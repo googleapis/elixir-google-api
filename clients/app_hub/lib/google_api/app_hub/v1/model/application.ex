@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AppHub.V1.Model.Application do
   @moduledoc """
-  Application defines the governance boundary for App Hub Entities that perform a logical end-to-end business function. App Hub supports application level IAM permission to align with governance requirements.
+  Application defines the governance boundary for App Hub entities that perform a logical end-to-end business function. App Hub supports application level IAM permission to align with governance requirements.
 
   ## Attributes
 
@@ -25,7 +25,7 @@ defmodule GoogleApi.AppHub.V1.Model.Application do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Create time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. User-defined description of an Application. Can have a maximum length of 2048 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User-defined name for the Application. Can have a maximum length of 63 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of an Application. Format: "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of an Application. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
   *   `scope` (*type:* `GoogleApi.AppHub.V1.Model.Scope.t`, *default:* `nil`) - Required. Immutable. Defines what data can be included into this Application. Limits which Services and Workloads can be registered.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Application state.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A universally unique identifier (in UUID4 format) for the `Application`.

@@ -671,7 +671,7 @@ defmodule GoogleApi.AppHub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AppHub.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Identifier. The resource name of an Application. Format: "projects/{host-project-id}/locations/{location}/applications/{application-id}"
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of an Application. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}"`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1187,7 +1187,7 @@ defmodule GoogleApi.AppHub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AppHub.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Identifier. The resource name of a Service. Format: "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of a Service. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1559,7 +1559,7 @@ defmodule GoogleApi.AppHub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AppHub.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Identifier. The resource name of the Workload. Format: "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the Workload. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

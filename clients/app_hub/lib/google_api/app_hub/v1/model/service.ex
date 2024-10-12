@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AppHub.V1.Model.Service do
   @moduledoc """
-  Service is an App Hub data model that contains a discovered service, which represents a network/api interface that exposes some functionality to clients for consumption over the network.
+  Service is an App Hub data model that contains a discovered service, which represents a network or API interface that exposes some functionality to clients for consumption over the network.
 
   ## Attributes
 
@@ -26,7 +26,7 @@ defmodule GoogleApi.AppHub.V1.Model.Service do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. User-defined description of a Service. Can have a maximum length of 2048 characters.
   *   `discoveredService` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The resource name of the original discovered service.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User-defined name for the Service. Can have a maximum length of 63 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of a Service. Format: "projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of a Service. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}/services/{service-id}"`
   *   `serviceProperties` (*type:* `GoogleApi.AppHub.V1.Model.ServiceProperties.t`, *default:* `nil`) - Output only. Properties of an underlying compute resource that can comprise a Service. These are immutable.
   *   `serviceReference` (*type:* `GoogleApi.AppHub.V1.Model.ServiceReference.t`, *default:* `nil`) - Output only. Reference to an underlying networking resource that can comprise a Service. These are immutable.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Service state.

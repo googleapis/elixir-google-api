@@ -21,7 +21,7 @@ defmodule GoogleApi.AppHub.V1.Model.DiscoveredWorkload do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the discovered workload. Format: "projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the discovered workload. Format: `"projects/{host-project-id}/locations/{location}/discoveredWorkloads/{uuid}"`
   *   `workloadProperties` (*type:* `GoogleApi.AppHub.V1.Model.WorkloadProperties.t`, *default:* `nil`) - Output only. Properties of an underlying compute resource represented by the Workload. These are immutable.
   *   `workloadReference` (*type:* `GoogleApi.AppHub.V1.Model.WorkloadReference.t`, *default:* `nil`) - Output only. Reference of an underlying compute resource represented by the Workload. These are immutable.
   """

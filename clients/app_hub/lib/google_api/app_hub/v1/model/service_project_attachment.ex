@@ -22,8 +22,8 @@ defmodule GoogleApi.AppHub.V1.Model.ServiceProjectAttachment do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Create time.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of a ServiceProjectAttachment. Format: "projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."
-  *   `serviceProject` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Service project name in the format: "projects/abc" or "projects/123". As input, project name with either project id or number are accepted. As output, this field will contain project number.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of a ServiceProjectAttachment. Format: `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
+  *   `serviceProject` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Service project name in the format: `"projects/abc"` or `"projects/123"`. As input, project name with either project id or number are accepted. As output, this field will contain project number.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. ServiceProjectAttachment state.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A globally unique identifier (in UUID4 format) for the `ServiceProjectAttachment`.
   """
