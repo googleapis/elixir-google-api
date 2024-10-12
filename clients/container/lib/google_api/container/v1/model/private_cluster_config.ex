@@ -21,14 +21,14 @@ defmodule GoogleApi.Container.V1.Model.PrivateClusterConfig do
 
   ## Attributes
 
-  *   `enablePrivateEndpoint` (*type:* `boolean()`, *default:* `nil`) - Whether the master's internal IP address is used as the cluster endpoint.
-  *   `enablePrivateNodes` (*type:* `boolean()`, *default:* `nil`) - Whether nodes have internal IP addresses only. If enabled, all nodes are given only RFC 1918 private addresses and communicate with the master via private networking.
-  *   `masterGlobalAccessConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterMasterGlobalAccessConfig.t`, *default:* `nil`) - Controls master global access settings.
+  *   `enablePrivateEndpoint` (*type:* `boolean()`, *default:* `nil`) - Whether the master's internal IP address is used as the cluster endpoint. Deprecated: Use ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_public_endpoint instead. Note that the value of enable_public_endpoint is reversed: if enable_private_endpoint is false, then enable_public_endpoint will be true.
+  *   `enablePrivateNodes` (*type:* `boolean()`, *default:* `nil`) - Whether nodes have internal IP addresses only. If enabled, all nodes are given only RFC 1918 private addresses and communicate with the master via private networking. Deprecated: Use NetworkConfig.default_enable_private_nodes instead.
+  *   `masterGlobalAccessConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterMasterGlobalAccessConfig.t`, *default:* `nil`) - Controls master global access settings. Deprecated: Use ControlPlaneEndpointsConfig.IPEndpointsConfig.enable_global_access instead.
   *   `masterIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - The IP range in CIDR notation to use for the hosted master network. This range will be used for assigning internal IP addresses to the master or set of masters, as well as the ILB VIP. This range must not overlap with any other ranges in use within the cluster's network.
   *   `peeringName` (*type:* `String.t`, *default:* `nil`) - Output only. The peering name in the customer VPC used by this cluster.
-  *   `privateEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The internal IP address of this cluster's master endpoint.
-  *   `privateEndpointSubnetwork` (*type:* `String.t`, *default:* `nil`) - Subnet to provision the master's private endpoint during cluster creation. Specified in projects/*/regions/*/subnetworks/* format.
-  *   `publicEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The external IP address of this cluster's master endpoint.
+  *   `privateEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The internal IP address of this cluster's master endpoint. Deprecated: Use ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint instead.
+  *   `privateEndpointSubnetwork` (*type:* `String.t`, *default:* `nil`) - Subnet to provision the master's private endpoint during cluster creation. Specified in projects/*/regions/*/subnetworks/* format. Deprecated: Use ControlPlaneEndpointsConfig.IPEndpointsConfig.private_endpoint_subnetwork instead.
+  *   `publicEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The external IP address of this cluster's master endpoint. Deprecated:Use ControlPlaneEndpointsConfig.IPEndpointsConfig.public_endpoint instead.
   """
 
   use GoogleApi.Gax.ModelBase
