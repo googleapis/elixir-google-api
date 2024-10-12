@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaReplayExecutionRequest do
   @moduledoc """
-  Request for replaying an execution Next ID: 3
+  Request for replaying an execution.
 
   ## Attributes
 
-  *   `replayReason` (*type:* `String.t`, *default:* `nil`) - Optional. The user provided reason for replaying the execution.
+  *   `replayReason` (*type:* `String.t`, *default:* `nil`) - Required. The user provided reason for replaying the execution.
   """
 
   use GoogleApi.Gax.ModelBase

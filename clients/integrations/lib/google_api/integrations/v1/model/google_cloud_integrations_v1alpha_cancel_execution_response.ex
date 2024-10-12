@@ -21,7 +21,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCancelEx
 
   ## Attributes
 
-  *   `isCanceled` (*type:* `boolean()`, *default:* `nil`) - True if cancellation performed successfully
+  *   `isCanceled` (*type:* `boolean()`, *default:* `nil`) - True if cancellation performed successfully.
   """
 
   use GoogleApi.Gax.ModelBase

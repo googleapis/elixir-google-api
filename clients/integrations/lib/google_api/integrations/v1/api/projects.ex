@@ -2695,12 +2695,12 @@ defmodule GoogleApi.Integrations.V1.Api.Projects do
   end
 
   @doc """
-  Re-execute an existing execution, with same request parameters and execution strategy
+  Re-execute an existing execution, with same request parameters and execution strategy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Integrations.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The execution resource name. Format: projects/{gcp_project_id}/locations/{location}/integrations/{integration}/executions/{execution_id}
+  *   `name` (*type:* `String.t`) - Required. Next ID: 3 The execution resource name. Format: projects/{gcp_project_id}/locations/{location}/integrations/{integration}/executions/{execution_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
