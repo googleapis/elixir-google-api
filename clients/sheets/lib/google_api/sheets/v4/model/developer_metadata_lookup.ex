@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.DeveloperMetadataLookup do
   *   `metadataKey` (*type:* `String.t`, *default:* `nil`) - Limits the selected developer metadata to that which has a matching DeveloperMetadata.metadata_key.
   *   `metadataLocation` (*type:* `GoogleApi.Sheets.V4.Model.DeveloperMetadataLocation.t`, *default:* `nil`) - Limits the selected developer metadata to those entries associated with the specified location. This field either matches exact locations or all intersecting locations according the specified locationMatchingStrategy.
   *   `metadataValue` (*type:* `String.t`, *default:* `nil`) - Limits the selected developer metadata to that which has a matching DeveloperMetadata.metadata_value.
-  *   `visibility` (*type:* `String.t`, *default:* `nil`) - Limits the selected developer metadata to that which has a matching DeveloperMetadata.visibility. If left unspecified, all developer metadata visibile to the requesting project is considered.
+  *   `visibility` (*type:* `String.t`, *default:* `nil`) - Limits the selected developer metadata to that which has a matching DeveloperMetadata.visibility. If left unspecified, all developer metadata visible to the requesting project is considered.
   """
 
   use GoogleApi.Gax.ModelBase
