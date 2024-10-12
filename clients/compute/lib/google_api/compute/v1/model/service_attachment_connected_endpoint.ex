@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachmentConnectedEndpoint do
 
   *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - The url of the consumer network.
   *   `endpoint` (*type:* `String.t`, *default:* `nil`) - The url of a connected endpoint.
+  *   `propagatedConnectionCount` (*type:* `integer()`, *default:* `nil`) - The number of consumer Network Connectivity Center spokes that the connected Private Service Connect endpoint has propagated to.
   *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - The PSC connection id of the connected endpoint.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of a connected endpoint to this service attachment.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachmentConnectedEndpoint do
   @type t :: %__MODULE__{
           :consumerNetwork => String.t() | nil,
           :endpoint => String.t() | nil,
+          :propagatedConnectionCount => integer() | nil,
           :pscConnectionId => String.t() | nil,
           :status => String.t() | nil
         }
 
   field(:consumerNetwork)
   field(:endpoint)
+  field(:propagatedConnectionCount)
   field(:pscConnectionId)
   field(:status)
 end

@@ -22,7 +22,6 @@ defmodule GoogleApi.Compute.V1.Model.AuditLogConfig do
   ## Attributes
 
   *   `exemptedMembers` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the identities that do not cause logging for this type of permission. Follows the same format of Binding.members.
-  *   `ignoreChildExemptions` (*type:* `boolean()`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   *   `logType` (*type:* `String.t`, *default:* `nil`) - The log type that this config enables.
   """
 
@@ -30,12 +29,10 @@ defmodule GoogleApi.Compute.V1.Model.AuditLogConfig do
 
   @type t :: %__MODULE__{
           :exemptedMembers => list(String.t()) | nil,
-          :ignoreChildExemptions => boolean() | nil,
           :logType => String.t() | nil
         }
 
   field(:exemptedMembers, type: :list)
-  field(:ignoreChildExemptions)
   field(:logType)
 end
 

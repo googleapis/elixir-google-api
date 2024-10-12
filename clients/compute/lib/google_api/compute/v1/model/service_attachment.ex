@@ -35,6 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `natSubnets` (*type:* `list(String.t)`, *default:* `nil`) - An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
   *   `producerForwardingRule` (*type:* `String.t`, *default:* `nil`) - The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
+  *   `propagatedConnectionLimit` (*type:* `integer()`, *default:* `nil`) - The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
   *   `pscServiceAttachmentId` (*type:* `GoogleApi.Compute.V1.Model.Uint128.t`, *default:* `nil`) - [Output Only] An 128-bit global unique ID of the PSC service attachment.
   *   `reconcileConnections` (*type:* `boolean()`, *default:* `nil`) - This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
@@ -61,6 +62,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
           :name => String.t() | nil,
           :natSubnets => list(String.t()) | nil,
           :producerForwardingRule => String.t() | nil,
+          :propagatedConnectionLimit => integer() | nil,
           :pscServiceAttachmentId => GoogleApi.Compute.V1.Model.Uint128.t() | nil,
           :reconcileConnections => boolean() | nil,
           :region => String.t() | nil,
@@ -91,6 +93,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
   field(:name)
   field(:natSubnets, type: :list)
   field(:producerForwardingRule)
+  field(:propagatedConnectionLimit)
   field(:pscServiceAttachmentId, as: GoogleApi.Compute.V1.Model.Uint128)
   field(:reconcileConnections)
   field(:region)
