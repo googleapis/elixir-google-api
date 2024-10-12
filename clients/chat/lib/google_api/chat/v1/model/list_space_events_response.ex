@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.ListSpaceEventsResponse do
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Continuation token used to fetch more events. If this field is omitted, there are no subsequent pages.
-  *   `spaceEvents` (*type:* `list(GoogleApi.Chat.V1.Model.SpaceEvent.t)`, *default:* `nil`) - Results are returned in chronological order (oldest event first).
+  *   `spaceEvents` (*type:* `list(GoogleApi.Chat.V1.Model.SpaceEvent.t)`, *default:* `nil`) - Results are returned in chronological order (oldest event first). Note: The `permissionSettings` field is not returned in the Space object for list requests.
   """
 
   use GoogleApi.Gax.ModelBase
