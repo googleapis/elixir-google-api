@@ -1495,4 +1495,146 @@ defmodule GoogleApi.Drive.V3.Api.Files do
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Drive.V3.Model.Channel{}])
   end
+
+  @doc """
+  List the AccessProposals on a file. Note: Only approvers are able to list AccessProposals on a file. If the user is not an approver, returns a 403.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Drive.V3.Connection.t`) - Connection to server
+  *   `file_id` (*type:* `String.t`) - Required. The id of the item the request is on.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - Optional. The number of results per page
+      *   `:pageToken` (*type:* `String.t`) - Optional. The continuation token on the list of access requests.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Drive.V3.Model.ListAccessProposalsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec drive_files_accessproposals_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Drive.V3.Model.ListAccessProposalsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def drive_files_accessproposals_list(connection, file_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/drive/v3/files/{fileId}/accessproposals", %{
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Drive.V3.Model.ListAccessProposalsResponse{}])
+  end
+
+  @doc """
+  Used to approve or deny an Access Proposal.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Drive.V3.Connection.t`) - Connection to server
+  *   `file_id` (*type:* `String.t`) - Required. The id of the item the request is on.
+  *   `proposal_id` (*type:* `String.t`) - Required. The id of the access proposal to resolve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:action` (*type:* `String.t`) - Required. The action to take on the AccessProposal.
+      *   `:role` (*type:* `list(String.t)`) - Optional. The roles the approver has allowed, if any.
+      *   `:sendNotification` (*type:* `boolean()`) - Optional. Whether to send an email to the requester when the AccessProposal is denied or accepted.
+      *   `:view` (*type:* `String.t`) - Optional. Indicates the view for this access proposal. This should only be set when the proposal belongs to a view. `published` is the only supported value.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec drive_files_accessproposals_resolve(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+  def drive_files_accessproposals_resolve(
+        connection,
+        file_id,
+        proposal_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :action => :query,
+      :role => :query,
+      :sendNotification => :query,
+      :view => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/drive/v3/files/{fileId}/accessproposals/{proposalId}:resolve", %{
+        "fileId" => URI.encode(file_id, &URI.char_unreserved?/1),
+        "proposalId" => URI.encode(proposal_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
+  end
 end
