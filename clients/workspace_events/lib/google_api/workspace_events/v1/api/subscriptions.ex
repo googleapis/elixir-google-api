@@ -283,7 +283,7 @@ defmodule GoogleApi.WorkspaceEvents.V1.Api.Subscriptions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.WorkspaceEvents.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Optional. Immutable. Identifier. Resource name of the subscription. Format: `subscriptions/{subscription}`
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of the subscription. Format: `subscriptions/{subscription}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
