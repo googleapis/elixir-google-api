@@ -21,6 +21,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.VmwarePlatformDetails do
 
   ## Attributes
 
+  *   `esxHyperthreading` (*type:* `String.t`, *default:* `nil`) - Whether the ESX is hyperthreaded.
   *   `esxVersion` (*type:* `String.t`, *default:* `nil`) - ESX version.
   *   `osid` (*type:* `String.t`, *default:* `nil`) - VMware os enum - https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html.
   *   `vcenterFolder` (*type:* `String.t`, *default:* `nil`) - Folder name in vCenter where asset resides.
@@ -32,6 +33,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.VmwarePlatformDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :esxHyperthreading => String.t() | nil,
           :esxVersion => String.t() | nil,
           :osid => String.t() | nil,
           :vcenterFolder => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.VmwarePlatformDetails do
           :vcenterVmId => String.t() | nil
         }
 
+  field(:esxHyperthreading)
   field(:esxVersion)
   field(:osid)
   field(:vcenterFolder)

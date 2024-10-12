@@ -21,15 +21,18 @@ defmodule GoogleApi.MigrationCenter.V1.Model.GenericPlatformDetails do
 
   ## Attributes
 
+  *   `hyperthreading` (*type:* `String.t`, *default:* `nil`) - Whether the machine is hyperthreaded.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Free text representation of the machine location. The format of this field should not be relied on. Different VMs in the same location may have different string values for this field.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :hyperthreading => String.t() | nil,
           :location => String.t() | nil
         }
 
+  field(:hyperthreading)
   field(:location)
 end
 
