@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1EncryptionSpec do
   @moduledoc """
-  A customer-managed encryption key specification that can be applied to all created resources (e.g. Conversation).
+  A customer-managed encryption key specification that can be applied to all created resources (e.g. `Conversation`).
 
   ## Attributes
 
-  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Required. The name of customer-managed encryption key that is used to secure a resource and its sub-resources. If empty, the resource is secured by the default Google encryption key. Only the key in the same location as this resource is allowed to be used for encryption. Format: `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
+  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Required. The name of customer-managed encryption key that is used to secure a resource and its sub-resources. If empty, the resource is secured by our default encryption key. Only the key in the same location as this resource is allowed to be used for encryption. Format: `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{key}`
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the encryption key specification resource. Format: projects/{project}/locations/{location}/encryptionSpec
   """
 

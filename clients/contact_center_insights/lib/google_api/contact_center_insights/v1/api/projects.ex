@@ -1344,7 +1344,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Api.Projects do
   end
 
   @doc """
-  Initializes a location-level encryption key specification. An error will be thrown if the location has resources already created before the initialization. Once the encryption specification is initialized at a location, it is immutable and all newly created resources under the location will be encrypted with the existing specification.
+  Initializes a location-level encryption key specification. An error will result if the location has resources already created before the initialization. After the encryption specification is initialized at a location, it is immutable and all newly created resources under the location will be encrypted with the existing specification.
 
   ## Parameters
 
