@@ -21,28 +21,28 @@ defmodule GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1S
 
   ## Attributes
 
+  *   `peerings` (*type:* `list(GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1Peering.t)`, *default:* `nil`) - Required. List of Peering connection information.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, validates request by executing a dry-run which would not alter the resource in any way.
-  *   `vpcPeerings` (*type:* `list(GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1Peering.t)`, *default:* `nil`) - Required. List of Peering connection information.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :requestId => String.t() | nil,
-          :validateOnly => boolean() | nil,
-          :vpcPeerings =>
+          :peerings =>
             list(GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1Peering.t())
-            | nil
+            | nil,
+          :requestId => String.t() | nil,
+          :validateOnly => boolean() | nil
         }
 
-  field(:requestId)
-  field(:validateOnly)
-
-  field(:vpcPeerings,
+  field(:peerings,
     as: GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1Peering,
     type: :list
   )
+
+  field(:requestId)
+  field(:validateOnly)
 end
 
 defimpl Poison.Decoder,
