@@ -21,19 +21,19 @@ defmodule GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1H
 
   ## Attributes
 
-  *   `natGatewayConfig` (*type:* `GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1NatGatewayConfig.t`, *default:* `nil`) - Optional. NAT gateway setup to ensure enough NAT IP addresses are available to handle the traffic needed to access the applications. Allows to explicitly enable or disable the NAT in the Hub along with the total IPs allocated to handle the capacity limits.
+  *   `internetGateway` (*type:* `GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1InternetGateway.t`, *default:* `nil`) - Optional. Internet Gateway configuration.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :natGatewayConfig =>
-            GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1NatGatewayConfig.t()
+          :internetGateway =>
+            GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1InternetGateway.t()
             | nil
         }
 
-  field(:natGatewayConfig,
-    as: GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1NatGatewayConfig
+  field(:internetGateway,
+    as: GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1InternetGateway
   )
 end
 
