@@ -26,7 +26,7 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupPlanAssociation do
   *   `dataSource` (*type:* `String.t`, *default:* `nil`) - Output only. Output Only. Resource name of data source which will be used as storage location for backups taken. Format : projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of BackupPlanAssociation in below format Format : projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
   *   `resource` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Resource name of workload on which backupplan is applied
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Output only. Output Only. Resource type of workload on which backupplan is applied
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Optional. Resource type of workload on which backupplan is applied
   *   `rulesConfigInfo` (*type:* `list(GoogleApi.BackupDR.V1.Model.RuleConfigInfo.t)`, *default:* `nil`) - Output only. The config info related to backup rules.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The BackupPlanAssociation resource state.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was updated.
