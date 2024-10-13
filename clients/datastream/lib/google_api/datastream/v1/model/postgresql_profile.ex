@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Datastream.V1.Model.PostgresqlProfile do
   @moduledoc """
-  PostgreSQL database profile.
+  PostgreSQL database profile. Next ID: 7.
 
   ## Attributes
 
   *   `database` (*type:* `String.t`, *default:* `nil`) - Required. Database for the PostgreSQL connection.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the PostgreSQL connection.
-  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Password for the PostgreSQL connection.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the PostgreSQL connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the PostgreSQL connection, default value is 5432.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the PostgreSQL connection.
   """
