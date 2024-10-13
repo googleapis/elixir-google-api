@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastream.V1.Model.OracleProfile do
   @moduledoc """
-  Oracle database profile.
+  Oracle database profile. Next ID: 10.
 
   ## Attributes
 
@@ -25,7 +25,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleProfile do
   *   `databaseService` (*type:* `String.t`, *default:* `nil`) - Required. Database for the Oracle connection.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the Oracle connection.
   *   `oracleSslConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSslConfig.t`, *default:* `nil`) - Optional. SSL configuration for the Oracle connection.
-  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Password for the Oracle connection.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the Oracle connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the Oracle connection, default value is 1521.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the Oracle connection.
   """

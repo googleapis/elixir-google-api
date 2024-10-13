@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Datastream.V1.Model.SqlServerProfile do
   @moduledoc """
-  SQLServer database profile
+  SQLServer database profile. Next ID: 8.
 
   ## Attributes
 
   *   `database` (*type:* `String.t`, *default:* `nil`) - Required. Database for the SQLServer connection.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the SQLServer connection.
-  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Password for the SQLServer connection.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the SQLServer connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the SQLServer connection, default value is 1433.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the SQLServer connection.
   """

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Datastream.V1.Model.MysqlProfile do
   @moduledoc """
-  MySQL database profile.
+  MySQL database profile. Next ID: 7.
 
   ## Attributes
 
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the MySQL connection.
-  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. Password for the MySQL connection.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. Password for the MySQL connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the MySQL connection, default value is 3306.
   *   `sslConfig` (*type:* `GoogleApi.Datastream.V1.Model.MysqlSslConfig.t`, *default:* `nil`) - SSL configuration for the MySQL connection.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the MySQL connection.
