@@ -22,12 +22,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
   ## Attributes
 
   *   `billingEstimation` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation.t`, *default:* `nil`) - Output only. Data size estimation for billing.
+  *   `cmekConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1CmekConfig.t`, *default:* `nil`) - Output only. CMEK-related information for the DataStore.
   *   `contentConfig` (*type:* `String.t`, *default:* `nil`) - Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the DataStore was created at.
   *   `defaultSchemaId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of the default Schema asscociated to this data store.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
   *   `documentProcessingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfig.t`, *default:* `nil`) - Configuration for Document understanding and enrichment.
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - Immutable. The industry vertical that the data store registers.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Input only. The KMS key to be used to protect this DataStore at creation time. Must be set for requests that need to comply with CMEK Org Policy protections. If this field is set and processed successfully, the DataStore will be protected by the KMS key, as indicated in the cmek_config field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
   *   `servingConfigDataStore` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1ServingConfigDataStore.t`, *default:* `nil`) - Optional. Stores serving config at DataStore level.
   *   `solutionTypes` (*type:* `list(String.t)`, *default:* `nil`) - The solutions that the data store enrolls. Available solutions for each industry_vertical: * `MEDIA`: `SOLUTION_TYPE_RECOMMENDATION` and `SOLUTION_TYPE_SEARCH`. * `SITE_SEARCH`: `SOLUTION_TYPE_SEARCH` is automatically enrolled. Other solutions cannot be enrolled.
@@ -41,6 +43,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
           :billingEstimation =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation.t()
             | nil,
+          :cmekConfig =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1CmekConfig.t()
+            | nil,
           :contentConfig => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :defaultSchemaId => String.t() | nil,
@@ -49,6 +54,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfig.t()
             | nil,
           :industryVertical => String.t() | nil,
+          :kmsKeyName => String.t() | nil,
           :name => String.t() | nil,
           :servingConfigDataStore =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1ServingConfigDataStore.t()
@@ -66,6 +72,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation
   )
 
+  field(:cmekConfig,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1CmekConfig
+  )
+
   field(:contentConfig)
   field(:createTime, as: DateTime)
   field(:defaultSchemaId)
@@ -77,6 +87,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
   )
 
   field(:industryVertical)
+  field(:kmsKeyName)
   field(:name)
 
   field(:servingConfigDataStore,
