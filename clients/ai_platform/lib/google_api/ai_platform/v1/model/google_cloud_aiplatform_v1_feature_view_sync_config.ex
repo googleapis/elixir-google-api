@@ -21,15 +21,18 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncCo
 
   ## Attributes
 
+  *   `continuous` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, syncs the FeatureView in a continuous manner to Online Store.
   *   `cron` (*type:* `String.t`, *default:* `nil`) - Cron schedule (https://en.wikipedia.org/wiki/Cron) to launch scheduled runs. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, "CRON_TZ=America/New_York 1 * * * *", or "TZ=America/New_York 1 * * * *".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :continuous => boolean() | nil,
           :cron => String.t() | nil
         }
 
+  field(:continuous)
   field(:cron)
 end
 
