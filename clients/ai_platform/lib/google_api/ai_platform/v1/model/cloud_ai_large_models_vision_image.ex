@@ -25,6 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImage do
   *   `generationSeed` (*type:* `integer()`, *default:* `nil`) - Generation seed for the sampled image. This parameter is exposed to the user only if one of the following is true: 1. The user specified per-example seeds in the request. 2. The user doesn't specify the generation seed in the request.
   *   `image` (*type:* `String.t`, *default:* `nil`) - Raw bytes.
   *   `imageRaiScores` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageRAIScores.t`, *default:* `nil`) - RAI scores for generated image.
+  *   `imageSize` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageImageSize.t`, *default:* `nil`) - Image size. The size of the image. Can be self reported, or computed from the image bytes.
   *   `raiInfo` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo.t`, *default:* `nil`) - RAI info for image.
   *   `semanticFilterResponse` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionSemanticFilterResponse.t`, *default:* `nil`) - Semantic filter info for image.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Text/Expanded text input for imagen.
@@ -39,6 +40,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImage do
           :image => String.t() | nil,
           :imageRaiScores =>
             GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageRAIScores.t() | nil,
+          :imageSize =>
+            GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageImageSize.t() | nil,
           :raiInfo => GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo.t() | nil,
           :semanticFilterResponse =>
             GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionSemanticFilterResponse.t() | nil,
@@ -50,6 +53,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImage do
   field(:generationSeed)
   field(:image)
   field(:imageRaiScores, as: GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageRAIScores)
+  field(:imageSize, as: GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageImageSize)
   field(:raiInfo, as: GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo)
 
   field(:semanticFilterResponse,

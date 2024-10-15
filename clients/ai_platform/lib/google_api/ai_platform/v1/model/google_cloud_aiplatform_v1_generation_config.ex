@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
 
   ## Attributes
 
+  *   `audioTimestamp` (*type:* `boolean()`, *default:* `nil`) - Optional. If enabled, audio timestamp will be included in the request to the model.
   *   `candidateCount` (*type:* `integer()`, *default:* `nil`) - Optional. Number of candidates to generate.
   *   `frequencyPenalty` (*type:* `number()`, *default:* `nil`) - Optional. Frequency penalties.
   *   `logprobs` (*type:* `integer()`, *default:* `nil`) - Optional. Logit probabilities.
@@ -40,6 +41,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :audioTimestamp => boolean() | nil,
           :candidateCount => integer() | nil,
           :frequencyPenalty => number() | nil,
           :logprobs => integer() | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
           :topP => number() | nil
         }
 
+  field(:audioTimestamp)
   field(:candidateCount)
   field(:frequencyPenalty)
   field(:logprobs)

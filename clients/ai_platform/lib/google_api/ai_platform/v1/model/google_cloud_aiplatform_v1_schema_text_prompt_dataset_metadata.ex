@@ -28,6 +28,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
   *   `logprobs` (*type:* `boolean()`, *default:* `nil`) - Whether or not the user has enabled logit probabilities in the model parameters.
   *   `maxOutputTokens` (*type:* `String.t`, *default:* `nil`) - Value of the maximum number of tokens generated set when the dataset was saved.
   *   `note` (*type:* `String.t`, *default:* `nil`) - User-created prompt note. Note size limit is 2KB.
+  *   `promptApiSchema` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptApiSchema.t`, *default:* `nil`) - The API schema of the prompt to support both UI and SDK usages.
   *   `promptType` (*type:* `String.t`, *default:* `nil`) - Type of the prompt dataset.
   *   `seedEnabled` (*type:* `boolean()`, *default:* `nil`) - Seeding enables model to return a deterministic response on a best effort basis. Determinism isn't guaranteed. This field determines whether or not seeding is enabled.
   *   `seedValue` (*type:* `String.t`, *default:* `nil`) - The actual value of the seed.
@@ -52,6 +53,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
           :logprobs => boolean() | nil,
           :maxOutputTokens => String.t() | nil,
           :note => String.t() | nil,
+          :promptApiSchema =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptApiSchema.t() | nil,
           :promptType => String.t() | nil,
           :seedEnabled => boolean() | nil,
           :seedValue => String.t() | nil,
@@ -75,6 +78,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
   field(:logprobs)
   field(:maxOutputTokens)
   field(:note)
+
+  field(:promptApiSchema,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptApiSchema
+  )
+
   field(:promptType)
   field(:seedEnabled)
   field(:seedValue)

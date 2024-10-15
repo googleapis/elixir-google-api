@@ -24,7 +24,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
   *   `anyOf` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t)`, *default:* `nil`) - Optional. The value should be validated against any (one or more) of the subschemas in the list.
   *   `default` (*type:* `any()`, *default:* `nil`) - Optional. Default value of the data.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the data.
-  *   `enum` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Possible values of the element of Type.STRING with enum format. For example we can define an Enum Direction as : {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
+  *   `enum` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Possible values of the element of primitive type with enum format. Examples: 1. We can define direction as : {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]} 2. We can define apartment number as : {type:INTEGER, format:enum, enum:["101", "201", "301"]}
   *   `example` (*type:* `any()`, *default:* `nil`) - Optional. Example of the object. Will only populated when the object is the root.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Optional. The format of the data. Supported formats: for NUMBER type: "float", "double" for INTEGER type: "int32", "int64" for STRING type: "email", "byte", etc
   *   `items` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t`, *default:* `nil`) - Optional. SCHEMA FIELDS FOR TYPE ARRAY Schema of the elements of Type.ARRAY.
