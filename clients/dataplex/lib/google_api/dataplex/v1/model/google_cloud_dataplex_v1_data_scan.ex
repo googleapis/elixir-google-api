@@ -23,10 +23,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the scan was created.
   *   `data` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataSource.t`, *default:* `nil`) - Required. The data source for DataScan.
-  *   `dataProfileResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult.t`, *default:* `nil`) - Output only. The result of the data profile scan.
-  *   `dataProfileSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpec.t`, *default:* `nil`) - DataProfileScan related setting.
-  *   `dataQualityResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult.t`, *default:* `nil`) - Output only. The result of the data quality scan.
-  *   `dataQualitySpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpec.t`, *default:* `nil`) - DataQualityScan related setting.
+  *   `dataProfileResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult.t`, *default:* `nil`) - Output only. The result of a data profile scan.
+  *   `dataProfileSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpec.t`, *default:* `nil`) - Settings for a data profile scan.
+  *   `dataQualityResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult.t`, *default:* `nil`) - Output only. The result of a data quality scan.
+  *   `dataQualitySpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpec.t`, *default:* `nil`) - Settings for a data quality scan.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the scan. Must be between 1-1024 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User friendly display name. Must be between 1-256 characters.
   *   `executionSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionSpec.t`, *default:* `nil`) - Optional. DataScan execution settings.If not specified, the fields in it will use their default values.

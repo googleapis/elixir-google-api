@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectSource do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the aspect was created in the source system.
+  *   `dataVersion` (*type:* `String.t`, *default:* `nil`) - The version of the data format used to produce this data. This field is used to indicated when the underlying data format changes (e.g., schema modifications, changes to the source URL format definition, etc).
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the aspect was last updated in the source system.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectSource do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :dataVersion => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
+  field(:dataVersion)
   field(:updateTime, as: DateTime)
 end
 

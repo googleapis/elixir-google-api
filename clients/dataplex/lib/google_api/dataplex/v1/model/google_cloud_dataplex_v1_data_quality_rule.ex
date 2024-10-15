@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule do
 
   *   `column` (*type:* `String.t`, *default:* `nil`) - Optional. The unnested column which this rule is evaluated against.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the rule. The maximum length is 1,024 characters.
-  *   `dimension` (*type:* `String.t`, *default:* `nil`) - Required. The dimension a rule belongs to. Results are also aggregated at the dimension level. Supported dimensions are "COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"
+  *   `dimension` (*type:* `String.t`, *default:* `nil`) - Required. The dimension a rule belongs to. Results are also aggregated at the dimension level. Supported dimensions are "COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS", "VOLUME"
   *   `ignoreNull` (*type:* `boolean()`, *default:* `nil`) - Optional. Rows with null values will automatically fail a rule, unless ignore_null is true. In that case, such null rows are trivially considered passing.This field is only valid for the following type of rules: RangeExpectation RegexExpectation SetExpectation UniquenessExpectation
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. A mutable name for the rule. The name must contain only letters (a-z, A-Z), numbers (0-9), or hyphens (-). The maximum length is 63 characters. Must start with a letter. Must end with a number or a letter.
   *   `nonNullExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleNonNullExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each column value is null.
