@@ -21,15 +21,18 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventActionD
 
   ## Attributes
 
+  *   `issue` (*type:* `String.t`, *default:* `nil`) - The human readable issue associated with the action.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of action. Eg. IncompatibleDataSchema, InvalidDataFormat
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :issue => String.t() | nil,
           :type => String.t() | nil
         }
 
+  field(:issue)
   field(:type)
 end
 
