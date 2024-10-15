@@ -18,7 +18,7 @@
 defmodule GoogleApi.Sheets.Mixfile do
   use Mix.Project
 
-  @version "0.33.4"
+  @version "0.33.5"
 
   def project() do
     [
