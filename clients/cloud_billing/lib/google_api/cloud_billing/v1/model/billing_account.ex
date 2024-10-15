@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.BillingAccount do
 
   ## Attributes
 
+  *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Optional. The currency in which the billing account is billed and charged, represented as an ISO 4217 code such as `USD`. Billing account currency is determined at the time of billing account creation and cannot be updated subsequently, so this field should not be set on update requests. In addition, a subaccount always matches the currency of its parent billing account, so this field should not be set on subaccount creation requests. Clients can read this field to determine the currency of an existing billing account.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name given to the billing account, such as `My Billing Account`. This name is displayed in the Google Cloud Console.
   *   `masterBillingAccount` (*type:* `String.t`, *default:* `nil`) - If this account is a [subaccount](https://cloud.google.com/billing/docs/concepts), then this will be the resource name of the parent billing account that it is being resold through. Otherwise this will be empty.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF` would be the resource name for billing account `012345-567890-ABCDEF`.
@@ -31,6 +32,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.BillingAccount do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :currencyCode => String.t() | nil,
           :displayName => String.t() | nil,
           :masterBillingAccount => String.t() | nil,
           :name => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.CloudBilling.V1.Model.BillingAccount do
           :parent => String.t() | nil
         }
 
+  field(:currencyCode)
   field(:displayName)
   field(:masterBillingAccount)
   field(:name)
