@@ -21,6 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.AutoscalingConfig do
 
   ## Attributes
 
+  *   `asymmetricAutoscalingOptions` (*type:* `list(GoogleApi.Spanner.V1.Model.AsymmetricAutoscalingOption.t)`, *default:* `nil`) - Optional. Optional asymmetric autoscaling options. Replicas matching the replica selection criteria will be autoscaled independently from other replicas. The autoscaler will scale the replicas based on the utilization of replicas identified by the replica selection. Replica selections should not overlap with each other. Other replicas (those do not match any replica selection) will be autoscaled together and will have the same compute capacity allocated to them.
   *   `autoscalingLimits` (*type:* `GoogleApi.Spanner.V1.Model.AutoscalingLimits.t`, *default:* `nil`) - Required. Autoscaling limits for an instance.
   *   `autoscalingTargets` (*type:* `GoogleApi.Spanner.V1.Model.AutoscalingTargets.t`, *default:* `nil`) - Required. The autoscaling targets for an instance.
   """
@@ -28,9 +29,16 @@ defmodule GoogleApi.Spanner.V1.Model.AutoscalingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :asymmetricAutoscalingOptions =>
+            list(GoogleApi.Spanner.V1.Model.AsymmetricAutoscalingOption.t()) | nil,
           :autoscalingLimits => GoogleApi.Spanner.V1.Model.AutoscalingLimits.t() | nil,
           :autoscalingTargets => GoogleApi.Spanner.V1.Model.AutoscalingTargets.t() | nil
         }
+
+  field(:asymmetricAutoscalingOptions,
+    as: GoogleApi.Spanner.V1.Model.AsymmetricAutoscalingOption,
+    type: :list
+  )
 
   field(:autoscalingLimits, as: GoogleApi.Spanner.V1.Model.AutoscalingLimits)
   field(:autoscalingTargets, as: GoogleApi.Spanner.V1.Model.AutoscalingTargets)
