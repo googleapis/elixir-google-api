@@ -22,7 +22,7 @@ defmodule GoogleApi.ReaderRevenueSubscriptionLinking.V1.Model.Entitlement do
   ## Attributes
 
   *   `detail` (*type:* `String.t`, *default:* `nil`) - The detail field can carry a description of the SKU that corresponds to what the user has been granted access to. This description, which is opaque to Google, can be displayed in the Google user subscription console for users who linked the subscription to a Google Account. Max 80 character limit.
-  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Expiration time of the entitlement. Entitlements that have expired over 30 days will be purged. Required. LINT.IfChange(expire_time) The max expire_time is 398 days from now(). LINT.ThenChange(//depot/google3/java/com/google/subscribewithgoogle/accountlinking/subscriptionlink/service/config/protoconf.pi:max_expiry_age)
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Expiration time of the entitlement. Entitlements that have expired over 30 days will be purged. The max expire_time is 398 days from now(). LINT.ThenChange(//depot/google3/java/com/google/subscribewithgoogle/accountlinking/subscriptionlink/service/config/protoconf.pi:max_expiry_age)
   *   `productId` (*type:* `String.t`, *default:* `nil`) - Required. The publication's product ID that the user has access to. This is the same product ID as can be found in Schema.org markup (http://schema.org/productID). E.g. "dailybugle.com:basic"
   *   `subscriptionToken` (*type:* `String.t`, *default:* `nil`) - A source-specific subscription token. This is an opaque string that the publisher provides to Google. This token is opaque and has no meaning to Google.
   """
