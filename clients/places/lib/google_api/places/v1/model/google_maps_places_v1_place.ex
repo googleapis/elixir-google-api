@@ -70,6 +70,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `servesWine` (*type:* `boolean()`, *default:* `nil`) - Specifies if the place serves wine.
   *   `goodForWatchingSports` (*type:* `boolean()`, *default:* `nil`) - Place is suitable for watching sports.
   *   `fuelOptions` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1FuelOptions.t`, *default:* `nil`) - The most recent information about fuel options in a gas station. This information is updated regularly.
+  *   `addressDescriptor` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AddressDescriptor.t`, *default:* `nil`) - The address descriptor of the place. Address descriptors include additional information that help describe a location using landmarks and areas. See address descriptor regional coverage in https://developers.google.com/maps/documentation/geocoding/address-descriptors/coverage.
   *   `formattedAddress` (*type:* `String.t`, *default:* `nil`) - A full, human-readable address for this place.
   *   `photos` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo.t)`, *default:* `nil`) - Information (including references) about photos of this place. A maximum of 10 photos can be returned.
   *   `reservable` (*type:* `boolean()`, *default:* `nil`) - Specifies if the place supports reservations.
@@ -148,6 +149,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
           :servesWine => boolean() | nil,
           :goodForWatchingSports => boolean() | nil,
           :fuelOptions => GoogleApi.Places.V1.Model.GoogleMapsPlacesV1FuelOptions.t() | nil,
+          :addressDescriptor =>
+            GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AddressDescriptor.t() | nil,
           :formattedAddress => String.t() | nil,
           :photos => list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo.t()) | nil,
           :reservable => boolean() | nil,
@@ -242,6 +245,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   field(:servesWine)
   field(:goodForWatchingSports)
   field(:fuelOptions, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1FuelOptions)
+  field(:addressDescriptor, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AddressDescriptor)
   field(:formattedAddress)
   field(:photos, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo, type: :list)
   field(:reservable)
