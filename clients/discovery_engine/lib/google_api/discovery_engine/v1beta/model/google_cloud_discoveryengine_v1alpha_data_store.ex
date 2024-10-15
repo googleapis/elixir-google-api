@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   *   `aclEnabled` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether data in the DataStore has ACL information. If set to `true`, the source data must have ACL. ACL will be ingested when data is ingested by DocumentService.ImportDocuments methods. When ACL is enabled for the DataStore, Document can't be accessed by calling DocumentService.GetDocument or DocumentService.ListDocuments. Currently ACL is only supported in `GENERIC` industry vertical with non-`PUBLIC_WEBSITE` content config.
   *   `billingEstimation` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaDataStoreBillingEstimation.t`, *default:* `nil`) - Output only. Data size estimation for billing.
+  *   `cmekConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCmekConfig.t`, *default:* `nil`) - Output only. CMEK-related information for the DataStore.
   *   `contentConfig` (*type:* `String.t`, *default:* `nil`) - Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the DataStore was created at.
   *   `defaultSchemaId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of the default Schema asscociated to this data store.
@@ -30,6 +31,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `documentProcessingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaDocumentProcessingConfig.t`, *default:* `nil`) - Configuration for Document understanding and enrichment.
   *   `idpConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaIdpConfig.t`, *default:* `nil`) - Output only. Data store level identity provider config.
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - Immutable. The industry vertical that the data store registers.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Input only. The KMS key to be used to protect this DataStore at creation time. Must be set for requests that need to comply with CMEK Org Policy protections. If this field is set and processed successfully, the DataStore will be protected by the KMS key, as indicated in the cmek_config field.
   *   `languageInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaLanguageInfo.t`, *default:* `nil`) - Language info for DataStore.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
   *   `naturalLanguageQueryUnderstandingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaNaturalLanguageQueryUnderstandingConfig.t`, *default:* `nil`) - Optional. Configuration for Natural Language Query Understanding.
@@ -46,6 +48,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
           :billingEstimation =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaDataStoreBillingEstimation.t()
             | nil,
+          :cmekConfig =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCmekConfig.t()
+            | nil,
           :contentConfig => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :defaultSchemaId => String.t() | nil,
@@ -57,6 +62,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaIdpConfig.t()
             | nil,
           :industryVertical => String.t() | nil,
+          :kmsKeyName => String.t() | nil,
           :languageInfo =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaLanguageInfo.t()
             | nil,
@@ -83,6 +89,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaDataStoreBillingEstimation
   )
 
+  field(:cmekConfig,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCmekConfig
+  )
+
   field(:contentConfig)
   field(:createTime, as: DateTime)
   field(:defaultSchemaId)
@@ -98,6 +108,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   )
 
   field(:industryVertical)
+  field(:kmsKeyName)
 
   field(:languageInfo,
     as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaLanguageInfo

@@ -348,8 +348,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:cmekConfigName` (*type:* `String.t`) - Resource name of the CmekConfig to use for protecting this DataStore.
       *   `:createAdvancedSiteSearch` (*type:* `boolean()`) - A boolean flag indicating whether user want to directly create an advanced data store for site search. If the data store is not configured as site search (GENERIC vertical and PUBLIC_WEBSITE content_config), this flag will be ignored.
       *   `:dataStoreId` (*type:* `String.t`) - Required. The ID to use for the DataStore, which will become the final component of the DataStore's resource name. This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with a length limit of 63 characters. Otherwise, an INVALID_ARGUMENT error is returned.
+      *   `:disableCmek` (*type:* `boolean()`) - DataStore without CMEK protections. If a default CmekConfig is set for the project, setting this field will override the default CmekConfig as well.
       *   `:skipDefaultSchemaCreation` (*type:* `boolean()`) - A boolean flag indicating whether to skip the default schema creation for the data store. Only enable this flag if you are certain that the default schema is incompatible with your use case. If set to true, you must manually create a schema for the data store before any documents can be ingested. This flag cannot be specified if `data_store.starting_schema` is specified.
       *   `:body` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDataStore.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -387,8 +389,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :cmekConfigName => :query,
       :createAdvancedSiteSearch => :query,
       :dataStoreId => :query,
+      :disableCmek => :query,
       :skipDefaultSchemaCreation => :query,
       :body => :body
     }
@@ -9026,8 +9030,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:cmekConfigName` (*type:* `String.t`) - Resource name of the CmekConfig to use for protecting this DataStore.
       *   `:createAdvancedSiteSearch` (*type:* `boolean()`) - A boolean flag indicating whether user want to directly create an advanced data store for site search. If the data store is not configured as site search (GENERIC vertical and PUBLIC_WEBSITE content_config), this flag will be ignored.
       *   `:dataStoreId` (*type:* `String.t`) - Required. The ID to use for the DataStore, which will become the final component of the DataStore's resource name. This field must conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with a length limit of 63 characters. Otherwise, an INVALID_ARGUMENT error is returned.
+      *   `:disableCmek` (*type:* `boolean()`) - DataStore without CMEK protections. If a default CmekConfig is set for the project, setting this field will override the default CmekConfig as well.
       *   `:skipDefaultSchemaCreation` (*type:* `boolean()`) - A boolean flag indicating whether to skip the default schema creation for the data store. Only enable this flag if you are certain that the default schema is incompatible with your use case. If set to true, you must manually create a schema for the data store before any documents can be ingested. This flag cannot be specified if `data_store.starting_schema` is specified.
       *   `:body` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDataStore.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -9065,8 +9071,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :cmekConfigName => :query,
       :createAdvancedSiteSearch => :query,
       :dataStoreId => :query,
+      :disableCmek => :query,
       :skipDefaultSchemaCreation => :query,
       :body => :body
     }
