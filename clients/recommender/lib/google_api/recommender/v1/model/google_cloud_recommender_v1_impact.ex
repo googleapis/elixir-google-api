@@ -23,8 +23,10 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact do
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - Category that is being targeted.
   *   `costProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection.t`, *default:* `nil`) - Use with CategoryType.COST
+  *   `impactComponents` (*type:* `list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact.t)`, *default:* `nil`) - If populated, the impact contains multiple components. In this case, the top-level impact contains aggregated values and each component contains per-service details.
   *   `reliabilityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ReliabilityProjection.t`, *default:* `nil`) - Use with CategoryType.RELIABILITY
   *   `securityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SecurityProjection.t`, *default:* `nil`) - Use with CategoryType.SECURITY
+  *   `service` (*type:* `String.t`, *default:* `nil`) - The service that this impact is associated with.
   *   `sustainabilityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SustainabilityProjection.t`, *default:* `nil`) - Use with CategoryType.SUSTAINABILITY
   """
 
@@ -34,10 +36,13 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact do
           :category => String.t() | nil,
           :costProjection =>
             GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection.t() | nil,
+          :impactComponents =>
+            list(GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact.t()) | nil,
           :reliabilityProjection =>
             GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ReliabilityProjection.t() | nil,
           :securityProjection =>
             GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SecurityProjection.t() | nil,
+          :service => String.t() | nil,
           :sustainabilityProjection =>
             GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SustainabilityProjection.t()
             | nil
@@ -47,6 +52,11 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact do
 
   field(:costProjection, as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection)
 
+  field(:impactComponents,
+    as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact,
+    type: :list
+  )
+
   field(:reliabilityProjection,
     as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ReliabilityProjection
   )
@@ -54,6 +64,8 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact do
   field(:securityProjection,
     as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SecurityProjection
   )
+
+  field(:service)
 
   field(:sustainabilityProjection,
     as: GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SustainabilityProjection
