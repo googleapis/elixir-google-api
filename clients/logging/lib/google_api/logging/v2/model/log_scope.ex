@@ -23,7 +23,7 @@ defmodule GoogleApi.Logging.V2.Model.LogScope do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the log scope.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Describes this log scope.The maximum length of the description is 8000 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the log scope.For example:projects/my-project/locations/global/logScopes/my-log-scope
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the log scope.Log scopes are only available in the global location. For example:projects/my-project/locations/global/logScopes/my-log-scope
   *   `resourceNames` (*type:* `list(String.t)`, *default:* `nil`) - Required. Names of one or more parent resources: projects/[PROJECT_ID]May alternatively be one or more views: projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]A log scope can include a maximum of 50 projects and a maximum of 100 resources in total.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the log scope.
   """
