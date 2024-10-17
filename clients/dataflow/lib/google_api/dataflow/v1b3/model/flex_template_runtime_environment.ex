@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   @moduledoc """
-  The environment values to be set at runtime for flex template. LINT.IfChange
+  The environment values to be set at runtime for flex template.
 
   ## Attributes
 
