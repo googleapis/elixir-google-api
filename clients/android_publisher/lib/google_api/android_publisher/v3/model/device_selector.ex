@@ -26,6 +26,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceSelector do
   *   `forbiddenSystemFeatures` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.SystemFeature.t)`, *default:* `nil`) - A device that has any of these system features is excluded by this selector, even if it matches all other conditions.
   *   `includedDeviceIds` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.DeviceId.t)`, *default:* `nil`) - Device models included by this selector.
   *   `requiredSystemFeatures` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.SystemFeature.t)`, *default:* `nil`) - A device needs to have all these system features to be included by the selector.
+  *   `systemOnChips` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.SystemOnChip.t)`, *default:* `nil`) - Optional. The SoCs included by this selector. Only works for Android S+ devices.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceSelector do
             list(GoogleApi.AndroidPublisher.V3.Model.SystemFeature.t()) | nil,
           :includedDeviceIds => list(GoogleApi.AndroidPublisher.V3.Model.DeviceId.t()) | nil,
           :requiredSystemFeatures =>
-            list(GoogleApi.AndroidPublisher.V3.Model.SystemFeature.t()) | nil
+            list(GoogleApi.AndroidPublisher.V3.Model.SystemFeature.t()) | nil,
+          :systemOnChips => list(GoogleApi.AndroidPublisher.V3.Model.SystemOnChip.t()) | nil
         }
 
   field(:deviceRam, as: GoogleApi.AndroidPublisher.V3.Model.DeviceRam)
@@ -54,6 +56,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceSelector do
     as: GoogleApi.AndroidPublisher.V3.Model.SystemFeature,
     type: :list
   )
+
+  field(:systemOnChips, as: GoogleApi.AndroidPublisher.V3.Model.SystemOnChip, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.DeviceSelector do
