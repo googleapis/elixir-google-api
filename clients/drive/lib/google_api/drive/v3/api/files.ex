@@ -1581,7 +1581,7 @@ defmodule GoogleApi.Drive.V3.Api.Files do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:action` (*type:* `String.t`) - Required. The action to take on the AccessProposal.
-      *   `:role` (*type:* `list(String.t)`) - Optional. The roles the approver has allowed, if any.
+      *   `:role` (*type:* `list(String.t)`) - Optional. The roles the approver has allowed, if any. Note: This field is required for the `ACCEPT` action.
       *   `:sendNotification` (*type:* `boolean()`) - Optional. Whether to send an email to the requester when the AccessProposal is denied or accepted.
       *   `:view` (*type:* `String.t`) - Optional. Indicates the view for this access proposal. This should only be set when the proposal belongs to a view. `published` is the only supported value.
   *   `opts` (*type:* `keyword()`) - Call options
