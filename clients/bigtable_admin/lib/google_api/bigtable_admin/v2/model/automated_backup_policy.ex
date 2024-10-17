@@ -21,7 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AutomatedBackupPolicy do
 
   ## Attributes
 
-  *   `frequency` (*type:* `String.t`, *default:* `nil`) - Required. How frequently automated backups should occur. The only supported value at this time is 24 hours.
+  *   `frequency` (*type:* `String.t`, *default:* `nil`) - How frequently automated backups should occur. The only supported value at this time is 24 hours. An undefined frequency is treated as 24 hours.
   *   `retentionPeriod` (*type:* `String.t`, *default:* `nil`) - Required. How long the automated backups should be retained. The only supported value at this time is 3 days.
   """
 

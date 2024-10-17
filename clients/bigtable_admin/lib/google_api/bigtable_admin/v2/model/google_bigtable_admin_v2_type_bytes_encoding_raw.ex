@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeBytesEncodingRaw do
   @moduledoc """
-  Leaves the value "as-is" * Order-preserving? Yes * Self-delimiting? No * Compatibility? N/A
+  Leaves the value as-is. Sorted mode: all values are supported. Distinct mode: all values are supported.
 
   ## Attributes
 
