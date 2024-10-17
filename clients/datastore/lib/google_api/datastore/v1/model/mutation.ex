@@ -22,9 +22,11 @@ defmodule GoogleApi.Datastore.V1.Model.Mutation do
   ## Attributes
 
   *   `baseVersion` (*type:* `String.t`, *default:* `nil`) - The version of the entity that this mutation is being applied to. If this does not match the current version on the server, the mutation conflicts.
+  *   `conflictResolutionStrategy` (*type:* `String.t`, *default:* `nil`) - The strategy to use when a conflict is detected. Defaults to `SERVER_VALUE`. If this is set, then `conflict_detection_strategy` must also be set.
   *   `delete` (*type:* `GoogleApi.Datastore.V1.Model.Key.t`, *default:* `nil`) - The key of the entity to delete. The entity may or may not already exist. Must have a complete key path and must not be reserved/read-only.
   *   `insert` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to insert. The entity must not already exist. The entity key's final path element may be incomplete.
   *   `propertyMask` (*type:* `GoogleApi.Datastore.V1.Model.PropertyMask.t`, *default:* `nil`) - The properties to write in this mutation. None of the properties in the mask may have a reserved name, except for `__key__`. This field is ignored for `delete`. If the entity already exists, only properties referenced in the mask are updated, others are left untouched. Properties referenced in the mask but not in the entity are deleted.
+  *   `propertyTransforms` (*type:* `list(GoogleApi.Datastore.V1.Model.PropertyTransform.t)`, *default:* `nil`) - Optional. The transforms to perform on the entity. This field can be set only when the operation is `insert`, `update`, or `upsert`. If present, the transforms are be applied to the entity regardless of the property mask, in order, after the operation.
   *   `update` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to update. The entity must already exist. Must have a complete key path.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The update time of the entity that this mutation is being applied to. If this does not match the current update time on the server, the mutation conflicts.
   *   `upsert` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The entity to upsert. The entity may or may not already exist. The entity key's final path element may be incomplete.
@@ -34,18 +36,22 @@ defmodule GoogleApi.Datastore.V1.Model.Mutation do
 
   @type t :: %__MODULE__{
           :baseVersion => String.t() | nil,
+          :conflictResolutionStrategy => String.t() | nil,
           :delete => GoogleApi.Datastore.V1.Model.Key.t() | nil,
           :insert => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
           :propertyMask => GoogleApi.Datastore.V1.Model.PropertyMask.t() | nil,
+          :propertyTransforms => list(GoogleApi.Datastore.V1.Model.PropertyTransform.t()) | nil,
           :update => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
           :updateTime => DateTime.t() | nil,
           :upsert => GoogleApi.Datastore.V1.Model.Entity.t() | nil
         }
 
   field(:baseVersion)
+  field(:conflictResolutionStrategy)
   field(:delete, as: GoogleApi.Datastore.V1.Model.Key)
   field(:insert, as: GoogleApi.Datastore.V1.Model.Entity)
   field(:propertyMask, as: GoogleApi.Datastore.V1.Model.PropertyMask)
+  field(:propertyTransforms, as: GoogleApi.Datastore.V1.Model.PropertyTransform, type: :list)
   field(:update, as: GoogleApi.Datastore.V1.Model.Entity)
   field(:updateTime, as: DateTime)
   field(:upsert, as: GoogleApi.Datastore.V1.Model.Entity)
