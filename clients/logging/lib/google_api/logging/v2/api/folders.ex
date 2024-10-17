@@ -2453,7 +2453,7 @@ defmodule GoogleApi.Logging.V2.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of the log scope.For example:projects/my-project/locations/global/logScopes/my-log-scope
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the log scope.Log scopes are only available in the global location. For example:projects/my-project/locations/global/logScopes/my-log-scope
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
