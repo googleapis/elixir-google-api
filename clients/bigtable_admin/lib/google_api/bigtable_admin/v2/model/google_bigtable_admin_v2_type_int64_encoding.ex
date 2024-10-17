@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64Encoding do
   @moduledoc """
-  Rules used to convert to/from lower level types.
+  Rules used to convert to or from lower level types.
 
   ## Attributes
 

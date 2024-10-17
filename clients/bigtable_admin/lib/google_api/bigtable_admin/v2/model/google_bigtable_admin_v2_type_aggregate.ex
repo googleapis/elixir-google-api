@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregate do
   @moduledoc """
-  A value that combines incremental updates into a summarized value. Data is never directly written or read using type `Aggregate`. Writes will provide either the `input_type` or `state_type`, and reads will always return the `state_type` .
+  A value that combines incremental updates into a summarized value. Data is never directly written or read using type `Aggregate`. Writes provide either the `input_type` or `state_type`, and reads always return the `state_type` .
 
   ## Attributes
 
   *   `hllppUniqueCount` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateHyperLogLogPlusPlusUniqueCount.t`, *default:* `nil`) - HyperLogLogPlusPlusUniqueCount aggregator.
-  *   `inputType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Type.t`, *default:* `nil`) - Type of the inputs that are accumulated by this `Aggregate`, which must specify a full encoding. Use `AddInput` mutations to accumulate new inputs.
+  *   `inputType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Type.t`, *default:* `nil`) - Type of the inputs that are accumulated by this `Aggregate`. Use `AddInput` mutations to accumulate new inputs.
   *   `max` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateMax.t`, *default:* `nil`) - Max aggregator.
   *   `min` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateMin.t`, *default:* `nil`) - Min aggregator.
-  *   `stateType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Type.t`, *default:* `nil`) - Output only. Type that holds the internal accumulator state for the `Aggregate`. This is a function of the `input_type` and `aggregator` chosen, and will always specify a full encoding.
+  *   `stateType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Type.t`, *default:* `nil`) - Output only. Type that holds the internal accumulator state for the `Aggregate`. This is a function of the `input_type` and `aggregator` chosen.
   *   `sum` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateSum.t`, *default:* `nil`) - Sum aggregator.
   """
 

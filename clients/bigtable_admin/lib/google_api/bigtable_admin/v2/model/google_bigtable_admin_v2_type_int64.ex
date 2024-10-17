@@ -21,7 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64 do
 
   ## Attributes
 
-  *   `encoding` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64Encoding.t`, *default:* `nil`) - The encoding to use when converting to/from lower level types.
+  *   `encoding` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64Encoding.t`, *default:* `nil`) - The encoding to use when converting to or from lower level types.
   """
 
   use GoogleApi.Gax.ModelBase
