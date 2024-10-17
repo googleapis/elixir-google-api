@@ -21,9 +21,9 @@ defmodule GoogleApi.HealthCare.V1.Model.GoogleCloudHealthcareV1DicomBigQueryDest
 
   ## Attributes
 
-  *   `force` (*type:* `boolean()`, *default:* `nil`) - Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE.
-  *   `tableUri` (*type:* `String.t`, *default:* `nil`) - BigQuery URI to a table, up to 2000 characters long, in the format `bq://projectId.bqDatasetId.tableId`
-  *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - Determines whether the existing table in the destination is to be overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - Optional. Use `write_disposition` instead. If `write_disposition` is specified, this parameter is ignored. force=false is equivalent to write_disposition=WRITE_EMPTY and force=true is equivalent to write_disposition=WRITE_TRUNCATE.
+  *   `tableUri` (*type:* `String.t`, *default:* `nil`) - Optional. BigQuery URI to a table, up to 2000 characters long, in the format `bq://projectId.bqDatasetId.tableId`
+  *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - Optional. Determines whether the existing table in the destination is to be overwritten or appended to. If a write_disposition is specified, the `force` parameter is ignored.
   """
 
   use GoogleApi.Gax.ModelBase

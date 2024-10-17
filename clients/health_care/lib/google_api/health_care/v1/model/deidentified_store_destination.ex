@@ -22,7 +22,7 @@ defmodule GoogleApi.HealthCare.V1.Model.DeidentifiedStoreDestination do
   ## Attributes
 
   *   `config` (*type:* `GoogleApi.HealthCare.V1.Model.DeidentifyConfig.t`, *default:* `nil`) - The configuration to use when de-identifying resources that are added to this store.
-  *   `store` (*type:* `String.t`, *default:* `nil`) - The full resource name of a Cloud Healthcare FHIR store, for example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `store` (*type:* `String.t`, *default:* `nil`) - Optional. The full resource name of a Cloud Healthcare FHIR store, for example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   """
 
   use GoogleApi.Gax.ModelBase
