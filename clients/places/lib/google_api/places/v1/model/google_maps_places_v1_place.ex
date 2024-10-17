@@ -58,7 +58,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `nationalPhoneNumber` (*type:* `String.t`, *default:* `nil`) - A human-readable phone number for the place, in national format.
   *   `plusCode` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlacePlusCode.t`, *default:* `nil`) - Plus code of the place location lat/long.
   *   `servesBrunch` (*type:* `boolean()`, *default:* `nil`) - Specifies if the place serves brunch.
-  *   `viewport` (*type:* `GoogleApi.Places.V1.Model.GoogleGeoTypeViewport.t`, *default:* `nil`) - A viewport suitable for displaying the place on an average-sized map.
+  *   `viewport` (*type:* `GoogleApi.Places.V1.Model.GoogleGeoTypeViewport.t`, *default:* `nil`) - A viewport suitable for displaying the place on an average-sized map. This viewport should not be used as the physical boundary or the service area of the business.
   *   `websiteUri` (*type:* `String.t`, *default:* `nil`) - The authoritative website for this place, e.g. a business' homepage. Note that for places that are part of a chain (e.g. an IKEA store), this will usually be the website for the individual store, not the overall chain.
   *   `utcOffsetMinutes` (*type:* `integer()`, *default:* `nil`) - Number of minutes this place's timezone is currently offset from UTC. This is expressed in minutes to support timezones that are offset by fractions of an hour, e.g. X hours and 15 minutes.
   *   `businessStatus` (*type:* `String.t`, *default:* `nil`) - The business status for the place.
