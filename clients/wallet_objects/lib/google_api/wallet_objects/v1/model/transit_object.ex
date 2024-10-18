@@ -43,6 +43,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   *   `activationStatus` (*type:* `GoogleApi.WalletObjects.V1.Model.ActivationStatus.t`, *default:* `nil`) - The activation status for the object. Required if the class has `activationOptions` set.
   *   `hasUsers` (*type:* `boolean()`, *default:* `nil`) - Indicates if the object has users. This field is set by the platform.
   *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
+  *   `notifyPreference` (*type:* `String.t`, *default:* `nil`) - Whether or not field updates to this object should trigger notifications. When set to NOTIFY, we will attempt to trigger a field update notification to users. These notifications will only be sent to users if the field is part of an allowlist. If set to DO_NOT_NOTIFY or NOTIFICATION_SETTINGS_UNSPECIFIED, no notification will be triggered. This setting is ephemeral and needs to be set with each PATCH or UPDATE request, otherwise a notification will not be triggered.
   *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
   *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If links module data is also defined on the class, both will be displayed.
   *   `customConcessionCategory` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - A custom concession category to use when `concessionCategory` does not provide the right option. Both `concessionCategory` and `customConcessionCategory` may not be set.
@@ -89,6 +90,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
           :activationStatus => GoogleApi.WalletObjects.V1.Model.ActivationStatus.t() | nil,
           :hasUsers => boolean() | nil,
           :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
+          :notifyPreference => String.t() | nil,
           :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
           :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
           :customConcessionCategory => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
@@ -133,6 +135,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   field(:activationStatus, as: GoogleApi.WalletObjects.V1.Model.ActivationStatus)
   field(:hasUsers)
   field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)
+  field(:notifyPreference)
   field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)
   field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
   field(:customConcessionCategory, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
