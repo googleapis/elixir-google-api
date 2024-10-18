@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint do
   *   `healthCheck` (*type:* `GoogleApi.Compute.V1.Model.HealthCheckReference.t`, *default:* `nil`) - URL of the health check associated with the health state of the network endpoint.
   *   `healthCheckService` (*type:* `GoogleApi.Compute.V1.Model.HealthCheckServiceReference.t`, *default:* `nil`) - URL of the health check service associated with the health state of the network endpoint.
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Health state of the network endpoint determined based on the health checks configured.
+  *   `ipv6HealthState` (*type:* `String.t`, *default:* `nil`) - Health state of the ipv6 network endpoint determined based on the health checks configured.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint do
           :forwardingRule => GoogleApi.Compute.V1.Model.ForwardingRuleReference.t() | nil,
           :healthCheck => GoogleApi.Compute.V1.Model.HealthCheckReference.t() | nil,
           :healthCheckService => GoogleApi.Compute.V1.Model.HealthCheckServiceReference.t() | nil,
-          :healthState => String.t() | nil
+          :healthState => String.t() | nil,
+          :ipv6HealthState => String.t() | nil
         }
 
   field(:backendService, as: GoogleApi.Compute.V1.Model.BackendServiceReference)
@@ -43,6 +45,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint do
   field(:healthCheck, as: GoogleApi.Compute.V1.Model.HealthCheckReference)
   field(:healthCheckService, as: GoogleApi.Compute.V1.Model.HealthCheckServiceReference)
   field(:healthState)
+  field(:ipv6HealthState)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint do

@@ -26,6 +26,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
   *   `fqdn` (*type:* `String.t`, *default:* `nil`) - Optional fully qualified domain name of network endpoint. This can only be specified when NetworkEndpointGroup.network_endpoint_type is NON_GCP_FQDN_PORT.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The name or a URL of VM instance of this network endpoint. This field is required for network endpoints of type GCE_VM_IP and GCE_VM_IP_PORT. The instance must be in the same zone of network endpoint group (for zonal NEGs) or in the zone within the region of the NEG (for regional NEGs). If the ipAddress is specified, it must belongs to the VM instance. The name must be 1-63 characters long, and comply with RFC1035 or be a valid URL pointing to an existing instance.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Optional IPv4 address of network endpoint. The IP address must belong to a VM in Compute Engine (either the primary IP or as part of an aliased IP range). If the IP address is not specified, then the primary IP address for the VM instance in the network that the network endpoint group belongs to will be used. This field is redundant and need not be set for network endpoints of type GCE_VM_IP. If set, it must be set to the primary internal IP address of the attached VM instance that matches the subnetwork of the NEG. The primary internal IP address from any NIC of a multi-NIC VM instance can be added to a NEG as long as it matches the NEG subnetwork.
+  *   `ipv6Address` (*type:* `String.t`, *default:* `nil`) - Optional IPv6 address of network endpoint.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Optional port number of network endpoint. If not specified, the defaultPort for the network endpoint group will be used. This field can not be set for network endpoints of type GCE_VM_IP.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
           :fqdn => String.t() | nil,
           :instance => String.t() | nil,
           :ipAddress => String.t() | nil,
+          :ipv6Address => String.t() | nil,
           :port => integer() | nil
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpoint do
   field(:fqdn)
   field(:instance)
   field(:ipAddress)
+  field(:ipv6Address)
   field(:port)
 end
 
