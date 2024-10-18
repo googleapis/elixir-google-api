@@ -25,6 +25,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.RetentionSettings do
   *   `quantityBasedRetention` (*type:* `integer()`, *default:* `nil`) - 
   *   `retentionUnit` (*type:* `String.t`, *default:* `nil`) - The unit that 'retained_backups' represents.
   *   `timeBasedRetention` (*type:* `String.t`, *default:* `nil`) - 
+  *   `timestampBasedRetentionTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp based retention period i.e. 2024-05-01T00:00:00Z
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Redis.V1beta1.Model.RetentionSettings do
           :durationBasedRetention => String.t() | nil,
           :quantityBasedRetention => integer() | nil,
           :retentionUnit => String.t() | nil,
-          :timeBasedRetention => String.t() | nil
+          :timeBasedRetention => String.t() | nil,
+          :timestampBasedRetentionTime => DateTime.t() | nil
         }
 
   field(:durationBasedRetention)
   field(:quantityBasedRetention)
   field(:retentionUnit)
   field(:timeBasedRetention)
+  field(:timestampBasedRetentionTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Redis.V1beta1.Model.RetentionSettings do
