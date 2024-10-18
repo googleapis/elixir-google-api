@@ -23,6 +23,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ConsumerPscConfig do
 
   *   `consumerInstanceProject` (*type:* `String.t`, *default:* `nil`) - Required. The project ID or project number of the consumer project. This project is the one that the consumer uses to interact with the producer instance. From the perspective of a consumer who's created a producer instance, this is the project of the producer instance. Format: 'projects/' Eg. 'projects/consumer-project' or 'projects/1234'
   *   `disableGlobalAccess` (*type:* `boolean()`, *default:* `nil`) - This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region.
+  *   `ipVersion` (*type:* `String.t`, *default:* `nil`) - The requested IP version for the PSC connection.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The resource path of the consumer network where PSC connections are allowed to be created in. Note, this network does not need be in the ConsumerPscConfig.project in the case of SharedVPC. Example: projects/{projectNumOrId}/global/networks/{networkId}.
   *   `producerInstanceId` (*type:* `String.t`, *default:* `nil`) - Immutable. Deprecated. Use producer_instance_metadata instead. An immutable identifier for the producer instance.
   *   `producerInstanceMetadata` (*type:* `map()`, *default:* `nil`) - Immutable. An immutable map for the producer instance metadata.
@@ -36,6 +37,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ConsumerPscConfig do
   @type t :: %__MODULE__{
           :consumerInstanceProject => String.t() | nil,
           :disableGlobalAccess => boolean() | nil,
+          :ipVersion => String.t() | nil,
           :network => String.t() | nil,
           :producerInstanceId => String.t() | nil,
           :producerInstanceMetadata => map() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ConsumerPscConfig do
 
   field(:consumerInstanceProject)
   field(:disableGlobalAccess)
+  field(:ipVersion)
   field(:network)
   field(:producerInstanceId)
   field(:producerInstanceMetadata, type: :map)

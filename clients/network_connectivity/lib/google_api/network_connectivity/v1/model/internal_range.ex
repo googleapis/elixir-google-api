@@ -25,7 +25,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.InternalRange do
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this resource.
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IP range that this internal range defines. NOTE: IPv6 ranges are limited to usage=EXTERNAL_TO_VPC and peering=FOR_SELF. NOTE: For IPv6 Ranges this field is compulsory, i.e. the address range must be specified explicitly.
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels.
-  *   `migration` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.Migration.t`, *default:* `nil`) - Optional. Should be present if usage is set to FOR_MIGRATION.
+  *   `migration` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.Migration.t`, *default:* `nil`) - Optional. Must be present if usage is set to FOR_MIGRATION. This field is for internal use.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of an internal range. Format: projects/{project}/locations/{location}/internalRanges/{internal_range} See: https://google.aip.dev/122#fields-representing-resource-names
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL or resource ID of the network in which to reserve the internal range. The network cannot be deleted if there are any reserved internal ranges referring to it. Legacy networks are not supported. For example: https://www.googleapis.com/compute/v1/projects/{project}/locations/global/networks/{network} projects/{project}/locations/global/networks/{network} {network}
   *   `overlaps` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Types of resources that are allowed to overlap with the current internal range.
