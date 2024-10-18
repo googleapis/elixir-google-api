@@ -21,16 +21,61 @@ defmodule GoogleApi.DisplayVideo.V3.Model.Adloox do
 
   ## Attributes
 
+  *   `adultExplicitSexualContent` (*type:* `String.t`, *default:* `nil`) - Optional. Adult explicit sexual content.
+  *   `armsAmmunitionContent` (*type:* `String.t`, *default:* `nil`) - Optional. Arms ammunition content.
+  *   `crimeHarmfulActsIndividualsSocietyHumanRightsViolationsContent` (*type:* `String.t`, *default:* `nil`) - Optional. Crime harmful acts to individuals society human rights violations content.
+  *   `deathInjuryMilitaryConflictContent` (*type:* `String.t`, *default:* `nil`) - Optional. Death injury military conflict content.
+  *   `debatedSensitiveSocialIssueContent` (*type:* `String.t`, *default:* `nil`) - Optional. Debated sensitive social issue content.
+  *   `displayIabViewability` (*type:* `String.t`, *default:* `nil`) - Optional. Display IAB viewability.
   *   `excludedAdlooxCategories` (*type:* `list(String.t)`, *default:* `nil`) - Adloox's brand safety settings.
+  *   `excludedFraudIvtMfaCategories` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Adloox's fraud IVT MFA settings.
+  *   `hateSpeechActsAggressionContent` (*type:* `String.t`, *default:* `nil`) - Optional. Hate speech acts of aggression content.
+  *   `illegalDrugsTobaccoEcigarettesVapingAlcoholContent` (*type:* `String.t`, *default:* `nil`) - Optional. Illegal drugs tobacco ecigarettes vaping alcohol content.
+  *   `misinformationContent` (*type:* `String.t`, *default:* `nil`) - Optional. Misinformation content.
+  *   `obscenityProfanityContent` (*type:* `String.t`, *default:* `nil`) - Optional. Obscenity profanity content.
+  *   `onlinePiracyContent` (*type:* `String.t`, *default:* `nil`) - Optional. Online piracy content.
+  *   `spamHarmfulContent` (*type:* `String.t`, *default:* `nil`) - Optional. Spam harmful content.
+  *   `terrorismContent` (*type:* `String.t`, *default:* `nil`) - Optional. Terrorism content.
+  *   `videoIabViewability` (*type:* `String.t`, *default:* `nil`) - Optional. Video IAB viewability.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :excludedAdlooxCategories => list(String.t()) | nil
+          :adultExplicitSexualContent => String.t() | nil,
+          :armsAmmunitionContent => String.t() | nil,
+          :crimeHarmfulActsIndividualsSocietyHumanRightsViolationsContent => String.t() | nil,
+          :deathInjuryMilitaryConflictContent => String.t() | nil,
+          :debatedSensitiveSocialIssueContent => String.t() | nil,
+          :displayIabViewability => String.t() | nil,
+          :excludedAdlooxCategories => list(String.t()) | nil,
+          :excludedFraudIvtMfaCategories => list(String.t()) | nil,
+          :hateSpeechActsAggressionContent => String.t() | nil,
+          :illegalDrugsTobaccoEcigarettesVapingAlcoholContent => String.t() | nil,
+          :misinformationContent => String.t() | nil,
+          :obscenityProfanityContent => String.t() | nil,
+          :onlinePiracyContent => String.t() | nil,
+          :spamHarmfulContent => String.t() | nil,
+          :terrorismContent => String.t() | nil,
+          :videoIabViewability => String.t() | nil
         }
 
+  field(:adultExplicitSexualContent)
+  field(:armsAmmunitionContent)
+  field(:crimeHarmfulActsIndividualsSocietyHumanRightsViolationsContent)
+  field(:deathInjuryMilitaryConflictContent)
+  field(:debatedSensitiveSocialIssueContent)
+  field(:displayIabViewability)
   field(:excludedAdlooxCategories, type: :list)
+  field(:excludedFraudIvtMfaCategories, type: :list)
+  field(:hateSpeechActsAggressionContent)
+  field(:illegalDrugsTobaccoEcigarettesVapingAlcoholContent)
+  field(:misinformationContent)
+  field(:obscenityProfanityContent)
+  field(:onlinePiracyContent)
+  field(:spamHarmfulContent)
+  field(:terrorismContent)
+  field(:videoIabViewability)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DisplayVideo.V3.Model.Adloox do
