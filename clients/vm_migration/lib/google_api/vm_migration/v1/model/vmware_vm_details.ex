@@ -21,6 +21,7 @@ defmodule GoogleApi.VMMigration.V1.Model.VmwareVmDetails do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - Output only. The CPU architecture.
   *   `bootOption` (*type:* `String.t`, *default:* `nil`) - Output only. The VM Boot Option.
   *   `committedStorageMb` (*type:* `String.t`, *default:* `nil`) - The total size of the storage allocated to the VM in MB.
   *   `cpuCount` (*type:* `integer()`, *default:* `nil`) - The number of cpus in the VM.
@@ -38,6 +39,7 @@ defmodule GoogleApi.VMMigration.V1.Model.VmwareVmDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :bootOption => String.t() | nil,
           :committedStorageMb => String.t() | nil,
           :cpuCount => integer() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.VMMigration.V1.Model.VmwareVmDetails do
           :vmId => String.t() | nil
         }
 
+  field(:architecture)
   field(:bootOption)
   field(:committedStorageMb)
   field(:cpuCount)

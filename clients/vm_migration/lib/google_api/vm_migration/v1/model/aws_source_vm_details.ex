@@ -21,6 +21,7 @@ defmodule GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - Output only. The VM architecture.
   *   `committedStorageBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The total size of the disks being migrated in bytes.
   *   `disks` (*type:* `list(GoogleApi.VMMigration.V1.Model.AwsDiskDetails.t)`, *default:* `nil`) - Output only. The disks attached to the source VM.
   *   `firmware` (*type:* `String.t`, *default:* `nil`) - Output only. The firmware type of the source VM.
@@ -30,12 +31,14 @@ defmodule GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :committedStorageBytes => String.t() | nil,
           :disks => list(GoogleApi.VMMigration.V1.Model.AwsDiskDetails.t()) | nil,
           :firmware => String.t() | nil,
           :vmCapabilitiesInfo => GoogleApi.VMMigration.V1.Model.VmCapabilities.t() | nil
         }
 
+  field(:architecture)
   field(:committedStorageBytes)
   field(:disks, as: GoogleApi.VMMigration.V1.Model.AwsDiskDetails, type: :list)
   field(:firmware)
