@@ -51,6 +51,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
   *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
   *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
+  *   `notifyPreference` (*type:* `String.t`, *default:* `nil`) - Whether or not field updates to this class should trigger notifications. When set to NOTIFY, we will attempt to trigger a field update notification to users. These notifications will only be sent to users if the field is part of an allowlist. If set to DO_NOT_NOTIFY or NOTIFICATION_SETTINGS_UNSPECIFIED, no notification will be triggered. This setting is ephemeral and needs to be set with each PATCH or UPDATE request, otherwise a notification will not be triggered.
   *   `homepageUri` (*type:* `GoogleApi.WalletObjects.V1.Model.Uri.t`, *default:* `nil`) - The URI of your application's home page. Populating the URI in this field results in the exact same behavior as populating an URI in linksModuleData (when an object is rendered, a link to the homepage is shown in what would usually be thought of as the linksModuleData section of the object).
   *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
   *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If links module data is also defined on the object, both will be displayed.
@@ -117,6 +118,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
           :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
           :version => String.t() | nil,
           :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
+          :notifyPreference => String.t() | nil,
           :homepageUri => GoogleApi.WalletObjects.V1.Model.Uri.t() | nil,
           :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
           :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
@@ -177,6 +179,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
   field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
   field(:version)
   field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)
+  field(:notifyPreference)
   field(:homepageUri, as: GoogleApi.WalletObjects.V1.Model.Uri)
   field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)
   field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
