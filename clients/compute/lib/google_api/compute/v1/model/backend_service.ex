@@ -48,6 +48,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - 
   *   `backends` (*type:* `list(GoogleApi.Compute.V1.Model.Backend.t)`, *default:* `nil`) - The list of backends that serve this BackendService.
   *   `securitySettings` (*type:* `GoogleApi.Compute.V1.Model.SecuritySettings.t`, *default:* `nil`) - This field specifies the security settings that apply to this backend service. This field is applicable to a global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED.
+  *   `strongSessionAffinityCookie` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceHttpCookie.t`, *default:* `nil`) - Describes the HTTP cookie used for stateful session affinity. This field is applicable and required if the sessionAffinity is set to STRONG_COOKIE_AFFINITY.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `cdnPolicy` (*type:* `GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t`, *default:* `nil`) - Cloud CDN configuration for this BackendService. Only available for specified load balancer types.
   *   `timeoutSec` (*type:* `integer()`, *default:* `nil`) - The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration.
@@ -98,6 +99,8 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :circuitBreakers => GoogleApi.Compute.V1.Model.CircuitBreakers.t() | nil,
           :backends => list(GoogleApi.Compute.V1.Model.Backend.t()) | nil,
           :securitySettings => GoogleApi.Compute.V1.Model.SecuritySettings.t() | nil,
+          :strongSessionAffinityCookie =>
+            GoogleApi.Compute.V1.Model.BackendServiceHttpCookie.t() | nil,
           :creationTimestamp => String.t() | nil,
           :cdnPolicy => GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy.t() | nil,
           :timeoutSec => integer() | nil,
@@ -149,6 +152,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:circuitBreakers, as: GoogleApi.Compute.V1.Model.CircuitBreakers)
   field(:backends, as: GoogleApi.Compute.V1.Model.Backend, type: :list)
   field(:securitySettings, as: GoogleApi.Compute.V1.Model.SecuritySettings)
+  field(:strongSessionAffinityCookie, as: GoogleApi.Compute.V1.Model.BackendServiceHttpCookie)
   field(:creationTimestamp)
   field(:cdnPolicy, as: GoogleApi.Compute.V1.Model.BackendServiceCdnPolicy)
   field(:timeoutSec)

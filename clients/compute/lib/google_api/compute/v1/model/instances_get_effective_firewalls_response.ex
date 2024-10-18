@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponse do
 
   ## Attributes
 
-  *   `firewallPolicys` (*type:* `list(GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.t)`, *default:* `nil`) - Effective firewalls from firewall policies.
+  *   `firewallPolicys` (*type:* `list(GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffectiveFirewallPolicy.t)`, *default:* `nil`) - [Output Only] Effective firewalls from firewall policies.
   *   `firewalls` (*type:* `list(GoogleApi.Compute.V1.Model.Firewall.t)`, *default:* `nil`) - Effective firewalls on the instance.
   """
 

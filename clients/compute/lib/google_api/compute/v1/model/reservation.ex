@@ -35,7 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
   *   `shareSettings` (*type:* `GoogleApi.Compute.V1.Model.ShareSettings.t`, *default:* `nil`) - Specify share-settings to create a shared reservation. This property is optional. For more information about the syntax and options for this field and its subfields, see the guide for creating a shared reservation.
   *   `specificReservation` (*type:* `GoogleApi.Compute.V1.Model.AllocationSpecificSKUReservation.t`, *default:* `nil`) - Reservation for instances with specific machine shapes.
   *   `specificReservationRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the reservation.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress. 
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
   """
 

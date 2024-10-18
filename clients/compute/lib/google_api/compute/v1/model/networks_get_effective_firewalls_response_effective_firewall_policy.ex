@@ -24,7 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworksGetEffectiveFirewallsResponseEffect
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] The name of the firewall policy.
   *   `priority` (*type:* `integer()`, *default:* `nil`) - [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
-  *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t)`, *default:* `nil`) - The rules that apply to the network.
+  *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t)`, *default:* `nil`) - [Output Only] The rules that apply to the network.
   *   `shortName` (*type:* `String.t`, *default:* `nil`) - [Output Only] The short name of the firewall policy.
   *   `type` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of the firewall policy.
   """

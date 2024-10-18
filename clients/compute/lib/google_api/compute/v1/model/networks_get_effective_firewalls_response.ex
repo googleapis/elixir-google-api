@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworksGetEffectiveFirewallsResponse do
 
   ## Attributes
 
-  *   `firewallPolicys` (*type:* `list(GoogleApi.Compute.V1.Model.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy.t)`, *default:* `nil`) - Effective firewalls from firewall policy.
+  *   `firewallPolicys` (*type:* `list(GoogleApi.Compute.V1.Model.NetworksGetEffectiveFirewallsResponseEffectiveFirewallPolicy.t)`, *default:* `nil`) - [Output Only] Effective firewalls from firewall policy. It returns Global Network Firewall Policies and Hierarchical Firewall Policies. Use regionNetworkFirewallPolicies.getEffectiveFirewalls to get Regional Network Firewall Policies as well.
   *   `firewalls` (*type:* `list(GoogleApi.Compute.V1.Model.Firewall.t)`, *default:* `nil`) - Effective firewalls on the network.
   """
 
