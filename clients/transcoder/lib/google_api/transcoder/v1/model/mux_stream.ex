@@ -21,7 +21,7 @@ defmodule GoogleApi.Transcoder.V1.Model.MuxStream do
 
   ## Attributes
 
-  *   `container` (*type:* `String.t`, *default:* `nil`) - The container format. The default is `mp4` Supported container formats: - `ts` - `fmp4`- the corresponding file extension is `.m4s` - `mp4` - `vtt` See also: [Supported input and output formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
+  *   `container` (*type:* `String.t`, *default:* `nil`) - The container format. The default is `mp4` Supported container formats: - `ts` - `fmp4`- the corresponding file extension is `.m4s` - `mp4` - `vtt` - `ogg` See also: [Supported input and output formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
   *   `elementaryStreams` (*type:* `list(String.t)`, *default:* `nil`) - List of ElementaryStream.key values multiplexed in this stream.
   *   `encryptionId` (*type:* `String.t`, *default:* `nil`) - Identifier of the encryption configuration to use. If omitted, output will be unencrypted.
   *   `fileName` (*type:* `String.t`, *default:* `nil`) - The name of the generated file. The default is MuxStream.key with the extension suffix corresponding to the MuxStream.container. Individual segments also have an incremental 10-digit zero-padded suffix starting from 0 before the extension, such as `mux_stream0000000123.ts`.
