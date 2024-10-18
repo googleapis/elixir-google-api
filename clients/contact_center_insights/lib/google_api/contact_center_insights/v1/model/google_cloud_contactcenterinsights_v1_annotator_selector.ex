@@ -23,11 +23,13 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   *   `issueModels` (*type:* `list(String.t)`, *default:* `nil`) - The issue model to run. If not provided, the most recently deployed topic model will be used. The provided issue model will only be used for inference if the issue model is deployed and if run_issue_model_annotator is set to true. If more than one issue model is provided, only the first provided issue model will be used for inference.
   *   `phraseMatchers` (*type:* `list(String.t)`, *default:* `nil`) - The list of phrase matchers to run. If not provided, all active phrase matchers will be used. If inactive phrase matchers are provided, they will not be used. Phrase matchers will be run only if run_phrase_matcher_annotator is set to true. Format: projects/{project}/locations/{location}/phraseMatchers/{phrase_matcher}
+  *   `qaConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelectorQaConfig.t`, *default:* `nil`) - Configuration for the QA annotator.
   *   `runEntityAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the entity annotator.
   *   `runIntentAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the intent annotator.
   *   `runInterruptionAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the interruption annotator.
   *   `runIssueModelAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the issue model annotator. A model should have already been deployed for this to take effect.
   *   `runPhraseMatcherAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the active phrase matcher annotator(s).
+  *   `runQaAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the QA annotator.
   *   `runSentimentAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the sentiment annotator.
   *   `runSilenceAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the silence annotator.
   *   `runSummarizationAnnotator` (*type:* `boolean()`, *default:* `nil`) - Whether to run the summarization annotator.
@@ -39,11 +41,15 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   @type t :: %__MODULE__{
           :issueModels => list(String.t()) | nil,
           :phraseMatchers => list(String.t()) | nil,
+          :qaConfig =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelectorQaConfig.t()
+            | nil,
           :runEntityAnnotator => boolean() | nil,
           :runIntentAnnotator => boolean() | nil,
           :runInterruptionAnnotator => boolean() | nil,
           :runIssueModelAnnotator => boolean() | nil,
           :runPhraseMatcherAnnotator => boolean() | nil,
+          :runQaAnnotator => boolean() | nil,
           :runSentimentAnnotator => boolean() | nil,
           :runSilenceAnnotator => boolean() | nil,
           :runSummarizationAnnotator => boolean() | nil,
@@ -54,11 +60,18 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   field(:issueModels, type: :list)
   field(:phraseMatchers, type: :list)
+
+  field(:qaConfig,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelectorQaConfig
+  )
+
   field(:runEntityAnnotator)
   field(:runIntentAnnotator)
   field(:runInterruptionAnnotator)
   field(:runIssueModelAnnotator)
   field(:runPhraseMatcherAnnotator)
+  field(:runQaAnnotator)
   field(:runSentimentAnnotator)
   field(:runSilenceAnnotator)
   field(:runSummarizationAnnotator)

@@ -26,6 +26,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `intents` (*type:* `%{optional(String.t) => GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1Intent.t}`, *default:* `nil`) - All the matched intents in the call.
   *   `issueModelResult` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1IssueModelResult.t`, *default:* `nil`) - Overall conversation-level issue modeling result.
   *   `phraseMatchers` (*type:* `%{optional(String.t) => GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1PhraseMatchData.t}`, *default:* `nil`) - All the matched phrase matchers in the call.
+  *   `qaScorecardResults` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1QaScorecardResult.t)`, *default:* `nil`) - Results of scoring QaScorecards.
   *   `sentiments` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationLevelSentiment.t)`, *default:* `nil`) - Overall conversation-level sentiment for each channel of the call.
   *   `silence` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationLevelSilence.t`, *default:* `nil`) - Overall conversation-level silence during the call.
   """
@@ -58,6 +59,11 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
               optional(String.t()) =>
                 GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1PhraseMatchData.t()
             }
+            | nil,
+          :qaScorecardResults =>
+            list(
+              GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1QaScorecardResult.t()
+            )
             | nil,
           :sentiments =>
             list(
@@ -93,6 +99,12 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
     as:
       GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1PhraseMatchData,
     type: :map
+  )
+
+  field(:qaScorecardResults,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1QaScorecardResult,
+    type: :list
   )
 
   field(:sentiments,
