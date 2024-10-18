@@ -21,6 +21,7 @@ defmodule GoogleApi.VMMigration.V1.Model.AzureVmDetails do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The CPU architecture.
   *   `bootOption` (*type:* `String.t`, *default:* `nil`) - The VM Boot Option.
   *   `committedStorageMb` (*type:* `String.t`, *default:* `nil`) - The total size of the storage allocated to the VM in MB.
   *   `computerName` (*type:* `String.t`, *default:* `nil`) - The VM's ComputerName.
@@ -39,6 +40,7 @@ defmodule GoogleApi.VMMigration.V1.Model.AzureVmDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
           :bootOption => String.t() | nil,
           :committedStorageMb => String.t() | nil,
           :computerName => String.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.VMMigration.V1.Model.AzureVmDetails do
           :vmSize => String.t() | nil
         }
 
+  field(:architecture)
   field(:bootOption)
   field(:committedStorageMb)
   field(:computerName)
