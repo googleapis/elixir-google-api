@@ -22,18 +22,18 @@ defmodule GoogleApi.BeyondCorp.V1.Model.GoogleCloudBeyondcorpSecuritygatewaysV1P
   ## Attributes
 
   *   `dnsZones` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of DNS zones for DNS peering with the customer VPC network.
-  *   `targetVpcNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Target VPC network name in the format: `projects/{project}/global/networks/{network}
+  *   `targetNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Target VPC network name in the format: `projects/{project}/global/networks/{network}
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :dnsZones => list(String.t()) | nil,
-          :targetVpcNetwork => String.t() | nil
+          :targetNetwork => String.t() | nil
         }
 
   field(:dnsZones, type: :list)
-  field(:targetVpcNetwork)
+  field(:targetNetwork)
 end
 
 defimpl Poison.Decoder,
