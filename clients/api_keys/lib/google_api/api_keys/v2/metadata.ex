@@ -20,7 +20,7 @@ defmodule GoogleApi.APIKeys.V2 do
   API client metadata for GoogleApi.APIKeys.V2.
   """
 
-  @discovery_revision "20240811"
+  @discovery_revision "20241016"
 
   def discovery_revision(), do: @discovery_revision
 end
