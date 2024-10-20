@@ -36,6 +36,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationCluster do
   *   `privateClusterConfig` (*type:* `GoogleApi.Workstations.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Optional. Configuration for private workstation cluster.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this workstation cluster is currently being updated to match its intended state.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the Compute Engine subnetwork in which instances associated with this workstation cluster will be created. Must be part of the subnetwork specified for this workstation cluster.
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A system-assigned unique identifier for this workstation cluster.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this workstation cluster was most recently updated.
   """
@@ -58,6 +59,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationCluster do
           :privateClusterConfig => GoogleApi.Workstations.V1.Model.PrivateClusterConfig.t() | nil,
           :reconciling => boolean() | nil,
           :subnetwork => String.t() | nil,
+          :tags => map() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -77,6 +79,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationCluster do
   field(:privateClusterConfig, as: GoogleApi.Workstations.V1.Model.PrivateClusterConfig)
   field(:reconciling)
   field(:subnetwork)
+  field(:tags, type: :map)
   field(:uid)
   field(:updateTime, as: DateTime)
 end
