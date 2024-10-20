@@ -29,6 +29,7 @@ defmodule GoogleApi.APIKeys.V2.Model.V2Key do
   *   `keyString` (*type:* `String.t`, *default:* `nil`) - Output only. An encrypted and signed value held by this key. This field can be accessed only through the `GetKeyString` method.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the key. The `name` has the form: `projects//locations/global/keys/`. For example: `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value for location is `global`.
   *   `restrictions` (*type:* `GoogleApi.APIKeys.V2.Model.V2Restrictions.t`, *default:* `nil`) - Key restrictions.
+  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Optional. The email address of [the service account](https://cloud.google.com/iam/docs/service-accounts) the key is bound to.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Unique id in UUID4 format.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. A timestamp identifying the time this key was last updated.
   """
@@ -44,6 +45,7 @@ defmodule GoogleApi.APIKeys.V2.Model.V2Key do
           :keyString => String.t() | nil,
           :name => String.t() | nil,
           :restrictions => GoogleApi.APIKeys.V2.Model.V2Restrictions.t() | nil,
+          :serviceAccountEmail => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -56,6 +58,7 @@ defmodule GoogleApi.APIKeys.V2.Model.V2Key do
   field(:keyString)
   field(:name)
   field(:restrictions, as: GoogleApi.APIKeys.V2.Model.V2Restrictions)
+  field(:serviceAccountEmail)
   field(:uid)
   field(:updateTime, as: DateTime)
 end
