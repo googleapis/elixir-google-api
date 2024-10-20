@@ -39,6 +39,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
   *   `sizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the repository was last updated.
   *   `virtualRepositoryConfig` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.VirtualRepositoryConfig.t`, *default:* `nil`) - Configuration specific for a Virtual Repository.
+  *   `vulnerabilityScanningConfig` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.VulnerabilityScanningConfig.t`, *default:* `nil`) - Optional. Config and state for vulnerability scanning of resources within this Repository.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -64,7 +65,9 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
           :sizeBytes => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :virtualRepositoryConfig =>
-            GoogleApi.ArtifactRegistry.V1.Model.VirtualRepositoryConfig.t() | nil
+            GoogleApi.ArtifactRegistry.V1.Model.VirtualRepositoryConfig.t() | nil,
+          :vulnerabilityScanningConfig =>
+            GoogleApi.ArtifactRegistry.V1.Model.VulnerabilityScanningConfig.t() | nil
         }
 
   field(:cleanupPolicies, as: GoogleApi.ArtifactRegistry.V1.Model.CleanupPolicy, type: :map)
@@ -85,6 +88,10 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
   field(:sizeBytes)
   field(:updateTime, as: DateTime)
   field(:virtualRepositoryConfig, as: GoogleApi.ArtifactRegistry.V1.Model.VirtualRepositoryConfig)
+
+  field(:vulnerabilityScanningConfig,
+    as: GoogleApi.ArtifactRegistry.V1.Model.VulnerabilityScanningConfig
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ArtifactRegistry.V1.Model.Repository do
