@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1Rule do
   @moduledoc """
-  A Rule applies to repository or package level. It defines the deny or allow action of the operation when the conditions in the rule are met.
+  A rule defines the deny or allow action of the operation it applies to and the conditions required for the rule to apply. You can set one rule for an entire repository and one rule for each package within.
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - The action this rule makes.
-  *   `condition` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.Expr.t`, *default:* `nil`) - Optional. The condition of the rule in CEL expression. If not provided, the rule matches all the objects.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the rule, for example: "projects/p1/locations/us-central1/repositories/repo1/rules/rule1".
+  *   `action` (*type:* `String.t`, *default:* `nil`) - The action this rule takes.
+  *   `condition` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.Expr.t`, *default:* `nil`) - Optional. A CEL expression for conditions that must be met in order for the rule to apply. If not provided, the rule matches all objects.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the rule, for example: `projects/p1/locations/us-central1/repositories/repo1/rules/rule1`.
   *   `operation` (*type:* `String.t`, *default:* `nil`) - 
-  *   `packageId` (*type:* `String.t`, *default:* `nil`) - The package ID the rule applies to. If empty, this rule applies to all the packages inside the repository.
+  *   `packageId` (*type:* `String.t`, *default:* `nil`) - The package ID the rule applies to. If empty, this rule applies to all packages inside the repository.
   """
 
   use GoogleApi.Gax.ModelBase

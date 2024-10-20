@@ -5435,7 +5435,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the rule, for example: "projects/p1/locations/us-central1/repositories/repo1/rules/rule1".
+  *   `name` (*type:* `String.t`) - The name of the rule, for example: `projects/p1/locations/us-central1/repositories/repo1/rules/rule1`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
