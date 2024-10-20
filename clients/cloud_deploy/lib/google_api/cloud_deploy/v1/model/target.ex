@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Target do
 
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
   *   `anthosCluster` (*type:* `GoogleApi.CloudDeploy.V1.Model.AnthosCluster.t`, *default:* `nil`) - Optional. Information specifying an Anthos Cluster.
+  *   `associatedEntities` (*type:* `%{optional(String.t) => GoogleApi.CloudDeploy.V1.Model.AssociatedEntities.t}`, *default:* `nil`) - Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Target` was created.
   *   `customTarget` (*type:* `GoogleApi.CloudDeploy.V1.Model.CustomTarget.t`, *default:* `nil`) - Optional. Information specifying a Custom Target.
   *   `deployParameters` (*type:* `map()`, *default:* `nil`) - Optional. The deploy parameters to use for this target.
@@ -45,6 +46,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Target do
   @type t :: %__MODULE__{
           :annotations => map() | nil,
           :anthosCluster => GoogleApi.CloudDeploy.V1.Model.AnthosCluster.t() | nil,
+          :associatedEntities =>
+            %{optional(String.t()) => GoogleApi.CloudDeploy.V1.Model.AssociatedEntities.t()} | nil,
           :createTime => DateTime.t() | nil,
           :customTarget => GoogleApi.CloudDeploy.V1.Model.CustomTarget.t() | nil,
           :deployParameters => map() | nil,
@@ -64,6 +67,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Target do
 
   field(:annotations, type: :map)
   field(:anthosCluster, as: GoogleApi.CloudDeploy.V1.Model.AnthosCluster)
+  field(:associatedEntities, as: GoogleApi.CloudDeploy.V1.Model.AssociatedEntities, type: :map)
   field(:createTime, as: DateTime)
   field(:customTarget, as: GoogleApi.CloudDeploy.V1.Model.CustomTarget)
   field(:deployParameters, type: :map)

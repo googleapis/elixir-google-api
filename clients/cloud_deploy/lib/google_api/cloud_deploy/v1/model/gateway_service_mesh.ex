@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.GatewayServiceMesh do
   *   `deployment` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Kubernetes Deployment whose traffic is managed by the specified HTTPRoute and Service.
   *   `httpRoute` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Gateway API HTTPRoute.
   *   `podSelectorLabel` (*type:* `String.t`, *default:* `nil`) - Optional. The label to use when selecting Pods for the Deployment and Service resources. This label must already be present in both resources.
+  *   `routeDestinations` (*type:* `GoogleApi.CloudDeploy.V1.Model.RouteDestinations.t`, *default:* `nil`) - Optional. Route destinations allow configuring the Gateway API HTTPRoute to be deployed to additional clusters. This option is available for multi-cluster service mesh set ups that require the route to exist in the clusters that call the service. If unspecified, the HTTPRoute will only be deployed to the Target cluster.
   *   `routeUpdateWaitTime` (*type:* `String.t`, *default:* `nil`) - Optional. The time to wait for route updates to propagate. The maximum configurable time is 3 hours, in seconds format. If unspecified, there is no wait time.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Kubernetes Service.
   *   `stableCutbackDuration` (*type:* `String.t`, *default:* `nil`) - Optional. The amount of time to migrate traffic back from the canary Service to the original Service during the stable phase deployment. If specified, must be between 15s and 3600s. If unspecified, there is no cutback time.
@@ -35,6 +36,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.GatewayServiceMesh do
           :deployment => String.t() | nil,
           :httpRoute => String.t() | nil,
           :podSelectorLabel => String.t() | nil,
+          :routeDestinations => GoogleApi.CloudDeploy.V1.Model.RouteDestinations.t() | nil,
           :routeUpdateWaitTime => String.t() | nil,
           :service => String.t() | nil,
           :stableCutbackDuration => String.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.GatewayServiceMesh do
   field(:deployment)
   field(:httpRoute)
   field(:podSelectorLabel)
+  field(:routeDestinations, as: GoogleApi.CloudDeploy.V1.Model.RouteDestinations)
   field(:routeUpdateWaitTime)
   field(:service)
   field(:stableCutbackDuration)
