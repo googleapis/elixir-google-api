@@ -27,6 +27,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Execution do
   *   `inventoryTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Inventory time stamp
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of execution resource. The format is projects/{project}/locations/{location}/evaluations/{evaluation}/executions/{execution}
+  *   `ruleResults` (*type:* `list(GoogleApi.WorkloadManager.V1.Model.RuleExecutionResult.t)`, *default:* `nil`) - Output only. execution result summary per rule
   *   `runType` (*type:* `String.t`, *default:* `nil`) - type represent whether the execution executed directly by user or scheduled according evaluation.schedule field.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Start time stamp
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. [Output only] State
@@ -42,6 +43,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Execution do
           :inventoryTime => DateTime.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :ruleResults => list(GoogleApi.WorkloadManager.V1.Model.RuleExecutionResult.t()) | nil,
           :runType => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil
@@ -58,6 +60,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Execution do
   field(:inventoryTime, as: DateTime)
   field(:labels, type: :map)
   field(:name)
+  field(:ruleResults, as: GoogleApi.WorkloadManager.V1.Model.RuleExecutionResult, type: :list)
   field(:runType)
   field(:startTime, as: DateTime)
   field(:state)
