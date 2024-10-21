@@ -23,7 +23,7 @@ defmodule GoogleApi.VMwareEngine.V1.Model.Subnet do
 
   *   `gatewayIp` (*type:* `String.t`, *default:* `nil`) - The IP address of the gateway of this subnet. Must fall within the IP prefix defined above.
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IP address range of the subnet in CIDR format '10.0.0.0/24'.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this subnet. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of this subnet. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the resource.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the subnet. For example "management" or "userDefined".
   *   `vlanId` (*type:* `integer()`, *default:* `nil`) - Output only. VLAN ID of the VLAN on which the subnet is configured

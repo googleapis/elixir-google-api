@@ -669,7 +669,7 @@ defmodule GoogleApi.VMwareEngine.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VMwareEngine.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of the network peering. NetworkPeering is a global resource and location can only be global. Resource names are scheme-less URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/networkPeerings/my-peering`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of the network peering. NetworkPeering is a global resource and location can only be global. Resource names are scheme-less URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/networkPeerings/my-peering`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1198,7 +1198,7 @@ defmodule GoogleApi.VMwareEngine.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VMwareEngine.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of this network policy. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/networkPolicies/my-network-policy`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of this network policy. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/networkPolicies/my-network-policy`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2458,7 +2458,7 @@ defmodule GoogleApi.VMwareEngine.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VMwareEngine.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of this private cloud. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of this private cloud. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3038,7 +3038,7 @@ defmodule GoogleApi.VMwareEngine.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VMwareEngine.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of this DNS profile. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/dnsForwarding`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of this DNS profile. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/dnsForwarding`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3484,7 +3484,7 @@ defmodule GoogleApi.VMwareEngine.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VMwareEngine.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of this cluster. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of this cluster. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4150,7 +4150,7 @@ defmodule GoogleApi.VMwareEngine.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VMwareEngine.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of this external IP address. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-address`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of this external IP address. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-address`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5632,7 +5632,7 @@ defmodule GoogleApi.VMwareEngine.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VMwareEngine.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of this subnet. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of this subnet. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/subnets/my-subnet`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6457,7 +6457,7 @@ defmodule GoogleApi.VMwareEngine.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VMwareEngine.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of the VMware Engine network. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/vmwareEngineNetworks/my-network`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of the VMware Engine network. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/vmwareEngineNetworks/my-network`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

@@ -23,7 +23,7 @@ defmodule GoogleApi.VMwareEngine.V1.Model.DnsForwarding do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of this resource.
   *   `forwardingRules` (*type:* `list(GoogleApi.VMwareEngine.V1.Model.ForwardingRule.t)`, *default:* `nil`) - Required. List of domain mappings to configure
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this DNS profile. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/dnsForwarding`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of this DNS profile. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/dnsForwarding`
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last update time of this resource.
   """
 

@@ -25,7 +25,7 @@ defmodule GoogleApi.VMwareEngine.V1.Model.ExternalAddress do
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description for this resource.
   *   `externalIp` (*type:* `String.t`, *default:* `nil`) - Output only. The external IP address of a workload VM.
   *   `internalIp` (*type:* `String.t`, *default:* `nil`) - The internal IP address of a workload VM.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this external IP address. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-address`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of this external IP address. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-address`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the resource.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System-generated unique identifier for the resource.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last update time of this resource.
