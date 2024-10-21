@@ -27,7 +27,7 @@ defmodule GoogleApi.VMwareEngine.V1.Model.PrivateCloud do
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the resource will be irreversibly deleted.
   *   `hcx` (*type:* `GoogleApi.VMwareEngine.V1.Model.Hcx.t`, *default:* `nil`) - Output only. HCX appliance.
   *   `managementCluster` (*type:* `GoogleApi.VMwareEngine.V1.Model.ManagementCluster.t`, *default:* `nil`) - Required. Input only. The management cluster for this private cloud. This field is required during creation of the private cloud to provide details for the default cluster. The following fields can't be changed after private cloud creation: `ManagementCluster.clusterId`, `ManagementCluster.nodeTypeId`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this private cloud. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of this private cloud. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
   *   `networkConfig` (*type:* `GoogleApi.VMwareEngine.V1.Model.NetworkConfig.t`, *default:* `nil`) - Required. Network configuration of the private cloud.
   *   `nsx` (*type:* `GoogleApi.VMwareEngine.V1.Model.Nsx.t`, *default:* `nil`) - Output only. NSX appliance.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the resource. New values may be added to this enum when appropriate.

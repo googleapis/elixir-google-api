@@ -24,7 +24,7 @@ defmodule GoogleApi.VMwareEngine.V1.Model.VmwareEngineNetwork do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of this resource.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description for this VMware Engine network.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Checksum that may be sent on update and delete requests to ensure that the user-provided value is up to date before the server processes a request. The server computes checksums based on the value of other fields in the request.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the VMware Engine network. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/vmwareEngineNetworks/my-network`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of the VMware Engine network. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/vmwareEngineNetworks/my-network`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the VMware Engine network.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. VMware Engine network type.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System-generated unique identifier for the resource.
