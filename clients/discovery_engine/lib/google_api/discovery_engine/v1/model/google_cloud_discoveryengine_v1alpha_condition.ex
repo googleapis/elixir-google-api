@@ -22,7 +22,8 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
   ## Attributes
 
   *   `activeTimeRange` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaConditionTimeRange.t)`, *default:* `nil`) - Range of time(s) specifying when condition is active. Maximum of 10 time ranges.
-  *   `queryTerms` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaConditionQueryTerm.t)`, *default:* `nil`) - Search only A list of terms to match the query on. Maximum of 10 query terms.
+  *   `queryRegex` (*type:* `String.t`, *default:* `nil`) - Optional. Query regex to match the whole search query. Cannot be set when Condition.query_terms is set. This is currently supporting promotion use case.
+  *   `queryTerms` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaConditionQueryTerm.t)`, *default:* `nil`) - Search only A list of terms to match the query on. Cannot be set when Condition.query_regex is set. Maximum of 10 query terms.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,6 +34,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
               GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaConditionTimeRange.t()
             )
             | nil,
+          :queryRegex => String.t() | nil,
           :queryTerms =>
             list(
               GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaConditionQueryTerm.t()
@@ -44,6 +46,8 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
     as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaConditionTimeRange,
     type: :list
   )
+
+  field(:queryRegex)
 
   field(:queryTerms,
     as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaConditionQueryTerm,

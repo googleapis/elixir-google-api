@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
-  *   `fhirResource` (*type:* `String.t`, *default:* `nil`) - Required. Format: projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
+  *   `fhirResource` (*type:* `String.t`, *default:* `nil`) - Format: projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
   *   `uri` (*type:* `String.t`, *default:* `nil`) - If match by URI, the URI of the Document.
   """
 

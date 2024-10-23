@@ -22,11 +22,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation create time.
-  *   `invalidUris` (*type:* `list(String.t)`, *default:* `nil`) - Unique URIs in the request that don't match any TargetSite in the DataStore, only match TargetSites that haven't been fully indexed, or match a TargetSite with type EXCLUDE.
+  *   `invalidUris` (*type:* `list(String.t)`, *default:* `nil`) - Unique URIs in the request that have invalid format. Sample limited to 1000.
+  *   `invalidUrisCount` (*type:* `integer()`, *default:* `nil`) - Total number of unique URIs in the request that have invalid format.
   *   `pendingCount` (*type:* `integer()`, *default:* `nil`) - Total number of URIs that have yet to be crawled.
   *   `quotaExceededCount` (*type:* `integer()`, *default:* `nil`) - Total number of URIs that were rejected due to insufficient indexing resources.
   *   `successCount` (*type:* `integer()`, *default:* `nil`) - Total number of URIs that have been crawled so far.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation last update time. If the operation is done, this is also the finish time.
+  *   `urisNotMatchingTargetSites` (*type:* `list(String.t)`, *default:* `nil`) - Unique URIs in the request that don't match any TargetSite in the DataStore, only match TargetSites that haven't been fully indexed, or match a TargetSite with type EXCLUDE. Sample limited to 1000.
+  *   `urisNotMatchingTargetSitesCount` (*type:* `integer()`, *default:* `nil`) - Total number of URIs that don't match any TargetSites.
   *   `validUrisCount` (*type:* `integer()`, *default:* `nil`) - Total number of unique URIs in the request that are not in invalid_uris.
   """
 
@@ -35,19 +38,25 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :invalidUris => list(String.t()) | nil,
+          :invalidUrisCount => integer() | nil,
           :pendingCount => integer() | nil,
           :quotaExceededCount => integer() | nil,
           :successCount => integer() | nil,
           :updateTime => DateTime.t() | nil,
+          :urisNotMatchingTargetSites => list(String.t()) | nil,
+          :urisNotMatchingTargetSitesCount => integer() | nil,
           :validUrisCount => integer() | nil
         }
 
   field(:createTime, as: DateTime)
   field(:invalidUris, type: :list)
+  field(:invalidUrisCount)
   field(:pendingCount)
   field(:quotaExceededCount)
   field(:successCount)
   field(:updateTime, as: DateTime)
+  field(:urisNotMatchingTargetSites, type: :list)
+  field(:urisNotMatchingTargetSitesCount)
   field(:validUrisCount)
 end
 

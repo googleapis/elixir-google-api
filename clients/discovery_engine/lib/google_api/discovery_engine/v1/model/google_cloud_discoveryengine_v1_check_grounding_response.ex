@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGr
 
   ## Attributes
 
-  *   `citedChunks` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1FactChunk.t)`, *default:* `nil`) - List of facts cited across all claims in the answer candidate. These are derived from the facts supplied in the request.
+  *   `citedChunks` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGroundingResponseFactChunk.t)`, *default:* `nil`) - List of facts cited across all claims in the answer candidate. These are derived from the facts supplied in the request.
   *   `claims` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGroundingResponseClaim.t)`, *default:* `nil`) - Claim texts and citation info across all claims in the answer candidate.
   *   `supportScore` (*type:* `number()`, *default:* `nil`) - The support score for the input answer candidate. Higher the score, higher is the fraction of claims that are supported by the provided facts. This is always set when a response is returned.
   """
@@ -30,7 +30,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGr
 
   @type t :: %__MODULE__{
           :citedChunks =>
-            list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1FactChunk.t())
+            list(
+              GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGroundingResponseFactChunk.t()
+            )
             | nil,
           :claims =>
             list(
@@ -41,7 +43,8 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGr
         }
 
   field(:citedChunks,
-    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1FactChunk,
+    as:
+      GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGroundingResponseFactChunk,
     type: :list
   )
 

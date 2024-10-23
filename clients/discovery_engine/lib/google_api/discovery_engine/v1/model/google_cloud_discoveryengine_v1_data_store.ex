@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
 
   ## Attributes
 
+  *   `advancedSiteSearchConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AdvancedSiteSearchConfig.t`, *default:* `nil`) - Optional. Configuration for advanced site search.
   *   `billingEstimation` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation.t`, *default:* `nil`) - Output only. Data size estimation for billing.
   *   `cmekConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CmekConfig.t`, *default:* `nil`) - Output only. CMEK-related information for the DataStore.
   *   `contentConfig` (*type:* `String.t`, *default:* `nil`) - Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
@@ -31,7 +32,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - Immutable. The industry vertical that the data store registers.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Input only. The KMS key to be used to protect this DataStore at creation time. Must be set for requests that need to comply with CMEK Org Policy protections. If this field is set and processed successfully, the DataStore will be protected by the KMS key, as indicated in the cmek_config field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
-  *   `servingConfigDataStore` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1ServingConfigDataStore.t`, *default:* `nil`) - Optional. Stores serving config at DataStore level.
+  *   `servingConfigDataStore` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataStoreServingConfigDataStore.t`, *default:* `nil`) - Optional. Stores serving config at DataStore level.
   *   `solutionTypes` (*type:* `list(String.t)`, *default:* `nil`) - The solutions that the data store enrolls. Available solutions for each industry_vertical: * `MEDIA`: `SOLUTION_TYPE_RECOMMENDATION` and `SOLUTION_TYPE_SEARCH`. * `SITE_SEARCH`: `SOLUTION_TYPE_SEARCH` is automatically enrolled. Other solutions cannot be enrolled.
   *   `startingSchema` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Schema.t`, *default:* `nil`) - The start schema to use for this DataStore when provisioning it. If unset, a default vertical specialized schema will be used. This field is only used by CreateDataStore API, and will be ignored if used in other APIs. This field will be omitted from all API responses including CreateDataStore API. To retrieve a schema of a DataStore, use SchemaService.GetSchema API instead. The provided schema will be validated against certain rules on schema. Learn more from [this doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
   *   `workspaceConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1WorkspaceConfig.t`, *default:* `nil`) - Config to store data store type configuration for workspace data. This must be set when DataStore.content_config is set as DataStore.ContentConfig.GOOGLE_WORKSPACE.
@@ -40,6 +41,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedSiteSearchConfig =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AdvancedSiteSearchConfig.t()
+            | nil,
           :billingEstimation =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation.t()
             | nil,
@@ -56,7 +60,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
           :kmsKeyName => String.t() | nil,
           :name => String.t() | nil,
           :servingConfigDataStore =>
-            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1ServingConfigDataStore.t()
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataStoreServingConfigDataStore.t()
             | nil,
           :solutionTypes => list(String.t()) | nil,
           :startingSchema =>
@@ -65,6 +69,10 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1WorkspaceConfig.t()
             | nil
         }
+
+  field(:advancedSiteSearchConfig,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AdvancedSiteSearchConfig
+  )
 
   field(:billingEstimation,
     as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation
@@ -86,7 +94,8 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
   field(:name)
 
   field(:servingConfigDataStore,
-    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1ServingConfigDataStore
+    as:
+      GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataStoreServingConfigDataStore
   )
 
   field(:solutionTypes, type: :list)

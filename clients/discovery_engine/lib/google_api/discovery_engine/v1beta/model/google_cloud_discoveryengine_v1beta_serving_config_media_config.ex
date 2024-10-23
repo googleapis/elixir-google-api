@@ -24,6 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `contentFreshnessCutoffDays` (*type:* `integer()`, *default:* `nil`) - Specifies the content freshness used for recommendation result. Contents will be demoted if contents were published for more than content freshness cutoff days.
   *   `contentWatchedPercentageThreshold` (*type:* `number()`, *default:* `nil`) - Specifies the content watched percentage threshold for demotion. Threshold value must be between [0, 1.0] inclusive.
   *   `contentWatchedSecondsThreshold` (*type:* `number()`, *default:* `nil`) - Specifies the content watched minutes threshold for demotion.
+  *   `demoteContentWatchedPastDays` (*type:* `integer()`, *default:* `nil`) - Optional. Specifies the number of days to look back for demoting watched content. If set to zero or unset, defaults to the maximum of 365 days.
   *   `demotionEventType` (*type:* `String.t`, *default:* `nil`) - Specifies the event type used for demoting recommendation result. Currently supported values: * `view-item`: Item viewed. * `media-play`: Start/resume watching a video, playing a song, etc. * `media-complete`: Finished or stopped midway through a video, song, etc. If unset, watch history demotion will not be applied. Content freshness demotion will still be applied.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :contentFreshnessCutoffDays => integer() | nil,
           :contentWatchedPercentageThreshold => number() | nil,
           :contentWatchedSecondsThreshold => number() | nil,
+          :demoteContentWatchedPastDays => integer() | nil,
           :demotionEventType => String.t() | nil
         }
 
   field(:contentFreshnessCutoffDays)
   field(:contentWatchedPercentageThreshold)
   field(:contentWatchedSecondsThreshold)
+  field(:demoteContentWatchedPastDays)
   field(:demotionEventType)
 end
 
