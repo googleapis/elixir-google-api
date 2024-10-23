@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.YouTube.V3.Model.InvideoBranding do
   @moduledoc """
-  LINT.IfChange Describes an invideo branding.
+  Describes an invideo branding.
 
   ## Attributes
 
