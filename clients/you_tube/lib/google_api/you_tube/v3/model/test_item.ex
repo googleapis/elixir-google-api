@@ -21,6 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.TestItem do
 
   ## Attributes
 
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag for the resource. See https://en.wikipedia.org/wiki/HTTP_ETag.
   *   `featuredPart` (*type:* `boolean()`, *default:* `nil`) - 
   *   `gaia` (*type:* `String.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - 
@@ -30,12 +31,14 @@ defmodule GoogleApi.YouTube.V3.Model.TestItem do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :etag => String.t() | nil,
           :featuredPart => boolean() | nil,
           :gaia => String.t() | nil,
           :id => String.t() | nil,
           :snippet => GoogleApi.YouTube.V3.Model.TestItemTestItemSnippet.t() | nil
         }
 
+  field(:etag)
   field(:featuredPart)
   field(:gaia)
   field(:id)
