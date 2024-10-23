@@ -21,6 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse do
 
   ## Attributes
 
+  *   `precommitToken` (*type:* `GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t`, *default:* `nil`) - Optional. A precommit token will be included if the read-write transaction is on a multiplexed session. The precommit token with the highest sequence number from this transaction attempt should be passed to the Commit request for this transaction.
   *   `resultSets` (*type:* `list(GoogleApi.Spanner.V1.Model.ResultSet.t)`, *default:* `nil`) - One ResultSet for each statement in the request that ran successfully, in the same order as the statements in the request. Each ResultSet does not contain any rows. The ResultSetStats in each ResultSet contain the number of rows modified by the statement. Only the first ResultSet in the response contains valid ResultSetMetadata.
   *   `status` (*type:* `GoogleApi.Spanner.V1.Model.Status.t`, *default:* `nil`) - If all DML statements are executed successfully, the status is `OK`. Otherwise, the error status of the first failed statement.
   """
@@ -28,10 +29,13 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteBatchDmlResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :precommitToken =>
+            GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t() | nil,
           :resultSets => list(GoogleApi.Spanner.V1.Model.ResultSet.t()) | nil,
           :status => GoogleApi.Spanner.V1.Model.Status.t() | nil
         }
 
+  field(:precommitToken, as: GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken)
   field(:resultSets, as: GoogleApi.Spanner.V1.Model.ResultSet, type: :list)
   field(:status, as: GoogleApi.Spanner.V1.Model.Status)
 end
