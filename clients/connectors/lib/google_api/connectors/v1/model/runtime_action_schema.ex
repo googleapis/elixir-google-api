@@ -26,8 +26,10 @@ defmodule GoogleApi.Connectors.V1.Model.RuntimeActionSchema do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display Name of action to be shown on client side
   *   `inputJsonSchema` (*type:* `GoogleApi.Connectors.V1.Model.JsonSchema.t`, *default:* `nil`) - Output only. JsonSchema representation of this action's input metadata
   *   `inputParameters` (*type:* `list(GoogleApi.Connectors.V1.Model.InputParameter.t)`, *default:* `nil`) - Output only. List of input parameter metadata for the action.
+  *   `inputSchemaAsString` (*type:* `String.t`, *default:* `nil`) - Output only. Input schema as string.
   *   `resultJsonSchema` (*type:* `GoogleApi.Connectors.V1.Model.JsonSchema.t`, *default:* `nil`) - Output only. JsonSchema representation of this action's result metadata
   *   `resultMetadata` (*type:* `list(GoogleApi.Connectors.V1.Model.ResultMetadata.t)`, *default:* `nil`) - Output only. List of result field metadata.
+  *   `resultSchemaAsString` (*type:* `String.t`, *default:* `nil`) - Output only. Result schema as string.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,8 +40,10 @@ defmodule GoogleApi.Connectors.V1.Model.RuntimeActionSchema do
           :displayName => String.t() | nil,
           :inputJsonSchema => GoogleApi.Connectors.V1.Model.JsonSchema.t() | nil,
           :inputParameters => list(GoogleApi.Connectors.V1.Model.InputParameter.t()) | nil,
+          :inputSchemaAsString => String.t() | nil,
           :resultJsonSchema => GoogleApi.Connectors.V1.Model.JsonSchema.t() | nil,
-          :resultMetadata => list(GoogleApi.Connectors.V1.Model.ResultMetadata.t()) | nil
+          :resultMetadata => list(GoogleApi.Connectors.V1.Model.ResultMetadata.t()) | nil,
+          :resultSchemaAsString => String.t() | nil
         }
 
   field(:action)
@@ -47,8 +51,10 @@ defmodule GoogleApi.Connectors.V1.Model.RuntimeActionSchema do
   field(:displayName)
   field(:inputJsonSchema, as: GoogleApi.Connectors.V1.Model.JsonSchema)
   field(:inputParameters, as: GoogleApi.Connectors.V1.Model.InputParameter, type: :list)
+  field(:inputSchemaAsString)
   field(:resultJsonSchema, as: GoogleApi.Connectors.V1.Model.JsonSchema)
   field(:resultMetadata, as: GoogleApi.Connectors.V1.Model.ResultMetadata, type: :list)
+  field(:resultSchemaAsString)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.RuntimeActionSchema do
