@@ -26,7 +26,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists all versions of server certificates and certificate authorities (CAs) for the specified instance. There can be up to three sets of certs listed: the certificate that is currently in use, a future that has been added but not yet used to sign a certificate, and a certificate that has been rotated out.
+  Lists all versions of server certificates and certificate authorities (CAs) for the specified instance. There can be up to three sets of certs listed: the certificate that is currently in use, a future that has been added but not yet used to sign a certificate, and a certificate that has been rotated out. For instances not using Certificate Authority Service (CAS) server CA, use ListServerCas instead.
 
   ## Parameters
 
