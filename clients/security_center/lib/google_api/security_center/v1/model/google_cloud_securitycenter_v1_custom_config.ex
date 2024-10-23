@@ -21,7 +21,6 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomCon
 
   ## Attributes
 
-  *   `celPolicy` (*type:* `GoogleApi.SecurityCenter.V1.Model.CelPolicySpec.t`, *default:* `nil`) - The CEL policy spec attached to the custom module.
   *   `customOutput` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomOutputSpec.t`, *default:* `nil`) - Custom output properties.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Text that describes the vulnerability or misconfiguration that the custom module detects. This explanation is returned with each finding instance to help investigators understand the detected issue. The text must be enclosed in quotation marks.
   *   `predicate` (*type:* `GoogleApi.SecurityCenter.V1.Model.Expr.t`, *default:* `nil`) - The CEL expression to evaluate to produce findings. When the expression evaluates to true against a resource, a finding is generated.
@@ -33,7 +32,6 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomCon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :celPolicy => GoogleApi.SecurityCenter.V1.Model.CelPolicySpec.t() | nil,
           :customOutput =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomOutputSpec.t()
             | nil,
@@ -45,8 +43,6 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomCon
             | nil,
           :severity => String.t() | nil
         }
-
-  field(:celPolicy, as: GoogleApi.SecurityCenter.V1.Model.CelPolicySpec)
 
   field(:customOutput,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomOutputSpec

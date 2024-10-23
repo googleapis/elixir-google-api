@@ -21,7 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.SetFindingStateRequest do
 
   ## Attributes
 
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The time at which the updated state takes effect.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time at which the updated state takes effect. If unset, defaults to the request time.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The desired State of the finding.
   """
 
