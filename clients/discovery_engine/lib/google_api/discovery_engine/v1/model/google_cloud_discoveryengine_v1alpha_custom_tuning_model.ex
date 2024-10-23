@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCu
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp the Model was created at.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Deprecated: Timestamp the Model was created at.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the model.
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Currently this is only populated if the model state is `INPUT_VALIDATION_FAILED`.
   *   `metrics` (*type:* `map()`, *default:* `nil`) - The metrics of the trained model.

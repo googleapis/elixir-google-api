@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   ## Attributes
 
   *   `aclEnabled` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether data in the DataStore has ACL information. If set to `true`, the source data must have ACL. ACL will be ingested when data is ingested by DocumentService.ImportDocuments methods. When ACL is enabled for the DataStore, Document can't be accessed by calling DocumentService.GetDocument or DocumentService.ListDocuments. Currently ACL is only supported in `GENERIC` industry vertical with non-`PUBLIC_WEBSITE` content config.
+  *   `advancedSiteSearchConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAdvancedSiteSearchConfig.t`, *default:* `nil`) - Optional. Configuration for advanced site search.
   *   `billingEstimation` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDataStoreBillingEstimation.t`, *default:* `nil`) - Output only. Data size estimation for billing.
   *   `cmekConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCmekConfig.t`, *default:* `nil`) - Output only. CMEK-related information for the DataStore.
   *   `contentConfig` (*type:* `String.t`, *default:* `nil`) - Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
@@ -35,7 +36,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   *   `languageInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaLanguageInfo.t`, *default:* `nil`) - Language info for DataStore.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
   *   `naturalLanguageQueryUnderstandingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaNaturalLanguageQueryUnderstandingConfig.t`, *default:* `nil`) - Optional. Configuration for Natural Language Query Understanding.
-  *   `servingConfigDataStore` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaServingConfigDataStore.t`, *default:* `nil`) - Optional. Stores serving config at DataStore level.
+  *   `servingConfigDataStore` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDataStoreServingConfigDataStore.t`, *default:* `nil`) - Optional. Stores serving config at DataStore level.
   *   `solutionTypes` (*type:* `list(String.t)`, *default:* `nil`) - The solutions that the data store enrolls. Available solutions for each industry_vertical: * `MEDIA`: `SOLUTION_TYPE_RECOMMENDATION` and `SOLUTION_TYPE_SEARCH`. * `SITE_SEARCH`: `SOLUTION_TYPE_SEARCH` is automatically enrolled. Other solutions cannot be enrolled.
   *   `startingSchema` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSchema.t`, *default:* `nil`) - The start schema to use for this DataStore when provisioning it. If unset, a default vertical specialized schema will be used. This field is only used by CreateDataStore API, and will be ignored if used in other APIs. This field will be omitted from all API responses including CreateDataStore API. To retrieve a schema of a DataStore, use SchemaService.GetSchema API instead. The provided schema will be validated against certain rules on schema. Learn more from [this doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
   *   `workspaceConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaWorkspaceConfig.t`, *default:* `nil`) - Config to store data store type configuration for workspace data. This must be set when DataStore.content_config is set as DataStore.ContentConfig.GOOGLE_WORKSPACE.
@@ -45,6 +46,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
 
   @type t :: %__MODULE__{
           :aclEnabled => boolean() | nil,
+          :advancedSiteSearchConfig =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAdvancedSiteSearchConfig.t()
+            | nil,
           :billingEstimation =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDataStoreBillingEstimation.t()
             | nil,
@@ -71,7 +75,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaNaturalLanguageQueryUnderstandingConfig.t()
             | nil,
           :servingConfigDataStore =>
-            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaServingConfigDataStore.t()
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDataStoreServingConfigDataStore.t()
             | nil,
           :solutionTypes => list(String.t()) | nil,
           :startingSchema =>
@@ -82,6 +86,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
         }
 
   field(:aclEnabled)
+
+  field(:advancedSiteSearchConfig,
+    as:
+      GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAdvancedSiteSearchConfig
+  )
 
   field(:billingEstimation,
     as:
@@ -121,7 +130,8 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   )
 
   field(:servingConfigDataStore,
-    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaServingConfigDataStore
+    as:
+      GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDataStoreServingConfigDataStore
   )
 
   field(:solutionTypes, type: :list)
