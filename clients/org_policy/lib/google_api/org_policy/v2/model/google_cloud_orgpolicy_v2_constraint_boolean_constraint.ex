@@ -21,11 +21,20 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintBooleanCo
 
   ## Attributes
 
+  *   `customConstraintDefinition` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition.t`, *default:* `nil`) - Custom constraint definition. This is set only for Managed Constraints
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :customConstraintDefinition =>
+            GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition.t()
+            | nil
+        }
+
+  field(:customConstraintDefinition,
+    as: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition
+  )
 end
 
 defimpl Poison.Decoder,
