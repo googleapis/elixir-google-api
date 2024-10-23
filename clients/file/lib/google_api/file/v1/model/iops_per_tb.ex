@@ -21,15 +21,18 @@ defmodule GoogleApi.File.V1.Model.IOPSPerTB do
 
   ## Attributes
 
-  *   `maxReadIopsPerTb` (*type:* `String.t`, *default:* `nil`) - Required. Maximum read IOPS per TiB.
+  *   `maxIopsPerTb` (*type:* `String.t`, *default:* `nil`) - Required. Maximum IOPS per TiB.
+  *   `maxReadIopsPerTb` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated: `max_iops_per_tb` should be used instead of this parameter. Maximum read IOPS per TiB.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :maxIopsPerTb => String.t() | nil,
           :maxReadIopsPerTb => String.t() | nil
         }
 
+  field(:maxIopsPerTb)
   field(:maxReadIopsPerTb)
 end
 
