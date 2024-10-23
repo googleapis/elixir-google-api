@@ -20,7 +20,7 @@ defmodule GoogleApi.MerchantAPI.Reports_v1beta do
   API client metadata for GoogleApi.MerchantAPI.Reports_v1beta.
   """
 
-  @discovery_revision "20240611"
+  @discovery_revision "20241022"
 
   def discovery_revision(), do: @discovery_revision
 end

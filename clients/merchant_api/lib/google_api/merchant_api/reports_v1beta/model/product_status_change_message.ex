@@ -24,6 +24,7 @@ defmodule GoogleApi.MerchantAPI.Reports_v1beta.Model.ProductStatusChangeMessage 
   *   `account` (*type:* `String.t`, *default:* `nil`) - The target account that owns the entity that changed. Format : `accounts/{merchant_id}`
   *   `attribute` (*type:* `String.t`, *default:* `nil`) - The attribute in the resource that changed, in this case it will be always `Status`.
   *   `changes` (*type:* `list(GoogleApi.MerchantAPI.Reports_v1beta.Model.ProductChange.t)`, *default:* `nil`) - A message to describe the change that happened to the product
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The product expiration time.
   *   `managingAccount` (*type:* `String.t`, *default:* `nil`) - The account that manages the merchant's account. can be the same as merchant id if it is standalone account. Format : `accounts/{service_provider_id}`
   *   `resource` (*type:* `String.t`, *default:* `nil`) - The product name. Format: `{product.name=accounts/{account}/products/{product}}`
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The product id.
@@ -36,6 +37,7 @@ defmodule GoogleApi.MerchantAPI.Reports_v1beta.Model.ProductStatusChangeMessage 
           :account => String.t() | nil,
           :attribute => String.t() | nil,
           :changes => list(GoogleApi.MerchantAPI.Reports_v1beta.Model.ProductChange.t()) | nil,
+          :expirationTime => DateTime.t() | nil,
           :managingAccount => String.t() | nil,
           :resource => String.t() | nil,
           :resourceId => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.MerchantAPI.Reports_v1beta.Model.ProductStatusChangeMessage 
   field(:account)
   field(:attribute)
   field(:changes, as: GoogleApi.MerchantAPI.Reports_v1beta.Model.ProductChange, type: :list)
+  field(:expirationTime, as: DateTime)
   field(:managingAccount)
   field(:resource)
   field(:resourceId)
