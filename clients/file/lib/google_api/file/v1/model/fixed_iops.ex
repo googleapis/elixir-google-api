@@ -21,15 +21,18 @@ defmodule GoogleApi.File.V1.Model.FixedIOPS do
 
   ## Attributes
 
-  *   `maxReadIops` (*type:* `String.t`, *default:* `nil`) - Required. Maximum raw read IOPS.
+  *   `maxIops` (*type:* `String.t`, *default:* `nil`) - Required. Maximum IOPS.
+  *   `maxReadIops` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated: `max_iops` should be used instead of this parameter. Maximum raw read IOPS.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :maxIops => String.t() | nil,
           :maxReadIops => String.t() | nil
         }
 
+  field(:maxIops)
   field(:maxReadIops)
 end
 
