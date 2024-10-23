@@ -23,6 +23,7 @@ defmodule GoogleApi.Container.V1.Model.ReleaseChannelConfig do
 
   *   `channel` (*type:* `String.t`, *default:* `nil`) - The release channel this configuration applies to.
   *   `defaultVersion` (*type:* `String.t`, *default:* `nil`) - The default version for newly created clusters on the channel.
+  *   `upgradeTargetVersion` (*type:* `String.t`, *default:* `nil`) - The auto upgrade target version for clusters on the channel.
   *   `validVersions` (*type:* `list(String.t)`, *default:* `nil`) - List of valid versions for the channel.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Container.V1.Model.ReleaseChannelConfig do
   @type t :: %__MODULE__{
           :channel => String.t() | nil,
           :defaultVersion => String.t() | nil,
+          :upgradeTargetVersion => String.t() | nil,
           :validVersions => list(String.t()) | nil
         }
 
   field(:channel)
   field(:defaultVersion)
+  field(:upgradeTargetVersion)
   field(:validVersions, type: :list)
 end
 
