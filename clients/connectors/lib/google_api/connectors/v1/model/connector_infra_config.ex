@@ -23,6 +23,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
 
   *   `alwaysAllocateCpu` (*type:* `boolean()`, *default:* `nil`) - Indicates that the Cloud Run CPU should always be allocated.
   *   `connectionRatelimitWindowSeconds` (*type:* `String.t`, *default:* `nil`) - The window used for ratelimiting runtime requests to connections.
+  *   `connectorVersioningEnabled` (*type:* `boolean()`, *default:* `nil`) - Indicate whether connector versioning is enabled.
   *   `deploymentModel` (*type:* `String.t`, *default:* `nil`) - Indicate whether connector is deployed on GKE/CloudRun
   *   `hpaConfig` (*type:* `GoogleApi.Connectors.V1.Model.HPAConfig.t`, *default:* `nil`) - HPA autoscaling config.
   *   `internalclientRatelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Max QPS supported for internal requests originating from Connd.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   @type t :: %__MODULE__{
           :alwaysAllocateCpu => boolean() | nil,
           :connectionRatelimitWindowSeconds => String.t() | nil,
+          :connectorVersioningEnabled => boolean() | nil,
           :deploymentModel => String.t() | nil,
           :hpaConfig => GoogleApi.Connectors.V1.Model.HPAConfig.t() | nil,
           :internalclientRatelimitThreshold => String.t() | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
 
   field(:alwaysAllocateCpu)
   field(:connectionRatelimitWindowSeconds)
+  field(:connectorVersioningEnabled)
   field(:deploymentModel)
   field(:hpaConfig, as: GoogleApi.Connectors.V1.Model.HPAConfig)
   field(:internalclientRatelimitThreshold)

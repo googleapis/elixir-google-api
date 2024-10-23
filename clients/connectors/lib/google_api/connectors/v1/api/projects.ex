@@ -2081,6 +2081,7 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Required. Filter Format: action="{actionId}" Only action field is supported with literal equality operator. Accepted filter example: action="CancelOrder" Wildcards are not supported in the filter currently.
       *   `:pageSize` (*type:* `integer()`) - Page size.
       *   `:pageToken` (*type:* `String.t`) - Page token.
+      *   `:schemaAsString` (*type:* `boolean()`) - Optional. Flag to indicate if schema should be returned as string or not
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2118,7 +2119,8 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       :upload_protocol => :query,
       :filter => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :schemaAsString => :query
     }
 
     request =
