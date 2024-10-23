@@ -22,7 +22,6 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelModelFeaturesCo
   ## Attributes
 
   *   `frequentlyBoughtTogetherConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelFrequentlyBoughtTogetherFeaturesConfig.t`, *default:* `nil`) - Additional configs for frequently-bought-together models.
-  *   `llmEmbeddingConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelModelFeaturesConfigLlmEmbeddingConfig.t`, *default:* `nil`) - Optional. LLM embedding config to use for this model.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,20 +29,12 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelModelFeaturesCo
   @type t :: %__MODULE__{
           :frequentlyBoughtTogetherConfig =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelFrequentlyBoughtTogetherFeaturesConfig.t()
-            | nil,
-          :llmEmbeddingConfig =>
-            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelModelFeaturesConfigLlmEmbeddingConfig.t()
             | nil
         }
 
   field(:frequentlyBoughtTogetherConfig,
     as:
       GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelFrequentlyBoughtTogetherFeaturesConfig
-  )
-
-  field(:llmEmbeddingConfig,
-    as:
-      GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelModelFeaturesConfigLlmEmbeddingConfig
   )
 end
 
