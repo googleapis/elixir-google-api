@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.SearchRequest do
   @moduledoc """
-  The search API request.
+  The search API request. NEXT ID: 17
 
   ## Attributes
 
