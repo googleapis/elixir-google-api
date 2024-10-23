@@ -22,6 +22,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   ## Attributes
 
   *   `authorizationMode` (*type:* `String.t`, *default:* `nil`) - Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
+  *   `clusterEndpoints` (*type:* `list(GoogleApi.Redis.V1.Model.ClusterEndpoint.t)`, *default:* `nil`) - Optional. A list of cluster enpoints.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp associated with the cluster creation request.
   *   `crossClusterReplicationConfig` (*type:* `GoogleApi.Redis.V1.Model.CrossClusterReplicationConfig.t`, *default:* `nil`) - Optional. Cross cluster replication config.
   *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The delete operation will fail when the value is set to true.
@@ -32,8 +33,9 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.
   *   `persistenceConfig` (*type:* `GoogleApi.Redis.V1.Model.ClusterPersistenceConfig.t`, *default:* `nil`) - Optional. Persistence config (RDB, AOF) for the cluster.
   *   `preciseSizeGb` (*type:* `float()`, *default:* `nil`) - Output only. Precise value of redis memory size in GB for the entire cluster.
-  *   `pscConfigs` (*type:* `list(GoogleApi.Redis.V1.Model.PscConfig.t)`, *default:* `nil`) - Required. Each PscConfig configures the consumer network where IPs will be designated to the cluster for client access through Private Service Connect Automation. Currently, only one PscConfig is supported.
+  *   `pscConfigs` (*type:* `list(GoogleApi.Redis.V1.Model.PscConfig.t)`, *default:* `nil`) - Optional. Each PscConfig configures the consumer network where IPs will be designated to the cluster for client access through Private Service Connect Automation. Currently, only one PscConfig is supported.
   *   `pscConnections` (*type:* `list(GoogleApi.Redis.V1.Model.PscConnection.t)`, *default:* `nil`) - Output only. The list of PSC connections that are auto-created through service connectivity automation.
+  *   `pscServiceAttachments` (*type:* `list(GoogleApi.Redis.V1.Model.PscServiceAttachment.t)`, *default:* `nil`) - Output only. Service attachment details to configure Psc connections
   *   `redisConfigs` (*type:* `map()`, *default:* `nil`) - Optional. Key/Value pairs of customer overrides for mutable Redis Configs
   *   `replicaCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of replica nodes per shard.
   *   `shardCount` (*type:* `integer()`, *default:* `nil`) - Optional. Number of shards for the Redis cluster.
@@ -49,6 +51,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
 
   @type t :: %__MODULE__{
           :authorizationMode => String.t() | nil,
+          :clusterEndpoints => list(GoogleApi.Redis.V1.Model.ClusterEndpoint.t()) | nil,
           :createTime => DateTime.t() | nil,
           :crossClusterReplicationConfig =>
             GoogleApi.Redis.V1.Model.CrossClusterReplicationConfig.t() | nil,
@@ -62,6 +65,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
           :preciseSizeGb => float() | nil,
           :pscConfigs => list(GoogleApi.Redis.V1.Model.PscConfig.t()) | nil,
           :pscConnections => list(GoogleApi.Redis.V1.Model.PscConnection.t()) | nil,
+          :pscServiceAttachments => list(GoogleApi.Redis.V1.Model.PscServiceAttachment.t()) | nil,
           :redisConfigs => map() | nil,
           :replicaCount => integer() | nil,
           :shardCount => integer() | nil,
@@ -74,6 +78,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
         }
 
   field(:authorizationMode)
+  field(:clusterEndpoints, as: GoogleApi.Redis.V1.Model.ClusterEndpoint, type: :list)
   field(:createTime, as: DateTime)
 
   field(:crossClusterReplicationConfig, as: GoogleApi.Redis.V1.Model.CrossClusterReplicationConfig)
@@ -88,6 +93,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   field(:preciseSizeGb)
   field(:pscConfigs, as: GoogleApi.Redis.V1.Model.PscConfig, type: :list)
   field(:pscConnections, as: GoogleApi.Redis.V1.Model.PscConnection, type: :list)
+  field(:pscServiceAttachments, as: GoogleApi.Redis.V1.Model.PscServiceAttachment, type: :list)
   field(:redisConfigs, type: :map)
   field(:replicaCount)
   field(:shardCount)
