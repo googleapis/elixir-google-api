@@ -30,7 +30,7 @@ defmodule GoogleApi.ChromeManagement.V1.Connection do
       # See reports about devices and Chrome browsers managed within your organization
       "https://www.googleapis.com/auth/chrome.management.reports.readonly",
 
-      # See basic device and telemetry information collected from Chrome OS devices or users managed within your organization
+      # See basic device and telemetry information collected from ChromeOS devices or users managed within your organization
       "https://www.googleapis.com/auth/chrome.management.telemetry.readonly"
     ],
     otp_app: :google_api_chrome_management,
