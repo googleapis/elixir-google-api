@@ -25,8 +25,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AddressDescriptorLandmark 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The landmark's resource name.
   *   `placeId` (*type:* `String.t`, *default:* `nil`) - The landmark's place id.
   *   `spatialRelationship` (*type:* `String.t`, *default:* `nil`) - Defines the spatial relationship between the target location and the landmark.
-  *   `straightLineDistanceMeters` (*type:* `number()`, *default:* `nil`) - The straight line distance in meters between the target location and the landmark.
-  *   `travelDistanceMeters` (*type:* `number()`, *default:* `nil`) - The travel distance in meters along the road network if known. This does not take into account the mode of transportation (walking/driving).
+  *   `straightLineDistanceMeters` (*type:* `number()`, *default:* `nil`) - The straight line distance, in meters, between the center point of the target and the center point of the landmark. In some situations, this value can be longer than `travel_distance_meters`.
+  *   `travelDistanceMeters` (*type:* `number()`, *default:* `nil`) - The travel distance, in meters, along the road network from the target to the landmark, if known. This value does not take into account the mode of transportation, such as walking, driving, or biking.
   *   `types` (*type:* `list(String.t)`, *default:* `nil`) - A set of type tags for this landmark. For a complete list of possible values, see https://developers.google.com/maps/documentation/places/web-service/place-types.
   """
 
