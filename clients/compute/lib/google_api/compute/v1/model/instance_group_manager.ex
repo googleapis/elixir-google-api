@@ -30,13 +30,14 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `distributionPolicy` (*type:* `GoogleApi.Compute.V1.Model.DistributionPolicy.t`, *default:* `nil`) - Policy specifying the intended distribution of managed instances across zones in a regional managed instance group.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] A unique identifier for this resource type. The server generates this identifier.
+  *   `instanceFlexibilityPolicy` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerInstanceFlexibilityPolicy.t`, *default:* `nil`) - Instance flexibility allowing MIG to create VMs from multiple types of machines. Instance flexibility configuration on MIG overrides instance template configuration.
   *   `instanceGroup` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the Instance Group resource.
   *   `instanceLifecyclePolicy` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerInstanceLifecyclePolicy.t`, *default:* `nil`) - The repair policy for this managed instance group.
   *   `instanceTemplate` (*type:* `String.t`, *default:* `nil`) - The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
   *   `kind` (*type:* `String.t`, *default:* `compute#instanceGroupManager`) - [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
   *   `listManagedInstancesResults` (*type:* `String.t`, *default:* `nil`) - Pagination behavior of the listManagedInstances API method for this managed instance group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
-  *   `namedPorts` (*type:* `list(GoogleApi.Compute.V1.Model.NamedPort.t)`, *default:* `nil`) - Named ports configured for the Instance Groups complementary to this Instance Group Manager.
+  *   `namedPorts` (*type:* `list(GoogleApi.Compute.V1.Model.NamedPort.t)`, *default:* `nil`) - [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the managed instance group resides (for regional resources).
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
@@ -65,6 +66,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :distributionPolicy => GoogleApi.Compute.V1.Model.DistributionPolicy.t() | nil,
           :fingerprint => String.t() | nil,
           :id => String.t() | nil,
+          :instanceFlexibilityPolicy =>
+            GoogleApi.Compute.V1.Model.InstanceGroupManagerInstanceFlexibilityPolicy.t() | nil,
           :instanceGroup => String.t() | nil,
           :instanceLifecyclePolicy =>
             GoogleApi.Compute.V1.Model.InstanceGroupManagerInstanceLifecyclePolicy.t() | nil,
@@ -100,6 +103,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   field(:distributionPolicy, as: GoogleApi.Compute.V1.Model.DistributionPolicy)
   field(:fingerprint)
   field(:id)
+
+  field(:instanceFlexibilityPolicy,
+    as: GoogleApi.Compute.V1.Model.InstanceGroupManagerInstanceFlexibilityPolicy
+  )
+
   field(:instanceGroup)
 
   field(:instanceLifecyclePolicy,

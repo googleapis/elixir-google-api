@@ -30,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] The name of the instance. The name always exists even if the instance has not yet been created.
   *   `preservedStateFromConfig` (*type:* `GoogleApi.Compute.V1.Model.PreservedState.t`, *default:* `nil`) - [Output Only] Preserved state applied from per-instance config for this instance.
   *   `preservedStateFromPolicy` (*type:* `GoogleApi.Compute.V1.Model.PreservedState.t`, *default:* `nil`) - [Output Only] Preserved state generated based on stateful policy for this instance.
+  *   `propertiesFromFlexibilityPolicy` (*type:* `GoogleApi.Compute.V1.Model.ManagedInstancePropertiesFromFlexibilityPolicy.t`, *default:* `nil`) - [Output Only] Instance properties selected for this instance resulting from InstanceFlexibilityPolicy.
   *   `version` (*type:* `GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t`, *default:* `nil`) - [Output Only] Intended version of this instance.
   """
 
@@ -46,6 +47,8 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
           :name => String.t() | nil,
           :preservedStateFromConfig => GoogleApi.Compute.V1.Model.PreservedState.t() | nil,
           :preservedStateFromPolicy => GoogleApi.Compute.V1.Model.PreservedState.t() | nil,
+          :propertiesFromFlexibilityPolicy =>
+            GoogleApi.Compute.V1.Model.ManagedInstancePropertiesFromFlexibilityPolicy.t() | nil,
           :version => GoogleApi.Compute.V1.Model.ManagedInstanceVersion.t() | nil
         }
 
@@ -60,6 +63,11 @@ defmodule GoogleApi.Compute.V1.Model.ManagedInstance do
   field(:name)
   field(:preservedStateFromConfig, as: GoogleApi.Compute.V1.Model.PreservedState)
   field(:preservedStateFromPolicy, as: GoogleApi.Compute.V1.Model.PreservedState)
+
+  field(:propertiesFromFlexibilityPolicy,
+    as: GoogleApi.Compute.V1.Model.ManagedInstancePropertiesFromFlexibilityPolicy
+  )
+
   field(:version, as: GoogleApi.Compute.V1.Model.ManagedInstanceVersion)
 end
 
