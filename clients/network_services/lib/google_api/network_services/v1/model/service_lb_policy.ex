@@ -27,7 +27,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.ServiceLbPolicy do
   *   `failoverConfig` (*type:* `GoogleApi.NetworkServices.V1.Model.ServiceLbPolicyFailoverConfig.t`, *default:* `nil`) - Optional. Configuration related to health based failover.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the ServiceLbPolicy resource.
   *   `loadBalancingAlgorithm` (*type:* `String.t`, *default:* `nil`) - Optional. The type of load balancing algorithm to be used. The default behavior is WATERFALL_BY_REGION.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the ServiceLbPolicy resource. It matches pattern `projects/{project}/locations/{location}/serviceLbPolicies/{service_lb_policy_name}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the ServiceLbPolicy resource. It matches pattern `projects/{project}/locations/{location}/serviceLbPolicies/{service_lb_policy_name}`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this resource was last updated.
   """
 
