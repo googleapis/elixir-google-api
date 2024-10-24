@@ -32,6 +32,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1InstalledA
   *   `homepageUri` (*type:* `String.t`, *default:* `nil`) - Output only. Homepage uri of the installed app.
   *   `osUserCount` (*type:* `String.t`, *default:* `nil`) - Output only. Count of ChromeOS users with this app installed.
   *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Permissions of the installed app.
+  *   `riskAssessment` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1RiskAssessmentData.t`, *default:* `nil`) - Output only. If available, the risk assessment data about this extension.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -47,7 +48,10 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1InstalledA
           :displayName => String.t() | nil,
           :homepageUri => String.t() | nil,
           :osUserCount => String.t() | nil,
-          :permissions => list(String.t()) | nil
+          :permissions => list(String.t()) | nil,
+          :riskAssessment =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1RiskAssessmentData.t()
+            | nil
         }
 
   field(:appId)
@@ -61,6 +65,10 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1InstalledA
   field(:homepageUri)
   field(:osUserCount)
   field(:permissions, type: :list)
+
+  field(:riskAssessment,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1RiskAssessmentData
+  )
 end
 
 defimpl Poison.Decoder,
