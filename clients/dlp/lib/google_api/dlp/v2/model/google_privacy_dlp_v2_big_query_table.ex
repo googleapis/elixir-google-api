@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable do
   ## Attributes
 
   *   `datasetId` (*type:* `String.t`, *default:* `nil`) - Dataset ID of the table.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Platform project ID of the project containing the table. If omitted, project ID is inferred from the API call.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud project ID of the project containing the table. If omitted, project ID is inferred from the API call.
   *   `tableId` (*type:* `String.t`, *default:* `nil`) - Name of the table.
   """
 
