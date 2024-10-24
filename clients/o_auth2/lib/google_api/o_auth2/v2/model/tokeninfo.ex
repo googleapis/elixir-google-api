@@ -33,13 +33,13 @@ defmodule GoogleApi.OAuth2.V2.Model.Tokeninfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :audience => String.t(),
-          :email => String.t(),
-          :expires_in => integer(),
-          :issued_to => String.t(),
-          :scope => String.t(),
-          :user_id => String.t(),
-          :verified_email => boolean()
+          :audience => String.t() | nil,
+          :email => String.t() | nil,
+          :expires_in => integer() | nil,
+          :issued_to => String.t() | nil,
+          :scope => String.t() | nil,
+          :user_id => String.t() | nil,
+          :verified_email => boolean() | nil
         }
 
   field(:audience)
