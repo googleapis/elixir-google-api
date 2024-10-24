@@ -23,6 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
 
   *   `confidenceThreshold` (*type:* `number()`, *default:* `nil`) - Confidence threshold of query result. Agent Assist gives each suggestion a score in the range [0.0, 1.0], based on the relevance between the suggestion and the current conversation context. A score of 0.0 has no relevance, while a score of 1.0 has high relevance. Only suggestions with a score greater than or equal to the value of this field are included in the results. For a baseline model (the default), the recommended value is in the range [0.05, 0.1]. For a custom model, there is no recommended value. Tune this value by starting from a very low value and slowly increasing until you have desired results. If this field is not set, it defaults to 0.0, which means that all suggestions are returned. Supported features: ARTICLE_SUGGESTION, FAQ, SMART_REPLY, SMART_COMPOSE, KNOWLEDGE_SEARCH, KNOWLEDGE_ASSIST, ENTITY_EXTRACTION.
   *   `contextFilterSettings` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigContextFilterSettings.t`, *default:* `nil`) - Determines how recent conversation context is filtered when generating suggestions. If unspecified, no messages will be dropped.
+  *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Optional. The number of recent messages to include in the context. Supported features: KNOWLEDGE_ASSIST.
   *   `dialogflowQuerySource` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigDialogflowQuerySource.t`, *default:* `nil`) - Query from Dialogflow agent. It is used by DIALOGFLOW_ASSIST.
   *   `documentQuerySource` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigDocumentQuerySource.t`, *default:* `nil`) - Query from knowledge base document. It is used by: SMART_REPLY, SMART_COMPOSE.
   *   `knowledgeBaseQuerySource` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigKnowledgeBaseQuerySource.t`, *default:* `nil`) - Query from knowledgebase. It is used by: ARTICLE_SUGGESTION, FAQ.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
           :contextFilterSettings =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigContextFilterSettings.t()
             | nil,
+          :contextSize => integer() | nil,
           :dialogflowQuerySource =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigDialogflowQuerySource.t()
             | nil,
@@ -58,6 +60,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
     as:
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigContextFilterSettings
   )
+
+  field(:contextSize)
 
   field(:dialogflowQuerySource,
     as:

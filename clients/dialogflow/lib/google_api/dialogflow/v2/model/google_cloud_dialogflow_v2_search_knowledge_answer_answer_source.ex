@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeAn
 
   ## Attributes
 
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Metadata associated with the article.
   *   `snippet` (*type:* `String.t`, *default:* `nil`) - The relevant snippet of the article.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the article.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the article.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeAn
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :metadata => map() | nil,
           :snippet => String.t() | nil,
           :title => String.t() | nil,
           :uri => String.t() | nil
         }
 
+  field(:metadata, type: :map)
   field(:snippet)
   field(:title)
   field(:uri)
