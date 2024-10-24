@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeAssistAn
 
   ## Attributes
 
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Metadata of the document.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Text taken from that URI.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the document.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI the data is sourced from.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2KnowledgeAssistAn
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :metadata => map() | nil,
           :text => String.t() | nil,
           :title => String.t() | nil,
           :uri => String.t() | nil
         }
 
+  field(:metadata, type: :map)
   field(:text)
   field(:title)
   field(:uri)

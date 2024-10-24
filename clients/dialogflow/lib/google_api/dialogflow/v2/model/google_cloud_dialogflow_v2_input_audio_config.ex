@@ -30,6 +30,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
   *   `modelVariant` (*type:* `String.t`, *default:* `nil`) - Which variant of the Speech model to use.
   *   `optOutConformerModelMigration` (*type:* `boolean()`, *default:* `nil`) - If `true`, the request will opt out for STT conformer model migration. This field will be deprecated once force migration takes place in June 2024. Please refer to [Dialogflow ES Speech model migration](https://cloud.google.com/dialogflow/es/docs/speech-model-migration).
   *   `phraseHints` (*type:* `list(String.t)`, *default:* `nil`) - A list of strings containing words and phrases that the speech recognizer should recognize with higher likelihood. See [the Cloud Speech documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints) for more details. This field is deprecated. Please use [`speech_contexts`]() instead. If you specify both [`phrase_hints`]() and [`speech_contexts`](), Dialogflow will treat the [`phrase_hints`]() as a single additional [`SpeechContext`]().
+  *   `phraseSets` (*type:* `list(String.t)`, *default:* `nil`) - A collection of phrase set resources to use for speech adaptation.
   *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - Required. Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details.
   *   `singleUtterance` (*type:* `boolean()`, *default:* `nil`) - If `false` (default), recognition does not cease until the client closes the stream. If `true`, the recognizer will detect a single spoken utterance in input audio. Recognition ceases when it detects the audio's voice has stopped or paused. In this case, once a detected intent is received, the client should close the stream and start a new request with a new stream as needed. Note: This setting is relevant only for streaming methods. Note: When specified, InputAudioConfig.single_utterance takes precedence over StreamingDetectIntentRequest.single_utterance.
   *   `speechContexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechContext.t)`, *default:* `nil`) - Context information to assist speech recognition. See [the Cloud Speech documentation](https://cloud.google.com/speech-to-text/docs/basics#phrase-hints) for more details.
@@ -47,6 +48,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
           :modelVariant => String.t() | nil,
           :optOutConformerModelMigration => boolean() | nil,
           :phraseHints => list(String.t()) | nil,
+          :phraseSets => list(String.t()) | nil,
           :sampleRateHertz => integer() | nil,
           :singleUtterance => boolean() | nil,
           :speechContexts =>
@@ -62,6 +64,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputAudioConfig 
   field(:modelVariant)
   field(:optOutConformerModelMigration)
   field(:phraseHints, type: :list)
+  field(:phraseSets, type: :list)
   field(:sampleRateHertz)
   field(:singleUtterance)
 
