@@ -24,7 +24,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `answerSources` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1QaAnswerAnswerSource.t)`, *default:* `nil`) - List of all individual answers given to the question.
   *   `answerValue` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1QaAnswerAnswerValue.t`, *default:* `nil`) - The main answer value, incorporating any manual edits if they exist.
   *   `conversation` (*type:* `String.t`, *default:* `nil`) - The conversation the answer applies to.
-  *   `potentialScore` (*type:* `float()`, *default:* `nil`) - The maximum potential score of the question. If the question was answered using `na_value`, this field will be zero.
+  *   `potentialScore` (*type:* `float()`, *default:* `nil`) - The maximum potential score of the question. If the question was answered using `na_value`, this field will be zero. Deprecated: Use AnswerValue.potential_score instead.
   *   `qaQuestion` (*type:* `String.t`, *default:* `nil`) - The QaQuestion answered by this answer.
   *   `questionBody` (*type:* `String.t`, *default:* `nil`) - Question text. E.g., "Did the agent greet the customer?"
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - User-defined list of arbitrary tags. Matches the value from QaScorecard.ScorecardQuestion.tags. Used for grouping/organization and for weighting the score of each answer.
