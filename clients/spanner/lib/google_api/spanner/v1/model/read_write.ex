@@ -21,18 +21,15 @@ defmodule GoogleApi.Spanner.V1.Model.ReadWrite do
 
   ## Attributes
 
-  *   `multiplexedSessionPreviousTransactionId` (*type:* `String.t`, *default:* `nil`) - Optional. Clients should pass the transaction ID of the previous transaction attempt that was aborted if this transaction is being executed on a multiplexed session.
   *   `readLockMode` (*type:* `String.t`, *default:* `nil`) - Read lock mode for the transaction.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :multiplexedSessionPreviousTransactionId => String.t() | nil,
           :readLockMode => String.t() | nil
         }
 
-  field(:multiplexedSessionPreviousTransactionId)
   field(:readLockMode)
 end
 
