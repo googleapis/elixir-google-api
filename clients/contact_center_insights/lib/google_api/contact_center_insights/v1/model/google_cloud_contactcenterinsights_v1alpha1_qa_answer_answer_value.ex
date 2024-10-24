@@ -24,8 +24,10 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value.
   *   `key` (*type:* `String.t`, *default:* `nil`) - A short string used as an identifier. Matches the value used in QaQuestion.AnswerChoice.key.
   *   `naValue` (*type:* `boolean()`, *default:* `nil`) - A value of "Not Applicable (N/A)".
+  *   `normalizedScore` (*type:* `float()`, *default:* `nil`) - Output only. Normalized score of the questions. Calculated as score / potential_score iff potential_score != 0 else 0
   *   `numValue` (*type:* `float()`, *default:* `nil`) - Numerical value.
-  *   `score` (*type:* `float()`, *default:* `nil`) - Numerical score of the answer.
+  *   `potentialScore` (*type:* `float()`, *default:* `nil`) - Output only. The maximum potential score of the question.
+  *   `score` (*type:* `float()`, *default:* `nil`) - Output only. Numerical score of the answer.
   *   `strValue` (*type:* `String.t`, *default:* `nil`) - String value.
   """
 
@@ -35,7 +37,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
           :boolValue => boolean() | nil,
           :key => String.t() | nil,
           :naValue => boolean() | nil,
+          :normalizedScore => float() | nil,
           :numValue => float() | nil,
+          :potentialScore => float() | nil,
           :score => float() | nil,
           :strValue => String.t() | nil
         }
@@ -43,7 +47,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   field(:boolValue)
   field(:key)
   field(:naValue)
+  field(:normalizedScore)
   field(:numValue)
+  field(:potentialScore)
   field(:score)
   field(:strValue)
 end
