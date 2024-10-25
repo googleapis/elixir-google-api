@@ -21,7 +21,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1RiskAssess
 
   ## Attributes
 
-  *   `assessment` (*type:* `String.t`, *default:* `nil`) - Risk assessment for the extension. Currently, this is a numerical value, and higher values denote higher risk.
+  *   `assessment` (*type:* `String.t`, *default:* `nil`) - Risk assessment for the extension. Currently, this is a numerical value, and its interpretation is specific to each risk assessment provider.
   *   `detailsUrl` (*type:* `String.t`, *default:* `nil`) - A URL that a user can navigate to for more information about the risk assessment.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the extension that this assessment applies to.
   """
