@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ListSkuGroupBillab
   ## Attributes
 
   *   `billableSkus` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1BillableSku.t)`, *default:* `nil`) - The list of billable SKUs in the requested SKU group.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass to ListSkuGroupBillableSkus.page_token to obtain that page.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass to ListSkuGroupBillableSkusRequest.page_token to obtain that page.
   """
 
   use GoogleApi.Gax.ModelBase

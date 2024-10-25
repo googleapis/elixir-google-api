@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ListSkuGroupsRespo
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass to ListSkuGroups.page_token to obtain that page.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass to ListSkuGroupsRequest.page_token to obtain that page.
   *   `skuGroups` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1SkuGroup.t)`, *default:* `nil`) - The list of SKU groups requested.
   """
 

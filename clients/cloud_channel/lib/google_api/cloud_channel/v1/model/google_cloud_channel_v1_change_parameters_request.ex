@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ChangeParametersRequest do
   @moduledoc """
-  Request message for CloudChannelService.ChangeParametersRequest.
+  Request message for CloudChannelService.ChangeParameters.
 
   ## Attributes
 
