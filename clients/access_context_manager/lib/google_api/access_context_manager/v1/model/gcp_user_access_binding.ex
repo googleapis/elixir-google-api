@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
   @moduledoc """
-  Restricts access to Cloud Console and Google Cloud APIs for a set of users using Context-Aware Access.
+  Restricts access to Cloud Console and Google Cloud APIs for a set of users using Context-Aware Access. Next ID: 11
 
   ## Attributes
 
