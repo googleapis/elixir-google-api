@@ -21,15 +21,21 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RegisterSubscriber
 
   ## Attributes
 
+  *   `account` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the account. Required if integrator is not provided. Otherwise, leave this field empty/unset.
+  *   `integrator` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the integrator. Required if account is not provided. Otherwise, leave this field empty/unset.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Required. Service account that provides subscriber access to the registered topic.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :account => String.t() | nil,
+          :integrator => String.t() | nil,
           :serviceAccount => String.t() | nil
         }
 
+  field(:account)
+  field(:integrator)
   field(:serviceAccount)
 end
 
