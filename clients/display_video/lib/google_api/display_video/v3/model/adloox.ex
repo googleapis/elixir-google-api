@@ -17,26 +17,26 @@
 
 defmodule GoogleApi.DisplayVideo.V3.Model.Adloox do
   @moduledoc """
-  Details of Adloox settings.
+  Details of Adloox brand safety settings.
 
   ## Attributes
 
-  *   `adultExplicitSexualContent` (*type:* `String.t`, *default:* `nil`) - Optional. Adult explicit sexual content.
-  *   `armsAmmunitionContent` (*type:* `String.t`, *default:* `nil`) - Optional. Arms ammunition content.
-  *   `crimeHarmfulActsIndividualsSocietyHumanRightsViolationsContent` (*type:* `String.t`, *default:* `nil`) - Optional. Crime harmful acts to individuals society human rights violations content.
-  *   `deathInjuryMilitaryConflictContent` (*type:* `String.t`, *default:* `nil`) - Optional. Death injury military conflict content.
-  *   `debatedSensitiveSocialIssueContent` (*type:* `String.t`, *default:* `nil`) - Optional. Debated sensitive social issue content.
-  *   `displayIabViewability` (*type:* `String.t`, *default:* `nil`) - Optional. Display IAB viewability.
-  *   `excludedAdlooxCategories` (*type:* `list(String.t)`, *default:* `nil`) - Adloox's brand safety settings.
-  *   `excludedFraudIvtMfaCategories` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Adloox's fraud IVT MFA settings.
-  *   `hateSpeechActsAggressionContent` (*type:* `String.t`, *default:* `nil`) - Optional. Hate speech acts of aggression content.
-  *   `illegalDrugsTobaccoEcigarettesVapingAlcoholContent` (*type:* `String.t`, *default:* `nil`) - Optional. Illegal drugs tobacco ecigarettes vaping alcohol content.
-  *   `misinformationContent` (*type:* `String.t`, *default:* `nil`) - Optional. Misinformation content.
-  *   `obscenityProfanityContent` (*type:* `String.t`, *default:* `nil`) - Optional. Obscenity profanity content.
-  *   `onlinePiracyContent` (*type:* `String.t`, *default:* `nil`) - Optional. Online piracy content.
-  *   `spamHarmfulContent` (*type:* `String.t`, *default:* `nil`) - Optional. Spam harmful content.
-  *   `terrorismContent` (*type:* `String.t`, *default:* `nil`) - Optional. Terrorism content.
-  *   `videoIabViewability` (*type:* `String.t`, *default:* `nil`) - Optional. Video IAB viewability.
+  *   `adultExplicitSexualContent` (*type:* `String.t`, *default:* `nil`) - Optional. Adult and Explicit Sexual Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `armsAmmunitionContent` (*type:* `String.t`, *default:* `nil`) - Optional. Arms and Ammunition Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `crimeHarmfulActsIndividualsSocietyHumanRightsViolationsContent` (*type:* `String.t`, *default:* `nil`) - Optional. Crime and Harmful Acts Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `deathInjuryMilitaryConflictContent` (*type:* `String.t`, *default:* `nil`) - Optional. Death, Injury, or Military Conflict Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `debatedSensitiveSocialIssueContent` (*type:* `String.t`, *default:* `nil`) - Optional. Debated Sensitive Social Issue Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `displayIabViewability` (*type:* `String.t`, *default:* `nil`) - Optional. IAB viewability threshold for display ads.
+  *   `excludedAdlooxCategories` (*type:* `list(String.t)`, *default:* `nil`) - Adloox categories to exclude.
+  *   `excludedFraudIvtMfaCategories` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Adloox's fraud IVT MFA categories to exclude.
+  *   `hateSpeechActsAggressionContent` (*type:* `String.t`, *default:* `nil`) - Optional. Hate Speech and Acts of Aggression Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `illegalDrugsTobaccoEcigarettesVapingAlcoholContent` (*type:* `String.t`, *default:* `nil`) - Optional. Illegal Drugs/Alcohol Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `misinformationContent` (*type:* `String.t`, *default:* `nil`) - Optional. Misinformation Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `obscenityProfanityContent` (*type:* `String.t`, *default:* `nil`) - Optional. Obscenity and Profanity Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `onlinePiracyContent` (*type:* `String.t`, *default:* `nil`) - Optional. Online Piracy Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `spamHarmfulContent` (*type:* `String.t`, *default:* `nil`) - Optional. Spam or Harmful Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `terrorismContent` (*type:* `String.t`, *default:* `nil`) - Optional. Terrorism Content [GARM](https://wfanet.org/leadership/garm/about-garm) risk ranges to exclude.
+  *   `videoIabViewability` (*type:* `String.t`, *default:* `nil`) - Optional. IAB viewability threshold for video ads.
   """
 
   use GoogleApi.Gax.ModelBase
