@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.AdvertiserBillingConfig do
 
   ## Attributes
 
-  *   `billingProfileId` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of a billing profile assigned to the advertiser.
+  *   `billingProfileId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of a billing profile assigned to the advertiser.
   """
 
   use GoogleApi.Gax.ModelBase

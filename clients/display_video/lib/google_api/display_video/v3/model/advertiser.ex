@@ -23,7 +23,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.Advertiser do
 
   *   `adServerConfig` (*type:* `GoogleApi.DisplayVideo.V3.Model.AdvertiserAdServerConfig.t`, *default:* `nil`) - Required. Immutable. Ad server related settings of the advertiser.
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser. Assigned by the system.
-  *   `billingConfig` (*type:* `GoogleApi.DisplayVideo.V3.Model.AdvertiserBillingConfig.t`, *default:* `nil`) - Optional. Required. Billing related settings of the advertiser.
+  *   `billingConfig` (*type:* `GoogleApi.DisplayVideo.V3.Model.AdvertiserBillingConfig.t`, *default:* `nil`) - Required. Billing related settings of the advertiser.
   *   `creativeConfig` (*type:* `GoogleApi.DisplayVideo.V3.Model.AdvertiserCreativeConfig.t`, *default:* `nil`) - Required. Creative related settings of the advertiser.
   *   `dataAccessConfig` (*type:* `GoogleApi.DisplayVideo.V3.Model.AdvertiserDataAccessConfig.t`, *default:* `nil`) - Settings that control how advertiser data may be accessed.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the advertiser. Must be UTF-8 encoded with a maximum size of 240 bytes.
