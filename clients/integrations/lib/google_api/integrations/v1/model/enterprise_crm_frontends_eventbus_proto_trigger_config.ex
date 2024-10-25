@@ -26,10 +26,10 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTri
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description intended to give more business context about the task.
   *   `enabledClients` (*type:* `list(String.t)`, *default:* `nil`) - Required. The list of client ids which are enabled to execute the workflow using this trigger. In other words, these clients have the workflow execution privledges for this trigger. For API trigger, the client id in the incoming request is validated against the list of enabled clients. For non-API triggers, one workflow execution is triggered on behalf of each enabled client.
   *   `errorCatcherId` (*type:* `String.t`, *default:* `nil`) - Optional Error catcher id of the error catch flow which will be executed when execution error happens in the task
-  *   `inputVariables` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of input variables for the api trigger.
+  *   `inputVariables` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables.t`, *default:* `nil`) - Optional. List of input variables for the api trigger.
   *   `label` (*type:* `String.t`, *default:* `nil`) - The user created label for a particular trigger.
   *   `nextTasksExecutionPolicy` (*type:* `String.t`, *default:* `nil`) - Dictates how next tasks will be executed.
-  *   `outputVariables` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of output variables for the api trigger.
+  *   `outputVariables` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables.t`, *default:* `nil`) - Optional. List of output variables for the api trigger.
   *   `pauseWorkflowExecutions` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, any upcoming requests for this trigger config will be paused and the executions will be resumed later when the flag is reset. The workflow to which this trigger config belongs has to be in ACTIVE status for the executions to be paused or resumed.
   *   `position` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoCoordinate.t`, *default:* `nil`) - Optional. Informs the front-end application where to draw this trigger config on the UI.
   *   `properties` (*type:* `map()`, *default:* `nil`) - Configurable properties of the trigger, not to be confused with workflow parameters. E.g. "name" is a property for API triggers and "subscription" is a property for Cloud Pubsub triggers.
@@ -55,10 +55,14 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTri
           :description => String.t() | nil,
           :enabledClients => list(String.t()) | nil,
           :errorCatcherId => String.t() | nil,
-          :inputVariables => list(String.t()) | nil,
+          :inputVariables =>
+            GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables.t()
+            | nil,
           :label => String.t() | nil,
           :nextTasksExecutionPolicy => String.t() | nil,
-          :outputVariables => list(String.t()) | nil,
+          :outputVariables =>
+            GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables.t()
+            | nil,
           :pauseWorkflowExecutions => boolean() | nil,
           :position =>
             GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoCoordinate.t() | nil,
@@ -85,10 +89,18 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTri
   field(:description)
   field(:enabledClients, type: :list)
   field(:errorCatcherId)
-  field(:inputVariables, type: :list)
+
+  field(:inputVariables,
+    as: GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
+  )
+
   field(:label)
   field(:nextTasksExecutionPolicy)
-  field(:outputVariables, type: :list)
+
+  field(:outputVariables,
+    as: GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoTriggerConfigVariables
+  )
+
   field(:pauseWorkflowExecutions)
   field(:position, as: GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoCoordinate)
   field(:properties, type: :map)
