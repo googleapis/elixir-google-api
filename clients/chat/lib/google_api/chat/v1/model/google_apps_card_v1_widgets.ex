@@ -22,6 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widgets do
   ## Attributes
 
   *   `buttonList` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ButtonList.t`, *default:* `nil`) - ButtonList widget.
+  *   `chipList` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList.t`, *default:* `nil`) - ChipList widget. [Google Chat apps](https://developers.google.com/workspace/chat):
   *   `dateTimePicker` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker.t`, *default:* `nil`) - DateTimePicker widget.
   *   `decoratedText` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1DecoratedText.t`, *default:* `nil`) - DecoratedText widget.
   *   `image` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Image.t`, *default:* `nil`) - Image widget.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widgets do
 
   @type t :: %__MODULE__{
           :buttonList => GoogleApi.Chat.V1.Model.GoogleAppsCardV1ButtonList.t() | nil,
+          :chipList => GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList.t() | nil,
           :dateTimePicker => GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker.t() | nil,
           :decoratedText => GoogleApi.Chat.V1.Model.GoogleAppsCardV1DecoratedText.t() | nil,
           :image => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Image.t() | nil,
@@ -43,6 +45,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widgets do
         }
 
   field(:buttonList, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1ButtonList)
+  field(:chipList, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList)
   field(:dateTimePicker, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker)
   field(:decoratedText, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1DecoratedText)
   field(:image, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Image)

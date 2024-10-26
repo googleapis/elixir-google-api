@@ -25,6 +25,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick do
   *   `card` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card.t`, *default:* `nil`) - A new card is pushed to the card stack after clicking if specified. [Google Workspace Add-ons](https://developers.google.com/workspace/add-ons):
   *   `openDynamicLinkAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - An add-on triggers this action when the action needs to open a link. This differs from the `open_link` above in that this needs to talk to server to get the link. Thus some preparation work is required for web client to do before the open link action response comes back. [Google Workspace Add-ons](https://developers.google.com/workspace/add-ons):
   *   `openLink` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OpenLink.t`, *default:* `nil`) - If specified, this `onClick` triggers an open link action.
+  *   `overflowMenu` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OverflowMenu.t`, *default:* `nil`) - If specified, this `onClick` opens an overflow menu. [Google Chat apps](https://developers.google.com/workspace/chat):
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick do
           :action => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t() | nil,
           :card => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card.t() | nil,
           :openDynamicLinkAction => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t() | nil,
-          :openLink => GoogleApi.Chat.V1.Model.GoogleAppsCardV1OpenLink.t() | nil
+          :openLink => GoogleApi.Chat.V1.Model.GoogleAppsCardV1OpenLink.t() | nil,
+          :overflowMenu => GoogleApi.Chat.V1.Model.GoogleAppsCardV1OverflowMenu.t() | nil
         }
 
   field(:action, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action)
   field(:card, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card)
   field(:openDynamicLinkAction, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action)
   field(:openLink, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1OpenLink)
+  field(:overflowMenu, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1OverflowMenu)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick do
