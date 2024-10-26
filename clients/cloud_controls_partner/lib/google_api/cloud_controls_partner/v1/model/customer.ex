@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudControlsPartner.V1.Model.Customer do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name for the customer
   *   `isOnboarded` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether a customer is fully onboarded
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Format: `organizations/{organization}/locations/{location}/customers/{customer}`
+  *   `organizationDomain` (*type:* `String.t`, *default:* `nil`) - Output only. The customer organization domain, extracted from CRM Organization’s display_name field. e.g. "google.com"
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,7 +35,8 @@ defmodule GoogleApi.CloudControlsPartner.V1.Model.Customer do
             GoogleApi.CloudControlsPartner.V1.Model.CustomerOnboardingState.t() | nil,
           :displayName => String.t() | nil,
           :isOnboarded => boolean() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :organizationDomain => String.t() | nil
         }
 
   field(:customerOnboardingState,
@@ -44,6 +46,7 @@ defmodule GoogleApi.CloudControlsPartner.V1.Model.Customer do
   field(:displayName)
   field(:isOnboarded)
   field(:name)
+  field(:organizationDomain)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudControlsPartner.V1.Model.Customer do
