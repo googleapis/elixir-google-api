@@ -29,7 +29,7 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupPlan do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. `etag` is returned from the service in the response. As a user of the service, you may provide an etag value in this field to prevent stale resources.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. This collection of key/value pairs allows for custom labels to be supplied by the user. Example, {"tag": "Weekly"}.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of the `BackupPlan`. Format: `projects/{project}/locations/{location}/backupPlans/{backup_plan}`
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Required. The resource type to which the `BackupPlan` will be applied. Examples include, "compute.googleapis.com/Instance" and "storage.googleapis.com/Bucket".
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Required. The resource type to which the `BackupPlan` will be applied. Examples include, "compute.googleapis.com/Instance", "sqladmin.googleapis.com/Instance" and "storage.googleapis.com/Bucket".
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The `State` for the `BackupPlan`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the `BackupPlan` was last updated.
   """
