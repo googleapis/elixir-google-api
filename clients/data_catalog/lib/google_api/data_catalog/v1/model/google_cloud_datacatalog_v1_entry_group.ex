@@ -25,6 +25,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1EntryGroup do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Entry group description. Can consist of several sentences or paragraphs that describe the entry group contents. Default value is an empty string.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A short name to identify the entry group, for example, "analytics data - jan 2011". Default value is an empty string.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the entry group in URL format. Note: The entry group itself and its child resources might not be stored in the location specified in its name.
+  *   `transferredToDataplex` (*type:* `boolean()`, *default:* `nil`) - Optional. When set to [true], it means DataCatalog EntryGroup was transferred to Dataplex Catalog Service. It makes EntryGroup and its Entries to be read-only in DataCatalog. However, new Tags on EntryGroup and its Entries can be created. After setting the flag to [true] it cannot be unset.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,7 +35,8 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1EntryGroup do
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SystemTimestamps.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :transferredToDataplex => boolean() | nil
         }
 
   field(:dataCatalogTimestamps,
@@ -44,6 +46,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1EntryGroup do
   field(:description)
   field(:displayName)
   field(:name)
+  field(:transferredToDataplex)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1EntryGroup do
