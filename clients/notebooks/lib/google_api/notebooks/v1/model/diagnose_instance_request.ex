@@ -22,7 +22,7 @@ defmodule GoogleApi.Notebooks.V1.Model.DiagnoseInstanceRequest do
   ## Attributes
 
   *   `diagnosticConfig` (*type:* `GoogleApi.Notebooks.V1.Model.DiagnosticConfig.t`, *default:* `nil`) - Required. Defines flags that are used to run the diagnostic tool
-  *   `timeoutMinutes` (*type:* `integer()`, *default:* `nil`) - Optional. Maxmium amount of time in minutes before the operation times out.
+  *   `timeoutMinutes` (*type:* `integer()`, *default:* `nil`) - Optional. Maximum amount of time in minutes before the operation times out.
   """
 
   use GoogleApi.Gax.ModelBase
