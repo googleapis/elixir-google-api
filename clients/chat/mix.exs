@@ -18,7 +18,7 @@
 defmodule GoogleApi.Chat.Mixfile do
   use Mix.Project
 
-  @version "0.40.2"
+  @version "0.41.0"
 
   def project() do
     [
