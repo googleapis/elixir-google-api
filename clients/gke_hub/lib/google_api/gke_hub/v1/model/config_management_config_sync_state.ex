@@ -22,6 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncState do
   ## Attributes
 
   *   `clusterLevelStopSyncingState` (*type:* `String.t`, *default:* `nil`) - Whether syncing resources to the cluster is stopped at the cluster level.
+  *   `crCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of RootSync and RepoSync CRs in the cluster.
   *   `deploymentState` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState.t`, *default:* `nil`) - Information about the deployment of ConfigSync, including the version of the various Pods deployed
   *   `errors` (*type:* `list(GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncError.t)`, *default:* `nil`) - Errors pertaining to the installation of Config Sync.
   *   `reposyncCrd` (*type:* `String.t`, *default:* `nil`) - The state of the Reposync CRD
@@ -35,6 +36,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncState do
 
   @type t :: %__MODULE__{
           :clusterLevelStopSyncingState => String.t() | nil,
+          :crCount => integer() | nil,
           :deploymentState =>
             GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState.t() | nil,
           :errors => list(GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncError.t()) | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncState do
         }
 
   field(:clusterLevelStopSyncingState)
+  field(:crCount)
   field(:deploymentState, as: GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState)
   field(:errors, as: GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncError, type: :list)
   field(:reposyncCrd)
