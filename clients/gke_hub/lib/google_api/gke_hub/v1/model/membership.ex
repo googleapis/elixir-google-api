@@ -22,6 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.Membership do
   ## Attributes
 
   *   `authority` (*type:* `GoogleApi.GKEHub.V1.Model.Authority.t`, *default:* `nil`) - Optional. How to identify workloads from this Membership. See the documentation on Workload Identity for more details: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
+  *   `clusterTier` (*type:* `String.t`, *default:* `nil`) - Output only. The tier of the cluster.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the Membership was created.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the Membership was deleted.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Description of this membership, limited to 63 characters. Must match the regex: `a-zA-Z0-9*` This field is present for legacy purposes.
@@ -40,6 +41,7 @@ defmodule GoogleApi.GKEHub.V1.Model.Membership do
 
   @type t :: %__MODULE__{
           :authority => GoogleApi.GKEHub.V1.Model.Authority.t() | nil,
+          :clusterTier => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :deleteTime => DateTime.t() | nil,
           :description => String.t() | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.GKEHub.V1.Model.Membership do
         }
 
   field(:authority, as: GoogleApi.GKEHub.V1.Model.Authority)
+  field(:clusterTier)
   field(:createTime, as: DateTime)
   field(:deleteTime, as: DateTime)
   field(:description)
