@@ -22,6 +22,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Tag do
   ## Attributes
 
   *   `column` (*type:* `String.t`, *default:* `nil`) - Resources like entry can have schemas associated with them. This scope allows you to attach tags to an individual column based on that schema. To attach a tag to a nested column, separate column names with a dot (`.`). Example: `column.nested_column`.
+  *   `dataplexTransferStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Denotes the transfer status of the Tag Template.
   *   `fields` (*type:* `%{optional(String.t) => GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1TagField.t}`, *default:* `nil`) - Required. Maps the ID of a tag field to its value and additional information about that field. Tag template defines valid field IDs. A tag must have at least 1 field and at most 500 fields.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the tag in URL format where tag ID is a system-generated identifier. Note: The tag itself might not be stored in the location specified in its name.
   *   `template` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the tag template this tag uses. Example: `projects/{PROJECT_ID}/locations/{LOCATION}/tagTemplates/{TAG_TEMPLATE_ID}` This field cannot be modified after creation.
@@ -32,6 +33,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Tag do
 
   @type t :: %__MODULE__{
           :column => String.t() | nil,
+          :dataplexTransferStatus => String.t() | nil,
           :fields =>
             %{
               optional(String.t()) =>
@@ -44,6 +46,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Tag do
         }
 
   field(:column)
+  field(:dataplexTransferStatus)
   field(:fields, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1TagField, type: :map)
   field(:name)
   field(:template)
