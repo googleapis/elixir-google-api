@@ -32,6 +32,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.VpcFlowLogsConfig do
   *   `metadataFields` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Custom metadata fields to include in the reported VPC flow logs. Can only be specified if "metadata" was set to CUSTOM_METADATA.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Unique name of the configuration using the form: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Optional. The state of the VPC Flow Log configuration. Default value is ENABLED. When creating a new configuration, it must be enabled.
+  *   `targetResourceState` (*type:* `String.t`, *default:* `nil`) - Output only. A diagnostic bit - describes the state of the configured target resource for diagnostic purposes.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the config was updated.
   *   `vpnTunnel` (*type:* `String.t`, *default:* `nil`) - Traffic will be logged from the VPN Tunnel. Format: projects/{project_id}/regions/{region}/vpnTunnels/{name}
   """
@@ -50,6 +51,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.VpcFlowLogsConfig do
           :metadataFields => list(String.t()) | nil,
           :name => String.t() | nil,
           :state => String.t() | nil,
+          :targetResourceState => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :vpnTunnel => String.t() | nil
         }
@@ -65,6 +67,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.VpcFlowLogsConfig do
   field(:metadataFields, type: :list)
   field(:name)
   field(:state)
+  field(:targetResourceState)
   field(:updateTime, as: DateTime)
   field(:vpnTunnel)
 end
