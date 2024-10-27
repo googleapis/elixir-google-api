@@ -823,7 +823,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of commits to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `FetchRepositoryHistory` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `FetchRepositoryHistory` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `FetchRepositoryHistory` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `FetchRepositoryHistory`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1115,7 +1115,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Optional. Filter for the returned list.
       *   `:orderBy` (*type:* `String.t`) - Optional. This field only supports ordering by `name`. If unspecified, the server will choose the ordering. If specified, the default order is ascending for the `name` field.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of repositories to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListRepositories` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRepositories` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListRepositories` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListRepositories`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1268,7 +1268,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:commitSha` (*type:* `String.t`) - Optional. The Commit SHA for the commit to query from. If unset, the directory will be queried from HEAD.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of paths to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `QueryRepositoryDirectoryContents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryRepositoryDirectoryContents` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `QueryRepositoryDirectoryContents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryRepositoryDirectoryContents`, with the exception of `page_size`, must match the call that provided the page token.
       *   `:path` (*type:* `String.t`) - Optional. The directory's full path including directory name, relative to root. If left unset, the root is used.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2002,7 +2002,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Optional. Filter for the returned list.
       *   `:orderBy` (*type:* `String.t`) - Optional. This field only supports ordering by `name` and `create_time`. If unspecified, the server will choose the ordering. If specified, the default order is ascending for the `name` field.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of compilation results to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListCompilationResults` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCompilationResults` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListCompilationResults` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCompilationResults`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2081,7 +2081,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Optional filter for the returned list. Filtering is only currently supported on the `file_path` field.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of compilation results to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `QueryCompilationResultActions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryCompilationResultActions` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `QueryCompilationResultActions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryCompilationResultActions`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2372,7 +2372,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of release configs to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListReleaseConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListReleaseConfigs` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListReleaseConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListReleaseConfigs`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2736,7 +2736,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of workflow configs to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListWorkflowConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkflowConfigs` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListWorkflowConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkflowConfigs`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3172,7 +3172,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Optional. Filter for the returned list.
       *   `:orderBy` (*type:* `String.t`) - Optional. This field only supports ordering by `name`. If unspecified, the server will choose the ordering. If specified, the default order is ascending for the `name` field.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of workflow invocations to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListWorkflowInvocations` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkflowInvocations` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListWorkflowInvocations` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkflowInvocations`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3250,7 +3250,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of workflow invocations to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `QueryWorkflowInvocationActions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryWorkflowInvocationActions` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `QueryWorkflowInvocationActions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryWorkflowInvocationActions`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3980,7 +3980,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:filter` (*type:* `String.t`) - Optional. Filter for the returned list.
       *   `:orderBy` (*type:* `String.t`) - Optional. This field only supports ordering by `name`. If unspecified, the server will choose the ordering. If specified, the default order is ascending for the `name` field.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of workspaces to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListWorkspaces` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkspaces` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListWorkspaces` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListWorkspaces`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4422,7 +4422,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of paths to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `QueryDirectoryContents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryDirectoryContents` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `QueryDirectoryContents` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryDirectoryContents`, with the exception of `page_size`, must match the call that provided the page token.
       *   `:path` (*type:* `String.t`) - Optional. The directory's full path including directory name, relative to the workspace root. If left unset, the workspace root is used.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4791,7 +4791,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Optional filter for the returned list in filtering format. Filtering is only currently supported on the `path` field. See https://google.aip.dev/160 for details.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of search results to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `SearchFilesRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchFilesRequest` must match the call that provided the page token.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `SearchFilesRequest` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchFilesRequest`, with the exception of `page_size`, must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
