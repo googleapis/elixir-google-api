@@ -23,6 +23,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Dataset
 
   *   `documentSchema` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t`, *default:* `nil`) - Optional. Schema of the dataset.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Dataset schema resource name. Format: `projects/{project}/locations/{location}/processors/{processor}/dataset/datasetSchema`
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,7 +33,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Dataset
           :documentSchema =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t()
             | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil
         }
 
   field(:documentSchema,
@@ -39,6 +43,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Dataset
   )
 
   field(:name)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
 end
 
 defimpl Poison.Decoder,
