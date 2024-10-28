@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.Datastore.V1.Model.Query do
   @moduledoc """
-  A query for entities.
+  A query for entities. The query stages are executed in the following order: 1. kind 2. filter 3. projection 4. order + start_cursor + end_cursor 5. offset 6. limit 7. find_nearest
 
   ## Attributes
 
   *   `distinctOn` (*type:* `list(GoogleApi.Datastore.V1.Model.PropertyReference.t)`, *default:* `nil`) - The properties to make distinct. The query results will contain the first result for each distinct combination of values for the given properties (if empty, all results are returned). Requires: * If `order` is specified, the set of distinct on properties must appear before the non-distinct on properties in `order`.
   *   `endCursor` (*type:* `String.t`, *default:* `nil`) - An ending point for the query results. Query cursors are returned in query result batches and [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
   *   `filter` (*type:* `GoogleApi.Datastore.V1.Model.Filter.t`, *default:* `nil`) - The filter to apply.
+  *   `findNearest` (*type:* `GoogleApi.Datastore.V1.Model.FindNearest.t`, *default:* `nil`) - Optional. A potential Nearest Neighbors Search. Applies after all other filters and ordering. Finds the closest vector embeddings to the given query vector.
   *   `kind` (*type:* `list(GoogleApi.Datastore.V1.Model.KindExpression.t)`, *default:* `nil`) - The kinds to query (if empty, returns entities of all kinds). Currently at most 1 kind may be specified.
   *   `limit` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return. Applies after all other constraints. Optional. Unspecified is interpreted as no limit. Must be >= 0 if specified.
   *   `offset` (*type:* `integer()`, *default:* `nil`) - The number of results to skip. Applies before limit, but after all other constraints. Optional. Must be >= 0 if specified.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Datastore.V1.Model.Query do
           :distinctOn => list(GoogleApi.Datastore.V1.Model.PropertyReference.t()) | nil,
           :endCursor => String.t() | nil,
           :filter => GoogleApi.Datastore.V1.Model.Filter.t() | nil,
+          :findNearest => GoogleApi.Datastore.V1.Model.FindNearest.t() | nil,
           :kind => list(GoogleApi.Datastore.V1.Model.KindExpression.t()) | nil,
           :limit => integer() | nil,
           :offset => integer() | nil,
@@ -49,6 +51,7 @@ defmodule GoogleApi.Datastore.V1.Model.Query do
   field(:distinctOn, as: GoogleApi.Datastore.V1.Model.PropertyReference, type: :list)
   field(:endCursor)
   field(:filter, as: GoogleApi.Datastore.V1.Model.Filter)
+  field(:findNearest, as: GoogleApi.Datastore.V1.Model.FindNearest)
   field(:kind, as: GoogleApi.Datastore.V1.Model.KindExpression, type: :list)
   field(:limit)
   field(:offset)
