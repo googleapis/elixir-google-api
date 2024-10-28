@@ -21,7 +21,7 @@ defmodule GoogleApi.TextToSpeech.V1.Model.SynthesizeSpeechRequest do
 
   ## Attributes
 
-  *   `advancedVoiceOptions` (*type:* `GoogleApi.TextToSpeech.V1.Model.AdvancedVoiceOptions.t`, *default:* `nil`) - Adnanced voice options.
+  *   `advancedVoiceOptions` (*type:* `GoogleApi.TextToSpeech.V1.Model.AdvancedVoiceOptions.t`, *default:* `nil`) - Advanced voice options.
   *   `audioConfig` (*type:* `GoogleApi.TextToSpeech.V1.Model.AudioConfig.t`, *default:* `nil`) - Required. The configuration of the synthesized audio.
   *   `input` (*type:* `GoogleApi.TextToSpeech.V1.Model.SynthesisInput.t`, *default:* `nil`) - Required. The Synthesizer requires either plain text or SSML as input.
   *   `voice` (*type:* `GoogleApi.TextToSpeech.V1.Model.VoiceSelectionParams.t`, *default:* `nil`) - Required. The desired voice of the synthesized audio.

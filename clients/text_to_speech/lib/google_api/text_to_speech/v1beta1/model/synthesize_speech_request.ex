@@ -21,7 +21,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.SynthesizeSpeechRequest do
 
   ## Attributes
 
-  *   `advancedVoiceOptions` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.AdvancedVoiceOptions.t`, *default:* `nil`) - Adnanced voice options.
+  *   `advancedVoiceOptions` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.AdvancedVoiceOptions.t`, *default:* `nil`) - Advanced voice options.
   *   `audioConfig` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig.t`, *default:* `nil`) - Required. The configuration of the synthesized audio.
   *   `enableTimePointing` (*type:* `list(String.t)`, *default:* `nil`) - Whether and what timepoints are returned in the response.
   *   `input` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.SynthesisInput.t`, *default:* `nil`) - Required. The Synthesizer requires either plain text or SSML as input.
