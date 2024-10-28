@@ -21,7 +21,7 @@ defmodule GoogleApi.TravelImpactModel.V1.Model.FlightWithEmissions do
 
   ## Attributes
 
-  *   `emissionsGramsPerPax` (*type:* `GoogleApi.TravelImpactModel.V1.Model.EmissionsGramsPerPax.t`, *default:* `nil`) - Optional. Per-passenger emission estimate numbers. Will not be present if emissions could not be computed. For the list of reasons why emissions could not be computed, see ComputeFlightEmissions. Note this field is currently equivalent to ttw_emissions_grams_per_pax until TIM version 1.X.0 which will update this to be total wtw emissions aka wtt_emissions_grams_per_pax + ttw_emissions_grams_per_pax.
+  *   `emissionsGramsPerPax` (*type:* `GoogleApi.TravelImpactModel.V1.Model.EmissionsGramsPerPax.t`, *default:* `nil`) - Optional. Per-passenger emission estimate numbers. Will not be present if emissions could not be computed. For the list of reasons why emissions could not be computed, see ComputeFlightEmissions. This field uses wtw emissions aka ttw_emissions_grams_per_pax + wtt_emissions_grams_per_pax.
   *   `flight` (*type:* `GoogleApi.TravelImpactModel.V1.Model.Flight.t`, *default:* `nil`) - Required. Matches the flight identifiers in the request. Note: all IATA codes are capitalized.
   """
 
