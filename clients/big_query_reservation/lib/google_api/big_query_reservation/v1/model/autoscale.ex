@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Autoscale do
 
   ## Attributes
 
-  *   `currentSlots` (*type:* `String.t`, *default:* `nil`) - Output only. The slot capacity added to this reservation when autoscale happens. Will be between [0, max_slots].
+  *   `currentSlots` (*type:* `String.t`, *default:* `nil`) - Output only. The slot capacity added to this reservation when autoscale happens. Will be between [0, max_slots]. Note: after users reduce max_slots, it may take a while before it can be propagated, so current_slots may stay in the original value and could be larger than max_slots for that brief period (less than one minute)
   *   `maxSlots` (*type:* `String.t`, *default:* `nil`) - Number of slots to be scaled when needed.
   """
 
