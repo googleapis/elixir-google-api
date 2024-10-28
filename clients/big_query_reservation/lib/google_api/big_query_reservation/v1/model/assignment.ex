@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Assignment do
   ## Attributes
 
   *   `assignee` (*type:* `String.t`, *default:* `nil`) - The resource which will use the reservation. E.g. `projects/myproject`, `folders/123`, or `organizations/456`.
+  *   `enableGeminiInBigquery` (*type:* `boolean()`, *default:* `nil`) - Optional. This field controls if "Gemini in BigQuery" (https://cloud.google.com/gemini/docs/bigquery/overview) features should be enabled for this reservation assignment, which is not on by default. "Gemini in BigQuery" has a distinct compliance posture from BigQuery. If this field is set to true, the assignment job type is QUERY, and the parent reservation edition is ENTERPRISE_PLUS, then the assignment will give the grantee project/organization access to "Gemini in BigQuery" features.
   *   `jobType` (*type:* `String.t`, *default:* `nil`) - Which type of jobs will use the reservation.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the resource. E.g.: `projects/myproject/locations/US/reservations/team1-prod/assignments/123`. The assignment_id must only contain lower case alphanumeric characters or dashes and the max length is 64 characters.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the assignment.
@@ -31,12 +32,14 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Assignment do
 
   @type t :: %__MODULE__{
           :assignee => String.t() | nil,
+          :enableGeminiInBigquery => boolean() | nil,
           :jobType => String.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil
         }
 
   field(:assignee)
+  field(:enableGeminiInBigquery)
   field(:jobType)
   field(:name)
   field(:state)

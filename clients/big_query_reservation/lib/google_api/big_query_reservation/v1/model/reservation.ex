@@ -26,6 +26,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of the reservation.
   *   `edition` (*type:* `String.t`, *default:* `nil`) - Edition of the reservation.
   *   `ignoreIdleSlots` (*type:* `boolean()`, *default:* `nil`) - If false, any query or pipeline job using this reservation will use idle slots from other reservations within the same admin project. If true, a query or pipeline job using this reservation will execute with the slot capacity specified in the slot_capacity field at most.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels associated with this reservation. You can use these to organize and group your reservations. You can set this property when inserting or updating a reservation.
   *   `multiRegionAuxiliary` (*type:* `boolean()`, *default:* `nil`) - Applicable only for reservations located within one of the BigQuery multi-regions (US or EU). If set to true, this reservation is placed in the organization's secondary region which is designated for disaster recovery purposes. If false, this reservation is placed in the organization's default region. NOTE: this is a preview feature. Project must be allow-listed in order to set this field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`. The reservation_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
   *   `originalPrimaryLocation` (*type:* `String.t`, *default:* `nil`) - Optional. The original primary location of the reservation which is set only during its creation and remains unchanged afterwards. It can be used by the customer to answer questions about disaster recovery billing. The field is output only for customers and should not be specified, however, the google.api.field_behavior is not set to OUTPUT_ONLY since these fields are set in rerouted requests sent across regions.
@@ -43,6 +44,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
           :creationTime => DateTime.t() | nil,
           :edition => String.t() | nil,
           :ignoreIdleSlots => boolean() | nil,
+          :labels => map() | nil,
           :multiRegionAuxiliary => boolean() | nil,
           :name => String.t() | nil,
           :originalPrimaryLocation => String.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
   field(:creationTime, as: DateTime)
   field(:edition)
   field(:ignoreIdleSlots)
+  field(:labels, type: :map)
   field(:multiRegionAuxiliary)
   field(:name)
   field(:originalPrimaryLocation)
