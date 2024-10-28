@@ -23,6 +23,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the scan was created.
   *   `data` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataSource.t`, *default:* `nil`) - Required. The data source for DataScan.
+  *   `dataDiscoveryResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResult.t`, *default:* `nil`) - Output only. The result of a data discovery scan.
+  *   `dataDiscoverySpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoverySpec.t`, *default:* `nil`) - Settings for a data discovery scan.
   *   `dataProfileResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult.t`, *default:* `nil`) - Output only. The result of a data profile scan.
   *   `dataProfileSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpec.t`, *default:* `nil`) - Settings for a data profile scan.
   *   `dataQualityResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult.t`, *default:* `nil`) - Output only. The result of a data quality scan.
@@ -44,6 +46,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :data => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataSource.t() | nil,
+          :dataDiscoveryResult =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResult.t() | nil,
+          :dataDiscoverySpec =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoverySpec.t() | nil,
           :dataProfileResult =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult.t() | nil,
           :dataProfileSpec =>
@@ -68,6 +74,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
 
   field(:createTime, as: DateTime)
   field(:data, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataSource)
+
+  field(:dataDiscoveryResult,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResult
+  )
+
+  field(:dataDiscoverySpec, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoverySpec)
 
   field(:dataProfileResult, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult)
 
