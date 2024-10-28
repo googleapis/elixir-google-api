@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firestore.V1beta1.Model.StructuredQuery do
   @moduledoc """
-  A Firestore query. The query stages are executed in the following order: 1. from 2. where 3. select 4. order_by + start_at + end_at 5. offset 6. limit
+  A Firestore query. The query stages are executed in the following order: 1. from 2. where 3. select 4. order_by + start_at + end_at 5. offset 6. limit 7. find_nearest
 
   ## Attributes
 
