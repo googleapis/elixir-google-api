@@ -21,7 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidcWebSso
 
   ## Attributes
 
-  *   `additionalScopes` (*type:* `list(String.t)`, *default:* `nil`) - Additional scopes to request for in the OIDC authentication request on top of scopes requested by default. By default, the `openid`, `profile` and `email` scopes that are supported by the identity provider are requested. Each additional scope may be at most 256 characters. A maximum of 10 additional scopes may be configured.
+  *   `additionalScopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Additional scopes to request for in the OIDC authentication request on top of scopes requested by default. By default, the `openid`, `profile` and `email` scopes that are supported by the identity provider are requested. Each additional scope may be at most 256 characters. A maximum of 10 additional scopes may be configured.
   *   `assertionClaimsBehavior` (*type:* `String.t`, *default:* `nil`) - Required. The behavior for how OIDC Claims are included in the `assertion` object used for attribute mapping and attribute condition.
   *   `responseType` (*type:* `String.t`, *default:* `nil`) - Required. The Response Type to request for in the OIDC Authorization Request for web sign-in. The `CODE` Response Type is recommended to avoid the Implicit Flow, for security reasons.
   """

@@ -21,7 +21,7 @@ defmodule GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidcClient
 
   ## Attributes
 
-  *   `plainText` (*type:* `String.t`, *default:* `nil`) - Input only. The plain text of the client secret value. For security reasons, this field is only used for input and will never be populated in any response.
+  *   `plainText` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. The plain text of the client secret value. For security reasons, this field is only used for input and will never be populated in any response.
   *   `thumbprint` (*type:* `String.t`, *default:* `nil`) - Output only. A thumbprint to represent the current client secret value.
   """
 
