@@ -31,7 +31,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `location` (*type:* `String.t`) - The location of the pool to create. Format: `locations/{location}`.
+  *   `location` (*type:* `String.t`) - Optional. The location of the pool to create. Format: `locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -44,7 +44,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:workforcePoolId` (*type:* `String.t`) - The ID to use for the pool, which becomes the final component of the resource name. The IDs must be a globally unique string of 6 to 63 lowercase letters, digits, or hyphens. It must start with a letter, and cannot have a trailing hyphen. The prefix `gcp-` is reserved for use by Google, and may not be specified.
+      *   `:workforcePoolId` (*type:* `String.t`) - Optional. The ID to use for the pool, which becomes the final component of the resource name. The IDs must be a globally unique string of 6 to 63 lowercase letters, digits, or hyphens. It must start with a letter, and cannot have a trailing hyphen. The prefix `gcp-` is reserved for use by Google, and may not be specified.
       *   `:body` (*type:* `GoogleApi.IAM.V1.Model.WorkforcePool.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
