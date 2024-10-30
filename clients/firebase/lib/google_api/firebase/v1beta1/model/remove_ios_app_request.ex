@@ -23,7 +23,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.RemoveIosAppRequest do
 
   *   `allowMissing` (*type:* `boolean()`, *default:* `nil`) - If set to true, and the App is not found, the request will succeed but no action will be taken on the server.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Checksum provided in the IosApp resource. If provided, this checksum ensures that the client has an up-to-date value before proceeding.
-  *   `immediate` (*type:* `boolean()`, *default:* `nil`) - Determines whether to _immediately_ delete the IosApp. If set to true, the App is immediately deleted from the Project and cannot be restored to the Project. If not set, defaults to false, which means the App will be set to expire in 30 days. Within the 30 days, the App may be restored to the Project using UndeleteIosApp
+  *   `immediate` (*type:* `boolean()`, *default:* `nil`) - Determines whether to _immediately_ delete the IosApp. If set to true, the App is immediately deleted from the Project and cannot be undeleted (that is, restored to the Project). If not set, defaults to false, which means the App will be set to expire in 30 days. Within the 30 days, the App may be restored to the Project using UndeleteIosApp
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, the request is only validated. The App will _not_ be removed.
   """
 
