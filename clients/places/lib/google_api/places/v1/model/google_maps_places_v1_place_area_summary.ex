@@ -22,16 +22,19 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceAreaSummary do
   ## Attributes
 
   *   `contentBlocks` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1ContentBlock.t)`, *default:* `nil`) - Content blocks that compose the area summary. Each block has a separate topic about the area.
+  *   `flagContentUri` (*type:* `String.t`, *default:* `nil`) - A link where users can flag a problem with the summary.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :contentBlocks =>
-            list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1ContentBlock.t()) | nil
+            list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1ContentBlock.t()) | nil,
+          :flagContentUri => String.t() | nil
         }
 
   field(:contentBlocks, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1ContentBlock, type: :list)
+  field(:flagContentUri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceAreaSummary do

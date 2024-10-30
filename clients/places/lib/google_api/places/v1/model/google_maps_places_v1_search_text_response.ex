@@ -25,6 +25,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextResponse do
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as `page_token` to retrieve the next page. If this field is omitted or empty, there are no subsequent pages.
   *   `places` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place.t)`, *default:* `nil`) - A list of places that meet the user's text search criteria.
   *   `routingSummaries` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingSummary.t)`, *default:* `nil`) - A list of routing summaries where each entry associates to the corresponding place in the same index in the `places` field. If the routing summary is not available for one of the places, it will contain an empty entry. This list will have as many entries as the list of places if requested.
+  *   `searchUri` (*type:* `String.t`, *default:* `nil`) - A link allows the user to search with the same text query as specified in the request on Google Maps.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextResponse do
           :nextPageToken => String.t() | nil,
           :places => list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place.t()) | nil,
           :routingSummaries =>
-            list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingSummary.t()) | nil
+            list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingSummary.t()) | nil,
+          :searchUri => String.t() | nil
         }
 
   field(:contextualContents,
@@ -50,6 +52,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextResponse do
     as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingSummary,
     type: :list
   )
+
+  field(:searchUri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextResponse do
