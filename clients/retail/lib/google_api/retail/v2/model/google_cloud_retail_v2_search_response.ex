@@ -29,6 +29,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
   *   `facets` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacet.t)`, *default:* `nil`) - Results of facets requested by user.
   *   `invalidConditionBoostSpecs` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec.t)`, *default:* `nil`) - The invalid SearchRequest.BoostSpec.condition_boost_specs that are not applied during serving.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as SearchRequest.page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
+  *   `pinControlMetadata` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2PinControlMetadata.t`, *default:* `nil`) - Metadata for pin controls which were applicable to the request. This contains two map fields, one for all matched pins and one for pins which were matched but not applied. The two maps are keyed by pin position, and the values are the product ids which were matched to that pin.
   *   `queryExpansionInfo` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseQueryExpansionInfo.t`, *default:* `nil`) - Query expansion information for the returned results.
   *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response.
   *   `results` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseSearchResult.t)`, *default:* `nil`) - A list of matched items. The order represents the ranking.
@@ -55,6 +56,8 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
             )
             | nil,
           :nextPageToken => String.t() | nil,
+          :pinControlMetadata =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2PinControlMetadata.t() | nil,
           :queryExpansionInfo =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseQueryExpansionInfo.t()
             | nil,
@@ -90,6 +93,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
   )
 
   field(:nextPageToken)
+  field(:pinControlMetadata, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2PinControlMetadata)
 
   field(:queryExpansionInfo,
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseQueryExpansionInfo
