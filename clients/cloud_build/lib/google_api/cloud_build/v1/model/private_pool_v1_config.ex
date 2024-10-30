@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.PrivatePoolV1Config do
   ## Attributes
 
   *   `networkConfig` (*type:* `GoogleApi.CloudBuild.V1.Model.NetworkConfig.t`, *default:* `nil`) - Network configuration for the pool.
+  *   `privateServiceConnect` (*type:* `GoogleApi.CloudBuild.V1.Model.PrivateServiceConnect.t`, *default:* `nil`) - Immutable. Private Service Connect(PSC) Network configuration for the pool.
   *   `workerConfig` (*type:* `GoogleApi.CloudBuild.V1.Model.WorkerConfig.t`, *default:* `nil`) - Machine configuration for the workers in the pool.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.CloudBuild.V1.Model.PrivatePoolV1Config do
 
   @type t :: %__MODULE__{
           :networkConfig => GoogleApi.CloudBuild.V1.Model.NetworkConfig.t() | nil,
+          :privateServiceConnect => GoogleApi.CloudBuild.V1.Model.PrivateServiceConnect.t() | nil,
           :workerConfig => GoogleApi.CloudBuild.V1.Model.WorkerConfig.t() | nil
         }
 
   field(:networkConfig, as: GoogleApi.CloudBuild.V1.Model.NetworkConfig)
+  field(:privateServiceConnect, as: GoogleApi.CloudBuild.V1.Model.PrivateServiceConnect)
   field(:workerConfig, as: GoogleApi.CloudBuild.V1.Model.WorkerConfig)
 end
 
