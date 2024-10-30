@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.AppSettingsChanged do
   @moduledoc """
-  Alerts from AppSettingsChanged bucket Rules configured by Admin which contain the below rules. Calendar settings changed Drive settings changed Email settings changed Mobile settings changed
+  * Alerts from AppSettingsChanged bucket Rules configured by Admin which contain the below rules. Calendar settings changed Drive settings changed Email settings changed Mobile settings changed
 
   ## Attributes
 

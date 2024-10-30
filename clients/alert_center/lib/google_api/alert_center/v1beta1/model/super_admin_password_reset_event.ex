@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.SuperAdminPasswordResetEvent do
   @moduledoc """
-  Event occurred when password was reset for super admin in customer's account. The event are being received from insight forwarder
+  * Event occurred when password was reset for super admin in customer's account. The event are being received from insight forwarder
 
   ## Attributes
 

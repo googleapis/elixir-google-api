@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.UserChanges do
   @moduledoc """
-  Alerts from UserChanges bucket Rules for predefined rules which contain the below rules. Suspended user made active New user Added User suspended (by admin) User granted admin privileges User admin privileges revoked User deleted Users password changed
+  * Alerts from UserChanges bucket Rules for predefined rules which contain the below rules. Suspended user made active New user Added User suspended (by admin) User granted admin privileges User admin privileges revoked User deleted Users password changed
 
   ## Attributes
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.SSOProfileUpdatedEvent do
   @moduledoc """
-  Event occurred when SSO Profile updated in customer's account. The event are being received from insight forwarder
+  * Event occurred when SSO Profile updated in customer's account. The event are being received from insight forwarder
 
   ## Attributes
 
