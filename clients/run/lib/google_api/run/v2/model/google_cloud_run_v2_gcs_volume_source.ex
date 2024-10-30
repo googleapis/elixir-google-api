@@ -22,6 +22,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2GCSVolumeSource do
   ## Attributes
 
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - Cloud Storage Bucket name.
+  *   `mountOptions` (*type:* `list(String.t)`, *default:* `nil`) - A list of additional flags to pass to the gcsfuse CLI. Options should be specified without the leading "--".
   *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - If true, the volume will be mounted as read only for all mounts.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2GCSVolumeSource do
 
   @type t :: %__MODULE__{
           :bucket => String.t() | nil,
+          :mountOptions => list(String.t()) | nil,
           :readOnly => boolean() | nil
         }
 
   field(:bucket)
+  field(:mountOptions, type: :list)
   field(:readOnly)
 end
 
