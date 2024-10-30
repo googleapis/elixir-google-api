@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCal
 
   ## Attributes
 
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels for the deployment. For managing deployment config like verifying, source of deployment config, etc.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels for the deployment config. For managing deployment config like verifying, source of deployment config, etc.
   *   `sampleRequest` (*type:* `String.t`, *default:* `nil`) - Optional. Sample request for deployed endpoint.
   """
 

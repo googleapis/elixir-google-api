@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
 
   ## Attributes
 
+  *   `clientConnectionConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ClientConnectionConfig.t`, *default:* `nil`) - Configurations that are applied to the endpoint for online prediction.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this Endpoint was created.
   *   `dedicatedEndpointDns` (*type:* `String.t`, *default:* `nil`) - Output only. DNS of the dedicated endpoint. Will only be populated if dedicated_endpoint_enabled is true. Format: `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
   *   `dedicatedEndpointEnabled` (*type:* `boolean()`, *default:* `nil`) - If true, the endpoint will be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS will be isolated from other users' traffic and will have better performance and reliability. Note: Once you enabled dedicated endpoint, you won't be able to send request to the shared DNS {region}-aiplatform.googleapis.com. The limitation will be removed soon.
@@ -45,6 +46,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :clientConnectionConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ClientConnectionConfig.t() | nil,
           :createTime => DateTime.t() | nil,
           :dedicatedEndpointDns => String.t() | nil,
           :dedicatedEndpointEnabled => boolean() | nil,
@@ -71,6 +74,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
           :trafficSplit => map() | nil,
           :updateTime => DateTime.t() | nil
         }
+
+  field(:clientConnectionConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ClientConnectionConfig
+  )
 
   field(:createTime, as: DateTime)
   field(:dedicatedEndpointDns)
