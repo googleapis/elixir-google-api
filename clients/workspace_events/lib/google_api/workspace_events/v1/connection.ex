@@ -51,6 +51,21 @@ defmodule GoogleApi.WorkspaceEvents.V1.Connection do
       # View chat and spaces in Google Chat
       "https://www.googleapis.com/auth/chat.spaces.readonly",
 
+      # See, edit, create, and delete all of your Google Drive files
+      "https://www.googleapis.com/auth/drive",
+
+      # See, edit, create, and delete only the specific Google Drive files you use with this app
+      "https://www.googleapis.com/auth/drive.file",
+
+      # View and manage metadata of files in your Google Drive
+      "https://www.googleapis.com/auth/drive.metadata",
+
+      # See information about your Google Drive files
+      "https://www.googleapis.com/auth/drive.metadata.readonly",
+
+      # See and download all your Google Drive files
+      "https://www.googleapis.com/auth/drive.readonly",
+
       # Create, edit, and see information about your Google Meet conferences created by the app.
       "https://www.googleapis.com/auth/meetings.space.created",
 
