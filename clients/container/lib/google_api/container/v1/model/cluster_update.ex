@@ -26,6 +26,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredK8sBetaApis` (*type:* `GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t`, *default:* `nil`) - Desired Beta APIs to be enabled for cluster.
   *   `enableK8sBetaApis` (*type:* `GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t`, *default:* `nil`) - Kubernetes open source beta apis enabled on the cluster. Only beta apis
   *   `desiredLoggingConfig` (*type:* `GoogleApi.Container.V1.Model.LoggingConfig.t`, *default:* `nil`) - The desired logging configuration.
+  *   `desiredEnterpriseConfig` (*type:* `GoogleApi.Container.V1.Model.DesiredEnterpriseConfig.t`, *default:* `nil`) - The desired enterprise configuration for the cluster.
   *   `desiredGcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - The desired GCFS config for the cluster
   *   `desiredDefaultEnablePrivateNodes` (*type:* `boolean()`, *default:* `nil`) - Override the default setting of whether future created nodes have private IP addresses only, namely NetworkConfig.default_enable_private_nodes
   *   `desiredDatapathProvider` (*type:* `String.t`, *default:* `nil`) - The desired datapath provider for the cluster.
@@ -95,6 +96,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredK8sBetaApis => GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t() | nil,
           :enableK8sBetaApis => GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t() | nil,
           :desiredLoggingConfig => GoogleApi.Container.V1.Model.LoggingConfig.t() | nil,
+          :desiredEnterpriseConfig =>
+            GoogleApi.Container.V1.Model.DesiredEnterpriseConfig.t() | nil,
           :desiredGcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
           :desiredDefaultEnablePrivateNodes => boolean() | nil,
           :desiredDatapathProvider => String.t() | nil,
@@ -185,6 +188,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredK8sBetaApis, as: GoogleApi.Container.V1.Model.K8sBetaAPIConfig)
   field(:enableK8sBetaApis, as: GoogleApi.Container.V1.Model.K8sBetaAPIConfig)
   field(:desiredLoggingConfig, as: GoogleApi.Container.V1.Model.LoggingConfig)
+  field(:desiredEnterpriseConfig, as: GoogleApi.Container.V1.Model.DesiredEnterpriseConfig)
   field(:desiredGcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
   field(:desiredDefaultEnablePrivateNodes)
   field(:desiredDatapathProvider)
