@@ -22,6 +22,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo do
   ## Attributes
 
   *   `authorAttributions` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AuthorAttribution.t)`, *default:* `nil`) - This photo's authors.
+  *   `flagContentUri` (*type:* `String.t`, *default:* `nil`) - A link where users can flag a problem with the photo.
+  *   `googleMapsUri` (*type:* `String.t`, *default:* `nil`) - A link to show the photo on Google Maps.
   *   `heightPx` (*type:* `integer()`, *default:* `nil`) - The maximum available height, in pixels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. A reference representing this place photo which may be used to look up this place photo again (also called the API "resource" name: `places/{place_id}/photos/{photo}`).
   *   `widthPx` (*type:* `integer()`, *default:* `nil`) - The maximum available width, in pixels.
@@ -32,6 +34,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo do
   @type t :: %__MODULE__{
           :authorAttributions =>
             list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AuthorAttribution.t()) | nil,
+          :flagContentUri => String.t() | nil,
+          :googleMapsUri => String.t() | nil,
           :heightPx => integer() | nil,
           :name => String.t() | nil,
           :widthPx => integer() | nil
@@ -42,6 +46,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo do
     type: :list
   )
 
+  field(:flagContentUri)
+  field(:googleMapsUri)
   field(:heightPx)
   field(:name)
   field(:widthPx)

@@ -85,6 +85,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `parkingOptions` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceParkingOptions.t`, *default:* `nil`) - Options of parking provided by the place.
   *   `adrFormatAddress` (*type:* `String.t`, *default:* `nil`) - The place's address in adr microformat: http://microformats.org/wiki/adr.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique identifier of a place.
+  *   `googleMapsLinks` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGoogleMapsLinks.t`, *default:* `nil`) - Links to trigger different Google Maps actions.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -166,7 +167,9 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
           :parkingOptions =>
             GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceParkingOptions.t() | nil,
           :adrFormatAddress => String.t() | nil,
-          :id => String.t() | nil
+          :id => String.t() | nil,
+          :googleMapsLinks =>
+            GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGoogleMapsLinks.t() | nil
         }
 
   field(:liveMusic)
@@ -264,6 +267,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   field(:parkingOptions, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceParkingOptions)
   field(:adrFormatAddress)
   field(:id)
+  field(:googleMapsLinks, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGoogleMapsLinks)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do

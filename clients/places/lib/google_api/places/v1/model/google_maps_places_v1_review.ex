@@ -22,6 +22,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Review do
   ## Attributes
 
   *   `authorAttribution` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AuthorAttribution.t`, *default:* `nil`) - This review's author.
+  *   `flagContentUri` (*type:* `String.t`, *default:* `nil`) - A link where users can flag a problem with the review.
+  *   `googleMapsUri` (*type:* `String.t`, *default:* `nil`) - A link to show the review on Google Maps.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A reference representing this place review which may be used to look up this place review again (also called the API "resource" name: `places/{place_id}/reviews/{review}`).
   *   `originalText` (*type:* `GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t`, *default:* `nil`) - The review text in its original language.
   *   `publishTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp for the review.
@@ -35,6 +37,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Review do
   @type t :: %__MODULE__{
           :authorAttribution =>
             GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AuthorAttribution.t() | nil,
+          :flagContentUri => String.t() | nil,
+          :googleMapsUri => String.t() | nil,
           :name => String.t() | nil,
           :originalText => GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t() | nil,
           :publishTime => DateTime.t() | nil,
@@ -44,6 +48,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Review do
         }
 
   field(:authorAttribution, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AuthorAttribution)
+  field(:flagContentUri)
+  field(:googleMapsUri)
   field(:name)
   field(:originalText, as: GoogleApi.Places.V1.Model.GoogleTypeLocalizedText)
   field(:publishTime, as: DateTime)

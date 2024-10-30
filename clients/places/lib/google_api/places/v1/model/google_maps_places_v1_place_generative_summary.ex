@@ -22,7 +22,9 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGenerativeSummary do
   ## Attributes
 
   *   `description` (*type:* `GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t`, *default:* `nil`) - The detailed description of the place.
+  *   `descriptionFlagContentUri` (*type:* `String.t`, *default:* `nil`) - A link where users can flag a problem with the description summary.
   *   `overview` (*type:* `GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t`, *default:* `nil`) - The overview of the place.
+  *   `overviewFlagContentUri` (*type:* `String.t`, *default:* `nil`) - A link where users can flag a problem with the overview summary.
   *   `references` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1References.t`, *default:* `nil`) - References that are used to generate the summary description.
   """
 
@@ -30,12 +32,16 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGenerativeSummary do
 
   @type t :: %__MODULE__{
           :description => GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t() | nil,
+          :descriptionFlagContentUri => String.t() | nil,
           :overview => GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t() | nil,
+          :overviewFlagContentUri => String.t() | nil,
           :references => GoogleApi.Places.V1.Model.GoogleMapsPlacesV1References.t() | nil
         }
 
   field(:description, as: GoogleApi.Places.V1.Model.GoogleTypeLocalizedText)
+  field(:descriptionFlagContentUri)
   field(:overview, as: GoogleApi.Places.V1.Model.GoogleTypeLocalizedText)
+  field(:overviewFlagContentUri)
   field(:references, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1References)
 end
 
