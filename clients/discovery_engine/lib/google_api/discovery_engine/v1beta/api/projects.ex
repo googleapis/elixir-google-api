@@ -1730,6 +1730,85 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   end
 
   @doc """
+  Completes the user input with advanced keyword suggestions.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
+  *   `completion_config` (*type:* `String.t`) - Required. The completion_config of the parent dataStore or engine resource name for which the completion is performed, such as `projects/*/locations/global/collections/default_collection/dataStores/*/completionConfig` `projects/*/locations/global/collections/default_collection/engines/*/completionConfig`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec discoveryengine_projects_locations_collections_data_stores_completion_config_complete_query(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def discoveryengine_projects_locations_collections_data_stores_completion_config_complete_query(
+        connection,
+        completion_config,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta/{+completionConfig}:completeQuery", %{
+        "completionConfig" => URI.encode(completion_config, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse{}
+        ]
+    )
+  end
+
+  @doc """
   Imports CompletionSuggestions for a DataStore.
 
   ## Parameters
@@ -4124,6 +4203,85 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta/{+servingConfig}:search", %{
+        "servingConfig" => URI.encode(serving_config, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Performs a search. Similar to the SearchService.Search method, but a lite version that allows API key for authentication, where OAuth and IAM checks are not required. Only public website search is supported by this method. If data stores and engines not associated with public website search are specified, a `FAILED_PRECONDITION` error is returned. This method can be used for easy onboarding without having to implement an authentication backend. However, it is strongly recommended to use SearchService.Search instead with required OAuth and IAM checks to provide better data security.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
+  *   `serving_config` (*type:* `String.t`) - Required. The resource name of the Search serving config, such as `projects/*/locations/global/collections/default_collection/engines/*/servingConfigs/default_serving_config`, or `projects/*/locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`. This field is used to identify the serving configuration name, set of models used to make the search.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec discoveryengine_projects_locations_collections_data_stores_serving_configs_search_lite(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def discoveryengine_projects_locations_collections_data_stores_serving_configs_search_lite(
+        connection,
+        serving_config,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta/{+servingConfig}:searchLite", %{
         "servingConfig" => URI.encode(serving_config, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -6807,6 +6965,85 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   end
 
   @doc """
+  Completes the user input with advanced keyword suggestions.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
+  *   `completion_config` (*type:* `String.t`) - Required. The completion_config of the parent dataStore or engine resource name for which the completion is performed, such as `projects/*/locations/global/collections/default_collection/dataStores/*/completionConfig` `projects/*/locations/global/collections/default_collection/engines/*/completionConfig`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec discoveryengine_projects_locations_collections_engines_completion_config_complete_query(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def discoveryengine_projects_locations_collections_engines_completion_config_complete_query(
+        connection,
+        completion_config,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta/{+completionConfig}:completeQuery", %{
+        "completionConfig" => URI.encode(completion_config, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse{}
+        ]
+    )
+  end
+
+  @doc """
   Creates a Control. By default 1000 controls are allowed for a data store. A request can be submitted to adjust this limit. If the Control to create already exists, an ALREADY_EXISTS error is returned.
 
   ## Parameters
@@ -8288,6 +8525,85 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta/{+servingConfig}:search", %{
+        "servingConfig" => URI.encode(serving_config, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Performs a search. Similar to the SearchService.Search method, but a lite version that allows API key for authentication, where OAuth and IAM checks are not required. Only public website search is supported by this method. If data stores and engines not associated with public website search are specified, a `FAILED_PRECONDITION` error is returned. This method can be used for easy onboarding without having to implement an authentication backend. However, it is strongly recommended to use SearchService.Search instead with required OAuth and IAM checks to provide better data security.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
+  *   `serving_config` (*type:* `String.t`) - Required. The resource name of the Search serving config, such as `projects/*/locations/global/collections/default_collection/engines/*/servingConfigs/default_serving_config`, or `projects/*/locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`. This field is used to identify the serving configuration name, set of models used to make the search.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec discoveryengine_projects_locations_collections_engines_serving_configs_search_lite(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def discoveryengine_projects_locations_collections_engines_serving_configs_search_lite(
+        connection,
+        serving_config,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta/{+servingConfig}:searchLite", %{
         "servingConfig" => URI.encode(serving_config, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -10333,6 +10649,85 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
         [
           struct:
             %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleLongrunningListOperationsResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Completes the user input with advanced keyword suggestions.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
+  *   `completion_config` (*type:* `String.t`) - Required. The completion_config of the parent dataStore or engine resource name for which the completion is performed, such as `projects/*/locations/global/collections/default_collection/dataStores/*/completionConfig` `projects/*/locations/global/collections/default_collection/engines/*/completionConfig`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec discoveryengine_projects_locations_data_stores_completion_config_complete_query(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def discoveryengine_projects_locations_data_stores_completion_config_complete_query(
+        connection,
+        completion_config,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta/{+completionConfig}:completeQuery", %{
+        "completionConfig" => URI.encode(completion_config, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAdvancedCompleteQueryResponse{}
         ]
     )
   end
@@ -12500,6 +12895,85 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1beta/{+servingConfig}:search", %{
+        "servingConfig" => URI.encode(serving_config, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse{}
+        ]
+    )
+  end
+
+  @doc """
+  Performs a search. Similar to the SearchService.Search method, but a lite version that allows API key for authentication, where OAuth and IAM checks are not required. Only public website search is supported by this method. If data stores and engines not associated with public website search are specified, a `FAILED_PRECONDITION` error is returned. This method can be used for easy onboarding without having to implement an authentication backend. However, it is strongly recommended to use SearchService.Search instead with required OAuth and IAM checks to provide better data security.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
+  *   `serving_config` (*type:* `String.t`) - Required. The resource name of the Search serving config, such as `projects/*/locations/global/collections/default_collection/engines/*/servingConfigs/default_serving_config`, or `projects/*/locations/global/collections/default_collection/dataStores/default_data_store/servingConfigs/default_serving_config`. This field is used to identify the serving configuration name, set of models used to make the search.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec discoveryengine_projects_locations_data_stores_serving_configs_search_lite(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def discoveryengine_projects_locations_data_stores_serving_configs_search_lite(
+        connection,
+        serving_config,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta/{+servingConfig}:searchLite", %{
         "servingConfig" => URI.encode(serving_config, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
