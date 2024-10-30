@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.PySparkJob do
   @moduledoc """
-  A Dataproc job for running Apache PySpark (https://spark.apache.org/docs/0.9.0/python-programming-guide.html) applications on YARN.
+  A Dataproc job for running Apache PySpark (https://spark.apache.org/docs/latest/api/python/index.html#pyspark-overview) applications on YARN.
 
   ## Attributes
 
