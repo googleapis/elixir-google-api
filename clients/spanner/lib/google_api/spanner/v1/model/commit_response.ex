@@ -23,17 +23,20 @@ defmodule GoogleApi.Spanner.V1.Model.CommitResponse do
 
   *   `commitStats` (*type:* `GoogleApi.Spanner.V1.Model.CommitStats.t`, *default:* `nil`) - The statistics about this Commit. Not returned by default. For more information, see CommitRequest.return_commit_stats.
   *   `commitTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - The Cloud Spanner timestamp at which the transaction committed.
+  *   `precommitToken` (*type:* `GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t`, *default:* `nil`) - If specified, transaction has not committed yet. Clients must retry the commit with the new precommit token.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :commitStats => GoogleApi.Spanner.V1.Model.CommitStats.t() | nil,
-          :commitTimestamp => DateTime.t() | nil
+          :commitTimestamp => DateTime.t() | nil,
+          :precommitToken => GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t() | nil
         }
 
   field(:commitStats, as: GoogleApi.Spanner.V1.Model.CommitStats)
   field(:commitTimestamp, as: DateTime)
+  field(:precommitToken, as: GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CommitResponse do
