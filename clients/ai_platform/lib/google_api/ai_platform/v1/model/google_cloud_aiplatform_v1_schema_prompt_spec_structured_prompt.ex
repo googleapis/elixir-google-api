@@ -23,8 +23,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecS
 
   *   `context` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t`, *default:* `nil`) - Preamble: The context of the prompt.
   *   `examples` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecPartList.t)`, *default:* `nil`) - Preamble: A set of examples for expected model response.
+  *   `infillPrefix` (*type:* `String.t`, *default:* `nil`) - Preamble: For infill prompt, the prefix before expected model response.
+  *   `infillSuffix` (*type:* `String.t`, *default:* `nil`) - Preamble: For infill prompt, the suffix after expected model response.
   *   `inputPrefixes` (*type:* `list(String.t)`, *default:* `nil`) - Preamble: The input prefixes before each example input.
   *   `outputPrefixes` (*type:* `list(String.t)`, *default:* `nil`) - Preamble: The output prefixes before each example output.
+  *   `predictionInputs` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecPartList.t)`, *default:* `nil`) - Preamble: The input test data for prediction. Each PartList in this field represents one text-only input set for a single model request.
   *   `promptMessage` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage.t`, *default:* `nil`) - The prompt message.
   """
 
@@ -37,8 +40,15 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecS
               GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecPartList.t()
             )
             | nil,
+          :infillPrefix => String.t() | nil,
+          :infillSuffix => String.t() | nil,
           :inputPrefixes => list(String.t()) | nil,
           :outputPrefixes => list(String.t()) | nil,
+          :predictionInputs =>
+            list(
+              GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecPartList.t()
+            )
+            | nil,
           :promptMessage =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage.t()
             | nil
@@ -51,8 +61,15 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecS
     type: :list
   )
 
+  field(:infillPrefix)
+  field(:infillSuffix)
   field(:inputPrefixes, type: :list)
   field(:outputPrefixes, type: :list)
+
+  field(:predictionInputs,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecPartList,
+    type: :list
+  )
 
   field(:promptMessage,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecPromptMessage

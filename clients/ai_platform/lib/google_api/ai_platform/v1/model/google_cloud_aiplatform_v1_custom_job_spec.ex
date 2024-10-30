@@ -30,7 +30,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec do
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the Job should be peered. For example, `projects/12345/global/networks/myVPC`. [Format](/compute/docs/reference/rest/v1/networks/insert) is of the form `projects/{project}/global/networks/{network}`. Where {project} is a project number, as in `12345`, and {network} is a network name. To specify this field, you must have already [configured VPC Network Peering for Vertex AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering). If this field is left unspecified, the job is not peered with any network.
   *   `persistentResourceId` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of the PersistentResource in the same Project and Location which to run If this is specified, the job will be run on existing machines held by the PersistentResource instead of on-demand short-live machines. The network and CMEK configs on the job should be consistent with those on the PersistentResource, otherwise, the job will be rejected.
   *   `protectedArtifactLocationId` (*type:* `String.t`, *default:* `nil`) - The ID of the location to store protected artifacts. e.g. us-central1. Populate only when the location is different than CustomJob location. List of supported locations: https://cloud.google.com/vertex-ai/docs/general/locations
-  *   `pscInterfaceConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PscInterfaceConfig.t`, *default:* `nil`) - Optional. Configuration for PSC-I for CustomJob.
   *   `reservedIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of names for the reserved ip ranges under the VPC network that can be used for this job. If set, we will deploy the job within the provided ip ranges. Otherwise, the job will be deployed to any ip ranges under the provided VPC network. Example: ['vertex-ai-ip-range'].
   *   `scheduling` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Scheduling.t`, *default:* `nil`) - Scheduling options for a CustomJob.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Specifies the service account for workload run-as account. Users submitting jobs must have act-as permission on this run-as account. If unspecified, the [Vertex AI Custom Code Service Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents) for the CustomJob's project is used.
@@ -51,8 +50,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec do
           :network => String.t() | nil,
           :persistentResourceId => String.t() | nil,
           :protectedArtifactLocationId => String.t() | nil,
-          :pscInterfaceConfig =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PscInterfaceConfig.t() | nil,
           :reservedIpRanges => list(String.t()) | nil,
           :scheduling =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Scheduling.t() | nil,
@@ -74,11 +71,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec do
   field(:network)
   field(:persistentResourceId)
   field(:protectedArtifactLocationId)
-
-  field(:pscInterfaceConfig,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PscInterfaceConfig
-  )
-
   field(:reservedIpRanges, type: :list)
   field(:scheduling, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Scheduling)
   field(:serviceAccount)

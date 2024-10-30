@@ -35,6 +35,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
   *   `privateEndpoints` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateEndpoints.t`, *default:* `nil`) - Output only. Provide paths for users to send predict/explain/health requests directly to the deployed model services running on Cloud via private services access. This field is populated if network is configured.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account that the DeployedModel's container runs as. Specify the email address of the service account. If this service account is not specified, the container runs as a service account that doesn't have access to the resource project. Users deploying the Model must have the `iam.serviceAccounts.actAs` permission on this service account.
   *   `sharedResources` (*type:* `String.t`, *default:* `nil`) - The resource name of the shared DeploymentResourcePool to deploy on. Format: `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+  *   `systemLabels` (*type:* `map()`, *default:* `nil`) - System labels to apply to Model Garden deployments. System labels are managed by Google for internal use only.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -57,7 +58,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
           :privateEndpoints =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateEndpoints.t() | nil,
           :serviceAccount => String.t() | nil,
-          :sharedResources => String.t() | nil
+          :sharedResources => String.t() | nil,
+          :systemLabels => map() | nil
         }
 
   field(:automaticResources,
@@ -87,6 +89,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
 
   field(:serviceAccount)
   field(:sharedResources)
+  field(:systemLabels, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
