@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `answerGenerationSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpec.t`, *default:* `nil`) - Answer generation specification.
   *   `asynchronousMode` (*type:* `boolean()`, *default:* `nil`) - Deprecated: This field is deprecated. Streaming Answer API will be supported. Asynchronous mode control. If enabled, the response will be returned with answer/session resource name without final answer. The API users need to do the polling to get the latest status of answer/session by calling ConversationalSearchService.GetAnswer or ConversationalSearchService.GetSession method.
+  *   `groundingSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestGroundingSpec.t`, *default:* `nil`) - Optional. Grounding specification.
   *   `query` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaQuery.t`, *default:* `nil`) - Required. Current user query.
   *   `queryUnderstandingSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestQueryUnderstandingSpec.t`, *default:* `nil`) - Query understanding specification.
   *   `relatedQuestionsSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestRelatedQuestionsSpec.t`, *default:* `nil`) - Related questions specification.
@@ -40,6 +41,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpec.t()
             | nil,
           :asynchronousMode => boolean() | nil,
+          :groundingSpec =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestGroundingSpec.t()
+            | nil,
           :query =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaQuery.t() | nil,
           :queryUnderstandingSpec =>
@@ -65,6 +69,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   )
 
   field(:asynchronousMode)
+
+  field(:groundingSpec,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestGroundingSpec
+  )
+
   field(:query, as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaQuery)
 
   field(:queryUnderstandingSpec,
