@@ -24,7 +24,7 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistItemListResponse do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - 
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.PlaylistItem.t)`, *default:* `nil`) - A list of playlist items that match the request criteria.
-  *   `kind` (*type:* `String.t`, *default:* `youtube#playlistItemListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#playlistItemListResponse". Etag of this resource.
+  *   `kind` (*type:* `String.t`, *default:* `youtube#playlistItemListResponse`) - Identifies what kind of resource this is. Value: the fixed string "youtube#playlistItemListResponse".
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the next page in the result set.
   *   `pageInfo` (*type:* `GoogleApi.YouTube.V3.Model.PageInfo.t`, *default:* `nil`) - General pagination information.
   *   `prevPageToken` (*type:* `String.t`, *default:* `nil`) - The token that can be used as the value of the pageToken parameter to retrieve the previous page in the result set.
