@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1RemoveIpOverrideRequest do
   @moduledoc """
-  The removeIpOverride request message.
+  The RemoveIpOverride request message.
 
   ## Attributes
 
