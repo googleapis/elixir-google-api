@@ -65,6 +65,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `ethernetMacAddress` (*type:* `String.t`, *default:* `nil`) - The device's MAC address on the ethernet network interface.
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the organizational unit. orgUnitPath is the human readable version of orgUnitId. While orgUnitPath may change by renaming an organizational unit within the path, orgUnitId is unchangeable for one organizational unit. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's operating system version.
+  *   `diskSpaceUsage` (*type:* `GoogleApi.Admin.Directory_v1.Model.ByteUsage.t`, *default:* `nil`) - Output only. How much disk space the device has available and is currently using.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the device.
   *   `systemRamFreeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t)`, *default:* `nil`) - Reports of amounts of available RAM memory (Read-only)
@@ -129,6 +130,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :ethernetMacAddress => String.t() | nil,
           :orgUnitId => String.t() | nil,
           :osVersion => String.t() | nil,
+          :diskSpaceUsage => GoogleApi.Admin.Directory_v1.Model.ByteUsage.t() | nil,
           :etag => String.t() | nil,
           :status => String.t() | nil,
           :systemRamFreeReports =>
@@ -216,6 +218,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   field(:ethernetMacAddress)
   field(:orgUnitId)
   field(:osVersion)
+  field(:diskSpaceUsage, as: GoogleApi.Admin.Directory_v1.Model.ByteUsage)
   field(:etag)
   field(:status)
 
