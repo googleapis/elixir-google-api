@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport do
 
   *   `containers` (*type:* `%{optional(String.t) => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t}`, *default:* `nil`) - Per container information. Key: container name.
   *   `cpuTime` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.CPUTime.t)`, *default:* `nil`) - CPU utilization samples.
+  *   `gpuUsage` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.GPUUsage.t)`, *default:* `nil`) - Optional. GPU usage samples.
   *   `memoryInfo` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.MemInfo.t)`, *default:* `nil`) - Memory utilization samples.
   """
 
@@ -33,11 +34,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport do
             %{optional(String.t()) => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t()}
             | nil,
           :cpuTime => list(GoogleApi.Dataflow.V1b3.Model.CPUTime.t()) | nil,
+          :gpuUsage => list(GoogleApi.Dataflow.V1b3.Model.GPUUsage.t()) | nil,
           :memoryInfo => list(GoogleApi.Dataflow.V1b3.Model.MemInfo.t()) | nil
         }
 
   field(:containers, as: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport, type: :map)
   field(:cpuTime, as: GoogleApi.Dataflow.V1b3.Model.CPUTime, type: :list)
+  field(:gpuUsage, as: GoogleApi.Dataflow.V1b3.Model.GPUUsage, type: :list)
   field(:memoryInfo, as: GoogleApi.Dataflow.V1b3.Model.MemInfo, type: :list)
 end
 
