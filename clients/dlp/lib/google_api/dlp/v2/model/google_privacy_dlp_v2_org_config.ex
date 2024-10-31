@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OrgConfig do
   ## Attributes
 
   *   `location` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryStartingLocation.t`, *default:* `nil`) - The data to scan: folder, org, or project
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project that will run the scan. The DLP service account that exists within this project must have access to all resources that are profiled, and the Cloud DLP API must be enabled.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project that will run the scan. The DLP service account that exists within this project must have access to all resources that are profiled, and the DLP API must be enabled.
   """
 
   use GoogleApi.Gax.ModelBase

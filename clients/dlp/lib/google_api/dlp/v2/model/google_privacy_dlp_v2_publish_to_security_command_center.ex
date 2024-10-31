@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToSecurityCommandCenter do
   @moduledoc """
-  If set, a summary finding will be created/updated in SCC for each profile.
+  If set, a summary finding will be created or updated in Security Command Center for each profile.
 
   ## Attributes
 
