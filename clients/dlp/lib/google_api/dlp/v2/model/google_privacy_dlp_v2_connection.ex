@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Connection do
   @moduledoc """
-  A data connection to allow DLP to profile data in locations that require additional configuration.
+  A data connection to allow the DLP API to profile data in locations that require additional configuration.
 
   ## Attributes
 
