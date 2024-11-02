@@ -28,7 +28,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user provided metadata. Labels currently defined: 1. migrate_from_go= If set to true, the MS is created in migration ready mode.
   *   `managementUri` (*type:* `GoogleApi.BackupDR.V1.Model.ManagementURI.t`, *default:* `nil`) - Output only. The hostname or ip address of the exposed AGM endpoints, used by clients to connect to AGM/RD graphical user interface and APIs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name.
-  *   `networks` (*type:* `list(GoogleApi.BackupDR.V1.Model.NetworkConfig.t)`, *default:* `nil`) - Required. VPC networks to which the ManagementServer instance is connected. For this version, only a single network is supported.
+  *   `networks` (*type:* `list(GoogleApi.BackupDR.V1.Model.NetworkConfig.t)`, *default:* `nil`) - Optional. VPC networks to which the ManagementServer instance is connected. For this version, only a single network is supported. This field is optional if MS is created without PSA
   *   `oauth2ClientId` (*type:* `String.t`, *default:* `nil`) - Output only. The OAuth 2.0 client id is required to make API calls to the BackupDR instance API of this ManagementServer. This is the value that should be provided in the 'aud' field of the OIDC ID Token (see openid specification https://openid.net/specs/openid-connect-core-1_0.html#IDToken).
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
