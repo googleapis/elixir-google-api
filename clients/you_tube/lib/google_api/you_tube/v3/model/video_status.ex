@@ -21,6 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
 
   ## Attributes
 
+  *   `containsSyntheticMedia` (*type:* `boolean()`, *default:* `nil`) - Indicates if the video contains altered or synthetic media.
   *   `embeddable` (*type:* `boolean()`, *default:* `nil`) - This value indicates if the video can be embedded on another website. @mutable youtube.videos.insert youtube.videos.update
   *   `failureReason` (*type:* `String.t`, *default:* `nil`) - This value explains why a video failed to upload. This property is only present if the uploadStatus property indicates that the upload failed.
   *   `license` (*type:* `String.t`, *default:* `nil`) - The video's license. @mutable youtube.videos.insert youtube.videos.update
@@ -36,6 +37,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :containsSyntheticMedia => boolean() | nil,
           :embeddable => boolean() | nil,
           :failureReason => String.t() | nil,
           :license => String.t() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoStatus do
           :uploadStatus => String.t() | nil
         }
 
+  field(:containsSyntheticMedia)
   field(:embeddable)
   field(:failureReason)
   field(:license)
