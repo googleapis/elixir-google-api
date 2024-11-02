@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Generator do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the generator, unique within the agent. The prompt contains pre-defined parameters such as $conversation, $last-user-utterance, etc. populated by Dialogflow. It can also contain custom placeholders which will be resolved during fulfillment.
+  *   `modelParameter` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3GeneratorModelParameter.t`, *default:* `nil`) - Parameters passed to the LLM to configure its behavior.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the generator. Must be set for the Generators.UpdateGenerator method. Generators.CreateGenerate populates the name automatically. Format: `projects//locations//agents//generators/`.
   *   `placeholders` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3GeneratorPlaceholder.t)`, *default:* `nil`) - Optional. List of custom placeholders in the prompt text.
   *   `promptText` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Phrase.t`, *default:* `nil`) - Required. Prompt for the LLM model.
@@ -31,6 +32,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Generator do
 
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
+          :modelParameter =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3GeneratorModelParameter.t()
+            | nil,
           :name => String.t() | nil,
           :placeholders =>
             list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3GeneratorPlaceholder.t())
@@ -39,6 +43,11 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Generator do
         }
 
   field(:displayName)
+
+  field(:modelParameter,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3GeneratorModelParameter
+  )
+
   field(:name)
 
   field(:placeholders,
