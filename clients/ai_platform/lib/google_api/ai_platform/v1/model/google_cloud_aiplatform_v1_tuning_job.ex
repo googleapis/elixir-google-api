@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningJob do
 
   ## Attributes
 
-  *   `baseModel` (*type:* `String.t`, *default:* `nil`) - The base model that is being tuned, e.g., "gemini-1.0-pro-002".
+  *   `baseModel` (*type:* `String.t`, *default:* `nil`) - The base model that is being tuned, e.g., "gemini-1.0-pro-002". .
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the TuningJob was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the TuningJob.
   *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key options for a TuningJob. If this is set, then all resources created by the TuningJob will be encrypted with the provided encryption key.

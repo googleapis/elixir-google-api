@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookExecutionJob was created.
+  *   `customEnvironmentSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobCustomEnvironmentSpec.t`, *default:* `nil`) - The custom compute configuration for an execution job.
   *   `dataformRepositorySource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobDataformRepositorySource.t`, *default:* `nil`) - The Dataform Repository pointing to a single file notebook repository.
   *   `directNotebookSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobDirectNotebookSource.t`, *default:* `nil`) - The contents of an input notebook file.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the NotebookExecutionJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -44,6 +45,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :customEnvironmentSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobCustomEnvironmentSpec.t()
+            | nil,
           :dataformRepositorySource =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobDataformRepositorySource.t()
             | nil,
@@ -70,6 +74,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
         }
 
   field(:createTime, as: DateTime)
+
+  field(:customEnvironmentSpec,
+    as:
+      GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobCustomEnvironmentSpec
+  )
 
   field(:dataformRepositorySource,
     as:
