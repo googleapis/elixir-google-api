@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
   @moduledoc """
-  Restricts access to Cloud Console and Google Cloud APIs for a set of users using Context-Aware Access. Next ID: 11
+  Restricts access to Cloud Console and Google Cloud APIs for a set of users using Context-Aware Access.
 
   ## Attributes
 
@@ -28,6 +28,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
   *   `reauthSettings` (*type:* `GoogleApi.AccessContextManager.V1.Model.ReauthSettings.t`, *default:* `nil`) - Optional. GCSL policy for the group key.
   *   `restrictedClientApplications` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.Application.t)`, *default:* `nil`) - Optional. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications.
   *   `scopedAccessSettings` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.ScopedAccessSettings.t)`, *default:* `nil`) - Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set.
+  *   `sessionSettings` (*type:* `GoogleApi.AccessContextManager.V1.Model.SessionSettings.t`, *default:* `nil`) - Optional. GCSL policy for the group key. Migrated from ReauthSettings
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
           :restrictedClientApplications =>
             list(GoogleApi.AccessContextManager.V1.Model.Application.t()) | nil,
           :scopedAccessSettings =>
-            list(GoogleApi.AccessContextManager.V1.Model.ScopedAccessSettings.t()) | nil
+            list(GoogleApi.AccessContextManager.V1.Model.ScopedAccessSettings.t()) | nil,
+          :sessionSettings => GoogleApi.AccessContextManager.V1.Model.SessionSettings.t() | nil
         }
 
   field(:accessLevels, type: :list)
@@ -59,6 +61,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
     as: GoogleApi.AccessContextManager.V1.Model.ScopedAccessSettings,
     type: :list
   )
+
+  field(:sessionSettings, as: GoogleApi.AccessContextManager.V1.Model.SessionSettings)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
