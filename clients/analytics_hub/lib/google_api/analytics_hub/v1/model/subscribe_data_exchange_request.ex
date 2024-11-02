@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.SubscribeDataExchangeRequest do
   ## Attributes
 
   *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The parent resource path of the Subscription. e.g. `projects/subscriberproject/locations/US`
+  *   `destinationDataset` (*type:* `GoogleApi.AnalyticsHub.V1.Model.DestinationDataset.t`, *default:* `nil`) - Optional. BigQuery destination dataset to create for the subscriber.
   *   `subscriberContact` (*type:* `String.t`, *default:* `nil`) - Email of the subscriber.
   *   `subscription` (*type:* `String.t`, *default:* `nil`) - Required. Name of the subscription to create. e.g. `subscription1`
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.SubscribeDataExchangeRequest do
 
   @type t :: %__MODULE__{
           :destination => String.t() | nil,
+          :destinationDataset => GoogleApi.AnalyticsHub.V1.Model.DestinationDataset.t() | nil,
           :subscriberContact => String.t() | nil,
           :subscription => String.t() | nil
         }
 
   field(:destination)
+  field(:destinationDataset, as: GoogleApi.AnalyticsHub.V1.Model.DestinationDataset)
   field(:subscriberContact)
   field(:subscription)
 end
