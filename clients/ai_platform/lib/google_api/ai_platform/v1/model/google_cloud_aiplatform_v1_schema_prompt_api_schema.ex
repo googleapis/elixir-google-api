@@ -25,6 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptApiSc
   *   `executions` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptInstancePromptExecution.t)`, *default:* `nil`) - A list of execution instances for constructing a ready-to-use prompt.
   *   `multimodalPrompt` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecMultimodalPrompt.t`, *default:* `nil`) - Multimodal prompt which embeds preambles to prompt string.
   *   `structuredPrompt` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecStructuredPrompt.t`, *default:* `nil`) - The prompt variation that stores preambles in separate fields.
+  *   `translationPrompt` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecTranslationPrompt.t`, *default:* `nil`) - The prompt variation for Translation use case.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,6 +42,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptApiSc
             | nil,
           :structuredPrompt =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecStructuredPrompt.t()
+            | nil,
+          :translationPrompt =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecTranslationPrompt.t()
             | nil
         }
 
@@ -57,6 +61,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptApiSc
 
   field(:structuredPrompt,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecStructuredPrompt
+  )
+
+  field(:translationPrompt,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPromptSpecTranslationPrompt
   )
 end
 
