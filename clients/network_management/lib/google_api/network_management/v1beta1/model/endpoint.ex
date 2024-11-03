@@ -27,7 +27,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   *   `cloudSqlInstance` (*type:* `String.t`, *default:* `nil`) - A [Cloud SQL](https://cloud.google.com/sql) instance URI.
   *   `forwardingRule` (*type:* `String.t`, *default:* `nil`) - A forwarding rule and its corresponding IP address represent the frontend configuration of a Google Cloud load balancer. Forwarding rules are also used for protocol forwarding, Private Service Connect and other network services to provide forwarding information in the control plane. Format: projects/{project}/global/forwardingRules/{id} or projects/{project}/regions/{region}/forwardingRules/{id}
   *   `forwardingRuleTarget` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the type of the target of the forwarding rule.
-  *   `gkeMasterCluster` (*type:* `String.t`, *default:* `nil`) - A cluster URI for [Google Kubernetes Engine master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
+  *   `fqdn` (*type:* `String.t`, *default:* `nil`) - DNS endpoint of [Google Kubernetes Engine cluster control plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture). Requires gke_master_cluster to be set, can't be used simultaneoulsly with ip_address.
+  *   `gkeMasterCluster` (*type:* `String.t`, *default:* `nil`) - A cluster URI for [Google Kubernetes Engine cluster control plane](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
   *   `instance` (*type:* `String.t`, *default:* `nil`) - A Compute Engine instance URI.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The IP address of the endpoint, which can be an external or internal IP.
   *   `loadBalancerId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the load balancer the forwarding rule points to. Empty for forwarding rules not related to load balancers.
@@ -52,6 +53,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
           :cloudSqlInstance => String.t() | nil,
           :forwardingRule => String.t() | nil,
           :forwardingRuleTarget => String.t() | nil,
+          :fqdn => String.t() | nil,
           :gkeMasterCluster => String.t() | nil,
           :instance => String.t() | nil,
           :ipAddress => String.t() | nil,
@@ -71,6 +73,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   field(:cloudSqlInstance)
   field(:forwardingRule)
   field(:forwardingRuleTarget)
+  field(:fqdn)
   field(:gkeMasterCluster)
   field(:instance)
   field(:ipAddress)
