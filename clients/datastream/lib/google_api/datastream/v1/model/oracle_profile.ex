@@ -24,9 +24,11 @@ defmodule GoogleApi.Datastream.V1.Model.OracleProfile do
   *   `connectionAttributes` (*type:* `map()`, *default:* `nil`) - Connection string attributes
   *   `databaseService` (*type:* `String.t`, *default:* `nil`) - Required. Database for the Oracle connection.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the Oracle connection.
+  *   `oracleAsmConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleAsmConfig.t`, *default:* `nil`) - Optional. Configuration for Oracle ASM connection.
   *   `oracleSslConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSslConfig.t`, *default:* `nil`) - Optional. SSL configuration for the Oracle connection.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the Oracle connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the Oracle connection, default value is 1521.
+  *   `secretManagerStoredPassword` (*type:* `String.t`, *default:* `nil`) - Optional. A reference to a Secret Manager resource name storing the Oracle connection password. Mutually exclusive with the `password` field.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the Oracle connection.
   """
 
@@ -36,18 +38,22 @@ defmodule GoogleApi.Datastream.V1.Model.OracleProfile do
           :connectionAttributes => map() | nil,
           :databaseService => String.t() | nil,
           :hostname => String.t() | nil,
+          :oracleAsmConfig => GoogleApi.Datastream.V1.Model.OracleAsmConfig.t() | nil,
           :oracleSslConfig => GoogleApi.Datastream.V1.Model.OracleSslConfig.t() | nil,
           :password => String.t() | nil,
           :port => integer() | nil,
+          :secretManagerStoredPassword => String.t() | nil,
           :username => String.t() | nil
         }
 
   field(:connectionAttributes, type: :map)
   field(:databaseService)
   field(:hostname)
+  field(:oracleAsmConfig, as: GoogleApi.Datastream.V1.Model.OracleAsmConfig)
   field(:oracleSslConfig, as: GoogleApi.Datastream.V1.Model.OracleSslConfig)
   field(:password)
   field(:port)
+  field(:secretManagerStoredPassword)
   field(:username)
 end
 

@@ -21,7 +21,9 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlSourceConfig do
 
   ## Attributes
 
+  *   `binaryLogPosition` (*type:* `GoogleApi.Datastream.V1.Model.BinaryLogPosition.t`, *default:* `nil`) - Use Binary log position based replication.
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - MySQL objects to exclude from the stream.
+  *   `gtid` (*type:* `GoogleApi.Datastream.V1.Model.Gtid.t`, *default:* `nil`) - Use GTID based replication.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - MySQL objects to retrieve from the source.
   *   `maxConcurrentBackfillTasks` (*type:* `integer()`, *default:* `nil`) - Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
   *   `maxConcurrentCdcTasks` (*type:* `integer()`, *default:* `nil`) - Maximum number of concurrent CDC tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
@@ -30,13 +32,17 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlSourceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :binaryLogPosition => GoogleApi.Datastream.V1.Model.BinaryLogPosition.t() | nil,
           :excludeObjects => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
+          :gtid => GoogleApi.Datastream.V1.Model.Gtid.t() | nil,
           :includeObjects => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
           :maxConcurrentBackfillTasks => integer() | nil,
           :maxConcurrentCdcTasks => integer() | nil
         }
 
+  field(:binaryLogPosition, as: GoogleApi.Datastream.V1.Model.BinaryLogPosition)
   field(:excludeObjects, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
+  field(:gtid, as: GoogleApi.Datastream.V1.Model.Gtid)
   field(:includeObjects, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
   field(:maxConcurrentBackfillTasks)
   field(:maxConcurrentCdcTasks)

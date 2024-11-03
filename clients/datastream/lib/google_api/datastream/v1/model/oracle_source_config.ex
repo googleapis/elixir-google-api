@@ -21,9 +21,11 @@ defmodule GoogleApi.Datastream.V1.Model.OracleSourceConfig do
 
   ## Attributes
 
+  *   `binaryLogParser` (*type:* `GoogleApi.Datastream.V1.Model.BinaryLogParser.t`, *default:* `nil`) - Use Binary Log Parser.
   *   `dropLargeObjects` (*type:* `GoogleApi.Datastream.V1.Model.DropLargeObjects.t`, *default:* `nil`) - Drop large object values.
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle objects to exclude from the stream.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle objects to include in the stream.
+  *   `logMiner` (*type:* `GoogleApi.Datastream.V1.Model.LogMiner.t`, *default:* `nil`) - Use LogMiner.
   *   `maxConcurrentBackfillTasks` (*type:* `integer()`, *default:* `nil`) - Maximum number of concurrent backfill tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used.
   *   `maxConcurrentCdcTasks` (*type:* `integer()`, *default:* `nil`) - Maximum number of concurrent CDC tasks. The number should be non-negative. If not set (or set to 0), the system's default value is used.
   *   `streamLargeObjects` (*type:* `GoogleApi.Datastream.V1.Model.StreamLargeObjects.t`, *default:* `nil`) - Stream large object values.
@@ -32,17 +34,21 @@ defmodule GoogleApi.Datastream.V1.Model.OracleSourceConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :binaryLogParser => GoogleApi.Datastream.V1.Model.BinaryLogParser.t() | nil,
           :dropLargeObjects => GoogleApi.Datastream.V1.Model.DropLargeObjects.t() | nil,
           :excludeObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
           :includeObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
+          :logMiner => GoogleApi.Datastream.V1.Model.LogMiner.t() | nil,
           :maxConcurrentBackfillTasks => integer() | nil,
           :maxConcurrentCdcTasks => integer() | nil,
           :streamLargeObjects => GoogleApi.Datastream.V1.Model.StreamLargeObjects.t() | nil
         }
 
+  field(:binaryLogParser, as: GoogleApi.Datastream.V1.Model.BinaryLogParser)
   field(:dropLargeObjects, as: GoogleApi.Datastream.V1.Model.DropLargeObjects)
   field(:excludeObjects, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
   field(:includeObjects, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
+  field(:logMiner, as: GoogleApi.Datastream.V1.Model.LogMiner)
   field(:maxConcurrentBackfillTasks)
   field(:maxConcurrentCdcTasks)
   field(:streamLargeObjects, as: GoogleApi.Datastream.V1.Model.StreamLargeObjects)

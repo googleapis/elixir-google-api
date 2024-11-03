@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastream.V1.Model.PostgresqlProfile do
   @moduledoc """
-  PostgreSQL database profile. Next ID: 7.
+  PostgreSQL database profile.
 
   ## Attributes
 
