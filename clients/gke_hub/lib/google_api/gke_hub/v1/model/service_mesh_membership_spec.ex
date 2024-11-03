@@ -21,6 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec do
 
   ## Attributes
 
+  *   `configApi` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the API that will be used for configuring the mesh workloads.
   *   `controlPlane` (*type:* `String.t`, *default:* `nil`) - Deprecated: use `management` instead Enables automatic control plane management.
   *   `management` (*type:* `String.t`, *default:* `nil`) - Optional. Enables automatic Service Mesh management.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :configApi => String.t() | nil,
           :controlPlane => String.t() | nil,
           :management => String.t() | nil
         }
 
+  field(:configApi)
   field(:controlPlane)
   field(:management)
 end
