@@ -28,6 +28,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
   *   `oci` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig.t`, *default:* `nil`) - OCI repo configuration for the cluster
   *   `preventDrift` (*type:* `boolean()`, *default:* `nil`) - Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts.
   *   `sourceFormat` (*type:* `String.t`, *default:* `nil`) - Specifies whether the Config Sync Repo is in "hierarchical" or "unstructured" mode.
+  *   `stopSyncing` (*type:* `boolean()`, *default:* `nil`) - Set to true to stop syncing configs for a single cluster. Default to false.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
           :metricsGcpServiceAccountEmail => String.t() | nil,
           :oci => GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig.t() | nil,
           :preventDrift => boolean() | nil,
-          :sourceFormat => String.t() | nil
+          :sourceFormat => String.t() | nil,
+          :stopSyncing => boolean() | nil
         }
 
   field(:allowVerticalScale)
@@ -49,6 +51,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
   field(:oci, as: GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig)
   field(:preventDrift)
   field(:sourceFormat)
+  field(:stopSyncing)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
