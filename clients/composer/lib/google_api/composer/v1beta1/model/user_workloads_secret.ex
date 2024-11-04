@@ -21,7 +21,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.UserWorkloadsSecret do
 
   ## Attributes
 
-  *   `data` (*type:* `map()`, *default:* `nil`) - Optional. The "data" field of Kubernetes Secret, organized in key-value pairs, which can contain sensitive values such as a password, a token, or a key. The values for all keys have to be base64-encoded strings. For details see: https://kubernetes.io/docs/concepts/configuration/secret/
+  *   `data` (*type:* `map()`, *default:* `nil`) - Optional. The "data" field of Kubernetes Secret, organized in key-value pairs, which can contain sensitive values such as a password, a token, or a key. The values for all keys have to be base64-encoded strings. For details see: https://kubernetes.io/docs/concepts/configuration/secret/ Example: { "example": "ZXhhbXBsZV92YWx1ZQ==", "another-example": "YW5vdGhlcl9leGFtcGxlX3ZhbHVl" }
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the Secret, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}/userWorkloadsSecrets/{userWorkloadsSecretId}"
   """
 
