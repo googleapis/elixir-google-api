@@ -22,7 +22,7 @@ defmodule GoogleApi.Eventarc.V1.Model.GoogleCloudEventarcV1PipelineDestinationAu
   ## Attributes
 
   *   `scope` (*type:* `String.t`, *default:* `nil`) - Optional. OAuth scope to be used for generating OAuth access token. If not specified, "https://www.googleapis.com/auth/cloud-platform" will be used.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Required. Service account email used to generate the [OAuth token](https://developers.google.com/identity/protocols/OAuth2). The principal who calls this API must have iam.serviceAccounts.actAs permission in the service account. See https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common for more information. Eventarc service agents must have roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline to create OAuth2 tokens for authenticated requests.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Required. Service account email used to generate the [OAuth token](https://developers.google.com/identity/protocols/OAuth2). The principal who calls this API must have iam.serviceAccounts.actAs permission in the service account. See https://cloud.google.com/iam/docs/understanding-service-accounts for more information. Eventarc service agents must have roles/roles/iam.serviceAccountTokenCreator role to allow Pipeline to create OAuth2 tokens for authenticated requests.
   """
 
   use GoogleApi.Gax.ModelBase
