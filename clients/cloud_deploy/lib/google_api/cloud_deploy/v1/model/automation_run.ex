@@ -35,7 +35,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRun do
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of the user-managed IAM service account that performs the operations against Cloud Deploy resources.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the `AutomationRun`.
   *   `stateDescription` (*type:* `String.t`, *default:* `nil`) - Output only. Explains the current state of the `AutomationRun`. Present only when an explanation is needed.
-  *   `targetId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the target that represents the promotion stage that initiates the `AutomationRun`. The value of this field is the last segment of a target name.
+  *   `targetId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the source target that initiates the `AutomationRun`. The value of this field is the last segment of a target name.
+  *   `timedPromoteReleaseOperation` (*type:* `GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseOperation.t`, *default:* `nil`) - Output only. Promotes a release to a specified 'Target' as defined in a Timed Promote Release rule.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the automationRun was updated.
   *   `waitUntilTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Earliest time the `AutomationRun` will attempt to resume. Wait-time is configured by `wait` in automation rule.
   """
@@ -61,6 +62,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRun do
           :state => String.t() | nil,
           :stateDescription => String.t() | nil,
           :targetId => String.t() | nil,
+          :timedPromoteReleaseOperation =>
+            GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseOperation.t() | nil,
           :updateTime => DateTime.t() | nil,
           :waitUntilTime => DateTime.t() | nil
         }
@@ -80,6 +83,11 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRun do
   field(:state)
   field(:stateDescription)
   field(:targetId)
+
+  field(:timedPromoteReleaseOperation,
+    as: GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseOperation
+  )
+
   field(:updateTime, as: DateTime)
   field(:waitUntilTime, as: DateTime)
 end

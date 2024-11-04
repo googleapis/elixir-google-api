@@ -22,16 +22,23 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRuleCondition do
   ## Attributes
 
   *   `targetsPresentCondition` (*type:* `GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition.t`, *default:* `nil`) - Optional. Details around targets enumerated in the rule.
+  *   `timedPromoteReleaseCondition` (*type:* `GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseCondition.t`, *default:* `nil`) - Optional. TimedPromoteReleaseCondition contains rule conditions specific to a an Automation with a timed promote release rule defined.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :targetsPresentCondition =>
-            GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition.t() | nil
+            GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition.t() | nil,
+          :timedPromoteReleaseCondition =>
+            GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseCondition.t() | nil
         }
 
   field(:targetsPresentCondition, as: GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition)
+
+  field(:timedPromoteReleaseCondition,
+    as: GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseCondition
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.AutomationRuleCondition do
