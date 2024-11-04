@@ -22,8 +22,8 @@ defmodule GoogleApi.Eventarc.V1.Model.GoogleCloudEventarcV1PipelineRetryPolicy d
   ## Attributes
 
   *   `maxAttempts` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of delivery attempts for any message. The value must be between 1 and 100. The default value for this field is 5.
-  *   `maxRetryDelay` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum amount of seconds to wait between retry attempts. The value must be between 0 and 600. The default value for this field is 60.
-  *   `minRetryDelay` (*type:* `String.t`, *default:* `nil`) - Optional. The minimum amount of seconds to wait between retry attempts. The value must be between 0 and 600. The default value for this field is 5.
+  *   `maxRetryDelay` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum amount of seconds to wait between retry attempts. The value must be between 1 and 600. The default value for this field is 60.
+  *   `minRetryDelay` (*type:* `String.t`, *default:* `nil`) - Optional. The minimum amount of seconds to wait between retry attempts. The value must be between 1 and 600. The default value for this field is 5.
   """
 
   use GoogleApi.Gax.ModelBase
