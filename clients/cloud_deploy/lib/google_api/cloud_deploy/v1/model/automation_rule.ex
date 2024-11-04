@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRule do
   *   `advanceRolloutRule` (*type:* `GoogleApi.CloudDeploy.V1.Model.AdvanceRolloutRule.t`, *default:* `nil`) - Optional. The `AdvanceRolloutRule` will automatically advance a successful Rollout.
   *   `promoteReleaseRule` (*type:* `GoogleApi.CloudDeploy.V1.Model.PromoteReleaseRule.t`, *default:* `nil`) - Optional. `PromoteReleaseRule` will automatically promote a release from the current target to a specified target.
   *   `repairRolloutRule` (*type:* `GoogleApi.CloudDeploy.V1.Model.RepairRolloutRule.t`, *default:* `nil`) - Optional. The `RepairRolloutRule` will automatically repair a failed rollout.
+  *   `timedPromoteReleaseRule` (*type:* `GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseRule.t`, *default:* `nil`) - Optional. The `TimedPromoteReleaseRule` will automatically promote a release from the current target(s) to the specified target(s) on a configured schedule.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,15 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRule do
   @type t :: %__MODULE__{
           :advanceRolloutRule => GoogleApi.CloudDeploy.V1.Model.AdvanceRolloutRule.t() | nil,
           :promoteReleaseRule => GoogleApi.CloudDeploy.V1.Model.PromoteReleaseRule.t() | nil,
-          :repairRolloutRule => GoogleApi.CloudDeploy.V1.Model.RepairRolloutRule.t() | nil
+          :repairRolloutRule => GoogleApi.CloudDeploy.V1.Model.RepairRolloutRule.t() | nil,
+          :timedPromoteReleaseRule =>
+            GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseRule.t() | nil
         }
 
   field(:advanceRolloutRule, as: GoogleApi.CloudDeploy.V1.Model.AdvanceRolloutRule)
   field(:promoteReleaseRule, as: GoogleApi.CloudDeploy.V1.Model.PromoteReleaseRule)
   field(:repairRolloutRule, as: GoogleApi.CloudDeploy.V1.Model.RepairRolloutRule)
+  field(:timedPromoteReleaseRule, as: GoogleApi.CloudDeploy.V1.Model.TimedPromoteReleaseRule)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.AutomationRule do
