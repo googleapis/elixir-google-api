@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PanelIn
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the panel.
+  *   `documents` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DocumentInfo.t)`, *default:* `nil`) - Optional. The document IDs associated with this panel.
   *   `panelId` (*type:* `String.t`, *default:* `nil`) - Required. The panel ID.
   *   `panelPosition` (*type:* `integer()`, *default:* `nil`) - The ordered position of the panel, if shown to the user with other panels. If set, then total_panels must also be set.
   *   `totalPanels` (*type:* `integer()`, *default:* `nil`) - The total number of panels, including this one, shown to the user. Must be set if panel_position is set.
@@ -31,12 +32,21 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PanelIn
 
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
+          :documents =>
+            list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DocumentInfo.t())
+            | nil,
           :panelId => String.t() | nil,
           :panelPosition => integer() | nil,
           :totalPanels => integer() | nil
         }
 
   field(:displayName)
+
+  field(:documents,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DocumentInfo,
+    type: :list
+  )
+
   field(:panelId)
   field(:panelPosition)
   field(:totalPanels)
