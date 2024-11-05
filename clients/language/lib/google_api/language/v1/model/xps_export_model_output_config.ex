@@ -25,8 +25,8 @@ defmodule GoogleApi.Language.V1.Model.XPSExportModelOutputConfig do
   *   `dockerFormat` (*type:* `GoogleApi.Language.V1.Model.XPSDockerFormat.t`, *default:* `nil`) - 
   *   `edgeTpuTfLiteFormat` (*type:* `GoogleApi.Language.V1.Model.XPSEdgeTpuTfLiteFormat.t`, *default:* `nil`) - 
   *   `exportFirebaseAuxiliaryInfo` (*type:* `boolean()`, *default:* `nil`) - For any model and format: If true, will additionally export FirebaseExportedModelInfo in a firebase.txt file.
-  *   `outputGcrUri` (*type:* `String.t`, *default:* `nil`) - The Google Contained Registry (GCR) path the exported files to be pushed to. This location is set if the exported format is DOCKDER.
-  *   `outputGcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage (GCS) directory where XPS will output the exported models and related files. Format: gs://bucket/directory
+  *   `outputGcrUri` (*type:* `String.t`, *default:* `nil`) - The Google Contained Registry path the exported files to be pushed to. This location is set if the exported format is DOCKDER.
+  *   `outputGcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage directory where XPS will output the exported models and related files. Format: gs://bucket/directory
   *   `tfJsFormat` (*type:* `GoogleApi.Language.V1.Model.XPSTfJsFormat.t`, *default:* `nil`) - 
   *   `tfLiteFormat` (*type:* `GoogleApi.Language.V1.Model.XPSTfLiteFormat.t`, *default:* `nil`) - 
   *   `tfSavedModelFormat` (*type:* `GoogleApi.Language.V1.Model.XPSTfSavedModelFormat.t`, *default:* `nil`) - 

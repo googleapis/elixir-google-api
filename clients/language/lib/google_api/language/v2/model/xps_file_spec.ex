@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V2.Model.XPSFileSpec do
   @moduledoc """
-  Spec of input and output files, on external file systems (CNS, GCS, etc).
+  Spec of input and output files, on external file systems (for example, Colossus Namespace System or Google Cloud Storage).
 
   ## Attributes
 

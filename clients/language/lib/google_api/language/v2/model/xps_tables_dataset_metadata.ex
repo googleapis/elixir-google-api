@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V2.Model.XPSTablesDatasetMetadata do
   @moduledoc """
-  Metadata for a dataset used for AutoML Tables. Next ID: 6
+  Metadata for a dataset used for AutoML Tables.
 
   ## Attributes
 

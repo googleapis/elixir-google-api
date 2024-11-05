@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V2.Model.XPSTrainResponse do
   @moduledoc """
-  Next ID: 18
+
 
   ## Attributes
 

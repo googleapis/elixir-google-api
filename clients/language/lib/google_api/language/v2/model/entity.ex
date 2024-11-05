@@ -24,7 +24,7 @@ defmodule GoogleApi.Language.V2.Model.Entity do
   *   `mentions` (*type:* `list(GoogleApi.Language.V2.Model.EntityMention.t)`, *default:* `nil`) - The mentions of this entity in the input document. The API currently supports proper noun mentions.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Metadata associated with the entity. For the metadata associated with other entity types, see the Type table below.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The representative name for the entity.
-  *   `sentiment` (*type:* `GoogleApi.Language.V2.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeEntitySentiment or if AnnotateTextRequest.Features.extract_entity_sentiment is set to true, this field will contain the aggregate sentiment expressed for this entity in the provided document.
+  *   `sentiment` (*type:* `GoogleApi.Language.V2.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeEntitySentimentRequest or if AnnotateTextRequest.Features.extract_entity_sentiment is set to true, this field will contain the aggregate sentiment expressed for this entity in the provided document.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The entity type.
   """
 

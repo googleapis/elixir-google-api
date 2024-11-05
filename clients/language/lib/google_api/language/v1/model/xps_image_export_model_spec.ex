@@ -21,7 +21,7 @@ defmodule GoogleApi.Language.V1.Model.XPSImageExportModelSpec do
 
   ## Attributes
 
-  *   `exportModelOutputConfig` (*type:* `list(GoogleApi.Language.V1.Model.XPSExportModelOutputConfig.t)`, *default:* `nil`) - Contains the model format and internal location of the model files to be exported/downloaded. Use the GCS bucket name which is provided via TrainRequest.gcs_bucket_name to store the model files.
+  *   `exportModelOutputConfig` (*type:* `list(GoogleApi.Language.V1.Model.XPSExportModelOutputConfig.t)`, *default:* `nil`) - Contains the model format and internal location of the model files to be exported/downloaded. Use the Google Cloud Storage bucket name which is provided via TrainRequest.gcs_bucket_name to store the model files.
   """
 
   use GoogleApi.Gax.ModelBase

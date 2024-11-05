@@ -22,7 +22,7 @@ defmodule GoogleApi.Language.V2.Model.XPSModelArtifactItem do
   ## Attributes
 
   *   `artifactFormat` (*type:* `String.t`, *default:* `nil`) - The model artifact format.
-  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage (GCS) uri that stores the model binary files.
+  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URI that stores the model binary files.
   """
 
   use GoogleApi.Gax.ModelBase
