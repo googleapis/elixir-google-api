@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
 
   ## Attributes
 
-  *   `addUserDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adding new users and profiles is disabled.
+  *   `addUserDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adding new users and profiles is disabled. For devices where managementMode is DEVICE_OWNER this field is ignored and the user is never allowed to add or remove users.
   *   `applications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t)`, *default:* `nil`) - Policy applied to apps. This can have at most 3,000 elements.
   *   `safeBootDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether rebooting the device into safe boot is disabled.
   *   `usageLog` (*type:* `GoogleApi.AndroidManagement.V1.Model.UsageLog.t`, *default:* `nil`) - Configuration of device activity logging.
