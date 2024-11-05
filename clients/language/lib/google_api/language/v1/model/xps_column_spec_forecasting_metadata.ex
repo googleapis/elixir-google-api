@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V1.Model.XPSColumnSpecForecastingMetadata do
   @moduledoc """
-  =========================================================================== # The fields below are used exclusively for Forecasting.
+
 
   ## Attributes
 

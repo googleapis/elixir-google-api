@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V1.Model.XPSTextComponentModel do
   @moduledoc """
-  Component model. Next ID: 10
+  Component model.
 
   ## Attributes
 

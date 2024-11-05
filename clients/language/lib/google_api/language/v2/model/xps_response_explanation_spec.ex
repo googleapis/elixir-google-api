@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V2.Model.XPSResponseExplanationSpec do
   @moduledoc """
-  Specification of Model explanation. Feature-based XAI in AutoML Vision ICN is deprecated, see b/288407203 for context.
+  Specification of Model explanation. Feature-based XAI in AutoML Vision ICN is deprecated.
 
   ## Attributes
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Language.V2.Model.EntityMention do
   ## Attributes
 
   *   `probability` (*type:* `number()`, *default:* `nil`) - Probability score associated with the entity. The score shows the probability of the entity mention being the entity type. The score is in (0, 1] range.
-  *   `sentiment` (*type:* `GoogleApi.Language.V2.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeEntitySentiment or if AnnotateTextRequest.Features.extract_entity_sentiment is set to true, this field will contain the sentiment expressed for this mention of the entity in the provided document.
+  *   `sentiment` (*type:* `GoogleApi.Language.V2.Model.Sentiment.t`, *default:* `nil`) - For calls to AnalyzeEntitySentimentRequest or if AnnotateTextRequest.Features.extract_entity_sentiment is set to true, this field will contain the sentiment expressed for this mention of the entity in the provided document.
   *   `text` (*type:* `GoogleApi.Language.V2.Model.TextSpan.t`, *default:* `nil`) - The mention text.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the entity mention.
   """

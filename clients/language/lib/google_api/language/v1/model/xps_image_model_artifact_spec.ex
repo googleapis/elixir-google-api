@@ -23,10 +23,10 @@ defmodule GoogleApi.Language.V1.Model.XPSImageModelArtifactSpec do
 
   *   `checkpointArtifact` (*type:* `GoogleApi.Language.V1.Model.XPSModelArtifactItem.t`, *default:* `nil`) - The Tensorflow checkpoint files. e.g. Used for resumable training.
   *   `exportArtifact` (*type:* `list(GoogleApi.Language.V1.Model.XPSModelArtifactItem.t)`, *default:* `nil`) - The model binary files in different formats for model export.
-  *   `labelGcsUri` (*type:* `String.t`, *default:* `nil`) - GCS uri of decoded labels file for model export 'dict.txt'.
+  *   `labelGcsUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI of decoded labels file for model export 'dict.txt'.
   *   `servingArtifact` (*type:* `GoogleApi.Language.V1.Model.XPSModelArtifactItem.t`, *default:* `nil`) - The default model binary file used for serving (e.g. online predict, batch predict) via public Cloud AI Platform API.
-  *   `tfJsBinaryGcsPrefix` (*type:* `String.t`, *default:* `nil`) - GCS uri prefix of Tensorflow JavaScript binary files 'groupX-shardXofX.bin' Deprecated.
-  *   `tfLiteMetadataGcsUri` (*type:* `String.t`, *default:* `nil`) - GCS uri of Tensorflow Lite metadata 'tflite_metadata.json'.
+  *   `tfJsBinaryGcsPrefix` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI prefix of Tensorflow JavaScript binary files 'groupX-shardXofX.bin'. Deprecated.
+  *   `tfLiteMetadataGcsUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI of Tensorflow Lite metadata 'tflite_metadata.json'.
   """
 
   use GoogleApi.Gax.ModelBase

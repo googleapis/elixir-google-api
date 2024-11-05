@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V1.Model.InfraUsage do
   @moduledoc """
-  Infra Usage of billing metrics. Next ID: 6
+  Infra Usage of billing metrics.
 
   ## Attributes
 

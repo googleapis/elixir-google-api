@@ -21,7 +21,7 @@ defmodule GoogleApi.Language.V2.Model.Sentiment do
 
   ## Attributes
 
-  *   `magnitude` (*type:* `number()`, *default:* `nil`) - A non-negative number in the [0, +inf) range, which represents the absolute magnitude of sentiment regardless of score (positive or negative).
+  *   `magnitude` (*type:* `number()`, *default:* `nil`) - A non-negative number in the [0, +inf] range, which represents the absolute magnitude of sentiment regardless of score (positive or negative).
   *   `score` (*type:* `number()`, *default:* `nil`) - Sentiment score between -1.0 (negative sentiment) and 1.0 (positive sentiment).
   """
 
