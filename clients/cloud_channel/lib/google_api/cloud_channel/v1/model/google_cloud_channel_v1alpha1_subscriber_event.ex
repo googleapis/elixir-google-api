@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1SubscriberEv
   *   `channelPartnerEvent` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1ChannelPartnerEvent.t`, *default:* `nil`) - Channel Partner event sent as part of Pub/Sub event to partners.
   *   `customerEvent` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1CustomerEvent.t`, *default:* `nil`) - Customer event sent as part of Pub/Sub event to partners.
   *   `entitlementEvent` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1EntitlementEvent.t`, *default:* `nil`) - Entitlement event sent as part of Pub/Sub event to partners.
+  *   `opportunityEvent` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1OpportunityEvent.t`, *default:* `nil`) - Opportunity event sent as part of Pub/Sub event to partners/integrators.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,9 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1SubscriberEv
           :customerEvent =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1CustomerEvent.t() | nil,
           :entitlementEvent =>
-            GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1EntitlementEvent.t() | nil
+            GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1EntitlementEvent.t() | nil,
+          :opportunityEvent =>
+            GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1OpportunityEvent.t() | nil
         }
 
   field(:channelPartnerEvent,
@@ -48,6 +51,10 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1SubscriberEv
 
   field(:entitlementEvent,
     as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1EntitlementEvent
+  )
+
+  field(:opportunityEvent,
+    as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1OpportunityEvent
   )
 end
 

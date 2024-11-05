@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1EntitlementEvent d
   ## Attributes
 
   *   `entitlement` (*type:* `String.t`, *default:* `nil`) - Resource name of an entitlement of the form: accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}
-  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Type of event which happened on the entitlement.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Type of event which happened for the entitlement.
   """
 
   use GoogleApi.Gax.ModelBase

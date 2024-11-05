@@ -22,15 +22,18 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1PurchasableOffer d
   ## Attributes
 
   *   `offer` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Offer.t`, *default:* `nil`) - Offer.
+  *   `priceReferenceId` (*type:* `String.t`, *default:* `nil`) - Optional. Price reference ID for the offer. Optional field only for offers that require additional price information. Used to guarantee that the pricing is consistent between quoting the offer and placing the order.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :offer => GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Offer.t() | nil
+          :offer => GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Offer.t() | nil,
+          :priceReferenceId => String.t() | nil
         }
 
   field(:offer, as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Offer)
+  field(:priceReferenceId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1PurchasableOffer do
