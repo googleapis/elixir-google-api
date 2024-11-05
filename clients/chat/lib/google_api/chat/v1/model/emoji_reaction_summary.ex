@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.EmojiReactionSummary do
 
   ## Attributes
 
-  *   `emoji` (*type:* `GoogleApi.Chat.V1.Model.Emoji.t`, *default:* `nil`) - Emoji associated with the reactions.
-  *   `reactionCount` (*type:* `integer()`, *default:* `nil`) - The total number of reactions using the associated emoji.
+  *   `emoji` (*type:* `GoogleApi.Chat.V1.Model.Emoji.t`, *default:* `nil`) - Output only. Emoji associated with the reactions.
+  *   `reactionCount` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of reactions using the associated emoji.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.Reaction do
 
   ## Attributes
 
-  *   `emoji` (*type:* `GoogleApi.Chat.V1.Model.Emoji.t`, *default:* `nil`) - The emoji used in the reaction.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the reaction. Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
+  *   `emoji` (*type:* `GoogleApi.Chat.V1.Model.Emoji.t`, *default:* `nil`) - Required. The emoji used in the reaction.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the reaction. Format: `spaces/{space}/messages/{message}/reactions/{reaction}`
   *   `user` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - Output only. The user who created the reaction.
   """
 
