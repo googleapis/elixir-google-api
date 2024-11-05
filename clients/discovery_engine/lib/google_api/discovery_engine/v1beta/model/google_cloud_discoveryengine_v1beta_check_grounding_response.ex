@@ -21,7 +21,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
-  *   `citedChunks` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaCheckGroundingResponseFactChunk.t)`, *default:* `nil`) - List of facts cited across all claims in the answer candidate. These are derived from the facts supplied in the request.
+  *   `citedChunks` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaFactChunk.t)`, *default:* `nil`) - List of facts cited across all claims in the answer candidate. These are derived from the facts supplied in the request.
+  *   `citedFacts` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaCheckGroundingResponseCheckGroundingFactChunk.t)`, *default:* `nil`) - List of facts cited across all claims in the answer candidate. These are derived from the facts supplied in the request.
   *   `claims` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaCheckGroundingResponseClaim.t)`, *default:* `nil`) - Claim texts and citation info across all claims in the answer candidate.
   *   `supportScore` (*type:* `number()`, *default:* `nil`) - The support score for the input answer candidate. Higher the score, higher is the fraction of claims that are supported by the provided facts. This is always set when a response is returned.
   """
@@ -31,7 +32,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   @type t :: %__MODULE__{
           :citedChunks =>
             list(
-              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaCheckGroundingResponseFactChunk.t()
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaFactChunk.t()
+            )
+            | nil,
+          :citedFacts =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaCheckGroundingResponseCheckGroundingFactChunk.t()
             )
             | nil,
           :claims =>
@@ -43,8 +49,13 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
         }
 
   field(:citedChunks,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaFactChunk,
+    type: :list
+  )
+
+  field(:citedFacts,
     as:
-      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaCheckGroundingResponseFactChunk,
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaCheckGroundingResponseCheckGroundingFactChunk,
     type: :list
   )
 

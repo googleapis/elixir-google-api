@@ -30,10 +30,12 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
   *   `engine` (*type:* `String.t`, *default:* `nil`) - The Engine resource name, in the form of `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`. Optional. Only required for Engine produced user events. For example, user events from blended search.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Only required for UserEventService.ImportUserEvents method. Timestamp of when the user event happened.
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - Required. User event type. Allowed values are: Generic values: * `search`: Search for Documents. * `view-item`: Detailed page view of a Document. * `view-item-list`: View of a panel or ordered list of Documents. * `view-home-page`: View of the home page. * `view-category-page`: View of a category page, e.g. Home > Men > Jeans * `add-feedback`: Add a user feedback. Retail-related values: * `add-to-cart`: Add an item(s) to cart, e.g. in Retail online shopping * `purchase`: Purchase an item(s) Media-related values: * `media-play`: Start/resume watching a video, playing a song, etc. * `media-complete`: Finished or stopped midway through a video, song, etc.
+  *   `feedback` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Feedback.t`, *default:* `nil`) - Optional. This field is optional except for the `add-feedback` event types.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - The filter syntax consists of an expression language for constructing a predicate from one or more fields of the documents being filtered. One example is for `search` events, the associated SearchRequest may contain a filter expression in SearchRequest.filter conforming to https://google.aip.dev/160#filtering. Similarly, for `view-item-list` events that are generated from a RecommendRequest, this field may be populated directly from RecommendRequest.filter conforming to https://google.aip.dev/160#filtering. The value must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
   *   `mediaInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1MediaInfo.t`, *default:* `nil`) - Media-specific info.
   *   `pageInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PageInfo.t`, *default:* `nil`) - Page metadata such as categories and other critical information for certain event types such as `view-category-page`.
   *   `panel` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PanelInfo.t`, *default:* `nil`) - Panel metadata associated with this user event.
+  *   `panels` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PanelInfo.t)`, *default:* `nil`) - Optional. List of panels associated with this event. Used for page-level impression data.
   *   `promotionIds` (*type:* `list(String.t)`, *default:* `nil`) - The promotion IDs if this is an event associated with promotions. Currently, this field is restricted to at most one ID.
   *   `searchInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchInfo.t`, *default:* `nil`) - SearchService.Search details related to the event. This field should be set for `search` event.
   *   `sessionId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for tracking a visitor session with a length limit of 128 bytes. A session is an aggregation of an end user behavior in a time span. A general guideline to populate the session_id: 1. If user has no activity for 30 min, a new session_id should be assigned. 2. The session_id should be unique across users, suggest use uuid or add UserEvent.user_pseudo_id as prefix.
@@ -64,6 +66,8 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
           :engine => String.t() | nil,
           :eventTime => DateTime.t() | nil,
           :eventType => String.t() | nil,
+          :feedback =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Feedback.t() | nil,
           :filter => String.t() | nil,
           :mediaInfo =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1MediaInfo.t() | nil,
@@ -71,6 +75,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PageInfo.t() | nil,
           :panel =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PanelInfo.t() | nil,
+          :panels =>
+            list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PanelInfo.t())
+            | nil,
           :promotionIds => list(String.t()) | nil,
           :searchInfo =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchInfo.t() | nil,
@@ -106,10 +113,17 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
   field(:engine)
   field(:eventTime, as: DateTime)
   field(:eventType)
+  field(:feedback, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Feedback)
   field(:filter)
   field(:mediaInfo, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1MediaInfo)
   field(:pageInfo, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PageInfo)
   field(:panel, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PanelInfo)
+
+  field(:panels,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PanelInfo,
+    type: :list
+  )
+
   field(:promotionIds, type: :list)
 
   field(:searchInfo, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchInfo)
