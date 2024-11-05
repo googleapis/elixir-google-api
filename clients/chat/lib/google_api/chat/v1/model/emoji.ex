@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.Emoji do
   ## Attributes
 
   *   `customEmoji` (*type:* `GoogleApi.Chat.V1.Model.CustomEmoji.t`, *default:* `nil`) - Output only. A custom emoji.
-  *   `unicode` (*type:* `String.t`, *default:* `nil`) - A basic emoji represented by a unicode string.
+  *   `unicode` (*type:* `String.t`, *default:* `nil`) - Optional. A basic emoji represented by a unicode string.
   """
 
   use GoogleApi.Gax.ModelBase
