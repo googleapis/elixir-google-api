@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CustomerEvent do
   ## Attributes
 
   *   `customer` (*type:* `String.t`, *default:* `nil`) - Resource name of the customer. Format: accounts/{account_id}/customers/{customer_id}
-  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Type of event which happened on the customer.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Type of event which happened for the customer.
   """
 
   use GoogleApi.Gax.ModelBase
