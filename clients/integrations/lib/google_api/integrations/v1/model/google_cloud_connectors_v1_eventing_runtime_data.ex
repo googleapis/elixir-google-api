@@ -25,6 +25,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntime
   *   `eventsListenerPscSa` (*type:* `String.t`, *default:* `nil`) - Output only. Events listener PSC Service attachment. The value will be populated after provisioning the events listener with private connectivity enabled.
   *   `status` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingStatus.t`, *default:* `nil`) - Output only. Current status of eventing.
   *   `webhookData` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeDataWebhookData.t`, *default:* `nil`) - Output only. Webhook data.
+  *   `webhookSubscriptions` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeDataWebhookSubscriptions.t`, *default:* `nil`) - Output only. Webhook subscriptions.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,6 +37,9 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntime
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingStatus.t() | nil,
           :webhookData =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeDataWebhookData.t()
+            | nil,
+          :webhookSubscriptions =>
+            GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeDataWebhookSubscriptions.t()
             | nil
         }
 
@@ -45,6 +49,11 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntime
 
   field(:webhookData,
     as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeDataWebhookData
+  )
+
+  field(:webhookSubscriptions,
+    as:
+      GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeDataWebhookSubscriptions
   )
 end
 
