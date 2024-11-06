@@ -21,7 +21,10 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ResourceUpdateErrorErrors do
 
   ## Attributes
 
+  *   `arguments` (*type:* `list(String.t)`, *default:* `nil`) - [Output Only] Optional error details WARNING: DO NOT MAKE VISIBLE This is for internal use-only (like componentization) (thus the visibility "none") and in case of public exposure it is strongly recommended to follow pattern of: https://aip.dev/193 and expose as details field.
   *   `code` (*type:* `String.t`, *default:* `nil`) - [Output Only] The error type identifier for this error.
+  *   `debugInfo` (*type:* `GoogleApi.DeploymentManager.V2.Model.DebugInfo.t`, *default:* `nil`) - 
+  *   `errorDetails` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.ResourceUpdateErrorErrorsErrorDetails.t)`, *default:* `nil`) - [Output Only] An optional list of messages that contain the error details. There is a set of defined message types to use for providing details.The syntax depends on the error code. For example, QuotaExceededInfo will have details when the error code is QUOTA_EXCEEDED.
   *   `location` (*type:* `String.t`, *default:* `nil`) - [Output Only] Indicates the field in the request that caused the error. This property is optional.
   *   `message` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional, human-readable error message.
   """
@@ -29,12 +32,25 @@ defmodule GoogleApi.DeploymentManager.V2.Model.ResourceUpdateErrorErrors do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :arguments => list(String.t()) | nil,
           :code => String.t() | nil,
+          :debugInfo => GoogleApi.DeploymentManager.V2.Model.DebugInfo.t() | nil,
+          :errorDetails =>
+            list(GoogleApi.DeploymentManager.V2.Model.ResourceUpdateErrorErrorsErrorDetails.t())
+            | nil,
           :location => String.t() | nil,
           :message => String.t() | nil
         }
 
+  field(:arguments, type: :list)
   field(:code)
+  field(:debugInfo, as: GoogleApi.DeploymentManager.V2.Model.DebugInfo)
+
+  field(:errorDetails,
+    as: GoogleApi.DeploymentManager.V2.Model.ResourceUpdateErrorErrorsErrorDetails,
+    type: :list
+  )
+
   field(:location)
   field(:message)
 end
