@@ -21,14 +21,14 @@ defmodule GoogleApi.Chat.V1.Model.PermissionSettings do
 
   ## Attributes
 
-  *   `manageApps` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Setting for managing apps in a space.
-  *   `manageMembersAndGroups` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Setting for managing members and groups in a space.
-  *   `manageWebhooks` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Setting for managing webhooks in a space.
-  *   `modifySpaceDetails` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Setting for updating space name, avatar, description and guidelines.
+  *   `manageApps` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Optional. Setting for managing apps in a space.
+  *   `manageMembersAndGroups` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Optional. Setting for managing members and groups in a space.
+  *   `manageWebhooks` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Optional. Setting for managing webhooks in a space.
+  *   `modifySpaceDetails` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Optional. Setting for updating space name, avatar, description and guidelines.
   *   `postMessages` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Output only. Setting for posting messages in a space.
-  *   `replyMessages` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Setting for replying to messages in a space.
-  *   `toggleHistory` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Setting for toggling space history on and off.
-  *   `useAtMentionAll` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Setting for using @all in a space.
+  *   `replyMessages` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Optional. Setting for replying to messages in a space.
+  *   `toggleHistory` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Optional. Setting for toggling space history on and off.
+  *   `useAtMentionAll` (*type:* `GoogleApi.Chat.V1.Model.PermissionSetting.t`, *default:* `nil`) - Optional. Setting for using @all in a space.
   """
 
   use GoogleApi.Gax.ModelBase

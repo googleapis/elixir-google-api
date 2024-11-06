@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.MembershipCount do
 
   ## Attributes
 
-  *   `joinedDirectHumanUserCount` (*type:* `integer()`, *default:* `nil`) - Count of human users that have directly joined the space, not counting users joined by having membership in a joined group.
-  *   `joinedGroupCount` (*type:* `integer()`, *default:* `nil`) - Count of all groups that have directly joined the space.
+  *   `joinedDirectHumanUserCount` (*type:* `integer()`, *default:* `nil`) - Output only. Count of human users that have directly joined the space, not counting users joined by having membership in a joined group.
+  *   `joinedGroupCount` (*type:* `integer()`, *default:* `nil`) - Output only. Count of all groups that have directly joined the space.
   """
 
   use GoogleApi.Gax.ModelBase

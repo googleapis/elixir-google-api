@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.PermissionSetting do
 
   ## Attributes
 
-  *   `managersAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether spaces managers have this permission.
-  *   `membersAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether non-manager members have this permission.
+  *   `managersAllowed` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether spaces managers have this permission.
+  *   `membersAllowed` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether non-manager members have this permission.
   """
 
   use GoogleApi.Gax.ModelBase
