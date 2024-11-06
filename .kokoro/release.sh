@@ -23,6 +23,7 @@ pushd $(dirname "$0")/../
 export HEX_API_KEY=$(cat ${KOKORO_KEYSTORE_DIR}/73713_elixir_hex_apikey)
 
 if [[ -z "${FREEZE_RELEASES}" ]]; then
+  mix local.hex --force
   mix deps.get
   mix google_apis.publish
 else
