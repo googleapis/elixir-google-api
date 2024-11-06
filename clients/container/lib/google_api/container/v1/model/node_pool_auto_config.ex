@@ -21,6 +21,7 @@ defmodule GoogleApi.Container.V1.Model.NodePoolAutoConfig do
 
   ## Attributes
 
+  *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Output only. Configuration options for Linux nodes.
   *   `networkTags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The list of instance tags applied to all nodes. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during cluster creation. Each tag within the list must comply with RFC1035.
   *   `nodeKubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - NodeKubeletConfig controls the defaults for autoprovisioned node-pools. Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
   *   `resourceManagerTags` (*type:* `GoogleApi.Container.V1.Model.ResourceManagerTags.t`, *default:* `nil`) - Resource manager tag keys and values to be attached to the nodes for managing Compute Engine firewalls using Network Firewall Policies.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Container.V1.Model.NodePoolAutoConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
           :networkTags => GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
           :nodeKubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil,
           :resourceManagerTags => GoogleApi.Container.V1.Model.ResourceManagerTags.t() | nil
         }
 
+  field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
   field(:networkTags, as: GoogleApi.Container.V1.Model.NetworkTags)
   field(:nodeKubeletConfig, as: GoogleApi.Container.V1.Model.NodeKubeletConfig)
   field(:resourceManagerTags, as: GoogleApi.Container.V1.Model.ResourceManagerTags)
