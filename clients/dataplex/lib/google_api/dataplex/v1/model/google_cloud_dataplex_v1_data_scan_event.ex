@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEvent do
   @moduledoc """
-  These messages contain information about the execution of a datascan. The monitored resource is 'DataScan' Next ID: 13
+  These messages contain information about the execution of a datascan. The monitored resource is 'DataScan'
 
   ## Attributes
 
