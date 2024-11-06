@@ -25,7 +25,7 @@ defmodule GoogleApi.YouTube.V3.Model.VideoLiveStreamingDetails do
   *   `actualEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast actually ended. This value will not be available until the broadcast is over.
   *   `actualStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast actually started. This value will not be available until the broadcast begins.
   *   `concurrentViewers` (*type:* `String.t`, *default:* `nil`) - The number of viewers currently watching the broadcast. The property and its value will be present if the broadcast has current viewers and the broadcast owner has not hidden the viewcount for the video. Note that YouTube stops tracking the number of concurrent viewers for a broadcast when the broadcast ends. So, this property would not identify the number of viewers watching an archived video of a live broadcast that already ended.
-  *   `scheduledEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast is scheduled to end. If the value is empty or the property is not present, then the broadcast is scheduled to contiue indefinitely.
+  *   `scheduledEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast is scheduled to end. If the value is empty or the property is not present, then the broadcast is scheduled to continue indefinitely.
   *   `scheduledStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the broadcast is scheduled to begin.
   """
 
