@@ -57,6 +57,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredIdentityServiceConfig` (*type:* `GoogleApi.Container.V1.Model.IdentityServiceConfig.t`, *default:* `nil`) - The desired Identity Service component configuration.
   *   `desiredEnablePrivateEndpoint` (*type:* `boolean()`, *default:* `nil`) - Enable/Disable private endpoint for the cluster's master. Deprecated: Use desired_control_plane_endpoints_config.ip_endpoints_config.enable_public_endpoint instead. Note that the value of enable_public_endpoint is reversed: if enable_private_endpoint is false, then enable_public_endpoint will be true.
   *   `additionalPodRangesConfig` (*type:* `GoogleApi.Container.V1.Model.AdditionalPodRangesConfig.t`, *default:* `nil`) - The additional pod ranges to be added to the cluster. These pod ranges can be used by node pools to allocate pod IPs.
+  *   `desiredNodePoolAutoConfigLinuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - The desired Linux node config for all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters. Currently only `cgroup_mode` can be set here.
   *   `desiredNodePoolAutoConfigNetworkTags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The desired network tags that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
   *   `desiredGatewayApiConfig` (*type:* `GoogleApi.Container.V1.Model.GatewayAPIConfig.t`, *default:* `nil`) - The desired config of Gateway API on this cluster.
   *   `desiredCostManagementConfig` (*type:* `GoogleApi.Container.V1.Model.CostManagementConfig.t`, *default:* `nil`) - The desired configuration for the fine-grained cost management feature.
@@ -140,6 +141,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredEnablePrivateEndpoint => boolean() | nil,
           :additionalPodRangesConfig =>
             GoogleApi.Container.V1.Model.AdditionalPodRangesConfig.t() | nil,
+          :desiredNodePoolAutoConfigLinuxNodeConfig =>
+            GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
           :desiredNodePoolAutoConfigNetworkTags =>
             GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
           :desiredGatewayApiConfig => GoogleApi.Container.V1.Model.GatewayAPIConfig.t() | nil,
@@ -237,6 +240,11 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredIdentityServiceConfig, as: GoogleApi.Container.V1.Model.IdentityServiceConfig)
   field(:desiredEnablePrivateEndpoint)
   field(:additionalPodRangesConfig, as: GoogleApi.Container.V1.Model.AdditionalPodRangesConfig)
+
+  field(:desiredNodePoolAutoConfigLinuxNodeConfig,
+    as: GoogleApi.Container.V1.Model.LinuxNodeConfig
+  )
+
   field(:desiredNodePoolAutoConfigNetworkTags, as: GoogleApi.Container.V1.Model.NetworkTags)
   field(:desiredGatewayApiConfig, as: GoogleApi.Container.V1.Model.GatewayAPIConfig)
   field(:desiredCostManagementConfig, as: GoogleApi.Container.V1.Model.CostManagementConfig)
