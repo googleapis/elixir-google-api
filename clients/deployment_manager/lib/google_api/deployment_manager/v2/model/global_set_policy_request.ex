@@ -24,6 +24,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.GlobalSetPolicyRequest do
   *   `bindings` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.Binding.t)`, *default:* `nil`) - Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify bindings.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Flatten Policy to create a backward compatible wire-format. Deprecated. Use 'policy' to specify the etag.
   *   `policy` (*type:* `GoogleApi.DeploymentManager.V2.Model.Policy.t`, *default:* `nil`) - REQUIRED: The complete policy to be applied to the 'resource'. The size of the policy is limited to a few 10s of KB. An empty policy is in general a valid policy but certain services (like Projects) might reject them.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.DeploymentManager.V2.Model.GlobalSetPolicyRequest do
   @type t :: %__MODULE__{
           :bindings => list(GoogleApi.DeploymentManager.V2.Model.Binding.t()) | nil,
           :etag => String.t() | nil,
-          :policy => GoogleApi.DeploymentManager.V2.Model.Policy.t() | nil
+          :policy => GoogleApi.DeploymentManager.V2.Model.Policy.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:bindings, as: GoogleApi.DeploymentManager.V2.Model.Binding, type: :list)
   field(:etag)
   field(:policy, as: GoogleApi.DeploymentManager.V2.Model.Policy)
+  field(:updateMask)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DeploymentManager.V2.Model.GlobalSetPolicyRequest do

@@ -38,12 +38,13 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
   *   `progress` (*type:* `integer()`, *default:* `nil`) - [Output Only] An optional progress indicator that ranges from 0 to 100. There is no requirement that this be linear or support any granularity of operations. This should not be used to guess when the operation will be complete. This number should monotonically increase as the operation progresses.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
+  *   `selfLinkWithId` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource with the resource id.
   *   `setCommonInstanceMetadataOperationMetadata` (*type:* `GoogleApi.DeploymentManager.V2.Model.SetCommonInstanceMetadataOperationMetadata.t`, *default:* `nil`) - [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional textual description of the current status of the operation.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
-  *   `targetLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
+  *   `targetLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
   *   `user` (*type:* `String.t`, *default:* `nil`) - [Output Only] User who requested the operation, for example: `user@example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
   *   `warnings` (*type:* `list(GoogleApi.DeploymentManager.V2.Model.OperationWarnings.t)`, *default:* `nil`) - [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
@@ -70,6 +71,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
           :progress => integer() | nil,
           :region => String.t() | nil,
           :selfLink => String.t() | nil,
+          :selfLinkWithId => String.t() | nil,
           :setCommonInstanceMetadataOperationMetadata =>
             GoogleApi.DeploymentManager.V2.Model.SetCommonInstanceMetadataOperationMetadata.t()
             | nil,
@@ -104,6 +106,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
   field(:progress)
   field(:region)
   field(:selfLink)
+  field(:selfLinkWithId)
 
   field(:setCommonInstanceMetadataOperationMetadata,
     as: GoogleApi.DeploymentManager.V2.Model.SetCommonInstanceMetadataOperationMetadata

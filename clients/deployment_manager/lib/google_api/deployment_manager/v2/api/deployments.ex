@@ -125,6 +125,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:deletePolicy` (*type:* `String.t`) - Sets the policy to use for deleting resources.
+      *   `:"header.bypassBillingFilter"` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -162,7 +163,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :deletePolicy => :query
+      :deletePolicy => :query,
+      :"header.bypassBillingFilter" => :query
     }
 
     request =
@@ -203,6 +205,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"header.bypassBillingFilter"` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -239,7 +242,8 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :"header.bypassBillingFilter" => :query
     }
 
     request =
@@ -280,6 +284,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"header.bypassBillingFilter"` (*type:* `boolean()`) - 
       *   `:optionsRequestedPolicyVersion` (*type:* `integer()`) - Requested IAM Policy version.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -318,6 +323,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :"header.bypassBillingFilter" => :query,
       :optionsRequestedPolicyVersion => :query
     }
 
@@ -359,6 +365,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:createPolicy` (*type:* `String.t`) - Sets the policy to use for creating new resources.
+      *   `:"header.bypassBillingFilter"` (*type:* `boolean()`) - 
       *   `:preview` (*type:* `boolean()`) - If set to true, creates a deployment and creates "shell" resources but does not actually instantiate these resources. This allows you to preview what your deployment looks like. After previewing a deployment, you can deploy your resources by making a request with the `update()` method or you can use the `cancelPreview()` method to cancel the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it.
       *   `:body` (*type:* `GoogleApi.DeploymentManager.V2.Model.Deployment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -387,6 +394,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       :uploadType => :query,
       :upload_protocol => :query,
       :createPolicy => :query,
+      :"header.bypassBillingFilter" => :query,
       :preview => :query,
       :body => :body
     }
@@ -497,6 +505,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:createPolicy` (*type:* `String.t`) - Sets the policy to use for creating new resources.
       *   `:deletePolicy` (*type:* `String.t`) - Sets the policy to use for deleting resources.
+      *   `:"header.bypassBillingFilter"` (*type:* `boolean()`) - 
       *   `:preview` (*type:* `boolean()`) - If set to true, updates the deployment and creates and updates the "shell" resources but does not actually alter or instantiate these resources. This allows you to preview what your deployment will look like. You can use this intent to preview how an update would affect your deployment. You must provide a `target.config` with a configuration if this is set to true. After previewing a deployment, you can deploy your resources by making a request with the `update()` or you can `cancelPreview()` to remove the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it.
       *   `:body` (*type:* `GoogleApi.DeploymentManager.V2.Model.Deployment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -538,6 +547,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       :upload_protocol => :query,
       :createPolicy => :query,
       :deletePolicy => :query,
+      :"header.bypassBillingFilter" => :query,
       :preview => :query,
       :body => :body
     }
@@ -738,6 +748,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"header.bypassBillingFilter"` (*type:* `boolean()`) - 
       *   `:body` (*type:* `GoogleApi.DeploymentManager.V2.Model.TestPermissionsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -776,6 +787,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :"header.bypassBillingFilter" => :query,
       :body => :body
     }
 
@@ -821,6 +833,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:createPolicy` (*type:* `String.t`) - Sets the policy to use for creating new resources.
       *   `:deletePolicy` (*type:* `String.t`) - Sets the policy to use for deleting resources.
+      *   `:"header.bypassBillingFilter"` (*type:* `boolean()`) - 
       *   `:preview` (*type:* `boolean()`) - If set to true, updates the deployment and creates and updates the "shell" resources but does not actually alter or instantiate these resources. This allows you to preview what your deployment will look like. You can use this intent to preview how an update would affect your deployment. You must provide a `target.config` with a configuration if this is set to true. After previewing a deployment, you can deploy your resources by making a request with the `update()` or you can `cancelPreview()` to remove the preview altogether. Note that the deployment will still exist after you cancel the preview and you must separately delete this deployment if you want to remove it.
       *   `:body` (*type:* `GoogleApi.DeploymentManager.V2.Model.Deployment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -862,6 +875,7 @@ defmodule GoogleApi.DeploymentManager.V2.Api.Deployments do
       :upload_protocol => :query,
       :createPolicy => :query,
       :deletePolicy => :query,
+      :"header.bypassBillingFilter" => :query,
       :preview => :query,
       :body => :body
     }
