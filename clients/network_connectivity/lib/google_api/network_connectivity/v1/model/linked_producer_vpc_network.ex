@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedProducerVpcNetwork do
   @moduledoc """
-  Next ID: 7
+
 
   ## Attributes
 
   *   `excludeExportRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. IP ranges encompassing the subnets to be excluded from peering.
+  *   `includeExportRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. IP ranges allowed to be included from peering.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Immutable. The URI of the Service Consumer VPC that the Producer VPC is peered with.
   *   `peering` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the VPC peering between the Service Consumer VPC and the Producer VPC (defined in the Tenant project) which is added to the NCC hub. This peering must be in ACTIVE state.
   *   `producerNetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the Producer VPC.
@@ -32,6 +33,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedProducerVpcNetwork do
 
   @type t :: %__MODULE__{
           :excludeExportRanges => list(String.t()) | nil,
+          :includeExportRanges => list(String.t()) | nil,
           :network => String.t() | nil,
           :peering => String.t() | nil,
           :producerNetwork => String.t() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedProducerVpcNetwork do
         }
 
   field(:excludeExportRanges, type: :list)
+  field(:includeExportRanges, type: :list)
   field(:network)
   field(:peering)
   field(:producerNetwork)

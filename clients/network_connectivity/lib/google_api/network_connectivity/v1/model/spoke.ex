@@ -32,7 +32,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Spoke do
   *   `linkedVpcNetwork` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedVpcNetwork.t`, *default:* `nil`) - Optional. VPC network that is associated with the spoke.
   *   `linkedVpnTunnels` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedVpnTunnels.t`, *default:* `nil`) - VPN tunnels that are associated with the spoke.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the spoke. Spoke names must be unique. They use the following form: `projects/{project_number}/locations/{region}/spokes/{spoke_id}`
-  *   `reasons` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.StateReason.t)`, *default:* `nil`) - Output only. The reasons for current state of the spoke. Only present when the spoke is in the `INACTIVE` state.
+  *   `reasons` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.StateReason.t)`, *default:* `nil`) - Output only. The reasons for current state of the spoke.
   *   `spokeType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of resource associated with the spoke.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current lifecycle state of this spoke.
   *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - Output only. The Google-generated UUID for the spoke. This value is unique across all spoke resources. If a spoke is deleted and another with the same name is created, the new spoke is assigned a different `unique_id`.

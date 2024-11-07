@@ -20,7 +20,7 @@ defmodule GoogleApi.NetworkConnectivity.V1 do
   API client metadata for GoogleApi.NetworkConnectivity.V1.
   """
 
-  @discovery_revision "20241009"
+  @discovery_revision "20241030"
 
   def discovery_revision(), do: @discovery_revision
 end

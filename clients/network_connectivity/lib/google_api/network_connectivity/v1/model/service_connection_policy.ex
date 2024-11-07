@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.ServiceConnectionPolicy do
   @moduledoc """
-  The ServiceConnectionPolicy resource. Next id: 12
+  The ServiceConnectionPolicy resource.
 
   ## Attributes
 
