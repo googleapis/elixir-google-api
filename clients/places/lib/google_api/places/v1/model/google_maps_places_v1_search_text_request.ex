@@ -22,6 +22,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
   ## Attributes
 
   *   `evOptions` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestEVOptions.t`, *default:* `nil`) - Optional. Set the searchable EV options of a place search request.
+  *   `includePureServiceAreaBusinesses` (*type:* `boolean()`, *default:* `nil`) - Optional. Include pure service area businesses if the field is set to true. Pure service area business is a business that visits or delivers to customers directly but does not serve customers at their business address. For example, businesses like cleaning services or plumbers. Those businesses do not have a physical address or location on Google Maps. Places will not return fields including `location`, `plus_code`, and other location related fields for these businesses.
   *   `includedType` (*type:* `String.t`, *default:* `nil`) - The requested place type. Full list of types supported: https://developers.google.com/maps/documentation/places/web-service/place-types. Only support one included type.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Place details will be displayed with the preferred language if available. If the language code is unspecified or unrecognized, place details of any language may be returned, with a preference for English if such details exist. Current list of supported languages: https://developers.google.com/maps/faq#languagesupport.
   *   `locationBias` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestLocationBias.t`, *default:* `nil`) - The region to search. This location serves as a bias which means results around given location might be returned. Cannot be set along with location_restriction.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
   @type t :: %__MODULE__{
           :evOptions =>
             GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestEVOptions.t() | nil,
+          :includePureServiceAreaBusinesses => boolean() | nil,
           :includedType => String.t() | nil,
           :languageCode => String.t() | nil,
           :locationBias =>
@@ -70,6 +72,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
         }
 
   field(:evOptions, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestEVOptions)
+  field(:includePureServiceAreaBusinesses)
   field(:includedType)
   field(:languageCode)
 

@@ -21,6 +21,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours do
 
   ## Attributes
 
+  *   `nextCloseTime` (*type:* `DateTime.t`, *default:* `nil`) - The next time the current opening hours period ends up to 7 days in the future. This field is only populated if the opening hours period is active at the time of serving the request.
+  *   `nextOpenTime` (*type:* `DateTime.t`, *default:* `nil`) - The next time the current opening hours period starts up to 7 days in the future. This field is only populated if the opening hours period is not active at the time of serving the request.
   *   `openNow` (*type:* `boolean()`, *default:* `nil`) - Whether the opening hours period is currently active. For regular opening hours and current opening hours, this field means whether the place is open. For secondary opening hours and current secondary opening hours, this field means whether the secondary hours of this place is active.
   *   `periods` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHoursPeriod.t)`, *default:* `nil`) - The periods that this place is open during the week. The periods are in chronological order, starting with Sunday in the place-local timezone. An empty (but not absent) value indicates a place that is never open, e.g. because it is closed temporarily for renovations.
   *   `secondaryHoursType` (*type:* `String.t`, *default:* `nil`) - A type string used to identify the type of secondary hours.
@@ -31,6 +33,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :nextCloseTime => DateTime.t() | nil,
+          :nextOpenTime => DateTime.t() | nil,
           :openNow => boolean() | nil,
           :periods =>
             list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHoursPeriod.t()) | nil,
@@ -41,6 +45,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours do
           :weekdayDescriptions => list(String.t()) | nil
         }
 
+  field(:nextCloseTime, as: DateTime)
+  field(:nextOpenTime, as: DateTime)
   field(:openNow)
 
   field(:periods,
