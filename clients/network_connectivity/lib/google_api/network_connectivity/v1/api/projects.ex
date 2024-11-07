@@ -784,6 +784,88 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
+  Query PSC propagation status the status of a Network Connectivity Center hub.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.NetworkConnectivity.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the hub.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. An expression that filters the list of results. The filter can be used to filter the results by the following fields: * psc_propagation_status.source_spoke * psc_propagation_status.source_group * psc_propagation_status.source_forwarding_rule * psc_propagation_status.target_spoke * psc_propagation_status.target_group * psc_propagation_status.code * psc_propagation_status.message
+      *   `:groupBy` (*type:* `String.t`) - Optional. A field that counts are grouped by. A comma-separated list of any of these fields: * psc_propagation_status.source_spoke * psc_propagation_status.source_group * psc_propagation_status.source_forwarding_rule * psc_propagation_status.target_spoke * psc_propagation_status.target_group * psc_propagation_status.code
+      *   `:orderBy` (*type:* `String.t`) - Optional. Sort the results in the ascending order by specific fields returned in the response. A comma-separated list of any of these fields: * psc_propagation_status.source_spoke * psc_propagation_status.source_group * psc_propagation_status.source_forwarding_rule * psc_propagation_status.target_spoke * psc_propagation_status.target_group * psc_propagation_status.code If `group_by` is set, the value of the `order_by` field must be the same as or a subset of the `group_by` field.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per page.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The page token.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.NetworkConnectivity.V1.Model.QueryHubStatusResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec networkconnectivity_projects_locations_global_hubs_query_status(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.NetworkConnectivity.V1.Model.QueryHubStatusResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def networkconnectivity_projects_locations_global_hubs_query_status(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :groupBy => :query,
+      :orderBy => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}:queryStatus", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.NetworkConnectivity.V1.Model.QueryHubStatusResponse{}]
+    )
+  end
+
+  @doc """
   Rejects a Network Connectivity Center spoke from being attached to a hub. If the spoke was previously in the `ACTIVE` state, it transitions to the `INACTIVE` state and is no longer able to connect to other spokes that are attached to the hub.
 
   ## Parameters

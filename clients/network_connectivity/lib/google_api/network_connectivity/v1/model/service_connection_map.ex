@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.ServiceConnectionMap do
   @moduledoc """
-  The ServiceConnectionMap resource. Next id: 15
+  The ServiceConnectionMap resource.
 
   ## Attributes
 

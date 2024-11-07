@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.ServiceConnectionToken do
   @moduledoc """
-  The ServiceConnectionToken resource. Next id: 10
+  The ServiceConnectionToken resource.
 
   ## Attributes
 

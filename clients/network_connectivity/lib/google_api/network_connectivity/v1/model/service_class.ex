@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.ServiceClass do
   @moduledoc """
-  The ServiceClass resource. Next id: 9
+  The ServiceClass resource.
 
   ## Attributes
 
