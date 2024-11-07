@@ -20,7 +20,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1 do
   API client metadata for GoogleApi.PaymentsResellerSubscription.V1.
   """
 
-  @discovery_revision "20240616"
+  @discovery_revision "20241105"
 
   def discovery_revision(), do: @discovery_revision
 end
