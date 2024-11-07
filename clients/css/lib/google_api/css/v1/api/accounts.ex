@@ -605,7 +605,7 @@ defmodule GoogleApi.CSS.V1.Api.Accounts do
   end
 
   @doc """
-  Lists the labels assigned to an account.
+  Lists the labels owned by an account.
 
   ## Parameters
 
