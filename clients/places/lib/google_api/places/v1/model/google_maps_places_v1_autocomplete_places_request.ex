@@ -21,6 +21,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AutocompletePlacesRequest 
 
   ## Attributes
 
+  *   `includePureServiceAreaBusinesses` (*type:* `boolean()`, *default:* `nil`) - Optional. Include pure service area businesses if the field is set to true. Pure service area business is a business that visits or delivers to customers directly but does not serve customers at their business address. For example, businesses like cleaning services or plumbers. Those businesses do not have a physical address or location on Google Maps. Places will not return fields including `location`, `plus_code`, and other location related fields for these businesses.
   *   `includeQueryPredictions` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the response will include both Place and query predictions. Otherwise the response will only return Place predictions.
   *   `includedPrimaryTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Included primary Place type (for example, "restaurant" or "gas_station") in Place Types (https://developers.google.com/maps/documentation/places/web-service/place-types), or only `(regions)`, or only `(cities)`. A Place is only returned if its primary type is included in this list. Up to 5 values can be specified. If no types are specified, all Place types are returned.
   *   `includedRegionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Only include results in the specified regions, specified as up to 15 CLDR two-character region codes. An empty set will not restrict the results. If both `location_restriction` and `included_region_codes` are set, the results will be located in the area of intersection.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AutocompletePlacesRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :includePureServiceAreaBusinesses => boolean() | nil,
           :includeQueryPredictions => boolean() | nil,
           :includedPrimaryTypes => list(String.t()) | nil,
           :includedRegionCodes => list(String.t()) | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1AutocompletePlacesRequest 
           :sessionToken => String.t() | nil
         }
 
+  field(:includePureServiceAreaBusinesses)
   field(:includeQueryPredictions)
   field(:includedPrimaryTypes, type: :list)
   field(:includedRegionCodes, type: :list)

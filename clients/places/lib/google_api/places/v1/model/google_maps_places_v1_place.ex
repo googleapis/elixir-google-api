@@ -39,6 +39,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `servesCocktails` (*type:* `boolean()`, *default:* `nil`) - Place serves cocktails.
   *   `takeout` (*type:* `boolean()`, *default:* `nil`) - Specifies if the business supports takeout.
   *   `paymentOptions` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlacePaymentOptions.t`, *default:* `nil`) - Payment options the place accepts. If a payment option data is not available, the payment option field will be unset.
+  *   `pureServiceAreaBusiness` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the place is a pure service area business. Pure service area business is a business that visits or delivers to customers directly but does not serve customers at their business address. For example, businesses like cleaning services or plumbers. Those businesses may not have a physical address or location on Google Maps.
   *   `regularOpeningHours` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t`, *default:* `nil`) - The regular hours of operation.
   *   `shortFormattedAddress` (*type:* `String.t`, *default:* `nil`) - A short, human-readable address for this place.
   *   `internationalPhoneNumber` (*type:* `String.t`, *default:* `nil`) - A human-readable phone number for the place, in international format.
@@ -61,7 +62,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `viewport` (*type:* `GoogleApi.Places.V1.Model.GoogleGeoTypeViewport.t`, *default:* `nil`) - A viewport suitable for displaying the place on an average-sized map. This viewport should not be used as the physical boundary or the service area of the business.
   *   `websiteUri` (*type:* `String.t`, *default:* `nil`) - The authoritative website for this place, e.g. a business' homepage. Note that for places that are part of a chain (e.g. an IKEA store), this will usually be the website for the individual store, not the overall chain.
   *   `utcOffsetMinutes` (*type:* `integer()`, *default:* `nil`) - Number of minutes this place's timezone is currently offset from UTC. This is expressed in minutes to support timezones that are offset by fractions of an hour, e.g. X hours and 15 minutes.
-  *   `businessStatus` (*type:* `String.t`, *default:* `nil`) - 
+  *   `businessStatus` (*type:* `String.t`, *default:* `nil`) - The business status for the place.
   *   `menuForChildren` (*type:* `boolean()`, *default:* `nil`) - Place has a children's menu.
   *   `regularSecondaryOpeningHours` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t)`, *default:* `nil`) - Contains an array of entries for information about regular secondary hours of a business. Secondary hours are different from a business's main hours. For example, a restaurant can specify drive through hours or delivery hours as its secondary hours. This field populates the type subfield, which draws from a predefined list of opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the place.
   *   `curbsidePickup` (*type:* `boolean()`, *default:* `nil`) - Specifies if the business supports curbside pickup.
@@ -81,9 +82,11 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `types` (*type:* `list(String.t)`, *default:* `nil`) - A set of type tags for this result. For example, "political" and "locality". For the complete list of possible values, see Table A and Table B at https://developers.google.com/maps/documentation/places/web-service/place-types
   *   `servesCoffee` (*type:* `boolean()`, *default:* `nil`) - Place serves coffee.
   *   `iconBackgroundColor` (*type:* `String.t`, *default:* `nil`) - Background color for icon_mask in hex format, e.g. #909CE1.
+  *   `containingPlaces` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceContainingPlace.t)`, *default:* `nil`) - List of places in which the current place is located.
   *   `primaryTypeDisplayName` (*type:* `GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t`, *default:* `nil`) - The display name of the primary type, localized to the request language if applicable. For the complete list of possible values, see Table A and Table B at https://developers.google.com/maps/documentation/places/web-service/place-types
   *   `parkingOptions` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceParkingOptions.t`, *default:* `nil`) - Options of parking provided by the place.
   *   `adrFormatAddress` (*type:* `String.t`, *default:* `nil`) - The place's address in adr microformat: http://microformats.org/wiki/adr.
+  *   `priceRange` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PriceRange.t`, *default:* `nil`) - The price range associated with a Place.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique identifier of a place.
   *   `googleMapsLinks` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGoogleMapsLinks.t`, *default:* `nil`) - Links to trigger different Google Maps actions.
   """
@@ -113,6 +116,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
           :takeout => boolean() | nil,
           :paymentOptions =>
             GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlacePaymentOptions.t() | nil,
+          :pureServiceAreaBusiness => boolean() | nil,
           :regularOpeningHours =>
             GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t() | nil,
           :shortFormattedAddress => String.t() | nil,
@@ -163,10 +167,13 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
           :types => list(String.t()) | nil,
           :servesCoffee => boolean() | nil,
           :iconBackgroundColor => String.t() | nil,
+          :containingPlaces =>
+            list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceContainingPlace.t()) | nil,
           :primaryTypeDisplayName => GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t() | nil,
           :parkingOptions =>
             GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceParkingOptions.t() | nil,
           :adrFormatAddress => String.t() | nil,
+          :priceRange => GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PriceRange.t() | nil,
           :id => String.t() | nil,
           :googleMapsLinks =>
             GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGoogleMapsLinks.t() | nil
@@ -202,6 +209,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   field(:servesCocktails)
   field(:takeout)
   field(:paymentOptions, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlacePaymentOptions)
+  field(:pureServiceAreaBusiness)
   field(:regularOpeningHours, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours)
   field(:shortFormattedAddress)
   field(:internationalPhoneNumber)
@@ -263,9 +271,16 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   field(:types, type: :list)
   field(:servesCoffee)
   field(:iconBackgroundColor)
+
+  field(:containingPlaces,
+    as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceContainingPlace,
+    type: :list
+  )
+
   field(:primaryTypeDisplayName, as: GoogleApi.Places.V1.Model.GoogleTypeLocalizedText)
   field(:parkingOptions, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceParkingOptions)
   field(:adrFormatAddress)
+  field(:priceRange, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PriceRange)
   field(:id)
   field(:googleMapsLinks, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGoogleMapsLinks)
 end
