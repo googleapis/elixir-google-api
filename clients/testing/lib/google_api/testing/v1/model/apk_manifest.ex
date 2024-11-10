@@ -30,7 +30,8 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   *   `services` (*type:* `list(GoogleApi.Testing.V1.Model.Service.t)`, *default:* `nil`) - Services contained in the tag.
   *   `targetSdkVersion` (*type:* `integer()`, *default:* `nil`) - Specifies the API Level on which the application is designed to run.
   *   `usesFeature` (*type:* `list(GoogleApi.Testing.V1.Model.UsesFeature.t)`, *default:* `nil`) - Feature usage tags defined in the manifest.
-  *   `usesPermission` (*type:* `list(String.t)`, *default:* `nil`) - Permissions declared to be used by the application
+  *   `usesPermission` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `usesPermissionTags` (*type:* `list(GoogleApi.Testing.V1.Model.UsesPermissionTag.t)`, *default:* `nil`) - Permissions declared to be used by the application
   *   `versionCode` (*type:* `String.t`, *default:* `nil`) - Version number used internally by the app.
   *   `versionName` (*type:* `String.t`, *default:* `nil`) - Version number shown to users.
   """
@@ -48,6 +49,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
           :targetSdkVersion => integer() | nil,
           :usesFeature => list(GoogleApi.Testing.V1.Model.UsesFeature.t()) | nil,
           :usesPermission => list(String.t()) | nil,
+          :usesPermissionTags => list(GoogleApi.Testing.V1.Model.UsesPermissionTag.t()) | nil,
           :versionCode => String.t() | nil,
           :versionName => String.t() | nil
         }
@@ -62,6 +64,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   field(:targetSdkVersion)
   field(:usesFeature, as: GoogleApi.Testing.V1.Model.UsesFeature, type: :list)
   field(:usesPermission, type: :list)
+  field(:usesPermissionTags, as: GoogleApi.Testing.V1.Model.UsesPermissionTag, type: :list)
   field(:versionCode)
   field(:versionName)
 end
