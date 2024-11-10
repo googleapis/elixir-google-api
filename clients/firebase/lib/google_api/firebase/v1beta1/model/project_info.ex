@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Firebase.V1beta1.Model.ProjectInfo do
   @moduledoc """
-  A reference to a Google Cloud Platform (GCP) `Project`.
+  A reference to a Google Cloud `Project`.
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the GCP `Project`, for example: `My App`
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location is one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations). Not all Projects will have this field populated. If it is not populated, it means that the Project does not yet have a default GCP resource location. To set a Project's default GCP resource location, call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you add Firebase resources to the Project.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The resource name of the GCP `Project` to which Firebase resources can be added, in the format: projects/PROJECT_IDENTIFIER Refer to the `FirebaseProject` [`name`](../projects#FirebaseProject.FIELDS.name) field for details about PROJECT_IDENTIFIER values.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name of the Google Cloud `Project`, for example: `My App`.
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - **DEPRECATED** _Instead, use product-specific REST APIs to work with the location of each resource in a Project. This field may not be populated, especially for newly provisioned projects after October 30, 2024._ The ID of the Project's ["location for default Google Cloud resources"](https://firebase.google.com/docs/projects/locations#default-cloud-location). The location is one of the available [Google App Engine locations](https://cloud.google.com/about/locations#region). Not all Projects will have this field populated. If it is not populated, it means that the Project does not yet have a location for default Google Cloud resources.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The resource name of the Google Cloud `Project` to which Firebase resources can be added, in the format: projects/PROJECT_IDENTIFIER Refer to the `FirebaseProject` [`name`](../projects#FirebaseProject.FIELDS.name) field for details about PROJECT_IDENTIFIER values.
   """
 
   use GoogleApi.Gax.ModelBase

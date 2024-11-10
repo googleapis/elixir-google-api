@@ -21,7 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.AddFirebaseRequest do
 
   ## Attributes
 
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Instead, to set a Project's default GCP resource location, call [`FinalizeDefaultLocation`](../projects.defaultLocation/finalize) after you add Firebase resources to the GCP `Project`. The ID of the Project's default GCP resource location. The location must be one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations).
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - **DEPRECATED.** _Instead, use product-specific REST APIs to work with the location of each resource in a Project. This field may be ignored, especially for newly provisioned projects after October 30, 2024._ The ID of the Project's ["location for default Google Cloud resources"](https://firebase.google.com/docs/projects/locations#default-cloud-location), which are resources associated with Google App Engine. The location must be one of the available [Google App Engine locations](https://cloud.google.com/about/locations#region).
   """
 
   use GoogleApi.Gax.ModelBase
