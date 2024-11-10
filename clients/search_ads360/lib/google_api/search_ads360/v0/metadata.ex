@@ -20,7 +20,7 @@ defmodule GoogleApi.SearchAds360.V0 do
   API client metadata for GoogleApi.SearchAds360.V0.
   """
 
-  @discovery_revision "20241002"
+  @discovery_revision "20241108"
 
   def discovery_revision(), do: @discovery_revision
 end

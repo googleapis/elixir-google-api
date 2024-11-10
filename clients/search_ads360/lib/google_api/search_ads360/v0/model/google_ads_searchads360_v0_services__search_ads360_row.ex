@@ -30,6 +30,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
   *   `conversionCustomVariable` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionCustomVariable.t`, *default:* `nil`) - The conversion custom variable referenced in the query.
   *   `adGroupAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAsset.t`, *default:* `nil`) - The ad group asset referenced in the query.
   *   `geoTargetConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant.t`, *default:* `nil`) - The geo target constant referenced in the query.
+  *   `adGroupAdEffectiveLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAdEffectiveLabel.t`, *default:* `nil`) - The ad group ad effective label referenced in the query.
   *   `adGroupAd` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd.t`, *default:* `nil`) - The ad referenced in the query.
   *   `cartDataSalesView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView.t`, *default:* `nil`) - The cart data sales view referenced in the query.
   *   `adGroupEffectiveLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupEffectiveLabel.t`, *default:* `nil`) - The ad group effective label referenced in the query.
@@ -51,6 +52,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
   *   `campaignCriterion` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignCriterion.t`, *default:* `nil`) - The campaign criterion referenced in the query.
   *   `assetGroupSignal` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupSignal.t`, *default:* `nil`) - The asset group signal referenced in the query.
   *   `languageConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant.t`, *default:* `nil`) - The language constant referenced in the query.
+  *   `adGroupCriterionEffectiveLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionEffectiveLabel.t`, *default:* `nil`) - The ad group criterion effective label referenced in the query.
   *   `userList` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList.t`, *default:* `nil`) - The user list referenced in the query.
   *   `customerAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAsset.t`, *default:* `nil`) - The customer asset referenced in the query.
   *   `campaignAudienceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAudienceView.t`, *default:* `nil`) - The campaign audience view referenced in the query.
@@ -71,6 +73,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
   *   `adGroupBidModifier` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupBidModifier.t`, *default:* `nil`) - The bid modifier referenced in the query.
   *   `genderView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView.t`, *default:* `nil`) - The gender view referenced in the query.
   *   `adGroupAssetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet.t`, *default:* `nil`) - The ad group asset set referenced in the query.
+  *   `userLocationView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserLocationView.t`, *default:* `nil`) - The user location view referenced in the query.
   *   `accessibleBiddingStrategy` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AccessibleBiddingStrategy.t`, *default:* `nil`) - The accessible bidding strategy referenced in the query.
   *   `adGroupCriterionLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel.t`, *default:* `nil`) - The ad group criterion label referenced in the query.
   *   `productGroupView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView.t`, *default:* `nil`) - The product group view referenced in the query.
@@ -105,6 +108,9 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
             | nil,
           :geoTargetConstant =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant.t()
+            | nil,
+          :adGroupAdEffectiveLabel =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAdEffectiveLabel.t()
             | nil,
           :adGroupAd =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd.t() | nil,
@@ -161,6 +167,9 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
           :languageConstant =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant.t()
             | nil,
+          :adGroupCriterionEffectiveLabel =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionEffectiveLabel.t()
+            | nil,
           :userList =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList.t() | nil,
           :customerAsset =>
@@ -215,6 +224,9 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
           :adGroupAssetSet =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet.t()
             | nil,
+          :userLocationView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserLocationView.t()
+            | nil,
           :accessibleBiddingStrategy =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AccessibleBiddingStrategy.t()
             | nil,
@@ -263,6 +275,10 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
 
   field(:geoTargetConstant,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant
+  )
+
+  field(:adGroupAdEffectiveLabel,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAdEffectiveLabel
   )
 
   field(:adGroupAd, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd)
@@ -345,6 +361,11 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant
   )
 
+  field(:adGroupCriterionEffectiveLabel,
+    as:
+      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionEffectiveLabel
+  )
+
   field(:userList, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList)
 
   field(:customerAsset,
@@ -412,6 +433,10 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
 
   field(:adGroupAssetSet,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet
+  )
+
+  field(:userLocationView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserLocationView
   )
 
   field(:accessibleBiddingStrategy,
