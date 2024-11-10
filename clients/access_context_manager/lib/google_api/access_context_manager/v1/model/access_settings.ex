@@ -22,20 +22,17 @@ defmodule GoogleApi.AccessContextManager.V1.Model.AccessSettings do
   ## Attributes
 
   *   `accessLevels` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Access level that a user must have to be granted access. Only one access level is supported, not multiple. This repeated field must have exactly one element. Example: "accessPolicies/9522/accessLevels/device_trusted"
-  *   `reauthSettings` (*type:* `GoogleApi.AccessContextManager.V1.Model.ReauthSettings.t`, *default:* `nil`) - Optional. Reauth settings applied to user access on a given AccessScope.
-  *   `sessionSettings` (*type:* `GoogleApi.AccessContextManager.V1.Model.SessionSettings.t`, *default:* `nil`) - Optional. Session settings applied to user access on a given AccessScope. Migrated from ReauthSettings
+  *   `sessionSettings` (*type:* `GoogleApi.AccessContextManager.V1.Model.SessionSettings.t`, *default:* `nil`) - Optional. Session settings applied to user access on a given AccessScope.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :accessLevels => list(String.t()) | nil,
-          :reauthSettings => GoogleApi.AccessContextManager.V1.Model.ReauthSettings.t() | nil,
           :sessionSettings => GoogleApi.AccessContextManager.V1.Model.SessionSettings.t() | nil
         }
 
   field(:accessLevels, type: :list)
-  field(:reauthSettings, as: GoogleApi.AccessContextManager.V1.Model.ReauthSettings)
   field(:sessionSettings, as: GoogleApi.AccessContextManager.V1.Model.SessionSettings)
 end
 
