@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.AttachmentDataRef do
 
   ## Attributes
 
-  *   `attachmentUploadToken` (*type:* `String.t`, *default:* `nil`) - Opaque token containing a reference to an uploaded attachment. Treated by clients as an opaque string and used to create or update Chat messages with attachments.
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name of the attachment data. This field is used with the media API to download the attachment data.
+  *   `attachmentUploadToken` (*type:* `String.t`, *default:* `nil`) - Optional. Opaque token containing a reference to an uploaded attachment. Treated by clients as an opaque string and used to create or update Chat messages with attachments.
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the attachment data. This field is used with the media API to download the attachment data.
   """
 
   use GoogleApi.Gax.ModelBase

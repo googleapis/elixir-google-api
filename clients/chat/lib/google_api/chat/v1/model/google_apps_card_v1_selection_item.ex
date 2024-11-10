@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem do
   @moduledoc """
-  An item that users can select in a selection input, such as a checkbox or switch. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  An item that users can select in a selection input, such as a checkbox or switch. Supports up to 100 items. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
