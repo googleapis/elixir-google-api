@@ -45,6 +45,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   *   `guestsCanModify` (*type:* `boolean()`, *default:* `false`) - Whether attendees other than the organizer can modify the event. Optional. The default is False.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Geographic location of the event as free-form text. Optional.
   *   `extendedProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventExtendedProperties.t`, *default:* `nil`) - Extended properties of the event.
+  *   `birthdayProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventBirthdayProperties.t`, *default:* `nil`) - Birthday or special event data. Used if eventType is "birthday". Immutable.
   *   `source` (*type:* `GoogleApi.Calendar.V3.Model.EventSource.t`, *default:* `nil`) - Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event.
   *   `attachments` (*type:* `list(GoogleApi.Calendar.V3.Model.EventAttachment.t)`, *default:* `nil`) - File attachments for the event.
       In order to modify attachments the supportsAttachments request parameter should be set to true.
@@ -119,6 +120,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
           :guestsCanModify => boolean() | nil,
           :location => String.t() | nil,
           :extendedProperties => GoogleApi.Calendar.V3.Model.EventExtendedProperties.t() | nil,
+          :birthdayProperties => GoogleApi.Calendar.V3.Model.EventBirthdayProperties.t() | nil,
           :source => GoogleApi.Calendar.V3.Model.EventSource.t() | nil,
           :attachments => list(GoogleApi.Calendar.V3.Model.EventAttachment.t()) | nil,
           :colorId => String.t() | nil,
@@ -165,6 +167,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   field(:guestsCanModify)
   field(:location)
   field(:extendedProperties, as: GoogleApi.Calendar.V3.Model.EventExtendedProperties)
+  field(:birthdayProperties, as: GoogleApi.Calendar.V3.Model.EventBirthdayProperties)
   field(:source, as: GoogleApi.Calendar.V3.Model.EventSource)
   field(:attachments, as: GoogleApi.Calendar.V3.Model.EventAttachment, type: :list)
   field(:colorId)
