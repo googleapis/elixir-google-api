@@ -21,7 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.FinalizeDefaultLocationRequest do
 
   ## Attributes
 
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The ID of the Project's default GCP resource location. The location must be one of the available [GCP resource locations](https://firebase.google.com/docs/projects/locations).
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - **DEPRECATED** The ID of the Project's ["location for default Google Cloud resources"](https://firebase.google.com/docs/projects/locations#default-cloud-location), which are resources associated with Google App Engine. The location must be one of the available [Google App Engine locations](https://cloud.google.com/about/locations#region).
   """
 
   use GoogleApi.Gax.ModelBase
