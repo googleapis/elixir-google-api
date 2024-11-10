@@ -23,6 +23,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
 
   *   `ad` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Ad.t`, *default:* `nil`) - Immutable. The ad.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when this ad_group_ad was created. The datetime is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss.ssssss" format.
+  *   `effectiveLabels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of effective labels attached to this ad. An effective label is a label inherited or directly assigned to this ad.
   *   `engineId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the ad in the external engine account. This field is for Search Ads 360 account only, for example, Yahoo Japan, Microsoft, Baidu etc. For non-Search Ads 360 entity, use "ad_group_ad.ad.id" instead.
   *   `engineStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Additional status of the ad in the external engine account. Possible statuses (depending on the type of external account) include active, eligible, pending review, etc.
   *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of labels attached to this ad group ad.
@@ -36,6 +37,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
   @type t :: %__MODULE__{
           :ad => GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Ad.t() | nil,
           :creationTime => String.t() | nil,
+          :effectiveLabels => list(String.t()) | nil,
           :engineId => String.t() | nil,
           :engineStatus => String.t() | nil,
           :labels => list(String.t()) | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
 
   field(:ad, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Ad)
   field(:creationTime)
+  field(:effectiveLabels, type: :list)
   field(:engineId)
   field(:engineStatus)
   field(:labels, type: :list)

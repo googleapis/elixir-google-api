@@ -28,6 +28,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when this ad group criterion was created. The timestamp is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss" format.
   *   `criterionId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the criterion.
   *   `effectiveCpcBidMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The effective CPC (cost-per-click) bid.
+  *   `effectiveLabels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of effective labels attached to this ad group criterion. An effective label is a label inherited or directly assigned to this ad group criterion.
   *   `engineId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the ad group criterion in the external engine account. This field is for non-Google Ads account only, for example, Yahoo Japan, Microsoft, Baidu etc. For Google Ads entity, use "ad_group_criterion.criterion_id" instead.
   *   `engineStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The Engine Status for ad group criterion.
   *   `finalUrlSuffix` (*type:* `String.t`, *default:* `nil`) - URL template for appending params to final URL.
@@ -60,6 +61,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
           :creationTime => String.t() | nil,
           :criterionId => String.t() | nil,
           :effectiveCpcBidMicros => String.t() | nil,
+          :effectiveLabels => list(String.t()) | nil,
           :engineId => String.t() | nil,
           :engineStatus => String.t() | nil,
           :finalUrlSuffix => String.t() | nil,
@@ -99,6 +101,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
   field(:creationTime)
   field(:criterionId)
   field(:effectiveCpcBidMicros)
+  field(:effectiveLabels, type: :list)
   field(:engineId)
   field(:engineStatus)
   field(:finalUrlSuffix)
