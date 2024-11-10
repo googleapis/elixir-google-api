@@ -21,24 +21,15 @@ defmodule GoogleApi.Compute.V1.Model.NetworkRoutingConfig do
 
   ## Attributes
 
-  *   `bgpAlwaysCompareMed` (*type:* `boolean()`, *default:* `nil`) - Enable comparison of Multi-Exit Discriminators (MED) across routes with different neighbor ASNs when using the STANDARD BGP best path selection algorithm.
-  *   `bgpBestPathSelectionMode` (*type:* `String.t`, *default:* `nil`) - The BGP best path selection algorithm to be employed within this network for dynamic routes learned by Cloud Routers. Can be LEGACY (default) or STANDARD.
-  *   `bgpInterRegionCost` (*type:* `String.t`, *default:* `nil`) - Allows to define a preferred approach for handling inter-region cost in the selection process when using the STANDARD BGP best path selection algorithm. Can be DEFAULT or ADD_COST_TO_MED.
   *   `routingMode` (*type:* `String.t`, *default:* `nil`) - The network-wide routing mode to use. If set to REGIONAL, this network's Cloud Routers will only advertise routes with subnets of this network in the same region as the router. If set to GLOBAL, this network's Cloud Routers will advertise routes with all subnets of this network, across regions.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bgpAlwaysCompareMed => boolean() | nil,
-          :bgpBestPathSelectionMode => String.t() | nil,
-          :bgpInterRegionCost => String.t() | nil,
           :routingMode => String.t() | nil
         }
 
-  field(:bgpAlwaysCompareMed)
-  field(:bgpBestPathSelectionMode)
-  field(:bgpInterRegionCost)
   field(:routingMode)
 end
 
