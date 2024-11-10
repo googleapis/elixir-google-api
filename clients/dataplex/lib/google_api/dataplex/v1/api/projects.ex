@@ -11916,6 +11916,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:metadataJobId` (*type:* `String.t`) - Optional. The metadata job ID. If not provided, a unique ID is generated with the prefix metadata-job-.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. The service validates the request without performing any mutations. The default is false.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJob.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -11953,6 +11954,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :metadataJobId => :query,
+      :validateOnly => :query,
       :body => :body
     }
 
