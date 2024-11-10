@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.UpdatedWidget do
   @moduledoc """
-  The response of the updated widget. Used to provide autocomplete options for a widget.
+  For `selectionInput` widgets, returns autocomplete suggestions for a multiselect menu.
 
   ## Attributes
 
