@@ -85,7 +85,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `autoClassWeights` (*type:* `boolean()`, *default:* `nil`) - Whether to calculate class weights automatically based on the popularity of each label.
   *   `optimizer` (*type:* `String.t`, *default:* `nil`) - Optimizer used for training the neural nets.
   *   `colsampleBynode` (*type:* `float()`, *default:* `nil`) - Subsample ratio of columns for each node(split) for boosted tree models.
-  *   `contributionMetric` (*type:* `String.t`, *default:* `nil`) - The contribution metric. Applies to contribution analysis models. Allowed formats supported are for summable and summable ratio contribution metrics. These include expressions such as "SUM(x)" or "SUM(x)/SUM(y)", where x and y are column names from the base table.
+  *   `contributionMetric` (*type:* `String.t`, *default:* `nil`) - The contribution metric. Applies to contribution analysis models. Allowed formats supported are for summable and summable ratio contribution metrics. These include expressions such as `SUM(x)` or `SUM(x)/SUM(y)`, where x and y are column names from the base table.
   *   `modelUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI from which the model was imported. Only applicable for imported models.
   *   `sampledShapleyNumPaths` (*type:* `String.t`, *default:* `nil`) - Number of paths for the sampled Shapley explain method.
   *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate strategy.
