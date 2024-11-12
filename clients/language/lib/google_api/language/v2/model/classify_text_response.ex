@@ -22,7 +22,7 @@ defmodule GoogleApi.Language.V2.Model.ClassifyTextResponse do
   ## Attributes
 
   *   `categories` (*type:* `list(GoogleApi.Language.V2.Model.ClassificationCategory.t)`, *default:* `nil`) - Categories representing the input document.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified in the request or, if not specified, the automatically-detected language. See Document.language field for more details.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified in the request or, if not specified, the automatically-detected language. See Document.language_code field for more details.
   *   `languageSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the language is officially supported. The API may still return a response when the language is not supported, but it is on a best effort basis.
   """
 
