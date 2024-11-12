@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CloudIdentityCusto
   *   `customerName` (*type:* `String.t`, *default:* `nil`) - If owned = true, the name of the customer that owns the Cloud Identity account. Customer_name uses the format: accounts/{account_id}/customers/{customer_id}
   *   `customerType` (*type:* `String.t`, *default:* `nil`) - If existing = true, the type of the customer.
   *   `existing` (*type:* `boolean()`, *default:* `nil`) - Returns true if a Cloud Identity account exists for a specific domain.
-  *   `owned` (*type:* `boolean()`, *default:* `nil`) - Returns true if the Cloud Identity account is associated with a customer of the Channel Services partner.
+  *   `owned` (*type:* `boolean()`, *default:* `nil`) - Returns true if the Cloud Identity account is associated with a customer of the Channel Services partner (with active subscriptions or purchase consents).
   """
 
   use GoogleApi.Gax.ModelBase
