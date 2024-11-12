@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `conversionValue` (*type:* `number()`, *default:* `nil`) - Optional. The conversion value associated with this Document. Must be set if UserEvent.event_type is "conversion". For example, a value of 1000 signifies that 1000 seconds were spent viewing a Document for the `watch` conversion type.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The Document resource ID.
   *   `joined` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the referenced Document can be found in the data store.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The Document resource full name, of the form: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
@@ -32,6 +33,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :conversionValue => number() | nil,
           :id => String.t() | nil,
           :joined => boolean() | nil,
           :name => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :uri => String.t() | nil
         }
 
+  field(:conversionValue)
   field(:id)
   field(:joined)
   field(:name)

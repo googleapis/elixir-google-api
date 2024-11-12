@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Session
   ## Attributes
 
   *   `answer` (*type:* `String.t`, *default:* `nil`) - The resource name of the answer to the user query. Only set if the answer generation (/answer API call) happened in this turn.
+  *   `detailedAnswer` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Answer.t`, *default:* `nil`) - Output only. In ConversationalSearchService.GetSession API, if GetSessionRequest.include_answer_details is set to true, this field will be populated when getting answer query session.
   *   `query` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Query.t`, *default:* `nil`) - The user query.
   """
 
@@ -29,10 +30,15 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Session
 
   @type t :: %__MODULE__{
           :answer => String.t() | nil,
+          :detailedAnswer =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Answer.t() | nil,
           :query => GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Query.t() | nil
         }
 
   field(:answer)
+
+  field(:detailedAnswer, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Answer)
+
   field(:query, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Query)
 end
 

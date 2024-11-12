@@ -23,7 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - The content of the record. Empty by default. At least one of title or content should be set otherwise an INVALID_ARGUMENT error is thrown.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID to represent the record.
-  *   `score` (*type:* `number()`, *default:* `nil`) - The score of this record based on the given query and selected model.
+  *   `score` (*type:* `number()`, *default:* `nil`) - The score of this record based on the given query and selected model. The score will be rounded to 2 decimal places. If the score is close to 0, it will be rounded to 0.0001 to avoid returning unset.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the record. Empty by default. At least one of title or content should be set otherwise an INVALID_ARGUMENT error is thrown.
   """
 
