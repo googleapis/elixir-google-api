@@ -23,8 +23,8 @@ defmodule GoogleApi.Language.V2.Model.AnnotateTextResponse do
 
   *   `categories` (*type:* `list(GoogleApi.Language.V2.Model.ClassificationCategory.t)`, *default:* `nil`) - Categories identified in the input document.
   *   `documentSentiment` (*type:* `GoogleApi.Language.V2.Model.Sentiment.t`, *default:* `nil`) - The overall sentiment for the document. Populated if the user enables AnnotateTextRequest.Features.extract_document_sentiment.
-  *   `entities` (*type:* `list(GoogleApi.Language.V2.Model.Entity.t)`, *default:* `nil`) - Entities, along with their semantic information, in the input document. Populated if the user enables AnnotateTextRequest.Features.extract_entities or AnnotateTextRequest.Features.extract_entity_sentiment.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified in the request or, if not specified, the automatically-detected language. See Document.language field for more details.
+  *   `entities` (*type:* `list(GoogleApi.Language.V2.Model.Entity.t)`, *default:* `nil`) - Entities, along with their semantic information, in the input document. Populated if the user enables AnnotateTextRequest.Features.extract_entities .
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language of the text, which will be the same as the language specified in the request or, if not specified, the automatically-detected language. See Document.language_code field for more details.
   *   `languageSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the language is officially supported by all requested features. The API may still return a response when the language is not supported, but it is on a best effort basis.
   *   `moderationCategories` (*type:* `list(GoogleApi.Language.V2.Model.ClassificationCategory.t)`, *default:* `nil`) - Harmful and sensitive categories identified in the input document.
   *   `sentences` (*type:* `list(GoogleApi.Language.V2.Model.Sentence.t)`, *default:* `nil`) - Sentences in the input document. Populated if the user enables AnnotateTextRequest.Features.extract_document_sentiment.
