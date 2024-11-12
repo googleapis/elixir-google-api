@@ -21,7 +21,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
-  *   `userSession` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1UserSession.t`, *default:* `nil`) - The generated user session. The token size of proportional to the size of the intent payload. Therefore, please be mindful of keeping the request intent payload reasonably small.
+  *   `userSession` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1UserSession.t`, *default:* `nil`) - The generated user session. The token size is proportional to the size of the intent payload.
   """
 
   use GoogleApi.Gax.ModelBase

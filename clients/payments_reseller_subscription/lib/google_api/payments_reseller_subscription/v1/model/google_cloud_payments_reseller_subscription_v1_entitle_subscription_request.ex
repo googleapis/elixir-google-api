@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequest do
   @moduledoc """
-  LINT.IfChange Partner request for entitling the previously provisioned subscription to an end user. The end user identity is inferred from the request OAuth context.
+  Partner request for entitling the previously provisioned subscription to an end user. The end user identity is inferred from the request OAuth context.
 
   ## Attributes
 
