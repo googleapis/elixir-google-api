@@ -24,13 +24,13 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
   *   `attributes` (*type:* `%{optional(String.t) => GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CustomAttribute.t}`, *default:* `nil`) - Extra user event features to include in the recommendation model. These attributes must NOT contain data that needs to be parsed or processed further, e.g. JSON or other encodings. If you provide custom attributes for ingested user events, also include them in the user events that you associate with prediction requests. Custom attribute formatting must be consistent between imported events and events provided with prediction requests. This lets the Discovery Engine API use those custom attributes when training models and serving predictions, which helps improve recommendation quality. This field needs to pass all below criteria, otherwise an `INVALID_ARGUMENT` error is returned: * The key must be a UTF-8 encoded string with a length limit of 5,000 characters. * For text attributes, at most 400 values are allowed. Empty values are not allowed. Each value must be a UTF-8 encoded string with a length limit of 256 characters. * For number attributes, at most 400 values are allowed. For product recommendations, an example of extra user information is `traffic_channel`, which is how a user arrives at the site. Users can arrive at the site by coming to the site directly, coming through Google search, or in other ways.
   *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - Token to attribute an API response to user action(s) to trigger the event. Highly recommended for user events that are the result of RecommendationService.Recommend. This field enables accurate attribution of recommendation model performance. The value must be one of: * RecommendResponse.attribution_token for events that are the result of RecommendationService.Recommend. * SearchResponse.attribution_token for events that are the result of SearchService.Search. This token enables us to accurately attribute page view or conversion completion back to the event and the particular predict response containing this clicked/purchased product. If user clicks on product K in the recommendation results, pass RecommendResponse.attribution_token as a URL parameter to product K's page. When recording events on product K's page, log the RecommendResponse.attribution_token to this field.
   *   `completionInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CompletionInfo.t`, *default:* `nil`) - CompletionService.CompleteQuery details related to the event. This field should be set for `search` event when autocomplete function is enabled and the user clicks a suggestion for search.
+  *   `conversionType` (*type:* `String.t`, *default:* `nil`) - Optional. Conversion type. Required if UserEvent.event_type is `conversion`. This is a customer-defined conversion name in lowercase letters or numbers separated by "-", such as "watch", "good-visit" etc. Do not set the field if UserEvent.event_type is not `conversion`. This mixes the custom conversion event with predefined events like `search`, `view-item` etc.
   *   `dataStore` (*type:* `String.t`, *default:* `nil`) - The DataStore resource full name, of the form `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`. Optional. Only required for user events whose data store can't by determined by UserEvent.engine or UserEvent.documents. If data store is set in the parent of write/import/collect user event requests, this field can be omitted.
   *   `directUserRequest` (*type:* `boolean()`, *default:* `nil`) - Should set to true if the request is made directly from the end user, in which case the UserEvent.user_info.user_agent can be populated from the HTTP request. This flag should be set only if the API request is made directly from the end user such as a mobile app (and not if a gateway or a server is processing and pushing the user events). This should not be set when using the JavaScript tag in UserEventService.CollectUserEvent.
   *   `documents` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DocumentInfo.t)`, *default:* `nil`) - List of Documents associated with this user event. This field is optional except for the following event types: * `view-item` * `add-to-cart` * `purchase` * `media-play` * `media-complete` In a `search` event, this field represents the documents returned to the end user on the current page (the end user may have not finished browsing the whole page yet). When a new page is returned to the end user, after pagination/filtering/ordering even for the same query, a new `search` event with different UserEvent.documents is desired.
   *   `engine` (*type:* `String.t`, *default:* `nil`) - The Engine resource name, in the form of `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`. Optional. Only required for Engine produced user events. For example, user events from blended search.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Only required for UserEventService.ImportUserEvents method. Timestamp of when the user event happened.
-  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Required. User event type. Allowed values are: Generic values: * `search`: Search for Documents. * `view-item`: Detailed page view of a Document. * `view-item-list`: View of a panel or ordered list of Documents. * `view-home-page`: View of the home page. * `view-category-page`: View of a category page, e.g. Home > Men > Jeans * `add-feedback`: Add a user feedback. Retail-related values: * `add-to-cart`: Add an item(s) to cart, e.g. in Retail online shopping * `purchase`: Purchase an item(s) Media-related values: * `media-play`: Start/resume watching a video, playing a song, etc. * `media-complete`: Finished or stopped midway through a video, song, etc.
-  *   `feedback` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Feedback.t`, *default:* `nil`) - Optional. This field is optional except for the `add-feedback` event types.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Required. User event type. Allowed values are: Generic values: * `search`: Search for Documents. * `view-item`: Detailed page view of a Document. * `view-item-list`: View of a panel or ordered list of Documents. * `view-home-page`: View of the home page. * `view-category-page`: View of a category page, e.g. Home > Men > Jeans * `add-feedback`: Add a user feedback. Retail-related values: * `add-to-cart`: Add an item(s) to cart, e.g. in Retail online shopping * `purchase`: Purchase an item(s) Media-related values: * `media-play`: Start/resume watching a video, playing a song, etc. * `media-complete`: Finished or stopped midway through a video, song, etc. Custom conversion value: * `conversion`: Customer defined conversion event.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - The filter syntax consists of an expression language for constructing a predicate from one or more fields of the documents being filtered. One example is for `search` events, the associated SearchRequest may contain a filter expression in SearchRequest.filter conforming to https://google.aip.dev/160#filtering. Similarly, for `view-item-list` events that are generated from a RecommendRequest, this field may be populated directly from RecommendRequest.filter conforming to https://google.aip.dev/160#filtering. The value must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
   *   `mediaInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1MediaInfo.t`, *default:* `nil`) - Media-specific info.
   *   `pageInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PageInfo.t`, *default:* `nil`) - Page metadata such as categories and other critical information for certain event types such as `view-category-page`.
@@ -58,6 +58,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
           :completionInfo =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CompletionInfo.t()
             | nil,
+          :conversionType => String.t() | nil,
           :dataStore => String.t() | nil,
           :directUserRequest => boolean() | nil,
           :documents =>
@@ -66,8 +67,6 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
           :engine => String.t() | nil,
           :eventTime => DateTime.t() | nil,
           :eventType => String.t() | nil,
-          :feedback =>
-            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Feedback.t() | nil,
           :filter => String.t() | nil,
           :mediaInfo =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1MediaInfo.t() | nil,
@@ -102,6 +101,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
     as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CompletionInfo
   )
 
+  field(:conversionType)
   field(:dataStore)
   field(:directUserRequest)
 
@@ -113,7 +113,6 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1UserEve
   field(:engine)
   field(:eventTime, as: DateTime)
   field(:eventType)
-  field(:feedback, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Feedback)
   field(:filter)
   field(:mediaInfo, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1MediaInfo)
   field(:pageInfo, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PageInfo)

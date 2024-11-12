@@ -21,15 +21,18 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQ
 
   ## Attributes
 
+  *   `filteringLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies whether to enable the filtering based on grounding score and at what level.
   *   `includeGroundingSupports` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies whether to include grounding_supports in the answer. The default value is `false`. When this field is set to `true`, returned answer will have `grounding_score` and will contain GroundingSupports for each claim.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :filteringLevel => String.t() | nil,
           :includeGroundingSupports => boolean() | nil
         }
 
+  field(:filteringLevel)
   field(:includeGroundingSupports)
 end
 

@@ -28,7 +28,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Chunk d
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique chunk ID of the current chunk.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the chunk. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}/chunks/{chunk_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
   *   `pageSpan` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1ChunkPageSpan.t`, *default:* `nil`) - Page span of the chunk.
-  *   `relevanceScore` (*type:* `float()`, *default:* `nil`) - Output only. Represents the relevance score based on similarity. Higher score indicates higher chunk relevance. The score is in range [-1.0, 1.0]. Only populated on SearchService.SearchResponse.
+  *   `relevanceScore` (*type:* `float()`, *default:* `nil`) - Output only. Represents the relevance score based on similarity. Higher score indicates higher chunk relevance. The score is in range [-1.0, 1.0]. Only populated on SearchResponse.
   """
 
   use GoogleApi.Gax.ModelBase
