@@ -28,7 +28,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
   *   `hostPort` (*type:* `String.t`, *default:* `nil`) - The host and port of the on-premises instance in host:port format
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#onPremisesConfiguration`.
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for connecting to on-premises instance.
+  *   `selectedObjects` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.SelectedObjects.t)`, *default:* `nil`) - Optional. A list of objects that the user selects for replication from an external source instance.
   *   `sourceInstance` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.InstanceReference.t`, *default:* `nil`) - The reference to Cloud SQL instance if the source is Cloud SQL.
+  *   `sslOption` (*type:* `String.t`, *default:* `nil`) - Optional. SslOption for replica connection to the on-premises source.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The username for connecting to on-premises instance.
   """
 
@@ -42,7 +44,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
           :hostPort => String.t() | nil,
           :kind => String.t() | nil,
           :password => String.t() | nil,
+          :selectedObjects => list(GoogleApi.SQLAdmin.V1beta4.Model.SelectedObjects.t()) | nil,
           :sourceInstance => GoogleApi.SQLAdmin.V1beta4.Model.InstanceReference.t() | nil,
+          :sslOption => String.t() | nil,
           :username => String.t() | nil
         }
 
@@ -53,7 +57,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration do
   field(:hostPort)
   field(:kind)
   field(:password)
+  field(:selectedObjects, as: GoogleApi.SQLAdmin.V1beta4.Model.SelectedObjects, type: :list)
   field(:sourceInstance, as: GoogleApi.SQLAdmin.V1beta4.Model.InstanceReference)
+  field(:sslOption)
   field(:username)
 end
 

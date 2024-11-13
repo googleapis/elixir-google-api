@@ -497,8 +497,6 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:finalBackupExpiryTime` (*type:* `DateTime.t`) - Optional. Final Backup expiration time. Timestamp in UTC of when this resource is considered expired.
-      *   `:finalBackupTtlDays` (*type:* `String.t`) - Optional. Retention period of the final backup.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -523,9 +521,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :finalBackupExpiryTime => :query,
-      :finalBackupTtlDays => :query
+      :upload_protocol => :query
     }
 
     request =
