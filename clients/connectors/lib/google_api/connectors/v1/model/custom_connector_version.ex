@@ -28,6 +28,8 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnectorVersion do
   *   `enableBackendDestinationConfig` (*type:* `boolean()`, *default:* `nil`) - Optional. When enabled, the connector will be a facade/ proxy, and connects to the destination provided during connection creation.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. Resource name of the Version. Format: projects/{project}/locations/{location}/customConnectors/{custom_connector}/customConnectorVersions/{custom_connector_version}
+  *   `partnerMetadata` (*type:* `GoogleApi.Connectors.V1.Model.PartnerMetadata.t`, *default:* `nil`) - Optional. Partner metadata details. This should be populated only when publishing the custom connector to partner connector.
+  *   `publishStatus` (*type:* `GoogleApi.Connectors.V1.Model.PublishStatus.t`, *default:* `nil`) - Output only. Publish status of a custom connector.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Service account used by runtime plane to access auth config secrets.
   *   `specLocation` (*type:* `String.t`, *default:* `nil`) - Optional. Location of the custom connector spec. The location can be either a public url like `https://public-url.com/spec` Or a Google Cloud Storage location like `gs:///`
   *   `specServerUrls` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Server URLs parsed from the spec.
@@ -46,6 +48,8 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnectorVersion do
           :enableBackendDestinationConfig => boolean() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :partnerMetadata => GoogleApi.Connectors.V1.Model.PartnerMetadata.t() | nil,
+          :publishStatus => GoogleApi.Connectors.V1.Model.PublishStatus.t() | nil,
           :serviceAccount => String.t() | nil,
           :specLocation => String.t() | nil,
           :specServerUrls => list(String.t()) | nil,
@@ -65,6 +69,8 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnectorVersion do
   field(:enableBackendDestinationConfig)
   field(:labels, type: :map)
   field(:name)
+  field(:partnerMetadata, as: GoogleApi.Connectors.V1.Model.PartnerMetadata)
+  field(:publishStatus, as: GoogleApi.Connectors.V1.Model.PublishStatus)
   field(:serviceAccount)
   field(:specLocation)
   field(:specServerUrls, type: :list)

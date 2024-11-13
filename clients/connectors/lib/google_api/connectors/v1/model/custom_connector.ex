@@ -23,6 +23,7 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnector do
 
   *   `activeConnectorVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Active connector versions.
   *   `allConnectorVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. All connector versions.
+  *   `allMarketplaceVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. All marketplace versions.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
   *   `customConnectorType` (*type:* `String.t`, *default:* `nil`) - Required. Type of the custom connector.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the resource.
@@ -30,6 +31,7 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnector do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `logo` (*type:* `String.t`, *default:* `nil`) - Optional. Logo of the resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the CustomConnector. Format: projects/{project}/locations/{location}/customConnectors/{connector}
+  *   `publishedMarketplaceVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Published marketplace versions.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
 
@@ -38,6 +40,7 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnector do
   @type t :: %__MODULE__{
           :activeConnectorVersions => list(String.t()) | nil,
           :allConnectorVersions => list(String.t()) | nil,
+          :allMarketplaceVersions => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :customConnectorType => String.t() | nil,
           :description => String.t() | nil,
@@ -45,11 +48,13 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnector do
           :labels => map() | nil,
           :logo => String.t() | nil,
           :name => String.t() | nil,
+          :publishedMarketplaceVersions => list(String.t()) | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:activeConnectorVersions, type: :list)
   field(:allConnectorVersions, type: :list)
+  field(:allMarketplaceVersions, type: :list)
   field(:createTime, as: DateTime)
   field(:customConnectorType)
   field(:description)
@@ -57,6 +62,7 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnector do
   field(:labels, type: :map)
   field(:logo)
   field(:name)
+  field(:publishedMarketplaceVersions, type: :list)
   field(:updateTime, as: DateTime)
 end
 

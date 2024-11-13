@@ -25,6 +25,7 @@ defmodule GoogleApi.Connectors.V1.Model.EventingRuntimeData do
   *   `eventsListenerPscSa` (*type:* `String.t`, *default:* `nil`) - Output only. Events listener PSC Service attachment. The value will be populated after provisioning the events listener with private connectivity enabled.
   *   `status` (*type:* `GoogleApi.Connectors.V1.Model.EventingStatus.t`, *default:* `nil`) - Output only. Current status of eventing.
   *   `webhookData` (*type:* `GoogleApi.Connectors.V1.Model.WebhookData.t`, *default:* `nil`) - Output only. Webhook data.
+  *   `webhookSubscriptions` (*type:* `GoogleApi.Connectors.V1.Model.WebhookSubscriptions.t`, *default:* `nil`) - Output only. Webhook subscriptions.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Connectors.V1.Model.EventingRuntimeData do
           :eventsListenerEndpoint => String.t() | nil,
           :eventsListenerPscSa => String.t() | nil,
           :status => GoogleApi.Connectors.V1.Model.EventingStatus.t() | nil,
-          :webhookData => GoogleApi.Connectors.V1.Model.WebhookData.t() | nil
+          :webhookData => GoogleApi.Connectors.V1.Model.WebhookData.t() | nil,
+          :webhookSubscriptions => GoogleApi.Connectors.V1.Model.WebhookSubscriptions.t() | nil
         }
 
   field(:eventsListenerEndpoint)
   field(:eventsListenerPscSa)
   field(:status, as: GoogleApi.Connectors.V1.Model.EventingStatus)
   field(:webhookData, as: GoogleApi.Connectors.V1.Model.WebhookData)
+  field(:webhookSubscriptions, as: GoogleApi.Connectors.V1.Model.WebhookSubscriptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.EventingRuntimeData do
