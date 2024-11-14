@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1.Model.ImageConfig do
 
   ## Attributes
 
-  *   `textRedactionMode` (*type:* `String.t`, *default:* `nil`) - Determines how to redact text from image.
+  *   `textRedactionMode` (*type:* `String.t`, *default:* `nil`) - Optional. Determines how to redact text from image.
   """
 
   use GoogleApi.Gax.ModelBase
