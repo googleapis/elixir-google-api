@@ -22,6 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.EventThreatDetectionCustomModule do
   ## Attributes
 
   *   `ancestorModule` (*type:* `String.t`, *default:* `nil`) - Output only. The closest ancestor module that this module inherits the enablement state from. The format is the same as the EventThreatDetectionCustomModule resource name.
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - The cloud provider of the custom module.
   *   `config` (*type:* `map()`, *default:* `nil`) - Config for the module. For the resident module, its config value is defined at this level. For the inherited module, its config value is inherited from the ancestor module.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description for the module.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name to be displayed for the module.
@@ -36,6 +37,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.EventThreatDetectionCustomModule do
 
   @type t :: %__MODULE__{
           :ancestorModule => String.t() | nil,
+          :cloudProvider => String.t() | nil,
           :config => map() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.EventThreatDetectionCustomModule do
         }
 
   field(:ancestorModule)
+  field(:cloudProvider)
   field(:config, type: :map)
   field(:description)
   field(:displayName)

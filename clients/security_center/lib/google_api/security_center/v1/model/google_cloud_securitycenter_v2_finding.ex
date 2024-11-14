@@ -58,6 +58,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
   *   `processes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Process.t)`, *default:* `nil`) - Represents operating system processes associated with the Finding.
   *   `logEntries` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2LogEntry.t)`, *default:* `nil`) - Log entries that are relevant to the finding.
   *   `cloudArmor` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudArmor.t`, *default:* `nil`) - Fields related to Cloud Armor findings.
+  *   `disk` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Disk.t`, *default:* `nil`) - Disk associated with the finding.
   *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Access.t`, *default:* `nil`) - Access details associated with the finding, such as more information on the caller, which method was accessed, and from where.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string.
   *   `mitreAttack` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2MitreAttack.t`, *default:* `nil`) - MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org
@@ -154,6 +155,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
             list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2LogEntry.t()) | nil,
           :cloudArmor =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudArmor.t() | nil,
+          :disk => GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Disk.t() | nil,
           :access =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Access.t() | nil,
           :resourceName => String.t() | nil,
@@ -299,6 +301,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
   )
 
   field(:cloudArmor, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudArmor)
+  field(:disk, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Disk)
   field(:access, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Access)
   field(:resourceName)
 
