@@ -22,6 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1SecurityH
   ## Attributes
 
   *   `ancestorModule` (*type:* `String.t`, *default:* `nil`) - Output only. If empty, indicates that the custom module was created in the organization, folder, or project in which you are viewing the custom module. Otherwise, `ancestor_module` specifies the organization or folder from which the custom module is inherited.
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - The cloud provider of the custom module.
   *   `customConfig` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomConfig.t`, *default:* `nil`) - The user specified custom configuration for the module.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the Security Health Analytics custom module. This display name becomes the finding category for all findings that are returned by this custom module. The display name must be between 1 and 128 characters, start with a lowercase letter, and contain alphanumeric characters or underscores only.
   *   `enablementState` (*type:* `String.t`, *default:* `nil`) - The enablement state of the custom module.
@@ -34,6 +35,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1SecurityH
 
   @type t :: %__MODULE__{
           :ancestorModule => String.t() | nil,
+          :cloudProvider => String.t() | nil,
           :customConfig =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomConfig.t() | nil,
           :displayName => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1SecurityH
         }
 
   field(:ancestorModule)
+  field(:cloudProvider)
 
   field(:customConfig,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomConfig

@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.EffectiveEventThreatDetectionCustomM
 
   ## Attributes
 
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - The cloud provider of the custom module.
   *   `config` (*type:* `map()`, *default:* `nil`) - Output only. Config for the effective module.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. The description for the module.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The human readable name to be displayed for the module.
@@ -32,6 +33,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.EffectiveEventThreatDetectionCustomM
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudProvider => String.t() | nil,
           :config => map() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.EffectiveEventThreatDetectionCustomM
           :type => String.t() | nil
         }
 
+  field(:cloudProvider)
   field(:config, type: :map)
   field(:description)
   field(:displayName)

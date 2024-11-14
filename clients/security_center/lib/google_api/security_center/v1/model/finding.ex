@@ -58,6 +58,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `processes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Process.t)`, *default:* `nil`) - Represents operating system processes associated with the Finding.
   *   `logEntries` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.LogEntry.t)`, *default:* `nil`) - Log entries that are relevant to the finding.
   *   `cloudArmor` (*type:* `GoogleApi.SecurityCenter.V1.Model.CloudArmor.t`, *default:* `nil`) - Fields related to Cloud Armor findings.
+  *   `disk` (*type:* `GoogleApi.SecurityCenter.V1.Model.Disk.t`, *default:* `nil`) - Disk associated with the finding.
   *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.Access.t`, *default:* `nil`) - Access details associated with the finding, such as more information on the caller, which method was accessed, and from where.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string. This field is immutable after creation time.
   *   `mitreAttack` (*type:* `GoogleApi.SecurityCenter.V1.Model.MitreAttack.t`, *default:* `nil`) - MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org
@@ -121,6 +122,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :processes => list(GoogleApi.SecurityCenter.V1.Model.Process.t()) | nil,
           :logEntries => list(GoogleApi.SecurityCenter.V1.Model.LogEntry.t()) | nil,
           :cloudArmor => GoogleApi.SecurityCenter.V1.Model.CloudArmor.t() | nil,
+          :disk => GoogleApi.SecurityCenter.V1.Model.Disk.t() | nil,
           :access => GoogleApi.SecurityCenter.V1.Model.Access.t() | nil,
           :resourceName => String.t() | nil,
           :mitreAttack => GoogleApi.SecurityCenter.V1.Model.MitreAttack.t() | nil,
@@ -181,6 +183,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:processes, as: GoogleApi.SecurityCenter.V1.Model.Process, type: :list)
   field(:logEntries, as: GoogleApi.SecurityCenter.V1.Model.LogEntry, type: :list)
   field(:cloudArmor, as: GoogleApi.SecurityCenter.V1.Model.CloudArmor)
+  field(:disk, as: GoogleApi.SecurityCenter.V1.Model.Disk)
   field(:access, as: GoogleApi.SecurityCenter.V1.Model.Access)
   field(:resourceName)
   field(:mitreAttack, as: GoogleApi.SecurityCenter.V1.Model.MitreAttack)

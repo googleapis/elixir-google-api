@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Effective
 
   ## Attributes
 
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - The cloud provider of the custom module.
   *   `customConfig` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomConfig.t`, *default:* `nil`) - Output only. The user-specified configuration for the module.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name for the custom module. The name must be between 1 and 128 characters, start with a lowercase letter, and contain alphanumeric characters or underscores only.
   *   `enablementState` (*type:* `String.t`, *default:* `nil`) - Output only. The effective state of enablement for the module at the given level of the hierarchy.
@@ -30,12 +31,15 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Effective
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudProvider => String.t() | nil,
           :customConfig =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomConfig.t() | nil,
           :displayName => String.t() | nil,
           :enablementState => String.t() | nil,
           :name => String.t() | nil
         }
+
+  field(:cloudProvider)
 
   field(:customConfig,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1CustomConfig
