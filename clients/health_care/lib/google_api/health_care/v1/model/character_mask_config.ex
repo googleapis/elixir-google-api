@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1.Model.CharacterMaskConfig do
 
   ## Attributes
 
-  *   `maskingCharacter` (*type:* `String.t`, *default:* `nil`) - Character to mask the sensitive values. If not supplied, defaults to "*".
+  *   `maskingCharacter` (*type:* `String.t`, *default:* `nil`) - Optional. Character to mask the sensitive values. If not supplied, defaults to "*".
   """
 
   use GoogleApi.Gax.ModelBase

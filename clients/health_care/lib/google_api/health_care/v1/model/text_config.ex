@@ -21,9 +21,9 @@ defmodule GoogleApi.HealthCare.V1.Model.TextConfig do
 
   ## Attributes
 
-  *   `additionalTransformations` (*type:* `list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - Transformations to apply to the detected data, overridden by `exclude_info_types`.
-  *   `excludeInfoTypes` (*type:* `list(String.t)`, *default:* `nil`) - InfoTypes to skip transforming, overriding `additional_transformations`.
-  *   `transformations` (*type:* `list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - The transformations to apply to the detected data. Deprecated. Use `additional_transformations` instead.
+  *   `additionalTransformations` (*type:* `list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - Optional. Transformations to apply to the detected data, overridden by `exclude_info_types`.
+  *   `excludeInfoTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. InfoTypes to skip transforming, overriding `additional_transformations`.
+  *   `transformations` (*type:* `list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - Optional. The transformations to apply to the detected data. Deprecated. Use `additional_transformations` instead.
   """
 
   use GoogleApi.Gax.ModelBase
