@@ -24,6 +24,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system annotations in v1 now have a corresponding field in v2 RevisionTemplate. This field follows Kubernetes annotations' namespacing, limits, and rules.
   *   `containers` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Container.t)`, *default:* `nil`) - Holds the single container that defines the unit of execution for this Revision.
   *   `encryptionKey` (*type:* `String.t`, *default:* `nil`) - A reference to a customer managed encryption key (CMEK) to use to encrypt this container image. For more information, go to https://cloud.google.com/run/docs/securing/using-cmek
+  *   `encryptionKeyRevocationAction` (*type:* `String.t`, *default:* `nil`) - Optional. The action to take if the encryption key is revoked.
+  *   `encryptionKeyShutdownDuration` (*type:* `String.t`, *default:* `nil`) - Optional. If encryption_key_revocation_action is SHUTDOWN, the duration before shutting down all instances. The minimum increment is 1 hour.
   *   `executionEnvironment` (*type:* `String.t`, *default:* `nil`) - Optional. The sandbox environment to host this Revision.
   *   `healthCheckDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Disables health checking containers during deployment.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 RevisionTemplate.
@@ -45,6 +47,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
           :annotations => map() | nil,
           :containers => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Container.t()) | nil,
           :encryptionKey => String.t() | nil,
+          :encryptionKeyRevocationAction => String.t() | nil,
+          :encryptionKeyShutdownDuration => String.t() | nil,
           :executionEnvironment => String.t() | nil,
           :healthCheckDisabled => boolean() | nil,
           :labels => map() | nil,
@@ -63,6 +67,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
   field(:annotations, type: :map)
   field(:containers, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Container, type: :list)
   field(:encryptionKey)
+  field(:encryptionKeyRevocationAction)
+  field(:encryptionKeyShutdownDuration)
   field(:executionEnvironment)
   field(:healthCheckDisabled)
   field(:labels, type: :map)
