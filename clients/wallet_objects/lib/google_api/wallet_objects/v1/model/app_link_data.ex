@@ -22,6 +22,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.AppLinkData do
   ## Attributes
 
   *   `androidAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Optional information about the partner app link.
+  *   `displayText` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Optional display text for the app link button. Character limit is 30.
   *   `iosAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Deprecated. Links to open iOS apps are not supported.
   *   `webAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Optional information about the partner web link.
   """
@@ -31,11 +32,13 @@ defmodule GoogleApi.WalletObjects.V1.Model.AppLinkData do
   @type t :: %__MODULE__{
           :androidAppLinkInfo =>
             GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t() | nil,
+          :displayText => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
           :iosAppLinkInfo => GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t() | nil,
           :webAppLinkInfo => GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t() | nil
         }
 
   field(:androidAppLinkInfo, as: GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo)
+  field(:displayText, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
   field(:iosAppLinkInfo, as: GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo)
   field(:webAppLinkInfo, as: GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo)
 end
