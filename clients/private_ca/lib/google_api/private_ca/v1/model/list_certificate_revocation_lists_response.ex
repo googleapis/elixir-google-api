@@ -22,7 +22,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.ListCertificateRevocationListsResponse do
   ## Attributes
 
   *   `certificateRevocationLists` (*type:* `list(GoogleApi.PrivateCA.V1.Model.CertificateRevocationList.t)`, *default:* `nil`) - The list of CertificateRevocationLists.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListCertificateRevocationListsRequest.next_page_token to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListCertificateRevocationListsRequest.page_token to retrieve the next page of results.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - A list of locations (e.g. "us-west1") that could not be reached.
   """
 
