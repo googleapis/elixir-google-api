@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1GovernedContainer do
   *   `fullResourceName` (*type:* `String.t`, *default:* `nil`) - The [full resource name] (https://cloud.google.com/asset-inventory/docs/resource-name-format) of an organization/folder/project resource.
   *   `organization` (*type:* `String.t`, *default:* `nil`) - The organization that this resource belongs to, in the format of organizations/{ORGANIZATION_NUMBER}. This field is available when the resource belongs (directly or cascadingly) to an organization.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The [full resource name] (https://cloud.google.com/asset-inventory/docs/resource-name-format) of the parent of AnalyzeOrgPolicyGovernedContainersResponse.GovernedContainer.full_resource_name.
-  *   `policyBundle` (*type:* `list(GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t)`, *default:* `nil`) - The ordered list of all organization policies from the AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource. to the scope specified in the request. If the constraint is defined with default policy, it will also appear in the list.
+  *   `policyBundle` (*type:* `list(GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t)`, *default:* `nil`) - The ordered list of all organization policies from the consolidated_policy.attached_resource. to the scope specified in the request. If the constraint is defined with default policy, it will also appear in the list.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The project that this resource belongs to, in the format of projects/{PROJECT_NUMBER}. This field is available when the resource belongs to a project.
   """
 
