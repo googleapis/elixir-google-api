@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.NetworkServices.V1.Model.WasmPluginUsedBy do
   @moduledoc """
-  Defines a resource that uses the `WasmPlugin`.
+  Defines a resource that uses the `WasmPlugin` resource.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full name of the resource https://google.aip.dev/122#full-resource-names, e.g. `//networkservices.googleapis.com/projects/{project}/locations/{location}/lbRouteExtensions/{extension}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full name of the resource https://google.aip.dev/122#full-resource-names, for example `//networkservices.googleapis.com/projects/{project}/locations/{location}/lbRouteExtensions/{extension}`
   """
 
   use GoogleApi.Gax.ModelBase
