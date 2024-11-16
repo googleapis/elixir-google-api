@@ -23,8 +23,9 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo do
 
   *   `clusterNetworkUri` (*type:* `String.t`, *default:* `nil`) - URI of a GKE cluster network.
   *   `clusterUri` (*type:* `String.t`, *default:* `nil`) - URI of a GKE cluster.
-  *   `externalIp` (*type:* `String.t`, *default:* `nil`) - External IP address of a GKE cluster master.
-  *   `internalIp` (*type:* `String.t`, *default:* `nil`) - Internal IP address of a GKE cluster master.
+  *   `dnsEndpoint` (*type:* `String.t`, *default:* `nil`) - DNS endpoint of a GKE cluster control plane.
+  *   `externalIp` (*type:* `String.t`, *default:* `nil`) - External IP address of a GKE cluster control plane.
+  *   `internalIp` (*type:* `String.t`, *default:* `nil`) - Internal IP address of a GKE cluster control plane.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +33,14 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo do
   @type t :: %__MODULE__{
           :clusterNetworkUri => String.t() | nil,
           :clusterUri => String.t() | nil,
+          :dnsEndpoint => String.t() | nil,
           :externalIp => String.t() | nil,
           :internalIp => String.t() | nil
         }
 
   field(:clusterNetworkUri)
   field(:clusterUri)
+  field(:dnsEndpoint)
   field(:externalIp)
   field(:internalIp)
 end
