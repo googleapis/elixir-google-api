@@ -22,6 +22,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   ## Attributes
 
   *   `agentId` (*type:* `String.t`, *default:* `nil`) - A user-specified string representing the agent.
+  *   `agentType` (*type:* `String.t`, *default:* `nil`) - The agent type, e.g. HUMAN_AGENT.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The agent's name.
   *   `dispositionCode` (*type:* `String.t`, *default:* `nil`) - A user-provided string indicating the outcome of the agent's segment of the call.
   *   `team` (*type:* `String.t`, *default:* `nil`) - A user-specified string representing the agent's team.
@@ -31,12 +32,14 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   @type t :: %__MODULE__{
           :agentId => String.t() | nil,
+          :agentType => String.t() | nil,
           :displayName => String.t() | nil,
           :dispositionCode => String.t() | nil,
           :team => String.t() | nil
         }
 
   field(:agentId)
+  field(:agentType)
   field(:displayName)
   field(:dispositionCode)
   field(:team)

@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1QaAnswerAnswerValue do
   @moduledoc """
-  Message for holding the value of the answer. QaQuestion.AnswerChoice defines the possible answer values for a question.
+  Message for holding the value of a QaAnswer. QaQuestion.AnswerChoice defines the possible answer values for a question.
 
   ## Attributes
 
   *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value.
   *   `key` (*type:* `String.t`, *default:* `nil`) - A short string used as an identifier. Matches the value used in QaQuestion.AnswerChoice.key.
-  *   `naValue` (*type:* `boolean()`, *default:* `nil`) - A value of "Not Applicable (N/A)".
-  *   `normalizedScore` (*type:* `float()`, *default:* `nil`) - Output only. Normalized score of the questions. Calculated as score / potential_score iff potential_score != 0 else 0
+  *   `naValue` (*type:* `boolean()`, *default:* `nil`) - A value of "Not Applicable (N/A)". Should only ever be `true`.
+  *   `normalizedScore` (*type:* `float()`, *default:* `nil`) - Output only. Normalized score of the questions. Calculated as score / potential_score.
   *   `numValue` (*type:* `float()`, *default:* `nil`) - Numerical value.
   *   `potentialScore` (*type:* `float()`, *default:* `nil`) - Output only. The maximum potential score of the question.
   *   `score` (*type:* `float()`, *default:* `nil`) - Output only. Numerical score of the answer.
