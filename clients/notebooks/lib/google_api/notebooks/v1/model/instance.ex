@@ -40,7 +40,7 @@ defmodule GoogleApi.Notebooks.V1.Model.Instance do
   *   `noRemoveDataDisk` (*type:* `boolean()`, *default:* `nil`) - Input only. If true, the data disk will not be auto deleted when deleting the instance.
   *   `disks` (*type:* `list(GoogleApi.Notebooks.V1.Model.Disk.t)`, *default:* `nil`) - Output only. Attached disks to notebook instance.
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - Input only. The type of the data disk attached to this instance, defaults to standard persistent disk (`PD_STANDARD`).
-  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this instance.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-resource) of this instance.
   *   `installGpuDriver` (*type:* `boolean()`, *default:* `nil`) - Whether the end user authorizes Google Cloud to install GPU driver on this instance. If this field is empty or set to false, the GPU driver won't be installed. Only applicable to instances with GPUs.
   *   `acceleratorConfig` (*type:* `GoogleApi.Notebooks.V1.Model.AcceleratorConfig.t`, *default:* `nil`) - The hardware accelerator used on this instance. If you use accelerators, make sure that your configuration has [enough vCPUs and memory to support the `machine_type` you have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
   *   `nicType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.

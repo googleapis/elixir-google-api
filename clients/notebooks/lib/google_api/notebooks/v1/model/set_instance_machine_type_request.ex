@@ -21,7 +21,7 @@ defmodule GoogleApi.Notebooks.V1.Model.SetInstanceMachineTypeRequest do
 
   ## Attributes
 
-  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types).
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-resource).
   """
 
   use GoogleApi.Gax.ModelBase
