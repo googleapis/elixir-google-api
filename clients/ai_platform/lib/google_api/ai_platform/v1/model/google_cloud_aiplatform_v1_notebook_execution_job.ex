@@ -26,12 +26,13 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
   *   `dataformRepositorySource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobDataformRepositorySource.t`, *default:* `nil`) - The Dataform Repository pointing to a single file notebook repository.
   *   `directNotebookSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobDirectNotebookSource.t`, *default:* `nil`) - The contents of an input notebook file.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the NotebookExecutionJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
-  *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key spec for the notebook execution job. This field is auto-populated if the NotebookService.NotebookRuntimeTemplate has an encryption spec.
+  *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key spec for the notebook execution job. This field is auto-populated if the NotebookRuntimeTemplate has an encryption spec.
   *   `executionTimeout` (*type:* `String.t`, *default:* `nil`) - Max running time of the execution job in seconds (default 86400s / 24 hrs).
   *   `executionUser` (*type:* `String.t`, *default:* `nil`) - The user email to run the execution as. Only supported by Colab runtimes.
   *   `gcsNotebookSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobGcsNotebookSource.t`, *default:* `nil`) - The Cloud Storage url pointing to the ipynb file. Format: `gs://bucket/notebook_file.ipynb`
   *   `gcsOutputUri` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage location to upload the result to. Format: `gs://bucket-name`
   *   `jobState` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the NotebookExecutionJob.
+  *   `kernelName` (*type:* `String.t`, *default:* `nil`) - The name of the kernel to use during notebook execution. If unset, the default kernel is used.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels with user-defined metadata to organize NotebookExecutionJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this NotebookExecutionJob. Format: `projects/{project_id}/locations/{location}/notebookExecutionJobs/{job_id}`
   *   `notebookRuntimeTemplateResourceName` (*type:* `String.t`, *default:* `nil`) - The NotebookRuntimeTemplate to source compute configuration from.
@@ -39,6 +40,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account to run the execution as.
   *   `status` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - Output only. Populated when the NotebookExecutionJob is completed. When there is an error during notebook execution, the error details are populated.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookExecutionJob was most recently updated.
+  *   `workbenchRuntime` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobWorkbenchRuntime.t`, *default:* `nil`) - The Workbench runtime configuration to use for the notebook execution.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -64,13 +66,17 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
             | nil,
           :gcsOutputUri => String.t() | nil,
           :jobState => String.t() | nil,
+          :kernelName => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :notebookRuntimeTemplateResourceName => String.t() | nil,
           :scheduleResourceName => String.t() | nil,
           :serviceAccount => String.t() | nil,
           :status => GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :workbenchRuntime =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobWorkbenchRuntime.t()
+            | nil
         }
 
   field(:createTime, as: DateTime)
@@ -101,6 +107,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
 
   field(:gcsOutputUri)
   field(:jobState)
+  field(:kernelName)
   field(:labels, type: :map)
   field(:name)
   field(:notebookRuntimeTemplateResourceName)
@@ -108,6 +115,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
   field(:serviceAccount)
   field(:status, as: GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus)
   field(:updateTime, as: DateTime)
+
+  field(:workbenchRuntime,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobWorkbenchRuntime
+  )
 end
 
 defimpl Poison.Decoder,

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StreamingReadFeatureValuesRequest do
   @moduledoc """
-  Request message for FeaturestoreOnlineServingService.StreamingFeatureValuesRead.
+  Request message for FeaturestoreOnlineServingService.StreamingReadFeatureValues.
 
   ## Attributes
 

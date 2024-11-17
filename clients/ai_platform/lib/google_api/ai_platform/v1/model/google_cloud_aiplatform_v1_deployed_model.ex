@@ -29,6 +29,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the DeployedModel. If not provided upon creation, the Model's display_name is used.
   *   `enableAccessLogging` (*type:* `boolean()`, *default:* `nil`) - If true, online prediction access logs are sent to Cloud Logging. These logs are like standard server access logs, containing information like timestamp and latency for each prediction request. Note that logs may incur a cost, especially if your project receives prediction requests at a high queries per second rate (QPS). Estimate your costs before enabling this option.
   *   `explanationSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExplanationSpec.t`, *default:* `nil`) - Explanation configuration for this DeployedModel. When deploying a Model using EndpointService.DeployModel, this value overrides the value of Model.explanation_spec. All fields of explanation_spec are optional in the request. If a field of explanation_spec is not populated, the value of the same field of Model.explanation_spec is inherited. If the corresponding Model.explanation_spec is not populated, all fields of the explanation_spec will be used for the explanation configuration.
+  *   `fasterDeploymentConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FasterDeploymentConfig.t`, *default:* `nil`) - Configuration for faster model deployment.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Immutable. The ID of the DeployedModel. If not provided upon deployment, Vertex AI will generate a value for this ID. This value should be 1-10 characters, and valid characters are `/[0-9]/`.
   *   `model` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the Model that this is the deployment of. Note that the Model may be in a different location than the DeployedModel's Endpoint. The resource name may contain version id or version alias to specify the version. Example: `projects/{project}/locations/{location}/models/{model}@2` or `projects/{project}/locations/{location}/models/{model}@golden` if no version is specified, the default version will be deployed.
   *   `modelVersionId` (*type:* `String.t`, *default:* `nil`) - Output only. The version ID of the model that is deployed.
@@ -52,6 +53,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
           :enableAccessLogging => boolean() | nil,
           :explanationSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExplanationSpec.t() | nil,
+          :fasterDeploymentConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FasterDeploymentConfig.t() | nil,
           :id => String.t() | nil,
           :model => String.t() | nil,
           :modelVersionId => String.t() | nil,
@@ -78,6 +81,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
   field(:enableAccessLogging)
 
   field(:explanationSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExplanationSpec)
+
+  field(:fasterDeploymentConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FasterDeploymentConfig
+  )
 
   field(:id)
   field(:model)

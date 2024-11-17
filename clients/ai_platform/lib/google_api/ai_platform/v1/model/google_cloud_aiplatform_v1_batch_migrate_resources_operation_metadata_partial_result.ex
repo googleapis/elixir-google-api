@@ -24,7 +24,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BatchMigrateResou
   *   `dataset` (*type:* `String.t`, *default:* `nil`) - Migrated dataset resource name.
   *   `error` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The error result of the migration request in case of failure.
   *   `model` (*type:* `String.t`, *default:* `nil`) - Migrated model resource name.
-  *   `request` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MigrateResourceRequest.t`, *default:* `nil`) - It's the same as the value in MigrateResourceRequest.migrate_resource_requests.
+  *   `request` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MigrateResourceRequest.t`, *default:* `nil`) - It's the same as the value in BatchMigrateResourcesRequest.migrate_resource_requests.
   """
 
   use GoogleApi.Gax.ModelBase

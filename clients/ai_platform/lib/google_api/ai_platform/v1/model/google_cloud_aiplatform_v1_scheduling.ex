@@ -23,9 +23,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Scheduling do
 
   *   `disableRetries` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the job should retry for internal errors after the job starts running. If true, overrides `Scheduling.restart_job_on_worker_restart` to false.
   *   `maxWaitDuration` (*type:* `String.t`, *default:* `nil`) - Optional. This is the maximum duration that a job will wait for the requested resources to be provisioned if the scheduling strategy is set to [Strategy.DWS_FLEX_START]. If set to 0, the job will wait indefinitely. The default is 24 hours.
-  *   `restartJobOnWorkerRestart` (*type:* `boolean()`, *default:* `nil`) - Restarts the entire CustomJob if a worker gets restarted. This feature can be used by distributed training jobs that are not resilient to workers leaving and joining a job.
+  *   `restartJobOnWorkerRestart` (*type:* `boolean()`, *default:* `nil`) - Optional. Restarts the entire CustomJob if a worker gets restarted. This feature can be used by distributed training jobs that are not resilient to workers leaving and joining a job.
   *   `strategy` (*type:* `String.t`, *default:* `nil`) - Optional. This determines which type of scheduling strategy to use.
-  *   `timeout` (*type:* `String.t`, *default:* `nil`) - The maximum job running time. The default is 7 days.
+  *   `timeout` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum job running time. The default is 7 days.
   """
 
   use GoogleApi.Gax.ModelBase
