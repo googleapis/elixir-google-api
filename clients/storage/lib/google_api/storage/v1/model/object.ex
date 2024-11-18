@@ -25,6 +25,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   *   `customTime` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp in RFC 3339 format specified by the user for an object.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the object. Required if not specified by URL parameter.
   *   `timeStorageClassUpdated` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object's storage class was last changed. When the object is initially created, it will be set to timeCreated.
+  *   `timeFinalized` (*type:* `DateTime.t`, *default:* `nil`) - The time when the object was finalized.
   *   `temporaryHold` (*type:* `boolean()`, *default:* `nil`) - Whether an object is under temporary hold. While this flag is set to true, the object is protected against deletion and overwrites. A common use case of this flag is regulatory investigations where objects need to be retained while the investigation is ongoing. Note that unlike event-based hold, temporary hold does not impact retention expiration time of an object.
   *   `timeDeleted` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object became noncurrent in RFC 3339 format. Will be returned if and only if this version of the object has been deleted.
   *   `retention` (*type:* `GoogleApi.Storage.V1.Model.ObjectRetention.t`, *default:* `nil`) - A collection of object level retention parameters.
@@ -66,6 +67,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
           :customTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :timeStorageClassUpdated => DateTime.t() | nil,
+          :timeFinalized => DateTime.t() | nil,
           :temporaryHold => boolean() | nil,
           :timeDeleted => DateTime.t() | nil,
           :retention => GoogleApi.Storage.V1.Model.ObjectRetention.t() | nil,
@@ -104,6 +106,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   field(:customTime, as: DateTime)
   field(:name)
   field(:timeStorageClassUpdated, as: DateTime)
+  field(:timeFinalized, as: DateTime)
   field(:temporaryHold)
   field(:timeDeleted, as: DateTime)
   field(:retention, as: GoogleApi.Storage.V1.Model.ObjectRetention)

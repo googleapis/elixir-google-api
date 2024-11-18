@@ -603,16 +603,20 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %{}}` on success
+  *   `{:ok, %GoogleApi.Storage.V1.Model.Bucket{}}` on success
   *   `{:error, info}` on failure
   """
   @spec storage_buckets_restore(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
-          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+          {:ok, GoogleApi.Storage.V1.Model.Bucket.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def storage_buckets_restore(connection, bucket, generation, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -623,6 +627,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
+      :projection => :query,
       :userProject => :query
     }
 
@@ -638,7 +643,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [decode: false])
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Bucket{}])
   end
 
   @doc """
