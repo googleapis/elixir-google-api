@@ -219,7 +219,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
   end
 
   @doc """
-  Update default config for a given project and location.
+  Update default config for a given project and location. *Note:* This method does not fully implement AIP/134. In particular: 1. The wildcard entry (***) is treated as a bad request 2. When the *field_mask* is omitted, instead of only updating the set fields, the request is treated as a full update on all modifiable fields 
 
   ## Parameters
 
@@ -1174,7 +1174,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates a single Repository.
+  Updates a single Repository. *Note:* This method does not fully implement AIP/134. In particular: 1. The wildcard entry (***) is treated as a bad request 2. When the *field_mask* is omitted, instead of only updating the set fields, the request is treated as a full update on all modifiable fields 
 
   ## Parameters
 
@@ -2429,7 +2429,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates a single ReleaseConfig.
+  Updates a single ReleaseConfig. *Note:* This method does not fully implement AIP/134. In particular: 1. The wildcard entry (***) is treated as a bad request 2. When the *field_mask* is omitted, instead of only updating the set fields, the request is treated as a full update on all modifiable fields 
 
   ## Parameters
 
@@ -2793,7 +2793,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates a single WorkflowConfig.
+  Updates a single WorkflowConfig. *Note:* This method does not fully implement AIP/134. In particular: 1. The wildcard entry (***) is treated as a bad request 2. When the *field_mask* is omitted, instead of only updating the set fields, the request is treated as a full update on all modifiable fields 
 
   ## Parameters
 
