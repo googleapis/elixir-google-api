@@ -28,7 +28,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `dialogflowIntents` (*type:* `%{optional(String.t) => GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1DialogflowIntent.t}`, *default:* `nil`) - Output only. All the matched Dialogflow intents in the call. The key corresponds to a Dialogflow intent, format: projects/{project}/agent/{agent}/intents/{intent}
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Output only. The duration of the conversation.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this conversation should expire. After this time, the conversation data and any associated analyses will be deleted.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - A map for the user to specify any custom fields. A maximum of 20 labels per conversation is allowed, with a maximum of 256 characters per entry.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - A map for the user to specify any custom fields. A maximum of 100 labels per conversation is allowed, with a maximum of 256 characters per entry.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - A user-specified language code for the conversation.
   *   `latestAnalysis` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1Analysis.t`, *default:* `nil`) - Output only. The conversation's latest analysis, if one exists.
   *   `latestSummary` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData.t`, *default:* `nil`) - Output only. Latest summary of the conversation.
