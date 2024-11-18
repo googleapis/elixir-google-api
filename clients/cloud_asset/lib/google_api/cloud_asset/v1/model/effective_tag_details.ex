@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.EffectiveTagDetails do
 
   ## Attributes
 
-  *   `attachedResource` (*type:* `String.t`, *default:* `nil`) - The [full resource name](https://cloud.google.com/asset-inventory/docs/resource-name-format) of the ancestor from which an effective_tag is inherited, according to [tag inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
+  *   `attachedResource` (*type:* `String.t`, *default:* `nil`) - The [full resource name](https://cloud.google.com/asset-inventory/docs/resource-name-format) of the ancestor from which effective_tags are inherited, according to [tag inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
   *   `effectiveTags` (*type:* `list(GoogleApi.CloudAsset.V1.Model.Tag.t)`, *default:* `nil`) - The effective tags inherited from the attached_resource. Note that tags with the same key but different values may attach to resources at a different hierarchy levels. The lower hierarchy tag value will overwrite the higher hierarchy tag value of the same tag key. In this case, the tag value at the higher hierarchy level will be removed. For more information, see [tag inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance).
   """
 

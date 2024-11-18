@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyResponse do
 
   *   `fullyExplored` (*type:* `boolean()`, *default:* `nil`) - Represents whether all entries in the main_analysis and service_account_impersonation_analysis have been fully explored to answer the query in the request.
   *   `mainAnalysis` (*type:* `GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysis.t`, *default:* `nil`) - The main analysis that matches the original request.
-  *   `serviceAccountImpersonationAnalysis` (*type:* `list(GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysis.t)`, *default:* `nil`) - The service account impersonation analysis if AnalyzeIamPolicyRequest.analyze_service_account_impersonation is enabled.
+  *   `serviceAccountImpersonationAnalysis` (*type:* `list(GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysis.t)`, *default:* `nil`) - The service account impersonation analysis if IamPolicyAnalysisQuery.Options.analyze_service_account_impersonation is enabled.
   """
 
   use GoogleApi.Gax.ModelBase
