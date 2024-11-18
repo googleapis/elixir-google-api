@@ -21,11 +21,16 @@ defmodule GoogleApi.GKEOnPrem.V1.Model.VmwareAdminMetalLbConfig do
 
   ## Attributes
 
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether MetalLB is enabled.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :enabled => boolean() | nil
+        }
+
+  field(:enabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEOnPrem.V1.Model.VmwareAdminMetalLbConfig do
