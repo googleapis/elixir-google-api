@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudSearch.Mixfile do
   use Mix.Project
 
-  @version "0.23.1"
+  @version "0.24.0"
 
   def project() do
     [
