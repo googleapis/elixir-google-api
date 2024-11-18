@@ -23,6 +23,7 @@ defmodule GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile do
 
   *   `alloydbClusterId` (*type:* `String.t`, *default:* `nil`) - Optional. If the destination is an AlloyDB database, use this field to provide the AlloyDB cluster ID.
   *   `cloudSqlId` (*type:* `String.t`, *default:* `nil`) - If the source is a Cloud SQL database, use this field to provide the Cloud SQL instance ID of the source.
+  *   `database` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the specific database within the host.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Required. The IP or hostname of the source PostgreSQL database.
   *   `networkArchitecture` (*type:* `String.t`, *default:* `nil`) - Output only. If the source is a Cloud SQL database, this field indicates the network architecture it's associated with.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password for the user that Database Migration Service will be using to connect to the database. This field is not returned on request, and the value is encrypted when stored in Database Migration Service.
@@ -39,6 +40,7 @@ defmodule GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile do
   @type t :: %__MODULE__{
           :alloydbClusterId => String.t() | nil,
           :cloudSqlId => String.t() | nil,
+          :database => String.t() | nil,
           :host => String.t() | nil,
           :networkArchitecture => String.t() | nil,
           :password => String.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile do
 
   field(:alloydbClusterId)
   field(:cloudSqlId)
+  field(:database)
   field(:host)
   field(:networkArchitecture)
   field(:password)
