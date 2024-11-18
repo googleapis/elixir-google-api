@@ -23,10 +23,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   *   `bleuResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuResults.t`, *default:* `nil`) - Results for bleu metric.
   *   `coherenceResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceResult.t`, *default:* `nil`) - Result for coherence metric.
+  *   `cometResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometResult.t`, *default:* `nil`) - Translation metrics. Result for Comet metric.
   *   `exactMatchResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchResults.t`, *default:* `nil`) - Auto metric evaluation results. Results for exact match metric.
   *   `fluencyResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyResult.t`, *default:* `nil`) - LLM-based metric evaluation result. General text generation metrics, applicable to other categories. Result for fluency metric.
   *   `fulfillmentResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentResult.t`, *default:* `nil`) - Result for fulfillment metric.
   *   `groundednessResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessResult.t`, *default:* `nil`) - Result for groundedness metric.
+  *   `metricxResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxResult.t`, *default:* `nil`) - Result for Metricx metric.
   *   `pairwiseMetricResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricResult.t`, *default:* `nil`) - Result for pairwise metric.
   *   `pairwiseQuestionAnsweringQualityResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityResult.t`, *default:* `nil`) - Result for pairwise question answering quality metric.
   *   `pairwiseSummarizationQualityResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityResult.t`, *default:* `nil`) - Result for pairwise summarization quality metric.
@@ -53,6 +55,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuResults.t() | nil,
           :coherenceResult =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceResult.t() | nil,
+          :cometResult =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometResult.t() | nil,
           :exactMatchResults =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchResults.t() | nil,
           :fluencyResult =>
@@ -61,6 +65,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentResult.t() | nil,
           :groundednessResult =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessResult.t() | nil,
+          :metricxResult =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxResult.t() | nil,
           :pairwiseMetricResult =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricResult.t() | nil,
           :pairwiseQuestionAnsweringQualityResult =>
@@ -112,6 +118,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   field(:coherenceResult, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceResult)
 
+  field(:cometResult, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometResult)
+
   field(:exactMatchResults,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchResults
   )
@@ -125,6 +133,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   field(:groundednessResult,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessResult
   )
+
+  field(:metricxResult, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxResult)
 
   field(:pairwiseMetricResult,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricResult

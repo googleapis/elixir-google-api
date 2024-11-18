@@ -23,10 +23,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   *   `bleuInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput.t`, *default:* `nil`) - Instances and metric spec for bleu metric.
   *   `coherenceInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput.t`, *default:* `nil`) - Input for coherence metric.
+  *   `cometInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput.t`, *default:* `nil`) - Translation metrics. Input for Comet metric.
   *   `exactMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput.t`, *default:* `nil`) - Auto metric instances. Instances and metric spec for exact match metric.
   *   `fluencyInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyInput.t`, *default:* `nil`) - LLM-based metric instance. General text generation metrics, applicable to other categories. Input for fluency metric.
   *   `fulfillmentInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentInput.t`, *default:* `nil`) - Input for fulfillment metric.
   *   `groundednessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput.t`, *default:* `nil`) - Input for groundedness metric.
+  *   `metricxInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput.t`, *default:* `nil`) - Input for Metricx metric.
   *   `pairwiseMetricInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput.t`, *default:* `nil`) - Input for pairwise metric.
   *   `pairwiseQuestionAnsweringQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput.t`, *default:* `nil`) - Input for pairwise question answering quality metric.
   *   `pairwiseSummarizationQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityInput.t`, *default:* `nil`) - Input for pairwise summarization quality metric.
@@ -52,6 +54,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
           :bleuInput => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput.t() | nil,
           :coherenceInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput.t() | nil,
+          :cometInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput.t() | nil,
           :exactMatchInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput.t() | nil,
           :fluencyInput =>
@@ -60,6 +64,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentInput.t() | nil,
           :groundednessInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput.t() | nil,
+          :metricxInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput.t() | nil,
           :pairwiseMetricInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput.t() | nil,
           :pairwiseQuestionAnsweringQualityInput =>
@@ -109,6 +115,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   field(:bleuInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput)
   field(:coherenceInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput)
+  field(:cometInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput)
 
   field(:exactMatchInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput)
 
@@ -121,6 +128,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   field(:groundednessInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput
   )
+
+  field(:metricxInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput)
 
   field(:pairwiseMetricInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput
