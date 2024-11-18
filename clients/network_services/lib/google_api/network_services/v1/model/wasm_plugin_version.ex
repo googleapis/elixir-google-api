@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.NetworkServices.V1.Model.WasmPluginVersion do
   @moduledoc """
-  A single immutable version of a `WasmPlugin`. Defines the Wasm module used and optionally its runtime config.
+  A single immutable version of a `WasmPlugin` resource. Defines the Wasm module used and optionally its runtime config.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A human-readable description of the resource.
-  *   `imageDigest` (*type:* `String.t`, *default:* `nil`) - Output only. The resolved digest for the image specified in `image`. The digest is resolved during the creation of `WasmPluginVersion` resource. This field holds the digest value regardless of whether a tag or digest was originally specified in the `image` field.
-  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. URI of the container image containing the Wasm plugin, stored in the Artifact Registry. When a new `WasmPluginVersion` resource is created, the digest of the container image is saved in the `image_digest` field. When downloading an image, the digest value is used instead of an image tag.
+  *   `imageDigest` (*type:* `String.t`, *default:* `nil`) - Output only. The resolved digest for the image specified in the `image` field. The digest is resolved during the creation of `WasmPluginVersion` resource. This field holds the digest value, regardless of whether a tag or digest was originally specified in the `image` field.
+  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. URI of the container image containing the plugin, stored in the Artifact Registry. When a new `WasmPluginVersion` resource is created, the digest of the container image is saved in the `image_digest` field. When downloading an image, the digest value is used instead of an image tag.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of labels associated with the `WasmPluginVersion` resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the `WasmPluginVersion` resource in the following format: `projects/{project}/locations/{location}/wasmPlugins/{wasm_plugin}/ versions/{wasm_plugin_version}`.
-  *   `pluginConfigData` (*type:* `String.t`, *default:* `nil`) - Configuration for the Wasm plugin. The configuration is provided to the Wasm plugin at runtime through the `ON_CONFIGURE` callback. When a new `WasmPluginVersion` resource is created, the digest of the contents is saved in the `plugin_config_digest` field.
-  *   `pluginConfigDigest` (*type:* `String.t`, *default:* `nil`) - Output only. This field holds the digest (usually checksum) value for the plugin configuration. The value is calculated based on the contents of the `plugin_config_data` or the container image defined by the `plugin_config_uri` field.
-  *   `pluginConfigUri` (*type:* `String.t`, *default:* `nil`) - URI of the Wasm plugin configuration stored in the Artifact Registry. The configuration is provided to the plugin at runtime through the `ON_CONFIGURE` callback. The container image must contain only a single file with the name `plugin.config`. When a new `WasmPluginVersion` resource is created, the digest of the container image is saved in the `plugin_config_digest` field.
+  *   `pluginConfigData` (*type:* `String.t`, *default:* `nil`) - Configuration for the plugin. The configuration is provided to the plugin at runtime through the `ON_CONFIGURE` callback. When a new `WasmPluginVersion` resource is created, the digest of the contents is saved in the `plugin_config_digest` field.
+  *   `pluginConfigDigest` (*type:* `String.t`, *default:* `nil`) - Output only. This field holds the digest (usually checksum) value for the plugin configuration. The value is calculated based on the contents of `plugin_config_data` or the container image defined by the `plugin_config_uri` field.
+  *   `pluginConfigUri` (*type:* `String.t`, *default:* `nil`) - URI of the plugin configuration stored in the Artifact Registry. The configuration is provided to the plugin at runtime through the `ON_CONFIGURE` callback. The container image must contain only a single file with the name `plugin.config`. When a new `WasmPluginVersion` resource is created, the digest of the container image is saved in the `plugin_config_digest` field.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
   """
 
