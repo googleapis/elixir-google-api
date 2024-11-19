@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.Filter do
   ## Attributes
 
   *   `betweenFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.BetweenFilter.t`, *default:* `nil`) - A filter for two values.
+  *   `emptyFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.EmptyFilter.t`, *default:* `nil`) - A filter for empty values such as "(not set)" and "" values.
   *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The dimension name or metric name. In most methods, dimensions & metrics can be used for the first time in this field. However in a RunPivotReportRequest, this field must be additionally specified by name in the RunPivotReportRequest's dimensions or metrics.
   *   `inListFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.InListFilter.t`, *default:* `nil`) - A filter for in list values.
   *   `numericFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.NumericFilter.t`, *default:* `nil`) - A filter for numeric or date values.
@@ -32,6 +33,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.Filter do
 
   @type t :: %__MODULE__{
           :betweenFilter => GoogleApi.AnalyticsData.V1beta.Model.BetweenFilter.t() | nil,
+          :emptyFilter => GoogleApi.AnalyticsData.V1beta.Model.EmptyFilter.t() | nil,
           :fieldName => String.t() | nil,
           :inListFilter => GoogleApi.AnalyticsData.V1beta.Model.InListFilter.t() | nil,
           :numericFilter => GoogleApi.AnalyticsData.V1beta.Model.NumericFilter.t() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.Filter do
         }
 
   field(:betweenFilter, as: GoogleApi.AnalyticsData.V1beta.Model.BetweenFilter)
+  field(:emptyFilter, as: GoogleApi.AnalyticsData.V1beta.Model.EmptyFilter)
   field(:fieldName)
   field(:inListFilter, as: GoogleApi.AnalyticsData.V1beta.Model.InListFilter)
   field(:numericFilter, as: GoogleApi.AnalyticsData.V1beta.Model.NumericFilter)
