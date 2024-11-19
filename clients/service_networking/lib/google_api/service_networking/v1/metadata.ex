@@ -20,7 +20,7 @@ defmodule GoogleApi.ServiceNetworking.V1 do
   API client metadata for GoogleApi.ServiceNetworking.V1.
   """
 
-  @discovery_revision "20241113"
+  @discovery_revision "20241117"
 
   def discovery_revision(), do: @discovery_revision
 end
