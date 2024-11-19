@@ -22,6 +22,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails do
   ## Attributes
 
   *   `billingDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetailsBillingDetails.t`, *default:* `nil`) - Information specific to billing (read-only).
+  *   `merchantAffiliateProgramDetails` (*type:* `GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails.t`, *default:* `nil`) - Information specific to merchant affiliate program (read-only).
   *   `merchantId` (*type:* `String.t`, *default:* `nil`) - Google Merchant Center id of the store.
   *   `storeName` (*type:* `String.t`, *default:* `nil`) - Name of the store.
   *   `storeUrl` (*type:* `String.t`, *default:* `nil`) - Landing page of the store.
@@ -32,12 +33,20 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetails do
   @type t :: %__MODULE__{
           :billingDetails =>
             GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetailsBillingDetails.t() | nil,
+          :merchantAffiliateProgramDetails =>
+            GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails.t()
+            | nil,
           :merchantId => String.t() | nil,
           :storeName => String.t() | nil,
           :storeUrl => String.t() | nil
         }
 
   field(:billingDetails, as: GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetailsBillingDetails)
+
+  field(:merchantAffiliateProgramDetails,
+    as: GoogleApi.YouTube.V3.Model.ChannelToStoreLinkDetailsMerchantAffiliateProgramDetails
+  )
+
   field(:merchantId)
   field(:storeName)
   field(:storeUrl)
