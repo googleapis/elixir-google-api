@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ExperimentInfo do
   @moduledoc """
-  Metadata for active A/B testing Experiment.
+  Metadata for active A/B testing experiment.
 
   ## Attributes
 
