@@ -26,6 +26,7 @@ defmodule GoogleApi.Forms.V1.Model.Question do
   *   `fileUploadQuestion` (*type:* `GoogleApi.Forms.V1.Model.FileUploadQuestion.t`, *default:* `nil`) - A respondent can upload one or more files.
   *   `grading` (*type:* `GoogleApi.Forms.V1.Model.Grading.t`, *default:* `nil`) - Grading setup for the question.
   *   `questionId` (*type:* `String.t`, *default:* `nil`) - Read only. The question ID. On creation, it can be provided but the ID must not be already used in the form. If not provided, a new ID is assigned.
+  *   `ratingQuestion` (*type:* `GoogleApi.Forms.V1.Model.RatingQuestion.t`, *default:* `nil`) - A respondent can choose a rating from a pre-defined set of icons.
   *   `required` (*type:* `boolean()`, *default:* `nil`) - Whether the question must be answered in order for a respondent to submit their response.
   *   `rowQuestion` (*type:* `GoogleApi.Forms.V1.Model.RowQuestion.t`, *default:* `nil`) - A row of a QuestionGroupItem.
   *   `scaleQuestion` (*type:* `GoogleApi.Forms.V1.Model.ScaleQuestion.t`, *default:* `nil`) - A respondent can choose a number from a range.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Forms.V1.Model.Question do
           :fileUploadQuestion => GoogleApi.Forms.V1.Model.FileUploadQuestion.t() | nil,
           :grading => GoogleApi.Forms.V1.Model.Grading.t() | nil,
           :questionId => String.t() | nil,
+          :ratingQuestion => GoogleApi.Forms.V1.Model.RatingQuestion.t() | nil,
           :required => boolean() | nil,
           :rowQuestion => GoogleApi.Forms.V1.Model.RowQuestion.t() | nil,
           :scaleQuestion => GoogleApi.Forms.V1.Model.ScaleQuestion.t() | nil,
@@ -53,6 +55,7 @@ defmodule GoogleApi.Forms.V1.Model.Question do
   field(:fileUploadQuestion, as: GoogleApi.Forms.V1.Model.FileUploadQuestion)
   field(:grading, as: GoogleApi.Forms.V1.Model.Grading)
   field(:questionId)
+  field(:ratingQuestion, as: GoogleApi.Forms.V1.Model.RatingQuestion)
   field(:required)
   field(:rowQuestion, as: GoogleApi.Forms.V1.Model.RowQuestion)
   field(:scaleQuestion, as: GoogleApi.Forms.V1.Model.ScaleQuestion)
