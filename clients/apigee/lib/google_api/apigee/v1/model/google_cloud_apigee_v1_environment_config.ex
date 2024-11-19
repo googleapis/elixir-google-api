@@ -23,6 +23,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   *   `addonsConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeAddonsConfig.t`, *default:* `nil`) - The latest runtime configurations for add-ons.
   *   `arcConfigLocation` (*type:* `String.t`, *default:* `nil`) - The location for the config blob of API Runtime Control, aka Envoy Adapter, for op-based authentication as a URI, e.g. a Cloud Storage URI. This is only used by Envoy-based gateways.
+  *   `clientIpResolutionConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig.t`, *default:* `nil`) - The algorithm to resolve IP.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that the environment configuration was created.
   *   `dataCollectors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t)`, *default:* `nil`) - List of data collectors used by the deployments in the environment.
   *   `debugMask` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t`, *default:* `nil`) - Debug mask that applies to all deployments in the environment.
@@ -52,6 +53,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
           :addonsConfig =>
             GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeAddonsConfig.t() | nil,
           :arcConfigLocation => String.t() | nil,
+          :clientIpResolutionConfig =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig.t()
+            | nil,
           :createTime => DateTime.t() | nil,
           :dataCollectors =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t()) | nil,
@@ -86,6 +90,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   field(:addonsConfig, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeAddonsConfig)
   field(:arcConfigLocation)
+
+  field(:clientIpResolutionConfig,
+    as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfigClientIPResolutionConfig
+  )
+
   field(:createTime, as: DateTime)
 
   field(:dataCollectors,
