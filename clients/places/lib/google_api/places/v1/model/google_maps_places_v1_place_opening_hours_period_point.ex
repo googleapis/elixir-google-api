@@ -23,8 +23,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHoursPeriodPoi
 
   *   `date` (*type:* `GoogleApi.Places.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - Date in the local timezone for the place.
   *   `day` (*type:* `integer()`, *default:* `nil`) - A day of the week, as an integer in the range 0-6. 0 is Sunday, 1 is Monday, etc.
-  *   `hour` (*type:* `integer()`, *default:* `nil`) - The hour in 2 digits. Ranges from 00 to 23.
-  *   `minute` (*type:* `integer()`, *default:* `nil`) - The minute in 2 digits. Ranges from 00 to 59.
+  *   `hour` (*type:* `integer()`, *default:* `nil`) - The hour in 24 hour format. Ranges from 0 to 23.
+  *   `minute` (*type:* `integer()`, *default:* `nil`) - The minute. Ranges from 0 to 59.
   *   `truncated` (*type:* `boolean()`, *default:* `nil`) - Whether or not this endpoint was truncated. Truncation occurs when the real hours are outside the times we are willing to return hours between, so we truncate the hours back to these boundaries. This ensures that at most 24 * 7 hours from midnight of the day of the request are returned.
   """
 
