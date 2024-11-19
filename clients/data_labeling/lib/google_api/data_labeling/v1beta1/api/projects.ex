@@ -31,7 +31,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. AnnotationSpecSet resource parent, format: projects/{project_id}
+  *   `parent` (*type:* `String.t`) - Required. AnnotationSpecSet resource parent, format: projects/{project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -65,7 +65,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_annotation_spec_sets_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -87,8 +87,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/annotationSpecSets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/annotationSpecSets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -110,8 +110,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. AnnotationSpec resource name, format: `projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}`.
-  *   `annotation_spec_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. AnnotationSpec resource name, format: `projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -134,7 +133,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_annotation_spec_sets_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -144,8 +142,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_annotation_spec_sets_delete(
         connection,
-        projects_id,
-        annotation_spec_sets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -166,14 +163,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/annotationSpecSets/{annotationSpecSetsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "annotationSpecSetsId" =>
-            URI.encode(annotation_spec_sets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -190,8 +182,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. AnnotationSpecSet resource name, format: projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
-  *   `annotation_spec_sets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. AnnotationSpecSet resource name, format: projects/{project_id}/annotationSpecSets/{annotation_spec_set_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -214,7 +205,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_annotation_spec_sets_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -225,8 +215,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_annotation_spec_sets_get(
         connection,
-        projects_id,
-        annotation_spec_sets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -247,14 +236,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/annotationSpecSets/{annotationSpecSetsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "annotationSpecSetsId" =>
-            URI.encode(annotation_spec_sets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -275,7 +259,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Parent of AnnotationSpecSet resource, format: projects/{project_id}
+  *   `parent` (*type:* `String.t`) - Required. Parent of AnnotationSpecSet resource, format: projects/{project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -311,7 +295,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_annotation_spec_sets_list(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -335,8 +319,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/annotationSpecSets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/annotationSpecSets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -358,7 +342,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Dataset resource parent, format: projects/{project_id}
+  *   `parent` (*type:* `String.t`) - Required. Dataset resource parent, format: projects/{project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -389,12 +373,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_datasets_create(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_datasets_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -413,8 +392,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/datasets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -433,8 +412,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Dataset resource name, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Dataset resource name, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -457,7 +435,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -465,13 +442,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_datasets_delete(
-        connection,
-        projects_id,
-        datasets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_datasets_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -489,9 +460,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -509,8 +479,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Dataset resource name, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Dataset resource name, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -534,7 +503,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_export_data(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -544,8 +512,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_export_data(
         connection,
-        projects_id,
-        datasets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -567,9 +534,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}:exportData", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}:exportData", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -587,8 +553,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Dataset resource name, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Dataset resource name, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -608,24 +573,12 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dataset{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec datalabeling_projects_datasets_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec datalabeling_projects_datasets_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1Dataset.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_datasets_get(
-        connection,
-        projects_id,
-        datasets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_datasets_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -643,9 +596,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -664,8 +616,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Dataset resource name, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Dataset resource name, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -689,7 +640,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_import_data(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -699,8 +649,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_import_data(
         connection,
-        projects_id,
-        datasets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -722,9 +671,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}:importData", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}:importData", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -742,7 +690,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Dataset resource parent, format: projects/{project_id}
+  *   `parent` (*type:* `String.t`) - Required. Dataset resource parent, format: projects/{project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -771,12 +719,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_datasets_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_datasets_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -797,8 +740,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/datasets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -820,9 +763,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the annotated dataset to delete, format: projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the annotated dataset to delete, format: projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -845,8 +786,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -856,9 +795,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_delete(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -879,15 +816,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" =>
-            URI.encode(annotated_datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -904,9 +835,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the annotated dataset to get, format: projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the annotated dataset to get, format: projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -929,8 +858,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -941,9 +868,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_get(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -964,15 +889,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" =>
-            URI.encode(annotated_datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -993,8 +912,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset to list annotated datasets, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset to list annotated datasets, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1020,7 +938,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1031,8 +948,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_list(
         connection,
-        projects_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1056,9 +972,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/annotatedDatasets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1080,10 +995,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the data item to get, format: projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `data_items_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the data item to get, format: projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1106,9 +1018,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_data_items_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1118,10 +1027,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_data_items_get(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
-        data_items_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1142,15 +1048,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/dataItems/{dataItemsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1),
-          "dataItemsId" => URI.encode(data_items_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1168,9 +1068,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset to list data items, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset to list data items, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1196,8 +1094,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_data_items_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1208,9 +1104,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_data_items_list(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1234,14 +1128,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/dataItems",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dataItems", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1262,10 +1151,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of example, format: projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}/examples/{example_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `examples_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of example, format: projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/ {annotated_dataset_id}/examples/{example_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1289,9 +1175,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_examples_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1301,10 +1184,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_examples_get(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
-        examples_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1326,15 +1206,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/examples/{examplesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1),
-          "examplesId" => URI.encode(examples_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1352,9 +1226,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Example resource parent.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Example resource parent.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1380,8 +1252,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_examples_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1392,9 +1262,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_examples_list(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1418,14 +1286,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/examples",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/examples", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1446,10 +1309,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the FeedbackThread that is going to be deleted. Format: 'projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}'.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `feedback_threads_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the FeedbackThread that is going to be deleted. Format: 'projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1472,9 +1332,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_feedback_threads_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1484,10 +1341,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_delete(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
-        feedback_threads_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1508,16 +1362,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/feedbackThreads/{feedbackThreadsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1),
-          "feedbackThreadsId" =>
-            URI.encode(feedback_threads_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1534,10 +1381,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the feedback. Format: 'projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}'.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `feedback_threads_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the feedback. Format: 'projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1560,9 +1404,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_feedback_threads_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1573,10 +1414,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_get(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
-        feedback_threads_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1597,16 +1435,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/feedbackThreads/{feedbackThreadsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1),
-          "feedbackThreadsId" =>
-            URI.encode(feedback_threads_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1627,9 +1458,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. FeedbackThread resource parent. Format: "projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}"
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. FeedbackThread resource parent. Format: "projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1654,8 +1483,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_feedback_threads_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1666,9 +1493,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_list(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1691,14 +1516,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/feedbackThreads",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/feedbackThreads", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1719,10 +1539,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. FeedbackMessage resource parent, format: projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `feedback_threads_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. FeedbackMessage resource parent, format: projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1746,9 +1563,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1758,10 +1572,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_create(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
-        feedback_threads_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1783,15 +1594,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/feedbackThreads/{feedbackThreadsId}/feedbackMessages",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1),
-          "feedbackThreadsId" => URI.encode(feedback_threads_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/feedbackMessages", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1808,11 +1613,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the FeedbackMessage that is going to be deleted. Format: 'projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}/feedbackMessages/{feedback_message_id}'.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `feedback_threads_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `feedback_messages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the FeedbackMessage that is going to be deleted. Format: 'projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}/feedbackMessages/{feedback_message_id}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1835,10 +1636,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1848,11 +1645,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_delete(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
-        feedback_threads_id,
-        feedback_messages_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1873,17 +1666,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/feedbackThreads/{feedbackThreadsId}/feedbackMessages/{feedbackMessagesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1),
-          "feedbackThreadsId" => URI.encode(feedback_threads_id, &URI.char_unreserved?/1),
-          "feedbackMessagesId" =>
-            URI.encode(feedback_messages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1900,11 +1685,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the feedback. Format: 'projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}/feedbackMessages/{feedback_message_id}'.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `feedback_threads_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `feedback_messages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the feedback. Format: 'projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}/feedbackMessages/{feedback_message_id}'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1927,10 +1708,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1941,11 +1718,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_get(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
-        feedback_threads_id,
-        feedback_messages_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1966,17 +1739,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/feedbackThreads/{feedbackThreadsId}/feedbackMessages/{feedbackMessagesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1),
-          "feedbackThreadsId" => URI.encode(feedback_threads_id, &URI.char_unreserved?/1),
-          "feedbackMessagesId" =>
-            URI.encode(feedback_messages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1997,10 +1762,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. FeedbackMessage resource parent. Format: "projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}"
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `annotated_datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `feedback_threads_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. FeedbackMessage resource parent. Format: "projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2025,9 +1787,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2038,10 +1797,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_annotated_datasets_feedback_threads_feedback_messages_list(
         connection,
-        projects_id,
-        datasets_id,
-        annotated_datasets_id,
-        feedback_threads_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2064,15 +1820,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/annotatedDatasets/{annotatedDatasetsId}/feedbackThreads/{feedbackThreadsId}/feedbackMessages",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotatedDatasetsId" => URI.encode(annotated_datasets_id, &URI.char_unreserved?/1),
-          "feedbackThreadsId" => URI.encode(feedback_threads_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/feedbackMessages", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2093,9 +1843,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the data item to get, format: projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `data_items_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the data item to get, format: projects/{project_id}/datasets/{dataset_id}/dataItems/{data_item_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2118,8 +1866,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_data_items_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2129,9 +1875,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_data_items_get(
         connection,
-        projects_id,
-        datasets_id,
-        data_items_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2152,14 +1896,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/dataItems/{dataItemsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dataItemsId" => URI.encode(data_items_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2177,8 +1916,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset to list data items, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset to list data items, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2204,7 +1942,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_data_items_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2215,8 +1952,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_data_items_list(
         connection,
-        projects_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2240,9 +1976,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}/dataItems", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/dataItems", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2264,9 +1999,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the evaluation. Format: "projects/{project_id}/datasets/ {dataset_id}/evaluations/{evaluation_id}'
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `evaluations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the evaluation. Format: "projects/{project_id}/datasets/ {dataset_id}/evaluations/{evaluation_id}'
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2289,8 +2022,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_evaluations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2300,9 +2031,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_evaluations_get(
         connection,
-        projects_id,
-        datasets_id,
-        evaluations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2323,14 +2052,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/evaluations/{evaluationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "evaluationsId" => URI.encode(evaluations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2348,9 +2072,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the Evaluation resource to search for example comparisons from. Format: "projects/{project_id}/datasets/{dataset_id}/evaluations/ {evaluation_id}"
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `evaluations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the Evaluation resource to search for example comparisons from. Format: "projects/{project_id}/datasets/{dataset_id}/evaluations/ {evaluation_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2374,8 +2096,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_evaluations_example_comparisons_search(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2386,9 +2106,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_evaluations_example_comparisons_search(
         connection,
-        projects_id,
-        datasets_id,
-        evaluations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2410,14 +2128,9 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/datasets/{datasetsId}/evaluations/{evaluationsId}/exampleComparisons:search",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "evaluationsId" => URI.encode(evaluations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/exampleComparisons:search", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2438,8 +2151,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset to request labeling task, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset to request labeling task, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2463,7 +2175,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_image_label(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2473,8 +2184,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_image_label(
         connection,
-        projects_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2496,9 +2206,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}/image:label", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/image:label", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2516,8 +2225,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the data set to request labeling task, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the data set to request labeling task, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2541,7 +2249,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_text_label(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2551,8 +2258,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_text_label(
         connection,
-        projects_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2574,9 +2280,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}/text:label", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/text:label", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2594,8 +2299,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset to request labeling task, format: projects/{project_id}/datasets/{dataset_id}
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset to request labeling task, format: projects/{project_id}/datasets/{dataset_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2619,7 +2323,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_datasets_video_label(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2629,8 +2332,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_datasets_video_label(
         connection,
-        projects_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2652,9 +2354,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/datasets/{datasetsId}/video:label", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/video:label", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2672,7 +2373,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Evaluation job resource parent. Format: "projects/{project_id}"
+  *   `parent` (*type:* `String.t`) - Required. Evaluation job resource parent. Format: "projects/{project_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2706,7 +2407,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2728,8 +2429,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/evaluationJobs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/evaluationJobs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2751,8 +2452,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the evaluation job that is going to be deleted. Format: "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
-  *   `evaluation_jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the evaluation job that is going to be deleted. Format: "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2775,7 +2475,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_evaluation_jobs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2785,8 +2484,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_delete(
         connection,
-        projects_id,
-        evaluation_jobs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2807,10 +2505,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1beta1/projects/{projectsId}/evaluationJobs/{evaluationJobsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "evaluationJobsId" =>
-          URI.encode(evaluation_jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2828,8 +2524,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the evaluation job. Format: "projects/{project_id} /evaluationJobs/{evaluation_job_id}"
-  *   `evaluation_jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the evaluation job. Format: "projects/{project_id} /evaluationJobs/{evaluation_job_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2852,7 +2547,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_evaluation_jobs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2863,8 +2557,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_get(
         connection,
-        projects_id,
-        evaluation_jobs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2885,10 +2578,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/evaluationJobs/{evaluationJobsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "evaluationJobsId" =>
-          URI.encode(evaluation_jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2910,7 +2601,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Evaluation job resource parent. Format: "projects/{project_id}"
+  *   `parent` (*type:* `String.t`) - Required. Evaluation job resource parent. Format: "projects/{project_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2946,7 +2637,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_list(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2970,8 +2661,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/evaluationJobs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/evaluationJobs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2993,8 +2684,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `evaluationJob.name`. Output only. After you create a job, Data Labeling Service assigns a name to the job with the following format: "projects/{project_id}/evaluationJobs/ {evaluation_job_id}"
-  *   `evaluation_jobs_id` (*type:* `String.t`) - Part of `evaluationJob.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. After you create a job, Data Labeling Service assigns a name to the job with the following format: "projects/{project_id}/evaluationJobs/ {evaluation_job_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3019,7 +2709,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_evaluation_jobs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3030,8 +2719,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_patch(
         connection,
-        projects_id,
-        evaluation_jobs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3054,10 +2742,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1beta1/projects/{projectsId}/evaluationJobs/{evaluationJobsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "evaluationJobsId" =>
-          URI.encode(evaluation_jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3079,8 +2765,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the evaluation job that is going to be paused. Format: "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
-  *   `evaluation_jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the evaluation job that is going to be paused. Format: "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3104,7 +2789,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_evaluation_jobs_pause(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3114,8 +2798,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_pause(
         connection,
-        projects_id,
-        evaluation_jobs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3137,9 +2820,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/evaluationJobs/{evaluationJobsId}:pause", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "evaluationJobsId" => URI.encode(evaluation_jobs_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}:pause", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3157,8 +2839,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the evaluation job that is going to be resumed. Format: "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
-  *   `evaluation_jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the evaluation job that is going to be resumed. Format: "projects/{project_id}/evaluationJobs/{evaluation_job_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3182,7 +2863,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_evaluation_jobs_resume(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3192,8 +2872,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_evaluation_jobs_resume(
         connection,
-        projects_id,
-        evaluation_jobs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3215,9 +2894,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/evaluationJobs/{evaluationJobsId}:resume", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "evaluationJobsId" => URI.encode(evaluation_jobs_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}:resume", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3235,7 +2913,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Evaluation search parent (project ID). Format: "projects/ {project_id}"
+  *   `parent` (*type:* `String.t`) - Required. Evaluation search parent (project ID). Format: "projects/ {project_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3271,7 +2949,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_evaluations_search(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3295,8 +2973,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/evaluations:search", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/evaluations:search", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3318,7 +2996,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Instruction resource parent, format: projects/{project_id}
+  *   `parent` (*type:* `String.t`) - Required. Instruction resource parent, format: projects/{project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3351,7 +3029,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_instructions_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3373,8 +3051,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/instructions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/instructions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3392,8 +3070,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Instruction resource name, format: projects/{project_id}/instructions/{instruction_id}
-  *   `instructions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Instruction resource name, format: projects/{project_id}/instructions/{instruction_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3416,7 +3093,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_instructions_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3426,8 +3102,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_instructions_delete(
         connection,
-        projects_id,
-        instructions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3448,9 +3123,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1beta1/projects/{projectsId}/instructions/{instructionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instructionsId" => URI.encode(instructions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3468,8 +3142,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Instruction resource name, format: projects/{project_id}/instructions/{instruction_id}
-  *   `instructions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Instruction resource name, format: projects/{project_id}/instructions/{instruction_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3492,7 +3165,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_instructions_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3501,13 +3173,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_instructions_get(
-        connection,
-        projects_id,
-        instructions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_instructions_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -3525,9 +3191,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/instructions/{instructionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instructionsId" => URI.encode(instructions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3549,7 +3214,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Instruction resource parent, format: projects/{project_id}
+  *   `parent` (*type:* `String.t`) - Required. Instruction resource parent, format: projects/{project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3585,7 +3250,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:error, any()}
   def datalabeling_projects_instructions_list(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3609,8 +3274,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/instructions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/instructions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3627,13 +3292,12 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3656,7 +3320,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_operations_cancel(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3664,13 +3327,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_operations_cancel(
-        connection,
-        projects_id,
-        operations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -3688,9 +3345,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/operations/{operationsId}:cancel", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3708,8 +3364,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be deleted.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3732,7 +3387,6 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   @spec datalabeling_projects_operations_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3740,13 +3394,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_operations_delete(
-        connection,
-        projects_id,
-        operations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -3764,9 +3412,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1beta1/projects/{projectsId}/operations/{operationsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3784,8 +3431,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3805,24 +3451,12 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec datalabeling_projects_operations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec datalabeling_projects_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DataLabeling.V1beta1.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_operations_get(
-        connection,
-        projects_id,
-        operations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -3840,9 +3474,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/operations/{operationsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3860,7 +3493,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataLabeling.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3893,12 +3526,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def datalabeling_projects_operations_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def datalabeling_projects_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -3919,8 +3547,8 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/operations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}/operations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
