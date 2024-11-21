@@ -26,7 +26,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto do
   *   `messageType` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto.t)`, *default:* `nil`) - All top-level definitions in this file.
   *   `name` (*type:* `String.t`, *default:* `nil`) - file name, relative to root of source tree
   *   `package` (*type:* `String.t`, *default:* `nil`) - e.g. "foo", "foo.bar", etc.
-  *   `syntax` (*type:* `String.t`, *default:* `nil`) - The syntax of the proto file. The supported values are "proto2", "proto3", and "editions". If `edition` is present, this value must be "editions".
+  *   `syntax` (*type:* `String.t`, *default:* `nil`) - The syntax of the proto file. The supported values are "proto2", "proto3", and "editions". If `edition` is present, this value must be "editions". WARNING: This field should only be used by protobuf plugins or special cases like the proto compiler. Other uses are discouraged and developers should rely on the protoreflect APIs for their client language.
   """
 
   use GoogleApi.Gax.ModelBase
