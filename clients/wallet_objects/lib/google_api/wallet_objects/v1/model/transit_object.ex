@@ -38,6 +38,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   *   `classId` (*type:* `String.t`, *default:* `nil`) - Required. The class associated with this object. The class must be of the same type as this object, must already exist, and must be approved. Class IDs should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you.
   *   `ticketRestrictions` (*type:* `GoogleApi.WalletObjects.V1.Model.TicketRestrictions.t`, *default:* `nil`) - Information about what kind of restrictions there are on using this ticket. For example, which days of the week it must be used, or which routes are allowed to be taken.
   *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
+  *   `merchantLocations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t)`, *default:* `nil`) - Merchant locations. There is a maximum of ten on the object. Any additional MerchantLocations added beyond the 10 will be rejected. These locations will trigger a notification when a user enters within a Google-set radius of the point. This field replaces the deprecated LatLongPoints.
   *   `tripId` (*type:* `String.t`, *default:* `nil`) - This id is used to group tickets together if the user has saved multiple tickets for the same trip.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
   *   `activationStatus` (*type:* `GoogleApi.WalletObjects.V1.Model.ActivationStatus.t`, *default:* `nil`) - The activation status for the object. Required if the class has `activationOptions` set.
@@ -85,6 +86,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
           :classId => String.t() | nil,
           :ticketRestrictions => GoogleApi.WalletObjects.V1.Model.TicketRestrictions.t() | nil,
           :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
+          :merchantLocations => list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t()) | nil,
           :tripId => String.t() | nil,
           :version => String.t() | nil,
           :activationStatus => GoogleApi.WalletObjects.V1.Model.ActivationStatus.t() | nil,
@@ -130,6 +132,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   field(:classId)
   field(:ticketRestrictions, as: GoogleApi.WalletObjects.V1.Model.TicketRestrictions)
   field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
+  field(:merchantLocations, as: GoogleApi.WalletObjects.V1.Model.MerchantLocation, type: :list)
   field(:tripId)
   field(:version)
   field(:activationStatus, as: GoogleApi.WalletObjects.V1.Model.ActivationStatus)
