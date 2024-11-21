@@ -26,6 +26,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2BuildpacksBuild do
   *   `enableAutomaticUpdates` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether or not the application container will be enrolled in automatic base image updates. When true, the application will be built on a scratch base image, so the base layers can be appended at run time.
   *   `environmentVariables` (*type:* `map()`, *default:* `nil`) - Optional. User-provided build-time environment variables.
   *   `functionTarget` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the function target if the source is a function source. Required for function builds.
+  *   `projectDescriptor` (*type:* `String.t`, *default:* `nil`) - Optional. project_descriptor stores the path to the project descriptor file. When empty, it means that there is no project descriptor file in the source.
   *   `runtime` (*type:* `String.t`, *default:* `nil`) - The runtime name, e.g. 'go113'. Leave blank for generic builds.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2BuildpacksBuild do
           :enableAutomaticUpdates => boolean() | nil,
           :environmentVariables => map() | nil,
           :functionTarget => String.t() | nil,
+          :projectDescriptor => String.t() | nil,
           :runtime => String.t() | nil
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2BuildpacksBuild do
   field(:enableAutomaticUpdates)
   field(:environmentVariables, type: :map)
   field(:functionTarget)
+  field(:projectDescriptor)
   field(:runtime)
 end
 
