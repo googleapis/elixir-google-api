@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.CreateInstanceConfigRequest do
   @moduledoc """
-  The request for CreateInstanceConfigRequest.
+  The request for CreateInstanceConfig.
 
   ## Attributes
 
