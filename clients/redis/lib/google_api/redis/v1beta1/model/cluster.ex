@@ -22,13 +22,17 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
   ## Attributes
 
   *   `authorizationMode` (*type:* `String.t`, *default:* `nil`) - Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
+  *   `automatedBackupConfig` (*type:* `GoogleApi.Redis.V1beta1.Model.AutomatedBackupConfig.t`, *default:* `nil`) - Optional. The automated backup config for the cluster.
+  *   `backupCollection` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. The backup collection full resource name. Example: projects/{project}/locations/{location}/backupCollections/{collection}
   *   `clusterEndpoints` (*type:* `list(GoogleApi.Redis.V1beta1.Model.ClusterEndpoint.t)`, *default:* `nil`) - Optional. A list of cluster enpoints.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp associated with the cluster creation request.
   *   `crossClusterReplicationConfig` (*type:* `GoogleApi.Redis.V1beta1.Model.CrossClusterReplicationConfig.t`, *default:* `nil`) - Optional. Cross cluster replication config.
   *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The delete operation will fail when the value is set to true.
   *   `discoveryEndpoints` (*type:* `list(GoogleApi.Redis.V1beta1.Model.DiscoveryEndpoint.t)`, *default:* `nil`) - Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
+  *   `gcsSource` (*type:* `GoogleApi.Redis.V1beta1.Model.GcsBackupSource.t`, *default:* `nil`) - Optional. Backups stored in Cloud Storage buckets. The Cloud Storage buckets need to be the same region as the clusters. Read permission is required to import from the provided Cloud Storage objects.
   *   `maintenancePolicy` (*type:* `GoogleApi.Redis.V1beta1.Model.ClusterMaintenancePolicy.t`, *default:* `nil`) - Optional. ClusterMaintenancePolicy determines when to allow or deny updates.
   *   `maintenanceSchedule` (*type:* `GoogleApi.Redis.V1beta1.Model.ClusterMaintenanceSchedule.t`, *default:* `nil`) - Output only. ClusterMaintenanceSchedule Output only Published maintenance schedule.
+  *   `managedBackupSource` (*type:* `GoogleApi.Redis.V1beta1.Model.ManagedBackupSource.t`, *default:* `nil`) - Optional. Backups generated and managed by memorystore service.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Identifier. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.
   *   `persistenceConfig` (*type:* `GoogleApi.Redis.V1beta1.Model.ClusterPersistenceConfig.t`, *default:* `nil`) - Optional. Persistence config (RDB, AOF) for the cluster.
@@ -51,15 +55,19 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
 
   @type t :: %__MODULE__{
           :authorizationMode => String.t() | nil,
+          :automatedBackupConfig => GoogleApi.Redis.V1beta1.Model.AutomatedBackupConfig.t() | nil,
+          :backupCollection => String.t() | nil,
           :clusterEndpoints => list(GoogleApi.Redis.V1beta1.Model.ClusterEndpoint.t()) | nil,
           :createTime => DateTime.t() | nil,
           :crossClusterReplicationConfig =>
             GoogleApi.Redis.V1beta1.Model.CrossClusterReplicationConfig.t() | nil,
           :deletionProtectionEnabled => boolean() | nil,
           :discoveryEndpoints => list(GoogleApi.Redis.V1beta1.Model.DiscoveryEndpoint.t()) | nil,
+          :gcsSource => GoogleApi.Redis.V1beta1.Model.GcsBackupSource.t() | nil,
           :maintenancePolicy => GoogleApi.Redis.V1beta1.Model.ClusterMaintenancePolicy.t() | nil,
           :maintenanceSchedule =>
             GoogleApi.Redis.V1beta1.Model.ClusterMaintenanceSchedule.t() | nil,
+          :managedBackupSource => GoogleApi.Redis.V1beta1.Model.ManagedBackupSource.t() | nil,
           :name => String.t() | nil,
           :nodeType => String.t() | nil,
           :persistenceConfig => GoogleApi.Redis.V1beta1.Model.ClusterPersistenceConfig.t() | nil,
@@ -81,6 +89,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
         }
 
   field(:authorizationMode)
+  field(:automatedBackupConfig, as: GoogleApi.Redis.V1beta1.Model.AutomatedBackupConfig)
+  field(:backupCollection)
   field(:clusterEndpoints, as: GoogleApi.Redis.V1beta1.Model.ClusterEndpoint, type: :list)
   field(:createTime, as: DateTime)
 
@@ -90,8 +100,10 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
 
   field(:deletionProtectionEnabled)
   field(:discoveryEndpoints, as: GoogleApi.Redis.V1beta1.Model.DiscoveryEndpoint, type: :list)
+  field(:gcsSource, as: GoogleApi.Redis.V1beta1.Model.GcsBackupSource)
   field(:maintenancePolicy, as: GoogleApi.Redis.V1beta1.Model.ClusterMaintenancePolicy)
   field(:maintenanceSchedule, as: GoogleApi.Redis.V1beta1.Model.ClusterMaintenanceSchedule)
+  field(:managedBackupSource, as: GoogleApi.Redis.V1beta1.Model.ManagedBackupSource)
   field(:name)
   field(:nodeType)
   field(:persistenceConfig, as: GoogleApi.Redis.V1beta1.Model.ClusterPersistenceConfig)
