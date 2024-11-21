@@ -26,6 +26,7 @@ defmodule GoogleApi.Content.V21.Model.LoyaltyProgram do
   *   `memberPriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Optional. A date range during which the item is eligible for member price. If not specified, the member price is always applicable. The date range is represented by a pair of ISO 8601 dates separated by a space, comma, or slash.
   *   `price` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Optional. The price for members of the given tier (instant discount price). Must be smaller or equal to the regular price.
   *   `programLabel` (*type:* `String.t`, *default:* `nil`) - Required. The label of the loyalty program. This is an internal label that uniquely identifies the relationship between a merchant entity and a loyalty program entity. It must be provided so that system can associate the assets below (for example, price and points) with a merchant. The corresponding program must be linked to the merchant account.
+  *   `shippingLabel` (*type:* `String.t`, *default:* `nil`) - Optional. The shipping label for the loyalty program. You can use this label to indicate whether this offer has the loyalty shipping benefit. If not specified, the item is not eligible for loyalty shipping for the given loyalty tier.
   *   `tierLabel` (*type:* `String.t`, *default:* `nil`) - Required. The label of the tier within the loyalty program. Must match one of the labels within the program.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.Content.V21.Model.LoyaltyProgram do
           :memberPriceEffectiveDate => String.t() | nil,
           :price => GoogleApi.Content.V21.Model.Price.t() | nil,
           :programLabel => String.t() | nil,
+          :shippingLabel => String.t() | nil,
           :tierLabel => String.t() | nil
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.Content.V21.Model.LoyaltyProgram do
   field(:memberPriceEffectiveDate)
   field(:price, as: GoogleApi.Content.V21.Model.Price)
   field(:programLabel)
+  field(:shippingLabel)
   field(:tierLabel)
 end
 
