@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ClearSuggestionFeatureConfigOperationMetadata do
   @moduledoc """
-  Metadata for a ConversationProfile.ClearSuggestionFeatureConfig operation.
+  Metadata for a ConversationProfiles.ClearSuggestionFeatureConfig operation.
 
   ## Attributes
 

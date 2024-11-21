@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FewShotExample do
   @moduledoc """
-  Providing examples in the generator (i.e. building a few-shot generator) helps convey the desired format of the LLM response. NEXT_ID: 10
+  Providing examples in the generator (i.e. building a few-shot generator) helps convey the desired format of the LLM response.
 
   ## Attributes
 

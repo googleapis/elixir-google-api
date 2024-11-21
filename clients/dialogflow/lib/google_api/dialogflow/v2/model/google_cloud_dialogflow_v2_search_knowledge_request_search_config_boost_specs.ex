@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeRe
 
   ## Attributes
 
-  *   `dataStores` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Data Stores where the boosting configuration is applied. The full names of the referenced data stores. Formats: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}` `projects/{project}/locations/{location}/dataStores/{data_store}
+  *   `dataStores` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Data Stores where the boosting configuration is applied. The full names of the referenced data stores. Formats: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}` `projects/{project}/locations/{location}/dataStores/{data_store}`
   *   `spec` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeRequestSearchConfigBoostSpecsBoostSpec.t)`, *default:* `nil`) - Optional. A list of boosting specifications.
   """
 
