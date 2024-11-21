@@ -18,7 +18,7 @@
 defmodule GoogleApi.MyBusinessVerifications.Mixfile do
   use Mix.Project
 
-  @version "0.4.0"
+  @version "0.5.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.MyBusinessVerifications.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/my_business_verifications",
         "Homepage" => "https://developers.google.com/my-business/"
