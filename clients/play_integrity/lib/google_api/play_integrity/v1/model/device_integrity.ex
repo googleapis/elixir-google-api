@@ -21,6 +21,7 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity do
 
   ## Attributes
 
+  *   `deviceAttributes` (*type:* `GoogleApi.PlayIntegrity.V1.Model.DeviceAttributes.t`, *default:* `nil`) - Attributes of the device where the integrity token was generated.
   *   `deviceRecall` (*type:* `GoogleApi.PlayIntegrity.V1.Model.DeviceRecall.t`, *default:* `nil`) - Details about the device recall bits set by the developer.
   *   `deviceRecognitionVerdict` (*type:* `list(String.t)`, *default:* `nil`) - Details about the integrity of the device the app is running on.
   *   `recentDeviceActivity` (*type:* `GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity.t`, *default:* `nil`) - Details about the device activity of the device the app is running on.
@@ -29,11 +30,13 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :deviceAttributes => GoogleApi.PlayIntegrity.V1.Model.DeviceAttributes.t() | nil,
           :deviceRecall => GoogleApi.PlayIntegrity.V1.Model.DeviceRecall.t() | nil,
           :deviceRecognitionVerdict => list(String.t()) | nil,
           :recentDeviceActivity => GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity.t() | nil
         }
 
+  field(:deviceAttributes, as: GoogleApi.PlayIntegrity.V1.Model.DeviceAttributes)
   field(:deviceRecall, as: GoogleApi.PlayIntegrity.V1.Model.DeviceRecall)
   field(:deviceRecognitionVerdict, type: :list)
   field(:recentDeviceActivity, as: GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity)
