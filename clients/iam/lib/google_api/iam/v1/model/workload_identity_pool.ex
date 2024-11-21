@@ -21,9 +21,9 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPool do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the pool. Cannot exceed 256 characters.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether the pool is disabled. You cannot use a disabled pool to exchange tokens, or use existing tokens to access resources. If the pool is re-enabled, existing tokens grant access again.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A display name for the pool. Cannot exceed 32 characters.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the pool. Cannot exceed 256 characters.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the pool is disabled. You cannot use a disabled pool to exchange tokens, or use existing tokens to access resources. If the pool is re-enabled, existing tokens grant access again.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A display name for the pool. Cannot exceed 32 characters.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time after which the workload identity pool will be permanently purged and cannot be recovered.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the pool.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the pool.
