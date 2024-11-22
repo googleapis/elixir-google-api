@@ -23,17 +23,20 @@ defmodule GoogleApi.AccessContextManager.V1.Model.EgressPolicy do
 
   *   `egressFrom` (*type:* `GoogleApi.AccessContextManager.V1.Model.EgressFrom.t`, *default:* `nil`) - Defines conditions on the source of a request causing this EgressPolicy to apply.
   *   `egressTo` (*type:* `GoogleApi.AccessContextManager.V1.Model.EgressTo.t`, *default:* `nil`) - Defines the conditions on the ApiOperation and destination resources that cause this EgressPolicy to apply.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. Human-readable title for the egress rule. The title must be unique within the perimeter and can not exceed 100 characters. Within the access policy, the combined length of all rule titles must not exceed 240,000 characters.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :egressFrom => GoogleApi.AccessContextManager.V1.Model.EgressFrom.t() | nil,
-          :egressTo => GoogleApi.AccessContextManager.V1.Model.EgressTo.t() | nil
+          :egressTo => GoogleApi.AccessContextManager.V1.Model.EgressTo.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:egressFrom, as: GoogleApi.AccessContextManager.V1.Model.EgressFrom)
   field(:egressTo, as: GoogleApi.AccessContextManager.V1.Model.EgressTo)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessContextManager.V1.Model.EgressPolicy do
