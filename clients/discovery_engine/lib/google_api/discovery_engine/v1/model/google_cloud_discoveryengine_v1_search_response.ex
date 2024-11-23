@@ -28,6 +28,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
   *   `queryExpansionInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchResponseQueryExpansionInfo.t`, *default:* `nil`) - Query expansion information for the returned results.
   *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response.
   *   `results` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchResponseSearchResult.t)`, *default:* `nil`) - A list of matched documents. The order represents the ranking.
+  *   `searchLinkPromotions` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchLinkPromotion.t)`, *default:* `nil`) - Promotions for site search.
   *   `sessionInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchResponseSessionInfo.t`, *default:* `nil`) - Session information. Only set if SearchRequest.session is provided. See its description for more details.
   *   `summary` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchResponseSummary.t`, *default:* `nil`) - A summary as part of the search results. This field is only returned if SearchRequest.ContentSearchSpec.summary_spec is set.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
@@ -51,6 +52,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
           :results =>
             list(
               GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchResponseSearchResult.t()
+            )
+            | nil,
+          :searchLinkPromotions =>
+            list(
+              GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchLinkPromotion.t()
             )
             | nil,
           :sessionInfo =>
@@ -81,6 +87,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
 
   field(:results,
     as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchResponseSearchResult,
+    type: :list
+  )
+
+  field(:searchLinkPromotions,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchLinkPromotion,
     type: :list
   )
 

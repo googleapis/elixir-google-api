@@ -27,6 +27,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human readable name. The identifier used in UI views. Must be UTF-8 encoded string. Length limit is 128 characters. Otherwise an INVALID ARGUMENT error is thrown.
   *   `filterAction` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlFilterAction.t`, *default:* `nil`) - Defines a filter-type control Currently not supported by Recommendation
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `projects/*/locations/global/dataStore/*/controls/*`
+  *   `promoteAction` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlPromoteAction.t`, *default:* `nil`) - Promote certain links based on predefined trigger queries. This now only supports basic site search.
   *   `redirectAction` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlRedirectAction.t`, *default:* `nil`) - Defines a redirect-type control.
   *   `solutionType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. What solution the control belongs to. Must be compatible with vertical of resource. Otherwise an INVALID ARGUMENT error is thrown.
   *   `synonymsAction` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlSynonymsAction.t`, *default:* `nil`) - Treats a group of terms as synonyms of one another.
@@ -50,6 +51,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlFilterAction.t()
             | nil,
           :name => String.t() | nil,
+          :promoteAction =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlPromoteAction.t()
+            | nil,
           :redirectAction =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlRedirectAction.t()
             | nil,
@@ -78,6 +82,10 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
   )
 
   field(:name)
+
+  field(:promoteAction,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlPromoteAction
+  )
 
   field(:redirectAction,
     as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaControlRedirectAction
