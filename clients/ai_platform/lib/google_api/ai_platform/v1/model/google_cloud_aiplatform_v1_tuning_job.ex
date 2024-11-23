@@ -30,6 +30,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningJob do
   *   `experiment` (*type:* `String.t`, *default:* `nil`) - Output only. The Experiment associated with this TuningJob.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata to organize TuningJob and generated resources such as Model and Endpoint. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. Resource name of a TuningJob. Format: `projects/{project}/locations/{location}/tuningJobs/{tuning_job}`
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account that the tuningJob workload runs as. If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the project will be used. See https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent Users starting the pipeline must have the `iam.serviceAccounts.actAs` permission on this service account.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the TuningJob for the first time entered the `JOB_STATE_RUNNING` state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of the job.
   *   `supervisedTuningSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningSpec.t`, *default:* `nil`) - Tuning Spec for Supervised Fine Tuning.
@@ -52,6 +53,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningJob do
           :experiment => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :serviceAccount => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :supervisedTuningSpec =>
@@ -73,6 +75,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningJob do
   field(:experiment)
   field(:labels, type: :map)
   field(:name)
+  field(:serviceAccount)
   field(:startTime, as: DateTime)
   field(:state)
 
