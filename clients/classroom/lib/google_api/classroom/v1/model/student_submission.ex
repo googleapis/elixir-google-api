@@ -23,6 +23,7 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
 
   *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - Absolute link to the submission in the Classroom web UI. Read-only.
   *   `assignedGrade` (*type:* `float()`, *default:* `nil`) - Optional grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This may be modified only by course teachers.
+  *   `assignedRubricGrades` (*type:* `%{optional(String.t) => GoogleApi.Classroom.V1.Model.RubricGrade.t}`, *default:* `nil`) - Assigned rubric grades based on the rubric's Criteria. This map is empty if there is no rubric attached to this course work or if a rubric is attached, but no grades have been set on any Criteria. Entries are only populated for grades that have been set. Key: The rubric's criterion ID. Read-only.
   *   `assignmentSubmission` (*type:* `GoogleApi.Classroom.V1.Model.AssignmentSubmission.t`, *default:* `nil`) - Submission content when course_work_type is ASSIGNMENT. Students can modify this content using ModifyAttachments.
   *   `associatedWithDeveloper` (*type:* `boolean()`, *default:* `nil`) - Whether this student submission is associated with the Developer Console project making the request. See CreateCourseWork for more details. Read-only.
   *   `courseId` (*type:* `String.t`, *default:* `nil`) - Identifier of the course. Read-only.
@@ -30,6 +31,7 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
   *   `courseWorkType` (*type:* `String.t`, *default:* `nil`) - Type of course work this submission is for. Read-only.
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of this submission. This may be unset if the student has not accessed this item. Read-only.
   *   `draftGrade` (*type:* `float()`, *default:* `nil`) - Optional pending grade. If unset, no grade was set. This value must be non-negative. Decimal (that is, non-integer) values are allowed, but are rounded to two decimal places. This is only visible to and modifiable by course teachers.
+  *   `draftRubricGrades` (*type:* `%{optional(String.t) => GoogleApi.Classroom.V1.Model.RubricGrade.t}`, *default:* `nil`) - Pending rubric grades based on the rubric's criteria. This map is empty if there is no rubric attached to this course work or if a rubric is attached, but no grades have been set on any criteria. Entries are only populated for grades that have been set. Key: The rubric's criterion ID. Read-only.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Classroom-assigned Identifier for the student submission. This is unique among submissions for the relevant course work. Read-only.
   *   `late` (*type:* `boolean()`, *default:* `nil`) - Whether this submission is late. Read-only.
   *   `multipleChoiceSubmission` (*type:* `GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission.t`, *default:* `nil`) - Submission content when course_work_type is MULTIPLE_CHOICE_QUESTION.
@@ -45,6 +47,8 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
   @type t :: %__MODULE__{
           :alternateLink => String.t() | nil,
           :assignedGrade => float() | nil,
+          :assignedRubricGrades =>
+            %{optional(String.t()) => GoogleApi.Classroom.V1.Model.RubricGrade.t()} | nil,
           :assignmentSubmission => GoogleApi.Classroom.V1.Model.AssignmentSubmission.t() | nil,
           :associatedWithDeveloper => boolean() | nil,
           :courseId => String.t() | nil,
@@ -52,6 +56,8 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
           :courseWorkType => String.t() | nil,
           :creationTime => DateTime.t() | nil,
           :draftGrade => float() | nil,
+          :draftRubricGrades =>
+            %{optional(String.t()) => GoogleApi.Classroom.V1.Model.RubricGrade.t()} | nil,
           :id => String.t() | nil,
           :late => boolean() | nil,
           :multipleChoiceSubmission =>
@@ -65,6 +71,7 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
 
   field(:alternateLink)
   field(:assignedGrade)
+  field(:assignedRubricGrades, as: GoogleApi.Classroom.V1.Model.RubricGrade, type: :map)
   field(:assignmentSubmission, as: GoogleApi.Classroom.V1.Model.AssignmentSubmission)
   field(:associatedWithDeveloper)
   field(:courseId)
@@ -72,6 +79,7 @@ defmodule GoogleApi.Classroom.V1.Model.StudentSubmission do
   field(:courseWorkType)
   field(:creationTime, as: DateTime)
   field(:draftGrade)
+  field(:draftRubricGrades, as: GoogleApi.Classroom.V1.Model.RubricGrade, type: :map)
   field(:id)
   field(:late)
   field(:multipleChoiceSubmission, as: GoogleApi.Classroom.V1.Model.MultipleChoiceSubmission)
