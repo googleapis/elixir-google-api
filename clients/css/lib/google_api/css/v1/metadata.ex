@@ -20,7 +20,7 @@ defmodule GoogleApi.CSS.V1 do
   API client metadata for GoogleApi.CSS.V1.
   """
 
-  @discovery_revision "20241104"
+  @discovery_revision "20241124"
 
   def discovery_revision(), do: @discovery_revision
 end
