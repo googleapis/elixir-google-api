@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.UpdateInstanceConfigRequest do
   @moduledoc """
-  The request for UpdateInstanceConfigRequest.
+  The request for UpdateInstanceConfig.
 
   ## Attributes
 

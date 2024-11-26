@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.BackupSchedule do
   @moduledoc """
-  BackupSchedule expresses the automated backup creation specification for a Spanner database. Next ID: 10
+  BackupSchedule expresses the automated backup creation specification for a Spanner database.
 
   ## Attributes
 
