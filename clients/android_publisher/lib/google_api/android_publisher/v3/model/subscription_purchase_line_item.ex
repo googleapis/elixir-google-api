@@ -27,6 +27,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchaseLineItem do
   *   `offerDetails` (*type:* `GoogleApi.AndroidPublisher.V3.Model.OfferDetails.t`, *default:* `nil`) - The offer details for this item.
   *   `prepaidPlan` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PrepaidPlan.t`, *default:* `nil`) - The item is prepaid.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - The purchased product ID (for example, 'monthly001').
+  *   `signupPromotion` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SignupPromotion.t`, *default:* `nil`) - Promotion details about this item. Only set if a promotion was applied during signup.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,7 +39,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchaseLineItem do
           :expiryTime => DateTime.t() | nil,
           :offerDetails => GoogleApi.AndroidPublisher.V3.Model.OfferDetails.t() | nil,
           :prepaidPlan => GoogleApi.AndroidPublisher.V3.Model.PrepaidPlan.t() | nil,
-          :productId => String.t() | nil
+          :productId => String.t() | nil,
+          :signupPromotion => GoogleApi.AndroidPublisher.V3.Model.SignupPromotion.t() | nil
         }
 
   field(:autoRenewingPlan, as: GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan)
@@ -47,6 +49,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchaseLineItem do
   field(:offerDetails, as: GoogleApi.AndroidPublisher.V3.Model.OfferDetails)
   field(:prepaidPlan, as: GoogleApi.AndroidPublisher.V3.Model.PrepaidPlan)
   field(:productId)
+  field(:signupPromotion, as: GoogleApi.AndroidPublisher.V3.Model.SignupPromotion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchaseLineItem do
