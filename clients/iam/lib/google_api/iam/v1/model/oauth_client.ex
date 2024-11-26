@@ -30,7 +30,7 @@ defmodule GoogleApi.IAM.V1.Model.OauthClient do
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the OauthClient is disabled. You cannot use a disabled OAuth client.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A user-specified display name of the OauthClient. Cannot exceed 32 characters.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time after which the OauthClient will be permanently purged and cannot be recovered.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the OauthClient. Format:`projects/{project}/locations/{location}/oauthClients/{oauth_client}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier. The resource name of the OauthClient. Format:`projects/{project}/locations/{location}/oauthClients/{oauth_client}`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the OauthClient.
   """
 

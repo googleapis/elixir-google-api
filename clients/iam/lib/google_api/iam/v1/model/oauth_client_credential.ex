@@ -24,7 +24,7 @@ defmodule GoogleApi.IAM.V1.Model.OauthClientCredential do
   *   `clientSecret` (*type:* `String.t`, *default:* `nil`) - Output only. The system-generated OAuth client secret. The client secret must be stored securely. If the client secret is leaked, you must delete and re-create the client credential. To learn more, see [OAuth client and credential security risks and mitigations](https://cloud.google.com/iam/docs/workforce-oauth-app#security)
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the OauthClientCredential is disabled. You cannot use a disabled OauthClientCredential.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A user-specified display name of the OauthClientCredential. Cannot exceed 32 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the OauthClientCredential. Format: `projects/{project}/locations/{location}/oauthClients/{oauth_client}/credentials/{credential}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier. The resource name of the OauthClientCredential. Format: `projects/{project}/locations/{location}/oauthClients/{oauth_client}/credentials/{credential}`
   """
 
   use GoogleApi.Gax.ModelBase
