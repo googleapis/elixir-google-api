@@ -39,6 +39,12 @@ defmodule GoogleApi.CloudIdentity.V1.Connection do
       # See any Cloud Identity Groups that you can access, including group members and their emails
       "https://www.googleapis.com/auth/cloud-identity.groups.readonly",
 
+      # See and edit all of the Inbound SSO profiles and their assignments to any Org Units or Google Groups in your Cloud Identity Organization.
+      "https://www.googleapis.com/auth/cloud-identity.inboundsso",
+
+      # See all of the Inbound SSO profiles and their assignments to any Org Units or Google Groups in your Cloud Identity Organization.
+      "https://www.googleapis.com/auth/cloud-identity.inboundsso.readonly",
+
       # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform"
     ],
