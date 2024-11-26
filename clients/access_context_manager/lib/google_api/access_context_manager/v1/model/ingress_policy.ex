@@ -23,17 +23,20 @@ defmodule GoogleApi.AccessContextManager.V1.Model.IngressPolicy do
 
   *   `ingressFrom` (*type:* `GoogleApi.AccessContextManager.V1.Model.IngressFrom.t`, *default:* `nil`) - Defines the conditions on the source of a request causing this IngressPolicy to apply.
   *   `ingressTo` (*type:* `GoogleApi.AccessContextManager.V1.Model.IngressTo.t`, *default:* `nil`) - Defines the conditions on the ApiOperation and request destination that cause this IngressPolicy to apply.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. Human-readable title for the ingress rule. The title must be unique within the perimeter and can not exceed 100 characters. Within the access policy, the combined length of all rule titles must not exceed 240,000 characters.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :ingressFrom => GoogleApi.AccessContextManager.V1.Model.IngressFrom.t() | nil,
-          :ingressTo => GoogleApi.AccessContextManager.V1.Model.IngressTo.t() | nil
+          :ingressTo => GoogleApi.AccessContextManager.V1.Model.IngressTo.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:ingressFrom, as: GoogleApi.AccessContextManager.V1.Model.IngressFrom)
   field(:ingressTo, as: GoogleApi.AccessContextManager.V1.Model.IngressTo)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessContextManager.V1.Model.IngressPolicy do
