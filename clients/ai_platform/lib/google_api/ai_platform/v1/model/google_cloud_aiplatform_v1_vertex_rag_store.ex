@@ -21,8 +21,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexRagStore do
 
   ## Attributes
 
-  *   `ragCorpora` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deprecated. Please use rag_resources instead.
   *   `ragResources` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexRagStoreRagResource.t)`, *default:* `nil`) - Optional. The representation of the rag source. It can be used to specify corpus only or ragfiles. Currently only support one corpus or multiple files from one corpus. In the future we may open up multiple corpora support.
+  *   `ragRetrievalConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfig.t`, *default:* `nil`) - Optional. The retrieval config for the Rag query.
   *   `similarityTopK` (*type:* `integer()`, *default:* `nil`) - Optional. Number of top k results to return from the selected corpora.
   *   `vectorDistanceThreshold` (*type:* `float()`, *default:* `nil`) - Optional. Only return results with vector distance smaller than the threshold.
   """
@@ -30,21 +30,24 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexRagStore do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ragCorpora => list(String.t()) | nil,
           :ragResources =>
             list(
               GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexRagStoreRagResource.t()
             )
             | nil,
+          :ragRetrievalConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfig.t() | nil,
           :similarityTopK => integer() | nil,
           :vectorDistanceThreshold => float() | nil
         }
 
-  field(:ragCorpora, type: :list)
-
   field(:ragResources,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexRagStoreRagResource,
     type: :list
+  )
+
+  field(:ragRetrievalConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfig
   )
 
   field(:similarityTopK)

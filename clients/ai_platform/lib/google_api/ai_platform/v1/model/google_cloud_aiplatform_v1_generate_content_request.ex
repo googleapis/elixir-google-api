@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
 
   ## Attributes
 
+  *   `cachedContent` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the cached content used as context to serve the prediction. Note: only used in explicit caching, where users can have control over caching (e.g. what content to cache) and enjoy guaranteed cost savings. Format: `projects/{project}/locations/{location}/cachedContents/{cachedContent}`
   *   `contents` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Required. The content of the current conversation with the model. For single-turn queries, this is a single instance. For multi-turn queries, this is a repeated field that contains conversation history + latest request.
   *   `generationConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig.t`, *default:* `nil`) - Optional. Generation config.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata for the request. It is used for billing and reporting only. Label keys and values can be no longer than 63 characters (Unicode codepoints) and can only contain lowercase letters, numeric characters, underscores, and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter.
@@ -33,6 +34,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cachedContent => String.t() | nil,
           :contents =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t()) | nil,
           :generationConfig =>
@@ -47,6 +49,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
           :tools => list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool.t()) | nil
         }
 
+  field(:cachedContent)
   field(:contents, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content, type: :list)
 
   field(:generationConfig,
