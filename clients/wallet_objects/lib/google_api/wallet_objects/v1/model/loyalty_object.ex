@@ -21,115 +21,118 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyObject do
 
   ## Attributes
 
-  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The loyalty account identifier. Recommended maximum length is 20 characters.
-  *   `accountName` (*type:* `String.t`, *default:* `nil`) - The loyalty account holder name, such as "John Smith." Recommended maximum length is 20 characters to ensure full string is displayed on smaller screens.
-  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional app or website link that will be displayed as a button on the front of the pass. If AppLinkData is provided for the corresponding class only object AppLinkData will be displayed.
   *   `barcode` (*type:* `GoogleApi.WalletObjects.V1.Model.Barcode.t`, *default:* `nil`) - The barcode type and value.
-  *   `classId` (*type:* `String.t`, *default:* `nil`) - Required. The class associated with this object. The class must be of the same type as this object, must already exist, and must be approved. Class IDs should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you.
-  *   `classReference` (*type:* `GoogleApi.WalletObjects.V1.Model.LoyaltyClass.t`, *default:* `nil`) - A copy of the inherited fields of the parent class. These fields are retrieved during a GET.
-  *   `disableExpirationNotification` (*type:* `boolean()`, *default:* `nil`) - Indicates if notifications should explicitly be suppressed. If this field is set to true, regardless of the `messages` field, expiration notifications to the user will be suppressed. By default, this field is set to false. Currently, this can only be set for offers.
+  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional app or website link that will be displayed as a button on the front of the pass. If AppLinkData is provided for the corresponding class only object AppLinkData will be displayed.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The state of the object. This field is used to determine how an object is displayed in the app. For example, an `inactive` object is moved to the "Expired passes" section.
   *   `groupingInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.GroupingInfo.t`, *default:* `nil`) - Information that controls how passes are grouped together.
-  *   `hasLinkedDevice` (*type:* `boolean()`, *default:* `nil`) - Whether this object is currently linked to a single device. This field is set by the platform when a user saves the object, linking it to their device. Intended for use by select partners. Contact support for additional information.
-  *   `hasUsers` (*type:* `boolean()`, *default:* `nil`) - Indicates if the object has users. This field is set by the platform.
-  *   `heroImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Optional banner image displayed on the front of the card. If none is present, hero image of the class, if present, will be displayed. If hero image of the class is also not present, nothing will be displayed.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for an object. This ID must be unique across all objects from an issuer. This value should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you. The unique identifier should only include alphanumeric characters, '.', '_', or '-'.
-  *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
-  *   `infoModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.InfoModuleData.t`, *default:* `nil`) - Deprecated. Use textModulesData instead.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string `"walletobjects#loyaltyObject"`.
-  *   `linkedObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - linked_object_ids are a list of other objects such as event ticket, loyalty, offer, generic, giftcard, transit and boarding pass that should be automatically attached to this loyalty object. If a user had saved this loyalty card, then these linked_object_ids would be automatically pushed to the user's wallet (unless they turned off the setting to receive such linked passes). Make sure that objects present in linked_object_ids are already inserted - if not, calls would fail. Once linked, the linked objects cannot be unlinked. You cannot link objects belonging to another issuer. There is a limit to the number of objects that can be linked to a single object. After the limit is reached, new linked objects in the call will be ignored silently. Object IDs should follow the format issuer ID. identifier where the former is issued by Google and the latter is chosen by you.
-  *   `linkedOfferIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of offer objects linked to this loyalty card. The offer objects must already exist. Offer object IDs should follow the format issuer ID. identifier where the former is issued by Google and latter is chosen by you.
-  *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If links module data is also defined on the class, both will be displayed.
-  *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
+  *   `infoModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.InfoModuleData.t`, *default:* `nil`) - Deprecated. Use textModulesData instead.
   *   `loyaltyPoints` (*type:* `GoogleApi.WalletObjects.V1.Model.LoyaltyPoints.t`, *default:* `nil`) - The loyalty reward points label, balance, and type.
-  *   `messages` (*type:* `list(GoogleApi.WalletObjects.V1.Model.Message.t)`, *default:* `nil`) - An array of messages displayed in the app. All users of this object will receive its associated messages. The maximum number of these fields is 10.
+  *   `smartTapRedemptionValue` (*type:* `String.t`, *default:* `nil`) - The value that will be transmitted to a Smart Tap certified terminal over NFC for this object. The class level fields `enableSmartTap` and `redemptionIssuers` must also be set up correctly in order for the pass to support Smart Tap. Only ASCII characters are supported. If this value is not set but the class level fields `enableSmartTap` and `redemptionIssuers` are set up correctly, the `barcode.value` or the `accountId` fields are used as fallback if present.
+  *   `classId` (*type:* `String.t`, *default:* `nil`) - Required. The class associated with this object. The class must be of the same type as this object, must already exist, and must be approved. Class IDs should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you.
+  *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
+  *   `merchantLocations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t)`, *default:* `nil`) - Merchant locations. There is a maximum of ten on the object. Any additional MerchantLocations added beyond the 10 will be rejected. These locations will trigger a notification when a user enters within a Google-set radius of the point. This field replaces the deprecated LatLongPoints.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
+  *   `hasUsers` (*type:* `boolean()`, *default:* `nil`) - Indicates if the object has users. This field is set by the platform.
+  *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
   *   `notifyPreference` (*type:* `String.t`, *default:* `nil`) - Whether or not field updates to this object should trigger notifications. When set to NOTIFY, we will attempt to trigger a field update notification to users. These notifications will only be sent to users if the field is part of an allowlist. If set to DO_NOT_NOTIFY or NOTIFICATION_SETTINGS_UNSPECIFIED, no notification will be triggered. This setting is ephemeral and needs to be set with each PATCH or UPDATE request, otherwise a notification will not be triggered.
+  *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
+  *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If links module data is also defined on the class, both will be displayed.
+  *   `messages` (*type:* `list(GoogleApi.WalletObjects.V1.Model.Message.t)`, *default:* `nil`) - An array of messages displayed in the app. All users of this object will receive its associated messages. The maximum number of these fields is 10.
+  *   `heroImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Optional banner image displayed on the front of the card. If none is present, hero image of the class, if present, will be displayed. If hero image of the class is also not present, nothing will be displayed.
+  *   `hasLinkedDevice` (*type:* `boolean()`, *default:* `nil`) - Whether this object is currently linked to a single device. This field is set by the platform when a user saves the object, linking it to their device. Intended for use by select partners. Contact support for additional information.
+  *   `accountName` (*type:* `String.t`, *default:* `nil`) - The loyalty account holder name, such as "John Smith." Recommended maximum length is 20 characters to ensure full string is displayed on smaller screens.
+  *   `linkedObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - linked_object_ids are a list of other objects such as event ticket, loyalty, offer, generic, giftcard, transit and boarding pass that should be automatically attached to this loyalty object. If a user had saved this loyalty card, then these linked_object_ids would be automatically pushed to the user's wallet (unless they turned off the setting to receive such linked passes). Make sure that objects present in linked_object_ids are already inserted - if not, calls would fail. Once linked, the linked objects cannot be unlinked. You cannot link objects belonging to another issuer. There is a limit to the number of objects that can be linked to a single object. After the limit is reached, new linked objects in the call will be ignored silently. Object IDs should follow the format issuer ID. identifier where the former is issued by Google and the latter is chosen by you.
+  *   `disableExpirationNotification` (*type:* `boolean()`, *default:* `nil`) - Indicates if notifications should explicitly be suppressed. If this field is set to true, regardless of the `messages` field, expiration notifications to the user will be suppressed. By default, this field is set to false. Currently, this can only be set for offers.
   *   `passConstraints` (*type:* `GoogleApi.WalletObjects.V1.Model.PassConstraints.t`, *default:* `nil`) - Pass constraints for the object. Includes limiting NFC and screenshot behaviors.
   *   `rotatingBarcode` (*type:* `GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t`, *default:* `nil`) - The rotating barcode type and value.
-  *   `saveRestrictions` (*type:* `GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t`, *default:* `nil`) - Restrictions on the object that needs to be verified before the user tries to save the pass. Note that this restrictions will only be applied during save time. If the restrictions changed after a user saves the pass, the new restrictions will not be applied to an already saved pass.
+  *   `classReference` (*type:* `GoogleApi.WalletObjects.V1.Model.LoyaltyClass.t`, *default:* `nil`) - A copy of the inherited fields of the parent class. These fields are retrieved during a GET.
   *   `secondaryLoyaltyPoints` (*type:* `GoogleApi.WalletObjects.V1.Model.LoyaltyPoints.t`, *default:* `nil`) - The secondary loyalty reward points label, balance, and type. Shown in addition to the primary loyalty points.
-  *   `smartTapRedemptionValue` (*type:* `String.t`, *default:* `nil`) - The value that will be transmitted to a Smart Tap certified terminal over NFC for this object. The class level fields `enableSmartTap` and `redemptionIssuers` must also be set up correctly in order for the pass to support Smart Tap. Only ASCII characters are supported. If this value is not set but the class level fields `enableSmartTap` and `redemptionIssuers` are set up correctly, the `barcode.value` or the `accountId` fields are used as fallback if present.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The state of the object. This field is used to determine how an object is displayed in the app. For example, an `inactive` object is moved to the "Expired passes" section.
-  *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
-  *   `validTimeInterval` (*type:* `GoogleApi.WalletObjects.V1.Model.TimeInterval.t`, *default:* `nil`) - The time period this object will be `active` and object can be used. An object's state will be changed to `expired` when this time period has passed.
   *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the object.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
+  *   `linkedOfferIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of offer objects linked to this loyalty card. The offer objects must already exist. Offer object IDs should follow the format issuer ID. identifier where the former is issued by Google and latter is chosen by you.
+  *   `validTimeInterval` (*type:* `GoogleApi.WalletObjects.V1.Model.TimeInterval.t`, *default:* `nil`) - The time period this object will be `active` and object can be used. An object's state will be changed to `expired` when this time period has passed.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for an object. This ID must be unique across all objects from an issuer. This value should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you. The unique identifier should only include alphanumeric characters, '.', '_', or '-'.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The loyalty account identifier. Recommended maximum length is 20 characters.
+  *   `saveRestrictions` (*type:* `GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t`, *default:* `nil`) - Restrictions on the object that needs to be verified before the user tries to save the pass. Note that this restrictions will only be applied during save time. If the restrictions changed after a user saves the pass, the new restrictions will not be applied to an already saved pass.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :accountId => String.t() | nil,
-          :accountName => String.t() | nil,
-          :appLinkData => GoogleApi.WalletObjects.V1.Model.AppLinkData.t() | nil,
           :barcode => GoogleApi.WalletObjects.V1.Model.Barcode.t() | nil,
-          :classId => String.t() | nil,
-          :classReference => GoogleApi.WalletObjects.V1.Model.LoyaltyClass.t() | nil,
-          :disableExpirationNotification => boolean() | nil,
+          :appLinkData => GoogleApi.WalletObjects.V1.Model.AppLinkData.t() | nil,
+          :state => String.t() | nil,
           :groupingInfo => GoogleApi.WalletObjects.V1.Model.GroupingInfo.t() | nil,
-          :hasLinkedDevice => boolean() | nil,
-          :hasUsers => boolean() | nil,
-          :heroImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
-          :id => String.t() | nil,
-          :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
-          :infoModuleData => GoogleApi.WalletObjects.V1.Model.InfoModuleData.t() | nil,
           :kind => String.t() | nil,
-          :linkedObjectIds => list(String.t()) | nil,
-          :linkedOfferIds => list(String.t()) | nil,
-          :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
-          :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
+          :infoModuleData => GoogleApi.WalletObjects.V1.Model.InfoModuleData.t() | nil,
           :loyaltyPoints => GoogleApi.WalletObjects.V1.Model.LoyaltyPoints.t() | nil,
-          :messages => list(GoogleApi.WalletObjects.V1.Model.Message.t()) | nil,
+          :smartTapRedemptionValue => String.t() | nil,
+          :classId => String.t() | nil,
+          :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
+          :merchantLocations => list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t()) | nil,
+          :version => String.t() | nil,
+          :hasUsers => boolean() | nil,
+          :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
           :notifyPreference => String.t() | nil,
+          :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
+          :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
+          :messages => list(GoogleApi.WalletObjects.V1.Model.Message.t()) | nil,
+          :heroImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
+          :hasLinkedDevice => boolean() | nil,
+          :accountName => String.t() | nil,
+          :linkedObjectIds => list(String.t()) | nil,
+          :disableExpirationNotification => boolean() | nil,
           :passConstraints => GoogleApi.WalletObjects.V1.Model.PassConstraints.t() | nil,
           :rotatingBarcode => GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t() | nil,
-          :saveRestrictions => GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t() | nil,
+          :classReference => GoogleApi.WalletObjects.V1.Model.LoyaltyClass.t() | nil,
           :secondaryLoyaltyPoints => GoogleApi.WalletObjects.V1.Model.LoyaltyPoints.t() | nil,
-          :smartTapRedemptionValue => String.t() | nil,
-          :state => String.t() | nil,
-          :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
-          :validTimeInterval => GoogleApi.WalletObjects.V1.Model.TimeInterval.t() | nil,
           :valueAddedModuleData =>
             list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
-          :version => String.t() | nil
+          :linkedOfferIds => list(String.t()) | nil,
+          :validTimeInterval => GoogleApi.WalletObjects.V1.Model.TimeInterval.t() | nil,
+          :id => String.t() | nil,
+          :accountId => String.t() | nil,
+          :saveRestrictions => GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t() | nil
         }
 
-  field(:accountId)
-  field(:accountName)
-  field(:appLinkData, as: GoogleApi.WalletObjects.V1.Model.AppLinkData)
   field(:barcode, as: GoogleApi.WalletObjects.V1.Model.Barcode)
-  field(:classId)
-  field(:classReference, as: GoogleApi.WalletObjects.V1.Model.LoyaltyClass)
-  field(:disableExpirationNotification)
+  field(:appLinkData, as: GoogleApi.WalletObjects.V1.Model.AppLinkData)
+  field(:state)
   field(:groupingInfo, as: GoogleApi.WalletObjects.V1.Model.GroupingInfo)
-  field(:hasLinkedDevice)
-  field(:hasUsers)
-  field(:heroImage, as: GoogleApi.WalletObjects.V1.Model.Image)
-  field(:id)
-  field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
-  field(:infoModuleData, as: GoogleApi.WalletObjects.V1.Model.InfoModuleData)
   field(:kind)
-  field(:linkedObjectIds, type: :list)
-  field(:linkedOfferIds, type: :list)
-  field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
-  field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)
+  field(:infoModuleData, as: GoogleApi.WalletObjects.V1.Model.InfoModuleData)
   field(:loyaltyPoints, as: GoogleApi.WalletObjects.V1.Model.LoyaltyPoints)
-  field(:messages, as: GoogleApi.WalletObjects.V1.Model.Message, type: :list)
+  field(:smartTapRedemptionValue)
+  field(:classId)
+  field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
+  field(:merchantLocations, as: GoogleApi.WalletObjects.V1.Model.MerchantLocation, type: :list)
+  field(:version)
+  field(:hasUsers)
+  field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)
   field(:notifyPreference)
+  field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)
+  field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
+  field(:messages, as: GoogleApi.WalletObjects.V1.Model.Message, type: :list)
+  field(:heroImage, as: GoogleApi.WalletObjects.V1.Model.Image)
+  field(:hasLinkedDevice)
+  field(:accountName)
+  field(:linkedObjectIds, type: :list)
+  field(:disableExpirationNotification)
   field(:passConstraints, as: GoogleApi.WalletObjects.V1.Model.PassConstraints)
   field(:rotatingBarcode, as: GoogleApi.WalletObjects.V1.Model.RotatingBarcode)
-  field(:saveRestrictions, as: GoogleApi.WalletObjects.V1.Model.SaveRestrictions)
+  field(:classReference, as: GoogleApi.WalletObjects.V1.Model.LoyaltyClass)
   field(:secondaryLoyaltyPoints, as: GoogleApi.WalletObjects.V1.Model.LoyaltyPoints)
-  field(:smartTapRedemptionValue)
-  field(:state)
-  field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)
-  field(:validTimeInterval, as: GoogleApi.WalletObjects.V1.Model.TimeInterval)
 
   field(:valueAddedModuleData,
     as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
     type: :list
   )
 
-  field(:version)
+  field(:linkedOfferIds, type: :list)
+  field(:validTimeInterval, as: GoogleApi.WalletObjects.V1.Model.TimeInterval)
+  field(:id)
+  field(:accountId)
+  field(:saveRestrictions, as: GoogleApi.WalletObjects.V1.Model.SaveRestrictions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.WalletObjects.V1.Model.LoyaltyObject do

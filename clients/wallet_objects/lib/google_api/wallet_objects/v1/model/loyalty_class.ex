@@ -44,6 +44,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyClass do
   *   `issuerName` (*type:* `String.t`, *default:* `nil`) - Required. The issuer name. Recommended maximum length is 20 characters to ensure full string is displayed on smaller screens.
   *   `allowMultipleUsersPerObject` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Use `multipleDevicesAndHoldersAllowedStatus` instead.
   *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
+  *   `merchantLocations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t)`, *default:* `nil`) - Merchant locations. There is a maximum of ten on the class. Any additional MerchantLocations added beyond the 10 will be rejected. These locations will trigger a notification when a user enters within a Google-set radius of the point. This field replaces the deprecated LatLongPoints.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
   *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
   *   `notifyPreference` (*type:* `String.t`, *default:* `nil`) - Whether or not field updates to this class should trigger notifications. When set to NOTIFY, we will attempt to trigger a field update notification to users. These notifications will only be sent to users if the field is part of an allowlist. If not specified, no notification will be triggered. This setting is ephemeral and needs to be set with each PATCH or UPDATE request, otherwise a notification will not be triggered.
@@ -97,6 +98,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyClass do
           :issuerName => String.t() | nil,
           :allowMultipleUsersPerObject => boolean() | nil,
           :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
+          :merchantLocations => list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t()) | nil,
           :version => String.t() | nil,
           :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
           :notifyPreference => String.t() | nil,
@@ -148,6 +150,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyClass do
   field(:issuerName)
   field(:allowMultipleUsersPerObject)
   field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
+  field(:merchantLocations, as: GoogleApi.WalletObjects.V1.Model.MerchantLocation, type: :list)
   field(:version)
   field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)
   field(:notifyPreference)

@@ -33,6 +33,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.EventTicketObject do
   *   `smartTapRedemptionValue` (*type:* `String.t`, *default:* `nil`) - The value that will be transmitted to a Smart Tap certified terminal over NFC for this object. The class level fields `enableSmartTap` and `redemptionIssuers` must also be set up correctly in order for the pass to support Smart Tap. Only ASCII characters are supported.
   *   `classId` (*type:* `String.t`, *default:* `nil`) - Required. The class associated with this object. The class must be of the same type as this object, must already exist, and must be approved. Class IDs should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you.
   *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
+  *   `merchantLocations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t)`, *default:* `nil`) - Merchant locations. There is a maximum of ten on the object. Any additional MerchantLocations added beyond the 10 will be rejected. These locations will trigger a notification when a user enters within a Google-set radius of the point. This field replaces the deprecated LatLongPoints.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
   *   `hasUsers` (*type:* `boolean()`, *default:* `nil`) - Indicates if the object has users. This field is set by the platform.
   *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
@@ -73,6 +74,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.EventTicketObject do
           :smartTapRedemptionValue => String.t() | nil,
           :classId => String.t() | nil,
           :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
+          :merchantLocations => list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t()) | nil,
           :version => String.t() | nil,
           :hasUsers => boolean() | nil,
           :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
@@ -111,6 +113,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.EventTicketObject do
   field(:smartTapRedemptionValue)
   field(:classId)
   field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
+  field(:merchantLocations, as: GoogleApi.WalletObjects.V1.Model.MerchantLocation, type: :list)
   field(:version)
   field(:hasUsers)
   field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)

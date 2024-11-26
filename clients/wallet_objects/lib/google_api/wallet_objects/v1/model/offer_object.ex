@@ -37,6 +37,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferObject do
   *   `linkedObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - linked_object_ids are a list of other objects such as event ticket, loyalty, offer, generic, giftcard, transit and boarding pass that should be automatically attached to this offer object. If a user had saved this offer, then these linked_object_ids would be automatically pushed to the user's wallet (unless they turned off the setting to receive such linked passes). Make sure that objects present in linked_object_ids are already inserted - if not, calls would fail. Once linked, the linked objects cannot be unlinked. You cannot link objects belonging to another issuer. There is a limit to the number of objects that can be linked to a single object. After the limit is reached, new linked objects in the call will be ignored silently. Object IDs should follow the format issuer ID.identifier where the former is issued by Google and the latter is chosen by you.
   *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If links module data is also defined on the class, both will be displayed.
   *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
+  *   `merchantLocations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t)`, *default:* `nil`) - Merchant locations. There is a maximum of ten on the object. Any additional MerchantLocations added beyond the 10 will be rejected. These locations will trigger a notification when a user enters within a Google-set radius of the point. This field replaces the deprecated LatLongPoints.
   *   `messages` (*type:* `list(GoogleApi.WalletObjects.V1.Model.Message.t)`, *default:* `nil`) - An array of messages displayed in the app. All users of this object will receive its associated messages. The maximum number of these fields is 10.
   *   `notifyPreference` (*type:* `String.t`, *default:* `nil`) - Whether or not field updates to this object should trigger notifications. When set to NOTIFY, we will attempt to trigger a field update notification to users. These notifications will only be sent to users if the field is part of an allowlist. If set to DO_NOT_NOTIFY or NOTIFICATION_SETTINGS_UNSPECIFIED, no notification will be triggered. This setting is ephemeral and needs to be set with each PATCH or UPDATE request, otherwise a notification will not be triggered.
   *   `passConstraints` (*type:* `GoogleApi.WalletObjects.V1.Model.PassConstraints.t`, *default:* `nil`) - Pass constraints for the object. Includes limiting NFC and screenshot behaviors.
@@ -69,6 +70,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferObject do
           :linkedObjectIds => list(String.t()) | nil,
           :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
           :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
+          :merchantLocations => list(GoogleApi.WalletObjects.V1.Model.MerchantLocation.t()) | nil,
           :messages => list(GoogleApi.WalletObjects.V1.Model.Message.t()) | nil,
           :notifyPreference => String.t() | nil,
           :passConstraints => GoogleApi.WalletObjects.V1.Model.PassConstraints.t() | nil,
@@ -99,6 +101,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferObject do
   field(:linkedObjectIds, type: :list)
   field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
   field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)
+  field(:merchantLocations, as: GoogleApi.WalletObjects.V1.Model.MerchantLocation, type: :list)
   field(:messages, as: GoogleApi.WalletObjects.V1.Model.Message, type: :list)
   field(:notifyPreference)
   field(:passConstraints, as: GoogleApi.WalletObjects.V1.Model.PassConstraints)
