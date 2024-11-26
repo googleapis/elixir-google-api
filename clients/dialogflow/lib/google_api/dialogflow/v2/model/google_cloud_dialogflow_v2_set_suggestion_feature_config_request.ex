@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SetSuggestionFeatureConfigRequest do
   @moduledoc """
-  The request message for ConversationProfiles.SetSuggestionFeature.
+  The request message for ConversationProfiles.SetSuggestionFeatureConfig.
 
   ## Attributes
 

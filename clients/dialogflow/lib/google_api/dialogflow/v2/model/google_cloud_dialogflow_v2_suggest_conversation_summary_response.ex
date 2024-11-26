@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestConversati
 
   ## Attributes
 
-  *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the SuggestSummaryRequest.context_size field in the request if there weren't that many messages in the conversation.
+  *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Number of messages prior to and including latest_message used to compile the suggestion. It may be smaller than the SuggestConversationSummaryRequest.context_size field in the request if there weren't that many messages in the conversation.
   *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - The name of the latest conversation message used as context for compiling suggestion. Format: `projects//locations//conversations//messages/`.
   *   `summary` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestConversationSummaryResponseSummary.t`, *default:* `nil`) - Generated summary.
   """

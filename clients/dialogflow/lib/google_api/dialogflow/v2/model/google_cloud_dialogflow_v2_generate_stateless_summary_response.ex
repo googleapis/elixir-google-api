@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GenerateStateless
 
   ## Attributes
 
-  *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Number of messages prior to and including last_conversation_message used to compile the suggestion. It may be smaller than the GenerateStatelessSummaryRequest.context_size field in the request if there weren't that many messages in the conversation.
+  *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Number of messages prior to and including latest_message used to compile the suggestion. It may be smaller than the GenerateStatelessSummaryRequest.max_context_size field in the request if there weren't that many messages in the conversation.
   *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - The name of the latest conversation message used as context for compiling suggestion. The format is specific to the user and the names of the messages provided.
   *   `summary` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GenerateStatelessSummaryResponseSummary.t`, *default:* `nil`) - Generated summary.
   """
