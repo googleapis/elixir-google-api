@@ -28,6 +28,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `snapshotDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t`, *default:* `nil`) - Output only. Contains information about the snapshot. This value is set via snapshot creation.
   *   `cloneDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.CloneDefinition.t`, *default:* `nil`) - Output only. Contains information about the clone. This value is set via the clone operation.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this table was last modified, in milliseconds since the epoch.
+  *   `managedTableType` (*type:* `String.t`, *default:* `nil`) - Optional. If set, overrides the default managed table type configured in the dataset.
   *   `numLongTermLogicalBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Number of logical bytes that are more than 90 days old.
   *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.ViewDefinition.t`, *default:* `nil`) - Optional. The view definition.
   *   `kind` (*type:* `String.t`, *default:* `bigquery#table`) - The type of resource ID.
@@ -85,6 +86,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :snapshotDefinition => GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t() | nil,
           :cloneDefinition => GoogleApi.BigQuery.V2.Model.CloneDefinition.t() | nil,
           :lastModifiedTime => String.t() | nil,
+          :managedTableType => String.t() | nil,
           :numLongTermLogicalBytes => String.t() | nil,
           :view => GoogleApi.BigQuery.V2.Model.ViewDefinition.t() | nil,
           :kind => String.t() | nil,
@@ -140,6 +142,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   field(:snapshotDefinition, as: GoogleApi.BigQuery.V2.Model.SnapshotDefinition)
   field(:cloneDefinition, as: GoogleApi.BigQuery.V2.Model.CloneDefinition)
   field(:lastModifiedTime)
+  field(:managedTableType)
   field(:numLongTermLogicalBytes)
   field(:view, as: GoogleApi.BigQuery.V2.Model.ViewDefinition)
   field(:kind)
