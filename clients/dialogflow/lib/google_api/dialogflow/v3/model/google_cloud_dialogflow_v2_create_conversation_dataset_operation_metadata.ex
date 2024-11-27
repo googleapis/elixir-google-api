@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2CreateConversationDatasetOperationMetadata do
   @moduledoc """
-  Metadata for ConversationDatasets.
+  Metadata for CreateConversationDataset.
 
   ## Attributes
 

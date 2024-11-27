@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SetSuggestionFeatureConfigOperationMetadata do
   @moduledoc """
-  Metadata for a ConversationProfile.SetSuggestionFeatureConfig operation.
+  Metadata for a ConversationProfiles.SetSuggestionFeatureConfig operation.
 
   ## Attributes
 
