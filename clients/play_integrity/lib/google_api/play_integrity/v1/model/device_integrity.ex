@@ -24,6 +24,7 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity do
   *   `deviceAttributes` (*type:* `GoogleApi.PlayIntegrity.V1.Model.DeviceAttributes.t`, *default:* `nil`) - Attributes of the device where the integrity token was generated.
   *   `deviceRecall` (*type:* `GoogleApi.PlayIntegrity.V1.Model.DeviceRecall.t`, *default:* `nil`) - Details about the device recall bits set by the developer.
   *   `deviceRecognitionVerdict` (*type:* `list(String.t)`, *default:* `nil`) - Details about the integrity of the device the app is running on.
+  *   `legacyDeviceRecognitionVerdict` (*type:* `list(String.t)`, *default:* `nil`) - Contains legacy details about the integrity of the device the app is running on. Only for devices with Android version T or higher and only for apps opted in to the new verdicts. Only available during the transition period to the new verdicts system and will be removed afterwards.
   *   `recentDeviceActivity` (*type:* `GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity.t`, *default:* `nil`) - Details about the device activity of the device the app is running on.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity do
           :deviceAttributes => GoogleApi.PlayIntegrity.V1.Model.DeviceAttributes.t() | nil,
           :deviceRecall => GoogleApi.PlayIntegrity.V1.Model.DeviceRecall.t() | nil,
           :deviceRecognitionVerdict => list(String.t()) | nil,
+          :legacyDeviceRecognitionVerdict => list(String.t()) | nil,
           :recentDeviceActivity => GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity.t() | nil
         }
 
   field(:deviceAttributes, as: GoogleApi.PlayIntegrity.V1.Model.DeviceAttributes)
   field(:deviceRecall, as: GoogleApi.PlayIntegrity.V1.Model.DeviceRecall)
   field(:deviceRecognitionVerdict, type: :list)
+  field(:legacyDeviceRecognitionVerdict, type: :list)
   field(:recentDeviceActivity, as: GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity)
 end
 
