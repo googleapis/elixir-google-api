@@ -1196,7 +1196,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:orderBy` (*type:* `String.t`) - The ordering of membership relation for the display name or email in the response. The syntax for this field can be found at https://cloud.google.com/apis/design/design_patterns#sorting_order. Example: Sort by the ascending display name: order_by="group_name" or order_by="group_name asc". Sort by the descending display name: order_by="group_name desc". Sort by the ascending group key: order_by="group_key" or order_by="group_key asc". Sort by the descending group key: order_by="group_key desc".
       *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000).
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous list request, if any
       *   `:query` (*type:* `String.t`) - Required. A CEL expression that MUST include member specification AND label(s). Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Identity-mapped groups are uniquely identified by both a `member_key_id` and a `member_key_namespace`, which requires an additional query input: `member_key_namespace`. Example query: `member_key_id == 'member_key_id_value' && 'label_value' in labels`
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1275,8 +1275,8 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000).
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
-      *   `:query` (*type:* `String.t`) - Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Identity-mapped groups are uniquely identified by both a `member_key_id` and a `member_key_namespace`, which requires an additional query input: `member_key_namespace`. Example query: `member_key_id == 'member_key_id_value' && in labels` Query may optionally contain equality operators on the parent of the group restricting the search within a particular customer, e.g. `parent == 'customers/{customer_id}'`. The `customer_id` must begin with "C" (for example, 'C046psxkn'). This filtering is only supported for Admins with groups read permissons on the input customer. Example query: `member_key_id == 'member_key_id_value' && in labels && parent == 'customers/C046psxkn'`
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous list request, if any.
+      *   `:query` (*type:* `String.t`) - Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Identity-mapped groups are uniquely identified by both a `member_key_id` and a `member_key_namespace`, which requires an additional query input: `member_key_namespace`. Example query: `member_key_id == 'member_key_id_value' && in labels` Query may optionally contain equality operators on the parent of the group restricting the search within a particular customer, e.g. `parent == 'customers/{customer_id}'`. The `customer_id` must begin with "C" (for example, 'C046psxkn'). This filtering is only supported for Admins with groups read permissions on the input customer. Example query: `member_key_id == 'member_key_id_value' && in labels && parent == 'customers/C046psxkn'`
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1353,7 +1353,7 @@ defmodule GoogleApi.CloudIdentity.V1.Api.Groups do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The default page size is 200 (max 1000).
-      *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
+      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
