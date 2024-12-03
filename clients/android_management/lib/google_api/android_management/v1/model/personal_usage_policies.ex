@@ -26,6 +26,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies do
   *   `maxDaysWithWorkOff` (*type:* `integer()`, *default:* `nil`) - Controls how long the work profile can stay off. The minimum duration must be at least 3 days. Other details are as follows: - If the duration is set to 0, the feature is turned off. - If the duration is set to a value smaller than the minimum duration, the feature returns an error. *Note:* If you want to avoid personal profiles being suspended during long periods of off-time, you can temporarily set a large value for this parameter.
   *   `personalApplications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy.t)`, *default:* `nil`) - Policy applied to applications in the personal profile.
   *   `personalPlayStoreMode` (*type:* `String.t`, *default:* `nil`) - Used together with personalApplications to control how apps in the personal profile are allowed or blocked.
+  *   `privateSpacePolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Controls whether a private space is allowed on the device.
   *   `screenCaptureDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, screen capture is disabled for all users.
   """
 
@@ -38,6 +39,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies do
           :personalApplications =>
             list(GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy.t()) | nil,
           :personalPlayStoreMode => String.t() | nil,
+          :privateSpacePolicy => String.t() | nil,
           :screenCaptureDisabled => boolean() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies do
   )
 
   field(:personalPlayStoreMode)
+  field(:privateSpacePolicy)
   field(:screenCaptureDisabled)
 end
 
