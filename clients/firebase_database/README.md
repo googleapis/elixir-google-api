@@ -1,6 +1,6 @@
 # GoogleApi.FirebaseDatabase
 
-Firebase Realtime Database API client library.
+Firebase Realtime Database Management API client library.
 
 The Firebase Realtime Database API enables programmatic provisioning and management of Realtime Database instances.
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_firebase_database, "~> 0.3"}]
+  [{:google_api_firebase_database, "~> 0.4"}]
 end
 ```
 
