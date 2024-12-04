@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Eventarc.V1.Model.LoggingConfig do
   @moduledoc """
-  The configuration for Platform Telemetry logging for Eventarc Avdvanced resources.
+  The configuration for Platform Telemetry logging for Eventarc Advanced resources.
 
   ## Attributes
 
