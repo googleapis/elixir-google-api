@@ -24,6 +24,7 @@ defmodule GoogleApi.Eventarc.V1.Model.ChannelConnection do
   *   `activationToken` (*type:* `String.t`, *default:* `nil`) - Input only. Activation token for the channel. The token will be used during the creation of ChannelConnection to bind the channel with the provider project. This field will not be stored in the provider resource.
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Required. The name of the connected subscriber Channel. This is a weak reference to avoid cross project and cross accounts references. This must be in `projects/{project}/location/{location}/channels/{channel_id}` format.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the connection.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server assigned ID of the resource. The server guarantees uniqueness and immutability until deleted.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Eventarc.V1.Model.ChannelConnection do
           :activationToken => String.t() | nil,
           :channel => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :labels => map() | nil,
           :name => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.Eventarc.V1.Model.ChannelConnection do
   field(:activationToken)
   field(:channel)
   field(:createTime, as: DateTime)
+  field(:labels, type: :map)
   field(:name)
   field(:uid)
   field(:updateTime, as: DateTime)

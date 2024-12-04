@@ -1420,7 +1420,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:enrollmentId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the Enrollment. It should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+      *   `:enrollmentId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the Enrollment. It should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.Enrollment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2022,7 +2022,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:googleApiSourceId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the GoogleApiSource. It should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+      *   `:googleApiSourceId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the GoogleApiSource. It should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.GoogleApiSource.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2626,7 +2626,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:messageBusId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the MessageBus. It should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$)
+      *   `:messageBusId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the MessageBus. It should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.MessageBus.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -3286,7 +3286,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -3596,7 +3596,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pipelineId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the Pipeline.
+      *   `:pipelineId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the Pipeline. It should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.Pipeline.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
