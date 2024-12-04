@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.WalletObjects.V1.Model.DiscoverableProgram do
   @moduledoc """
-  Information about how a class may be discovered and instantiated from within the Android Pay app. This is done by searching for a loyalty or gift card program and scanning or manually entering.
+  Information about how a class may be discovered and instantiated from within the Google Wallet app. This is done by searching for a loyalty or gift card program and scanning or manually entering.
 
   ## Attributes
 
