@@ -43,7 +43,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of customers to show in a page of results. A number between 1 and 100 (inclusive).
+      *   `:pageSize` (*type:* `integer()`) - Required. The maximum number of customers to show in a page of results. A number between 1 and 100 (inclusive).
       *   `:pageToken` (*type:* `String.t`) - A token specifying which result page to return. This field has custom validations in ListCustomersRequestValidator
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -619,7 +619,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `String.t`) - The maximum number of devices to show in a page of results. Must be between 1 and 100 inclusive.
+      *   `:pageSize` (*type:* `String.t`) - Required. The maximum number of devices to show in a page of results. Must be between 1 and 100 inclusive.
       *   `:pageToken` (*type:* `String.t`) - A token specifying which result page to return.
   *   `opts` (*type:* `keyword()`) - Call options
 
