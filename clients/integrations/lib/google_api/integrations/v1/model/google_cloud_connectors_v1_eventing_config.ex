@@ -21,15 +21,15 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfig 
 
   ## Attributes
 
-  *   `additionalVariables` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConfigVariable.t)`, *default:* `nil`) - Additional eventing related field values
-  *   `authConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t`, *default:* `nil`) - Auth details for the webhook adapter.
+  *   `additionalVariables` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConfigVariable.t)`, *default:* `nil`) - Optional. Additional eventing related field values
+  *   `authConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t`, *default:* `nil`) - Optional. Auth details for the webhook adapter.
   *   `deadLetterConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfigDeadLetterConfig.t`, *default:* `nil`) - Optional. Dead letter configuration for eventing of a connection.
-  *   `enrichmentEnabled` (*type:* `boolean()`, *default:* `nil`) - Enrichment Enabled.
+  *   `enrichmentEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enrichment Enabled.
   *   `eventsListenerIngressEndpoint` (*type:* `String.t`, *default:* `nil`) - Optional. Ingress endpoint of the event listener. This is used only when private connectivity is enabled.
   *   `listenerAuthConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t`, *default:* `nil`) - Optional. Auth details for the event listener.
   *   `privateConnectivityEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Private Connectivity Enabled.
   *   `proxyDestinationConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1DestinationConfig.t`, *default:* `nil`) - Optional. Proxy for Eventing auto-registration.
-  *   `registrationDestinationConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1DestinationConfig.t`, *default:* `nil`) - Registration endpoint for auto registration.
+  *   `registrationDestinationConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1DestinationConfig.t`, *default:* `nil`) - Optional. Registration endpoint for auto registration.
   """
 
   use GoogleApi.Gax.ModelBase
