@@ -22,7 +22,7 @@ defmodule GoogleApi.DataLineage.V1.Model.GoogleCloudDatacatalogLineageV1Origin d
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - If the source_type isn't CUSTOM, the value of this field should be a GCP resource name of the system, which reports lineage. The project and location parts of the resource name must match the project and location of the lineage resource being created. Examples: - `{source_type: COMPOSER, name: "projects/foo/locations/us/environments/bar"}` - `{source_type: BIGQUERY, name: "projects/foo/locations/eu"}` - `{source_type: CUSTOM, name: "myCustomIntegration"}`
-  *   `sourceType` (*type:* `String.t`, *default:* `nil`) - Type of the source. Use of a source_type other than `CUSTOM` for process creation or updating is highly discouraged. It may cause additional billing costs and be restricted in the future without notice.
+  *   `sourceType` (*type:* `String.t`, *default:* `nil`) - Type of the source. Use of a source_type other than `CUSTOM` for process creation or updating is highly discouraged. It might be restricted in the future without notice. There will be increase in cost if you use any of the source types other than `CUSTOM`.
   """
 
   use GoogleApi.Gax.ModelBase
