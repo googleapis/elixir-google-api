@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaAssertion do
   @moduledoc """
-  An assertion which will check for a condition over task execution status or an expression for task output variables Next available id: 5
+  An assertion which will check for a condition over task execution status or an expression for task output variables
 
   ## Attributes
 
-  *   `assertionStrategy` (*type:* `String.t`, *default:* `nil`) - The type of assertion to perform.
+  *   `assertionStrategy` (*type:* `String.t`, *default:* `nil`) - Optional. The type of assertion to perform.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Optional. Standard filter expression for ASSERT_CONDITION to succeed
   *   `parameter` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaEventParameter.t`, *default:* `nil`) - Optional. Key-value pair for ASSERT_EQUALS, ASSERT_NOT_EQUALS, ASSERT_CONTAINS to succeed
   *   `retryCount` (*type:* `integer()`, *default:* `nil`) - Number of times given task should be retried in case of ASSERT_FAILED_EXECUTION

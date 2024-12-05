@@ -21,16 +21,16 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1SslConfig do
 
   ## Attributes
 
-  *   `additionalVariables` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConfigVariable.t)`, *default:* `nil`) - Additional SSL related field values
-  *   `clientCertType` (*type:* `String.t`, *default:* `nil`) - Type of Client Cert (PEM/JKS/.. etc.)
-  *   `clientCertificate` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Secret.t`, *default:* `nil`) - Client Certificate
-  *   `clientPrivateKey` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Secret.t`, *default:* `nil`) - Client Private Key
-  *   `clientPrivateKeyPass` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Secret.t`, *default:* `nil`) - Secret containing the passphrase protecting the Client Private Key
-  *   `privateServerCertificate` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Secret.t`, *default:* `nil`) - Private Server Certificate. Needs to be specified if trust model is `PRIVATE`.
-  *   `serverCertType` (*type:* `String.t`, *default:* `nil`) - Type of Server Cert (PEM/JKS/.. etc.)
-  *   `trustModel` (*type:* `String.t`, *default:* `nil`) - Trust Model of the SSL connection
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Controls the ssl type for the given connector version.
-  *   `useSsl` (*type:* `boolean()`, *default:* `nil`) - Bool for enabling SSL
+  *   `additionalVariables` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConfigVariable.t)`, *default:* `nil`) - Optional. Additional SSL related field values
+  *   `clientCertType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of Client Cert (PEM/JKS/.. etc.)
+  *   `clientCertificate` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Secret.t`, *default:* `nil`) - Optional. Client Certificate
+  *   `clientPrivateKey` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Secret.t`, *default:* `nil`) - Optional. Client Private Key
+  *   `clientPrivateKeyPass` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Secret.t`, *default:* `nil`) - Optional. Secret containing the passphrase protecting the Client Private Key
+  *   `privateServerCertificate` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Secret.t`, *default:* `nil`) - Optional. Private Server Certificate. Needs to be specified if trust model is `PRIVATE`.
+  *   `serverCertType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of Server Cert (PEM/JKS/.. etc.)
+  *   `trustModel` (*type:* `String.t`, *default:* `nil`) - Optional. Trust Model of the SSL connection
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. Controls the ssl type for the given connector version.
+  *   `useSsl` (*type:* `boolean()`, *default:* `nil`) - Optional. Bool for enabling SSL
   """
 
   use GoogleApi.Gax.ModelBase
