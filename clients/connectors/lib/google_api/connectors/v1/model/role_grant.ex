@@ -21,10 +21,10 @@ defmodule GoogleApi.Connectors.V1.Model.RoleGrant do
 
   ## Attributes
 
-  *   `helperTextTemplate` (*type:* `String.t`, *default:* `nil`) - Template that UI can use to provide helper text to customers.
-  *   `principal` (*type:* `String.t`, *default:* `nil`) - Prinicipal/Identity for whom the role need to assigned.
-  *   `resource` (*type:* `GoogleApi.Connectors.V1.Model.Resource.t`, *default:* `nil`) - Resource on which the roles needs to be granted for the principal.
-  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - List of roles that need to be granted.
+  *   `helperTextTemplate` (*type:* `String.t`, *default:* `nil`) - Optional. Template that UI can use to provide helper text to customers.
+  *   `principal` (*type:* `String.t`, *default:* `nil`) - Optional. Prinicipal/Identity for whom the role need to assigned.
+  *   `resource` (*type:* `GoogleApi.Connectors.V1.Model.Resource.t`, *default:* `nil`) - Optional. Resource on which the roles needs to be granted for the principal.
+  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of roles that need to be granted.
   """
 
   use GoogleApi.Gax.ModelBase

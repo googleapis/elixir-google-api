@@ -22,9 +22,9 @@ defmodule GoogleApi.Connectors.V1.Model.FieldComparison do
   ## Attributes
 
   *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Boolean value
-  *   `comparator` (*type:* `String.t`, *default:* `nil`) - Comparator to use for comparing the field value.
+  *   `comparator` (*type:* `String.t`, *default:* `nil`) - Optional. Comparator to use for comparing the field value.
   *   `intValue` (*type:* `String.t`, *default:* `nil`) - Integer value
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Key of the field.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Optional. Key of the field.
   *   `stringValue` (*type:* `String.t`, *default:* `nil`) - String value
   """
 

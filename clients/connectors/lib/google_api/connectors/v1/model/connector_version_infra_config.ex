@@ -22,7 +22,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersionInfraConfig do
   ## Attributes
 
   *   `connectionRatelimitWindowSeconds` (*type:* `String.t`, *default:* `nil`) - Output only. The window used for ratelimiting runtime requests to connections.
-  *   `deploymentModel` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates whether connector is deployed on GKE/CloudRun
+  *   `deploymentModel` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates whether connector is deployed on GKE/CloudRun
   *   `deploymentModelMigrationState` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the deployment model migration.
   *   `hpaConfig` (*type:* `GoogleApi.Connectors.V1.Model.HPAConfig.t`, *default:* `nil`) - Output only. HPA autoscaling config.
   *   `internalclientRatelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Output only. Max QPS supported for internal requests originating from Connd.
