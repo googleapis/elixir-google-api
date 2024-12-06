@@ -23,17 +23,26 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `disable` (*type:* `boolean()`, *default:* `nil`) - Disable query rephraser.
   *   `maxRephraseSteps` (*type:* `integer()`, *default:* `nil`) - Max rephrase steps. The max number is 5 steps. If not set or set to < 1, it will be set to 1 by default.
+  *   `modelSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestQueryUnderstandingSpecQueryRephraserSpecModelSpec.t`, *default:* `nil`) - Optional. Query Rephraser Model specification.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :disable => boolean() | nil,
-          :maxRephraseSteps => integer() | nil
+          :maxRephraseSteps => integer() | nil,
+          :modelSpec =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestQueryUnderstandingSpecQueryRephraserSpecModelSpec.t()
+            | nil
         }
 
   field(:disable)
   field(:maxRephraseSteps)
+
+  field(:modelSpec,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestQueryUnderstandingSpecQueryRephraserSpecModelSpec
+  )
 end
 
 defimpl Poison.Decoder,
