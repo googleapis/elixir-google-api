@@ -31,6 +31,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - Output only. Link to external page.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Output only. Flag to mark the version indicating the launch stage.
+  *   `marketplaceConnectorDetails` (*type:* `GoogleApi.Connectors.V1.Model.MarketplaceConnectorDetails.t`, *default:* `nil`) - Output only. Marketplace connector details. Will be null if the connector is not marketplace connector.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Connector. Format: projects/{project}/locations/{location}/providers/{provider}/connectors/{connector} Only global location is supported for Connector resource.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Tags of the connector.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
@@ -50,6 +51,8 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
           :externalUri => String.t() | nil,
           :labels => map() | nil,
           :launchStage => String.t() | nil,
+          :marketplaceConnectorDetails =>
+            GoogleApi.Connectors.V1.Model.MarketplaceConnectorDetails.t() | nil,
           :name => String.t() | nil,
           :tags => list(String.t()) | nil,
           :updateTime => DateTime.t() | nil,
@@ -66,6 +69,11 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   field(:externalUri)
   field(:labels, type: :map)
   field(:launchStage)
+
+  field(:marketplaceConnectorDetails,
+    as: GoogleApi.Connectors.V1.Model.MarketplaceConnectorDetails
+  )
+
   field(:name)
   field(:tags, type: :list)
   field(:updateTime, as: DateTime)

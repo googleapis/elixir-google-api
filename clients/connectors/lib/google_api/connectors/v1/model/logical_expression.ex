@@ -21,9 +21,9 @@ defmodule GoogleApi.Connectors.V1.Model.LogicalExpression do
 
   ## Attributes
 
-  *   `fieldComparisons` (*type:* `list(GoogleApi.Connectors.V1.Model.FieldComparison.t)`, *default:* `nil`) - A list of fields to be compared.
-  *   `logicalExpressions` (*type:* `list(GoogleApi.Connectors.V1.Model.LogicalExpression.t)`, *default:* `nil`) - A list of nested conditions to be compared.
-  *   `logicalOperator` (*type:* `String.t`, *default:* `nil`) - The logical operator to use between the fields and conditions.
+  *   `fieldComparisons` (*type:* `list(GoogleApi.Connectors.V1.Model.FieldComparison.t)`, *default:* `nil`) - Optional. A list of fields to be compared.
+  *   `logicalExpressions` (*type:* `list(GoogleApi.Connectors.V1.Model.LogicalExpression.t)`, *default:* `nil`) - Optional. A list of nested conditions to be compared.
+  *   `logicalOperator` (*type:* `String.t`, *default:* `nil`) - Optional. The logical operator to use between the fields and conditions.
   """
 
   use GoogleApi.Gax.ModelBase

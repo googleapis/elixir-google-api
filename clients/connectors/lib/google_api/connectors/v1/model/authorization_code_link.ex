@@ -21,12 +21,12 @@ defmodule GoogleApi.Connectors.V1.Model.AuthorizationCodeLink do
 
   ## Attributes
 
-  *   `clientId` (*type:* `String.t`, *default:* `nil`) - The client ID assigned to the Google Cloud Connectors OAuth app for the connector data source.
+  *   `clientId` (*type:* `String.t`, *default:* `nil`) - Optional. The client ID assigned to the Google Cloud Connectors OAuth app for the connector data source.
   *   `clientSecret` (*type:* `GoogleApi.Connectors.V1.Model.Secret.t`, *default:* `nil`) - Optional. The client secret assigned to the Google Cloud Connectors OAuth app for the connector data source.
-  *   `enablePkce` (*type:* `boolean()`, *default:* `nil`) - Whether to enable PKCE for the auth code flow.
+  *   `enablePkce` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to enable PKCE for the auth code flow.
   *   `omitQueryParams` (*type:* `boolean()`, *default:* `nil`) - Optional. Omit query params from the redirect URI.
-  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - The scopes for which the user will authorize Google Cloud Connectors on the connector data source.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - The base URI the user must click to trigger the authorization code login flow.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The scopes for which the user will authorize Google Cloud Connectors on the connector data source.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Optional. The base URI the user must click to trigger the authorization code login flow.
   """
 
   use GoogleApi.Gax.ModelBase

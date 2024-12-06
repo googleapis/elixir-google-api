@@ -21,8 +21,8 @@ defmodule GoogleApi.Connectors.V1.Model.EnumOption do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the option.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Id of the option.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name of the option.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. Id of the option.
   """
 
   use GoogleApi.Gax.ModelBase

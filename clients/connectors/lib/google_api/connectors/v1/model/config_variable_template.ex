@@ -21,21 +21,21 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
 
   ## Attributes
 
-  *   `authorizationCodeLink` (*type:* `GoogleApi.Connectors.V1.Model.AuthorizationCodeLink.t`, *default:* `nil`) - Authorization code link options. To be populated if `ValueType` is `AUTHORIZATION_CODE`
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the parameter.
-  *   `enumOptions` (*type:* `list(GoogleApi.Connectors.V1.Model.EnumOption.t)`, *default:* `nil`) - Enum options. To be populated if `ValueType` is `ENUM`
+  *   `authorizationCodeLink` (*type:* `GoogleApi.Connectors.V1.Model.AuthorizationCodeLink.t`, *default:* `nil`) - Optional. Authorization code link options. To be populated if `ValueType` is `AUTHORIZATION_CODE`
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name of the parameter.
+  *   `enumOptions` (*type:* `list(GoogleApi.Connectors.V1.Model.EnumOption.t)`, *default:* `nil`) - Optional. Enum options. To be populated if `ValueType` is `ENUM`
   *   `enumSource` (*type:* `String.t`, *default:* `nil`) - Optional. enum source denotes the source of api to fill the enum options
-  *   `isAdvanced` (*type:* `boolean()`, *default:* `nil`) - Indicates if current template is part of advanced settings
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Key of the config variable.
+  *   `isAdvanced` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if current template is part of advanced settings
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Optional. Key of the config variable.
   *   `locationType` (*type:* `String.t`, *default:* `nil`) - Optional. Location Tyep denotes where this value should be sent in BYOC connections.
   *   `multipleSelectConfig` (*type:* `GoogleApi.Connectors.V1.Model.MultipleSelectConfig.t`, *default:* `nil`) - Optional. MultipleSelectConfig represents the multiple options for a config variable.
-  *   `required` (*type:* `boolean()`, *default:* `nil`) - Flag represents that this `ConfigVariable` must be provided for a connection.
-  *   `requiredCondition` (*type:* `GoogleApi.Connectors.V1.Model.LogicalExpression.t`, *default:* `nil`) - Condition under which a field would be required. The condition can be represented in the form of a logical expression.
-  *   `roleGrant` (*type:* `GoogleApi.Connectors.V1.Model.RoleGrant.t`, *default:* `nil`) - Role grant configuration for the config variable.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - State of the config variable.
-  *   `validationRegex` (*type:* `String.t`, *default:* `nil`) - Regular expression in RE2 syntax used for validating the `value` of a `ConfigVariable`.
-  *   `valueType` (*type:* `String.t`, *default:* `nil`) - Type of the parameter: string, int, bool etc. consider custom type for the benefit for the validation.
+  *   `required` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag represents that this `ConfigVariable` must be provided for a connection.
+  *   `requiredCondition` (*type:* `GoogleApi.Connectors.V1.Model.LogicalExpression.t`, *default:* `nil`) - Optional. Condition under which a field would be required. The condition can be represented in the form of a logical expression.
+  *   `roleGrant` (*type:* `GoogleApi.Connectors.V1.Model.RoleGrant.t`, *default:* `nil`) - Optional. Role grant configuration for the config variable.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the config variable.
+  *   `validationRegex` (*type:* `String.t`, *default:* `nil`) - Optional. Regular expression in RE2 syntax used for validating the `value` of a `ConfigVariable`.
+  *   `valueType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of the parameter: string, int, bool etc. consider custom type for the benefit for the validation.
   """
 
   use GoogleApi.Gax.ModelBase
