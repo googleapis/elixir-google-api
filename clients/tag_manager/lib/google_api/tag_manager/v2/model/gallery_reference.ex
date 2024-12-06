@@ -26,6 +26,7 @@ defmodule GoogleApi.TagManager.V2.Model.GalleryReference do
   *   `owner` (*type:* `String.t`, *default:* `nil`) - The name of the owner for the community gallery template.
   *   `repository` (*type:* `String.t`, *default:* `nil`) - The name of the repository for the community gallery template.
   *   `signature` (*type:* `String.t`, *default:* `nil`) - The signature of the community gallery template as computed at import time. This value is recomputed whenever the template is updated from the gallery.
+  *   `templateDeveloperId` (*type:* `String.t`, *default:* `nil`) - The developer id of the community gallery template. This value is set whenever the template is created from the gallery.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the community gallery template.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.TagManager.V2.Model.GalleryReference do
           :owner => String.t() | nil,
           :repository => String.t() | nil,
           :signature => String.t() | nil,
+          :templateDeveloperId => String.t() | nil,
           :version => String.t() | nil
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.TagManager.V2.Model.GalleryReference do
   field(:owner)
   field(:repository)
   field(:signature)
+  field(:templateDeveloperId)
   field(:version)
 end
 
