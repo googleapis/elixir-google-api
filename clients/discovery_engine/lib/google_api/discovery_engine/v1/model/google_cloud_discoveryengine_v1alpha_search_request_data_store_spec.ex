@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSe
 
   ## Attributes
 
+  *   `boostSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSearchRequestBoostSpec.t`, *default:* `nil`) - Optional. Boost specification to boost certain documents. For more information on boosting, see [Boosting](https://cloud.google.com/generative-ai-app-builder/docs/boost-search-results)
   *   `dataStore` (*type:* `String.t`, *default:* `nil`) - Required. Full resource name of DataStore, such as `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. Filter specification to filter documents in the data store specified by data_store field. For more information on filtering, see [Filtering](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
   """
@@ -28,9 +29,16 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :boostSpec =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSearchRequestBoostSpec.t()
+            | nil,
           :dataStore => String.t() | nil,
           :filter => String.t() | nil
         }
+
+  field(:boostSpec,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSearchRequestBoostSpec
+  )
 
   field(:dataStore)
   field(:filter)

@@ -26,6 +26,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `citations` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerCitation.t)`, *default:* `nil`) - Citations.
   *   `completeTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Answer completed timestamp.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Answer creation timestamp.
+  *   `groundingScore` (*type:* `float()`, *default:* `nil`) - A score in the range of [0, 1] describing how grounded the answer is by the reference chunks.
+  *   `groundingSupports` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerGroundingSupport.t)`, *default:* `nil`) - Optional. Grounding supports.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/*/answers/*`
   *   `queryUnderstandingInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryUnderstandingInfo.t`, *default:* `nil`) - Query understanding information.
   *   `references` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReference.t)`, *default:* `nil`) - References.
@@ -46,6 +48,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             | nil,
           :completeTime => DateTime.t() | nil,
           :createTime => DateTime.t() | nil,
+          :groundingScore => float() | nil,
+          :groundingSupports =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerGroundingSupport.t()
+            )
+            | nil,
           :name => String.t() | nil,
           :queryUnderstandingInfo =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryUnderstandingInfo.t()
@@ -74,6 +82,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   field(:completeTime, as: DateTime)
   field(:createTime, as: DateTime)
+  field(:groundingScore)
+
+  field(:groundingSupports,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerGroundingSupport,
+    type: :list
+  )
+
   field(:name)
 
   field(:queryUnderstandingInfo,

@@ -24,6 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1FhirSto
   *   `fhirStore` (*type:* `String.t`, *default:* `nil`) - Required. The full resource name of the FHIR store to import data from, in the format of `projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}`.
   *   `gcsStagingDir` (*type:* `String.t`, *default:* `nil`) - Intermediate Cloud Storage directory used for the import with a length limit of 2,000 characters. Can be specified if one wants to have the FhirStore export to a specific Cloud Storage directory.
   *   `resourceTypes` (*type:* `list(String.t)`, *default:* `nil`) - The FHIR resource types to import. The resource types should be a subset of all [supported FHIR resource types](https://cloud.google.com/generative-ai-app-builder/docs/fhir-schema-reference#resource-level-specification). Default to all supported FHIR resource types if empty.
+  *   `updateFromLatestPredefinedSchema` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to update the DataStore schema to the latest predefined schema. If true, the DataStore schema will be updated to include any FHIR fields or resource types that have been added since the last import and corresponding FHIR resources will be imported from the FHIR store. Note this field cannot be used in conjunction with `resource_types`. It should be used after initial import.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1FhirSto
   @type t :: %__MODULE__{
           :fhirStore => String.t() | nil,
           :gcsStagingDir => String.t() | nil,
-          :resourceTypes => list(String.t()) | nil
+          :resourceTypes => list(String.t()) | nil,
+          :updateFromLatestPredefinedSchema => boolean() | nil
         }
 
   field(:fhirStore)
   field(:gcsStagingDir)
   field(:resourceTypes, type: :list)
+  field(:updateFromLatestPredefinedSchema)
 end
 
 defimpl Poison.Decoder,

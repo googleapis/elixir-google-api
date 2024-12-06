@@ -21,7 +21,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   ## Attributes
 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The display name of the session. This field is used to identify the session in the UI. By default, the display name is the first turn query text in the session.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the session finished.
+  *   `isPinned` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the session is pinned, pinned session will be displayed on the top of the session list.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/*`
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the session started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the session.
@@ -32,7 +34,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :displayName => String.t() | nil,
           :endTime => DateTime.t() | nil,
+          :isPinned => boolean() | nil,
           :name => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
@@ -44,7 +48,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
           :userPseudoId => String.t() | nil
         }
 
+  field(:displayName)
   field(:endTime, as: DateTime)
+  field(:isPinned)
   field(:name)
   field(:startTime, as: DateTime)
   field(:state)
