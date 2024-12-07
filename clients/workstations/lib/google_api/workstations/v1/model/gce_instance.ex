@@ -22,7 +22,7 @@ defmodule GoogleApi.Workstations.V1.Model.GceInstance do
   ## Attributes
 
   *   `accelerators` (*type:* `list(GoogleApi.Workstations.V1.Model.Accelerator.t)`, *default:* `nil`) - Optional. A list of the type and count of accelerator cards attached to the instance.
-  *   `boostConfigs` (*type:* `list(GoogleApi.Workstations.V1.Model.BoostConfig.t)`, *default:* `nil`) - Optional. A list of the boost configurations that workstations created using this workstation configuration are allowed to use.
+  *   `boostConfigs` (*type:* `list(GoogleApi.Workstations.V1.Model.BoostConfig.t)`, *default:* `nil`) - Optional. A list of the boost configurations that workstations created using this workstation configuration are allowed to use. If specified, users will have the option to choose from the list of boost configs when starting a workstation.
   *   `bootDiskSizeGb` (*type:* `integer()`, *default:* `nil`) - Optional. The size of the boot disk for the VM in gigabytes (GB). The minimum boot disk size is `30` GB. Defaults to `50` GB.
   *   `confidentialInstanceConfig` (*type:* `GoogleApi.Workstations.V1.Model.GceConfidentialInstanceConfig.t`, *default:* `nil`) - Optional. A set of Compute Engine Confidential VM instance options.
   *   `disablePublicIpAddresses` (*type:* `boolean()`, *default:* `nil`) - Optional. When set to true, disables public IP addresses for VMs. If you disable public IP addresses, you must set up Private Google Access or Cloud NAT on your network. If you use Private Google Access and you use `private.googleapis.com` or `restricted.googleapis.com` for Container Registry and Artifact Registry, make sure that you set up DNS records for domains `*.gcr.io` and `*.pkg.dev`. Defaults to false (VMs have public IP addresses).
