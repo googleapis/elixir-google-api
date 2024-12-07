@@ -32,6 +32,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ConnectivityTest do
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - IP Protocol of the test. When not provided, "TCP" is assumed.
   *   `reachabilityDetails` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails.t`, *default:* `nil`) - Output only. The reachability details of this test from the latest run. The details are updated when creating a new test, updating an existing test, or triggering a one-time rerun of an existing test.
   *   `relatedProjects` (*type:* `list(String.t)`, *default:* `nil`) - Other projects that may be relevant for reachability analysis. This is applicable to scenarios where a test can cross project boundaries.
+  *   `returnReachabilityDetails` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails.t`, *default:* `nil`) - Output only. The reachability details of this test from the latest run for the return path. The details are updated when creating a new test, updating an existing test, or triggering a one-time rerun of an existing test.
+  *   `roundTrip` (*type:* `boolean()`, *default:* `nil`) - Whether run analysis for the return path from destination to source. Default value is false.
   *   `source` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.Endpoint.t`, *default:* `nil`) - Required. Source specification of the Connectivity Test. You can use a combination of source IP address, virtual machine (VM) instance, or Compute Engine network to uniquely identify the source location. Examples: If the source IP address is an internal IP address within a Google Cloud Virtual Private Cloud (VPC) network, then you must also specify the VPC network. Otherwise, specify the VM instance, which already contains its internal IP address and VPC network information. If the source of the test is within an on-premises network, then you must provide the destination VPC network. If the source endpoint is a Compute Engine VM instance with multiple network interfaces, the instance itself is not sufficient to identify the endpoint. So, you must also specify the source IP address or VPC network. A reachability analysis proceeds even if the source location is ambiguous. However, the test result may include endpoints that you don't intend to test.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the test's configuration was updated.
   """
@@ -51,6 +53,9 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ConnectivityTest do
           :reachabilityDetails =>
             GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails.t() | nil,
           :relatedProjects => list(String.t()) | nil,
+          :returnReachabilityDetails =>
+            GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails.t() | nil,
+          :roundTrip => boolean() | nil,
           :source => GoogleApi.NetworkManagement.V1beta1.Model.Endpoint.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -66,6 +71,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ConnectivityTest do
   field(:protocol)
   field(:reachabilityDetails, as: GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails)
   field(:relatedProjects, type: :list)
+
+  field(:returnReachabilityDetails,
+    as: GoogleApi.NetworkManagement.V1beta1.Model.ReachabilityDetails
+  )
+
+  field(:roundTrip)
   field(:source, as: GoogleApi.NetworkManagement.V1beta1.Model.Endpoint)
   field(:updateTime, as: DateTime)
 end
