@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Metastore.V1beta.Model.RestoreServiceRequest do
   @moduledoc """
-  Request message for DataprocMetastore.Restore.
+  Request message for DataprocMetastore.RestoreService.
 
   ## Attributes
 
