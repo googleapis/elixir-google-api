@@ -46,6 +46,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   *   `toolNameMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolNameMatchInput.t`, *default:* `nil`) - Input for tool name match metric.
   *   `toolParameterKeyMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKeyMatchInput.t`, *default:* `nil`) - Input for tool parameter key match metric.
   *   `toolParameterKvMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchInput.t`, *default:* `nil`) - Input for tool parameter key value match metric.
+  *   `trajectoryAnyOrderMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput.t`, *default:* `nil`) - Input for trajectory match any order metric.
+  *   `trajectoryExactMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchInput.t`, *default:* `nil`) - Input for trajectory exact match metric.
+  *   `trajectoryInOrderMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchInput.t`, *default:* `nil`) - Input for trajectory in order match metric.
+  *   `trajectoryPrecisionInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionInput.t`, *default:* `nil`) - Input for trajectory precision metric.
+  *   `trajectoryRecallInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallInput.t`, *default:* `nil`) - Input for trajectory recall metric.
+  *   `trajectorySingleToolUseInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput.t`, *default:* `nil`) - Input for trajectory single tool use metric.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -110,6 +116,23 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             | nil,
           :toolParameterKvMatchInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchInput.t()
+            | nil,
+          :trajectoryAnyOrderMatchInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput.t()
+            | nil,
+          :trajectoryExactMatchInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchInput.t()
+            | nil,
+          :trajectoryInOrderMatchInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchInput.t()
+            | nil,
+          :trajectoryPrecisionInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionInput.t()
+            | nil,
+          :trajectoryRecallInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallInput.t() | nil,
+          :trajectorySingleToolUseInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput.t()
             | nil
         }
 
@@ -192,6 +215,30 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   field(:toolParameterKvMatchInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchInput
+  )
+
+  field(:trajectoryAnyOrderMatchInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput
+  )
+
+  field(:trajectoryExactMatchInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchInput
+  )
+
+  field(:trajectoryInOrderMatchInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchInput
+  )
+
+  field(:trajectoryPrecisionInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionInput
+  )
+
+  field(:trajectoryRecallInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallInput
+  )
+
+  field(:trajectorySingleToolUseInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput
   )
 end
 

@@ -30,6 +30,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFile do
   *   `googleDriveSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleDriveSource.t`, *default:* `nil`) - Output only. Google Drive location. Supports importing individual files as well as Google Drive folders.
   *   `jiraSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1JiraSource.t`, *default:* `nil`) - The RagFile is imported from a Jira query.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the RagFile.
+  *   `sharePointSources` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SharePointSources.t`, *default:* `nil`) - The RagFile is imported from a SharePoint source.
   *   `slackSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SlackSource.t`, *default:* `nil`) - The RagFile is imported from a Slack channel.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this RagFile was last updated.
   """
@@ -50,6 +51,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFile do
           :jiraSource =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1JiraSource.t() | nil,
           :name => String.t() | nil,
+          :sharePointSources =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SharePointSources.t() | nil,
           :slackSource =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SlackSource.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -72,6 +75,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFile do
 
   field(:jiraSource, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1JiraSource)
   field(:name)
+
+  field(:sharePointSources,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SharePointSources
+  )
+
   field(:slackSource, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SlackSource)
   field(:updateTime, as: DateTime)
 end

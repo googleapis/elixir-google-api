@@ -24,6 +24,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfig
   *   `apiAuth` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ApiAuth.t`, *default:* `nil`) - Authentication config for the chosen Vector DB.
   *   `pinecone` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfigPinecone.t`, *default:* `nil`) - The config for the Pinecone.
   *   `ragEmbeddingModelConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagEmbeddingModelConfig.t`, *default:* `nil`) - Optional. Immutable. The embedding model config of the Vector DB.
+  *   `ragManagedDb` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfigRagManagedDb.t`, *default:* `nil`) - The config for the RAG-managed Vector DB.
   *   `vertexVectorSearch` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfigVertexVectorSearch.t`, *default:* `nil`) - The config for the Vertex Vector Search.
   """
 
@@ -36,6 +37,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfig
             | nil,
           :ragEmbeddingModelConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagEmbeddingModelConfig.t() | nil,
+          :ragManagedDb =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfigRagManagedDb.t()
+            | nil,
           :vertexVectorSearch =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfigVertexVectorSearch.t()
             | nil
@@ -49,6 +53,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfig
 
   field(:ragEmbeddingModelConfig,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagEmbeddingModelConfig
+  )
+
+  field(:ragManagedDb,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfigRagManagedDb
   )
 
   field(:vertexVectorSearch,
