@@ -21,15 +21,18 @@ defmodule GoogleApi.DataMigration.V1.Model.RestartMigrationJobRequest do
 
   ## Attributes
 
+  *   `objectsFilter` (*type:* `GoogleApi.DataMigration.V1.Model.MigrationJobObjectsConfig.t`, *default:* `nil`) - Optional. The object filter to apply to the migration job.
   *   `skipValidation` (*type:* `boolean()`, *default:* `nil`) - Optional. Restart the migration job without running prior configuration verification. Defaults to `false`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :objectsFilter => GoogleApi.DataMigration.V1.Model.MigrationJobObjectsConfig.t() | nil,
           :skipValidation => boolean() | nil
         }
 
+  field(:objectsFilter, as: GoogleApi.DataMigration.V1.Model.MigrationJobObjectsConfig)
   field(:skipValidation)
 end
 

@@ -36,6 +36,7 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   *   `filter` (*type:* `String.t`, *default:* `nil`) - This field can be used to select the entities to migrate as part of the migration job. It uses AIP-160 notation to select a subset of the entities configured on the associated conversion-workspace. This field should not be set on migration-jobs that are not associated with a conversion workspace.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The resource labels for migration job to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
+  *   `objectsConfig` (*type:* `GoogleApi.DataMigration.V1.Model.MigrationJobObjectsConfig.t`, *default:* `nil`) - Optional. The objects that need to be migrated.
   *   `oracleToPostgresConfig` (*type:* `GoogleApi.DataMigration.V1.Model.OracleToPostgresConfig.t`, *default:* `nil`) - Configuration for heterogeneous **Oracle to Cloud SQL for PostgreSQL** and **Oracle to AlloyDB for PostgreSQL** migrations.
   *   `performanceConfig` (*type:* `GoogleApi.DataMigration.V1.Model.PerformanceConfig.t`, *default:* `nil`) - Optional. Data dump parallelism settings used by the migration.
   *   `phase` (*type:* `String.t`, *default:* `nil`) - Output only. The current migration job phase.
@@ -69,6 +70,7 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
           :filter => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :objectsConfig => GoogleApi.DataMigration.V1.Model.MigrationJobObjectsConfig.t() | nil,
           :oracleToPostgresConfig =>
             GoogleApi.DataMigration.V1.Model.OracleToPostgresConfig.t() | nil,
           :performanceConfig => GoogleApi.DataMigration.V1.Model.PerformanceConfig.t() | nil,
@@ -103,6 +105,7 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   field(:filter)
   field(:labels, type: :map)
   field(:name)
+  field(:objectsConfig, as: GoogleApi.DataMigration.V1.Model.MigrationJobObjectsConfig)
   field(:oracleToPostgresConfig, as: GoogleApi.DataMigration.V1.Model.OracleToPostgresConfig)
   field(:performanceConfig, as: GoogleApi.DataMigration.V1.Model.PerformanceConfig)
   field(:phase)
