@@ -28,6 +28,7 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
   *   `listConstraint` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintListConstraint.t`, *default:* `nil`) - Defines this constraint as being a ListConstraint.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the constraint. Must be in one of the following forms: * `projects/{project_number}/constraints/{constraint_name}` * `folders/{folder_id}/constraints/{constraint_name}` * `organizations/{organization_id}/constraints/{constraint_name}` For example, "/projects/123/constraints/compute.disableSerialPortAccess".
   *   `supportsDryRun` (*type:* `boolean()`, *default:* `nil`) - Shows if dry run is supported for this constraint or not.
+  *   `supportsSimulation` (*type:* `boolean()`, *default:* `nil`) - Shows if simulation is supported for this constraint or not.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,7 +43,8 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
           :listConstraint =>
             GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintListConstraint.t() | nil,
           :name => String.t() | nil,
-          :supportsDryRun => boolean() | nil
+          :supportsDryRun => boolean() | nil,
+          :supportsSimulation => boolean() | nil
         }
 
   field(:booleanConstraint,
@@ -59,6 +61,7 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
 
   field(:name)
   field(:supportsDryRun)
+  field(:supportsSimulation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
