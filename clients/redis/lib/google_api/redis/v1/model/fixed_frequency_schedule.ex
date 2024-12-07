@@ -21,7 +21,7 @@ defmodule GoogleApi.Redis.V1.Model.FixedFrequencySchedule do
 
   ## Attributes
 
-  *   `startTime` (*type:* `GoogleApi.Redis.V1.Model.TimeOfDay.t`, *default:* `nil`) - Optional. The start time of every automated backup in UTC. It must be set to the start of an hour. If not specified, the default value is the start of the hour when the automated backup config is enabled. For example, if the automated backup config is enabled at 10:13 AM UTC without specifying start_time, the default start time is 10:00 AM UTC.
+  *   `startTime` (*type:* `GoogleApi.Redis.V1.Model.TimeOfDay.t`, *default:* `nil`) - Required. The start time of every automated backup in UTC. It must be set to the start of an hour. This field is required.
   """
 
   use GoogleApi.Gax.ModelBase

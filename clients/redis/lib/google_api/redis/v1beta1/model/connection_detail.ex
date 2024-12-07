@@ -21,15 +21,18 @@ defmodule GoogleApi.Redis.V1beta1.Model.ConnectionDetail do
 
   ## Attributes
 
+  *   `pscAutoConnection` (*type:* `GoogleApi.Redis.V1beta1.Model.PscAutoConnection.t`, *default:* `nil`) - Detailed information of a PSC connection that is created through service connectivity automation.
   *   `pscConnection` (*type:* `GoogleApi.Redis.V1beta1.Model.PscConnection.t`, *default:* `nil`) - Detailed information of a PSC connection that is created by the customer who owns the cluster.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :pscAutoConnection => GoogleApi.Redis.V1beta1.Model.PscAutoConnection.t() | nil,
           :pscConnection => GoogleApi.Redis.V1beta1.Model.PscConnection.t() | nil
         }
 
+  field(:pscAutoConnection, as: GoogleApi.Redis.V1beta1.Model.PscAutoConnection)
   field(:pscConnection, as: GoogleApi.Redis.V1beta1.Model.PscConnection)
 end
 

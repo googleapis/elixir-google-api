@@ -34,6 +34,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Backup do
   *   `shardCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of shards for the cluster.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the backup.
   *   `totalSizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Total size of the backup in bytes.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System assigned unique identifier of the backup.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,7 +52,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.Backup do
           :replicaCount => integer() | nil,
           :shardCount => integer() | nil,
           :state => String.t() | nil,
-          :totalSizeBytes => String.t() | nil
+          :totalSizeBytes => String.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:backupFiles, as: GoogleApi.Redis.V1beta1.Model.BackupFile, type: :list)
@@ -67,6 +69,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Backup do
   field(:shardCount)
   field(:state)
   field(:totalSizeBytes)
+  field(:uid)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Redis.V1beta1.Model.Backup do
