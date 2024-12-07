@@ -24,6 +24,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.BackupCollection do
   *   `cluster` (*type:* `String.t`, *default:* `nil`) - Output only. The full resource path of the cluster the backup collection belongs to. Example: projects/{project}/locations/{location}/clusters/{cluster}
   *   `clusterUid` (*type:* `String.t`, *default:* `nil`) - Output only. The cluster uid of the backup collection.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Full resource path of the backup collection.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System assigned unique identifier of the backup collection.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Redis.V1beta1.Model.BackupCollection do
   @type t :: %__MODULE__{
           :cluster => String.t() | nil,
           :clusterUid => String.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :uid => String.t() | nil
         }
 
   field(:cluster)
   field(:clusterUid)
   field(:name)
+  field(:uid)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Redis.V1beta1.Model.BackupCollection do

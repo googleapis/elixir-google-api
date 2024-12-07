@@ -23,7 +23,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.AutomatedBackupConfig do
 
   *   `automatedBackupMode` (*type:* `String.t`, *default:* `nil`) - Optional. The automated backup mode. If the mode is disabled, the other fields will be ignored.
   *   `fixedFrequencySchedule` (*type:* `GoogleApi.Redis.V1beta1.Model.FixedFrequencySchedule.t`, *default:* `nil`) - Optional. Trigger automated backups at a fixed frequency.
-  *   `retention` (*type:* `String.t`, *default:* `nil`) - Optional. How long to keep automated backups before the backups are deleted. If not specified, the default value is 100 years which is also the maximum value supported. The minimum value is 1 day.
+  *   `retention` (*type:* `String.t`, *default:* `nil`) - Optional. How long to keep automated backups before the backups are deleted. The value should be between 1 day and 365 days. If not specified, the default value is 35 days.
   """
 
   use GoogleApi.Gax.ModelBase
