@@ -46,6 +46,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   *   `toolNameMatchResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolNameMatchResults.t`, *default:* `nil`) - Results for tool name match metric.
   *   `toolParameterKeyMatchResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKeyMatchResults.t`, *default:* `nil`) - Results for tool parameter key match metric.
   *   `toolParameterKvMatchResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchResults.t`, *default:* `nil`) - Results for tool parameter key value match metric.
+  *   `trajectoryAnyOrderMatchResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchResults.t`, *default:* `nil`) - Result for trajectory any order match metric.
+  *   `trajectoryExactMatchResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchResults.t`, *default:* `nil`) - Result for trajectory exact match metric.
+  *   `trajectoryInOrderMatchResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchResults.t`, *default:* `nil`) - Result for trajectory in order match metric.
+  *   `trajectoryPrecisionResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionResults.t`, *default:* `nil`) - Result for trajectory precision metric.
+  *   `trajectoryRecallResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallResults.t`, *default:* `nil`) - Results for trajectory recall metric.
+  *   `trajectorySingleToolUseResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseResults.t`, *default:* `nil`) - Results for trajectory single tool use metric.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -111,6 +117,23 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             | nil,
           :toolParameterKvMatchResults =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchResults.t()
+            | nil,
+          :trajectoryAnyOrderMatchResults =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchResults.t()
+            | nil,
+          :trajectoryExactMatchResults =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchResults.t()
+            | nil,
+          :trajectoryInOrderMatchResults =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchResults.t()
+            | nil,
+          :trajectoryPrecisionResults =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionResults.t()
+            | nil,
+          :trajectoryRecallResults =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallResults.t() | nil,
+          :trajectorySingleToolUseResults =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseResults.t()
             | nil
         }
 
@@ -198,6 +221,30 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   field(:toolParameterKvMatchResults,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchResults
+  )
+
+  field(:trajectoryAnyOrderMatchResults,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchResults
+  )
+
+  field(:trajectoryExactMatchResults,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchResults
+  )
+
+  field(:trajectoryInOrderMatchResults,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchResults
+  )
+
+  field(:trajectoryPrecisionResults,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionResults
+  )
+
+  field(:trajectoryRecallResults,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallResults
+  )
+
+  field(:trajectorySingleToolUseResults,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseResults
   )
 end
 

@@ -22,15 +22,19 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookRuntime was created.
+  *   `dataPersistentDiskSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentDiskSpec.t`, *default:* `nil`) - Output only. The specification of persistent disk attached to the notebook runtime as data disk storage.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the NotebookRuntime.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the NotebookRuntime. The name can be up to 128 characters long and can consist of any UTF-8 characters.
   *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Output only. Customer-managed encryption key spec for the notebook runtime.
+  *   `eucConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookEucConfig.t`, *default:* `nil`) - Output only. EUC configuration of the notebook runtime.
   *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookRuntime will be expired: 1. System Predefined NotebookRuntime: 24 hours after creation. After expiration, system predifined runtime will be deleted. 2. User created NotebookRuntime: 6 months after last upgrade. After expiration, user created runtime will be stopped and allowed for upgrade.
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Output only. The health state of the NotebookRuntime.
   *   `idleShutdownConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookIdleShutdownConfig.t`, *default:* `nil`) - Output only. The idle shutdown configuration of the notebook runtime.
   *   `isUpgradable` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether NotebookRuntime is upgradable.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels with user-defined metadata to organize your NotebookRuntime. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one NotebookRuntime (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. Following system labels exist for NotebookRuntime: * "aiplatform.googleapis.com/notebook_runtime_gce_instance_id": output only, its value is the Compute Engine instance id. * "aiplatform.googleapis.com/colab_enterprise_entry_service": its value is either "bigquery" or "vertex"; if absent, it should be "vertex". This is to describe the entry service, either BigQuery or Vertex.
+  *   `machineSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MachineSpec.t`, *default:* `nil`) - Output only. The specification of a single machine used by the notebook runtime.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the NotebookRuntime.
+  *   `networkSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NetworkSpec.t`, *default:* `nil`) - Output only. Network spec of the notebook runtime.
   *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Compute Engine tags to add to runtime (see [Tagging instances](https://cloud.google.com/vpc/docs/add-remove-network-tags)).
   *   `notebookRuntimeTemplateRef` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTemplateRef.t`, *default:* `nil`) - Output only. The pointer to NotebookRuntimeTemplate this NotebookRuntime is created from.
   *   `notebookRuntimeType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the notebook runtime.
@@ -39,7 +43,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
   *   `runtimeUser` (*type:* `String.t`, *default:* `nil`) - Required. The user email of the NotebookRuntime.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. The service account that the NotebookRuntime workload runs as.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. Deprecated: This field is no longer used and the "Vertex AI Notebook Service Account" (service-PROJECT_NUMBER@gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is used for the runtime workload identity. See https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account for more details. The service account that the NotebookRuntime workload runs as.
+  *   `shieldedVmConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig.t`, *default:* `nil`) - Output only. Runtime Shielded VM spec.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookRuntime was most recently updated.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Output only. The VM os image version of NotebookRuntime.
   """
@@ -48,10 +53,14 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :dataPersistentDiskSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentDiskSpec.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :encryptionSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t() | nil,
+          :eucConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookEucConfig.t() | nil,
           :expirationTime => DateTime.t() | nil,
           :healthState => String.t() | nil,
           :idleShutdownConfig =>
@@ -59,7 +68,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
             | nil,
           :isUpgradable => boolean() | nil,
           :labels => map() | nil,
+          :machineSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MachineSpec.t() | nil,
           :name => String.t() | nil,
+          :networkSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NetworkSpec.t() | nil,
           :networkTags => list(String.t()) | nil,
           :notebookRuntimeTemplateRef =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTemplateRef.t()
@@ -71,14 +84,22 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
           :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :serviceAccount => String.t() | nil,
+          :shieldedVmConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig.t() | nil,
           :updateTime => DateTime.t() | nil,
           :version => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
+
+  field(:dataPersistentDiskSpec,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentDiskSpec
+  )
+
   field(:description)
   field(:displayName)
   field(:encryptionSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec)
+  field(:eucConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookEucConfig)
   field(:expirationTime, as: DateTime)
   field(:healthState)
 
@@ -88,7 +109,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
 
   field(:isUpgradable)
   field(:labels, type: :map)
+  field(:machineSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MachineSpec)
   field(:name)
+  field(:networkSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NetworkSpec)
   field(:networkTags, type: :list)
 
   field(:notebookRuntimeTemplateRef,
@@ -102,6 +125,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
   field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:serviceAccount)
+
+  field(:shieldedVmConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig
+  )
+
   field(:updateTime, as: DateTime)
   field(:version)
 end

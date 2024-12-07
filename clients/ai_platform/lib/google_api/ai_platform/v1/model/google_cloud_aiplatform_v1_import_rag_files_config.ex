@@ -28,6 +28,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
   *   `partialFailureBigquerySink` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQueryDestination.t`, *default:* `nil`) - The BigQuery destination to write partial failures to. It should be a bigquery table resource name (e.g. "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the table does not exist, it will be created with the expected schema. If the table exists, the schema will be validated and data will be added to this existing table. Deprecated. Prefer to use `import_result_bq_sink`.
   *   `partialFailureGcsSink` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsDestination.t`, *default:* `nil`) - The Cloud Storage path to write partial failures to. Deprecated. Prefer to use `import_result_gcs_sink`.
   *   `ragFileTransformationConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFileTransformationConfig.t`, *default:* `nil`) - Specifies the transformation config for RagFiles.
+  *   `sharePointSources` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SharePointSources.t`, *default:* `nil`) - SharePoint sources.
   *   `slackSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SlackSource.t`, *default:* `nil`) - Slack channels with their corresponding access tokens.
   """
 
@@ -47,6 +48,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
           :ragFileTransformationConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFileTransformationConfig.t()
             | nil,
+          :sharePointSources =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SharePointSources.t() | nil,
           :slackSource =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SlackSource.t() | nil
         }
@@ -70,6 +73,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
 
   field(:ragFileTransformationConfig,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFileTransformationConfig
+  )
+
+  field(:sharePointSources,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SharePointSources
   )
 
   field(:slackSource, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SlackSource)

@@ -29,11 +29,14 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   *   `presencePenalty` (*type:* `number()`, *default:* `nil`) - Optional. Positive penalties.
   *   `responseLogprobs` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, export the logprobs results in response.
   *   `responseMimeType` (*type:* `String.t`, *default:* `nil`) - Optional. Output response mimetype of the generated candidate text. Supported mimetype: - `text/plain`: (default) Text output. - `application/json`: JSON response in the candidates. The model needs to be prompted to output the appropriate response type, otherwise the behavior is undefined. This is a preview feature.
+  *   `responseModalities` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The modalities of the response.
   *   `responseSchema` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t`, *default:* `nil`) - Optional. The `Schema` object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. Represents a select subset of an [OpenAPI 3.0 schema object](https://spec.openapis.org/oas/v3.0.3#schema). If set, a compatible response_mime_type must also be set. Compatible mimetypes: `application/json`: Schema for JSON response.
   *   `routingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfigRoutingConfig.t`, *default:* `nil`) - Optional. Routing configuration.
   *   `seed` (*type:* `integer()`, *default:* `nil`) - Optional. Seed.
+  *   `speechConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeechConfig.t`, *default:* `nil`) - Optional. The speech generation config.
   *   `stopSequences` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Stop sequences.
   *   `temperature` (*type:* `number()`, *default:* `nil`) - Optional. Controls the randomness of predictions.
+  *   `tokenResolution` (*type:* `String.t`, *default:* `nil`) - Optional. If specified, the token resolution specified will be used.
   *   `topK` (*type:* `number()`, *default:* `nil`) - Optional. If specified, top-k sampling will be used.
   *   `topP` (*type:* `number()`, *default:* `nil`) - Optional. If specified, nucleus sampling will be used.
   """
@@ -49,14 +52,18 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
           :presencePenalty => number() | nil,
           :responseLogprobs => boolean() | nil,
           :responseMimeType => String.t() | nil,
+          :responseModalities => list(String.t()) | nil,
           :responseSchema =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t() | nil,
           :routingConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfigRoutingConfig.t()
             | nil,
           :seed => integer() | nil,
+          :speechConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeechConfig.t() | nil,
           :stopSequences => list(String.t()) | nil,
           :temperature => number() | nil,
+          :tokenResolution => String.t() | nil,
           :topK => number() | nil,
           :topP => number() | nil
         }
@@ -69,6 +76,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   field(:presencePenalty)
   field(:responseLogprobs)
   field(:responseMimeType)
+  field(:responseModalities, type: :list)
   field(:responseSchema, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema)
 
   field(:routingConfig,
@@ -76,8 +84,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   )
 
   field(:seed)
+  field(:speechConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeechConfig)
   field(:stopSequences, type: :list)
   field(:temperature)
+  field(:tokenResolution)
   field(:topK)
   field(:topP)
 end
