@@ -22,15 +22,18 @@ defmodule GoogleApi.ServiceManagement.V1.Model.GoSettings do
   ## Attributes
 
   *   `common` (*type:* `GoogleApi.ServiceManagement.V1.Model.CommonLanguageSettings.t`, *default:* `nil`) - Some settings.
+  *   `renamedServices` (*type:* `map()`, *default:* `nil`) - Map of service names to renamed services. Keys are the package relative service names and values are the name to be used for the service client and call options. publishing: go_settings: renamed_services: Publisher: TopicAdmin
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :common => GoogleApi.ServiceManagement.V1.Model.CommonLanguageSettings.t() | nil
+          :common => GoogleApi.ServiceManagement.V1.Model.CommonLanguageSettings.t() | nil,
+          :renamedServices => map() | nil
         }
 
   field(:common, as: GoogleApi.ServiceManagement.V1.Model.CommonLanguageSettings)
+  field(:renamedServices, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.GoSettings do
