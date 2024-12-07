@@ -21,9 +21,9 @@ defmodule GoogleApi.DataMigration.V1.Model.SqlServerEncryptionOptions do
 
   ## Attributes
 
-  *   `certPath` (*type:* `String.t`, *default:* `nil`) - Required. Path to certificate.
-  *   `pvkPassword` (*type:* `String.t`, *default:* `nil`) - Required. Input only. Private key password.
-  *   `pvkPath` (*type:* `String.t`, *default:* `nil`) - Required. Path to certificate private key.
+  *   `certPath` (*type:* `String.t`, *default:* `nil`) - Required. Path to the Certificate (.cer) in Cloud Storage, in the form `gs://bucketName/fileName`. The instance must have write permissions to the bucket and read access to the file.
+  *   `pvkPassword` (*type:* `String.t`, *default:* `nil`) - Required. Input only. Password that encrypts the private key.
+  *   `pvkPath` (*type:* `String.t`, *default:* `nil`) - Required. Path to the Certificate Private Key (.pvk) in Cloud Storage, in the form `gs://bucketName/fileName`. The instance must have write permissions to the bucket and read access to the file.
   """
 
   use GoogleApi.Gax.ModelBase

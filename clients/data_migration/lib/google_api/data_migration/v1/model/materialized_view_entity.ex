@@ -22,6 +22,7 @@ defmodule GoogleApi.DataMigration.V1.Model.MaterializedViewEntity do
   ## Attributes
 
   *   `customFeatures` (*type:* `map()`, *default:* `nil`) - Custom engine specific features.
+  *   `indices` (*type:* `list(GoogleApi.DataMigration.V1.Model.IndexEntity.t)`, *default:* `nil`) - View indices.
   *   `sqlCode` (*type:* `String.t`, *default:* `nil`) - The SQL code which creates the view.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.DataMigration.V1.Model.MaterializedViewEntity do
 
   @type t :: %__MODULE__{
           :customFeatures => map() | nil,
+          :indices => list(GoogleApi.DataMigration.V1.Model.IndexEntity.t()) | nil,
           :sqlCode => String.t() | nil
         }
 
   field(:customFeatures, type: :map)
+  field(:indices, as: GoogleApi.DataMigration.V1.Model.IndexEntity, type: :list)
   field(:sqlCode)
 end
 
