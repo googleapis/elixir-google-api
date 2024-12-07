@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaLi
   ## Attributes
 
   *   `filter` (*type:* `String.t`, *default:* `nil`) - A filter to apply on the list results. The supported features are: user_pseudo_id, state. Example: "user_pseudo_id = some_id"
-  *   `orderBy` (*type:* `String.t`, *default:* `nil`) - A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `session_name` Example: "update_time desc" "create_time"
+  *   `orderBy` (*type:* `String.t`, *default:* `nil`) - A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `session_name` * `is_pinned` Example: * "update_time desc" * "create_time" * "is_pinned desc,update_time desc": list sessions by is_pinned first, then by update_time.
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A page token, received from a previous `ListSessions` call. Provide this to retrieve the subsequent page.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`

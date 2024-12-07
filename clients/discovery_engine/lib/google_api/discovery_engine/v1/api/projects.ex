@@ -4297,7 +4297,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - A filter to apply on the list results. The supported features are: user_pseudo_id, state. Example: "user_pseudo_id = some_id"
-      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `session_name` Example: "update_time desc" "create_time"
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `session_name` * `is_pinned` Example: * "update_time desc" * "create_time" * "is_pinned desc,update_time desc": list sessions by is_pinned first, then by update_time.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListSessions` call. Provide this to retrieve the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -8160,7 +8160,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - A filter to apply on the list results. The supported features are: user_pseudo_id, state. Example: "user_pseudo_id = some_id"
-      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `session_name` Example: "update_time desc" "create_time"
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `session_name` * `is_pinned` Example: * "update_time desc" * "create_time" * "is_pinned desc,update_time desc": list sessions by is_pinned first, then by update_time.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListSessions` call. Provide this to retrieve the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -12279,7 +12279,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - A filter to apply on the list results. The supported features are: user_pseudo_id, state. Example: "user_pseudo_id = some_id"
-      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `session_name` Example: "update_time desc" "create_time"
+      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `update_time` * `create_time` * `session_name` * `is_pinned` Example: * "update_time desc" * "create_time" * "is_pinned desc,update_time desc": list sessions by is_pinned first, then by update_time.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListSessions` call. Provide this to retrieve the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
