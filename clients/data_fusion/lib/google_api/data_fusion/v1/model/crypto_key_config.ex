@@ -21,7 +21,7 @@ defmodule GoogleApi.DataFusion.V1.Model.CryptoKeyConfig do
 
   ## Attributes
 
-  *   `keyReference` (*type:* `String.t`, *default:* `nil`) - The name of the key which is used to encrypt/decrypt customer data. For key in Cloud KMS, the key should be in the format of `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  *   `keyReference` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the key which is used to encrypt/decrypt customer data. For key in Cloud KMS, the key should be in the format of `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   """
 
   use GoogleApi.Gax.ModelBase
