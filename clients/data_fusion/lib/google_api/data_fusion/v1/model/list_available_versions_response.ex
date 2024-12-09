@@ -21,19 +21,22 @@ defmodule GoogleApi.DataFusion.V1.Model.ListAvailableVersionsResponse do
 
   ## Attributes
 
-  *   `availableVersions` (*type:* `list(GoogleApi.DataFusion.V1.Model.Version.t)`, *default:* `nil`) - Represents a list of versions that are supported.
+  *   `availableVersions` (*type:* `list(GoogleApi.DataFusion.V1.Model.Version.t)`, *default:* `nil`) - Represents a list of versions that are supported. Deprecated: Use versions field instead.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results or empty if there are no more results in the list.
+  *   `versions` (*type:* `list(GoogleApi.DataFusion.V1.Model.Version.t)`, *default:* `nil`) - Represents a list of all versions.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :availableVersions => list(GoogleApi.DataFusion.V1.Model.Version.t()) | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :versions => list(GoogleApi.DataFusion.V1.Model.Version.t()) | nil
         }
 
   field(:availableVersions, as: GoogleApi.DataFusion.V1.Model.Version, type: :list)
   field(:nextPageToken)
+  field(:versions, as: GoogleApi.DataFusion.V1.Model.Version, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataFusion.V1.Model.ListAvailableVersionsResponse do

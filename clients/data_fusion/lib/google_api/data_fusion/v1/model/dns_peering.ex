@@ -23,7 +23,7 @@ defmodule GoogleApi.DataFusion.V1.Model.DnsPeering do
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Optional description of the dns zone.
   *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. The dns name suffix of the zone.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the dns peering zone. Format: projects/{project}/locations/{location}/instances/{instance}/dnsPeerings/{dns_peering}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the dns peering zone. Format: projects/{project}/locations/{location}/instances/{instance}/dnsPeerings/{dns_peering}
   *   `targetNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. Optional target network to which dns peering should happen.
   *   `targetProject` (*type:* `String.t`, *default:* `nil`) - Optional. Optional target project to which dns peering should happen.
   """
