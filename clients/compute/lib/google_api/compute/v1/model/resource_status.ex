@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourceStatus do
 
   ## Attributes
 
-  *   `physicalHost` (*type:* `String.t`, *default:* `nil`) - [Output Only] An opaque ID of the host on which the VM is running.
+  *   `physicalHost` (*type:* `String.t`, *default:* `nil`) - [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
   *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.ResourceStatusScheduling.t`, *default:* `nil`) - 
   *   `upcomingMaintenance` (*type:* `GoogleApi.Compute.V1.Model.UpcomingMaintenance.t`, *default:* `nil`) - 
   """

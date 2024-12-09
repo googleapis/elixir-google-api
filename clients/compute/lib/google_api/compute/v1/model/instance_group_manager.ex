@@ -42,10 +42,13 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this managed instance group. The server defines this URL.
+  *   `standbyPolicy` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStandbyPolicy.t`, *default:* `nil`) - Standby policy for stopped and suspended instances.
   *   `statefulPolicy` (*type:* `GoogleApi.Compute.V1.Model.StatefulPolicy.t`, *default:* `nil`) - Stateful configuration for this Instanced Group Manager
   *   `status` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.t`, *default:* `nil`) - [Output Only] The status of this managed instance group.
   *   `targetPools` (*type:* `list(String.t)`, *default:* `nil`) - The URLs for all TargetPool resources to which instances in the instanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
   *   `targetSize` (*type:* `integer()`, *default:* `nil`) - The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
+  *   `targetStoppedSize` (*type:* `integer()`, *default:* `nil`) - The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method. 
+  *   `targetSuspendedSize` (*type:* `integer()`, *default:* `nil`) - The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method. 
   *   `updatePolicy` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy.t`, *default:* `nil`) - The update policy for this managed instance group.
   *   `versions` (*type:* `list(GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion.t)`, *default:* `nil`) - Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and a name. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about the relationships between these fields. Exactly one version must leave the targetSize field unset. That version will be applied to all remaining instances. For more information, read about canary updates.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of a zone where the managed instance group is located (for zonal resources).
@@ -80,10 +83,14 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
+          :standbyPolicy =>
+            GoogleApi.Compute.V1.Model.InstanceGroupManagerStandbyPolicy.t() | nil,
           :statefulPolicy => GoogleApi.Compute.V1.Model.StatefulPolicy.t() | nil,
           :status => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.t() | nil,
           :targetPools => list(String.t()) | nil,
           :targetSize => integer() | nil,
+          :targetStoppedSize => integer() | nil,
+          :targetSuspendedSize => integer() | nil,
           :updatePolicy => GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy.t() | nil,
           :versions => list(GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion.t()) | nil,
           :zone => String.t() | nil
@@ -123,10 +130,13 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:selfLink)
+  field(:standbyPolicy, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStandbyPolicy)
   field(:statefulPolicy, as: GoogleApi.Compute.V1.Model.StatefulPolicy)
   field(:status, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus)
   field(:targetPools, type: :list)
   field(:targetSize)
+  field(:targetStoppedSize)
+  field(:targetSuspendedSize)
   field(:updatePolicy, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerUpdatePolicy)
   field(:versions, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerVersion, type: :list)
   field(:zone)

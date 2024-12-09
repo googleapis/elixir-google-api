@@ -34,6 +34,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
   *   `mtu` (*type:* `integer()`, *default:* `nil`) - Maximum Transmission Unit in bytes. The minimum value for this field is 1300 and the maximum value is 8896. The suggested value is 1500, which is the default MTU used on the Internet, or 8896 if you want to use Jumbo frames. If unspecified, the value defaults to 1460.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
   *   `networkFirewallPolicyEnforcementOrder` (*type:* `String.t`, *default:* `nil`) - The network firewall policy enforcement order. Can be either AFTER_CLASSIC_FIREWALL or BEFORE_CLASSIC_FIREWALL. Defaults to AFTER_CLASSIC_FIREWALL if the field is not specified.
+  *   `networkProfile` (*type:* `String.t`, *default:* `nil`) - A full or partial URL of the network profile to apply to this network. This field can be set only at resource creation time. For example, the following are valid URLs: - https://www.googleapis.com/compute/{api_version}/projects/{project_id}/global/networkProfiles/{network_profile_name} - projects/{project_id}/global/networkProfiles/{network_profile_name} 
   *   `peerings` (*type:* `list(GoogleApi.Compute.V1.Model.NetworkPeering.t)`, *default:* `nil`) - [Output Only] A list of network peerings for the resource.
   *   `routingConfig` (*type:* `GoogleApi.Compute.V1.Model.NetworkRoutingConfig.t`, *default:* `nil`) - The network-level routing configuration for this network. Used by Cloud Router to determine what type of network-wide routing behavior to enforce.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
@@ -57,6 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
           :mtu => integer() | nil,
           :name => String.t() | nil,
           :networkFirewallPolicyEnforcementOrder => String.t() | nil,
+          :networkProfile => String.t() | nil,
           :peerings => list(GoogleApi.Compute.V1.Model.NetworkPeering.t()) | nil,
           :routingConfig => GoogleApi.Compute.V1.Model.NetworkRoutingConfig.t() | nil,
           :selfLink => String.t() | nil,
@@ -77,6 +79,7 @@ defmodule GoogleApi.Compute.V1.Model.Network do
   field(:mtu)
   field(:name)
   field(:networkFirewallPolicyEnforcementOrder)
+  field(:networkProfile)
   field(:peerings, as: GoogleApi.Compute.V1.Model.NetworkPeering, type: :list)
   field(:routingConfig, as: GoogleApi.Compute.V1.Model.NetworkRoutingConfig)
   field(:selfLink)

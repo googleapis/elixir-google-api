@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectLocation do
 
   *   `address` (*type:* `String.t`, *default:* `nil`) - [Output Only] The postal address of the Point of Presence, each line in the address is separated by a newline character.
   *   `availabilityZone` (*type:* `String.t`, *default:* `nil`) - [Output Only] Availability zone for this InterconnectLocation. Within a metropolitan area (metro), maintenance will not be simultaneously scheduled in more than one availability zone. Example: "zone1" or "zone2".
-  *   `availableFeatures` (*type:* `list(String.t)`, *default:* `nil`) - [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - MACSEC 
+  *   `availableFeatures` (*type:* `list(String.t)`, *default:* `nil`) - [Output only] List of features available at this InterconnectLocation, which can take one of the following values: - IF_MACSEC 
   *   `availableLinkTypes` (*type:* `list(String.t)`, *default:* `nil`) - [Output only] List of link types available at this InterconnectLocation, which can take one of the following values: - LINK_TYPE_ETHERNET_10G_LR - LINK_TYPE_ETHERNET_100G_LR 
   *   `city` (*type:* `String.t`, *default:* `nil`) - [Output Only] Metropolitan area designator that indicates which city an interconnect is located. For example: "Chicago, IL", "Amsterdam, Netherlands".
   *   `continent` (*type:* `String.t`, *default:* `nil`) - [Output Only] Continent for this location, which can take one of the following values: - AFRICA - ASIA_PAC - EUROPE - NORTH_AMERICA - SOUTH_AMERICA 

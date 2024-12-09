@@ -28,7 +28,7 @@ defmodule GoogleApi.Compute.V1.Model.License do
   *   `kind` (*type:* `String.t`, *default:* `compute#license`) - [Output Only] Type of resource. Always compute#license for licenses.
   *   `licenseCode` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique code used to attach this license to images, snapshots, and disks.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
-  *   `resourceRequirements` (*type:* `GoogleApi.Compute.V1.Model.LicenseResourceRequirements.t`, *default:* `nil`) - 
+  *   `resourceRequirements` (*type:* `GoogleApi.Compute.V1.Model.LicenseResourceRequirements.t`, *default:* `nil`) - [Input Only] Deprecated.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `transferable` (*type:* `boolean()`, *default:* `nil`) - If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
   """

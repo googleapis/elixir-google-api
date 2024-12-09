@@ -27,13 +27,13 @@ defmodule GoogleApi.Compute.V1.Model.Project do
   *   `defaultNetworkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the default network tier used for configuring resources of the project and can only take the following values: PREMIUM, STANDARD. Initially the default network tier is PREMIUM.
   *   `defaultServiceAccount` (*type:* `String.t`, *default:* `nil`) - [Output Only] Default service account used by VMs running in this project.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional textual description of the resource.
-  *   `enabledFeatures` (*type:* `list(String.t)`, *default:* `nil`) - Restricted features enabled for use on this project.
+  *   `enabledFeatures` (*type:* `list(String.t)`, *default:* `nil`) - An optional list of restricted features enabled for use on this project.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server. This is *not* the project ID, and is just a unique ID used by Compute Engine to identify resources.
   *   `kind` (*type:* `String.t`, *default:* `compute#project`) - [Output Only] Type of the resource. Always compute#project for projects.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
   *   `quotas` (*type:* `list(GoogleApi.Compute.V1.Model.Quota.t)`, *default:* `nil`) - [Output Only] Quotas assigned to this project.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `usageExportLocation` (*type:* `GoogleApi.Compute.V1.Model.UsageExportLocation.t`, *default:* `nil`) - The naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
+  *   `usageExportLocation` (*type:* `GoogleApi.Compute.V1.Model.UsageExportLocation.t`, *default:* `nil`) - An optional naming prefix for daily usage reports and the Google Cloud Storage bucket where they are stored.
   *   `vmDnsSetting` (*type:* `String.t`, *default:* `nil`) - [Output Only] Default internal DNS setting used by VMs running in this project.
   *   `xpnProjectStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The role this project has in a shared VPC configuration. Currently, only projects with the host role, which is specified by the value HOST, are differentiated.
   """
