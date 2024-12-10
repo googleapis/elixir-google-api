@@ -913,6 +913,96 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   end
 
   @doc """
+  Moves the source object to the destination object in the same bucket.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
+  *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
+  *   `source_object` (*type:* `String.t`) - Name of the source object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+  *   `destination_object` (*type:* `String.t`) - Name of the destination object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the destination object's current generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object. `ifGenerationMatch` and `ifGenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.
+      *   `:ifGenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the destination object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.`ifGenerationMatch` and `ifGenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.
+      *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the destination object's current metageneration matches the given value. `ifMetagenerationMatch` and `ifMetagenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.
+      *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the destination object's current metageneration does not match the given value. `ifMetagenerationMatch` and `ifMetagenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.
+      *   `:ifSourceGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the source object's current generation matches the given value. `ifSourceGenerationMatch` and `ifSourceGenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.
+      *   `:ifSourceGenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the source object's current generation does not match the given value. `ifSourceGenerationMatch` and `ifSourceGenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.
+      *   `:ifSourceMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the source object's current metageneration matches the given value. `ifSourceMetagenerationMatch` and `ifSourceMetagenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.
+      *   `:ifSourceMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the source object's current metageneration does not match the given value. `ifSourceMetagenerationMatch` and `ifSourceMetagenerationNotMatch` conditions are mutually exclusive: it's an error for both of them to be set in the request.
+      *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Storage.V1.Model.Object{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec storage_objects_move(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def storage_objects_move(
+        connection,
+        bucket,
+        source_object,
+        destination_object,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :userIp => :query,
+      :ifGenerationMatch => :query,
+      :ifGenerationNotMatch => :query,
+      :ifMetagenerationMatch => :query,
+      :ifMetagenerationNotMatch => :query,
+      :ifSourceGenerationMatch => :query,
+      :ifSourceGenerationNotMatch => :query,
+      :ifSourceMetagenerationMatch => :query,
+      :ifSourceMetagenerationNotMatch => :query,
+      :userProject => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/storage/v1/b/{bucket}/o/{sourceObject}/moveTo/o/{destinationObject}", %{
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "sourceObject" => URI.encode(source_object, &URI.char_unreserved?/1),
+        "destinationObject" => URI.encode(destination_object, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Object{}])
+  end
+
+  @doc """
   Patches an object's metadata.
 
   ## Parameters
