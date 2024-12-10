@@ -21,15 +21,18 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.ExperimentalFeatures do
 
   ## Attributes
 
+  *   `protobufPythonicTypesEnabled` (*type:* `boolean()`, *default:* `nil`) - Enables generation of protobuf code using new types that are more Pythonic which are included in `protobuf>=5.29.x`. This feature will be enabled by default 1 month after launching the feature in preview packages.
   *   `restAsyncIoEnabled` (*type:* `boolean()`, *default:* `nil`) - Enables generation of asynchronous REST clients if `rest` transport is enabled. By default, asynchronous REST clients will not be generated. This feature will be enabled by default 1 month after launching the feature in preview packages.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :protobufPythonicTypesEnabled => boolean() | nil,
           :restAsyncIoEnabled => boolean() | nil
         }
 
+  field(:protobufPythonicTypesEnabled)
   field(:restAsyncIoEnabled)
 end
 
