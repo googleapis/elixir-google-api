@@ -22,7 +22,7 @@ defmodule GoogleApi.FirebaseRules.V1.Model.UpdateReleaseRequest do
   ## Attributes
 
   *   `release` (*type:* `GoogleApi.FirebaseRules.V1.Model.Release.t`, *default:* `nil`) - Required. `Release` to update.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to update.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies which fields to update.
   """
 
   use GoogleApi.Gax.ModelBase
