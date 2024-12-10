@@ -22,7 +22,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.RegionalEndpoint do
   ## Attributes
 
   *   `accessType` (*type:* `String.t`, *default:* `nil`) - Required. The access type of this regional endpoint. This field is reflected in the PSC Forwarding Rule configuration to enable global access.
-  *   `address` (*type:* `String.t`, *default:* `nil`) - Optional. The IP Address of the Regional Endpoint. When no address is provided, an IP from the subnetwork is allocated. Use one of the following formats: * IPv4 address as in `10.0.0.1` * Address resource URI as in `projects/{project}/regions/{region}/addresses/{address_name}`
+  *   `address` (*type:* `String.t`, *default:* `nil`) - Optional. The IP Address of the Regional Endpoint. When no address is provided, an IP from the subnetwork is allocated. Use one of the following formats: * IPv4 address as in `10.0.0.1` * Address resource URI as in `projects/{project}/regions/{region}/addresses/{address_name}` for an IPv4 or IPv6 address.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the RegionalEndpoint was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of this resource.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Output only. The literal IP address of the PSC Forwarding Rule created on behalf of the customer. This field is deprecated. Use address instead.

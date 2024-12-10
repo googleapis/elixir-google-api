@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.ListPolicyBasedRoutesResponse do
   @moduledoc """
-  Response for PolicyBasedRouting.ListPolicyBasedRoutes method.
+  Response for PolicyBasedRoutingService.ListPolicyBasedRoutes method.
 
   ## Attributes
 
