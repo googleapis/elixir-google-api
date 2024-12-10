@@ -21,6 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
 
   ## Attributes
 
+  *   `filteredRowsIncluded` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the data validation rule will be applied to the filtered rows as well.
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range the data validation rule should apply to.
   *   `rule` (*type:* `GoogleApi.Sheets.V4.Model.DataValidationRule.t`, *default:* `nil`) - The data validation rule to set on each cell in the range, or empty to clear the data validation in the range.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Sheets.V4.Model.SetDataValidationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :filteredRowsIncluded => boolean() | nil,
           :range => GoogleApi.Sheets.V4.Model.GridRange.t() | nil,
           :rule => GoogleApi.Sheets.V4.Model.DataValidationRule.t() | nil
         }
 
+  field(:filteredRowsIncluded)
   field(:range, as: GoogleApi.Sheets.V4.Model.GridRange)
   field(:rule, as: GoogleApi.Sheets.V4.Model.DataValidationRule)
 end
