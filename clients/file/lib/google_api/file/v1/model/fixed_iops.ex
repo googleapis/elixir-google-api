@@ -22,7 +22,7 @@ defmodule GoogleApi.File.V1.Model.FixedIOPS do
   ## Attributes
 
   *   `maxIops` (*type:* `String.t`, *default:* `nil`) - Required. Maximum IOPS.
-  *   `maxReadIops` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated: `max_iops` should be used instead of this parameter. Maximum raw read IOPS.
+  *   `maxReadIops` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated: `max_iops` should be used instead of this parameter. Maximum read IOPS.
   """
 
   use GoogleApi.Gax.ModelBase
