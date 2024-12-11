@@ -29,7 +29,7 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.GitRepositoryLink do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels as key value pairs
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the repository, in the format `projects/*/locations/*/connections/*/gitRepositoryLinks/*`.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Set to true when the connection is being set up or updated in the background.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A system-assigned unique identifier for a the GitRepositoryLink.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A system-assigned unique identifier for the GitRepositoryLink.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Update timestamp
   *   `webhookId` (*type:* `String.t`, *default:* `nil`) - Output only. External ID of the webhook created for the repository.
   """
