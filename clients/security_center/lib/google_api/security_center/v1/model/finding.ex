@@ -33,6 +33,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `vulnerability` (*type:* `GoogleApi.SecurityCenter.V1.Model.Vulnerability.t`, *default:* `nil`) - Represents vulnerability-specific fields like CVE and CVSS scores. CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)
   *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
   *   `moduleName` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the module which generated the finding. Example: folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
+  *   `dataRetentionDeletionEvents` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.DataRetentionDeletionEvent.t)`, *default:* `nil`) - Data retention deletion events associated with the finding.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more details about the finding.
   *   `notebook` (*type:* `GoogleApi.SecurityCenter.V1.Model.Notebook.t`, *default:* `nil`) - Notebook associated with the finding.
   *   `cloudDlpDataProfile` (*type:* `GoogleApi.SecurityCenter.V1.Model.CloudDlpDataProfile.t`, *default:* `nil`) - Cloud DLP data profile that is associated with the finding.
@@ -91,6 +92,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :vulnerability => GoogleApi.SecurityCenter.V1.Model.Vulnerability.t() | nil,
           :mute => String.t() | nil,
           :moduleName => String.t() | nil,
+          :dataRetentionDeletionEvents =>
+            list(GoogleApi.SecurityCenter.V1.Model.DataRetentionDeletionEvent.t()) | nil,
           :description => String.t() | nil,
           :notebook => GoogleApi.SecurityCenter.V1.Model.Notebook.t() | nil,
           :cloudDlpDataProfile => GoogleApi.SecurityCenter.V1.Model.CloudDlpDataProfile.t() | nil,
@@ -153,6 +156,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:vulnerability, as: GoogleApi.SecurityCenter.V1.Model.Vulnerability)
   field(:mute)
   field(:moduleName)
+
+  field(:dataRetentionDeletionEvents,
+    as: GoogleApi.SecurityCenter.V1.Model.DataRetentionDeletionEvent,
+    type: :list
+  )
+
   field(:description)
   field(:notebook, as: GoogleApi.SecurityCenter.V1.Model.Notebook)
   field(:cloudDlpDataProfile, as: GoogleApi.SecurityCenter.V1.Model.CloudDlpDataProfile)
