@@ -22,7 +22,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   ## Attributes
 
   *   `setupErrors` (*type:* `list(String.t)`, *default:* `nil`) - Indicates SAA enrollment setup error if any.
-  *   `setupStatus` (*type:* `String.t`, *default:* `nil`) - Indicates SAA enrollment status of a given workload.
+  *   `setupStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates SAA enrollment status of a given workload.
   """
 
   use GoogleApi.Gax.ModelBase

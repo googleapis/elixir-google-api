@@ -21,7 +21,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
 
   ## Attributes
 
-  *   `resourceId` (*type:* `String.t`, *default:* `nil`) - Resource identifier. For a project this represents project_number.
+  *   `resourceId` (*type:* `String.t`, *default:* `nil`) - Output only. Resource identifier. For a project this represents project_number.
   *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Indicates the type of resource.
   """
 

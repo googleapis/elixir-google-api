@@ -23,7 +23,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
 
   *   `accessTransparencyLogsSupportCaseViewer` (*type:* `boolean()`, *default:* `nil`) - Optional. Allow partner to view support case details for an AXT log
   *   `assuredWorkloadsMonitoring` (*type:* `boolean()`, *default:* `nil`) - Optional. Allow partner to view violation alerts.
-  *   `dataLogsViewer` (*type:* `boolean()`, *default:* `nil`) - Allow the partner to view inspectability logs and monitoring violations.
+  *   `dataLogsViewer` (*type:* `boolean()`, *default:* `nil`) - Optional. Allow the partner to view inspectability logs and monitoring violations.
   *   `serviceAccessApprover` (*type:* `boolean()`, *default:* `nil`) - Optional. Allow partner to view access approval logs.
   """
 

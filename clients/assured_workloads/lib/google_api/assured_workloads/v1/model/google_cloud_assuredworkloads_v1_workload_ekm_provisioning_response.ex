@@ -23,7 +23,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
 
   *   `ekmProvisioningErrorDomain` (*type:* `String.t`, *default:* `nil`) - Indicates Ekm provisioning error if any.
   *   `ekmProvisioningErrorMapping` (*type:* `String.t`, *default:* `nil`) - Detailed error message if Ekm provisioning fails
-  *   `ekmProvisioningState` (*type:* `String.t`, *default:* `nil`) - Indicates Ekm enrollment Provisioning of a given workload.
+  *   `ekmProvisioningState` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates Ekm enrollment Provisioning of a given workload.
   """
 
   use GoogleApi.Gax.ModelBase
