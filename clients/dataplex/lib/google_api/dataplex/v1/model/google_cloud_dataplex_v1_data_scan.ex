@@ -34,7 +34,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
   *   `executionSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionSpec.t`, *default:* `nil`) - Optional. DataScan execution settings.If not specified, the fields in it will use their default values.
   *   `executionStatus` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionStatus.t`, *default:* `nil`) - Output only. Status of the data scan execution.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels for the scan.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}, where project refers to a project_id or project_number and location_id refers to a GCP region.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}, where project refers to a project_id or project_number and location_id refers to a GCP region.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the DataScan.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of DataScan.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated globally unique ID for the scan. This ID will be different if the scan is deleted and re-created with the same name.
