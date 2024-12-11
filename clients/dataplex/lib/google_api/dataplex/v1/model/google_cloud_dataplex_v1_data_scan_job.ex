@@ -30,7 +30,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanJob do
   *   `dataQualitySpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpec.t`, *default:* `nil`) - Output only. Settings for a data quality scan.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the DataScanJob ended.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current state.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the DataScanJob, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}, where project refers to a project_id or project_number and location_id refers to a GCP region.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The relative resource name of the DataScanJob, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}, where project refers to a project_id or project_number and location_id refers to a GCP region.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the DataScanJob was started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Execution state for the DataScanJob.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the parent DataScan.

@@ -254,10 +254,10 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results. Supported values are: * relevance (default) * last_modified_timestamp * last_modified_timestamp asc
       *   `:pageSize` (*type:* `integer()`) - Optional. Number of results in the search page. If <=0, then defaults to 10. Max limit for page_size is 1000. Throws an invalid argument for page_size > 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous SearchEntries call. Provide this to retrieve the subsequent page.
-      *   `:query` (*type:* `String.t`) - Required. The query against which entries in scope should be matched.
+      *   `:query` (*type:* `String.t`) - Required. The query against which entries in scope should be matched. The query syntax is defined in Search syntax for Dataplex Catalog (https://cloud.google.com/dataplex/docs/search-syntax).
       *   `:scope` (*type:* `String.t`) - Optional. The scope under which the search should be operating. It must either be organizations/ or projects/. If it is unspecified, it defaults to the organization where the project provided in name is located.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1620,6 +1620,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:force` (*type:* `boolean()`) - Optional. If set to true, any child resources of this data scan will also be deleted. (Otherwise, the request will only work if the data scan has no child resources.)
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1654,7 +1655,8 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :force => :query
     }
 
     request =
@@ -1984,7 +1986,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataplex.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}, where project refers to a project_id or project_number and location_id refers to a GCP region.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}, where project refers to a project_id or project_number and location_id refers to a GCP region.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1997,7 +1999,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Mask of fields to update.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the request, but do not perform mutations. The default is false.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -4635,7 +4637,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true and the entry doesn't exist, the service will create it.
-      *   `:aspectKeys` (*type:* `list(String.t)`) - Optional. The map keys of the Aspects which the service should modify. It supports the following syntaxes: - matches an aspect of the given type and empty path. @path - matches an aspect of the given type and specified path. For example, to attach an aspect to a field that is specified by the schema aspect, the path should have the format Schema.. * - matches aspects of the given type for all paths. *@path - matches aspects of all types on the given path.The service will not remove existing aspects matching the syntax unless delete_missing_aspects is set to true.If this field is left empty, the service treats it as specifying exactly those Aspects present in the request.
+      *   `:aspectKeys` (*type:* `list(String.t)`) - Optional. The map keys of the Aspects which the service should modify. It supports the following syntaxes: - matches an aspect of the given type and empty path. @path - matches an aspect of the given type and specified path. For example, to attach an aspect to a field that is specified by the schema aspect, the path should have the format Schema.. @* - matches aspects of the given type for all paths. *@path - matches aspects of all types on the given path.The service will not remove existing aspects matching the syntax unless delete_missing_aspects is set to true.If this field is left empty, the service treats it as specifying exactly those Aspects present in the request.
       *   `:deleteMissingAspects` (*type:* `boolean()`) - Optional. If set to true and the aspect_keys specify aspect ranges, the service deletes any existing aspects from that range that weren't provided in the request.
       *   `:updateMask` (*type:* `String.t`) - Optional. Mask of fields to update. To update Aspects, the update_mask must contain the value "aspects".If the update_mask is empty, the service will update all modifiable fields present in the request.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry.t`) - 
