@@ -20,7 +20,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta do
   API client metadata for GoogleApi.DiscoveryEngine.V1beta.
   """
 
-  @discovery_revision "20241206"
+  @discovery_revision "20241210"
 
   def discovery_revision(), do: @discovery_revision
 end
