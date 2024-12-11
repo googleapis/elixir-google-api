@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Egre
 
   *   `egressFrom` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressFrom.t`, *default:* `nil`) - Defines conditions on the source of a request causing this EgressPolicy to apply.
   *   `egressTo` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressTo.t`, *default:* `nil`) - Defines the conditions on the ApiOperation and destination resources that cause this EgressPolicy to apply.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. Human-readable title for the egress rule. The title must be unique within the perimeter and can not exceed 100 characters. Within the access policy, the combined length of all rule titles must not exceed 240,000 characters.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,7 +32,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Egre
           :egressFrom =>
             GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressFrom.t() | nil,
           :egressTo =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressTo.t() | nil
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressTo.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:egressFrom,
@@ -39,6 +41,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Egre
   )
 
   field(:egressTo, as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressTo)
+  field(:title)
 end
 
 defimpl Poison.Decoder,

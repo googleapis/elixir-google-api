@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Ingr
 
   *   `ingressFrom` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressFrom.t`, *default:* `nil`) - Defines the conditions on the source of a request causing this IngressPolicy to apply.
   *   `ingressTo` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressTo.t`, *default:* `nil`) - Defines the conditions on the ApiOperation and request destination that cause this IngressPolicy to apply.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. Human-readable title for the ingress rule. The title must be unique within the perimeter and can not exceed 100 characters. Within the access policy, the combined length of all rule titles must not exceed 240,000 characters.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,7 +33,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Ingr
             GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressFrom.t()
             | nil,
           :ingressTo =>
-            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressTo.t() | nil
+            GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressTo.t() | nil,
+          :title => String.t() | nil
         }
 
   field(:ingressFrom,
@@ -42,6 +44,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Ingr
   field(:ingressTo,
     as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1IngressTo
   )
+
+  field(:title)
 end
 
 defimpl Poison.Decoder,
