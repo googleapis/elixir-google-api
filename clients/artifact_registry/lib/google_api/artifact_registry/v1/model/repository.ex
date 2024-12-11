@@ -33,6 +33,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
   *   `mavenConfig` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.MavenRepositoryConfig.t`, *default:* `nil`) - Maven repository config contains repository level configuration for the repositories of maven type.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. The mode of the repository.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the repository, for example: `projects/p1/locations/us-central1/repositories/repo1`. For each location in a project, repository names must be unique.
+  *   `registryUri` (*type:* `String.t`, *default:* `nil`) - Output only. The repository endpoint, for example: `us-docker.pkg.dev/my-proj/my-repo`.
   *   `remoteRepositoryConfig` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig.t`, *default:* `nil`) - Configuration specific for a Remote Repository.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, the repository satisfies physical zone isolation.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, the repository satisfies physical zone separation.
@@ -58,6 +59,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
           :mavenConfig => GoogleApi.ArtifactRegistry.V1.Model.MavenRepositoryConfig.t() | nil,
           :mode => String.t() | nil,
           :name => String.t() | nil,
+          :registryUri => String.t() | nil,
           :remoteRepositoryConfig =>
             GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig.t() | nil,
           :satisfiesPzi => boolean() | nil,
@@ -82,6 +84,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
   field(:mavenConfig, as: GoogleApi.ArtifactRegistry.V1.Model.MavenRepositoryConfig)
   field(:mode)
   field(:name)
+  field(:registryUri)
   field(:remoteRepositoryConfig, as: GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig)
   field(:satisfiesPzi)
   field(:satisfiesPzs)
