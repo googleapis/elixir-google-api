@@ -22,6 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widget do
   ## Attributes
 
   *   `buttonList` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ButtonList.t`, *default:* `nil`) - A list of buttons. For example, the following JSON creates two buttons. The first is a blue text button and the second is an image button that opens a link: ``` "buttonList": { "buttons": [ { "text": "Edit", "color": { "red": 0, "green": 0, "blue": 1, }, "disabled": true, }, { "icon": { "knownIcon": "INVITE", "altText": "check calendar" }, "onClick": { "openLink": { "url": "https://example.com/calendar" } } } ] } ```
+  *   `carousel` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Carousel.t`, *default:* `nil`) - A carousel contains a collection of nested widgets. For example, this is a JSON representation of a carousel that contains two text paragraphs. ``` { "widgets": [ { "textParagraph": { "text": "First text paragraph in the carousel." } }, { "textParagraph": { "text": "Second text paragraph in the carousel." } } ] } ```
   *   `chipList` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList.t`, *default:* `nil`) - A list of chips. For example, the following JSON creates two chips. The first is a text chip and the second is an icon chip that opens a link: ``` "chipList": { "chips": [ { "text": "Edit", "disabled": true, }, { "icon": { "knownIcon": "INVITE", "altText": "check calendar" }, "onClick": { "openLink": { "url": "https://example.com/calendar" } } } ] } ``` [Google Chat apps](https://developers.google.com/workspace/chat):
   *   `columns` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Columns.t`, *default:* `nil`) - Displays up to 2 columns. To include more than 2 columns, or to use rows, use the `Grid` widget. For example, the following JSON creates 2 columns that each contain text paragraphs: ``` "columns": { "columnItems": [ { "horizontalSizeStyle": "FILL_AVAILABLE_SPACE", "horizontalAlignment": "CENTER", "verticalAlignment": "CENTER", "widgets": [ { "textParagraph": { "text": "First column text paragraph" } } ] }, { "horizontalSizeStyle": "FILL_AVAILABLE_SPACE", "horizontalAlignment": "CENTER", "verticalAlignment": "CENTER", "widgets": [ { "textParagraph": { "text": "Second column text paragraph" } } ] } ] } ```
   *   `dateTimePicker` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker.t`, *default:* `nil`) - Displays a widget that lets users input a date, time, or date and time. For example, the following JSON creates a date time picker to schedule an appointment: ``` "dateTimePicker": { "name": "appointment_time", "label": "Book your appointment at:", "type": "DATE_AND_TIME", "valueMsEpoch": "796435200000" } ```
@@ -39,6 +40,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widget do
 
   @type t :: %__MODULE__{
           :buttonList => GoogleApi.Chat.V1.Model.GoogleAppsCardV1ButtonList.t() | nil,
+          :carousel => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Carousel.t() | nil,
           :chipList => GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList.t() | nil,
           :columns => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Columns.t() | nil,
           :dateTimePicker => GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker.t() | nil,
@@ -53,6 +55,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widget do
         }
 
   field(:buttonList, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1ButtonList)
+  field(:carousel, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Carousel)
   field(:chipList, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList)
   field(:columns, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Columns)
   field(:dateTimePicker, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker)
