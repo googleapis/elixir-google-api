@@ -1223,7 +1223,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:failover` (*type:* `boolean()`) - Set to true to invoke a replica failover to the designated DR replica. As part of replica failover, the promote operation attempts to add the original primary instance as a replica of the promoted DR replica when the original primary instance comes back online. If set to false or not specified, then the original primary instance becomes an independent Cloud SQL primary instance. Only applicable to MySQL.
+      *   `:failover` (*type:* `boolean()`) - Set to true to invoke a replica failover to the DR replica. As part of replica failover, the promote operation attempts to add the original primary instance as a replica of the promoted DR replica when the original primary instance comes back online. If set to false or not specified, then the original primary instance becomes an independent Cloud SQL primary instance.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1850,7 +1850,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Switches over from the primary instance to the designated DR replica instance.
+  Switches over from the primary instance to the DR replica instance.
 
   ## Parameters
 
@@ -1869,7 +1869,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dbTimeout` (*type:* `String.t`) - Optional. (MySQL only) Cloud SQL instance operations timeout, which is a sum of all database operations. Default value is 10 minutes and can be modified to a maximum value of 24 hours.
+      *   `:dbTimeout` (*type:* `String.t`) - Optional. (MySQL and PostgreSQL only) Cloud SQL instance operations timeout, which is a sum of all database operations. Default value is 10 minutes and can be modified to a maximum value of 24 hours.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -35,6 +35,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Operation do
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of an operation.
+  *   `subOperationType` (*type:* `GoogleApi.SQLAdmin.V1.Model.SqlSubOperationType.t`, *default:* `nil`) - Optional. The sub operation based on the operation type.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - Name of the database instance related to this operation.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - 
   *   `targetProject` (*type:* `String.t`, *default:* `nil`) - The project ID of the target instance related to this operation.
@@ -59,6 +60,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Operation do
           :selfLink => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :status => String.t() | nil,
+          :subOperationType => GoogleApi.SQLAdmin.V1.Model.SqlSubOperationType.t() | nil,
           :targetId => String.t() | nil,
           :targetLink => String.t() | nil,
           :targetProject => String.t() | nil,
@@ -79,6 +81,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Operation do
   field(:selfLink)
   field(:startTime, as: DateTime)
   field(:status)
+  field(:subOperationType, as: GoogleApi.SQLAdmin.V1.Model.SqlSubOperationType)
   field(:targetId)
   field(:targetLink)
   field(:targetProject)

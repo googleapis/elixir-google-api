@@ -22,6 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ConnectSettings do
   ## Attributes
 
   *   `backendType` (*type:* `String.t`, *default:* `nil`) - `SECOND_GEN`: Cloud SQL database instance. `EXTERNAL`: A database server that is not managed by Google. This property is read-only; use the `tier` property in the `settings` object to determine the database type.
+  *   `customSubjectAlternativeNames` (*type:* `list(String.t)`, *default:* `nil`) - Custom subject alternative names for the server certificate.
   *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version. The `databaseVersion` field cannot be changed after instance creation. MySQL instances: `MYSQL_8_0`, `MYSQL_5_7` (default), or `MYSQL_5_6`. PostgreSQL instances: `POSTGRES_9_6`, `POSTGRES_10`, `POSTGRES_11`, `POSTGRES_12` (default), `POSTGRES_13`, or `POSTGRES_14`. SQL Server instances: `SQLSERVER_2017_STANDARD` (default), `SQLSERVER_2017_ENTERPRISE`, `SQLSERVER_2017_EXPRESS`, `SQLSERVER_2017_WEB`, `SQLSERVER_2019_STANDARD`, `SQLSERVER_2019_ENTERPRISE`, `SQLSERVER_2019_EXPRESS`, or `SQLSERVER_2019_WEB`.
   *   `dnsName` (*type:* `String.t`, *default:* `nil`) - The dns name of the instance.
   *   `ipAddresses` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.IpMapping.t)`, *default:* `nil`) - The assigned IP addresses for the instance.
@@ -36,6 +37,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ConnectSettings do
 
   @type t :: %__MODULE__{
           :backendType => String.t() | nil,
+          :customSubjectAlternativeNames => list(String.t()) | nil,
           :databaseVersion => String.t() | nil,
           :dnsName => String.t() | nil,
           :ipAddresses => list(GoogleApi.SQLAdmin.V1.Model.IpMapping.t()) | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ConnectSettings do
         }
 
   field(:backendType)
+  field(:customSubjectAlternativeNames, type: :list)
   field(:databaseVersion)
   field(:dnsName)
   field(:ipAddresses, as: GoogleApi.SQLAdmin.V1.Model.IpMapping, type: :list)
