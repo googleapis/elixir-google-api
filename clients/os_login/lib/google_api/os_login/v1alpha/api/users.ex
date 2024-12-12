@@ -113,7 +113,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:projectId` (*type:* `String.t`) - The project ID of the Google Cloud Platform project.
-      *   `:regions` (*type:* `list(String.t)`) - Optional. The regions to which to assert that the key was written. If unspecified, defaults to all regions. Regions are listed at https://cloud.google.com/about/locations#region.
+      *   `:regions` (*type:* `list(String.t)`) - Optional. The regions to wait for a POSIX account to be written to before returning a response. If unspecified, defaults to all regions. Regions are listed at https://cloud.google.com/about/locations#region.
       *   `:view` (*type:* `String.t`) - The view configures whether to retrieve security keys information.
       *   `:body` (*type:* `GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
