@@ -24,12 +24,6 @@ defmodule GoogleApi.Classroom.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # See and update its own attachments to posts in Google Classroom
-      "https://www.googleapis.com/auth/classroom.addons.student",
-
-      # See, create, and update its own attachments to posts in classes you teach in Google Classroom
-      "https://www.googleapis.com/auth/classroom.addons.teacher",
-
       # View and manage announcements in Google Classroom
       "https://www.googleapis.com/auth/classroom.announcements",
 
