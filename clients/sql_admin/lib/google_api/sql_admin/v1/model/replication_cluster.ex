@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.SQLAdmin.V1.Model.ReplicationCluster do
   @moduledoc """
-  A primary instance and disaster recovery (DR) replica pair. A DR replica is a cross-region replica that you designate for failover in the event that the primary instance experiences regional failure. Only applicable to MySQL.
+  A primary instance and disaster recovery (DR) replica pair. A DR replica is a cross-region replica that you designate for failover in the event that the primary instance experiences regional failure. Applicable to MySQL and PostgreSQL.
 
   ## Attributes
 
   *   `drReplica` (*type:* `boolean()`, *default:* `nil`) - Output only. Read-only field that indicates whether the replica is a DR replica. This field is not set if the instance is a primary instance.
   *   `failoverDrReplicaName` (*type:* `String.t`, *default:* `nil`) - Optional. If the instance is a primary instance, then this field identifies the disaster recovery (DR) replica. A DR replica is an optional configuration for Enterprise Plus edition instances. If the instance is a read replica, then the field is not set. Set this field to a replica name to designate a DR replica for a primary instance. Remove the replica name to remove the DR replica designation.
-  *   `psaWriteEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. If set, it indicates this instance has a private service access (PSA) dns endpoint that is pointing to the primary instance of the cluster. If this instance is the primary, the dns should be pointing to this instance. After Switchover or Replica failover, this DNS endpoint points to the promoted instance. This is a read-only field, returned to the user as information. This field can exist even if a standalone instance does not yet have a replica, or had a DR replica that was deleted.
+  *   `psaWriteEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. If set, this field indicates this instance has a private service access (PSA) DNS endpoint that is pointing to the primary instance of the cluster. If this instance is the primary, then the DNS endpoint points to this instance. After a switchover or replica failover operation, this DNS endpoint points to the promoted instance. This is a read-only field, returned to the user as information. This field can exist even if a standalone instance doesn't have a DR replica yet or the DR replica is deleted.
   """
 
   use GoogleApi.Gax.ModelBase
