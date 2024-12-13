@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Documentation do
 
   ## Attributes
 
+  *   `additionalIamInfo` (*type:* `String.t`, *default:* `nil`) - Optional information about the IAM configuration. This is typically used to link to documentation about a product's IAM roles and permissions.
   *   `documentationRootUrl` (*type:* `String.t`, *default:* `nil`) - The URL to the root of documentation.
   *   `overview` (*type:* `String.t`, *default:* `nil`) - Declares a single overview page. For example: documentation: summary: ... overview: (== include overview.md ==) This is a shortcut for the following declaration (using pages style): documentation: summary: ... pages: - name: Overview content: (== include overview.md ==) Note: you cannot specify both `overview` field and `pages` field.
   *   `pages` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.Page.t)`, *default:* `nil`) - The top level pages for the documentation set.
@@ -33,6 +34,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Documentation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalIamInfo => String.t() | nil,
           :documentationRootUrl => String.t() | nil,
           :overview => String.t() | nil,
           :pages => list(GoogleApi.ServiceUsage.V1.Model.Page.t()) | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Documentation do
           :summary => String.t() | nil
         }
 
+  field(:additionalIamInfo)
   field(:documentationRootUrl)
   field(:overview)
   field(:pages, as: GoogleApi.ServiceUsage.V1.Model.Page, type: :list)
