@@ -22,6 +22,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoEve
   ## Attributes
 
   *   `originalExecutionInfoId` (*type:* `String.t`, *default:* `nil`) - If this execution is a replay of another execution, then this field contains the original execution id.
+  *   `replayMode` (*type:* `String.t`, *default:* `nil`) - Replay mode for the execution
   *   `replayReason` (*type:* `String.t`, *default:* `nil`) - reason for replay
   *   `replayedExecutionInfoIds` (*type:* `list(String.t)`, *default:* `nil`) - If this execution has been replayed, then this field contains the execution ids of the replayed executions.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoEve
 
   @type t :: %__MODULE__{
           :originalExecutionInfoId => String.t() | nil,
+          :replayMode => String.t() | nil,
           :replayReason => String.t() | nil,
           :replayedExecutionInfoIds => list(String.t()) | nil
         }
 
   field(:originalExecutionInfoId)
+  field(:replayMode)
   field(:replayReason)
   field(:replayedExecutionInfoIds, type: :list)
 end
