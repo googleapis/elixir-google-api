@@ -42,7 +42,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredNotificationConfig` (*type:* `GoogleApi.Container.V1.Model.NotificationConfig.t`, *default:* `nil`) - The desired notification configuration.
   *   `desiredL4ilbSubsettingConfig` (*type:* `GoogleApi.Container.V1.Model.ILBSubsettingConfig.t`, *default:* `nil`) - The desired L4 Internal Load Balancer Subsetting configuration.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
-  *   `desiredAutopilotWorkloadPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadPolicyConfig.t`, *default:* `nil`) - The desired workload policy configuration for the autopilot cluster.
+  *   `desiredAutopilotWorkloadPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadPolicyConfig.t`, *default:* `nil`) - WorkloadPolicyConfig is the configuration related to GCW workload policy
   *   `desiredServiceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies the config for the use of Services with ExternalIPs field.
   *   `desiredReleaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - The desired release channel configuration.
   *   `desiredRbacBindingConfig` (*type:* `GoogleApi.Container.V1.Model.RBACBindingConfig.t`, *default:* `nil`) - RBACBindingConfig allows user to restrict ClusterRoleBindings an RoleBindings that can be created.

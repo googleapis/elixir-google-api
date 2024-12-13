@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.WorkloadPolicyConfig do
   @moduledoc """
-  WorkloadPolicyConfig is the configuration of workload policy for autopilot clusters.
+  WorkloadPolicyConfig is the configuration related to GCW workload policy
 
   ## Attributes
 
