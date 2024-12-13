@@ -20,7 +20,7 @@ defmodule GoogleApi.NetworkManagement.V1 do
   API client metadata for GoogleApi.NetworkManagement.V1.
   """
 
-  @discovery_revision "20241202"
+  @discovery_revision "20241210"
 
   def discovery_revision(), do: @discovery_revision
 end
