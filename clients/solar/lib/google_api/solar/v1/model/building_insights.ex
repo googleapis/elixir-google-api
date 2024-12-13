@@ -27,7 +27,7 @@ defmodule GoogleApi.Solar.V1.Model.BuildingInsights do
   *   `imageryDate` (*type:* `GoogleApi.Solar.V1.Model.Date.t`, *default:* `nil`) - Date that the underlying imagery was acquired. This is approximate.
   *   `imageryProcessedDate` (*type:* `GoogleApi.Solar.V1.Model.Date.t`, *default:* `nil`) - When processing was completed on this imagery.
   *   `imageryQuality` (*type:* `String.t`, *default:* `nil`) - The quality of the imagery used to compute the data for this building.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the building, of the format `building/`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the building, of the format `buildings/{place_id}`.
   *   `postalCode` (*type:* `String.t`, *default:* `nil`) - Postal code (e.g., US zip code) this building is contained by.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Region code for the country (or region) this building is in.
   *   `solarPotential` (*type:* `GoogleApi.Solar.V1.Model.SolarPotential.t`, *default:* `nil`) - Solar potential of the building.
