@@ -30,7 +30,7 @@ defmodule GoogleApi.Datastream.V1.Model.Stream do
   *   `errors` (*type:* `list(GoogleApi.Datastream.V1.Model.Error.t)`, *default:* `nil`) - Output only. Errors on the Stream.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels.
   *   `lastRecoveryTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If the stream was recovered, the time of the last recovery. Note: This field is currently experimental.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The stream's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The stream's name.
   *   `sourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.SourceConfig.t`, *default:* `nil`) - Required. Source connection profile configuration.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the stream.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update time of the stream.

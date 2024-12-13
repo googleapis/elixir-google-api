@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastream.V1.Model.OracleAsmConfig do
   @moduledoc """
-  Configuration for Oracle Automatic Storage Management (ASM) connection.
+  Configuration for Oracle Automatic Storage Management (ASM) connection. .
 
   ## Attributes
 
@@ -25,7 +25,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleAsmConfig do
   *   `connectionAttributes` (*type:* `map()`, *default:* `nil`) - Optional. Connection string attributes
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the Oracle ASM connection.
   *   `oracleSslConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSslConfig.t`, *default:* `nil`) - Optional. SSL configuration for the Oracle connection.
-  *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Password for the Oracle ASM connection.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the Oracle ASM connection.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Required. Port for the Oracle ASM connection.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the Oracle ASM connection.
   """

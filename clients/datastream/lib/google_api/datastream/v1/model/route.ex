@@ -26,7 +26,7 @@ defmodule GoogleApi.Datastream.V1.Model.Route do
   *   `destinationPort` (*type:* `integer()`, *default:* `nil`) - Destination port for connection
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource's name.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update time of the resource.
   """
 

@@ -28,7 +28,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   *   `gcsProfile` (*type:* `GoogleApi.Datastream.V1.Model.GcsProfile.t`, *default:* `nil`) - Cloud Storage ConnectionProfile configuration.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels.
   *   `mysqlProfile` (*type:* `GoogleApi.Datastream.V1.Model.MysqlProfile.t`, *default:* `nil`) - MySQL ConnectionProfile configuration.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource's name.
   *   `oracleProfile` (*type:* `GoogleApi.Datastream.V1.Model.OracleProfile.t`, *default:* `nil`) - Oracle ConnectionProfile configuration.
   *   `postgresqlProfile` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlProfile.t`, *default:* `nil`) - PostgreSQL Connection Profile configuration.
   *   `privateConnectivity` (*type:* `GoogleApi.Datastream.V1.Model.PrivateConnectivity.t`, *default:* `nil`) - Private connectivity.

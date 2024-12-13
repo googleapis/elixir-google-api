@@ -607,7 +607,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastream.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource's name.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource's name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -682,7 +682,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 
@@ -1873,7 +1873,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Datastream.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The stream's name.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The stream's name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

@@ -23,17 +23,20 @@ defmodule GoogleApi.Datastream.V1.Model.SpecificStartPosition do
 
   *   `mysqlLogPosition` (*type:* `GoogleApi.Datastream.V1.Model.MysqlLogPosition.t`, *default:* `nil`) - MySQL specific log position to start replicating from.
   *   `oracleScnPosition` (*type:* `GoogleApi.Datastream.V1.Model.OracleScnPosition.t`, *default:* `nil`) - Oracle SCN to start replicating from.
+  *   `sqlServerLsnPosition` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerLsnPosition.t`, *default:* `nil`) - SqlServer LSN to start replicating from.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :mysqlLogPosition => GoogleApi.Datastream.V1.Model.MysqlLogPosition.t() | nil,
-          :oracleScnPosition => GoogleApi.Datastream.V1.Model.OracleScnPosition.t() | nil
+          :oracleScnPosition => GoogleApi.Datastream.V1.Model.OracleScnPosition.t() | nil,
+          :sqlServerLsnPosition => GoogleApi.Datastream.V1.Model.SqlServerLsnPosition.t() | nil
         }
 
   field(:mysqlLogPosition, as: GoogleApi.Datastream.V1.Model.MysqlLogPosition)
   field(:oracleScnPosition, as: GoogleApi.Datastream.V1.Model.OracleScnPosition)
+  field(:sqlServerLsnPosition, as: GoogleApi.Datastream.V1.Model.SqlServerLsnPosition)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.SpecificStartPosition do
