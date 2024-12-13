@@ -22,7 +22,7 @@ defmodule GoogleApi.Container.V1.Model.Autopilot do
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enable Autopilot
-  *   `workloadPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadPolicyConfig.t`, *default:* `nil`) - Workload policy configuration for Autopilot.
+  *   `workloadPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadPolicyConfig.t`, *default:* `nil`) - WorkloadPolicyConfig is the configuration related to GCW workload policy
   """
 
   use GoogleApi.Gax.ModelBase

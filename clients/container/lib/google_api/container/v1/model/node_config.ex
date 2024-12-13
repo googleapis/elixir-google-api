@@ -42,6 +42,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `nodeGroup` (*type:* `String.t`, *default:* `nil`) - Setting this field will assign instances of this pool to run on the specified node group. This is useful for running workloads on [sole tenant nodes](https://cloud.google.com/compute/docs/nodes/sole-tenant-nodes).
   *   `secondaryBootDisks` (*type:* `list(GoogleApi.Container.V1.Model.SecondaryBootDisk.t)`, *default:* `nil`) - List of secondary boot disks attached to the nodes.
   *   `accelerators` (*type:* `list(GoogleApi.Container.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of hardware accelerators to be attached to each node. See https://cloud.google.com/compute/docs/gpus for more information about support for GPUs.
+  *   `maxRunDuration` (*type:* `String.t`, *default:* `nil`) - The maximum duration for the nodes to exist. If unspecified, the nodes can exist indefinitely.
   *   `windowsNodeConfig` (*type:* `GoogleApi.Container.V1.Model.WindowsNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Windows nodes.
   *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Linux nodes.
   *   `effectiveCgroupMode` (*type:* `String.t`, *default:* `nil`) - Output only. effective_cgroup_mode is the cgroup mode actually used by the node pool. It is determined by the cgroup mode specified in the LinuxNodeConfig or the default cgroup mode based on the cluster creation version.
@@ -92,6 +93,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :nodeGroup => String.t() | nil,
           :secondaryBootDisks => list(GoogleApi.Container.V1.Model.SecondaryBootDisk.t()) | nil,
           :accelerators => list(GoogleApi.Container.V1.Model.AcceleratorConfig.t()) | nil,
+          :maxRunDuration => String.t() | nil,
           :windowsNodeConfig => GoogleApi.Container.V1.Model.WindowsNodeConfig.t() | nil,
           :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
           :effectiveCgroupMode => String.t() | nil,
@@ -139,6 +141,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:nodeGroup)
   field(:secondaryBootDisks, as: GoogleApi.Container.V1.Model.SecondaryBootDisk, type: :list)
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
+  field(:maxRunDuration)
   field(:windowsNodeConfig, as: GoogleApi.Container.V1.Model.WindowsNodeConfig)
   field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
   field(:effectiveCgroupMode)
