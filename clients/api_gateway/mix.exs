@@ -18,7 +18,7 @@
 defmodule GoogleApi.APIGateway.Mixfile do
   use Mix.Project
 
-  @version "0.9.1"
+  @version "0.10.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.APIGateway.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/api_gateway",
         "Homepage" => "https://cloud.google.com/api-gateway/docs"
