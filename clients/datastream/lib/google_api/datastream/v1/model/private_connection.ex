@@ -25,7 +25,7 @@ defmodule GoogleApi.Datastream.V1.Model.PrivateConnection do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name.
   *   `error` (*type:* `GoogleApi.Datastream.V1.Model.Error.t`, *default:* `nil`) - Output only. In case of error, the details of the error in a user-friendly format.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource's name.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the Private Connection.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update time of the resource.
   *   `vpcPeeringConfig` (*type:* `GoogleApi.Datastream.V1.Model.VpcPeeringConfig.t`, *default:* `nil`) - VPC Peering Config.

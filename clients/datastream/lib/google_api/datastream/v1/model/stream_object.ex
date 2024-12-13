@@ -25,7 +25,7 @@ defmodule GoogleApi.Datastream.V1.Model.StreamObject do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time of the object.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Display name.
   *   `errors` (*type:* `list(GoogleApi.Datastream.V1.Model.Error.t)`, *default:* `nil`) - Output only. Active errors on the object.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The object resource's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The object resource's name.
   *   `sourceObject` (*type:* `GoogleApi.Datastream.V1.Model.SourceObjectIdentifier.t`, *default:* `nil`) - The object identifier in the data source.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update time of the object.
   """
