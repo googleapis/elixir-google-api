@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricValue do
 
   *   `metric` (*type:* `String.t`, *default:* `nil`) - Base name for this metric.
   *   `metricLabels` (*type:* `map()`, *default:* `nil`) - Optional. Set of metric labels for this metric.
+  *   `valueGauge64` (*type:* `GoogleApi.Dataflow.V1b3.Model.DataflowGaugeValue.t`, *default:* `nil`) - Non-cumulative int64 value of this metric.
   *   `valueHistogram` (*type:* `GoogleApi.Dataflow.V1b3.Model.DataflowHistogramValue.t`, *default:* `nil`) - Histogram value of this metric.
   *   `valueInt64` (*type:* `String.t`, *default:* `nil`) - Integer value of this metric.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricValue do
   @type t :: %__MODULE__{
           :metric => String.t() | nil,
           :metricLabels => map() | nil,
+          :valueGauge64 => GoogleApi.Dataflow.V1b3.Model.DataflowGaugeValue.t() | nil,
           :valueHistogram => GoogleApi.Dataflow.V1b3.Model.DataflowHistogramValue.t() | nil,
           :valueInt64 => String.t() | nil
         }
 
   field(:metric)
   field(:metricLabels, type: :map)
+  field(:valueGauge64, as: GoogleApi.Dataflow.V1b3.Model.DataflowGaugeValue)
   field(:valueHistogram, as: GoogleApi.Dataflow.V1b3.Model.DataflowHistogramValue)
   field(:valueInt64)
 end
