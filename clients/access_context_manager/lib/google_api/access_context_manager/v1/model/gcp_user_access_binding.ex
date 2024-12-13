@@ -27,7 +27,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Assigned by the server during creation. The last segment has an arbitrary length and has only URI unreserved characters (as defined by [RFC 3986 Section 2.3](https://tools.ietf.org/html/rfc3986#section-2.3)). Should not be specified by the client during creation. Example: "organizations/256/gcpUserAccessBindings/b3-BhcX_Ud5N"
   *   `restrictedClientApplications` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.Application.t)`, *default:* `nil`) - Optional. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications.
   *   `scopedAccessSettings` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.ScopedAccessSettings.t)`, *default:* `nil`) - Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set.
-  *   `sessionSettings` (*type:* `GoogleApi.AccessContextManager.V1.Model.SessionSettings.t`, *default:* `nil`) - Optional. GCSL policy for the group key.
+  *   `sessionSettings` (*type:* `GoogleApi.AccessContextManager.V1.Model.SessionSettings.t`, *default:* `nil`) - Optional. The Google Cloud session length (GCSL) policy for the group key.
   """
 
   use GoogleApi.Gax.ModelBase

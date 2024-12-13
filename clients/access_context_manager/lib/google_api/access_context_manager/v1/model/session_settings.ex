@@ -21,10 +21,10 @@ defmodule GoogleApi.AccessContextManager.V1.Model.SessionSettings do
 
   ## Attributes
 
-  *   `maxInactivity` (*type:* `String.t`, *default:* `nil`) - Optional. How long a user is allowed to take between actions before a new access token must be issued. Presently only set for Cloud Apps.
-  *   `sessionLength` (*type:* `String.t`, *default:* `nil`) - Optional. The session length. Setting this field to zero is equal to disabling. Session. Also can set infinite session by flipping the enabled bit to false below. If use_oidc_max_age is true, for OIDC apps, the session length will be the minimum of this field and OIDC max_age param.
-  *   `sessionLengthEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Big red button to turn off GCSL. When false, all fields set above will be disregarded and the session length is basically infinite.
-  *   `sessionReauthMethod` (*type:* `String.t`, *default:* `nil`) - Optional. Session method when users GCP session is up.
+  *   `maxInactivity` (*type:* `String.t`, *default:* `nil`) - Optional. How long a user is allowed to take between actions before a new access token must be issued. Only set for Google Cloud apps.
+  *   `sessionLength` (*type:* `String.t`, *default:* `nil`) - Optional. The session length. Setting this field to zero is equal to disabling session. Also can set infinite session by flipping the enabled bit to false below. If use_oidc_max_age is true, for OIDC apps, the session length will be the minimum of this field and OIDC max_age param.
+  *   `sessionLengthEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. This field enables or disables Google Cloud session length. When false, all fields set above will be disregarded and the session length is basically infinite.
+  *   `sessionReauthMethod` (*type:* `String.t`, *default:* `nil`) - Optional. Session method when user's Google Cloud session is up.
   *   `useOidcMaxAge` (*type:* `boolean()`, *default:* `nil`) - Optional. Only useful for OIDC apps. When false, the OIDC max_age param, if passed in the authentication request will be ignored. When true, the re-auth period will be the minimum of the session_length field and the max_age OIDC param.
   """
 
