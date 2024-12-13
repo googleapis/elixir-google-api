@@ -37,6 +37,7 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
   *   `sourceContents` (*type:* `String.t`, *default:* `nil`) - Workflow code to be executed. The size limit is 128KB.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the workflow deployment.
   *   `stateError` (*type:* `GoogleApi.Workflows.V1.Model.StateError.t`, *default:* `nil`) - Output only. Error regarding the state of the workflow. For example, this field will have error details if the execution data is unavailable due to revoked KMS key permissions.
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tags associated with this workflow.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp for when the workflow was last updated. This is a workflow-wide field and is not tied to a specific revision.
   *   `userEnvVars` (*type:* `map()`, *default:* `nil`) - Optional. User-defined environment variables associated with this workflow revision. This map has a maximum length of 20. Each string can take up to 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or "WORKFLOWS".
   """
@@ -60,6 +61,7 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
           :sourceContents => String.t() | nil,
           :state => String.t() | nil,
           :stateError => GoogleApi.Workflows.V1.Model.StateError.t() | nil,
+          :tags => map() | nil,
           :updateTime => DateTime.t() | nil,
           :userEnvVars => map() | nil
         }
@@ -80,6 +82,7 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
   field(:sourceContents)
   field(:state)
   field(:stateError, as: GoogleApi.Workflows.V1.Model.StateError)
+  field(:tags, type: :map)
   field(:updateTime, as: DateTime)
   field(:userEnvVars, type: :map)
 end
