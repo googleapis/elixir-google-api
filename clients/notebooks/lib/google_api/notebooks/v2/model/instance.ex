@@ -24,6 +24,7 @@ defmodule GoogleApi.Notebooks.V2.Model.Instance do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Instance creation time.
   *   `creator` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of entity that sent original CreateInstance request.
   *   `disableProxyAccess` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the notebook instance will not register with the proxy.
+  *   `enableThirdPartyIdentity` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag that specifies that a notebook can be accessed with third party identity provider.
   *   `gceSetup` (*type:* `GoogleApi.Notebooks.V2.Model.GceSetup.t`, *default:* `nil`) - Optional. Compute Engine setup for the notebook. Uses notebook-defined fields.
   *   `healthInfo` (*type:* `map()`, *default:* `nil`) - Output only. Additional information about instance health. Example: healthInfo": { "docker_proxy_agent_status": "1", "docker_status": "1", "jupyterlab_api_status": "-1", "jupyterlab_status": "-1", "updated": "2020-10-18 09:40:03.573409" }
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Output only. Instance health_state.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Notebooks.V2.Model.Instance do
           :createTime => DateTime.t() | nil,
           :creator => String.t() | nil,
           :disableProxyAccess => boolean() | nil,
+          :enableThirdPartyIdentity => boolean() | nil,
           :gceSetup => GoogleApi.Notebooks.V2.Model.GceSetup.t() | nil,
           :healthInfo => map() | nil,
           :healthState => String.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.Notebooks.V2.Model.Instance do
   field(:createTime, as: DateTime)
   field(:creator)
   field(:disableProxyAccess)
+  field(:enableThirdPartyIdentity)
   field(:gceSetup, as: GoogleApi.Notebooks.V2.Model.GceSetup)
   field(:healthInfo, type: :map)
   field(:healthState)
