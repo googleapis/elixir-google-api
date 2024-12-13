@@ -20,7 +20,7 @@ defmodule GoogleApi.DocumentAI.V1beta3 do
   API client metadata for GoogleApi.DocumentAI.V1beta3.
   """
 
-  @discovery_revision "20241025"
+  @discovery_revision "20241210"
 
   def discovery_revision(), do: @discovery_revision
 end
