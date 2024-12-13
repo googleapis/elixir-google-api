@@ -17,19 +17,28 @@
 
 defmodule GoogleApi.AlloyDB.V1.Model.CsvExportOptions do
   @moduledoc """
-  Options for exporting data in CSV format. For now, we only support a query to get the data that needs to be exported.
+  Options for exporting data in CSV format.
 
   ## Attributes
 
-  *   `selectQuery` (*type:* `String.t`, *default:* `nil`) - Required. The select_query used to extract the data.
+  *   `escapeCharacter` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the character that should appear before a data character that needs to be escaped. The default is the same as quote character. The value of this argument has to be a character in Hex ASCII Code.
+  *   `fieldDelimiter` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the character that separates columns within each row (line) of the file. The default is comma. The value of this argument has to be a character in Hex ASCII Code.
+  *   `quoteCharacter` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the quoting character to be used when a data value is quoted. The default is double-quote. The value of this argument has to be a character in Hex ASCII Code.
+  *   `selectQuery` (*type:* `String.t`, *default:* `nil`) - Required. The SELECT query used to extract the data.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :escapeCharacter => String.t() | nil,
+          :fieldDelimiter => String.t() | nil,
+          :quoteCharacter => String.t() | nil,
           :selectQuery => String.t() | nil
         }
 
+  field(:escapeCharacter)
+  field(:fieldDelimiter)
+  field(:quoteCharacter)
   field(:selectQuery)
 end
 
