@@ -27,6 +27,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   *   `endUserEntitled` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if the subscription is entitled to the end user.
   *   `freeTrialEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. End of the free trial period, in ISO 8061 format. For example, "2019-08-31T17:28:54.564Z". It will be set the same as createTime if no free trial promotion is specified.
   *   `lineItems` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem.t)`, *default:* `nil`) - Required. The line items of the subscription.
+  *   `migrationDetails` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionMigrationDetails.t`, *default:* `nil`) - Output only. Describes the details of the migrated subscription. Only populated if this subscription is migrated from another system.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the subscription. It will have the format of "partners/{partner_id}/subscriptions/{subscription_id}". This is available for authorizeAddon, but otherwise is response only.
   *   `partnerUserToken` (*type:* `String.t`, *default:* `nil`) - Required. Identifier of the end-user in partner’s system. The value is restricted to 63 ASCII characters at the maximum.
   *   `processingState` (*type:* `String.t`, *default:* `nil`) - Output only. Describes the processing state of the subscription. See more details at [the lifecycle of a subscription](/payments/reseller/subscription/reference/index/Receive.Notifications#payments-subscription-lifecycle).
@@ -56,6 +57,9 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
             list(
               GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem.t()
             )
+            | nil,
+          :migrationDetails =>
+            GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionMigrationDetails.t()
             | nil,
           :name => String.t() | nil,
           :partnerUserToken => String.t() | nil,
@@ -94,6 +98,11 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
     as:
       GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem,
     type: :list
+  )
+
+  field(:migrationDetails,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionMigrationDetails
   )
 
   field(:name)
