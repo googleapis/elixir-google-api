@@ -22,8 +22,9 @@ defmodule GoogleApi.AlloyDB.V1.Model.ExportClusterRequest do
   ## Attributes
 
   *   `csvExportOptions` (*type:* `GoogleApi.AlloyDB.V1.Model.CsvExportOptions.t`, *default:* `nil`) - Options for exporting data in CSV format. Required field to be set for CSV file type.
-  *   `database` (*type:* `String.t`, *default:* `nil`) - Required. Name of the database where the query will be executed. Note - Value provided should be the same as expected from `SELECT current_database();` and NOT as a resource reference.
+  *   `database` (*type:* `String.t`, *default:* `nil`) - Required. Name of the database where the export command will be executed. Note - Value provided should be the same as expected from `SELECT current_database();` and NOT as a resource reference.
   *   `gcsDestination` (*type:* `GoogleApi.AlloyDB.V1.Model.GcsDestination.t`, *default:* `nil`) - Required. Option to export data to cloud storage.
+  *   `sqlExportOptions` (*type:* `GoogleApi.AlloyDB.V1.Model.SqlExportOptions.t`, *default:* `nil`) - Options for exporting data in SQL format. Required field to be set for SQL file type.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.AlloyDB.V1.Model.ExportClusterRequest do
   @type t :: %__MODULE__{
           :csvExportOptions => GoogleApi.AlloyDB.V1.Model.CsvExportOptions.t() | nil,
           :database => String.t() | nil,
-          :gcsDestination => GoogleApi.AlloyDB.V1.Model.GcsDestination.t() | nil
+          :gcsDestination => GoogleApi.AlloyDB.V1.Model.GcsDestination.t() | nil,
+          :sqlExportOptions => GoogleApi.AlloyDB.V1.Model.SqlExportOptions.t() | nil
         }
 
   field(:csvExportOptions, as: GoogleApi.AlloyDB.V1.Model.CsvExportOptions)
   field(:database)
   field(:gcsDestination, as: GoogleApi.AlloyDB.V1.Model.GcsDestination)
+  field(:sqlExportOptions, as: GoogleApi.AlloyDB.V1.Model.SqlExportOptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AlloyDB.V1.Model.ExportClusterRequest do

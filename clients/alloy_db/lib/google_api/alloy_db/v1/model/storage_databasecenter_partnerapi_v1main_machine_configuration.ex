@@ -24,6 +24,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainMachin
   *   `cpuCount` (*type:* `integer()`, *default:* `nil`) - The number of CPUs. TODO(b/342344482, b/342346271) add proto validations again after bug fix.
   *   `memorySizeInBytes` (*type:* `String.t`, *default:* `nil`) - Memory size in bytes. TODO(b/342344482, b/342346271) add proto validations again after bug fix.
   *   `shardCount` (*type:* `integer()`, *default:* `nil`) - Optional. Number of shards (if applicable).
+  *   `vcpuCount` (*type:* `float()`, *default:* `nil`) - Optional. The number of vCPUs. TODO(b/342344482, b/342346271) add proto validations again after bug fix.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainMachin
   @type t :: %__MODULE__{
           :cpuCount => integer() | nil,
           :memorySizeInBytes => String.t() | nil,
-          :shardCount => integer() | nil
+          :shardCount => integer() | nil,
+          :vcpuCount => float() | nil
         }
 
   field(:cpuCount)
   field(:memorySizeInBytes)
   field(:shardCount)
+  field(:vcpuCount)
 end
 
 defimpl Poison.Decoder,

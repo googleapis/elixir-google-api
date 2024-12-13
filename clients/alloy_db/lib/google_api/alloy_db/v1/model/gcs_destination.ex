@@ -21,7 +21,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.GcsDestination do
 
   ## Attributes
 
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The path to the file in Google Cloud Storage where the export will be stored. The URI is in the form `gs://bucketName/fileName`. If the file already exists, the request succeeds, but the operation fails.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The path to the file in Google Cloud Storage where the export will be stored. The URI is in the form `gs://bucketName/fileName`.
   """
 
   use GoogleApi.Gax.ModelBase
