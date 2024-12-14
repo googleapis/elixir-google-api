@@ -26,6 +26,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Insight do
   *   `sapValidation` (*type:* `GoogleApi.WorkloadManager.V1.Model.SapValidation.t`, *default:* `nil`) - The insights data for the SAP workload validation.
   *   `sentTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Create time stamp
   *   `sqlserverValidation` (*type:* `GoogleApi.WorkloadManager.V1.Model.SqlserverValidation.t`, *default:* `nil`) - The insights data for the sqlserver workload validation.
+  *   `torsoValidation` (*type:* `GoogleApi.WorkloadManager.V1.Model.TorsoValidation.t`, *default:* `nil`) - The insights data for workload validation of torso workloads.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,9 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Insight do
           :sapDiscovery => GoogleApi.WorkloadManager.V1.Model.SapDiscovery.t() | nil,
           :sapValidation => GoogleApi.WorkloadManager.V1.Model.SapValidation.t() | nil,
           :sentTime => DateTime.t() | nil,
-          :sqlserverValidation => GoogleApi.WorkloadManager.V1.Model.SqlserverValidation.t() | nil
+          :sqlserverValidation =>
+            GoogleApi.WorkloadManager.V1.Model.SqlserverValidation.t() | nil,
+          :torsoValidation => GoogleApi.WorkloadManager.V1.Model.TorsoValidation.t() | nil
         }
 
   field(:instanceId)
@@ -43,6 +46,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Insight do
   field(:sapValidation, as: GoogleApi.WorkloadManager.V1.Model.SapValidation)
   field(:sentTime, as: DateTime)
   field(:sqlserverValidation, as: GoogleApi.WorkloadManager.V1.Model.SqlserverValidation)
+  field(:torsoValidation, as: GoogleApi.WorkloadManager.V1.Model.TorsoValidation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.WorkloadManager.V1.Model.Insight do
