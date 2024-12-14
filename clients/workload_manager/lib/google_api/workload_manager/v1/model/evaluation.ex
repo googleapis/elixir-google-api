@@ -25,6 +25,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Evaluation do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Create time stamp
   *   `customRulesBucket` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage bucket name for custom rules.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the Evaluation
+  *   `evaluationType` (*type:* `String.t`, *default:* `nil`) - Evaluation type
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs
   *   `name` (*type:* `String.t`, *default:* `nil`) - name of resource names have the form 'projects/{project_id}/locations/{location_id}/evaluations/{evaluation_id}'
   *   `resourceFilter` (*type:* `GoogleApi.WorkloadManager.V1.Model.ResourceFilter.t`, *default:* `nil`) - annotations as key value pairs
@@ -43,6 +44,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Evaluation do
           :createTime => DateTime.t() | nil,
           :customRulesBucket => String.t() | nil,
           :description => String.t() | nil,
+          :evaluationType => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :resourceFilter => GoogleApi.WorkloadManager.V1.Model.ResourceFilter.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Evaluation do
   field(:createTime, as: DateTime)
   field(:customRulesBucket)
   field(:description)
+  field(:evaluationType)
   field(:labels, type: :map)
   field(:name)
   field(:resourceFilter, as: GoogleApi.WorkloadManager.V1.Model.ResourceFilter)
