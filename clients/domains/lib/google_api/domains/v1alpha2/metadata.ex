@@ -20,7 +20,7 @@ defmodule GoogleApi.Domains.V1alpha2 do
   API client metadata for GoogleApi.Domains.V1alpha2.
   """
 
-  @discovery_revision "20240724"
+  @discovery_revision "20241209"
 
   def discovery_revision(), do: @discovery_revision
 end
