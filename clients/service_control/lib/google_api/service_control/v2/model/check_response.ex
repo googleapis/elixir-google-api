@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.CheckResponse do
 
   ## Attributes
 
+  *   `dynamicMetadata` (*type:* `map()`, *default:* `nil`) - Optional response metadata that will be emitted as dynamic metadata to be consumed by the caller of ServiceController. For compatibility with the ext_authz interface.
   *   `headers` (*type:* `map()`, *default:* `nil`) - Returns a set of request contexts generated from the `CheckRequest`.
   *   `status` (*type:* `GoogleApi.ServiceControl.V2.Model.Status.t`, *default:* `nil`) - Operation is allowed when this field is not set. Any non-'OK' status indicates a denial; google.rpc.Status.details would contain additional details about the denial.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.ServiceControl.V2.Model.CheckResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dynamicMetadata => map() | nil,
           :headers => map() | nil,
           :status => GoogleApi.ServiceControl.V2.Model.Status.t() | nil
         }
 
+  field(:dynamicMetadata, type: :map)
   field(:headers, type: :map)
   field(:status, as: GoogleApi.ServiceControl.V2.Model.Status)
 end
