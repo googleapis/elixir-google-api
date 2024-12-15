@@ -1688,7 +1688,7 @@ defmodule GoogleApi.Composer.V1.Api.Projects do
   end
 
   @doc """
-  Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer component. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Lists workloads in a Cloud Composer environment. Workload is a unit that runs a single Composer component. This method is supported for Cloud Composer environments in versions composer-2.*.*-airflow-*.*.* and newer.
 
   ## Parameters
 
