@@ -21,7 +21,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.Insight do
 
   ## Attributes
 
-  *   `genericInsight` (*type:* `GoogleApi.MigrationCenter.V1.Model.GenericInsight.t`, *default:* `nil`) - Output only. A generic insight about an asset
+  *   `genericInsight` (*type:* `GoogleApi.MigrationCenter.V1.Model.GenericInsight.t`, *default:* `nil`) - Output only. A generic insight about an asset.
   *   `migrationInsight` (*type:* `GoogleApi.MigrationCenter.V1.Model.MigrationInsight.t`, *default:* `nil`) - Output only. An insight about potential migrations for an asset.
   """
 
