@@ -22,7 +22,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Probe do
   ## Attributes
 
   *   `exec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeExecAction.t`, *default:* `nil`) - ExecAction probes the health of a container by executing a command.
+  *   `grpc` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeGrpcAction.t`, *default:* `nil`) - GrpcAction probes the health of a container by sending a gRPC request.
+  *   `httpGet` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeHttpGetAction.t`, *default:* `nil`) - HttpGetAction probes the health of a container by sending an HTTP GET request.
   *   `periodSeconds` (*type:* `integer()`, *default:* `nil`) - How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Must be less than timeout_seconds. Maps to Kubernetes probe argument 'periodSeconds'.
+  *   `tcpSocket` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeTcpSocketAction.t`, *default:* `nil`) - TcpSocketAction probes the health of a container by opening a TCP socket connection.
   *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Must be greater or equal to period_seconds. Maps to Kubernetes probe argument 'timeoutSeconds'.
   """
 
@@ -30,12 +33,20 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Probe do
 
   @type t :: %__MODULE__{
           :exec => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeExecAction.t() | nil,
+          :grpc => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeGrpcAction.t() | nil,
+          :httpGet =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeHttpGetAction.t() | nil,
           :periodSeconds => integer() | nil,
+          :tcpSocket =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeTcpSocketAction.t() | nil,
           :timeoutSeconds => integer() | nil
         }
 
   field(:exec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeExecAction)
+  field(:grpc, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeGrpcAction)
+  field(:httpGet, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeHttpGetAction)
   field(:periodSeconds)
+  field(:tcpSocket, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeTcpSocketAction)
   field(:timeoutSeconds)
 end
 
