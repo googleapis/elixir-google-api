@@ -292,7 +292,7 @@ defmodule GoogleApi.AIPlatform.V1.Api.Datasets do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AIPlatform.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of the Dataset.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name of the Dataset. Format: `projects/{project}/locations/{location}/datasets/{dataset}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

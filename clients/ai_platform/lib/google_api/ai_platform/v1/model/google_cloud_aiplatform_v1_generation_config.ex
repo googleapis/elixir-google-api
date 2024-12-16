@@ -26,6 +26,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   *   `frequencyPenalty` (*type:* `number()`, *default:* `nil`) - Optional. Frequency penalties.
   *   `logprobs` (*type:* `integer()`, *default:* `nil`) - Optional. Logit probabilities.
   *   `maxOutputTokens` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of output tokens to generate per message.
+  *   `mediaResolution` (*type:* `String.t`, *default:* `nil`) - Optional. If specified, the media resolution specified will be used.
   *   `presencePenalty` (*type:* `number()`, *default:* `nil`) - Optional. Positive penalties.
   *   `responseLogprobs` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, export the logprobs results in response.
   *   `responseMimeType` (*type:* `String.t`, *default:* `nil`) - Optional. Output response mimetype of the generated candidate text. Supported mimetype: - `text/plain`: (default) Text output. - `application/json`: JSON response in the candidates. The model needs to be prompted to output the appropriate response type, otherwise the behavior is undefined. This is a preview feature.
@@ -36,7 +37,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   *   `speechConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeechConfig.t`, *default:* `nil`) - Optional. The speech generation config.
   *   `stopSequences` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Stop sequences.
   *   `temperature` (*type:* `number()`, *default:* `nil`) - Optional. Controls the randomness of predictions.
-  *   `tokenResolution` (*type:* `String.t`, *default:* `nil`) - Optional. If specified, the token resolution specified will be used.
   *   `topK` (*type:* `number()`, *default:* `nil`) - Optional. If specified, top-k sampling will be used.
   *   `topP` (*type:* `number()`, *default:* `nil`) - Optional. If specified, nucleus sampling will be used.
   """
@@ -49,6 +49,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
           :frequencyPenalty => number() | nil,
           :logprobs => integer() | nil,
           :maxOutputTokens => integer() | nil,
+          :mediaResolution => String.t() | nil,
           :presencePenalty => number() | nil,
           :responseLogprobs => boolean() | nil,
           :responseMimeType => String.t() | nil,
@@ -63,7 +64,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeechConfig.t() | nil,
           :stopSequences => list(String.t()) | nil,
           :temperature => number() | nil,
-          :tokenResolution => String.t() | nil,
           :topK => number() | nil,
           :topP => number() | nil
         }
@@ -73,6 +73,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   field(:frequencyPenalty)
   field(:logprobs)
   field(:maxOutputTokens)
+  field(:mediaResolution)
   field(:presencePenalty)
   field(:responseLogprobs)
   field(:responseMimeType)
@@ -87,7 +88,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   field(:speechConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeechConfig)
   field(:stopSequences, type: :list)
   field(:temperature)
-  field(:tokenResolution)
   field(:topK)
   field(:topP)
 end
