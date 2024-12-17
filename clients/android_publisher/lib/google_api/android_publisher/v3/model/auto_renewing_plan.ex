@@ -24,6 +24,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan do
   *   `autoRenewEnabled` (*type:* `boolean()`, *default:* `nil`) - If the subscription is currently set to auto-renew, e.g. the user has not canceled the subscription
   *   `installmentDetails` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InstallmentPlan.t`, *default:* `nil`) - The installment plan commitment and state related info for the auto renewing plan.
   *   `priceChangeDetails` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails.t`, *default:* `nil`) - The information of the last price change for the item since subscription signup.
+  *   `recurringPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Money.t`, *default:* `nil`) - The current recurring price of the auto renewing plan.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,7 +33,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan do
           :autoRenewEnabled => boolean() | nil,
           :installmentDetails => GoogleApi.AndroidPublisher.V3.Model.InstallmentPlan.t() | nil,
           :priceChangeDetails =>
-            GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails.t() | nil
+            GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails.t() | nil,
+          :recurringPrice => GoogleApi.AndroidPublisher.V3.Model.Money.t() | nil
         }
 
   field(:autoRenewEnabled)
@@ -41,6 +43,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan do
   field(:priceChangeDetails,
     as: GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails
   )
+
+  field(:recurringPrice, as: GoogleApi.AndroidPublisher.V3.Model.Money)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan do
