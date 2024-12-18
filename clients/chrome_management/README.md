@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_chrome_management, "~> 0.10"}]
+  [{:google_api_chrome_management, "~> 0.11"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [http://developers.google.com/chrome/management/](http://developers.google.com/chrome/management/).
+Product documentation is available at [https://developers.google.com/chrome/management/](https://developers.google.com/chrome/management/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_chrome_management](https://hexdocs.pm/google_api_chrome_management).
