@@ -30,6 +30,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaDat
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
   *   `documentProcessingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaDocumentProcessingConfig.t`, *default:* `nil`) - Configuration for Document understanding and enrichment.
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - Immutable. The industry vertical that the data store registers.
+  *   `isInfobotFaqDataStore` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, this DataStore is an Infobot FAQ DataStore.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Input only. The KMS key to be used to protect this DataStore at creation time. Must be set for requests that need to comply with CMEK Org Policy protections. If this field is set and processed successfully, the DataStore will be protected by the KMS key, as indicated in the cmek_config field.
   *   `languageInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaLanguageInfo.t`, *default:* `nil`) - Language info for DataStore.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
@@ -60,6 +61,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaDat
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaDocumentProcessingConfig.t()
             | nil,
           :industryVertical => String.t() | nil,
+          :isInfobotFaqDataStore => boolean() | nil,
           :kmsKeyName => String.t() | nil,
           :languageInfo =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaLanguageInfo.t()
@@ -104,6 +106,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaDat
   )
 
   field(:industryVertical)
+  field(:isInfobotFaqDataStore)
   field(:kmsKeyName)
 
   field(:languageInfo,

@@ -26,6 +26,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `kmsKeyVersion` (*type:* `String.t`, *default:* `nil`) - Kms key version resource name which will be used to encrypt resources `/cryptoKeyVersions/{keyVersion}`.
   *   `lastRotationTimestampMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp of the last key rotation.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the CmekConfig, of the form `projects/{project}/locations/{location}/cmekConfig` or `projects/{project}/locations/{location}/cmekConfigs/{cmekConfig}`.
+  *   `singleRegionKeys` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSingleRegionKey.t)`, *default:* `nil`) - Optional. Single-regional CMEKs that are required for some VAIS features.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the CmekConfig.
   """
 
@@ -37,6 +38,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :kmsKeyVersion => String.t() | nil,
           :lastRotationTimestampMicros => String.t() | nil,
           :name => String.t() | nil,
+          :singleRegionKeys =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSingleRegionKey.t()
+            )
+            | nil,
           :state => String.t() | nil
         }
 
@@ -45,6 +51,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   field(:kmsKeyVersion)
   field(:lastRotationTimestampMicros)
   field(:name)
+
+  field(:singleRegionKeys,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSingleRegionKey,
+    type: :list
+  )
+
   field(:state)
 end
 
