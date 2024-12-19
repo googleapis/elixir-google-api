@@ -22,6 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
   ## Attributes
 
   *   `apiProxyType` (*type:* `String.t`, *default:* `nil`) - Optional. API Proxy type supported by the environment. The type can be set when creating the Environment and cannot be changed.
+  *   `clientIpResolutionConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentClientIPResolutionConfig.t`, *default:* `nil`) - Optional. The algorithm to resolve IP. This will affect Analytics, API Security, and other features that use the client ip. To remove a client ip resolution config, update the field to an empty value. Example: '{ "clientIpResolutionConfig" = {} }' For more information, see: https://cloud.google.com/apigee/docs/api-platform/system-administration/client-ip-resolution.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Creation time of this environment as milliseconds since epoch.
   *   `deploymentType` (*type:* `String.t`, *default:* `nil`) - Optional. Deployment type supported by the environment. The deployment type can be set when creating the environment and cannot be changed. When you enable archive deployment, you will be **prevented from performing** a [subset of actions](/apigee/docs/api-platform/local-development/overview#prevented-actions) within the environment, including: * Managing the deployment of API proxy or shared flow revisions * Creating, updating, or deleting resource files * Creating, updating, or deleting target servers
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the environment.
@@ -40,6 +41,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
 
   @type t :: %__MODULE__{
           :apiProxyType => String.t() | nil,
+          :clientIpResolutionConfig =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentClientIPResolutionConfig.t()
+            | nil,
           :createdAt => String.t() | nil,
           :deploymentType => String.t() | nil,
           :description => String.t() | nil,
@@ -55,6 +59,11 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Environment do
         }
 
   field(:apiProxyType)
+
+  field(:clientIpResolutionConfig,
+    as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentClientIPResolutionConfig
+  )
+
   field(:createdAt)
   field(:deploymentType)
   field(:description)
