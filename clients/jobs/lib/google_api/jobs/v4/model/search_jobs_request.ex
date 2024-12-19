@@ -33,6 +33,7 @@ defmodule GoogleApi.Jobs.V4.Model.SearchJobsRequest do
   *   `offset` (*type:* `integer()`, *default:* `nil`) - An integer that specifies the current offset (that is, starting result location, amongst the jobs deemed by the API as relevant) in search results. This field is only considered if page_token is unset. The maximum allowed value is 5000. Otherwise an error is thrown. For example, 0 means to return results starting from the first matching job, and 10 means to return from the 11th job. This can be used for pagination, (for example, pageSize = 10 and offset = 10 means to return from the second page).
   *   `orderBy` (*type:* `String.t`, *default:* `nil`) - The criteria determining how search results are sorted. Default is `"relevance desc"`. Supported options are: * `"relevance desc"`: By relevance descending, as determined by the API algorithms. Relevance thresholding of query results is only available with this ordering. * `"posting_publish_time desc"`: By Job.posting_publish_time descending. * `"posting_update_time desc"`: By Job.posting_update_time descending. * `"title"`: By Job.title ascending. * `"title desc"`: By Job.title descending. * `"annualized_base_compensation"`: By job's CompensationInfo.annualized_base_compensation_range ascending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `"annualized_base_compensation desc"`: By job's CompensationInfo.annualized_base_compensation_range descending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `"annualized_total_compensation"`: By job's CompensationInfo.annualized_total_compensation_range ascending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `"annualized_total_compensation desc"`: By job's CompensationInfo.annualized_total_compensation_range descending. Jobs whose annualized base compensation is unspecified are put at the end of search results. * `"custom_ranking desc"`: By the relevance score adjusted to the SearchJobsRequest.CustomRankingInfo.ranking_expression with weight factor assigned by SearchJobsRequest.CustomRankingInfo.importance_level in descending order. * Location sorting: Use the special syntax to order jobs by distance: `"distance_from('Hawaii')"`: Order by distance from Hawaii. `"distance_from(19.89, 155.5)"`: Order by distance from a coordinate. `"distance_from('Hawaii'), distance_from('Puerto Rico')"`: Order by multiple locations. See details below. `"distance_from('Hawaii'), distance_from(19.89, 155.5)"`: Order by multiple locations. See details below. The string can have a maximum of 256 characters. When multiple distance centers are provided, a job that is close to any of the distance centers would have a high rank. When a job has multiple locations, the job location closest to one of the distance centers will be used. Jobs that don't have locations will be ranked at the bottom. Distance is calculated with a precision of 11.3 meters (37.4 feet). Diversification strategy is still applied unless explicitly disabled in diversification_level.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - The token specifying the current offset within search results. See SearchJobsResponse.next_page_token for an explanation of how to obtain the next set of query results.
+  *   `relevanceThreshold` (*type:* `String.t`, *default:* `nil`) - Optional. The relevance threshold of the search results. Default to Google defined threshold, leveraging a balance of precision and recall to deliver both highly accurate results and comprehensive coverage of relevant information.
   *   `requestMetadata` (*type:* `GoogleApi.Jobs.V4.Model.RequestMetadata.t`, *default:* `nil`) - Required. The meta information collected about the job searcher, used to improve the search quality of the service. The identifiers (such as `user_id`) are provided by users, and must be unique and consistent.
   *   `searchMode` (*type:* `String.t`, *default:* `nil`) - Mode of a search. Defaults to SearchMode.JOB_SEARCH.
   """
@@ -52,6 +53,7 @@ defmodule GoogleApi.Jobs.V4.Model.SearchJobsRequest do
           :offset => integer() | nil,
           :orderBy => String.t() | nil,
           :pageToken => String.t() | nil,
+          :relevanceThreshold => String.t() | nil,
           :requestMetadata => GoogleApi.Jobs.V4.Model.RequestMetadata.t() | nil,
           :searchMode => String.t() | nil
         }
@@ -68,6 +70,7 @@ defmodule GoogleApi.Jobs.V4.Model.SearchJobsRequest do
   field(:offset)
   field(:orderBy)
   field(:pageToken)
+  field(:relevanceThreshold)
   field(:requestMetadata, as: GoogleApi.Jobs.V4.Model.RequestMetadata)
   field(:searchMode)
 end
