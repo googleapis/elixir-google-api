@@ -30,6 +30,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
   *   `loggingConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2LoggingConfig.t`, *default:* `nil`) - Configuration for logging conversation lifecycle events.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of this conversation profile. Format: `projects//locations//conversationProfiles/`.
   *   `newMessageEventNotificationConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t`, *default:* `nil`) - Configuration for publishing new message events. Event will be sent in format of ConversationEvent
+  *   `newRecognitionResultNotificationConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t`, *default:* `nil`) - Optional. Configuration for publishing transcription intermediate results. Event will be sent in format of ConversationEvent. If configured, the following information will be populated as ConversationEvent Pub/Sub message attributes: - "participant_id" - "participant_role" - "message_id"
   *   `notificationConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t`, *default:* `nil`) - Configuration for publishing conversation lifecycle events.
   *   `securitySettings` (*type:* `String.t`, *default:* `nil`) - Name of the CX SecuritySettings reference for the agent. Format: `projects//locations//securitySettings/`.
   *   `sttConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfig.t`, *default:* `nil`) - Settings for speech transcription.
@@ -55,6 +56,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2LoggingConfig.t() | nil,
           :name => String.t() | nil,
           :newMessageEventNotificationConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t() | nil,
+          :newRecognitionResultNotificationConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t() | nil,
           :notificationConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig.t() | nil,
@@ -87,6 +90,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
   field(:name)
 
   field(:newMessageEventNotificationConfig,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig
+  )
+
+  field(:newRecognitionResultNotificationConfig,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2NotificationConfig
   )
 
