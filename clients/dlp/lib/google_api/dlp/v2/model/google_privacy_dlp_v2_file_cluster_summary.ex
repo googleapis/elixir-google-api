@@ -27,7 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileClusterSummary do
   *   `fileExtensionsScanned` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileExtensionInfo.t)`, *default:* `nil`) - A sample of file types scanned in this cluster. Empty if no files were scanned. File extensions can be derived from the file name or the file content.
   *   `fileExtensionsSeen` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileExtensionInfo.t)`, *default:* `nil`) - A sample of file types seen in this cluster. Empty if no files were seen. File extensions can be derived from the file name or the file content.
   *   `fileStoreInfoTypeSummaries` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreInfoTypeSummary.t)`, *default:* `nil`) - InfoTypes detected in this cluster.
-  *   `noFilesExist` (*type:* `boolean()`, *default:* `nil`) - True if no files exist in this cluster. If the bucket had more files than could be listed, this will be false even if no files for this cluster were seen and file_extensions_seen is empty.
+  *   `noFilesExist` (*type:* `boolean()`, *default:* `nil`) - True if no files exist in this cluster. If the file store had more files than could be listed, this will be false even if no files for this cluster were seen and file_extensions_seen is empty.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this cluster. The score will be SENSITIVITY_LOW if nothing has been scanned.
   """
 
