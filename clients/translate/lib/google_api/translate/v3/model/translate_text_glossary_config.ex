@@ -21,6 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig do
 
   ## Attributes
 
+  *   `contextualTranslationEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, the glossary will be used for contextual translation.
   *   `glossary` (*type:* `String.t`, *default:* `nil`) - Required. The `glossary` to be applied for this translation. The format depends on the glossary: - User-provided custom glossary: `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
   *   `ignoreCase` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates match is case insensitive. The default value is `false` if missing.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :contextualTranslationEnabled => boolean() | nil,
           :glossary => String.t() | nil,
           :ignoreCase => boolean() | nil
         }
 
+  field(:contextualTranslationEnabled)
   field(:glossary)
   field(:ignoreCase)
 end
