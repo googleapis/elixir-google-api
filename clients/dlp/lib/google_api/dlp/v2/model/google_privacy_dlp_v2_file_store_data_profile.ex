@@ -33,7 +33,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   *   `fileStorePath` (*type:* `String.t`, *default:* `nil`) - The file store path. * Cloud Storage: `gs://{bucket}` * Amazon S3: `s3://{bucket}`
   *   `fullResource` (*type:* `String.t`, *default:* `nil`) - The resource name of the resource profiled. https://cloud.google.com/apis/design/resource_names#full_resource_name Example format of an S3 bucket full resource name: `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
   *   `lastModifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the file store was last modified.
-  *   `locationType` (*type:* `String.t`, *default:* `nil`) - The location type of the bucket (region, dual-region, multi-region, etc). If dual-region, expect data_storage_locations to be populated.
+  *   `locationType` (*type:* `String.t`, *default:* `nil`) - The location type of the file store (region, dual-region, multi-region, etc). If dual-region, expect data_storage_locations to be populated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the profile.
   *   `profileLastGenerated` (*type:* `DateTime.t`, *default:* `nil`) - The last time the profile was generated.
   *   `profileStatus` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t`, *default:* `nil`) - Success or error status from the most recent profile generation attempt. May be empty if the profile is still being generated.
