@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1TextParagraph do
 
   ## Attributes
 
-  *   `maxLines` (*type:* `integer()`, *default:* `nil`) - The maximum number of lines of text that are displayed in the widget. If the text exceeds the specified maximum number of lines, the excess content is concealed behind a **show more** button. If the text is equal or shorter than the specified maximum number of lines, a **show more** button isn't displayed. The default value is 0, in which case all context is displayed. Negative values are ignored. [Google Chat apps](https://developers.google.com/workspace/chat):
+  *   `maxLines` (*type:* `integer()`, *default:* `nil`) - The maximum number of lines of text that are displayed in the widget. If the text exceeds the specified maximum number of lines, the excess content is concealed behind a **show more** button. If the text is equal or shorter than the specified maximum number of lines, a **show more** button isn't displayed. The default value is 0, in which case all context is displayed. Negative values are ignored.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The text that's shown in the widget.
   """
 
