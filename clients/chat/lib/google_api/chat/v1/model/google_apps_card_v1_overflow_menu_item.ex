@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1OverflowMenuItem do
   @moduledoc """
-  An option that users can invoke in an overflow menu. [Google Chat apps](https://developers.google.com/workspace/chat):
+  An option that users can invoke in an overflow menu. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 

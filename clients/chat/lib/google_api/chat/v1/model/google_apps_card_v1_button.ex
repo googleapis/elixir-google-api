@@ -27,7 +27,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Button do
   *   `icon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - An icon displayed inside the button. If both `icon` and `text` are set, then the icon appears before the text.
   *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - Required. The action to perform when a user clicks the button, such as opening a hyperlink or running a custom function.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The text displayed inside the button.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a button. If unset, button type defaults to `OUTLINED`. If the `color` field is set, the button type is forced to `FILLED` and any value set for this field is ignored. [Google Chat apps](https://developers.google.com/workspace/chat):
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a button. If unset, button type defaults to `OUTLINED`. If the `color` field is set, the button type is forced to `FILLED` and any value set for this field is ignored.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList do
   @moduledoc """
-  A list of chips layed out horizontally, which can either scroll horizontally or wrap to the next line. [Google Chat apps](https://developers.google.com/workspace/chat):
+  A list of chips layed out horizontally, which can either scroll horizontally or wrap to the next line. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
