@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Blob do
   @moduledoc """
-  Content blob. It's preferred to send as text directly rather than raw bytes.
+  Content blob.
 
   ## Attributes
 
