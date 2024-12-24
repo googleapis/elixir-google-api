@@ -23,6 +23,8 @@ defmodule GoogleApi.MigrationCenter.V1.Model.AssetFrame do
 
   *   `attributes` (*type:* `map()`, *default:* `nil`) - Generic asset attributes.
   *   `collectionType` (*type:* `String.t`, *default:* `nil`) - Optional. Frame collection type, if not specified the collection type will be based on the source type of the source the frame was reported on.
+  *   `databaseDeploymentDetails` (*type:* `GoogleApi.MigrationCenter.V1.Model.DatabaseDeploymentDetails.t`, *default:* `nil`) - Asset information specific for database deployments.
+  *   `databaseDetails` (*type:* `GoogleApi.MigrationCenter.V1.Model.DatabaseDetails.t`, *default:* `nil`) - Asset information specific for logical databases.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs.
   *   `machineDetails` (*type:* `GoogleApi.MigrationCenter.V1.Model.MachineDetails.t`, *default:* `nil`) - Asset information specific for virtual machines.
   *   `performanceSamples` (*type:* `list(GoogleApi.MigrationCenter.V1.Model.PerformanceSample.t)`, *default:* `nil`) - Asset performance data samples. Samples that are from more than 40 days ago or after tomorrow are ignored.
@@ -35,6 +37,9 @@ defmodule GoogleApi.MigrationCenter.V1.Model.AssetFrame do
   @type t :: %__MODULE__{
           :attributes => map() | nil,
           :collectionType => String.t() | nil,
+          :databaseDeploymentDetails =>
+            GoogleApi.MigrationCenter.V1.Model.DatabaseDeploymentDetails.t() | nil,
+          :databaseDetails => GoogleApi.MigrationCenter.V1.Model.DatabaseDetails.t() | nil,
           :labels => map() | nil,
           :machineDetails => GoogleApi.MigrationCenter.V1.Model.MachineDetails.t() | nil,
           :performanceSamples =>
@@ -45,6 +50,12 @@ defmodule GoogleApi.MigrationCenter.V1.Model.AssetFrame do
 
   field(:attributes, type: :map)
   field(:collectionType)
+
+  field(:databaseDeploymentDetails,
+    as: GoogleApi.MigrationCenter.V1.Model.DatabaseDeploymentDetails
+  )
+
+  field(:databaseDetails, as: GoogleApi.MigrationCenter.V1.Model.DatabaseDetails)
   field(:labels, type: :map)
   field(:machineDetails, as: GoogleApi.MigrationCenter.V1.Model.MachineDetails)
 
