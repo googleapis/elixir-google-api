@@ -42,7 +42,7 @@ defmodule GoogleApi.AppHub.Mixfile do
     [
       {:google_gax, "~> 0.4"},
 
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:ex_doc, "~> 0.36", only: :dev}
     ]
   end
 
