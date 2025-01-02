@@ -21,19 +21,16 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.CreateEnrollmentTokenResponse do
 
   ## Attributes
 
-  *   `enrollmentToken` (*type:* `String.t`, *default:* `nil`) - Deprecated: Use token instead. This field will be removed in the future.
-  *   `token` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.EnrollmentToken.t`, *default:* `nil`) - [Required] The created enrollment token.
+  *   `enrollmentToken` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.EnrollmentToken.t`, *default:* `nil`) - [Required] The created enrollment token.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enrollmentToken => String.t() | nil,
-          :token => GoogleApi.AndroidEnterprise.V1.Model.EnrollmentToken.t() | nil
+          :enrollmentToken => GoogleApi.AndroidEnterprise.V1.Model.EnrollmentToken.t() | nil
         }
 
-  field(:enrollmentToken)
-  field(:token, as: GoogleApi.AndroidEnterprise.V1.Model.EnrollmentToken)
+  field(:enrollmentToken, as: GoogleApi.AndroidEnterprise.V1.Model.EnrollmentToken)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.CreateEnrollmentTokenResponse do
