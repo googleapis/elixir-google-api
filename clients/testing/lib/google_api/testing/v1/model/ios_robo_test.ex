@@ -23,7 +23,7 @@ defmodule GoogleApi.Testing.V1.Model.IosRoboTest do
 
   *   `appBundleId` (*type:* `String.t`, *default:* `nil`) - The bundle ID for the app-under-test. This is determined by examining the application's "Info.plist" file.
   *   `appIpa` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - Required. The ipa stored at this file should be used to run the test.
-  *   `roboScript` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - An optional Roboscript to customize the crawl. See https://firebase.google.com/docs/test-lab/android/robo-scripts-reference for more information about Roboscripts.
+  *   `roboScript` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`, *default:* `nil`) - An optional Roboscript to customize the crawl. See https://firebase.google.com/docs/test-lab/android/robo-scripts-reference for more information about Roboscripts. The maximum allowed file size of the roboscript is 10MiB.
   """
 
   use GoogleApi.Gax.ModelBase
