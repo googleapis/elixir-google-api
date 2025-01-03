@@ -21,6 +21,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Subscription do
 
   ## Attributes
 
+  *   `commercialInfo` (*type:* `GoogleApi.AnalyticsHub.V1beta1.Model.CommercialInfo.t`, *default:* `nil`) - Output only. This is set if this is a commercial subscription i.e. if this subscription was created from subscribing to a commercial listing.
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when the subscription was created.
   *   `dataExchange` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the source Data Exchange. e.g. projects/123/locations/US/dataExchanges/456
   *   `lastModifyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when the subscription was last modified.
@@ -38,6 +39,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Subscription do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :commercialInfo => GoogleApi.AnalyticsHub.V1beta1.Model.CommercialInfo.t() | nil,
           :creationTime => DateTime.t() | nil,
           :dataExchange => String.t() | nil,
           :lastModifyTime => DateTime.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Subscription do
           :subscriberContact => String.t() | nil
         }
 
+  field(:commercialInfo, as: GoogleApi.AnalyticsHub.V1beta1.Model.CommercialInfo)
   field(:creationTime, as: DateTime)
   field(:dataExchange)
   field(:lastModifyTime, as: DateTime)
