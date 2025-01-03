@@ -23,6 +23,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.Listing do
 
   *   `bigqueryDataset` (*type:* `GoogleApi.AnalyticsHub.V1.Model.BigQueryDatasetSource.t`, *default:* `nil`) - Required. Shared dataset i.e. BigQuery dataset source.
   *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Categories of the listing. Up to two categories are allowed.
+  *   `commercialInfo` (*type:* `GoogleApi.AnalyticsHub.V1.Model.GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfo.t`, *default:* `nil`) - Output only. Commercial info contains the information about the commercial data products associated with the listing.
   *   `dataProvider` (*type:* `GoogleApi.AnalyticsHub.V1.Model.DataProvider.t`, *default:* `nil`) - Optional. Details of the data provider who owns the source data.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Short description of the listing. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default value is an empty string. Max length: 2000 bytes.
   *   `discoveryType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of discovery of the listing on the discovery page.
@@ -44,6 +45,9 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.Listing do
   @type t :: %__MODULE__{
           :bigqueryDataset => GoogleApi.AnalyticsHub.V1.Model.BigQueryDatasetSource.t() | nil,
           :categories => list(String.t()) | nil,
+          :commercialInfo =>
+            GoogleApi.AnalyticsHub.V1.Model.GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfo.t()
+            | nil,
           :dataProvider => GoogleApi.AnalyticsHub.V1.Model.DataProvider.t() | nil,
           :description => String.t() | nil,
           :discoveryType => String.t() | nil,
@@ -63,6 +67,11 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.Listing do
 
   field(:bigqueryDataset, as: GoogleApi.AnalyticsHub.V1.Model.BigQueryDatasetSource)
   field(:categories, type: :list)
+
+  field(:commercialInfo,
+    as: GoogleApi.AnalyticsHub.V1.Model.GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfo
+  )
+
   field(:dataProvider, as: GoogleApi.AnalyticsHub.V1.Model.DataProvider)
   field(:description)
   field(:discoveryType)
