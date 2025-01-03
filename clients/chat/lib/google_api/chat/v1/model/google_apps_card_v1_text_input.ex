@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1TextInput do
   @moduledoc """
-  A field in which users can enter text. Supports suggestions and on-change actions. For an example in Google Chat apps, see [Add a field in which a user can enter text](https://developers.google.com/workspace/chat/design-interactive-card-dialog#add_a_field_in_which_a_user_can_enter_text). Chat apps receive and can process the value of entered text during form input events. For details about working with form inputs, see [Receive form data](https://developers.google.com/workspace/chat/read-form-data). When you need to collect undefined or abstract data from users, use a text input. To collect defined or enumerated data from users, use the SelectionInput widget. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  A field in which users can enter text. Supports suggestions and on-change actions. Supports form submission validation. When `Action.all_widgets_are_required` is set to `true` or this widget is specified in `Action.required_widgets`, the submission action is blocked unless a value is entered. For an example in Google Chat apps, see [Add a field in which a user can enter text](https://developers.google.com/workspace/chat/design-interactive-card-dialog#add_a_field_in_which_a_user_can_enter_text). Chat apps receive and can process the value of entered text during form input events. For details about working with form inputs, see [Receive form data](https://developers.google.com/workspace/chat/read-form-data). When you need to collect undefined or abstract data from users, use a text input. To collect defined or enumerated data from users, use the SelectionInput widget. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
@@ -29,6 +29,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1TextInput do
   *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - What to do when a change occurs in the text input field. For example, a user adding to the field or deleting text. Examples of actions to take include running a custom function or opening a [dialog](https://developers.google.com/workspace/chat/dialogs) in Google Chat.
   *   `placeholderText` (*type:* `String.t`, *default:* `nil`) - Text that appears in the text input field when the field is empty. Use this text to prompt users to enter a value. For example, `Enter a number from 0 to 100`. [Google Chat apps](https://developers.google.com/workspace/chat):
   *   `type` (*type:* `String.t`, *default:* `nil`) - How a text input field appears in the user interface. For example, whether the field is single or multi-line.
+  *   `validation` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Validation.t`, *default:* `nil`) - Specify the input format validation necessary for this text field. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
   *   `value` (*type:* `String.t`, *default:* `nil`) - The value entered by a user, returned as part of a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/workspace/chat/read-form-data).
   """
 
@@ -43,6 +44,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1TextInput do
           :onChangeAction => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t() | nil,
           :placeholderText => String.t() | nil,
           :type => String.t() | nil,
+          :validation => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Validation.t() | nil,
           :value => String.t() | nil
         }
 
@@ -54,6 +56,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1TextInput do
   field(:onChangeAction, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action)
   field(:placeholderText)
   field(:type)
+  field(:validation, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Validation)
   field(:value)
 end
 
