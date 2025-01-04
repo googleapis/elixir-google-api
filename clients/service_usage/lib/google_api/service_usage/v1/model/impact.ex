@@ -23,17 +23,20 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Impact do
 
   *   `detail` (*type:* `String.t`, *default:* `nil`) - Output only. User friendly impact detail in a free form message.
   *   `impactType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of impact.
+  *   `parent` (*type:* `String.t`, *default:* `nil`) - The parent resource that the analysis is based on and the service name that the analysis is for. Example: `projects/100/services/compute.googleapis.com`, folders/101/services/compute.googleapis.com` and `organizations/102/services/compute.googleapis.com`. Usually, the parent resource here is same as the parent resource of the analyzed policy. However, for some analysis types, the parent can be different. For example, for resource existence analysis, if the parent resource of the analyzed policy is a folder or an organization, the parent resource here can still be the project that contains the resources.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :detail => String.t() | nil,
-          :impactType => String.t() | nil
+          :impactType => String.t() | nil,
+          :parent => String.t() | nil
         }
 
   field(:detail)
   field(:impactType)
+  field(:parent)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceUsage.V1.Model.Impact do
