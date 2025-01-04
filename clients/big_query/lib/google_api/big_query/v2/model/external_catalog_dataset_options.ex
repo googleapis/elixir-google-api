@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ExternalCatalogDatasetOptions do
   @moduledoc """
-  Options defining open source compatible datasets living in the BigQuery catalog. Contains metadata of open source database, schema or namespace represented by the current dataset.
+  Options defining open source compatible datasets living in the BigQuery catalog. Contains metadata of open source database, schema, or namespace represented by the current dataset.
 
   ## Attributes
 
   *   `defaultStorageLocationUri` (*type:* `String.t`, *default:* `nil`) - Optional. The storage location URI for all tables in the dataset. Equivalent to hive metastore's database locationUri. Maximum length of 1024 characters.
-  *   `parameters` (*type:* `map()`, *default:* `nil`) - Optional. A map of key value pairs defining the parameters and properties of the open source schema. Maximum size of 2Mib.
+  *   `parameters` (*type:* `map()`, *default:* `nil`) - Optional. A map of key value pairs defining the parameters and properties of the open source schema. Maximum size of 2MiB.
   """
 
   use GoogleApi.Gax.ModelBase
