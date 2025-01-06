@@ -26,6 +26,8 @@ defmodule GoogleApi.DataMigration.V1.Model.PrivateConnection do
   *   `error` (*type:* `GoogleApi.DataMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. The error details in case of state FAILED.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The resource labels for private connections to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Zone Isolation compliance state of the resource.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Zone Separation compliance state of the resource.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the private connection.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update time of the resource.
   *   `vpcPeeringConfig` (*type:* `GoogleApi.DataMigration.V1.Model.VpcPeeringConfig.t`, *default:* `nil`) - VPC peering configuration.
@@ -39,6 +41,8 @@ defmodule GoogleApi.DataMigration.V1.Model.PrivateConnection do
           :error => GoogleApi.DataMigration.V1.Model.Status.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :vpcPeeringConfig => GoogleApi.DataMigration.V1.Model.VpcPeeringConfig.t() | nil
@@ -49,6 +53,8 @@ defmodule GoogleApi.DataMigration.V1.Model.PrivateConnection do
   field(:error, as: GoogleApi.DataMigration.V1.Model.Status)
   field(:labels, type: :map)
   field(:name)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
   field(:updateTime, as: DateTime)
   field(:vpcPeeringConfig, as: GoogleApi.DataMigration.V1.Model.VpcPeeringConfig)

@@ -21,7 +21,7 @@ defmodule GoogleApi.DataMigration.V1.Model.SourceObjectConfig do
 
   ## Attributes
 
-  *   `objectIdentifier` (*type:* `GoogleApi.DataMigration.V1.Model.SourceObjectIdentifier.t`, *default:* `nil`) - The object identifier.
+  *   `objectIdentifier` (*type:* `GoogleApi.DataMigration.V1.Model.SourceObjectIdentifier.t`, *default:* `nil`) - Optional. The object identifier.
   """
 
   use GoogleApi.Gax.ModelBase
