@@ -22,8 +22,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Attack do
   ## Attributes
 
   *   `classification` (*type:* `String.t`, *default:* `nil`) - Type of attack, for example, 'SYN-flood', 'NTP-udp', or 'CHARGEN-udp'.
-  *   `volumeBps` (*type:* `integer()`, *default:* `nil`) - Total BPS (bytes per second) volume of attack.
-  *   `volumePps` (*type:* `integer()`, *default:* `nil`) - Total PPS (packets per second) volume of attack.
+  *   `volumeBps` (*type:* `integer()`, *default:* `nil`) - Total BPS (bytes per second) volume of attack. Deprecated - refer to volume_bps_long instead.
+  *   `volumeBpsLong` (*type:* `String.t`, *default:* `nil`) - Total BPS (bytes per second) volume of attack.
+  *   `volumePps` (*type:* `integer()`, *default:* `nil`) - Total PPS (packets per second) volume of attack. Deprecated - refer to volume_pps_long instead.
+  *   `volumePpsLong` (*type:* `String.t`, *default:* `nil`) - Total PPS (packets per second) volume of attack.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +33,16 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Attack do
   @type t :: %__MODULE__{
           :classification => String.t() | nil,
           :volumeBps => integer() | nil,
-          :volumePps => integer() | nil
+          :volumeBpsLong => String.t() | nil,
+          :volumePps => integer() | nil,
+          :volumePpsLong => String.t() | nil
         }
 
   field(:classification)
   field(:volumeBps)
+  field(:volumeBpsLong)
   field(:volumePps)
+  field(:volumePpsLong)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Attack do
