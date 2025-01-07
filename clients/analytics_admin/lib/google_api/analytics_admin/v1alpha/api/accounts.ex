@@ -514,7 +514,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   end
 
   @doc """
-  Searches through all changes to an account or its children given the specified set of filters.
+  Searches through all changes to an account or its children given the specified set of filters. Only returns the subset of changes supported by the API. The UI may return additional changes.
 
   ## Parameters
 
