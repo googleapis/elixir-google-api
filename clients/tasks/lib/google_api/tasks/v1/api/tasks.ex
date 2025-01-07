@@ -372,8 +372,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:destinationTasklist` (*type:* `String.t`) - Optional. Destination task list identifier. If set, the task is moved from tasklist to the destinationTasklist list. Otherwise the task is moved within its current list. Recurrent tasks cannot currently be moved between lists. Optional.
-      *   `:parent` (*type:* `String.t`) - New parent task identifier. If the task is moved to the top level, this parameter is omitted. Assigned tasks can not be set as parent task (have subtasks) or be moved under a parent task (become subtasks). Optional.
-      *   `:previous` (*type:* `String.t`) - New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.
+      *   `:parent` (*type:* `String.t`) - New parent task identifier. If the task is moved to the top level, this parameter is omitted. The task set as parent must exist in the task list and can not be hidden. Assigned tasks can not be set as parent task (have subtasks) or be moved under a parent task (become subtasks). Optional.
+      *   `:previous` (*type:* `String.t`) - New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. The task set as previous must exist in the task list and can not be hidden. Optional.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
