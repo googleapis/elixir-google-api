@@ -22,7 +22,10 @@ defmodule GoogleApi.PubSub.V1.Model.IngestionDataSourceSettings do
   ## Attributes
 
   *   `awsKinesis` (*type:* `GoogleApi.PubSub.V1.Model.AwsKinesis.t`, *default:* `nil`) - Optional. Amazon Kinesis Data Streams.
+  *   `awsMsk` (*type:* `GoogleApi.PubSub.V1.Model.AwsMsk.t`, *default:* `nil`) - Optional. Amazon MSK.
+  *   `azureEventHubs` (*type:* `GoogleApi.PubSub.V1.Model.AzureEventHubs.t`, *default:* `nil`) - Optional. Azure Event Hubs.
   *   `cloudStorage` (*type:* `GoogleApi.PubSub.V1.Model.CloudStorage.t`, *default:* `nil`) - Optional. Cloud Storage.
+  *   `confluentCloud` (*type:* `GoogleApi.PubSub.V1.Model.ConfluentCloud.t`, *default:* `nil`) - Optional. Confluent Cloud.
   *   `platformLogsSettings` (*type:* `GoogleApi.PubSub.V1.Model.PlatformLogsSettings.t`, *default:* `nil`) - Optional. Platform Logs settings. If unset, no Platform Logs will be generated.
   """
 
@@ -30,12 +33,18 @@ defmodule GoogleApi.PubSub.V1.Model.IngestionDataSourceSettings do
 
   @type t :: %__MODULE__{
           :awsKinesis => GoogleApi.PubSub.V1.Model.AwsKinesis.t() | nil,
+          :awsMsk => GoogleApi.PubSub.V1.Model.AwsMsk.t() | nil,
+          :azureEventHubs => GoogleApi.PubSub.V1.Model.AzureEventHubs.t() | nil,
           :cloudStorage => GoogleApi.PubSub.V1.Model.CloudStorage.t() | nil,
+          :confluentCloud => GoogleApi.PubSub.V1.Model.ConfluentCloud.t() | nil,
           :platformLogsSettings => GoogleApi.PubSub.V1.Model.PlatformLogsSettings.t() | nil
         }
 
   field(:awsKinesis, as: GoogleApi.PubSub.V1.Model.AwsKinesis)
+  field(:awsMsk, as: GoogleApi.PubSub.V1.Model.AwsMsk)
+  field(:azureEventHubs, as: GoogleApi.PubSub.V1.Model.AzureEventHubs)
   field(:cloudStorage, as: GoogleApi.PubSub.V1.Model.CloudStorage)
+  field(:confluentCloud, as: GoogleApi.PubSub.V1.Model.ConfluentCloud)
   field(:platformLogsSettings, as: GoogleApi.PubSub.V1.Model.PlatformLogsSettings)
 end
 
