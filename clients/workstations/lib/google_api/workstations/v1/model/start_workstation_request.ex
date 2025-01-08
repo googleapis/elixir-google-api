@@ -21,6 +21,7 @@ defmodule GoogleApi.Workstations.V1.Model.StartWorkstationRequest do
 
   ## Attributes
 
+  *   `boostConfig` (*type:* `String.t`, *default:* `nil`) - Optional. If set, the workstation starts using the boost configuration with the specified ID.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. If set, the request will be rejected if the latest version of the workstation on the server does not have this ETag.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, validate the request and preview the review, but do not actually apply it.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Workstations.V1.Model.StartWorkstationRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :boostConfig => String.t() | nil,
           :etag => String.t() | nil,
           :validateOnly => boolean() | nil
         }
 
+  field(:boostConfig)
   field(:etag)
   field(:validateOnly)
 end
