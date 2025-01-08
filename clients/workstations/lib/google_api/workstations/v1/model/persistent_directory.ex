@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Workstations.V1.Model.PersistentDirectory do
   @moduledoc """
-  A directory to persist across workstation sessions.
+  A directory to persist across workstation sessions. Updates to this field will not update existing workstations and will only take effect on new workstations.
 
   ## Attributes
 

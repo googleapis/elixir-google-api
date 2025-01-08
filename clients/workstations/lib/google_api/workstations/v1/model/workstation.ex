@@ -32,6 +32,8 @@ defmodule GoogleApi.Workstations.V1.Model.Workstation do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. [Labels](https://cloud.google.com/workstations/docs/label-resources) that are applied to the workstation and that are also propagated to the underlying Compute Engine resources.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Full name of this workstation.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this workstation is currently being updated to match its intended state.
+  *   `runtimeHost` (*type:* `GoogleApi.Workstations.V1.Model.RuntimeHost.t`, *default:* `nil`) - Optional. Output only. Runtime host for the workstation when in STATE_RUNNING.
+  *   `sourceWorkstation` (*type:* `String.t`, *default:* `nil`) - Optional. The source workstation from which this workstation's persistent directories were cloned on creation.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this workstation was most recently successfully started, regardless of the workstation's initial state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the workstation.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A system-assigned unique identifier for this workstation.
@@ -52,6 +54,8 @@ defmodule GoogleApi.Workstations.V1.Model.Workstation do
           :labels => map() | nil,
           :name => String.t() | nil,
           :reconciling => boolean() | nil,
+          :runtimeHost => GoogleApi.Workstations.V1.Model.RuntimeHost.t() | nil,
+          :sourceWorkstation => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :uid => String.t() | nil,
@@ -69,6 +73,8 @@ defmodule GoogleApi.Workstations.V1.Model.Workstation do
   field(:labels, type: :map)
   field(:name)
   field(:reconciling)
+  field(:runtimeHost, as: GoogleApi.Workstations.V1.Model.RuntimeHost)
+  field(:sourceWorkstation)
   field(:startTime, as: DateTime)
   field(:state)
   field(:uid)
