@@ -22,15 +22,27 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `enable` (*type:* `boolean()`, *default:* `nil`) - Enable the safety filtering on the answer response. It is false by default.
+  *   `safetySettings` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestSafetySpecSafetySetting.t)`, *default:* `nil`) - Optional. Safety settings. This settings are effective only when the safety_spec.enable is true.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :enable => boolean() | nil
+          :enable => boolean() | nil,
+          :safetySettings =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestSafetySpecSafetySetting.t()
+            )
+            | nil
         }
 
   field(:enable)
+
+  field(:safetySettings,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestSafetySpecSafetySetting,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,
