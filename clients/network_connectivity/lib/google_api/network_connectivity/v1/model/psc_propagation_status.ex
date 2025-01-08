@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.PscPropagationStatus do
   @moduledoc """
-  The PSC propagation status in a hub.
+  The status of one or more propagated Private Service Connect connections in a hub.
 
   ## Attributes
 
   *   `code` (*type:* `String.t`, *default:* `nil`) - The propagation status.
-  *   `message` (*type:* `String.t`, *default:* `nil`) - The human-readable summary of the PSC connection propagation status.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - The human-readable summary of the Private Service Connect connection propagation status.
   *   `sourceForwardingRule` (*type:* `String.t`, *default:* `nil`) - The name of the forwarding rule exported to the hub.
   *   `sourceGroup` (*type:* `String.t`, *default:* `nil`) - The name of the group that the source spoke belongs to.
   *   `sourceSpoke` (*type:* `String.t`, *default:* `nil`) - The name of the spoke that the source forwarding rule belongs to.

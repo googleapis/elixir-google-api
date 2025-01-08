@@ -32,7 +32,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ServiceConnectionMap do
   *   `producerPscConfigs` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.ProducerPscConfig.t)`, *default:* `nil`) - The PSC configurations on producer side.
   *   `serviceClass` (*type:* `String.t`, *default:* `nil`) - The service class identifier this ServiceConnectionMap is for. The user of ServiceConnectionMap create API needs to have networkconnecitivty.serviceclasses.use iam permission for the service class.
   *   `serviceClassUri` (*type:* `String.t`, *default:* `nil`) - Output only. The service class uri this ServiceConnectionMap is for.
-  *   `token` (*type:* `String.t`, *default:* `nil`) - The token provided by the consumer. This token authenticates that the consumer can create a connecton within the specified project and network.
+  *   `token` (*type:* `String.t`, *default:* `nil`) - The token provided by the consumer. This token authenticates that the consumer can create a connection within the specified project and network.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the ServiceConnectionMap was updated.
   """
 
