@@ -784,7 +784,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Query PSC propagation status the status of a Network Connectivity Center hub.
+  Query the Private Service Connect propagation status of a Network Connectivity Center hub.
 
   ## Parameters
 
@@ -802,9 +802,9 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. An expression that filters the list of results. The filter can be used to filter the results by the following fields: * psc_propagation_status.source_spoke * psc_propagation_status.source_group * psc_propagation_status.source_forwarding_rule * psc_propagation_status.target_spoke * psc_propagation_status.target_group * psc_propagation_status.code * psc_propagation_status.message
-      *   `:groupBy` (*type:* `String.t`) - Optional. A field that counts are grouped by. A comma-separated list of any of these fields: * psc_propagation_status.source_spoke * psc_propagation_status.source_group * psc_propagation_status.source_forwarding_rule * psc_propagation_status.target_spoke * psc_propagation_status.target_group * psc_propagation_status.code
-      *   `:orderBy` (*type:* `String.t`) - Optional. Sort the results in the ascending order by specific fields returned in the response. A comma-separated list of any of these fields: * psc_propagation_status.source_spoke * psc_propagation_status.source_group * psc_propagation_status.source_forwarding_rule * psc_propagation_status.target_spoke * psc_propagation_status.target_group * psc_propagation_status.code If `group_by` is set, the value of the `order_by` field must be the same as or a subset of the `group_by` field.
+      *   `:filter` (*type:* `String.t`) - Optional. An expression that filters the list of results. The filter can be used to filter the results by the following fields: * `psc_propagation_status.source_spoke` * `psc_propagation_status.source_group` * `psc_propagation_status.source_forwarding_rule` * `psc_propagation_status.target_spoke` * `psc_propagation_status.target_group` * `psc_propagation_status.code` * `psc_propagation_status.message`
+      *   `:groupBy` (*type:* `String.t`) - Optional. Aggregate the results by the specified fields. A comma-separated list of any of these fields: * `psc_propagation_status.source_spoke` * `psc_propagation_status.source_group` * `psc_propagation_status.source_forwarding_rule` * `psc_propagation_status.target_spoke` * `psc_propagation_status.target_group` * `psc_propagation_status.code`
+      *   `:orderBy` (*type:* `String.t`) - Optional. Sort the results in ascending order by the specified fields. A comma-separated list of any of these fields: * `psc_propagation_status.source_spoke` * `psc_propagation_status.source_group` * `psc_propagation_status.source_forwarding_rule` * `psc_propagation_status.target_spoke` * `psc_propagation_status.target_group` * `psc_propagation_status.code` If `group_by` is set, the value of the `order_by` field must be the same as or a subset of the `group_by` field.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per page.
       *   `:pageToken` (*type:* `String.t`) - Optional. The page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2734,7 +2734,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Api.Projects do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of `1`, corresponding to `Code.CANCELLED`.
 
   ## Parameters
 

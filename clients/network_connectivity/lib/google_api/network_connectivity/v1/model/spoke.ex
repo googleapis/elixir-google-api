@@ -22,15 +22,15 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Spoke do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the spoke was created.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of the spoke.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. An optional description of the spoke.
   *   `group` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the group that this spoke is associated with.
   *   `hub` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the hub that this spoke is attached to.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional labels in key-value pair format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
-  *   `linkedInterconnectAttachments` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments.t`, *default:* `nil`) - VLAN attachments that are associated with the spoke.
+  *   `linkedInterconnectAttachments` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments.t`, *default:* `nil`) - Optional. VLAN attachments that are associated with the spoke.
   *   `linkedProducerVpcNetwork` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedProducerVpcNetwork.t`, *default:* `nil`) - Optional. The linked producer VPC that is associated with the spoke.
-  *   `linkedRouterApplianceInstances` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances.t`, *default:* `nil`) - Router appliance instances that are associated with the spoke.
+  *   `linkedRouterApplianceInstances` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances.t`, *default:* `nil`) - Optional. Router appliance instances that are associated with the spoke.
   *   `linkedVpcNetwork` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedVpcNetwork.t`, *default:* `nil`) - Optional. VPC network that is associated with the spoke.
-  *   `linkedVpnTunnels` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedVpnTunnels.t`, *default:* `nil`) - VPN tunnels that are associated with the spoke.
+  *   `linkedVpnTunnels` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedVpnTunnels.t`, *default:* `nil`) - Optional. VPN tunnels that are associated with the spoke.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the spoke. Spoke names must be unique. They use the following form: `projects/{project_number}/locations/{region}/spokes/{spoke_id}`
   *   `reasons` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.StateReason.t)`, *default:* `nil`) - Output only. The reasons for current state of the spoke.
   *   `spokeType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of resource associated with the spoke.
