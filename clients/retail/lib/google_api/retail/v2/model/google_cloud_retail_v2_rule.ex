@@ -28,6 +28,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Rule do
   *   `forceReturnFacetAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleForceReturnFacetAction.t`, *default:* `nil`) - Force returns an attribute as a facet in the request.
   *   `ignoreAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleIgnoreAction.t`, *default:* `nil`) - Ignores specific terms from query during search.
   *   `onewaySynonymsAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleOnewaySynonymsAction.t`, *default:* `nil`) - Treats specific term as a synonym with a group of terms. Group of terms will not be treated as synonyms with the specific term.
+  *   `pinAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RulePinAction.t`, *default:* `nil`) - Pins one or more specified products to a specific position in the results.
   *   `redirectAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRedirectAction.t`, *default:* `nil`) - Redirects a shopper to a specific page.
   *   `removeFacetAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRemoveFacetAction.t`, *default:* `nil`) - Remove an attribute as a facet in the request (if present).
   *   `replacementAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleReplacementAction.t`, *default:* `nil`) - Replaces specific terms in the query.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Rule do
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleIgnoreAction.t() | nil,
           :onewaySynonymsAction =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleOnewaySynonymsAction.t() | nil,
+          :pinAction => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RulePinAction.t() | nil,
           :redirectAction =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRedirectAction.t() | nil,
           :removeFacetAction =>
@@ -78,6 +80,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Rule do
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleOnewaySynonymsAction
   )
 
+  field(:pinAction, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RulePinAction)
   field(:redirectAction, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRedirectAction)
 
   field(:removeFacetAction, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRemoveFacetAction)
