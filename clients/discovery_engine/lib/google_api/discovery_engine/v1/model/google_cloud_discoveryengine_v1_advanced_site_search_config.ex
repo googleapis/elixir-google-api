@@ -21,11 +21,19 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Advance
 
   ## Attributes
 
+  *   `disableAutomaticRefresh` (*type:* `boolean()`, *default:* `nil`) - If set true, automatic refresh is disabled for the DataStore.
+  *   `disableInitialIndex` (*type:* `boolean()`, *default:* `nil`) - If set true, initial indexing is disabled for the DataStore.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :disableAutomaticRefresh => boolean() | nil,
+          :disableInitialIndex => boolean() | nil
+        }
+
+  field(:disableAutomaticRefresh)
+  field(:disableInitialIndex)
 end
 
 defimpl Poison.Decoder,

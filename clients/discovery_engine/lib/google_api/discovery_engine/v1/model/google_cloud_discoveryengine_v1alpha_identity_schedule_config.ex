@@ -21,15 +21,18 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaId
 
   ## Attributes
 
+  *   `nextSyncTime` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleTypeDateTime.t`, *default:* `nil`) - Optional. The UTC time when the next data sync is expected to start for the Data Connector. Customers are only able to specify the hour and minute to schedule the data sync. This is utilized when the data connector has a refresh interval greater than 1 day.
   *   `refreshInterval` (*type:* `String.t`, *default:* `nil`) - Optional. The refresh interval to sync the Access Control List information for the documents ingested by this connector. If not set, the access control list will be refreshed at the default interval of 30 minutes. The identity refresh interval can be at least 30 minutes and at most 7 days.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :nextSyncTime => GoogleApi.DiscoveryEngine.V1.Model.GoogleTypeDateTime.t() | nil,
           :refreshInterval => String.t() | nil
         }
 
+  field(:nextSyncTime, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleTypeDateTime)
   field(:refreshInterval)
 end
 

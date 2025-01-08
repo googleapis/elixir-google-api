@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDataConnector do
   @moduledoc """
-  Manages the connection to external data sources for all data stores grouped under a Collection. It's a singleton resource of Collection. The initialization is only supported through SetUpDataConnector method, which will create a new Collection and initialize its DataConnector. //
+  Manages the connection to external data sources for all data stores grouped under a Collection. It's a singleton resource of Collection. The initialization is only supported through DataConnectorService.SetUpDataConnector method, which will create a new Collection and initialize its DataConnector.
 
   ## Attributes
 

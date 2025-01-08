@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaTa
 
   ## Attributes
 
-  *   `exactMatch` (*type:* `boolean()`, *default:* `nil`) - Input only. If set to false, a uri_pattern is generated to include all pages whose address contains the provided_uri_pattern. If set to true, an uri_pattern is generated to try to be an exact match of the provided_uri_pattern or just the specific page if the provided_uri_pattern is a specific one. provided_uri_pattern is always normalized to generate the URI pattern to be used by the search engine.
+  *   `exactMatch` (*type:* `boolean()`, *default:* `nil`) - Immutable. If set to false, a uri_pattern is generated to include all pages whose address contains the provided_uri_pattern. If set to true, an uri_pattern is generated to try to be an exact match of the provided_uri_pattern or just the specific page if the provided_uri_pattern is a specific one. provided_uri_pattern is always normalized to generate the URI pattern to be used by the search engine.
   *   `failureReason` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaTargetSiteFailureReason.t`, *default:* `nil`) - Output only. Failure reason.
   *   `generatedUriPattern` (*type:* `String.t`, *default:* `nil`) - Output only. This is system-generated based on the provided_uri_pattern.
   *   `indexingStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Indexing status.

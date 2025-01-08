@@ -32,6 +32,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAn
   *   `queryUnderstandingInfo` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAnswerQueryUnderstandingInfo.t`, *default:* `nil`) - Query understanding information.
   *   `references` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAnswerReference.t)`, *default:* `nil`) - References.
   *   `relatedQuestions` (*type:* `list(String.t)`, *default:* `nil`) - Suggested related questions.
+  *   `safetyRatings` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSafetyRating.t)`, *default:* `nil`) - Optional. Safety ratings.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the answer generation.
   *   `steps` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAnswerStep.t)`, *default:* `nil`) - Answer generation steps.
   """
@@ -64,6 +65,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAn
             )
             | nil,
           :relatedQuestions => list(String.t()) | nil,
+          :safetyRatings =>
+            list(
+              GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSafetyRating.t()
+            )
+            | nil,
           :state => String.t() | nil,
           :steps =>
             list(
@@ -103,6 +109,12 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAn
   )
 
   field(:relatedQuestions, type: :list)
+
+  field(:safetyRatings,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSafetyRating,
+    type: :list
+  )
+
   field(:state)
 
   field(:steps,
