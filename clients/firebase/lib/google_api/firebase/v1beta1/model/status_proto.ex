@@ -21,8 +21,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StatusProto do
 
   ## Attributes
 
-  *   `canonicalCode` (*type:* `integer()`, *default:* `nil`) - The canonical error code (see codes.proto) that most closely corresponds to this status. This may be missing, and in the common case of the generic space, it definitely will be.
-  *   `code` (*type:* `integer()`, *default:* `nil`) - Numeric code drawn from the space specified below. Often, this is the canonical error space, and code is drawn from google3/util/task/codes.proto
+  *   `canonicalCode` (*type:* `integer()`, *default:* `nil`) - The canonical error code (see codes.proto) that most closely corresponds to this status. This may be missing, and in the common case of the generic space, it definitely will be. copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional int32 canonical_code = 6;
+  *   `code` (*type:* `integer()`, *default:* `nil`) - Numeric code drawn from the space specified below. Often, this is the canonical error space, and code is drawn from google3/util/task/codes.proto copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional int32 code = 1;
   *   `message` (*type:* `String.t`, *default:* `nil`) - Detail message copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional string message = 3;
   *   `messageSet` (*type:* `GoogleApi.Firebase.V1beta1.Model.MessageSet.t`, *default:* `nil`) - message_set associates an arbitrary proto message with the status. copybara:strip_begin(b/383363683) copybara:strip_end_and_replace optional proto2.bridge.MessageSet message_set = 5;
   *   `space` (*type:* `String.t`, *default:* `nil`) - The following are usually only present when code != 0 Space to which this status belongs
