@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.DeleteDimensionRequest do
   @moduledoc """
-  Deletes the dimensions from the sheet.
+   Deletes the dimensions from the sheet.
 
   ## Attributes
 
