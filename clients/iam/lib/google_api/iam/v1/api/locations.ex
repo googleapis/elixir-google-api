@@ -360,7 +360,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -997,7 +997,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of the provider. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the provider. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

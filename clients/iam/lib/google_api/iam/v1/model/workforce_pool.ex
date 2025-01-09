@@ -26,7 +26,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkforcePool do
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Disables the workforce pool. You cannot use a disabled pool to exchange tokens, or use existing tokens to access resources. If the pool is re-enabled, existing tokens grant access again.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A user-specified display name of the pool in Google Cloud Console. Cannot exceed 32 characters.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time after which the workforce pool will be permanently purged and cannot be recovered.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the parent. Format: `organizations/{org-id}`.
   *   `sessionDuration` (*type:* `String.t`, *default:* `nil`) - Optional. Duration that the Google Cloud access tokens, console sign-in sessions, and `gcloud` sign-in sessions from this pool are valid. Must be greater than 15 minutes (900s) and less than 12 hours (43200s). If `session_duration` is not configured, minted credentials have a default duration of one hour (3600s). For SAML providers, the lifetime of the token is the minimum of the `session_duration` and the `SessionNotOnOrAfter` claim in the SAML assertion.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the pool.

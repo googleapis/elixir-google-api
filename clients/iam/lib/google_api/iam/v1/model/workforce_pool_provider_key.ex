@@ -23,7 +23,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkforcePoolProviderKey do
 
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time after which the key will be permanently deleted and cannot be recovered. Note that the key may get purged before this time if the total limit of keys per provider is exceeded.
   *   `keyData` (*type:* `GoogleApi.IAM.V1.Model.KeyData.t`, *default:* `nil`) - Immutable. Public half of the asymmetric key.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the key.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the key. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}/keys/{key_id}`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the key.
   *   `use` (*type:* `String.t`, *default:* `nil`) - Required. The purpose of the key.
   """
