@@ -95,6 +95,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `productHighlights` (*type:* `list(String.t)`, *default:* `nil`) - Bullet points describing the most relevant highlights of a product.
   *   `sizeType` (*type:* `String.t`, *default:* `nil`) - The cut of the item. Recommended for apparel items.
   *   `customAttributes` (*type:* `list(GoogleApi.Content.V21.Model.CustomAttribute.t)`, *default:* `nil`) - A list of custom (merchant-provided) attributes. It can also be used for submitting any attribute of the feed specification in its generic form (for example, `{ "name": "size type", "value": "regular" }`). This is useful for submitting attributes not explicitly exposed by the API, such as additional attributes used for Buy on Google (formerly known as Shopping Actions).
+  *   `sustainabilityIncentives` (*type:* `list(GoogleApi.Content.V21.Model.ProductSustainabilityIncentive.t)`, *default:* `nil`) - Optional. The list of sustainability incentive programs.
   *   `pickupSla` (*type:* `String.t`, *default:* `nil`) - Item store pickup timeline. Acceptable values are: - "`same day`" - "`next day`" - "`2-day`" - "`3-day`" - "`4-day`" - "`5-day`" - "`6-day`" - "`7-day`" - "`multi-week`" 
   *   `expirationDate` (*type:* `String.t`, *default:* `nil`) - Date on which the item should expire, as specified upon insertion, in ISO 8601 format. The actual expiration date in Google Shopping is exposed in `productstatuses` as `googleExpirationDate` and might be earlier if `expirationDate` is too far in the future.
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Required. The item's channel (online or local). Acceptable values are: - "`local`" - "`online`" 
@@ -205,6 +206,8 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :productHighlights => list(String.t()) | nil,
           :sizeType => String.t() | nil,
           :customAttributes => list(GoogleApi.Content.V21.Model.CustomAttribute.t()) | nil,
+          :sustainabilityIncentives =>
+            list(GoogleApi.Content.V21.Model.ProductSustainabilityIncentive.t()) | nil,
           :pickupSla => String.t() | nil,
           :expirationDate => String.t() | nil,
           :channel => String.t() | nil,
@@ -317,6 +320,12 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:productHighlights, type: :list)
   field(:sizeType)
   field(:customAttributes, as: GoogleApi.Content.V21.Model.CustomAttribute, type: :list)
+
+  field(:sustainabilityIncentives,
+    as: GoogleApi.Content.V21.Model.ProductSustainabilityIncentive,
+    type: :list
+  )
+
   field(:pickupSla)
   field(:expirationDate)
   field(:channel)

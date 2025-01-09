@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaData
 
   ## Attributes
 
-  *   `eventDataRetention` (*type:* `String.t`, *default:* `nil`) - The length of time that event-level data is retained.
+  *   `eventDataRetention` (*type:* `String.t`, *default:* `nil`) - Required. The length of time that event-level data is retained.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name for this DataRetentionSetting resource. Format: properties/{property}/dataRetentionSettings
   *   `resetUserDataOnNewActivity` (*type:* `boolean()`, *default:* `nil`) - If true, reset the retention period for the user identifier with every event from that user.
   """

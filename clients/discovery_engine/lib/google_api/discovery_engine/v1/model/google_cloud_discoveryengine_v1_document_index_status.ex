@@ -23,17 +23,20 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Documen
 
   *   `errorSamples` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - A sample of errors encountered while indexing the document. If this field is populated, the document is not indexed due to errors.
   *   `indexTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the document was indexed. If this field is populated, it means the document has been indexed.
+  *   `pendingMessage` (*type:* `String.t`, *default:* `nil`) - Immutable. The message indicates the document index is in progress. If this field is populated, the document index is pending.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :errorSamples => list(GoogleApi.DiscoveryEngine.V1.Model.GoogleRpcStatus.t()) | nil,
-          :indexTime => DateTime.t() | nil
+          :indexTime => DateTime.t() | nil,
+          :pendingMessage => String.t() | nil
         }
 
   field(:errorSamples, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleRpcStatus, type: :list)
   field(:indexTime, as: DateTime)
+  field(:pendingMessage)
 end
 
 defimpl Poison.Decoder,

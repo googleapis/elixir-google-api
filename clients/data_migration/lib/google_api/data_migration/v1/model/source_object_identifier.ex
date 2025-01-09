@@ -21,7 +21,7 @@ defmodule GoogleApi.DataMigration.V1.Model.SourceObjectIdentifier do
 
   ## Attributes
 
-  *   `database` (*type:* `String.t`, *default:* `nil`) - The database name. This will be required only if the object uses a database name as part of its unique identifier.
+  *   `database` (*type:* `String.t`, *default:* `nil`) - Optional. The database name. This will be required only if the object uses a database name as part of its unique identifier.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the migration job object.
   """
 

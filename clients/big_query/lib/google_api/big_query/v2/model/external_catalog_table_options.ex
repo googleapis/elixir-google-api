@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ExternalCatalogTableOptions do
   @moduledoc """
-  Metadata about open source compatible table. The fields contained in these options correspond to hive metastore's table level properties.
+  Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties.
 
   ## Attributes
 
-  *   `connectionId` (*type:* `String.t`, *default:* `nil`) - Optional. The connection specifying the credentials to be used to read external storage, such as Azure Blob, Cloud Storage, or S3. The connection is needed to read the open source table from BigQuery Engine. The connection_id can have the form `..` or `projects//locations//connections/`.
-  *   `parameters` (*type:* `map()`, *default:* `nil`) - Optional. A map of key value pairs defining the parameters and properties of the open source table. Corresponds with hive meta store table parameters. Maximum size of 4Mib.
+  *   `connectionId` (*type:* `String.t`, *default:* `nil`) - Optional. A connection ID that specifies the credentials to be used to read external storage, such as Azure Blob, Cloud Storage, or Amazon S3. This connection is needed to read the open source table from BigQuery. The connection_id format must be either `..` or `projects//locations//connections/`.
+  *   `parameters` (*type:* `map()`, *default:* `nil`) - Optional. A map of the key-value pairs defining the parameters and properties of the open source table. Corresponds with Hive metastore table parameters. Maximum size of 4MiB.
   *   `storageDescriptor` (*type:* `GoogleApi.BigQuery.V2.Model.StorageDescriptor.t`, *default:* `nil`) - Optional. A storage descriptor containing information about the physical storage of this table.
   """
 

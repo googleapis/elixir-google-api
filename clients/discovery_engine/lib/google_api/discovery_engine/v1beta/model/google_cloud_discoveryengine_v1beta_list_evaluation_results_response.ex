@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
-  *   `evaluationResults` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaListEvaluationResultsResponseEvaluationResult.t)`, *default:* `nil`) - The EvaluationResults.
+  *   `evaluationResults` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaListEvaluationResultsResponseEvaluationResult.t)`, *default:* `nil`) - The evaluation results for the SampleQuerys.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as ListEvaluationResultsRequest.page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
   """
 

@@ -23,9 +23,10 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.AuctionPackage do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the auction package was created.
   *   `creator` (*type:* `String.t`, *default:* `nil`) - Output only. The buyer that created this auction package. Format: `buyers/{buyerAccountId}`
+  *   `dealOwnerSeatId` (*type:* `String.t`, *default:* `nil`) - Output only. If set, this field contains the DSP specific seat id set by the media planner account that is considered the owner of this deal. The seat ID is in the calling DSP's namespace.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. A description of the auction package.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display_name assigned to the auction package.
-  *   `eligibleSeatIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. If set, this field contains the list of DSP specific seat ids set by media planners that are eligible to transact on this deal. The seat ID is in the calling DSP's namespace.
+  *   `eligibleSeatIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. If set, this field identifies a seat that the media planner selected as the owner of this auction package. This is a seat ID in the DSP's namespace that was provided to the media planner.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The unique identifier for the auction package. Format: `buyers/{accountId}/auctionPackages/{auctionPackageId}` The auction_package_id part of name is sent in the BidRequest to all RTB bidders and is returned as deal_id by the bidder in the BidResponse.
   *   `subscribedBuyers` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of buyers that are subscribed to the AuctionPackage. This field is only populated when calling as a bidder. Format: `buyers/{buyerAccountId}`
   *   `subscribedClients` (*type:* `list(String.t)`, *default:* `nil`) - Output only. When calling as a buyer, the list of clients of the current buyer that are subscribed to the AuctionPackage. When calling as a bidder, the list of clients that are subscribed to the AuctionPackage owned by the bidder or its buyers. Format: `buyers/{buyerAccountId}/clients/{clientAccountId}`
@@ -38,6 +39,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.AuctionPackage do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :creator => String.t() | nil,
+          :dealOwnerSeatId => String.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :eligibleSeatIds => list(String.t()) | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.AuctionPackage do
 
   field(:createTime, as: DateTime)
   field(:creator)
+  field(:dealOwnerSeatId)
   field(:description)
   field(:displayName)
   field(:eligibleSeatIds, type: :list)

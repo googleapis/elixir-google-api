@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Conversation
   *   `conversation` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier of the conversation this notification refers to. Format: `projects//conversations/`.
   *   `errorStatus` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Optional. More detailed information about an error. Only set for type UNRECOVERABLE_ERROR_IN_PHONE_CALL.
   *   `newMessagePayload` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Message.t`, *default:* `nil`) - Payload of NEW_MESSAGE event.
+  *   `newRecognitionResultPayload` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1StreamingRecognitionResult.t`, *default:* `nil`) - Payload of NEW_RECOGNITION_RESULT event.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the event that this notification refers to.
   """
 
@@ -34,12 +35,20 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Conversation
           :errorStatus => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t() | nil,
           :newMessagePayload =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Message.t() | nil,
+          :newRecognitionResultPayload =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1StreamingRecognitionResult.t()
+            | nil,
           :type => String.t() | nil
         }
 
   field(:conversation)
   field(:errorStatus, as: GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus)
   field(:newMessagePayload, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Message)
+
+  field(:newRecognitionResultPayload,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1StreamingRecognitionResult
+  )
+
   field(:type)
 end
 

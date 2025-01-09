@@ -27,7 +27,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.HttpRequest do
   *   `cacheValidatedWithOriginServer` (*type:* `boolean()`, *default:* `nil`) - Whether or not the response was validated with the origin server before being served from cache. This field is only meaningful if `cache_hit` is True.
   *   `latency` (*type:* `String.t`, *default:* `nil`) - The request processing latency on the server, from the time the request was received until the response was sent.
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - Protocol used for the request. Examples: "HTTP/1.1", "HTTP/2", "websocket"
-  *   `referer` (*type:* `String.t`, *default:* `nil`) - The referer URL of the request, as defined in [HTTP/1.1 Header Field Definitions](http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
+  *   `referer` (*type:* `String.t`, *default:* `nil`) - The referer URL of the request, as defined in [HTTP/1.1 Header Field Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
   *   `remoteIp` (*type:* `String.t`, *default:* `nil`) - The IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples: `"192.168.1.1"`, `"FE80::0202:B3FF:FE1E:8329"`.
   *   `requestMethod` (*type:* `String.t`, *default:* `nil`) - The request method. Examples: `"GET"`, `"HEAD"`, `"PUT"`, `"POST"`.
   *   `requestSize` (*type:* `String.t`, *default:* `nil`) - The size of the HTTP request message in bytes, including the request headers and the request body.

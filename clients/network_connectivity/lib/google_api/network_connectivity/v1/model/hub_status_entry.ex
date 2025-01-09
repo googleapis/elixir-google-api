@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.HubStatusEntry do
   @moduledoc """
-  The hub status entry.
+  A hub status entry represents the status of a set of propagated Private Service Connect connections grouped by certain fields.
 
   ## Attributes
 
-  *   `count` (*type:* `integer()`, *default:* `nil`) - The number of status. If group_by is not set in the request, the default is 1.
-  *   `groupBy` (*type:* `String.t`, *default:* `nil`) - The same group_by field from the request.
-  *   `pscPropagationStatus` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.PscPropagationStatus.t`, *default:* `nil`) - The PSC propagation status.
+  *   `count` (*type:* `integer()`, *default:* `nil`) - The number of propagated Private Service Connect connections with this status. If the `group_by` field was not set in the request message, the value of this field is 1.
+  *   `groupBy` (*type:* `String.t`, *default:* `nil`) - The fields that this entry is grouped by. This has the same value as the `group_by` field in the request message.
+  *   `pscPropagationStatus` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.PscPropagationStatus.t`, *default:* `nil`) - The Private Service Connect propagation status.
   """
 
   use GoogleApi.Gax.ModelBase

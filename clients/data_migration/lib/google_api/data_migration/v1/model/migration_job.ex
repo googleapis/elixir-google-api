@@ -41,6 +41,8 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   *   `performanceConfig` (*type:* `GoogleApi.DataMigration.V1.Model.PerformanceConfig.t`, *default:* `nil`) - Optional. Data dump parallelism settings used by the migration.
   *   `phase` (*type:* `String.t`, *default:* `nil`) - Output only. The current migration job phase.
   *   `reverseSshConnectivity` (*type:* `GoogleApi.DataMigration.V1.Model.ReverseSshConnectivity.t`, *default:* `nil`) - The details needed to communicate to the source over Reverse SSH tunnel connectivity.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Zone Isolation compliance state of the resource.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Zone Separation compliance state of the resource.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Required. The resource name (URI) of the source connection profile.
   *   `sourceDatabase` (*type:* `GoogleApi.DataMigration.V1.Model.DatabaseType.t`, *default:* `nil`) - The database engine type and provider of the source.
   *   `sqlserverHomogeneousMigrationJobConfig` (*type:* `GoogleApi.DataMigration.V1.Model.SqlServerHomogeneousMigrationJobConfig.t`, *default:* `nil`) - Optional. Configuration for SQL Server homogeneous migration.
@@ -77,6 +79,8 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
           :phase => String.t() | nil,
           :reverseSshConnectivity =>
             GoogleApi.DataMigration.V1.Model.ReverseSshConnectivity.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :source => String.t() | nil,
           :sourceDatabase => GoogleApi.DataMigration.V1.Model.DatabaseType.t() | nil,
           :sqlserverHomogeneousMigrationJobConfig =>
@@ -110,6 +114,8 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   field(:performanceConfig, as: GoogleApi.DataMigration.V1.Model.PerformanceConfig)
   field(:phase)
   field(:reverseSshConnectivity, as: GoogleApi.DataMigration.V1.Model.ReverseSshConnectivity)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:source)
   field(:sourceDatabase, as: GoogleApi.DataMigration.V1.Model.DatabaseType)
 

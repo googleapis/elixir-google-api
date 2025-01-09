@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBindingOperationMetadata do
   @moduledoc """
-  Metadata of GCP Access Binding Long Running Operations.
+  Metadata of Google Cloud Access Binding Long Running Operations.
 
   ## Attributes
 

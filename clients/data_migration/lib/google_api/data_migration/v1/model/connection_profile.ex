@@ -33,6 +33,8 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
   *   `postgresql` (*type:* `GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile.t`, *default:* `nil`) - A PostgreSQL database connection profile.
   *   `provider` (*type:* `String.t`, *default:* `nil`) - The database provider.
   *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. The connection profile role.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Zone Isolation compliance state of the resource.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Zone Separation compliance state of the resource.
   *   `sqlserver` (*type:* `GoogleApi.DataMigration.V1.Model.SqlServerConnectionProfile.t`, *default:* `nil`) - Connection profile for a SQL Server data source.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current connection profile state (e.g. DRAFT, READY, or FAILED).
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
@@ -53,6 +55,8 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
           :postgresql => GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile.t() | nil,
           :provider => String.t() | nil,
           :role => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :sqlserver => GoogleApi.DataMigration.V1.Model.SqlServerConnectionProfile.t() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -70,6 +74,8 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
   field(:postgresql, as: GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile)
   field(:provider)
   field(:role)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:sqlserver, as: GoogleApi.DataMigration.V1.Model.SqlServerConnectionProfile)
   field(:state)
   field(:updateTime, as: DateTime)

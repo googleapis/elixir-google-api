@@ -4304,7 +4304,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
   end
 
   @doc """
-  Writes a single user event from the browser. This uses a GET request to due to browser restriction of POST-ing to a 3rd party domain. This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users should not call this method directly.
+  Writes a single user event from the browser. For larger user event payload over 16 KB, the POST method should be used instead, otherwise a 400 Bad Request error is returned. This method is used only by the Retail API JavaScript pixel and Google Tag Manager. Users should not call this method directly.
 
   ## Parameters
 
@@ -4322,11 +4322,7 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ets` (*type:* `String.t`) - The event timestamp in milliseconds. This prevents browser caching of otherwise identical get requests. The name is abbreviated to reduce the payload bytes.
-      *   `:prebuiltRule` (*type:* `String.t`) - The prebuilt rule name that can convert a specific type of raw_json. For example: "ga4_bq" rule for the GA4 user event schema.
-      *   `:rawJson` (*type:* `String.t`) - An arbitrary serialized JSON string that contains necessary information that can comprise a user event. When this field is specified, the user_event field will be ignored. Note: line-delimited JSON is not supported, a single JSON only.
-      *   `:uri` (*type:* `String.t`) - The URL including cgi-parameters but excluding the hash fragment with a length limit of 5,000 characters. This is often more useful than the referer URL, because many browsers only send the domain for 3rd party requests.
-      *   `:userEvent` (*type:* `String.t`) - Required. URL encoded UserEvent proto with a length limit of 2,000,000 characters.
+      *   `:body` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CollectUserEventRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4362,16 +4358,12 @@ defmodule GoogleApi.Retail.V2.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :ets => :query,
-      :prebuiltRule => :query,
-      :rawJson => :query,
-      :uri => :query,
-      :userEvent => :query
+      :body => :body
     }
 
     request =
       Request.new()
-      |> Request.method(:get)
+      |> Request.method(:post)
       |> Request.url("/v2/{+parent}/userEvents:collect", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })

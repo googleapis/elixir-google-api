@@ -21,7 +21,7 @@ defmodule GoogleApi.DataMigration.V1.Model.SourceObjectsConfig do
 
   ## Attributes
 
-  *   `objectConfigs` (*type:* `list(GoogleApi.DataMigration.V1.Model.SourceObjectConfig.t)`, *default:* `nil`) - The list of the objects to be migrated.
+  *   `objectConfigs` (*type:* `list(GoogleApi.DataMigration.V1.Model.SourceObjectConfig.t)`, *default:* `nil`) - Optional. The list of the objects to be migrated.
   *   `objectsSelectionType` (*type:* `String.t`, *default:* `nil`) - Optional. The objects selection type of the migration job.
   """
 

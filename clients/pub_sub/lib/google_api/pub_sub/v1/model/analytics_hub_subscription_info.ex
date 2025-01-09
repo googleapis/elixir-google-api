@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PubSub.V1.Model.AnalyticsHubSubscriptionInfo do
   @moduledoc """
-  Information about an associated Analytics Hub subscription (https://cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions).
+  Information about an associated [Analytics Hub subscription](https://cloud.google.com/bigquery/docs/analytics-hub-manage-subscriptions).
 
   ## Attributes
 

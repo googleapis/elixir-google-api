@@ -21,28 +21,34 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action do
 
   ## Attributes
 
+  *   `allWidgetsAreRequired` (*type:* `boolean()`, *default:* `nil`) - Optional. If this is true, then all widgets are considered required by this action. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
   *   `function` (*type:* `String.t`, *default:* `nil`) - A custom function to invoke when the containing element is clicked or otherwise activated. For example usage, see [Read form data](https://developers.google.com/workspace/chat/read-form-data).
   *   `interaction` (*type:* `String.t`, *default:* `nil`) - Optional. Required when opening a [dialog](https://developers.google.com/workspace/chat/dialogs). What to do in response to an interaction with a user, such as a user clicking a button in a card message. If unspecified, the app responds by executing an `action`—like opening a link or running a function—as normal. By specifying an `interaction`, the app can respond in special interactive ways. For example, by setting `interaction` to `OPEN_DIALOG`, the app can open a [dialog](https://developers.google.com/workspace/chat/dialogs). When specified, a loading indicator isn't shown. If specified for an add-on, the entire card is stripped and nothing is shown in the client. [Google Chat apps](https://developers.google.com/workspace/chat):
   *   `loadIndicator` (*type:* `String.t`, *default:* `nil`) - Specifies the loading indicator that the action displays while making the call to the action.
   *   `parameters` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1ActionParameter.t)`, *default:* `nil`) - List of action parameters.
   *   `persistValues` (*type:* `boolean()`, *default:* `nil`) - Indicates whether form values persist after the action. The default value is `false`. If `true`, form values remain after the action is triggered. To let the user make changes while the action is being processed, set [`LoadIndicator`](https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1#loadindicator) to `NONE`. For [card messages](https://developers.google.com/workspace/chat/api/guides/v1/messages/create#create) in Chat apps, you must also set the action's [`ResponseType`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages#responsetype) to `UPDATE_MESSAGE` and use the same [`card_id`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages#CardWithId) from the card that contained the action. If `false`, the form values are cleared when the action is triggered. To prevent the user from making changes while the action is being processed, set [`LoadIndicator`](https://developers.google.com/workspace/add-ons/reference/rpc/google.apps.card.v1#loadindicator) to `SPINNER`.
+  *   `requiredWidgets` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Fill this list with the names of widgets that this Action needs for a valid submission. If the widgets listed here don't have a value when this Action is invoked, the form submission is aborted. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allWidgetsAreRequired => boolean() | nil,
           :function => String.t() | nil,
           :interaction => String.t() | nil,
           :loadIndicator => String.t() | nil,
           :parameters => list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1ActionParameter.t()) | nil,
-          :persistValues => boolean() | nil
+          :persistValues => boolean() | nil,
+          :requiredWidgets => list(String.t()) | nil
         }
 
+  field(:allWidgetsAreRequired)
   field(:function)
   field(:interaction)
   field(:loadIndicator)
   field(:parameters, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1ActionParameter, type: :list)
   field(:persistValues)
+  field(:requiredWidgets, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action do

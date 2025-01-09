@@ -20,7 +20,7 @@ defmodule GoogleApi.Places.V1 do
   API client metadata for GoogleApi.Places.V1.
   """
 
-  @discovery_revision "20241117"
+  @discovery_revision "20241231"
 
   def discovery_revision(), do: @discovery_revision
 end

@@ -18,7 +18,7 @@
 defmodule GoogleApi.ChromeManagement.Mixfile do
   use Mix.Project
 
-  @version "0.10.0"
+  @version "0.11.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.ChromeManagement.Mixfile do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/chrome_management",
-        "Homepage" => "http://developers.google.com/chrome/management/"
+        "Homepage" => "https://developers.google.com/chrome/management/"
       }
     ]
   end

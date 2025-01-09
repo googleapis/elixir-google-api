@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1CollapseControl do
   @moduledoc """
-  Represent an expand and collapse control. [Google Chat apps](https://developers.google.com/workspace/chat):
+  Represent an expand and collapse control. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 

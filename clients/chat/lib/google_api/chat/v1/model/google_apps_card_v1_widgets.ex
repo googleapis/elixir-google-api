@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widgets do
   ## Attributes
 
   *   `buttonList` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ButtonList.t`, *default:* `nil`) - ButtonList widget.
-  *   `chipList` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList.t`, *default:* `nil`) - ChipList widget. [Google Chat apps](https://developers.google.com/workspace/chat):
+  *   `chipList` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ChipList.t`, *default:* `nil`) - ChipList widget.
   *   `dateTimePicker` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1DateTimePicker.t`, *default:* `nil`) - DateTimePicker widget.
   *   `decoratedText` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1DecoratedText.t`, *default:* `nil`) - DecoratedText widget.
   *   `image` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Image.t`, *default:* `nil`) - Image widget.
