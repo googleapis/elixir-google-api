@@ -28,7 +28,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkforcePoolProvider do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A user-specified display name for the provider. Cannot exceed 32 characters.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time after which the workload pool provider will be permanently purged and cannot be recovered.
   *   `extraAttributesOauth2Client` (*type:* `GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderExtraAttributesOAuth2Client.t`, *default:* `nil`) - Optional. The configuration for OAuth 2.0 client used to get the additional user attributes. This should be used when users can't get the desired claims in authentication credentials. Currently this configuration is only supported with OIDC protocol.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the provider. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the provider. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
   *   `oidc` (*type:* `GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidc.t`, *default:* `nil`) - An OpenId Connect 1.0 identity provider configuration.
   *   `saml` (*type:* `GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderSaml.t`, *default:* `nil`) - A SAML identity provider configuration.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the provider.
