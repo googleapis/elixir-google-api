@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
   @moduledoc """
-  An update to a Counter sent from a worker.
+  An update to a Counter sent from a worker. Next ID: 17
 
   ## Attributes
 
   *   `boolean` (*type:* `boolean()`, *default:* `nil`) - Boolean value for And, Or.
+  *   `boundedTrie` (*type:* `GoogleApi.Dataflow.V1b3.Model.BoundedTrie.t`, *default:* `nil`) - Bounded trie data
   *   `cumulative` (*type:* `boolean()`, *default:* `nil`) - True if this counter is reported as the total cumulative aggregate value accumulated since the worker started working on this WorkItem. By default this is false, indicating that this counter is reported as a delta.
   *   `distribution` (*type:* `GoogleApi.Dataflow.V1b3.Model.DistributionUpdate.t`, *default:* `nil`) - Distribution data
   *   `floatingPoint` (*type:* `float()`, *default:* `nil`) - Floating point value for Sum, Max, Min.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
 
   @type t :: %__MODULE__{
           :boolean => boolean() | nil,
+          :boundedTrie => GoogleApi.Dataflow.V1b3.Model.BoundedTrie.t() | nil,
           :cumulative => boolean() | nil,
           :distribution => GoogleApi.Dataflow.V1b3.Model.DistributionUpdate.t() | nil,
           :floatingPoint => float() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.CounterUpdate do
         }
 
   field(:boolean)
+  field(:boundedTrie, as: GoogleApi.Dataflow.V1b3.Model.BoundedTrie)
   field(:cumulative)
   field(:distribution, as: GoogleApi.Dataflow.V1b3.Model.DistributionUpdate)
   field(:floatingPoint)

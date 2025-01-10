@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
   @moduledoc """
-  Describes the state of a metric.
+  Describes the state of a metric. Next ID: 14
 
   ## Attributes
 
@@ -30,7 +30,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
   *   `meanSum` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Mean" aggregation kind. This holds the sum of the aggregated values and is used in combination with mean_count below to obtain the actual mean aggregate value. The only possible value types are Long and Double.
   *   `name` (*type:* `GoogleApi.Dataflow.V1b3.Model.MetricStructuredName.t`, *default:* `nil`) - Name of the metric.
   *   `scalar` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for aggregation kinds "Sum", "Max", "Min", "And", and "Or". The possible value types are Long, Double, and Boolean.
-  *   `set` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Set" aggregation kind. The only possible value type is a list of Values whose type can be Long, Double, or String, according to the metric's type. All Values in the list must be of the same type.
+  *   `set` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Set" aggregation kind. The only possible value type is a list of Values whose type can be Long, Double, String, or BoundedTrie according to the metric's type. All Values in the list must be of the same type.
+  *   `trie` (*type:* `any()`, *default:* `nil`) - Worker-computed aggregate value for the "Trie" aggregation kind. The only possible value type is a BoundedTrieNode.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp associated with the metric value. Optional when workers are reporting work progress; it will be filled in responses from the metrics API.
   """
 
@@ -47,6 +48,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
           :name => GoogleApi.Dataflow.V1b3.Model.MetricStructuredName.t() | nil,
           :scalar => any() | nil,
           :set => any() | nil,
+          :trie => any() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -60,6 +62,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
   field(:name, as: GoogleApi.Dataflow.V1b3.Model.MetricStructuredName)
   field(:scalar)
   field(:set)
+  field(:trie)
   field(:updateTime, as: DateTime)
 end
 
