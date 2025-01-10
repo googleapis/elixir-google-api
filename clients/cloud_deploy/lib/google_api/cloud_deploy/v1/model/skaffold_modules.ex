@@ -22,9 +22,9 @@ defmodule GoogleApi.CloudDeploy.V1.Model.SkaffoldModules do
   ## Attributes
 
   *   `configs` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Skaffold Config modules to use from the specified source.
-  *   `git` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGitSource.t`, *default:* `nil`) - Remote git repository containing the Skaffold Config modules.
-  *   `googleCloudBuildRepo` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGCBRepoSource.t`, *default:* `nil`) - Cloud Build V2 repository containing the Skaffold Config modules.
-  *   `googleCloudStorage` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGCSSource.t`, *default:* `nil`) - Cloud Storage bucket containing the Skaffold Config modules.
+  *   `git` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGitSource.t`, *default:* `nil`) - Optional. Remote git repository containing the Skaffold Config modules.
+  *   `googleCloudBuildRepo` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGCBRepoSource.t`, *default:* `nil`) - Optional. Cloud Build V2 repository containing the Skaffold Config modules.
+  *   `googleCloudStorage` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGCSSource.t`, *default:* `nil`) - Optional. Cloud Storage bucket containing the Skaffold Config modules.
   """
 
   use GoogleApi.Gax.ModelBase

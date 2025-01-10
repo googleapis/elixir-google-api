@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.KubernetesConfig do
 
   ## Attributes
 
-  *   `gatewayServiceMesh` (*type:* `GoogleApi.CloudDeploy.V1.Model.GatewayServiceMesh.t`, *default:* `nil`) - Kubernetes Gateway API service mesh configuration.
-  *   `serviceNetworking` (*type:* `GoogleApi.CloudDeploy.V1.Model.ServiceNetworking.t`, *default:* `nil`) - Kubernetes Service networking configuration.
+  *   `gatewayServiceMesh` (*type:* `GoogleApi.CloudDeploy.V1.Model.GatewayServiceMesh.t`, *default:* `nil`) - Optional. Kubernetes Gateway API service mesh configuration.
+  *   `serviceNetworking` (*type:* `GoogleApi.CloudDeploy.V1.Model.ServiceNetworking.t`, *default:* `nil`) - Optional. Kubernetes Service networking configuration.
   """
 
   use GoogleApi.Gax.ModelBase

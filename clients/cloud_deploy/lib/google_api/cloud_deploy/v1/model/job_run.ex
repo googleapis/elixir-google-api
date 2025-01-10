@@ -28,7 +28,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.JobRun do
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `JobRun` ended.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the `Rollout` job this `JobRun` corresponds to.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `JobRun`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the `JobRun`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
   *   `phaseId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the `Rollout` phase this `JobRun` belongs in.
   *   `postdeployJobRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.PostdeployJobRun.t`, *default:* `nil`) - Output only. Information specific to a postdeploy `JobRun`.
   *   `predeployJobRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.PredeployJobRun.t`, *default:* `nil`) - Output only. Information specific to a predeploy `JobRun`.

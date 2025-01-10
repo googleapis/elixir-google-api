@@ -25,8 +25,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.PhaseConfig do
   *   `phaseId` (*type:* `String.t`, *default:* `nil`) - Required. The ID to assign to the `Rollout` phase. This value must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
   *   `postdeploy` (*type:* `GoogleApi.CloudDeploy.V1.Model.Postdeploy.t`, *default:* `nil`) - Optional. Configuration for the postdeploy job of this phase. If this is not configured, there will be no postdeploy job for this phase.
   *   `predeploy` (*type:* `GoogleApi.CloudDeploy.V1.Model.Predeploy.t`, *default:* `nil`) - Optional. Configuration for the predeploy job of this phase. If this is not configured, there will be no predeploy job for this phase.
-  *   `profiles` (*type:* `list(String.t)`, *default:* `nil`) - Skaffold profiles to use when rendering the manifest for this phase. These are in addition to the profiles list specified in the `DeliveryPipeline` stage.
-  *   `verify` (*type:* `boolean()`, *default:* `nil`) - Whether to run verify tests after the deployment.
+  *   `profiles` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Skaffold profiles to use when rendering the manifest for this phase. These are in addition to the profiles list specified in the `DeliveryPipeline` stage.
+  *   `verify` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to run verify tests after the deployment.
   """
 
   use GoogleApi.Gax.ModelBase

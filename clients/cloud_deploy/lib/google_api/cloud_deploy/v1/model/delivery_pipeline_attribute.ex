@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeliveryPipelineAttribute do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the `DeliveryPipeline`. The value of this field could be one of the following: * The last segment of a pipeline name * "*", all delivery pipelines in a location
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. ID of the `DeliveryPipeline`. The value of this field could be one of the following: * The last segment of a pipeline name * "*", all delivery pipelines in a location
   *   `labels` (*type:* `map()`, *default:* `nil`) - DeliveryPipeline labels.
   """
 
