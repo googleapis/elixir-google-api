@@ -25,6 +25,7 @@ defmodule GoogleApi.Datastream.V1.Model.PostgresqlProfile do
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the PostgreSQL connection.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the PostgreSQL connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the PostgreSQL connection, default value is 5432.
+  *   `sslConfig` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlSslConfig.t`, *default:* `nil`) - Optional. SSL configuration for the PostgreSQL connection. In case PostgresqlSslConfig is not set, the connection will use the default SSL mode, which is `prefer` (i.e. this mode will only use encryption if enabled from database side, otherwise will use unencrypted communication)
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the PostgreSQL connection.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Datastream.V1.Model.PostgresqlProfile do
           :hostname => String.t() | nil,
           :password => String.t() | nil,
           :port => integer() | nil,
+          :sslConfig => GoogleApi.Datastream.V1.Model.PostgresqlSslConfig.t() | nil,
           :username => String.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Datastream.V1.Model.PostgresqlProfile do
   field(:hostname)
   field(:password)
   field(:port)
+  field(:sslConfig, as: GoogleApi.Datastream.V1.Model.PostgresqlSslConfig)
   field(:username)
 end
 
