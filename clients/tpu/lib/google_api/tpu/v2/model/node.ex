@@ -35,7 +35,8 @@ defmodule GoogleApi.TPU.V2.Model.Node do
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script
   *   `multisliceNode` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the Node belongs to a Multislice group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The name of the TPU.
-  *   `networkConfig` (*type:* `GoogleApi.TPU.V2.Model.NetworkConfig.t`, *default:* `nil`) - Network configurations for the TPU node.
+  *   `networkConfig` (*type:* `GoogleApi.TPU.V2.Model.NetworkConfig.t`, *default:* `nil`) - Network configurations for the TPU node. network_config and network_configs are mutually exclusive, you can only specify one of them. If both are specified, an error will be returned.
+  *   `networkConfigs` (*type:* `list(GoogleApi.TPU.V2.Model.NetworkConfig.t)`, *default:* `nil`) - Optional. Repeated network configurations for the TPU node. This field is used to specify multiple networks configs for the TPU node. network_config and network_configs are mutually exclusive, you can only specify one of them. If both are specified, an error will be returned.
   *   `networkEndpoints` (*type:* `list(GoogleApi.TPU.V2.Model.NetworkEndpoint.t)`, *default:* `nil`) - Output only. The network endpoints where TPU workers can be accessed and sent work. It is recommended that runtime clients of the node reach out to the 0th entry in this map first.
   *   `queuedResource` (*type:* `String.t`, *default:* `nil`) - Output only. The qualified name of the QueuedResource that requested this Node.
   *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Required. The runtime version running in the Node.
@@ -65,6 +66,7 @@ defmodule GoogleApi.TPU.V2.Model.Node do
           :multisliceNode => boolean() | nil,
           :name => String.t() | nil,
           :networkConfig => GoogleApi.TPU.V2.Model.NetworkConfig.t() | nil,
+          :networkConfigs => list(GoogleApi.TPU.V2.Model.NetworkConfig.t()) | nil,
           :networkEndpoints => list(GoogleApi.TPU.V2.Model.NetworkEndpoint.t()) | nil,
           :queuedResource => String.t() | nil,
           :runtimeVersion => String.t() | nil,
@@ -91,6 +93,7 @@ defmodule GoogleApi.TPU.V2.Model.Node do
   field(:multisliceNode)
   field(:name)
   field(:networkConfig, as: GoogleApi.TPU.V2.Model.NetworkConfig)
+  field(:networkConfigs, as: GoogleApi.TPU.V2.Model.NetworkConfig, type: :list)
   field(:networkEndpoints, as: GoogleApi.TPU.V2.Model.NetworkEndpoint, type: :list)
   field(:queuedResource)
   field(:runtimeVersion)
