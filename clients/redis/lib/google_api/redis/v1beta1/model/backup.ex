@@ -26,6 +26,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Backup do
   *   `cluster` (*type:* `String.t`, *default:* `nil`) - Output only. Cluster resource path of this backup.
   *   `clusterUid` (*type:* `String.t`, *default:* `nil`) - Output only. Cluster uid of this backup.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the backup was created.
+  *   `encryptionInfo` (*type:* `GoogleApi.Redis.V1beta1.Model.EncryptionInfo.t`, *default:* `nil`) - Output only. Encryption information of the backup.
   *   `engineVersion` (*type:* `String.t`, *default:* `nil`) - Output only. redis-7.2, valkey-7.5
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the backup will expire.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Full resource path of the backup. the last part of the name is the backup id with the following format: [YYYYMMDDHHMMSS]_[Shorted Cluster UID] OR customer specified while backup cluster. Example: 20240515123000_1234
@@ -45,6 +46,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Backup do
           :cluster => String.t() | nil,
           :clusterUid => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :encryptionInfo => GoogleApi.Redis.V1beta1.Model.EncryptionInfo.t() | nil,
           :engineVersion => String.t() | nil,
           :expireTime => DateTime.t() | nil,
           :name => String.t() | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Backup do
   field(:cluster)
   field(:clusterUid)
   field(:createTime, as: DateTime)
+  field(:encryptionInfo, as: GoogleApi.Redis.V1beta1.Model.EncryptionInfo)
   field(:engineVersion)
   field(:expireTime, as: DateTime)
   field(:name)
