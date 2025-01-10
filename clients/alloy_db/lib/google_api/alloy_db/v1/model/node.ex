@@ -21,10 +21,10 @@ defmodule GoogleApi.AlloyDB.V1.Model.Node do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
-  *   `ip` (*type:* `String.t`, *default:* `nil`) - The private IP address of the VM e.g. "10.57.0.34".
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Determined by state of the compute VM and postgres-service health. Compute VM state can have values listed in https://cloud.google.com/compute/docs/instances/instance-life-cycle and postgres-service health can have values: HEALTHY and UNHEALTHY.
-  *   `zoneId` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone of the VM e.g. "us-central1-b".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The identifier of the VM e.g. "test-read-0601-407e52be-ms3l".
+  *   `ip` (*type:* `String.t`, *default:* `nil`) - Output only. The private IP address of the VM e.g. "10.57.0.34".
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Determined by state of the compute VM and postgres-service health. Compute VM state can have values listed in https://cloud.google.com/compute/docs/instances/instance-life-cycle and postgres-service health can have values: HEALTHY and UNHEALTHY.
+  *   `zoneId` (*type:* `String.t`, *default:* `nil`) - Output only. The Compute Engine zone of the VM e.g. "us-central1-b".
   """
 
   use GoogleApi.Gax.ModelBase
