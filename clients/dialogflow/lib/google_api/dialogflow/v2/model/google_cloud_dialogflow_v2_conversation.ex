@@ -28,6 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The unique identifier of this conversation. Format: `projects//locations//conversations/`.
   *   `phoneNumber` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationPhoneNumber.t`, *default:* `nil`) - Output only. It will not be empty if the conversation is to be connected over telephony.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the conversation was started.
+  *   `telephonyConnectionInfo` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationTelephonyConnectionInfo.t`, *default:* `nil`) - Output only. The telephony connection information.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,7 +41,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation do
           :name => String.t() | nil,
           :phoneNumber =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationPhoneNumber.t() | nil,
-          :startTime => DateTime.t() | nil
+          :startTime => DateTime.t() | nil,
+          :telephonyConnectionInfo =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationTelephonyConnectionInfo.t()
+            | nil
         }
 
   field(:conversationProfile)
@@ -54,6 +58,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation do
   )
 
   field(:startTime, as: DateTime)
+
+  field(:telephonyConnectionInfo,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationTelephonyConnectionInfo
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation do
