@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationResourceSelector do
 
   ## Attributes
 
-  *   `targets` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.TargetAttribute.t)`, *default:* `nil`) - Contains attributes about a target.
+  *   `targets` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.TargetAttribute.t)`, *default:* `nil`) - Optional. Contains attributes about a target.
   """
 
   use GoogleApi.Gax.ModelBase

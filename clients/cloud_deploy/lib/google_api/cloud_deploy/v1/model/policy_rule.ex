@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.PolicyRule do
 
   ## Attributes
 
-  *   `rolloutRestriction` (*type:* `GoogleApi.CloudDeploy.V1.Model.RolloutRestriction.t`, *default:* `nil`) - Rollout restrictions.
+  *   `rolloutRestriction` (*type:* `GoogleApi.CloudDeploy.V1.Model.RolloutRestriction.t`, *default:* `nil`) - Optional. Rollout restrictions.
   """
 
   use GoogleApi.Gax.ModelBase

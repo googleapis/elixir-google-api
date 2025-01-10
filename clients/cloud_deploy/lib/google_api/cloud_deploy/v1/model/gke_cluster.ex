@@ -22,7 +22,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.GkeCluster do
   ## Attributes
 
   *   `cluster` (*type:* `String.t`, *default:* `nil`) - Optional. Information specifying a GKE Cluster. Format is `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`.
-  *   `internalIp` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, `cluster` is accessed using the private IP address of the control plane endpoint. Otherwise, the default IP address of the control plane endpoint is used. The default IP address is the private IP address for clusters with private control-plane endpoints and the public IP address otherwise. Only specify this option when `cluster` is a [private GKE cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept).
+  *   `dnsEndpoint` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, the cluster will be accessed using the DNS endpoint. Note that both `dns_endpoint` and `internal_ip` cannot be set to true.
+  *   `internalIp` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, `cluster` is accessed using the private IP address of the control plane endpoint. Otherwise, the default IP address of the control plane endpoint is used. The default IP address is the private IP address for clusters with private control-plane endpoints and the public IP address otherwise. Only specify this option when `cluster` is a [private GKE cluster](https://cloud.google.com/kubernetes-engine/docs/concepts/private-cluster-concept). Note that `internal_ip` and `dns_endpoint` cannot both be set to true.
   *   `proxyUrl` (*type:* `String.t`, *default:* `nil`) - Optional. If set, used to configure a [proxy](https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/#proxy) to the Kubernetes server.
   """
 
@@ -30,11 +31,13 @@ defmodule GoogleApi.CloudDeploy.V1.Model.GkeCluster do
 
   @type t :: %__MODULE__{
           :cluster => String.t() | nil,
+          :dnsEndpoint => boolean() | nil,
           :internalIp => boolean() | nil,
           :proxyUrl => String.t() | nil
         }
 
   field(:cluster)
+  field(:dnsEndpoint)
   field(:internalIp)
   field(:proxyUrl)
 end

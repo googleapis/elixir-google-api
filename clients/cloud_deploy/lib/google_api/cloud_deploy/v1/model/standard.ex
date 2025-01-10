@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Standard do
 
   *   `postdeploy` (*type:* `GoogleApi.CloudDeploy.V1.Model.Postdeploy.t`, *default:* `nil`) - Optional. Configuration for the postdeploy job. If this is not configured, postdeploy job will not be present.
   *   `predeploy` (*type:* `GoogleApi.CloudDeploy.V1.Model.Predeploy.t`, *default:* `nil`) - Optional. Configuration for the predeploy job. If this is not configured, predeploy job will not be present.
-  *   `verify` (*type:* `boolean()`, *default:* `nil`) - Whether to verify a deployment.
+  *   `verify` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to verify a deployment.
   """
 
   use GoogleApi.Gax.ModelBase

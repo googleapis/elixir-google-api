@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.BuildArtifact do
 
   ## Attributes
 
-  *   `image` (*type:* `String.t`, *default:* `nil`) - Image name in Skaffold configuration.
-  *   `tag` (*type:* `String.t`, *default:* `nil`) - Image tag to use. This will generally be the full path to an image, such as "gcr.io/my-project/busybox:1.2.3" or "gcr.io/my-project/busybox@sha256:abc123".
+  *   `image` (*type:* `String.t`, *default:* `nil`) - Optional. Image name in Skaffold configuration.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Optional. Image tag to use. This will generally be the full path to an image, such as "gcr.io/my-project/busybox:1.2.3" or "gcr.io/my-project/busybox@sha256:abc123".
   """
 
   use GoogleApi.Gax.ModelBase

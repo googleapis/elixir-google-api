@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.CloudRunConfig do
 
   ## Attributes
 
-  *   `automaticTrafficControl` (*type:* `boolean()`, *default:* `nil`) - Whether Cloud Deploy should update the traffic stanza in a Cloud Run Service on the user's behalf to facilitate traffic splitting. This is required to be true for CanaryDeployments, but optional for CustomCanaryDeployments.
+  *   `automaticTrafficControl` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether Cloud Deploy should update the traffic stanza in a Cloud Run Service on the user's behalf to facilitate traffic splitting. This is required to be true for CanaryDeployments, but optional for CustomCanaryDeployments.
   *   `canaryRevisionTags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of tags that are added to the canary revision while the canary phase is in progress.
   *   `priorRevisionTags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of tags that are added to the prior revision while the canary phase is in progress.
   *   `stableRevisionTags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of tags that are added to the final stable revision when the stable phase is applied.

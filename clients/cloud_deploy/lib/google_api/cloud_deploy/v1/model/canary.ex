@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Canary do
 
   ## Attributes
 
-  *   `canaryDeployment` (*type:* `GoogleApi.CloudDeploy.V1.Model.CanaryDeployment.t`, *default:* `nil`) - Configures the progressive based deployment for a Target.
-  *   `customCanaryDeployment` (*type:* `GoogleApi.CloudDeploy.V1.Model.CustomCanaryDeployment.t`, *default:* `nil`) - Configures the progressive based deployment for a Target, but allows customizing at the phase level where a phase represents each of the percentage deployments.
+  *   `canaryDeployment` (*type:* `GoogleApi.CloudDeploy.V1.Model.CanaryDeployment.t`, *default:* `nil`) - Optional. Configures the progressive based deployment for a Target.
+  *   `customCanaryDeployment` (*type:* `GoogleApi.CloudDeploy.V1.Model.CustomCanaryDeployment.t`, *default:* `nil`) - Optional. Configures the progressive based deployment for a Target, but allows customizing at the phase level where a phase represents each of the percentage deployments.
   *   `runtimeConfig` (*type:* `GoogleApi.CloudDeploy.V1.Model.RuntimeConfig.t`, *default:* `nil`) - Optional. Runtime specific configurations for the deployment strategy. The runtime configuration is used to determine how Cloud Deploy will split traffic to enable a progressive deployment.
   """
 

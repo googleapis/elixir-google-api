@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RuntimeConfig do
 
   ## Attributes
 
-  *   `cloudRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.CloudRunConfig.t`, *default:* `nil`) - Cloud Run runtime configuration.
-  *   `kubernetes` (*type:* `GoogleApi.CloudDeploy.V1.Model.KubernetesConfig.t`, *default:* `nil`) - Kubernetes runtime configuration.
+  *   `cloudRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.CloudRunConfig.t`, *default:* `nil`) - Optional. Cloud Run runtime configuration.
+  *   `kubernetes` (*type:* `GoogleApi.CloudDeploy.V1.Model.KubernetesConfig.t`, *default:* `nil`) - Optional. Kubernetes runtime configuration.
   """
 
   use GoogleApi.Gax.ModelBase

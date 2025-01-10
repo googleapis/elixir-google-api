@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.SerialPipeline do
 
   ## Attributes
 
-  *   `stages` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.Stage.t)`, *default:* `nil`) - Each stage specifies configuration for a `Target`. The ordering of this list defines the promotion flow.
+  *   `stages` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.Stage.t)`, *default:* `nil`) - Optional. Each stage specifies configuration for a `Target`. The ordering of this list defines the promotion flow.
   """
 
   use GoogleApi.Gax.ModelBase

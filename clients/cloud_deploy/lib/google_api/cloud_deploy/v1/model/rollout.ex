@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
   ## Attributes
 
   *   `activeRepairAutomationRun` (*type:* `String.t`, *default:* `nil`) - Output only. The AutomationRun actively repairing the rollout.
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
   *   `approvalState` (*type:* `String.t`, *default:* `nil`) - Output only. Approval state of the `Rollout`.
   *   `approveTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Rollout` was approved.
   *   `controllerRollout` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the `ControllerRollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
@@ -31,13 +31,13 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
   *   `deployFailureCause` (*type:* `String.t`, *default:* `nil`) - Output only. The reason this rollout failed. This will always be unspecified while the rollout is in progress.
   *   `deployStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Rollout` started deploying.
   *   `deployingBuild` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Cloud Build `Build` object that is used to deploy the Rollout. Format is `projects/{project}/locations/{location}/builds/{build}`.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `Rollout` for user purposes. Max length is 255 characters.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the `Rollout` for user purposes. Max length is 255 characters.
   *   `enqueueTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Rollout` was enqueued.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `failureReason` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the rollout failure, if available.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
   *   `metadata` (*type:* `GoogleApi.CloudDeploy.V1.Model.Metadata.t`, *default:* `nil`) - Output only. Metadata contains information about the rollout.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Rollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`. The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the `Rollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`. The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
   *   `phases` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.Phase.t)`, *default:* `nil`) - Output only. The phases that represent the workflows of this `Rollout`.
   *   `rollbackOfRollout` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the `Rollout` that is rolled back by this `Rollout`. Empty if this `Rollout` wasn't created as a rollback.
   *   `rolledBackByRollouts` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Names of `Rollouts` that rolled back this `Rollout`.
