@@ -29,7 +29,9 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   *   `crossClusterReplicationConfig` (*type:* `GoogleApi.Redis.V1.Model.CrossClusterReplicationConfig.t`, *default:* `nil`) - Optional. Cross cluster replication config.
   *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The delete operation will fail when the value is set to true.
   *   `discoveryEndpoints` (*type:* `list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t)`, *default:* `nil`) - Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
+  *   `encryptionInfo` (*type:* `GoogleApi.Redis.V1.Model.EncryptionInfo.t`, *default:* `nil`) - Output only. Encryption information of the data at rest of the cluster.
   *   `gcsSource` (*type:* `GoogleApi.Redis.V1.Model.GcsBackupSource.t`, *default:* `nil`) - Optional. Backups stored in Cloud Storage buckets. The Cloud Storage buckets need to be the same region as the clusters. Read permission is required to import from the provided Cloud Storage objects.
+  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Optional. The KMS key used to encrypt the at-rest data of the cluster.
   *   `maintenancePolicy` (*type:* `GoogleApi.Redis.V1.Model.ClusterMaintenancePolicy.t`, *default:* `nil`) - Optional. ClusterMaintenancePolicy determines when to allow or deny updates.
   *   `maintenanceSchedule` (*type:* `GoogleApi.Redis.V1.Model.ClusterMaintenanceSchedule.t`, *default:* `nil`) - Output only. ClusterMaintenanceSchedule Output only Published maintenance schedule.
   *   `managedBackupSource` (*type:* `GoogleApi.Redis.V1.Model.ManagedBackupSource.t`, *default:* `nil`) - Optional. Backups generated and managed by memorystore service.
@@ -63,7 +65,9 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
             GoogleApi.Redis.V1.Model.CrossClusterReplicationConfig.t() | nil,
           :deletionProtectionEnabled => boolean() | nil,
           :discoveryEndpoints => list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t()) | nil,
+          :encryptionInfo => GoogleApi.Redis.V1.Model.EncryptionInfo.t() | nil,
           :gcsSource => GoogleApi.Redis.V1.Model.GcsBackupSource.t() | nil,
+          :kmsKey => String.t() | nil,
           :maintenancePolicy => GoogleApi.Redis.V1.Model.ClusterMaintenancePolicy.t() | nil,
           :maintenanceSchedule => GoogleApi.Redis.V1.Model.ClusterMaintenanceSchedule.t() | nil,
           :managedBackupSource => GoogleApi.Redis.V1.Model.ManagedBackupSource.t() | nil,
@@ -95,7 +99,9 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
 
   field(:deletionProtectionEnabled)
   field(:discoveryEndpoints, as: GoogleApi.Redis.V1.Model.DiscoveryEndpoint, type: :list)
+  field(:encryptionInfo, as: GoogleApi.Redis.V1.Model.EncryptionInfo)
   field(:gcsSource, as: GoogleApi.Redis.V1.Model.GcsBackupSource)
+  field(:kmsKey)
   field(:maintenancePolicy, as: GoogleApi.Redis.V1.Model.ClusterMaintenancePolicy)
   field(:maintenanceSchedule, as: GoogleApi.Redis.V1.Model.ClusterMaintenanceSchedule)
   field(:managedBackupSource, as: GoogleApi.Redis.V1.Model.ManagedBackupSource)
