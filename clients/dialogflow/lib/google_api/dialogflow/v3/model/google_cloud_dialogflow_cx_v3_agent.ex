@@ -36,6 +36,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   *   `locked` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the agent is locked for changes. If the agent is locked, modifications to the agent will be rejected except for RestoreAgent.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the agent. Required for the Agents.UpdateAgent method. Agents.CreateAgent populates the name automatically. Format: `projects//locations//agents/`.
   *   `personalizationSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentPersonalizationSettings.t`, *default:* `nil`) - Optional. Settings for end user personalization.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Optional. Output only. A read only boolean field reflecting Zone Isolation status of the agent.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Optional. Output only. A read only boolean field reflecting Zone Separation status of the agent.
   *   `securitySettings` (*type:* `String.t`, *default:* `nil`) - Name of the SecuritySettings reference for the agent. Format: `projects//locations//securitySettings/`.
   *   `speechToTextSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SpeechToTextSettings.t`, *default:* `nil`) - Speech recognition related settings.
   *   `startFlow` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the start flow in this agent. A start flow will be automatically created when the agent is created, and can only be deleted by deleting the agent. Format: `projects//locations//agents//flows/`.
@@ -73,6 +75,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
           :personalizationSettings =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentPersonalizationSettings.t()
             | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :securitySettings => String.t() | nil,
           :speechToTextSettings =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SpeechToTextSettings.t() | nil,
@@ -119,6 +123,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentPersonalizationSettings
   )
 
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:securitySettings)
 
   field(:speechToTextSettings,
