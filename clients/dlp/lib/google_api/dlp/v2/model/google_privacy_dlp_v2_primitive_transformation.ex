@@ -25,7 +25,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PrimitiveTransformation do
   *   `characterMaskConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CharacterMaskConfig.t`, *default:* `nil`) - Mask
   *   `cryptoDeterministicConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoDeterministicConfig.t`, *default:* `nil`) - Deterministic Crypto
   *   `cryptoHashConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoHashConfig.t`, *default:* `nil`) - Crypto
-  *   `cryptoReplaceFfxFpeConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig.t`, *default:* `nil`) - Ffx-Fpe
+  *   `cryptoReplaceFfxFpeConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CryptoReplaceFfxFpeConfig.t`, *default:* `nil`) - Ffx-Fpe. Strongly discouraged, consider using CryptoDeterministicConfig instead. Fpe is computationally expensive incurring latency costs.
   *   `dateShiftConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DateShiftConfig.t`, *default:* `nil`) - Date Shift
   *   `fixedSizeBucketingConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FixedSizeBucketingConfig.t`, *default:* `nil`) - Fixed size bucketing
   *   `redactConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RedactConfig.t`, *default:* `nil`) - Redact
