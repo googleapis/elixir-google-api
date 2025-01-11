@@ -24,9 +24,12 @@ defmodule GoogleApi.Container.V1.Model.UpgradeInfoEvent do
   *   `currentVersion` (*type:* `String.t`, *default:* `nil`) - The current version before the upgrade.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of the event.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the operation ended.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - The type of the event.
+  *   `extendedSupportEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The end of extended support timestamp.
   *   `operation` (*type:* `String.t`, *default:* `nil`) - The operation associated with this upgrade.
   *   `resource` (*type:* `String.t`, *default:* `nil`) - Optional relative path to the resource. For example in node pool upgrades, the relative path of the node pool.
   *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The resource type associated with the upgrade.
+  *   `standardSupportEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The end of standard support timestamp.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the operation was started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the upgrade.
   *   `targetVersion` (*type:* `String.t`, *default:* `nil`) - The target version for the upgrade.
@@ -38,9 +41,12 @@ defmodule GoogleApi.Container.V1.Model.UpgradeInfoEvent do
           :currentVersion => String.t() | nil,
           :description => String.t() | nil,
           :endTime => DateTime.t() | nil,
+          :eventType => String.t() | nil,
+          :extendedSupportEndTime => DateTime.t() | nil,
           :operation => String.t() | nil,
           :resource => String.t() | nil,
           :resourceType => String.t() | nil,
+          :standardSupportEndTime => DateTime.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :targetVersion => String.t() | nil
@@ -49,9 +55,12 @@ defmodule GoogleApi.Container.V1.Model.UpgradeInfoEvent do
   field(:currentVersion)
   field(:description)
   field(:endTime, as: DateTime)
+  field(:eventType)
+  field(:extendedSupportEndTime, as: DateTime)
   field(:operation)
   field(:resource)
   field(:resourceType)
+  field(:standardSupportEndTime, as: DateTime)
   field(:startTime, as: DateTime)
   field(:state)
   field(:targetVersion)

@@ -69,6 +69,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredClusterAutoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
   *   `desiredFleet` (*type:* `GoogleApi.Container.V1.Model.Fleet.t`, *default:* `nil`) - The desired fleet configuration for the cluster.
   *   `desiredParentProductConfig` (*type:* `GoogleApi.Container.V1.Model.ParentProductConfig.t`, *default:* `nil`) - The desired parent product config for the cluster.
+  *   `desiredDisableL4LbFirewallReconciliation` (*type:* `boolean()`, *default:* `nil`) - Enable/Disable L4 LB VPC firewall reconciliation for the cluster.
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
   *   `removedAdditionalPodRangesConfig` (*type:* `GoogleApi.Container.V1.Model.AdditionalPodRangesConfig.t`, *default:* `nil`) - The additional pod ranges that are to be removed from the cluster. The pod ranges specified here must have been specified earlier in the 'additional_pod_ranges_config' argument.
   *   `desiredNodeVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the Kubernetes master version
@@ -158,6 +159,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredFleet => GoogleApi.Container.V1.Model.Fleet.t() | nil,
           :desiredParentProductConfig =>
             GoogleApi.Container.V1.Model.ParentProductConfig.t() | nil,
+          :desiredDisableL4LbFirewallReconciliation => boolean() | nil,
           :desiredResourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t() | nil,
           :removedAdditionalPodRangesConfig =>
@@ -260,6 +262,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredClusterAutoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
   field(:desiredFleet, as: GoogleApi.Container.V1.Model.Fleet)
   field(:desiredParentProductConfig, as: GoogleApi.Container.V1.Model.ParentProductConfig)
+  field(:desiredDisableL4LbFirewallReconciliation)
 
   field(:desiredResourceUsageExportConfig,
     as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig
