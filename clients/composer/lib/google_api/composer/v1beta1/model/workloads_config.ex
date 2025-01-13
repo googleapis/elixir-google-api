@@ -21,7 +21,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.WorkloadsConfig do
 
   ## Attributes
 
-  *   `dagProcessor` (*type:* `GoogleApi.Composer.V1beta1.Model.DagProcessorResource.t`, *default:* `nil`) - Optional. Resources used by Airflow DAG processors. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  *   `dagProcessor` (*type:* `GoogleApi.Composer.V1beta1.Model.DagProcessorResource.t`, *default:* `nil`) - Optional. Resources used by Airflow DAG processors. This field is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
   *   `scheduler` (*type:* `GoogleApi.Composer.V1beta1.Model.SchedulerResource.t`, *default:* `nil`) - Optional. Resources used by Airflow schedulers.
   *   `triggerer` (*type:* `GoogleApi.Composer.V1beta1.Model.TriggererResource.t`, *default:* `nil`) - Optional. Resources used by Airflow triggerers.
   *   `webServer` (*type:* `GoogleApi.Composer.V1beta1.Model.WebServerResource.t`, *default:* `nil`) - Optional. Resources used by Airflow web server.
