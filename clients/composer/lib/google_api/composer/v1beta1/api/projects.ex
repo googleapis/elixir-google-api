@@ -1042,7 +1042,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a user workloads ConfigMap. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Creates a user workloads ConfigMap. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1116,7 +1116,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes a user workloads ConfigMap. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Deletes a user workloads ConfigMap. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1186,7 +1186,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets an existing user workloads ConfigMap. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Gets an existing user workloads ConfigMap. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1258,7 +1258,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists user workloads ConfigMaps. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Lists user workloads ConfigMaps. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1334,7 +1334,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates a user workloads ConfigMap. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Updates a user workloads ConfigMap. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1408,7 +1408,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a user workloads Secret. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Creates a user workloads Secret. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1480,7 +1480,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Deletes a user workloads Secret. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Deletes a user workloads Secret. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1550,7 +1550,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets an existing user workloads Secret. Values of the "data" field in the response are cleared. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Gets an existing user workloads Secret. Values of the "data" field in the response are cleared. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1620,7 +1620,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Lists user workloads Secrets. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Lists user workloads Secrets. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
@@ -1696,7 +1696,7 @@ defmodule GoogleApi.Composer.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates a user workloads Secret. This method is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
+  Updates a user workloads Secret. This method is supported for Cloud Composer environments in versions composer-3-airflow-*.*.*-build.* and newer.
 
   ## Parameters
 
