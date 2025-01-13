@@ -21,8 +21,8 @@ defmodule GoogleApi.Dataproc.V1.Model.DiskConfig do
 
   ## Attributes
 
-  *   `bootDiskProvisionedIops` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. Note: This field is only supported if boot_disk_type is hyperdisk-balanced.
-  *   `bootDiskProvisionedThroughput` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1. Note: This field is only supported if boot_disk_type is hyperdisk-balanced.
+  *   `bootDiskProvisionedIops` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates how many IOPS to provision for the disk. This sets the number of I/O operations per second that the disk can handle. This field is supported only if boot_disk_type is hyperdisk-balanced.
+  *   `bootDiskProvisionedThroughput` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1. This field is supported only if boot_disk_type is hyperdisk-balanced.
   *   `bootDiskSizeGb` (*type:* `integer()`, *default:* `nil`) - Optional. Size in GB of the boot disk (default is 500GB).
   *   `bootDiskType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of the boot disk (default is "pd-standard"). Valid values: "pd-balanced" (Persistent Disk Balanced Solid State Drive), "pd-ssd" (Persistent Disk Solid State Drive), or "pd-standard" (Persistent Disk Hard Disk Drive). See Disk types (https://cloud.google.com/compute/docs/disks#disk-types).
   *   `localSsdInterface` (*type:* `String.t`, *default:* `nil`) - Optional. Interface type of local SSDs (default is "scsi"). Valid values: "scsi" (Small Computer System Interface), "nvme" (Non-Volatile Memory Express). See local SSD performance (https://cloud.google.com/compute/docs/disks/local-ssd#performance).
