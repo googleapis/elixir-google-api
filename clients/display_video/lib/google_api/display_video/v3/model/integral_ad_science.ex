@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.IntegralAdScience do
 
   ## Attributes
 
-  *   `customSegmentId` (*type:* `list(String.t)`, *default:* `nil`) - The custom segment ID provided by Integral Ad Science. The ID must be between `1000001` and `1999999`, inclusive.
+  *   `customSegmentId` (*type:* `list(String.t)`, *default:* `nil`) - The custom segment ID provided by Integral Ad Science. The ID must be between `1000001` and `1999999` or `3000001` and `3999999`, inclusive.
   *   `displayViewability` (*type:* `String.t`, *default:* `nil`) - Display Viewability section (applicable to display line items only).
   *   `excludeUnrateable` (*type:* `boolean()`, *default:* `nil`) - Brand Safety - **Unrateable**.
   *   `excludedAdFraudRisk` (*type:* `String.t`, *default:* `nil`) - Ad Fraud settings.
