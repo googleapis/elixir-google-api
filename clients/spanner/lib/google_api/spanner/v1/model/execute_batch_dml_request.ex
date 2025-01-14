@@ -21,6 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteBatchDmlRequest do
 
   ## Attributes
 
+  *   `lastStatements` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, this request marks the end of the transaction. The transaction should be committed or aborted after these statements execute, and attempts to execute any other requests against this transaction (including reads and queries) will be rejected. Setting this option may cause some error reporting to be deferred until commit time (e.g. validation of unique constraints). Given this, successful execution of statements should not be assumed until a subsequent Commit call completes successfully.
   *   `requestOptions` (*type:* `GoogleApi.Spanner.V1.Model.RequestOptions.t`, *default:* `nil`) - Common options for this request.
   *   `seqno` (*type:* `String.t`, *default:* `nil`) - Required. A per-transaction sequence number used to identify this request. This field makes each request idempotent such that if the request is received multiple times, at most one will succeed. The sequence number must be monotonically increasing within the transaction. If a request arrives for the first time with an out-of-order sequence number, the transaction may be aborted. Replays of previously handled requests will yield the same response as the first execution.
   *   `statements` (*type:* `list(GoogleApi.Spanner.V1.Model.Statement.t)`, *default:* `nil`) - Required. The list of statements to execute in this batch. Statements are executed serially, such that the effects of statement `i` are visible to statement `i+1`. Each statement must be a DML statement. Execution stops at the first failed statement; the remaining statements are not executed. Callers must provide at least one statement.
@@ -30,12 +31,14 @@ defmodule GoogleApi.Spanner.V1.Model.ExecuteBatchDmlRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :lastStatements => boolean() | nil,
           :requestOptions => GoogleApi.Spanner.V1.Model.RequestOptions.t() | nil,
           :seqno => String.t() | nil,
           :statements => list(GoogleApi.Spanner.V1.Model.Statement.t()) | nil,
           :transaction => GoogleApi.Spanner.V1.Model.TransactionSelector.t() | nil
         }
 
+  field(:lastStatements)
   field(:requestOptions, as: GoogleApi.Spanner.V1.Model.RequestOptions)
   field(:seqno)
   field(:statements, as: GoogleApi.Spanner.V1.Model.Statement, type: :list)
