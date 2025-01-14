@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.PrivateData do
   @moduledoc """
-  Buyers are allowed to store certain types of private data in a proposal or deal.
+  Buyers are allowed to store certain types of private data in a proposal.
 
   ## Attributes
 
