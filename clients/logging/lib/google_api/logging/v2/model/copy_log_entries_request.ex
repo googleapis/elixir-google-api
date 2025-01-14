@@ -21,7 +21,7 @@ defmodule GoogleApi.Logging.V2.Model.CopyLogEntriesRequest do
 
   ## Attributes
 
-  *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. Destination to which to copy log entries.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. Destination to which to copy log entries. For example: "storage.googleapis.com/GCS_BUCKET"
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. A filter specifying which log entries to copy. The filter must be no more than 20k characters. An empty filter matches all log entries.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Log bucket from which to copy log entries.For example:"projects/my-project/locations/global/buckets/my-source-bucket"
   """
