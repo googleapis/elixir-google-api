@@ -254,7 +254,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results. Supported values are: * relevance (default) * last_modified_timestamp * last_modified_timestamp asc
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results. Supported values are: relevance (default) last_modified_timestamp last_modified_timestamp asc
       *   `:pageSize` (*type:* `integer()`) - Optional. Number of results in the search page. If <=0, then defaults to 10. Max limit for page_size is 1000. Throws an invalid argument for page_size > 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous SearchEntries call. Provide this to retrieve the subsequent page.
       *   `:query` (*type:* `String.t`) - Required. The query against which entries in scope should be matched. The query syntax is defined in Search syntax for Dataplex Catalog (https://cloud.google.com/dataplex/docs/search-syntax).
