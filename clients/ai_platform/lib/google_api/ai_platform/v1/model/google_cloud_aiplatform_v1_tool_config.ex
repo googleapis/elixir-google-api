@@ -22,18 +22,23 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolConfig do
   ## Attributes
 
   *   `functionCallingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionCallingConfig.t`, *default:* `nil`) - Optional. Function calling config.
+  *   `retrievalConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RetrievalConfig.t`, *default:* `nil`) - Optional. Retrieval config.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :functionCallingConfig =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionCallingConfig.t() | nil
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionCallingConfig.t() | nil,
+          :retrievalConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RetrievalConfig.t() | nil
         }
 
   field(:functionCallingConfig,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionCallingConfig
   )
+
+  field(:retrievalConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RetrievalConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolConfig do
