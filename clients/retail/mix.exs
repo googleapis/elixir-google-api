@@ -48,7 +48,7 @@ defmodule GoogleApi.Retail.Mixfile do
 
   defp description() do
     """
-    Vertex AI Search for Retail API client library.
+    Vertex AI Search for commerce API client library.
     """
   end
 
