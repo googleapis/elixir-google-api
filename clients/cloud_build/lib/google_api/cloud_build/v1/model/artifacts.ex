@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Artifacts do
 
   ## Attributes
 
+  *   `goModules` (*type:* `list(GoogleApi.CloudBuild.V1.Model.GoModule.t)`, *default:* `nil`) - Optional. A list of Go modules to be uploaded to Artifact Registry upon successful completion of all build steps. If any objects fail to be pushed, the build is marked FAILURE.
   *   `images` (*type:* `list(String.t)`, *default:* `nil`) - A list of images to be pushed upon the successful completion of all build steps. The images will be pushed using the builder service account's credentials. The digests of the pushed images will be stored in the Build resource's results field. If any of the images fail to be pushed, the build is marked FAILURE.
   *   `mavenArtifacts` (*type:* `list(GoogleApi.CloudBuild.V1.Model.MavenArtifact.t)`, *default:* `nil`) - A list of Maven artifacts to be uploaded to Artifact Registry upon successful completion of all build steps. Artifacts in the workspace matching specified paths globs will be uploaded to the specified Artifact Registry repository using the builder service account's credentials. If any artifacts fail to be pushed, the build is marked FAILURE.
   *   `npmPackages` (*type:* `list(GoogleApi.CloudBuild.V1.Model.NpmPackage.t)`, *default:* `nil`) - A list of npm packages to be uploaded to Artifact Registry upon successful completion of all build steps. Npm packages in the specified paths will be uploaded to the specified Artifact Registry repository using the builder service account's credentials. If any packages fail to be pushed, the build is marked FAILURE.
@@ -31,6 +32,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Artifacts do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :goModules => list(GoogleApi.CloudBuild.V1.Model.GoModule.t()) | nil,
           :images => list(String.t()) | nil,
           :mavenArtifacts => list(GoogleApi.CloudBuild.V1.Model.MavenArtifact.t()) | nil,
           :npmPackages => list(GoogleApi.CloudBuild.V1.Model.NpmPackage.t()) | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Artifacts do
           :pythonPackages => list(GoogleApi.CloudBuild.V1.Model.PythonPackage.t()) | nil
         }
 
+  field(:goModules, as: GoogleApi.CloudBuild.V1.Model.GoModule, type: :list)
   field(:images, type: :list)
   field(:mavenArtifacts, as: GoogleApi.CloudBuild.V1.Model.MavenArtifact, type: :list)
   field(:npmPackages, as: GoogleApi.CloudBuild.V1.Model.NpmPackage, type: :list)
