@@ -35,6 +35,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `results` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSearchResult.t)`, *default:* `nil`) - A list of matched documents. The order represents the ranking.
   *   `searchLinkPromotions` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchLinkPromotion.t)`, *default:* `nil`) - Promotions for site search.
   *   `sessionInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSessionInfo.t`, *default:* `nil`) - Session information. Only set if SearchRequest.session is provided. See its description for more details.
+  *   `suggestedQuery` (*type:* `String.t`, *default:* `nil`) - Corrected query with low confidence, AKA did you mean query. Compared with corrected_query, this field is set when SpellCorrector returned a response, but FPR(full page replacement) is not triggered because the corrction is of low confidence(eg, reversed because there are matches of the original query in document corpus).
   *   `summary` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummary.t`, *default:* `nil`) - A summary as part of the search results. This field is only returned if SearchRequest.ContentSearchSpec.summary_spec is set.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
   """
@@ -84,6 +85,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :sessionInfo =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSessionInfo.t()
             | nil,
+          :suggestedQuery => String.t() | nil,
           :summary =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummary.t()
             | nil,
@@ -147,6 +149,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
     as:
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSessionInfo
   )
+
+  field(:suggestedQuery)
 
   field(:summary,
     as:

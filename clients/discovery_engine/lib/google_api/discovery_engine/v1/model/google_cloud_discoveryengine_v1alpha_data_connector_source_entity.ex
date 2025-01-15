@@ -24,7 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   *   `dataStore` (*type:* `String.t`, *default:* `nil`) - Output only. The full resource name of the associated data store for the source entity. Format: `projects/*/locations/*/collections/*/dataStores/*`. When the connector is initialized by the DataConnectorService.SetUpDataConnector method, a DataStore is automatically created for each source entity.
   *   `entityName` (*type:* `String.t`, *default:* `nil`) - The name of the entity. Supported values by data source: * Salesforce: `Lead`, `Opportunity`, `Contact`, `Account`, `Case`, `Contract`, `Campaign` * Jira: `Issue` * Confluence: `Content`, `Space`
   *   `keyPropertyMappings` (*type:* `map()`, *default:* `nil`) - Attributes for indexing. Key: Field name. Value: The key property to map a field to, such as `title`, and `description`. Supported key properties: * `title`: The title for data record. This would be displayed on search results. * `description`: The description for data record. This would be displayed on search results.
-  *   `params` (*type:* `map()`, *default:* `nil`) - The parameters for the entity to facilitate data ingestion. E.g. for BQ connectors: * Key: `document_id_column` * Value: type STRING. The value of the column id.
+  *   `params` (*type:* `map()`, *default:* `nil`) - The parameters for the entity to facilitate data ingestion. E.g. for BigQuery connectors: * Key: `document_id_column` * Value: type STRING. The value of the column ID.
   """
 
   use GoogleApi.Gax.ModelBase
