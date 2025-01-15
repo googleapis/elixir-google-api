@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
   *   `artifactTiming` (*type:* `GoogleApi.CloudBuild.V1.Model.TimeSpan.t`, *default:* `nil`) - Time to push all non-container artifacts to Cloud Storage.
   *   `buildStepImages` (*type:* `list(String.t)`, *default:* `nil`) - List of build step digests, in the order corresponding to build step indices.
   *   `buildStepOutputs` (*type:* `list(String.t)`, *default:* `nil`) - List of build step outputs, produced by builder images, in the order corresponding to build step indices. [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can produce this output by writing to `$BUILDER_OUTPUT/output`. Only the first 50KB of data is stored. Note that the `$BUILDER_OUTPUT` variable is read-only and can't be substituted.
+  *   `goModules` (*type:* `list(GoogleApi.CloudBuild.V1.Model.UploadedGoModule.t)`, *default:* `nil`) - Optional. Go module artifacts uploaded to Artifact Registry at the end of the build.
   *   `images` (*type:* `list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t)`, *default:* `nil`) - Container images that were built as a part of the build.
   *   `mavenArtifacts` (*type:* `list(GoogleApi.CloudBuild.V1.Model.UploadedMavenArtifact.t)`, *default:* `nil`) - Maven artifacts uploaded to Artifact Registry at the end of the build.
   *   `npmPackages` (*type:* `list(GoogleApi.CloudBuild.V1.Model.UploadedNpmPackage.t)`, *default:* `nil`) - Npm packages uploaded to Artifact Registry at the end of the build.
@@ -39,6 +40,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
           :artifactTiming => GoogleApi.CloudBuild.V1.Model.TimeSpan.t() | nil,
           :buildStepImages => list(String.t()) | nil,
           :buildStepOutputs => list(String.t()) | nil,
+          :goModules => list(GoogleApi.CloudBuild.V1.Model.UploadedGoModule.t()) | nil,
           :images => list(GoogleApi.CloudBuild.V1.Model.BuiltImage.t()) | nil,
           :mavenArtifacts => list(GoogleApi.CloudBuild.V1.Model.UploadedMavenArtifact.t()) | nil,
           :npmPackages => list(GoogleApi.CloudBuild.V1.Model.UploadedNpmPackage.t()) | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Results do
   field(:artifactTiming, as: GoogleApi.CloudBuild.V1.Model.TimeSpan)
   field(:buildStepImages, type: :list)
   field(:buildStepOutputs, type: :list)
+  field(:goModules, as: GoogleApi.CloudBuild.V1.Model.UploadedGoModule, type: :list)
   field(:images, as: GoogleApi.CloudBuild.V1.Model.BuiltImage, type: :list)
   field(:mavenArtifacts, as: GoogleApi.CloudBuild.V1.Model.UploadedMavenArtifact, type: :list)
   field(:npmPackages, as: GoogleApi.CloudBuild.V1.Model.UploadedNpmPackage, type: :list)
