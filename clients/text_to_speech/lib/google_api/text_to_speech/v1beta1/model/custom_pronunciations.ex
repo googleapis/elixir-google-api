@@ -21,7 +21,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.CustomPronunciations do
 
   ## Attributes
 
-  *   `pronunciations` (*type:* `list(GoogleApi.TextToSpeech.V1beta1.Model.CustomPronunciationParams.t)`, *default:* `nil`) - The pronunciation customizations to be applied.
+  *   `pronunciations` (*type:* `list(GoogleApi.TextToSpeech.V1beta1.Model.CustomPronunciationParams.t)`, *default:* `nil`) - The pronunciation customizations are applied.
   """
 
   use GoogleApi.Gax.ModelBase
