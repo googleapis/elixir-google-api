@@ -21,8 +21,8 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointWithHealthStatus do
 
   ## Attributes
 
-  *   `healths` (*type:* `list(GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint.t)`, *default:* `nil`) - [Output only] The health status of network endpoint;
-  *   `networkEndpoint` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpoint.t`, *default:* `nil`) - [Output only] The network endpoint;
+  *   `healths` (*type:* `list(GoogleApi.Compute.V1.Model.HealthStatusForNetworkEndpoint.t)`, *default:* `nil`) - [Output only] The health status of network endpoint. Optional. Displayed only if the network endpoint has centralized health checking configured.
+  *   `networkEndpoint` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpoint.t`, *default:* `nil`) - [Output only] The network endpoint.
   """
 
   use GoogleApi.Gax.ModelBase
