@@ -24,6 +24,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaData
   *   `eventDataRetention` (*type:* `String.t`, *default:* `nil`) - Required. The length of time that event-level data is retained.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name for this DataRetentionSetting resource. Format: properties/{property}/dataRetentionSettings
   *   `resetUserDataOnNewActivity` (*type:* `boolean()`, *default:* `nil`) - If true, reset the retention period for the user identifier with every event from that user.
+  *   `userDataRetention` (*type:* `String.t`, *default:* `nil`) - Required. The length of time that user-level data is retained.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaData
   @type t :: %__MODULE__{
           :eventDataRetention => String.t() | nil,
           :name => String.t() | nil,
-          :resetUserDataOnNewActivity => boolean() | nil
+          :resetUserDataOnNewActivity => boolean() | nil,
+          :userDataRetention => String.t() | nil
         }
 
   field(:eventDataRetention)
   field(:name)
   field(:resetUserDataOnNewActivity)
+  field(:userDataRetention)
 end
 
 defimpl Poison.Decoder,
