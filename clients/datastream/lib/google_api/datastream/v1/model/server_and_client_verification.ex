@@ -23,7 +23,7 @@ defmodule GoogleApi.Datastream.V1.Model.ServerAndClientVerification do
 
   *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - Required. Input only. PEM-encoded server root CA certificate.
   *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - Required. Input only. PEM-encoded certificate used by the source database to authenticate the client identity (i.e., the Datastream's identity). This certificate is signed by either a root certificate trusted by the server or one or more intermediate certificates (which is stored with the leaf certificate) to link the this certificate to the trusted root certificate.
-  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - Required. Input only. PEM-encoded private key associated with the client certificate. This value will be used during the SSL/TLS handshake, allowing the PostgreSQL server to authenticate the client's identity, i.e. identity of the Datastream.
+  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. PEM-encoded private key associated with the client certificate. This value will be used during the SSL/TLS handshake, allowing the PostgreSQL server to authenticate the client's identity, i.e. identity of the Datastream. Mutually exclusive with the `secret_manager_stored_client_key` field.
   """
 
   use GoogleApi.Gax.ModelBase
