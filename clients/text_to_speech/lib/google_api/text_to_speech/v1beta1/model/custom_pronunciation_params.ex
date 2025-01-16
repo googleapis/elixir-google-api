@@ -22,7 +22,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.CustomPronunciationParams do
   ## Attributes
 
   *   `phoneticEncoding` (*type:* `String.t`, *default:* `nil`) - The phonetic encoding of the phrase.
-  *   `phrase` (*type:* `String.t`, *default:* `nil`) - The phrase to which the customization will be applied. The phrase can be multiple words (in the case of proper nouns etc), but should not span to a whole sentence.
+  *   `phrase` (*type:* `String.t`, *default:* `nil`) - The phrase to which the customization is applied. The phrase can be multiple words, such as proper nouns, but shouldn't span the length of the sentence.
   *   `pronunciation` (*type:* `String.t`, *default:* `nil`) - The pronunciation of the phrase. This must be in the phonetic encoding specified above.
   """
 

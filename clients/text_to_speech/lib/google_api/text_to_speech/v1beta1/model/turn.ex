@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.TextToSpeech.V1beta1.Model.Turn do
   @moduledoc """
-  A Multi-speaker turn.
+  A multi-speaker turn.
 
   ## Attributes
 

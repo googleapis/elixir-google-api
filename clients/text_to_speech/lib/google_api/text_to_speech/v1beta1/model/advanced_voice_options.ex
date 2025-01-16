@@ -21,7 +21,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.AdvancedVoiceOptions do
 
   ## Attributes
 
-  *   `lowLatencyJourneySynthesis` (*type:* `boolean()`, *default:* `nil`) - Only for Journey voices. If false, the synthesis will be context aware and have higher latency.
+  *   `lowLatencyJourneySynthesis` (*type:* `boolean()`, *default:* `nil`) - Only for Journey voices. If false, the synthesis is context aware and has a higher latency.
   """
 
   use GoogleApi.Gax.ModelBase
