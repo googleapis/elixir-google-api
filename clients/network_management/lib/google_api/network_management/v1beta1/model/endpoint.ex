@@ -21,6 +21,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
 
   ## Attributes
 
+  *   `alloyDbInstance` (*type:* `String.t`, *default:* `nil`) - An [AlloyDB Instance](https://cloud.google.com/alloydb) URI.
   *   `appEngineVersion` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionEndpoint.t`, *default:* `nil`) - An [App Engine](https://cloud.google.com/appengine) [service version](https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions).
   *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionEndpoint.t`, *default:* `nil`) - A [Cloud Function](https://cloud.google.com/functions).
   *   `cloudRunRevision` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionEndpoint.t`, *default:* `nil`) - A [Cloud Run](https://cloud.google.com/run) [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
@@ -44,6 +45,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :alloyDbInstance => String.t() | nil,
           :appEngineVersion =>
             GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionEndpoint.t() | nil,
           :cloudFunction =>
@@ -67,6 +69,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
           :redisInstance => String.t() | nil
         }
 
+  field(:alloyDbInstance)
   field(:appEngineVersion, as: GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionEndpoint)
   field(:cloudFunction, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionEndpoint)
   field(:cloudRunRevision, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionEndpoint)
