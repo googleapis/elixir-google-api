@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.AttributionSettings do
   ## Attributes
 
   *   `attributionLookbackWindowInDays` (*type:* `integer()`, *default:* `nil`) - Required. Lookback windows (in days) used for attribution in this source. Supported values are 7, 30, 40.
-  *   `attributionModel` (*type:* `String.t`, *default:* `nil`) - Required. Attribution model.
+  *   `attributionModel` (*type:* `String.t`, *default:* `nil`) - 
   *   `conversionType` (*type:* `list(GoogleApi.Content.V21.Model.AttributionSettingsConversionType.t)`, *default:* `nil`) - Immutable. Unordered list. List of different conversion types a conversion event can be classified as. A standard "purchase" type will be automatically created if this list is empty at creation time.
   """
 
