@@ -21,15 +21,18 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.SelectedResource do
 
   ## Attributes
 
+  *   `routine` (*type:* `String.t`, *default:* `nil`) - Optional. Format: For routine: `projects/{projectId}/datasets/{datasetId}/routines/{routineId}` Example:"projects/test_project/datasets/test_dataset/routines/test_routine"
   *   `table` (*type:* `String.t`, *default:* `nil`) - Optional. Format: For table: `projects/{projectId}/datasets/{datasetId}/tables/{tableId}` Example:"projects/test_project/datasets/test_dataset/tables/test_table"
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :routine => String.t() | nil,
           :table => String.t() | nil
         }
 
+  field(:routine)
   field(:table)
 end
 
