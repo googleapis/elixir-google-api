@@ -22,12 +22,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleResult
   ## Attributes
 
   *   `assertionRowCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of rows returned by the SQL statement in a SQL assertion rule.This field is only valid for SQL assertion rules.
-  *   `evaluatedCount` (*type:* `String.t`, *default:* `nil`) - The number of rows a rule was evaluated against.This field is only valid for row-level type rules.Evaluated count can be configured to either include all rows (default) - with null rows automatically failing rule evaluation, or exclude null rows from the evaluated_count, by setting ignore_nulls = true.
+  *   `evaluatedCount` (*type:* `String.t`, *default:* `nil`) - The number of rows a rule was evaluated against.This field is only valid for row-level type rules.Evaluated count can be configured to either include all rows (default) - with null rows automatically failing rule evaluation, or exclude null rows from the evaluated_count, by setting ignore_nulls = true.This field is not set for rule SqlAssertion.
   *   `failingRowsQuery` (*type:* `String.t`, *default:* `nil`) - The query to find rows that did not pass this rule.This field is only valid for row-level type rules.
   *   `nullCount` (*type:* `String.t`, *default:* `nil`) - The number of rows with null values in the specified column.
   *   `passRatio` (*type:* `float()`, *default:* `nil`) - The ratio of passed_count / evaluated_count.This field is only valid for row-level type rules.
   *   `passed` (*type:* `boolean()`, *default:* `nil`) - Whether the rule passed or failed.
-  *   `passedCount` (*type:* `String.t`, *default:* `nil`) - The number of rows which passed a rule evaluation.This field is only valid for row-level type rules.
+  *   `passedCount` (*type:* `String.t`, *default:* `nil`) - This field is not set for rule SqlAssertion.
   *   `rule` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule.t`, *default:* `nil`) - The rule specified in the DataQualitySpec, as is.
   """
 
