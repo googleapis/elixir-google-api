@@ -1034,7 +1034,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:requestId` (*type:* `String.t`) - Idempotent request UUID.
-      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. The elements of the repeated paths field may only include these fields from Cluster: * `size_gb` * `replica_count`
+      *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. The elements of the repeated paths field may only include these fields from Cluster: * `size_gb` * `replica_count` * `cluster_endpoints`
       *   `:body` (*type:* `GoogleApi.Redis.V1.Model.Cluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
