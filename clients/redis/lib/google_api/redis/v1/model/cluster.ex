@@ -21,6 +21,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
 
   ## Attributes
 
+  *   `asyncClusterEndpointsDeletionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, cluster endpoints that are created and registered by customers can be deleted asynchronously. That is, such a cluster endpoint can be de-registered before the forwarding rules in the cluster endpoint are deleted.
   *   `authorizationMode` (*type:* `String.t`, *default:* `nil`) - Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
   *   `automatedBackupConfig` (*type:* `GoogleApi.Redis.V1.Model.AutomatedBackupConfig.t`, *default:* `nil`) - Optional. The automated backup config for the cluster.
   *   `backupCollection` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. The backup collection full resource name. Example: projects/{project}/locations/{location}/backupCollections/{collection}
@@ -56,6 +57,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :asyncClusterEndpointsDeletionEnabled => boolean() | nil,
           :authorizationMode => String.t() | nil,
           :automatedBackupConfig => GoogleApi.Redis.V1.Model.AutomatedBackupConfig.t() | nil,
           :backupCollection => String.t() | nil,
@@ -89,6 +91,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
           :zoneDistributionConfig => GoogleApi.Redis.V1.Model.ZoneDistributionConfig.t() | nil
         }
 
+  field(:asyncClusterEndpointsDeletionEnabled)
   field(:authorizationMode)
   field(:automatedBackupConfig, as: GoogleApi.Redis.V1.Model.AutomatedBackupConfig)
   field(:backupCollection)
