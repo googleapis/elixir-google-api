@@ -20,7 +20,7 @@ defmodule GoogleApi.AdSensePlatform.V1alpha do
   API client metadata for GoogleApi.AdSensePlatform.V1alpha.
   """
 
-  @discovery_revision "20250115"
+  @discovery_revision "20250120"
 
   def discovery_revision(), do: @discovery_revision
 end
