@@ -21,11 +21,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
 
   ## Attributes
 
+  *   `droppedExampleReasons` (*type:* `list(String.t)`, *default:* `nil`) - Output only. For each index in `truncated_example_indices`, the user-facing reason why the example was dropped. Must not include example itself.
   *   `totalBillableCharacterCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of billable characters in the tuning dataset.
   *   `totalBillableTokenCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of billable tokens in the tuning dataset.
-  *   `totalTruncatedExampleCount` (*type:* `String.t`, *default:* `nil`) - The number of examples in the dataset that have been truncated by any amount.
+  *   `totalTruncatedExampleCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of examples in the dataset that have been dropped. An example can be dropped for reasons including: too many tokens, contains an invalid image, contains too many images, etc.
   *   `totalTuningCharacterCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of tuning characters in the tuning dataset.
-  *   `truncatedExampleIndices` (*type:* `list(String.t)`, *default:* `nil`) - A partial sample of the indices (starting from 1) of the truncated examples.
+  *   `truncatedExampleIndices` (*type:* `list(String.t)`, *default:* `nil`) - Output only. A partial sample of the indices (starting from 1) of the dropped examples.
   *   `tuningDatasetExampleCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of examples in the tuning dataset.
   *   `tuningStepCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of tuning steps for this Tuning Job.
   *   `userDatasetExamples` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Output only. Sample user messages in the training dataset uri.
@@ -37,6 +38,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :droppedExampleReasons => list(String.t()) | nil,
           :totalBillableCharacterCount => String.t() | nil,
           :totalBillableTokenCount => String.t() | nil,
           :totalTruncatedExampleCount => String.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
             | nil
         }
 
+  field(:droppedExampleReasons, type: :list)
   field(:totalBillableCharacterCount)
   field(:totalBillableTokenCount)
   field(:totalTruncatedExampleCount)
