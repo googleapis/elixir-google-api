@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintBooleanConstraint do
   @moduledoc """
-  A constraint that is either enforced or not. For example, a constraint `constraints/compute.disableSerialPortAccess`. If it is enforced on a VM instance, serial port connections will not be opened to that instance.
+  A constraint type is enforced or not enforced, which is configured in the `PolicyRule`. If `customConstraintDefinition` is defined, this constraint is a managed constraint.
 
   ## Attributes
 
-  *   `customConstraintDefinition` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition.t`, *default:* `nil`) - Custom constraint definition. This is set only for Managed Constraints
+  *   `customConstraintDefinition` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition.t`, *default:* `nil`) - Custom constraint definition. Defines this as a managed constraint.
   """
 
   use GoogleApi.Gax.ModelBase
