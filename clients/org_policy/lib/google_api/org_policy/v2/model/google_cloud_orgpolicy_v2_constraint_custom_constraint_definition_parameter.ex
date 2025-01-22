@@ -22,7 +22,7 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomCon
   ## Attributes
 
   *   `defaultValue` (*type:* `any()`, *default:* `nil`) - Sets the value of the parameter in an assignment if no value is given.
-  *   `item` (*type:* `String.t`, *default:* `nil`) - Determines the parameter’s value structure. For example, LIST can be specified by defining type : LIST, and item type as : STRING.
+  *   `item` (*type:* `String.t`, *default:* `nil`) - Determines the parameter's value structure. For example, `LIST` can be specified by defining `type: LIST`, and `item: STRING`.
   *   `metadata` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinitionParameterMetadata.t`, *default:* `nil`) - Defines subproperties primarily used by the UI to display user-friendly information.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the parameter.
   *   `validValuesExpr` (*type:* `String.t`, *default:* `nil`) - Provides a CEL expression to specify the acceptable parameter values during assignment. For example, parameterName in ("parameterValue1", "parameterValue2")

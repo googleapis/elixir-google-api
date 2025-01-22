@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinitionParameterMetadata do
   @moduledoc """
-  Defines Medata structure.
+  Defines Metadata structure.
 
   ## Attributes
 

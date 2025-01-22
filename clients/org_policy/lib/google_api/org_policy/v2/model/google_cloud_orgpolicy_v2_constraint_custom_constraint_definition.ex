@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinition do
   @moduledoc """
-  Currently used for Managed Constraints. This represents a subset of fields missing from Constraint proto that are required to describe CustomConstraint
+  Custom constraint definition. Defines this as a managed constraint.
 
   ## Attributes
 
   *   `actionType` (*type:* `String.t`, *default:* `nil`) - Allow or deny type.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Org policy condition/expression. For example: `resource.instanceName.matches("[production|test]_.*_(\\d)+")` or, `resource.management.auto_upgrade == true` The max length of the condition is 1000 characters.
   *   `methodTypes` (*type:* `list(String.t)`, *default:* `nil`) - All the operations being applied for this constraint.
-  *   `parameters` (*type:* `%{optional(String.t) => GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinitionParameter.t}`, *default:* `nil`) - Stores Structure of parameters used by Constraint condition. Key of map represents name of the parameter.
+  *   `parameters` (*type:* `%{optional(String.t) => GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintCustomConstraintDefinitionParameter.t}`, *default:* `nil`) - Stores the structure of `Parameters` used by the constraint condition. The key of `map` represents the name of the parameter.
   *   `resourceTypes` (*type:* `list(String.t)`, *default:* `nil`) - The resource instance type on which this policy applies. Format will be of the form : `/` Example: * `compute.googleapis.com/Instance`.
   """
 

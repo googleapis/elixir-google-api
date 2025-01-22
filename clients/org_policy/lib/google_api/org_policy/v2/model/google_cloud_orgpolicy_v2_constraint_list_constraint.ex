@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintListConstraint do
   @moduledoc """
-  A constraint that allows or disallows a list of string values, which are configured by an Organization Policy administrator with a policy.
+  A constraint type that allows or disallows a list of string values, which are configured in the `PolicyRule`.
 
   ## Attributes
 
