@@ -24,199 +24,202 @@ defmodule GoogleApi.DataPortability.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Move a copy of your public YouTube videos and information about them.
+      # Move a copy of your public YouTube videos and information about them
       "https://www.googleapis.com/auth/dataportability.youtube.public_videos",
 
-      # Move a copy of content you marked as not interested, saved by Discover.
+      # Move a copy of content you marked as not interested, saved by Discover
       "https://www.googleapis.com/auth/dataportability.discover.not_interested",
 
-      # Move a copy of your My Ad Center activity.
+      # Move a copy of your My Ad Center activity
       "https://www.googleapis.com/auth/dataportability.myactivity.myadcenter",
 
-      # Move a copy of extensions you installed from the Chrome Web Store.
+      # Move a copy of extensions you installed from the Chrome Web Store
       "https://www.googleapis.com/auth/dataportability.chrome.extensions",
 
-      # Move a copy of information about your devices with Google Play Store installed.
+      # Move a copy of information about your devices with Google Play Store installed
       "https://www.googleapis.com/auth/dataportability.play.devices",
 
-      # Move a copy of your Google Play Store redemption activities.
+      # Move a copy of your Google Play Store redemption activities
       "https://www.googleapis.com/auth/dataportability.play.redemptions",
 
-      # Move a copy of information about the movies and TV shows you marked as watched on Google Search and Google TV.
+      # Move a copy of information about the movies and TV shows you marked as watched on Google Search and Google TV
       "https://www.googleapis.com/auth/dataportability.search_ugc.media.watched",
 
-      # Move a copy of your reviews and posts on Maps.
+      # Move a copy of your reviews and posts on Maps
       "https://www.googleapis.com/auth/dataportability.maps.reviews",
 
-      # Move a copy of information about your Google Play Store promotions.
+      # Move a copy of information about your Google Play Store promotions
       "https://www.googleapis.com/auth/dataportability.play.promotions",
 
-      # Move a copy of your Google Search activity.
+      # Move a copy of your Google Search activity
       "https://www.googleapis.com/auth/dataportability.myactivity.search",
 
-      # Move a copy of your Google Play Store Grouping tags created by app developers.
+      # Move a copy of your Google Play Store Grouping tags created by app developers
       "https://www.googleapis.com/auth/dataportability.play.grouping",
 
-      # Move a copy of your shipping information on Shopping.
+      # Move a copy of your shipping information on Shopping
       "https://www.googleapis.com/auth/dataportability.shopping.addresses",
 
-      # Move a copy of pages you bookmarked in Chrome.
+      # Move a copy of pages you bookmarked in Chrome
       "https://www.googleapis.com/auth/dataportability.chrome.bookmarks",
 
-      # Move a copy of your YouTube clips metadata.
+      # Move a copy of your YouTube clips metadata
       "https://www.googleapis.com/auth/dataportability.youtube.clips",
 
-      # Move a copy of your YouTube activity.
+      # Move a copy of your YouTube activity
       "https://www.googleapis.com/auth/dataportability.myactivity.youtube",
 
-      # Move a copy of your commute settings on Maps.
+      # Move a copy of your commute settings on Maps
       "https://www.googleapis.com/auth/dataportability.maps.commute_settings",
 
-      # Move a copy of sites you visited in Chrome.
+      # Move a copy of sites you visited in Chrome
       "https://www.googleapis.com/auth/dataportability.chrome.history",
 
-      # Move a copy of your YouTube posts.
+      # Move a copy of your YouTube posts
       "https://www.googleapis.com/auth/dataportability.youtube.posts",
 
-      # Move a copy of information about your Google Play Store Points.
+      # Move a copy of information about your Google Play Store Points
       "https://www.googleapis.com/auth/dataportability.play.playpoints",
 
-      # Move a copy of your Google Play Store subscriptions.
+      # Move a copy of your Google Play Store subscriptions
       "https://www.googleapis.com/auth/dataportability.play.subscriptions",
 
-      # Move a copy of the information you entered into online forms in Chrome.
+      # Move a copy of the information you entered into online forms in Chrome
       "https://www.googleapis.com/auth/dataportability.chrome.autofill",
 
-      # Move a copy of the places you labeled on Maps.
+      # Move a copy of the places you labeled on Maps
       "https://www.googleapis.com/auth/dataportability.maps.aliased_places",
 
-      # Move a copy of your self-reported video streaming provider preferences from Google Search and Google TV.
+      # Move a copy of your self-reported video streaming provider preferences from Google Search and Google TV
       "https://www.googleapis.com/auth/dataportability.search_ugc.media.streaming_video_providers",
 
-      # Move a copy of your Google Play Store user settings and preferences.
+      # Move a copy of your Google Play Store user settings and preferences
       "https://www.googleapis.com/auth/dataportability.play.usersettings",
 
-      # Move a copy of searches and sites you follow, saved by Discover.
+      # Move a copy of searches and sites you follow, saved by Discover
       "https://www.googleapis.com/auth/dataportability.discover.follows",
 
-      # Move a copy of your unlisted YouTube playlists.
+      # Move a copy of your unlisted YouTube playlists
       "https://www.googleapis.com/auth/dataportability.youtube.unlisted_playlists",
 
-      # Move a copy of your YouTube comments.
+      # Move a copy of your YouTube comments
       "https://www.googleapis.com/auth/dataportability.youtube.comments",
 
-      # Move a copy of your settings in Chrome.
+      # Move a copy of your settings in Chrome
       "https://www.googleapis.com/auth/dataportability.chrome.settings",
 
-      # Move a copy of the corrections you made to places or map information on Maps.
+      # Move a copy of the corrections you made to places or map information on Maps
       "https://www.googleapis.com/auth/dataportability.maps.factual_contributions",
 
-      # Move a copy of your media reviews on Google Search.
+      # Move a copy of your media reviews on Google Search
       "https://www.googleapis.com/auth/dataportability.search_ugc.media.reviews_and_stars",
 
-      # Move a copy of your Google Play Store purchases.
+      # Move a copy of your Google Play Store purchases
       "https://www.googleapis.com/auth/dataportability.play.purchases",
 
-      # Move a copy of pages you added to your reading list in Chrome.
+      # Move a copy of pages you added to your reading list in Chrome
       "https://www.googleapis.com/auth/dataportability.chrome.reading_list",
 
-      # Move a copy of the images and videos you uploaded to Street View.
+      # Move a copy of the images and videos you uploaded to Street View
       "https://www.googleapis.com/auth/dataportability.streetview.imagery",
 
-      # Move a copy of your Starred places list on Maps.
+      # Move a copy of your Starred places list on Maps
       "https://www.googleapis.com/auth/dataportability.maps.starred_places",
 
-      # Move a copy of your Maps activity.
+      # Move a copy of your Maps activity
       "https://www.googleapis.com/auth/dataportability.myactivity.maps",
 
-      # Move a copy of your Google Play Store downloads, including books, games, and apps.
+      # Move a copy of your Google Play Store downloads, including books, games, and apps
       "https://www.googleapis.com/auth/dataportability.play.library",
 
-      # Move a copy of your YouTube shopping wishlists, and wishlist items.
+      # Move a copy of your comments on Google Search
+      "https://www.googleapis.com/auth/dataportability.search_ugc.comments",
+
+      # Move a copy of your YouTube shopping wishlists, and wishlist items
       "https://www.googleapis.com/auth/dataportability.youtube.shopping",
 
-      # Move a copy of your indicated thumbs up and thumbs down on media in Google Search and Google TV.
+      # Move a copy of your indicated thumbs up and thumbs down on media in Google Search and Google TV
       "https://www.googleapis.com/auth/dataportability.search_ugc.media.thumbs",
 
-      # Move a copy of links to your liked documents, saved by Discover.
+      # Move a copy of links to your liked documents, saved by Discover
       "https://www.googleapis.com/auth/dataportability.discover.likes",
 
-      # Move a copy of your private YouTube videos and information about them.
+      # Move a copy of your private YouTube videos and information about them
       "https://www.googleapis.com/auth/dataportability.youtube.private_videos",
 
-      # Move a copy of your unlisted YouTube videos and information about them.
+      # Move a copy of your unlisted YouTube videos and information about them
       "https://www.googleapis.com/auth/dataportability.youtube.unlisted_videos",
 
-      # Move a copy of your saved links, images, places, and collections from your use of Google services.
+      # Move a copy of your saved links, images, places, and collections from your use of Google services
       "https://www.googleapis.com/auth/dataportability.saved.collections",
 
-      # Move a copy of the photos and videos you posted on Maps.
+      # Move a copy of the photos and videos you posted on Maps
       "https://www.googleapis.com/auth/dataportability.maps.photos_videos",
 
-      # Move a copy of your pinned trips on Maps.
+      # Move a copy of your pinned trips on Maps
       "https://www.googleapis.com/auth/dataportability.maps.commute_routes",
 
-      # Move a copy of your YouTube playables saved game progress files.
+      # Move a copy of your YouTube playables saved game progress files
       "https://www.googleapis.com/auth/dataportability.youtube.playable",
 
-      # Move a copy of your electric vehicle profile on Maps.
+      # Move a copy of your electric vehicle profile on Maps
       "https://www.googleapis.com/auth/dataportability.maps.ev_profile",
 
-      # Move a copy of your uploaded YouTube music tracks and your YouTube music library.
+      # Move a copy of your uploaded YouTube music tracks and your YouTube music library
       "https://www.googleapis.com/auth/dataportability.youtube.music",
 
-      # Move a copy of your YouTube messages in live chat.
+      # Move a copy of your YouTube messages in live chat
       "https://www.googleapis.com/auth/dataportability.youtube.live_chat",
 
-      # Move a copy of your notification settings on the Google Search app.
+      # Move a copy of your notification settings on the Google Search app
       "https://www.googleapis.com/auth/dataportability.searchnotifications.settings",
 
-      # Move a copy of messages between you and the businesses you have conversations with across Google services.
+      # Move a copy of messages between you and the businesses you have conversations with across Google services
       "https://www.googleapis.com/auth/dataportability.businessmessaging.conversations",
 
-      # Move a copy of your Shopping activity.
+      # Move a copy of your Shopping activity
       "https://www.googleapis.com/auth/dataportability.myactivity.shopping",
 
-      # Move a copy of information about your YouTube channel.
+      # Move a copy of information about your YouTube channel
       "https://www.googleapis.com/auth/dataportability.youtube.channel",
 
-      # Move a copy of your notification subscriptions on Google Search app.
+      # Move a copy of your notification subscriptions on Google Search app
       "https://www.googleapis.com/auth/dataportability.searchnotifications.subscriptions",
 
-      # Move a copy of the maps you created in My Maps.
+      # Move a copy of the maps you created in My Maps
       "https://www.googleapis.com/auth/dataportability.mymaps.maps",
 
-      # Move a copy of your YouTube private playlists.
+      # Move a copy of your YouTube private playlists
       "https://www.googleapis.com/auth/dataportability.youtube.private_playlists",
 
-      # Move a copy of your YouTube channel subscriptions, even if they're private.
+      # Move a copy of your YouTube channel subscriptions, even if they're private
       "https://www.googleapis.com/auth/dataportability.youtube.subscriptions",
 
-      # Move a copy of your Google Play Store app installations.
+      # Move a copy of your Google Play Store app installations
       "https://www.googleapis.com/auth/dataportability.play.installs",
 
-      # Move a copy of your updates to places on Maps.
+      # Move a copy of your updates to places on Maps
       "https://www.googleapis.com/auth/dataportability.maps.offering_contributions",
 
-      # Move a copy of your food purchase and reservation activity.
+      # Move a copy of your food purchase and reservation activity
       "https://www.googleapis.com/auth/dataportability.order_reserve.purchases_reservations",
 
-      # Move a copy of your public YouTube playlists.
+      # Move a copy of your public YouTube playlists
       "https://www.googleapis.com/auth/dataportability.youtube.public_playlists",
 
-      # Move a copy of the Google Alerts subscriptions you created.
+      # Move a copy of the Google Alerts subscriptions you created
       "https://www.googleapis.com/auth/dataportability.alerts.subscriptions",
 
-      # Move a copy of reviews you wrote about products or online stores on Google Search.
+      # Move a copy of reviews you wrote about products or online stores on Google Search
       "https://www.googleapis.com/auth/dataportability.shopping.reviews",
 
-      # Move a copy of your Google Play activity.
+      # Move a copy of your Google Play activity
       "https://www.googleapis.com/auth/dataportability.myactivity.play",
 
-      # Move a copy of the questions and answers you posted on Maps.
+      # Move a copy of the questions and answers you posted on Maps
       "https://www.googleapis.com/auth/dataportability.maps.questions_answers",
 
-      # Move a copy of words you added to Chrome's dictionary.
+      # Move a copy of words you added to Chrome's dictionary
       "https://www.googleapis.com/auth/dataportability.chrome.dictionary"
     ],
     otp_app: :google_api_data_portability,
