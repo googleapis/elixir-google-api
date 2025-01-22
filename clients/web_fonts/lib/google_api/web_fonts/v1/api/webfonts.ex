@@ -44,6 +44,7 @@ defmodule GoogleApi.WebFonts.V1.Api.Webfonts do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:capability` (*type:* `list(String.t)`) - Controls the font urls in `Webfont.files`, by default, static ttf fonts are sent.
+      *   `:category` (*type:* `String.t`) - Filters by Webfont.category, if category is found in Webfont.categories. If not set, returns all families.
       *   `:family` (*type:* `list(String.t)`) - Filters by Webfont.family, using literal match. If not set, returns all families
       *   `:sort` (*type:* `String.t`) - Enables sorting of the list.
       *   `:subset` (*type:* `String.t`) - Filters by Webfont.subset, if subset is found in Webfont.subsets. If not set, returns all families.
@@ -73,6 +74,7 @@ defmodule GoogleApi.WebFonts.V1.Api.Webfonts do
       :uploadType => :query,
       :upload_protocol => :query,
       :capability => :query,
+      :category => :query,
       :family => :query,
       :sort => :query,
       :subset => :query
