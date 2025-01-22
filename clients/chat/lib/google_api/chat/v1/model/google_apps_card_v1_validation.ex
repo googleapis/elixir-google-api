@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Validation do
   @moduledoc """
-  Represents the necessary data for validating the widget it's attached to. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  Represents the necessary data for validating the widget it's attached to. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
-  *   `characterLimit` (*type:* `integer()`, *default:* `nil`) - Specify the character limit for text input widgets. Note that this is only used for text input and is ignored for other widgets. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
-  *   `inputType` (*type:* `String.t`, *default:* `nil`) - Specify the type of the input widgets. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  *   `characterLimit` (*type:* `integer()`, *default:* `nil`) - Specify the character limit for text input widgets. Note that this is only used for text input and is ignored for other widgets. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  *   `inputType` (*type:* `String.t`, *default:* `nil`) - Specify the type of the input widgets. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
   """
 
   use GoogleApi.Gax.ModelBase

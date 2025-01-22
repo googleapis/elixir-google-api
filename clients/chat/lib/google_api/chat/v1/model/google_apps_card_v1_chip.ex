@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Chip do
   @moduledoc """
-  A text, icon, or text and icon chip that users can click. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  A text, icon, or text and icon chip that users can click. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 

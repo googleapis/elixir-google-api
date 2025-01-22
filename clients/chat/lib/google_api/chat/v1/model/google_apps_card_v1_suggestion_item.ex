@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SuggestionItem do
   @moduledoc """
-  One suggested value that users can enter in a text input field. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  One suggested value that users can enter in a text input field. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 

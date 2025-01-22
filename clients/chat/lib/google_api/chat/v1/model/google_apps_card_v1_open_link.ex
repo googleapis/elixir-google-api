@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1OpenLink do
   @moduledoc """
-  Represents an `onClick` event that opens a hyperlink. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  Represents an `onClick` event that opens a hyperlink. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
-  *   `onClose` (*type:* `String.t`, *default:* `nil`) - Whether the client forgets about a link after opening it, or observes it until the window closes. [Google Workspace Add-ons](https://developers.google.com/workspace/add-ons):
-  *   `openAs` (*type:* `String.t`, *default:* `nil`) - How to open a link. [Google Workspace Add-ons](https://developers.google.com/workspace/add-ons):
+  *   `onClose` (*type:* `String.t`, *default:* `nil`) - Whether the client forgets about a link after opening it, or observes it until the window closes. [Google Workspace add-ons](https://developers.google.com/workspace/add-ons):
+  *   `openAs` (*type:* `String.t`, *default:* `nil`) - How to open a link. [Google Workspace add-ons](https://developers.google.com/workspace/add-ons):
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL to open.
   """
 
