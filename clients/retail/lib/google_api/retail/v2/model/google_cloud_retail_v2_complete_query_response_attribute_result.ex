@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponseAttributeResult do
   @moduledoc """
-  Resource that represents attribute results. The list of suggestions for the attribute.
+  Resource that represents attribute results.
 
   ## Attributes
 
-  *   `suggestions` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `suggestions` (*type:* `list(String.t)`, *default:* `nil`) - The list of suggestions for the attribute.
   """
 
   use GoogleApi.Gax.ModelBase
