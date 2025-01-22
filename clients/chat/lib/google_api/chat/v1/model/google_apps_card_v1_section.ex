@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Section do
   @moduledoc """
-  A section contains a collection of widgets that are rendered vertically in the order that they're specified. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  A section contains a collection of widgets that are rendered vertically in the order that they're specified. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
   *   `collapseControl` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1CollapseControl.t`, *default:* `nil`) - Optional. Define the expand and collapse button of the section. This button will be shown only if the section is collapsible. If this field isn't set, the default button is used.
   *   `collapsible` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this section is collapsible. Collapsible sections hide some or all widgets, but users can expand the section to reveal the hidden widgets by clicking **Show more**. Users can hide the widgets again by clicking **Show less**. To determine which widgets are hidden, specify `uncollapsibleWidgetsCount`.
-  *   `header` (*type:* `String.t`, *default:* `nil`) - Text that appears at the top of a section. Supports simple HTML formatted text. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/workspace/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
+  *   `header` (*type:* `String.t`, *default:* `nil`) - Text that appears at the top of a section. Supports simple HTML formatted text. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/workspace/chat/format-messages#card-formatting) and [Formatting text in Google Workspace add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
   *   `uncollapsibleWidgetsCount` (*type:* `integer()`, *default:* `nil`) - The number of uncollapsible widgets which remain visible even when a section is collapsed. For example, when a section contains five widgets and the `uncollapsibleWidgetsCount` is set to `2`, the first two widgets are always shown and the last three are collapsed by default. The `uncollapsibleWidgetsCount` is taken into account only when `collapsible` is `true`.
   *   `widgets` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widget.t)`, *default:* `nil`) - All the widgets in the section. Must contain at least one widget.
   """

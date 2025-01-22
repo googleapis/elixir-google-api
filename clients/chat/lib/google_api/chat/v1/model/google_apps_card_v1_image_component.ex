@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1ImageComponent do
   @moduledoc """
-  Represents an image. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  Represents an image. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 

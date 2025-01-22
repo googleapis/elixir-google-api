@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SwitchControl do
   @moduledoc """
-  Either a toggle-style switch or a checkbox inside a `decoratedText` widget. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend): Only supported in the `decoratedText` widget.
+  Either a toggle-style switch or a checkbox inside a `decoratedText` widget. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend): Only supported in the `decoratedText` widget.
 
   ## Attributes
 
-  *   `controlType` (*type:* `String.t`, *default:* `nil`) - How the switch appears in the user interface. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
+  *   `controlType` (*type:* `String.t`, *default:* `nil`) - How the switch appears in the user interface. [Google Workspace add-ons and Chat apps](https://developers.google.com/workspace/extend):
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name by which the switch widget is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/workspace/chat/read-form-data).
   *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - The action to perform when the switch state is changed, such as what function to run.
   *   `selected` (*type:* `boolean()`, *default:* `nil`) - When `true`, the switch is selected.
