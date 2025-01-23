@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
   ## Attributes
 
   *   `assistQueryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AssistQueryParameters.t`, *default:* `nil`) - Parameters for a human assist query.
+  *   `audioInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AudioInput.t`, *default:* `nil`) - The natural language speech audio to be processed.
   *   `cxParameters` (*type:* `map()`, *default:* `nil`) - Additional parameters to be put into Dialogflow CX session parameters. To remove a parameter from the session, clients should explicitly set the parameter value to null. Note: this field should only be used if you are connecting to a Dialogflow CX agent.
   *   `eventInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t`, *default:* `nil`) - An input event to send to Dialogflow.
   *   `queryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t`, *default:* `nil`) - Parameters for a Dialogflow virtual-agent query.
@@ -36,6 +37,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
   @type t :: %__MODULE__{
           :assistQueryParams =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AssistQueryParameters.t() | nil,
+          :audioInput =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AudioInput.t() | nil,
           :cxParameters => map() | nil,
           :eventInput =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput.t() | nil,
@@ -53,6 +56,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AssistQueryParameters
   )
 
+  field(:audioInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AudioInput)
   field(:cxParameters, type: :map)
   field(:eventInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EventInput)
   field(:queryParams, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters)
