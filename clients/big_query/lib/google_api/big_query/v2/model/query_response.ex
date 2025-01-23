@@ -22,57 +22,75 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryResponse do
   ## Attributes
 
   *   `cacheHit` (*type:* `boolean()`, *default:* `nil`) - Whether the query result was fetched from the query cache.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. Creation time of this query, in milliseconds since the epoch. This field will be present on all queries.
   *   `dmlStats` (*type:* `GoogleApi.BigQuery.V2.Model.DmlStatistics.t`, *default:* `nil`) - Output only. Detailed statistics for DML statements INSERT, UPDATE, DELETE, MERGE or TRUNCATE.
+  *   `endTime` (*type:* `String.t`, *default:* `nil`) - Output only. End time of this query, in milliseconds since the epoch. This field will be present whenever a query job is in the DONE state.
   *   `errors` (*type:* `list(GoogleApi.BigQuery.V2.Model.ErrorProto.t)`, *default:* `nil`) - Output only. The first errors or warnings encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful. For more information about error messages, see [Error messages](https://cloud.google.com/bigquery/docs/error-messages).
   *   `jobComplete` (*type:* `boolean()`, *default:* `nil`) - Whether the query has completed or not. If rows or totalRows are present, this will always be true. If this is false, totalRows will not be available.
   *   `jobCreationReason` (*type:* `GoogleApi.BigQuery.V2.Model.JobCreationReason.t`, *default:* `nil`) - Optional. The reason why a Job was created. Only relevant when a job_reference is present in the response. If job_reference is not present it will always be unset. [Preview](https://cloud.google.com/products/#product-launch-stages)
   *   `jobReference` (*type:* `GoogleApi.BigQuery.V2.Model.JobReference.t`, *default:* `nil`) - Reference to the Job that was created to run the query. This field will be present even if the original request timed out, in which case GetQueryResults can be used to read the results once the query has completed. Since this API only returns the first page of results, subsequent pages can be fetched via the same mechanism (GetQueryResults). If job_creation_mode was set to `JOB_CREATION_OPTIONAL` and the query completes without creating a job, this field will be empty.
   *   `kind` (*type:* `String.t`, *default:* `bigquery#queryResponse`) - The resource type.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. The geographic location of the query. For more information about BigQuery locations, see: https://cloud.google.com/bigquery/docs/locations
   *   `numDmlAffectedRows` (*type:* `String.t`, *default:* `nil`) - Output only. The number of rows affected by a DML statement. Present only for DML statements INSERT, UPDATE or DELETE.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token used for paging results. A non-empty token indicates that additional results are available. To see additional results, query the [`jobs.getQueryResults`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/getQueryResults) method. For more information, see [Paging through table data](https://cloud.google.com/bigquery/docs/paging-results).
   *   `queryId` (*type:* `String.t`, *default:* `nil`) - Auto-generated ID for the query. [Preview](https://cloud.google.com/products/#product-launch-stages)
   *   `rows` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableRow.t)`, *default:* `nil`) - An object with as many results as can be contained within the maximum permitted reply size. To get any additional rows, you can call GetQueryResults and specify the jobReference returned above.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - The schema of the results. Present only when the query completes successfully.
   *   `sessionInfo` (*type:* `GoogleApi.BigQuery.V2.Model.SessionInfo.t`, *default:* `nil`) - Output only. Information of the session if this job is part of one.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Output only. Start time of this query, in milliseconds since the epoch. This field will be present when the query job transitions from the PENDING state to either RUNNING or DONE.
+  *   `totalBytesBilled` (*type:* `String.t`, *default:* `nil`) - Output only. If the project is configured to use on-demand pricing, then this field contains the total bytes billed for the job. If the project is configured to use flat-rate pricing, then you are not billed for bytes and this field is informational only.
   *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - The total number of bytes processed for this query. If this query was a dry run, this is the number of bytes that would be processed if the query were run.
   *   `totalRows` (*type:* `String.t`, *default:* `nil`) - The total number of rows in the complete query result set, which can be more than the number of rows in this single page of results.
+  *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - Output only. Number of slot ms the user is actually billed for.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cacheHit => boolean() | nil,
+          :creationTime => String.t() | nil,
           :dmlStats => GoogleApi.BigQuery.V2.Model.DmlStatistics.t() | nil,
+          :endTime => String.t() | nil,
           :errors => list(GoogleApi.BigQuery.V2.Model.ErrorProto.t()) | nil,
           :jobComplete => boolean() | nil,
           :jobCreationReason => GoogleApi.BigQuery.V2.Model.JobCreationReason.t() | nil,
           :jobReference => GoogleApi.BigQuery.V2.Model.JobReference.t() | nil,
           :kind => String.t() | nil,
+          :location => String.t() | nil,
           :numDmlAffectedRows => String.t() | nil,
           :pageToken => String.t() | nil,
           :queryId => String.t() | nil,
           :rows => list(GoogleApi.BigQuery.V2.Model.TableRow.t()) | nil,
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
           :sessionInfo => GoogleApi.BigQuery.V2.Model.SessionInfo.t() | nil,
+          :startTime => String.t() | nil,
+          :totalBytesBilled => String.t() | nil,
           :totalBytesProcessed => String.t() | nil,
-          :totalRows => String.t() | nil
+          :totalRows => String.t() | nil,
+          :totalSlotMs => String.t() | nil
         }
 
   field(:cacheHit)
+  field(:creationTime)
   field(:dmlStats, as: GoogleApi.BigQuery.V2.Model.DmlStatistics)
+  field(:endTime)
   field(:errors, as: GoogleApi.BigQuery.V2.Model.ErrorProto, type: :list)
   field(:jobComplete)
   field(:jobCreationReason, as: GoogleApi.BigQuery.V2.Model.JobCreationReason)
   field(:jobReference, as: GoogleApi.BigQuery.V2.Model.JobReference)
   field(:kind)
+  field(:location)
   field(:numDmlAffectedRows)
   field(:pageToken)
   field(:queryId)
   field(:rows, as: GoogleApi.BigQuery.V2.Model.TableRow, type: :list)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
   field(:sessionInfo, as: GoogleApi.BigQuery.V2.Model.SessionInfo)
+  field(:startTime)
+  field(:totalBytesBilled)
   field(:totalBytesProcessed)
   field(:totalRows)
+  field(:totalSlotMs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.QueryResponse do
