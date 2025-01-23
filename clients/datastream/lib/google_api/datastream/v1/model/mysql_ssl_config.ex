@@ -23,9 +23,9 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlSslConfig do
 
   *   `caCertificate` (*type:* `String.t`, *default:* `nil`) - Input only. PEM-encoded certificate of the CA that signed the source database server's certificate.
   *   `caCertificateSet` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the ca_certificate field is set.
-  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - Input only. PEM-encoded certificate that will be used by the replica to authenticate against the source database server. If this field is used then the 'client_key' and the 'ca_certificate' fields are mandatory.
+  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. PEM-encoded certificate that will be used by the replica to authenticate against the source database server. If this field is used then the 'client_key' and the 'ca_certificate' fields are mandatory.
   *   `clientCertificateSet` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the client_certificate field is set.
-  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - Input only. PEM-encoded private key associated with the Client Certificate. If this field is used then the 'client_certificate' and the 'ca_certificate' fields are mandatory.
+  *   `clientKey` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. PEM-encoded private key associated with the Client Certificate. If this field is used then the 'client_certificate' and the 'ca_certificate' fields are mandatory. Mutually exclusive with the `secret_manager_stored_client_key` field.
   *   `clientKeySet` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the client_key field is set.
   """
 
