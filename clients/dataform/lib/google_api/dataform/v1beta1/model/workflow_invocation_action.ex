@@ -24,6 +24,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocationAction do
   *   `bigqueryAction` (*type:* `GoogleApi.Dataform.V1beta1.Model.BigQueryAction.t`, *default:* `nil`) - Output only. The workflow action's bigquery action details.
   *   `canonicalTarget` (*type:* `GoogleApi.Dataform.V1beta1.Model.Target.t`, *default:* `nil`) - Output only. The action's identifier if the project had been compiled without any overrides configured. Unique within the compilation result.
   *   `failureReason` (*type:* `String.t`, *default:* `nil`) - Output only. If and only if action's state is FAILED a failure reason is set.
+  *   `internalMetadata` (*type:* `String.t`, *default:* `nil`) - Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
   *   `invocationTiming` (*type:* `GoogleApi.Dataform.V1beta1.Model.Interval.t`, *default:* `nil`) - Output only. This action's timing details. `start_time` will be set if the action is in [RUNNING, SUCCEEDED, CANCELLED, FAILED] state. `end_time` will be set if the action is in [SUCCEEDED, CANCELLED, FAILED] state.
   *   `notebookAction` (*type:* `GoogleApi.Dataform.V1beta1.Model.NotebookAction.t`, *default:* `nil`) - Output only. The workflow action's notebook action details.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. This action's current state.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocationAction do
           :bigqueryAction => GoogleApi.Dataform.V1beta1.Model.BigQueryAction.t() | nil,
           :canonicalTarget => GoogleApi.Dataform.V1beta1.Model.Target.t() | nil,
           :failureReason => String.t() | nil,
+          :internalMetadata => String.t() | nil,
           :invocationTiming => GoogleApi.Dataform.V1beta1.Model.Interval.t() | nil,
           :notebookAction => GoogleApi.Dataform.V1beta1.Model.NotebookAction.t() | nil,
           :state => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocationAction do
   field(:bigqueryAction, as: GoogleApi.Dataform.V1beta1.Model.BigQueryAction)
   field(:canonicalTarget, as: GoogleApi.Dataform.V1beta1.Model.Target)
   field(:failureReason)
+  field(:internalMetadata)
   field(:invocationTiming, as: GoogleApi.Dataform.V1beta1.Model.Interval)
   field(:notebookAction, as: GoogleApi.Dataform.V1beta1.Model.NotebookAction)
   field(:state)

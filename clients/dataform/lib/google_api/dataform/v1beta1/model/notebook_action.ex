@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.NotebookAction do
   ## Attributes
 
   *   `contents` (*type:* `String.t`, *default:* `nil`) - Output only. The code contents of a Notebook to be run.
-  *   `jobId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the Vertex job that executed the notebook in contents and also the ID used for the outputs created in GCS buckets. Only set once the job has started to run.
+  *   `jobId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the Vertex job that executed the notebook in contents and also the ID used for the outputs created in Google Cloud Storage buckets. Only set once the job has started to run.
   """
 
   use GoogleApi.Gax.ModelBase

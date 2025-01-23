@@ -25,6 +25,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResultAction do
   *   `canonicalTarget` (*type:* `GoogleApi.Dataform.V1beta1.Model.Target.t`, *default:* `nil`) - The action's identifier if the project had been compiled without any overrides configured. Unique within the compilation result.
   *   `declaration` (*type:* `GoogleApi.Dataform.V1beta1.Model.Declaration.t`, *default:* `nil`) - The declaration declared by this action.
   *   `filePath` (*type:* `String.t`, *default:* `nil`) - The full path including filename in which this action is located, relative to the workspace root.
+  *   `internalMetadata` (*type:* `String.t`, *default:* `nil`) - Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
   *   `notebook` (*type:* `GoogleApi.Dataform.V1beta1.Model.Notebook.t`, *default:* `nil`) - The notebook executed by this action.
   *   `operations` (*type:* `GoogleApi.Dataform.V1beta1.Model.Operations.t`, *default:* `nil`) - The database operations executed by this action.
   *   `relation` (*type:* `GoogleApi.Dataform.V1beta1.Model.Relation.t`, *default:* `nil`) - The database relation created/updated by this action.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResultAction do
           :canonicalTarget => GoogleApi.Dataform.V1beta1.Model.Target.t() | nil,
           :declaration => GoogleApi.Dataform.V1beta1.Model.Declaration.t() | nil,
           :filePath => String.t() | nil,
+          :internalMetadata => String.t() | nil,
           :notebook => GoogleApi.Dataform.V1beta1.Model.Notebook.t() | nil,
           :operations => GoogleApi.Dataform.V1beta1.Model.Operations.t() | nil,
           :relation => GoogleApi.Dataform.V1beta1.Model.Relation.t() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResultAction do
   field(:canonicalTarget, as: GoogleApi.Dataform.V1beta1.Model.Target)
   field(:declaration, as: GoogleApi.Dataform.V1beta1.Model.Declaration)
   field(:filePath)
+  field(:internalMetadata)
   field(:notebook, as: GoogleApi.Dataform.V1beta1.Model.Notebook)
   field(:operations, as: GoogleApi.Dataform.V1beta1.Model.Operations)
   field(:relation, as: GoogleApi.Dataform.V1beta1.Model.Relation)

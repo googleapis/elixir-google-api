@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowConfig do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of when the WorkflowConfig was created.
   *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - Optional. Optional schedule (in cron format) for automatic execution of this workflow config.
+  *   `internalMetadata` (*type:* `String.t`, *default:* `nil`) - Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
   *   `invocationConfig` (*type:* `GoogleApi.Dataform.V1beta1.Model.InvocationConfig.t`, *default:* `nil`) - Optional. If left unset, a default InvocationConfig will be used.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The workflow config's name.
   *   `recentScheduledExecutionRecords` (*type:* `list(GoogleApi.Dataform.V1beta1.Model.ScheduledExecutionRecord.t)`, *default:* `nil`) - Output only. Records of the 10 most recent scheduled execution attempts, ordered in descending order of `execution_time`. Updated whenever automatic creation of a workflow invocation is triggered by cron_schedule.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowConfig do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :cronSchedule => String.t() | nil,
+          :internalMetadata => String.t() | nil,
           :invocationConfig => GoogleApi.Dataform.V1beta1.Model.InvocationConfig.t() | nil,
           :name => String.t() | nil,
           :recentScheduledExecutionRecords =>
@@ -47,6 +49,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowConfig do
 
   field(:createTime, as: DateTime)
   field(:cronSchedule)
+  field(:internalMetadata)
   field(:invocationConfig, as: GoogleApi.Dataform.V1beta1.Model.InvocationConfig)
   field(:name)
 
