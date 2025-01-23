@@ -23,17 +23,20 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3DataStoreConnec
 
   *   `dataStore` (*type:* `String.t`, *default:* `nil`) - The full name of the referenced data store. Formats: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}` `projects/{project}/locations/{location}/dataStores/{data_store}`
   *   `dataStoreType` (*type:* `String.t`, *default:* `nil`) - The type of the connected data store.
+  *   `documentProcessingMode` (*type:* `String.t`, *default:* `nil`) - The document processing mode for the data store connection. Should only be set for PUBLIC_WEB and UNSTRUCTURED data stores. If not set it is considered as DOCUMENTS, as this is the legacy mode.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :dataStore => String.t() | nil,
-          :dataStoreType => String.t() | nil
+          :dataStoreType => String.t() | nil,
+          :documentProcessingMode => String.t() | nil
         }
 
   field(:dataStore)
   field(:dataStoreType)
+  field(:documentProcessingMode)
 end
 
 defimpl Poison.Decoder,
