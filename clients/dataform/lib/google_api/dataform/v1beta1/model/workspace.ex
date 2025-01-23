@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Workspace do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of when the workspace was created.
   *   `dataEncryptionState` (*type:* `GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t`, *default:* `nil`) - Output only. A data encryption state of a Git repository if this Workspace is protected by a KMS key.
+  *   `internalMetadata` (*type:* `String.t`, *default:* `nil`) - Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The workspace's name.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Workspace do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :dataEncryptionState => GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t() | nil,
+          :internalMetadata => String.t() | nil,
           :name => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
   field(:dataEncryptionState, as: GoogleApi.Dataform.V1beta1.Model.DataEncryptionState)
+  field(:internalMetadata)
   field(:name)
 end
 

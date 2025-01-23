@@ -25,6 +25,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Repository do
   *   `dataEncryptionState` (*type:* `GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t`, *default:* `nil`) - Output only. A data encryption state of a Git repository if this Repository is protected by a KMS key.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The repository's user-friendly name.
   *   `gitRemoteSettings` (*type:* `GoogleApi.Dataform.V1beta1.Model.GitRemoteSettings.t`, *default:* `nil`) - Optional. If set, configures this repository to be linked to a Git remote.
+  *   `internalMetadata` (*type:* `String.t`, *default:* `nil`) - Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. The reference to a KMS encryption key. If provided, it will be used to encrypt user data in the repository and all child resources. It is not possible to add or update the encryption key after the repository is created. Example: `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Repository user labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The repository's name.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Repository do
           :dataEncryptionState => GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t() | nil,
           :displayName => String.t() | nil,
           :gitRemoteSettings => GoogleApi.Dataform.V1beta1.Model.GitRemoteSettings.t() | nil,
+          :internalMetadata => String.t() | nil,
           :kmsKeyName => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Repository do
   field(:dataEncryptionState, as: GoogleApi.Dataform.V1beta1.Model.DataEncryptionState)
   field(:displayName)
   field(:gitRemoteSettings, as: GoogleApi.Dataform.V1beta1.Model.GitRemoteSettings)
+  field(:internalMetadata)
   field(:kmsKeyName)
   field(:labels, type: :map)
   field(:name)

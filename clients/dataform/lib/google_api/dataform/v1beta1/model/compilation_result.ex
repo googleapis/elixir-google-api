@@ -27,6 +27,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResult do
   *   `dataEncryptionState` (*type:* `GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t`, *default:* `nil`) - Output only. Only set if the repository has a KMS Key.
   *   `dataformCoreVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The version of `@dataform/core` that was used for compilation.
   *   `gitCommitish` (*type:* `String.t`, *default:* `nil`) - Immutable. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1`
+  *   `internalMetadata` (*type:* `String.t`, *default:* `nil`) - Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The compilation result's name.
   *   `releaseConfig` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the release config to compile. Must be in the format `projects/*/locations/*/repositories/*/releaseConfigs/*`.
   *   `resolvedGitCommitSha` (*type:* `String.t`, *default:* `nil`) - Output only. The fully resolved Git commit SHA of the code that was compiled. Not set for compilation results whose source is a workspace.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResult do
           :dataEncryptionState => GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t() | nil,
           :dataformCoreVersion => String.t() | nil,
           :gitCommitish => String.t() | nil,
+          :internalMetadata => String.t() | nil,
           :name => String.t() | nil,
           :releaseConfig => String.t() | nil,
           :resolvedGitCommitSha => String.t() | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResult do
   field(:dataEncryptionState, as: GoogleApi.Dataform.V1beta1.Model.DataEncryptionState)
   field(:dataformCoreVersion)
   field(:gitCommitish)
+  field(:internalMetadata)
   field(:name)
   field(:releaseConfig)
   field(:resolvedGitCommitSha)

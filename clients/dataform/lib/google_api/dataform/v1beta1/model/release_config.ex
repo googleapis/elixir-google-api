@@ -25,6 +25,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.ReleaseConfig do
   *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - Optional. Optional schedule (in cron format) for automatic creation of compilation results.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Disables automatic creation of compilation results.
   *   `gitCommitish` (*type:* `String.t`, *default:* `nil`) - Required. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1`
+  *   `internalMetadata` (*type:* `String.t`, *default:* `nil`) - Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The release config's name.
   *   `recentScheduledReleaseRecords` (*type:* `list(GoogleApi.Dataform.V1beta1.Model.ScheduledReleaseRecord.t)`, *default:* `nil`) - Output only. Records of the 10 most recent scheduled release attempts, ordered in descending order of `release_time`. Updated whenever automatic creation of a compilation result is triggered by cron_schedule.
   *   `releaseCompilationResult` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the currently released compilation result for this release config. This value is updated when a compilation result is automatically created from this release config (using cron_schedule), or when this resource is updated by API call (perhaps to roll back to an earlier release). The compilation result must have been created using this release config. Must be in the format `projects/*/locations/*/repositories/*/compilationResults/*`.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.ReleaseConfig do
           :cronSchedule => String.t() | nil,
           :disabled => boolean() | nil,
           :gitCommitish => String.t() | nil,
+          :internalMetadata => String.t() | nil,
           :name => String.t() | nil,
           :recentScheduledReleaseRecords =>
             list(GoogleApi.Dataform.V1beta1.Model.ScheduledReleaseRecord.t()) | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.ReleaseConfig do
   field(:cronSchedule)
   field(:disabled)
   field(:gitCommitish)
+  field(:internalMetadata)
   field(:name)
 
   field(:recentScheduledReleaseRecords,
