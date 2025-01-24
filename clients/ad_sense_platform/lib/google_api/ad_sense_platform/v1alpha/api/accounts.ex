@@ -172,7 +172,7 @@ defmodule GoogleApi.AdSensePlatform.V1alpha.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdSensePlatform.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the platform to retrieve. Format: accounts/{account}/platforms/{platform}/childAccounts/{child_publisher_code}
+  *   `parent` (*type:* `String.t`) - Required. The name of the child account under the given platform which owns the platform child sites. Format: accounts/{account}/platforms/{platform}/childAccounts/{child_account}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -248,7 +248,7 @@ defmodule GoogleApi.AdSensePlatform.V1alpha.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdSensePlatform.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Identifier. Format: accounts/{account}/platforms/{platform}/childAccounts/{child}/sites/{platformChildSite}
+  *   `name` (*type:* `String.t`) - Identifier. Format: accounts/{account}/platforms/{platform}/childAccounts/{child_account}/sites/{platform_child_site}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
