@@ -20,7 +20,7 @@ defmodule GoogleApi.AppHub.V1 do
   API client metadata for GoogleApi.AppHub.V1.
   """
 
-  @discovery_revision "20241008"
+  @discovery_revision "20250115"
 
   def discovery_revision(), do: @discovery_revision
 end
