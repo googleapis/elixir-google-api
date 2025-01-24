@@ -45,6 +45,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   *   `storageAutoResizeLimit` (*type:* `String.t`, *default:* `nil`) - The maximum size to which storage capacity can be automatically increased. The default value is 0, which specifies that there is no limit.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - The name of server Instance collation.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier (or machine type) for this instance, for example `db-custom-1-3840`. WARNING: Changing this restarts the instance.
+  *   `replicationLagMaxSeconds` (*type:* `integer()`, *default:* `nil`) - Optional. Configuration value for recreation of replica after certain replication lag
   *   `locationPreference` (*type:* `GoogleApi.SQLAdmin.V1.Model.LocationPreference.t`, *default:* `nil`) - The location preference settings. This allows the instance to be located as near as possible to either an App Engine app or Compute Engine zone for better performance. App Engine co-location was only applicable to First Generation instances.
   *   `storageAutoResize` (*type:* `boolean()`, *default:* `nil`) - Configuration to increase storage size automatically. The default value is true.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Server timezone, relevant only for Cloud SQL for SQL Server.
@@ -86,6 +87,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
           :storageAutoResizeLimit => String.t() | nil,
           :collation => String.t() | nil,
           :tier => String.t() | nil,
+          :replicationLagMaxSeconds => integer() | nil,
           :locationPreference => GoogleApi.SQLAdmin.V1.Model.LocationPreference.t() | nil,
           :storageAutoResize => boolean() | nil,
           :timeZone => String.t() | nil,
@@ -129,6 +131,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   field(:storageAutoResizeLimit)
   field(:collation)
   field(:tier)
+  field(:replicationLagMaxSeconds)
   field(:locationPreference, as: GoogleApi.SQLAdmin.V1.Model.LocationPreference)
   field(:storageAutoResize)
   field(:timeZone)
