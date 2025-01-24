@@ -22,7 +22,7 @@ defmodule GoogleApi.AdSensePlatform.V1alpha.Model.PlatformChildSite do
   ## Attributes
 
   *   `domain` (*type:* `String.t`, *default:* `nil`) - Output only. Domain URL of the Platform Child Site. Part of the PlatformChildSite name.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Format: accounts/{account}/platforms/{platform}/childAccounts/{child}/sites/{platformChildSite}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Format: accounts/{account}/platforms/{platform}/childAccounts/{child_account}/sites/{platform_child_site}
   *   `platformGroup` (*type:* `String.t`, *default:* `nil`) - Resource name of the Platform Group of the Platform Child Site.
   """
 
