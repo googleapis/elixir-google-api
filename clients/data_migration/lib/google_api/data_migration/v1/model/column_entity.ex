@@ -27,6 +27,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ColumnEntity do
   *   `charset` (*type:* `String.t`, *default:* `nil`) - Charset override - instead of table level charset.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - Collation override - instead of table level collation.
   *   `comment` (*type:* `String.t`, *default:* `nil`) - Comment associated with the column.
+  *   `computed` (*type:* `boolean()`, *default:* `nil`) - Is the column a computed column.
   *   `customFeatures` (*type:* `map()`, *default:* `nil`) - Custom engine specific features.
   *   `dataType` (*type:* `String.t`, *default:* `nil`) - Column data type.
   *   `defaultValue` (*type:* `String.t`, *default:* `nil`) - Default value of the column.
@@ -50,6 +51,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ColumnEntity do
           :charset => String.t() | nil,
           :collation => String.t() | nil,
           :comment => String.t() | nil,
+          :computed => boolean() | nil,
           :customFeatures => map() | nil,
           :dataType => String.t() | nil,
           :defaultValue => String.t() | nil,
@@ -70,6 +72,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ColumnEntity do
   field(:charset)
   field(:collation)
   field(:comment)
+  field(:computed)
   field(:customFeatures, type: :map)
   field(:dataType)
   field(:defaultValue)
