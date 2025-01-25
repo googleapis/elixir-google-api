@@ -22,6 +22,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   ## Attributes
 
   *   `chunkingConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptionsLayoutConfigChunkingConfig.t`, *default:* `nil`) - Optional. Config for chunking in layout parser processor.
+  *   `returnBoundingBoxes` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to include bounding boxes in layout parser processor response.
+  *   `returnImages` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to include images in layout parser processor response.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,13 +31,18 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   @type t :: %__MODULE__{
           :chunkingConfig =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptionsLayoutConfigChunkingConfig.t()
-            | nil
+            | nil,
+          :returnBoundingBoxes => boolean() | nil,
+          :returnImages => boolean() | nil
         }
 
   field(:chunkingConfig,
     as:
       GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptionsLayoutConfigChunkingConfig
   )
+
+  field(:returnBoundingBoxes)
+  field(:returnImages)
 end
 
 defimpl Poison.Decoder,
