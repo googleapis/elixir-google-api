@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeDescription do
   *   `categories` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeCategory.t)`, *default:* `nil`) - The category of the infoType.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the infotype. Translated when language is provided in the request.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human readable form of the infoType name.
-  *   `example` (*type:* `String.t`, *default:* `nil`) - A sample true positive for this infoType.
+  *   `example` (*type:* `String.t`, *default:* `nil`) - A sample that is a true positive for this infoType.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Internal name of the infoType.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The default sensitivity of the infoType.
   *   `supportedBy` (*type:* `list(String.t)`, *default:* `nil`) - Which parts of the API supports this InfoType.
