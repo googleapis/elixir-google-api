@@ -1841,7 +1841,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
+  *   `name` (*type:* `String.t`) - Immutable. Identifier. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3529,7 +3529,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}.
+  *   `name` (*type:* `String.t`) - Immutable. Identifier. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

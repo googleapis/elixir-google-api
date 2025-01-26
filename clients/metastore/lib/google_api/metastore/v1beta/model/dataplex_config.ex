@@ -21,7 +21,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.DataplexConfig do
 
   ## Attributes
 
-  *   `lakeResources` (*type:* `%{optional(String.t) => GoogleApi.Metastore.V1beta.Model.Lake.t}`, *default:* `nil`) - A reference to the Lake resources that this metastore service is attached to. The key is the lake resource name. Example: projects/{project_number}/locations/{location_id}/lakes/{lake_id}.
+  *   `lakeResources` (*type:* `%{optional(String.t) => GoogleApi.Metastore.V1beta.Model.Lake.t}`, *default:* `nil`) - Optional. A reference to the Lake resources that this metastore service is attached to. The key is the lake resource name. Example: projects/{project_number}/locations/{location_id}/lakes/{lake_id}.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Metastore.V1.Model.MaintenanceWindow do
 
   ## Attributes
 
-  *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - The day of week, when the window starts.
-  *   `hourOfDay` (*type:* `integer()`, *default:* `nil`) - The hour of day (0-23) when the window starts.
+  *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - Optional. The day of week, when the window starts.
+  *   `hourOfDay` (*type:* `integer()`, *default:* `nil`) - Optional. The hour of day (0-23) when the window starts.
   """
 
   use GoogleApi.Gax.ModelBase
