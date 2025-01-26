@@ -27,6 +27,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscovery do
   *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Optional. The GCP project number that this SapSystem belongs to.
   *   `systemId` (*type:* `String.t`, *default:* `nil`) - Output only. A combination of database SID, database instance URI and tenant DB name to make a unique identifier per-system.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Unix timestamp this system has been updated last.
+  *   `useDrReconciliation` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to use DR reconciliation or not.
   *   `workloadProperties` (*type:* `GoogleApi.WorkloadManager.V1.Model.SapDiscoveryWorkloadProperties.t`, *default:* `nil`) - Optional. The properties of the workload.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscovery do
           :projectNumber => String.t() | nil,
           :systemId => String.t() | nil,
           :updateTime => DateTime.t() | nil,
+          :useDrReconciliation => boolean() | nil,
           :workloadProperties =>
             GoogleApi.WorkloadManager.V1.Model.SapDiscoveryWorkloadProperties.t() | nil
         }
@@ -49,6 +51,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscovery do
   field(:projectNumber)
   field(:systemId)
   field(:updateTime, as: DateTime)
+  field(:useDrReconciliation)
 
   field(:workloadProperties, as: GoogleApi.WorkloadManager.V1.Model.SapDiscoveryWorkloadProperties)
 end
