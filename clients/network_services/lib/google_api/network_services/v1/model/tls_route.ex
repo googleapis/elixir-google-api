@@ -23,6 +23,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.TlsRoute do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A free-text description of the resource. Max length 1024 characters.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
   *   `gateways` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Gateways defines a list of gateways this TlsRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/*/locations/global/gateways/`
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the TlsRoute resource.
   *   `meshes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Meshes defines a list of meshes this TlsRoute is attached to, as one of the routing rules to route the requests served by the mesh. Each mesh reference should match the pattern: `projects/*/locations/global/meshes/` The attached Mesh should be of a type SIDECAR
@@ -37,6 +38,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.TlsRoute do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :etag => String.t() | nil,
           :gateways => list(String.t()) | nil,
           :labels => map() | nil,
           :meshes => list(String.t()) | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.TlsRoute do
 
   field(:createTime, as: DateTime)
   field(:description)
+  field(:etag)
   field(:gateways, type: :list)
   field(:labels, type: :map)
   field(:meshes, type: :list)
