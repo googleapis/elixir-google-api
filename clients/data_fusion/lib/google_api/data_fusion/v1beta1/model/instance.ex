@@ -30,6 +30,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of this instance is in the form of projects/{project}/locations/{location}/instances/{instance}.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current state of this Data Fusion instance if available.
   *   `dataplexDataLineageIntegrationEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Option to enable the Dataplex Lineage Integration feature.
+  *   `maintenanceEvents` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.MaintenanceEvent.t)`, *default:* `nil`) - Output only. The maintenance events for this instance.
   *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Option to enable Stackdriver Logging.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this instance.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for an instance.
@@ -70,6 +71,8 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
           :name => String.t() | nil,
           :stateMessage => String.t() | nil,
           :dataplexDataLineageIntegrationEnabled => boolean() | nil,
+          :maintenanceEvents =>
+            list(GoogleApi.DataFusion.V1beta1.Model.MaintenanceEvent.t()) | nil,
           :enableStackdriverLogging => boolean() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
@@ -107,6 +110,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   field(:name)
   field(:stateMessage)
   field(:dataplexDataLineageIntegrationEnabled)
+  field(:maintenanceEvents, as: GoogleApi.DataFusion.V1beta1.Model.MaintenanceEvent, type: :list)
   field(:enableStackdriverLogging)
   field(:description)
   field(:displayName)
