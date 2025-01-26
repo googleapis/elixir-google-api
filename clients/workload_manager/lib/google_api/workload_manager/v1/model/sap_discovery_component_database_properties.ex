@@ -25,6 +25,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentDatabaseProper
   *   `databaseType` (*type:* `String.t`, *default:* `nil`) - Required. Type of the database. HANA, DB2, etc.
   *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of the database software running in the system.
   *   `instanceNumber` (*type:* `String.t`, *default:* `nil`) - Optional. Instance number of the SAP instance.
+  *   `landscapeId` (*type:* `String.t`, *default:* `nil`) - Optional. Landscape ID from the HANA nameserver.
   *   `primaryInstanceUri` (*type:* `String.t`, *default:* `nil`) - Required. URI of the recognized primary instance of the database.
   *   `sharedNfsUri` (*type:* `String.t`, *default:* `nil`) - Optional. URI of the recognized shared NFS of the database. May be empty if the database has only a single node.
   """
@@ -36,6 +37,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentDatabaseProper
           :databaseType => String.t() | nil,
           :databaseVersion => String.t() | nil,
           :instanceNumber => String.t() | nil,
+          :landscapeId => String.t() | nil,
           :primaryInstanceUri => String.t() | nil,
           :sharedNfsUri => String.t() | nil
         }
@@ -44,6 +46,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentDatabaseProper
   field(:databaseType)
   field(:databaseVersion)
   field(:instanceNumber)
+  field(:landscapeId)
   field(:primaryInstanceUri)
   field(:sharedNfsUri)
 end
