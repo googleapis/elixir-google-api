@@ -22,9 +22,9 @@ defmodule GoogleApi.Metastore.V1beta.Model.Backup do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the backup was started.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the backup.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the backup.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the backup finished creating.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The relative resource name of the backup, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier. The relative resource name of the backup, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}
   *   `restoringServices` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Services that are restoring from the backup.
   *   `serviceRevision` (*type:* `GoogleApi.Metastore.V1beta.Model.Service.t`, *default:* `nil`) - Output only. The revision of the service at the time of backup.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the backup.

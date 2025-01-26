@@ -22,8 +22,8 @@ defmodule GoogleApi.Metastore.V1.Model.DatabaseDump do
   ## Attributes
 
   *   `databaseType` (*type:* `String.t`, *default:* `nil`) - The type of the database.
-  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - A Cloud Storage object or folder URI that specifies the source from which to import metadata. It must begin with gs://.
-  *   `sourceDatabase` (*type:* `String.t`, *default:* `nil`) - The name of the source database.
+  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - Optional. A Cloud Storage object or folder URI that specifies the source from which to import metadata. It must begin with gs://.
+  *   `sourceDatabase` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the source database.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the database dump. If unspecified, defaults to MYSQL.
   """
 

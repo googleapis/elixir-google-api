@@ -21,7 +21,7 @@ defmodule GoogleApi.Metastore.V1.Model.Secret do
 
   ## Attributes
 
-  *   `cloudSecret` (*type:* `String.t`, *default:* `nil`) - The relative resource name of a Secret Manager secret version, in the following form:projects/{project_number}/secrets/{secret_id}/versions/{version_id}.
+  *   `cloudSecret` (*type:* `String.t`, *default:* `nil`) - Optional. The relative resource name of a Secret Manager secret version, in the following form:projects/{project_number}/secrets/{secret_id}/versions/{version_id}.
   """
 
   use GoogleApi.Gax.ModelBase

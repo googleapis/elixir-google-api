@@ -22,7 +22,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.NetworkConfig do
   ## Attributes
 
   *   `consumers` (*type:* `list(GoogleApi.Metastore.V1beta.Model.Consumer.t)`, *default:* `nil`) - Immutable. The consumer-side network configuration for the Dataproc Metastore instance.
-  *   `customRoutesEnabled` (*type:* `boolean()`, *default:* `nil`) - Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.
+  *   `customRoutesEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -29,21 +29,21 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
   *   `endpointUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the endpoint used to access the metastore service.
   *   `hiveMetastoreConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.HiveMetastoreConfig.t`, *default:* `nil`) - Configuration information specific to running Hive metastore software as the metastore service.
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels for the metastore service.
-  *   `maintenanceWindow` (*type:* `GoogleApi.Metastore.V1beta.Model.MaintenanceWindow.t`, *default:* `nil`) - The one hour maintenance window of the metastore service. This specifies when the service can be restarted for maintenance purposes in UTC time. Maintenance window is not needed for services with the SPANNER database type.
+  *   `maintenanceWindow` (*type:* `GoogleApi.Metastore.V1beta.Model.MaintenanceWindow.t`, *default:* `nil`) - Optional. The one hour maintenance window of the metastore service. This specifies when the service can be restarted for maintenance purposes in UTC time. Maintenance window is not needed for services with the SPANNER database type.
   *   `metadataIntegration` (*type:* `GoogleApi.Metastore.V1beta.Model.MetadataIntegration.t`, *default:* `nil`) - Optional. The setting that defines how metastore metadata should be integrated with external services and systems.
   *   `metadataManagementActivity` (*type:* `GoogleApi.Metastore.V1beta.Model.MetadataManagementActivity.t`, *default:* `nil`) - Output only. The metadata management activities of the metastore service.
   *   `multiRegionConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.MultiRegionConfig.t`, *default:* `nil`) - Optional. Specifies the multi-region configuration information for the Hive metastore service.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Immutable. The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:projects/{project_number}/global/networks/{network_id}.
-  *   `networkConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.NetworkConfig.t`, *default:* `nil`) - The configuration specifying the network settings for the Dataproc Metastore service.
-  *   `port` (*type:* `integer()`, *default:* `nil`) - The TCP port at which the metastore service is reached. Default: 9083.
+  *   `networkConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.NetworkConfig.t`, *default:* `nil`) - Optional. The configuration specifying the network settings for the Dataproc Metastore service.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Optional. The TCP port at which the metastore service is reached. Default: 9083.
   *   `releaseChannel` (*type:* `String.t`, *default:* `nil`) - Immutable. The release channel of the service. If unspecified, defaults to STABLE.
-  *   `scalingConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.ScalingConfig.t`, *default:* `nil`) - Scaling configuration of the metastore service.
+  *   `scalingConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.ScalingConfig.t`, *default:* `nil`) - Optional. Scaling configuration of the metastore service.
   *   `scheduledBackup` (*type:* `GoogleApi.Metastore.V1beta.Model.ScheduledBackup.t`, *default:* `nil`) - Optional. The configuration of scheduled backup for the metastore service.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the metastore service.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current state of the metastore service, if available.
-  *   `telemetryConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.TelemetryConfig.t`, *default:* `nil`) - The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.
-  *   `tier` (*type:* `String.t`, *default:* `nil`) - The tier of the service.
+  *   `telemetryConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.TelemetryConfig.t`, *default:* `nil`) - Optional. The configuration specifying telemetry settings for the Dataproc Metastore service. If unspecified defaults to JSON.
+  *   `tier` (*type:* `String.t`, *default:* `nil`) - Optional. The tier of the service.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The globally unique resource identifier of the metastore service.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metastore service was last updated.
   """

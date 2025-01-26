@@ -22,7 +22,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.MetadataIntegration do
   ## Attributes
 
   *   `dataCatalogConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.DataCatalogConfig.t`, *default:* `nil`) - Optional. The integration config for the Data Catalog service.
-  *   `dataplexConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.DataplexConfig.t`, *default:* `nil`) - The integration config for the Dataplex service.
+  *   `dataplexConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.DataplexConfig.t`, *default:* `nil`) - Optional. The integration config for the Dataplex service.
   """
 
   use GoogleApi.Gax.ModelBase

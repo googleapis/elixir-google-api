@@ -23,9 +23,9 @@ defmodule GoogleApi.Metastore.V1beta.Model.MetadataImport do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metadata import was started.
   *   `databaseDump` (*type:* `GoogleApi.Metastore.V1beta.Model.DatabaseDump.t`, *default:* `nil`) - Immutable. A database dump from a pre-existing metastore's database.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the metadata import.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the metadata import.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metadata import finished.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the metadata import.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metadata import was last updated.
   """
