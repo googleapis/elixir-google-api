@@ -21,7 +21,7 @@ defmodule GoogleApi.TPU.V2.Model.MultisliceParams do
 
   ## Attributes
 
-  *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - Required. Number of nodes with this spec. The system will attempt to provison "node_count" nodes as part of the request. This needs to be > 1.
+  *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - Required. Number of nodes with this spec. The system will attempt to provision "node_count" nodes as part of the request. This needs to be > 1.
   *   `nodeIdPrefix` (*type:* `String.t`, *default:* `nil`) - Optional. Prefix of node_ids in case of multislice request. Should follow the `^[A-Za-z0-9_.~+%-]+$` regex format. If node_count = 3 and node_id_prefix = "np", node ids of nodes created will be "np-0", "np-1", "np-2". If this field is not provided we use queued_resource_id as the node_id_prefix.
   """
 
