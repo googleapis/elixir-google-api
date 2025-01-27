@@ -23,6 +23,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.BackupCollection do
 
   *   `cluster` (*type:* `String.t`, *default:* `nil`) - Output only. The full resource path of the cluster the backup collection belongs to. Example: projects/{project}/locations/{location}/clusters/{cluster}
   *   `clusterUid` (*type:* `String.t`, *default:* `nil`) - Output only. The cluster uid of the backup collection.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the backup collection was created.
   *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Output only. The KMS key used to encrypt the backups under this backup collection.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Full resource path of the backup collection.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System assigned unique identifier of the backup collection.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.BackupCollection do
   @type t :: %__MODULE__{
           :cluster => String.t() | nil,
           :clusterUid => String.t() | nil,
+          :createTime => DateTime.t() | nil,
           :kmsKey => String.t() | nil,
           :name => String.t() | nil,
           :uid => String.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.BackupCollection do
 
   field(:cluster)
   field(:clusterUid)
+  field(:createTime, as: DateTime)
   field(:kmsKey)
   field(:name)
   field(:uid)
