@@ -21,15 +21,18 @@ defmodule GoogleApi.Forms.V1.Model.FormSettings do
 
   ## Attributes
 
+  *   `emailCollectionType` (*type:* `String.t`, *default:* `nil`) - Optional. Kind of email collection configured in the form.
   *   `quizSettings` (*type:* `GoogleApi.Forms.V1.Model.QuizSettings.t`, *default:* `nil`) - Settings related to quiz forms and grading.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :emailCollectionType => String.t() | nil,
           :quizSettings => GoogleApi.Forms.V1.Model.QuizSettings.t() | nil
         }
 
+  field(:emailCollectionType)
   field(:quizSettings, as: GoogleApi.Forms.V1.Model.QuizSettings)
 end
 
