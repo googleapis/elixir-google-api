@@ -27,6 +27,12 @@ defmodule GoogleApi.ChromeManagement.V1.Connection do
       # See detailed information about apps installed on Chrome browsers and devices managed by your organization
       "https://www.googleapis.com/auth/chrome.management.appdetails.readonly",
 
+      # See, edit, delete, and take other necessary actions on Chrome browser profiles managed by your organization
+      "https://www.googleapis.com/auth/chrome.management.profiles",
+
+      # See Chrome browser profiles managed by your organization
+      "https://www.googleapis.com/auth/chrome.management.profiles.readonly",
+
       # See reports about devices and Chrome browsers managed within your organization
       "https://www.googleapis.com/auth/chrome.management.reports.readonly",
 
