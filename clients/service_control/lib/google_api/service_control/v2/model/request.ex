@@ -26,6 +26,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.Request do
   *   `host` (*type:* `String.t`, *default:* `nil`) - The HTTP request `Host` header value.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for a request, which can be propagated to downstream systems. The ID should have low probability of collision within a single day for a specific service.
   *   `method` (*type:* `String.t`, *default:* `nil`) - The HTTP request method, such as `GET`, `POST`.
+  *   `origin` (*type:* `String.t`, *default:* `nil`) - The values from Origin header from the HTTP request, such as "https://console.cloud.google.com". Modern browsers can only have one origin. Special browsers and/or HTTP clients may require multiple origins.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The HTTP URL path, excluding the query parameters.
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - The network protocol used with the request, such as "http/1.1", "spdy/3", "h2", "h2c", "webrtc", "tcp", "udp", "quic". See https://www.iana.org/assignments/tls-extensiontype-values/tls-extensiontype-values.xhtml#alpn-protocol-ids for details.
   *   `query` (*type:* `String.t`, *default:* `nil`) - The HTTP URL query in the format of `name1=value1&name2=value2`, as it appears in the first line of the HTTP request. No decoding is performed.
@@ -43,6 +44,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.Request do
           :host => String.t() | nil,
           :id => String.t() | nil,
           :method => String.t() | nil,
+          :origin => String.t() | nil,
           :path => String.t() | nil,
           :protocol => String.t() | nil,
           :query => String.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.Request do
   field(:host)
   field(:id)
   field(:method)
+  field(:origin)
   field(:path)
   field(:protocol)
   field(:query)
