@@ -26,7 +26,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Session do
   *   `environmentConfig` (*type:* `GoogleApi.Dataproc.V1.Model.EnvironmentConfig.t`, *default:* `nil`) - Optional. Environment configuration for the session execution.
   *   `jupyterSession` (*type:* `GoogleApi.Dataproc.V1.Model.JupyterConfig.t`, *default:* `nil`) - Optional. Jupyter session config.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with the session. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a session.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the session.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the session.
   *   `runtimeConfig` (*type:* `GoogleApi.Dataproc.V1.Model.RuntimeConfig.t`, *default:* `nil`) - Optional. Runtime configuration for the session execution.
   *   `runtimeInfo` (*type:* `GoogleApi.Dataproc.V1.Model.RuntimeInfo.t`, *default:* `nil`) - Output only. Runtime information about session execution.
   *   `sessionTemplate` (*type:* `String.t`, *default:* `nil`) - Optional. The session template used by the session.Only resource names, including project ID and location, are valid.Example: * https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/sessionTemplates/[template_id] * projects/[project_id]/locations/[dataproc_region]/sessionTemplates/[template_id]The template must be in the same project and Dataproc region as the session.
