@@ -20,7 +20,7 @@ defmodule GoogleApi.Forms.V1 do
   API client metadata for GoogleApi.Forms.V1.
   """
 
-  @discovery_revision "20241112"
+  @discovery_revision "20250121"
 
   def discovery_revision(), do: @discovery_revision
 end
