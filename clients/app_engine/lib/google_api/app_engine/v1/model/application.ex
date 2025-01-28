@@ -37,6 +37,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full path to the Application resource in the API. Example: apps/myapp.@OutputOnly
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one.
   *   `servingStatus` (*type:* `String.t`, *default:* `nil`) - Serving status of this application.
+  *   `sslPolicy` (*type:* `String.t`, *default:* `nil`) - The SSL policy that will be applied to the application. If set to Modern it will restrict traffic with TLS < 1.2 and allow only Modern Ciphers suite
   """
 
   use GoogleApi.Gax.ModelBase
@@ -57,7 +58,8 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
           :locationId => String.t() | nil,
           :name => String.t() | nil,
           :serviceAccount => String.t() | nil,
-          :servingStatus => String.t() | nil
+          :servingStatus => String.t() | nil,
+          :sslPolicy => String.t() | nil
         }
 
   field(:authDomain)
@@ -76,6 +78,7 @@ defmodule GoogleApi.AppEngine.V1.Model.Application do
   field(:name)
   field(:serviceAccount)
   field(:servingStatus)
+  field(:sslPolicy)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Application do
