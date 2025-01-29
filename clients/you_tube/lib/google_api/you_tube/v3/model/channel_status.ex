@@ -21,6 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
 
   ## Attributes
 
+  *   `isChannelMonetizationEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the channel is considered ypp monetization enabled. See go/yppornot for more details.
   *   `isLinked` (*type:* `boolean()`, *default:* `nil`) - If true, then the user is linked to either a YouTube username or G+ account. Otherwise, the user doesn't have a public YouTube identity.
   *   `longUploadsStatus` (*type:* `String.t`, *default:* `nil`) - The long uploads status of this channel. See https://support.google.com/youtube/answer/71673 for more information.
   *   `madeForKids` (*type:* `boolean()`, *default:* `nil`) - 
@@ -31,6 +32,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :isChannelMonetizationEnabled => boolean() | nil,
           :isLinked => boolean() | nil,
           :longUploadsStatus => String.t() | nil,
           :madeForKids => boolean() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.YouTube.V3.Model.ChannelStatus do
           :selfDeclaredMadeForKids => boolean() | nil
         }
 
+  field(:isChannelMonetizationEnabled)
   field(:isLinked)
   field(:longUploadsStatus)
   field(:madeForKids)
