@@ -30,6 +30,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   *   `defaultSchemaId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of the default Schema asscociated to this data store.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
   *   `documentProcessingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDocumentProcessingConfig.t`, *default:* `nil`) - Configuration for Document understanding and enrichment.
+  *   `healthcareFhirConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig.t`, *default:* `nil`) - Optional. Configuration for `HEALTHCARE_FHIR` vertical.
   *   `idpConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaIdpConfig.t`, *default:* `nil`) - Output only. Data store level identity provider config.
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - Immutable. The industry vertical that the data store registers.
   *   `isInfobotFaqDataStore` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, this DataStore is an Infobot FAQ DataStore.
@@ -62,6 +63,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
           :displayName => String.t() | nil,
           :documentProcessingConfig =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDocumentProcessingConfig.t()
+            | nil,
+          :healthcareFhirConfig =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig.t()
             | nil,
           :idpConfig =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaIdpConfig.t()
@@ -111,6 +115,10 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   field(:documentProcessingConfig,
     as:
       GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDocumentProcessingConfig
+  )
+
+  field(:healthcareFhirConfig,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig
   )
 
   field(:idpConfig,
