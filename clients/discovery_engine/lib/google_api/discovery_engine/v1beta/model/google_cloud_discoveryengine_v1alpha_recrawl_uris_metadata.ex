@@ -24,6 +24,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation create time.
   *   `invalidUris` (*type:* `list(String.t)`, *default:* `nil`) - Unique URIs in the request that have invalid format. Sample limited to 1000.
   *   `invalidUrisCount` (*type:* `integer()`, *default:* `nil`) - Total number of unique URIs in the request that have invalid format.
+  *   `noindexUris` (*type:* `list(String.t)`, *default:* `nil`) - URIs that have no index meta tag. Sample limited to 1000.
+  *   `noindexUrisCount` (*type:* `integer()`, *default:* `nil`) - Total number of URIs that have no index meta tag.
   *   `pendingCount` (*type:* `integer()`, *default:* `nil`) - Total number of URIs that have yet to be crawled.
   *   `quotaExceededCount` (*type:* `integer()`, *default:* `nil`) - Total number of URIs that were rejected due to insufficient indexing resources.
   *   `successCount` (*type:* `integer()`, *default:* `nil`) - Total number of URIs that have been crawled so far.
@@ -39,6 +41,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
           :createTime => DateTime.t() | nil,
           :invalidUris => list(String.t()) | nil,
           :invalidUrisCount => integer() | nil,
+          :noindexUris => list(String.t()) | nil,
+          :noindexUrisCount => integer() | nil,
           :pendingCount => integer() | nil,
           :quotaExceededCount => integer() | nil,
           :successCount => integer() | nil,
@@ -51,6 +55,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   field(:createTime, as: DateTime)
   field(:invalidUris, type: :list)
   field(:invalidUrisCount)
+  field(:noindexUris, type: :list)
+  field(:noindexUrisCount)
   field(:pendingCount)
   field(:quotaExceededCount)
   field(:successCount)
