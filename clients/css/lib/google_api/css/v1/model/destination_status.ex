@@ -21,10 +21,10 @@ defmodule GoogleApi.CSS.V1.Model.DestinationStatus do
 
   ## Attributes
 
-  *   `approvedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is approved.
+  *   `approvedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the CSS Product is approved.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination
-  *   `disapprovedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is disapproved.
-  *   `pendingCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the aggregate offer is pending approval.
+  *   `disapprovedCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the CSS Product is disapproved.
+  *   `pendingCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where the CSS Product is pending approval.
   """
 
   use GoogleApi.Gax.ModelBase
