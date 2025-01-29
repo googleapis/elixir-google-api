@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsHub.V1.Model.DestinationDatasetReference do
   @moduledoc """
-  Contains the reference that identifies a destination bigquery dataset.
+
 
   ## Attributes
 
