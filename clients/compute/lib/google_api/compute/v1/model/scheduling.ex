@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
 
   *   `automaticRestart` (*type:* `boolean()`, *default:* `nil`) - Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
   *   `availabilityDomain` (*type:* `integer()`, *default:* `nil`) - Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
+  *   `hostErrorTimeoutSeconds` (*type:* `integer()`, *default:* `nil`) - Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
   *   `instanceTerminationAction` (*type:* `String.t`, *default:* `nil`) - Specifies the termination action for the instance.
   *   `localSsdRecoveryTimeout` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
   *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
   @type t :: %__MODULE__{
           :automaticRestart => boolean() | nil,
           :availabilityDomain => integer() | nil,
+          :hostErrorTimeoutSeconds => integer() | nil,
           :instanceTerminationAction => String.t() | nil,
           :localSsdRecoveryTimeout => GoogleApi.Compute.V1.Model.Duration.t() | nil,
           :locationHint => String.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
 
   field(:automaticRestart)
   field(:availabilityDomain)
+  field(:hostErrorTimeoutSeconds)
   field(:instanceTerminationAction)
   field(:localSsdRecoveryTimeout, as: GoogleApi.Compute.V1.Model.Duration)
   field(:locationHint)
