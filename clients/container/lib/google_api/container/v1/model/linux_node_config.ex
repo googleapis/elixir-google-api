@@ -23,7 +23,7 @@ defmodule GoogleApi.Container.V1.Model.LinuxNodeConfig do
 
   *   `cgroupMode` (*type:* `String.t`, *default:* `nil`) - cgroup_mode specifies the cgroup mode to be used on the node.
   *   `hugepages` (*type:* `GoogleApi.Container.V1.Model.HugepagesConfig.t`, *default:* `nil`) - Optional. Amounts for 2M and 1G hugepages
-  *   `sysctls` (*type:* `map()`, *default:* `nil`) - The Linux kernel parameters to be applied to the nodes and all pods running on the nodes. The following parameters are supported. net.core.busy_poll net.core.busy_read net.core.netdev_max_backlog net.core.rmem_max net.core.wmem_default net.core.wmem_max net.core.optmem_max net.core.somaxconn net.ipv4.tcp_rmem net.ipv4.tcp_wmem net.ipv4.tcp_tw_reuse kernel.shmmni kernel.shmmax kernel.shmall
+  *   `sysctls` (*type:* `map()`, *default:* `nil`) - The Linux kernel parameters to be applied to the nodes and all pods running on the nodes. The following parameters are supported. net.core.busy_poll net.core.busy_read net.core.netdev_max_backlog net.core.rmem_max net.core.rmem_default net.core.wmem_default net.core.wmem_max net.core.optmem_max net.core.somaxconn net.ipv4.tcp_rmem net.ipv4.tcp_wmem net.ipv4.tcp_tw_reuse net.netfilter.nf_conntrack_max net.netfilter.nf_conntrack_buckets net.netfilter.nf_conntrack_tcp_timeout_close_wait net.netfilter.nf_conntrack_tcp_timeout_time_wait net.netfilter.nf_conntrack_tcp_timeout_established net.netfilter.nf_conntrack_acct kernel.shmmni kernel.shmmax kernel.shmall vm.max_map_count
   """
 
   use GoogleApi.Gax.ModelBase
