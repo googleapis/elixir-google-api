@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1CreateEvaluationJobRequest do
   @moduledoc """
-  Request message for CreateEvaluationJob.
+   Request message for CreateEvaluationJob.
 
   ## Attributes
 
