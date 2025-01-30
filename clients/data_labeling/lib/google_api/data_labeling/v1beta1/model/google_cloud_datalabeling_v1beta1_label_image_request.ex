@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1LabelImageRequest do
   @moduledoc """
-  Request message for starting an image labeling task.
+   Request message for starting an image labeling task.
 
   ## Attributes
 

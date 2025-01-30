@@ -337,7 +337,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates dataset. If success return a Dataset resource.
+   Creates dataset. If success return a Dataset resource.
 
   ## Parameters
 
@@ -1376,7 +1376,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   end
 
   @doc """
-  Get a FeedbackThread object.
+   Get a FeedbackThread object.
 
   ## Parameters
 
@@ -1994,7 +1994,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   end
 
   @doc """
-  Gets an evaluation by resource name (to search, use projects.evaluations.search).
+   Gets an evaluation by resource name (to search, use projects.evaluations.search).
 
   ## Parameters
 
@@ -2146,7 +2146,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   end
 
   @doc """
-  Starts a labeling task for image. The type of image labeling task is configured by feature in the request.
+   Starts a labeling task for image. The type of image labeling task is configured by feature in the request.
 
   ## Parameters
 
@@ -2368,7 +2368,7 @@ defmodule GoogleApi.DataLabeling.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates an evaluation job.
+   Creates an evaluation job.
 
   ## Parameters
 

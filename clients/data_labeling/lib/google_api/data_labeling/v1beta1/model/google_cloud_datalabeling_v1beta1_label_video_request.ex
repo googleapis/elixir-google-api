@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DataLabeling.V1beta1.Model.GoogleCloudDatalabelingV1beta1LabelVideoRequest do
   @moduledoc """
-  Request message for LabelVideo.
+   Request message for LabelVideo.
 
   ## Attributes
 
