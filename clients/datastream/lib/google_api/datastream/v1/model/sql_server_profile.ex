@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastream.V1.Model.SqlServerProfile do
   @moduledoc """
-  SQLServer database profile. Next ID: 8.
+  SQLServer database profile.
 
   ## Attributes
 

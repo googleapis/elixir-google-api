@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastream.V1.Model.MysqlProfile do
   @moduledoc """
-  MySQL database profile. Next ID: 7.
+  MySQL database profile.
 
   ## Attributes
 
