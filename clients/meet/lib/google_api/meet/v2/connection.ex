@@ -28,7 +28,10 @@ defmodule GoogleApi.Meet.V2.Connection do
       "https://www.googleapis.com/auth/meetings.space.created",
 
       # Read information about any of your Google Meet conferences
-      "https://www.googleapis.com/auth/meetings.space.readonly"
+      "https://www.googleapis.com/auth/meetings.space.readonly",
+
+      # Edit, and see settings for all of your Google Meet calls.
+      "https://www.googleapis.com/auth/meetings.space.settings"
     ],
     otp_app: :google_api_meet,
     base_url: "https://meet.googleapis.com/"
