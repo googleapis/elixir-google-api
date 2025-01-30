@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Vault.V1.Model.DriveOptions do
   @moduledoc """
-  Additional options for Drive search
+  Additional options for Drive search.
 
   ## Attributes
 
