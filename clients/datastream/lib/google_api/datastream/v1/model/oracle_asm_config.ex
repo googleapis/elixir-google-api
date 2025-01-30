@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastream.V1.Model.OracleAsmConfig do
   @moduledoc """
-  Configuration for Oracle Automatic Storage Management (ASM) connection. .
+  Configuration for Oracle Automatic Storage Management (ASM) connection.
 
   ## Attributes
 

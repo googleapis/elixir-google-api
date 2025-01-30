@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastream.V1.Model.OracleProfile do
   @moduledoc """
-  Oracle database profile. Next ID: 10.
+  Oracle database profile.
 
   ## Attributes
 
