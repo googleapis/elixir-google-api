@@ -21,9 +21,16 @@ defmodule GoogleApi.Container.V1.Model.NodeKubeletConfig do
 
   ## Attributes
 
+  *   `allowedUnsafeSysctls` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Defines a comma-separated allowlist of unsafe sysctls or sysctl patterns (ending in `*`). The unsafe namespaced sysctl groups are `kernel.shm*`, `kernel.msg*`, `kernel.sem`, `fs.mqueue.*`, and `net.*`. Leaving this allowlist empty means they cannot be set on Pods. To allow certain sysctls or sysctl patterns to be set on Pods, list them separated by commas. For example: `kernel.msg*,net.ipv4.route.min_pmtu`. See https://kubernetes.io/docs/tasks/administer-cluster/sysctl-cluster/ for more details.
+  *   `containerLogMaxFiles` (*type:* `integer()`, *default:* `nil`) - Optional. Defines the maximum number of container log files that can be present for a container. See https://kubernetes.io/docs/concepts/cluster-administration/logging/#log-rotation The value must be an integer between 2 and 10, inclusive. The default value is 5 if unspecified.
+  *   `containerLogMaxSize` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the maximum size of the container log file before it is rotated. See https://kubernetes.io/docs/concepts/cluster-administration/logging/#log-rotation Valid format is positive number + unit, e.g. 100Ki, 10Mi. Valid units are Ki, Mi, Gi. The value must be between 10Mi and 500Mi, inclusive. Note that the total container log size (container_log_max_size * container_log_max_files) cannot exceed 1% of the total storage of the node, to avoid disk pressure caused by log files. The default value is 10Mi if unspecified.
   *   `cpuCfsQuota` (*type:* `boolean()`, *default:* `nil`) - Enable CPU CFS quota enforcement for containers that specify CPU limits. This option is enabled by default which makes kubelet use CFS quota (https://www.kernel.org/doc/Documentation/scheduler/sched-bwc.txt) to enforce container CPU limits. Otherwise, CPU limits will not be enforced at all. Disable this option to mitigate CPU throttling problems while still having your pods to be in Guaranteed QoS class by specifying the CPU limits. The default value is 'true' if unspecified.
   *   `cpuCfsQuotaPeriod` (*type:* `String.t`, *default:* `nil`) - Set the CPU CFS quota period value 'cpu.cfs_period_us'. The string must be a sequence of decimal numbers, each with optional fraction and a unit suffix, such as "300ms". Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h". The value must be a positive duration.
   *   `cpuManagerPolicy` (*type:* `String.t`, *default:* `nil`) - Control the CPU management policy on the node. See https://kubernetes.io/docs/tasks/administer-cluster/cpu-management-policies/ The following values are allowed. * "none": the default, which represents the existing scheduling behavior. * "static": allows pods with certain resource characteristics to be granted increased CPU affinity and exclusivity on the node. The default value is 'none' if unspecified.
+  *   `imageGcHighThresholdPercent` (*type:* `integer()`, *default:* `nil`) - Optional. Defines the percent of disk usage after which image garbage collection is always run. The percent is calculated as this field value out of 100. The value must be between 10 and 85, inclusive and greater than image_gc_low_threshold_percent. The default value is 85 if unspecified.
+  *   `imageGcLowThresholdPercent` (*type:* `integer()`, *default:* `nil`) - Optional. Defines the percent of disk usage before which image garbage collection is never run. Lowest disk usage to garbage collect to. The percent is calculated as this field value out of 100. The value must be between 10 and 85, inclusive and smaller than image_gc_high_threshold_percent. The default value is 80 if unspecified.
+  *   `imageMaximumGcAge` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the maximum age an image can be unused before it is garbage collected. The string must be a sequence of decimal numbers, each with optional fraction and a unit suffix, such as "300s", "1.5h", and "2h45m". Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h". The value must be a positive duration greater than image_minimum_gc_age or "0s". The default value is "0s" if unspecified, which disables this field, meaning images won't be garbage collected based on being unused for too long.
+  *   `imageMinimumGcAge` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the minimum age for an unused image before it is garbage collected. The string must be a sequence of decimal numbers, each with optional fraction and a unit suffix, such as "300s", "1.5h", and "2h45m". Valid time units are "ns", "us" (or "µs"), "ms", "s", "m", "h". The value must be a positive duration less than or equal to 2 minutes. The default value is "2m0s" if unspecified.
   *   `insecureKubeletReadonlyPortEnabled` (*type:* `boolean()`, *default:* `nil`) - Enable or disable Kubelet read only port.
   *   `podPidsLimit` (*type:* `String.t`, *default:* `nil`) - Set the Pod PID limits. See https://kubernetes.io/docs/concepts/policy/pid-limiting/#pod-pid-limits Controls the maximum number of processes allowed to run in a pod. The value must be greater than or equal to 1024 and less than 4194304.
   """
@@ -31,16 +38,30 @@ defmodule GoogleApi.Container.V1.Model.NodeKubeletConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowedUnsafeSysctls => list(String.t()) | nil,
+          :containerLogMaxFiles => integer() | nil,
+          :containerLogMaxSize => String.t() | nil,
           :cpuCfsQuota => boolean() | nil,
           :cpuCfsQuotaPeriod => String.t() | nil,
           :cpuManagerPolicy => String.t() | nil,
+          :imageGcHighThresholdPercent => integer() | nil,
+          :imageGcLowThresholdPercent => integer() | nil,
+          :imageMaximumGcAge => String.t() | nil,
+          :imageMinimumGcAge => String.t() | nil,
           :insecureKubeletReadonlyPortEnabled => boolean() | nil,
           :podPidsLimit => String.t() | nil
         }
 
+  field(:allowedUnsafeSysctls, type: :list)
+  field(:containerLogMaxFiles)
+  field(:containerLogMaxSize)
   field(:cpuCfsQuota)
   field(:cpuCfsQuotaPeriod)
   field(:cpuManagerPolicy)
+  field(:imageGcHighThresholdPercent)
+  field(:imageGcLowThresholdPercent)
+  field(:imageMaximumGcAge)
+  field(:imageMinimumGcAge)
   field(:insecureKubeletReadonlyPortEnabled)
   field(:podPidsLimit)
 end
