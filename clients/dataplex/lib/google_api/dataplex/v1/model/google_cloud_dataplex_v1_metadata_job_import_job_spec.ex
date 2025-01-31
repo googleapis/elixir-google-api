@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobImportJobSpec do
   @moduledoc """
-  Job specification for a metadata import job
+  Job specification for a metadata import job.You can run the following kinds of metadata import jobs: Full sync of entries with incremental import of their aspects. Supported for custom entries. Incremental import of aspects only. Supported for aspects that belong to custom entries and system entries. For custom entries, you can modify both optional aspects and required aspects. For system entries, you can modify optional aspects.
 
   ## Attributes
 
-  *   `aspectSyncMode` (*type:* `String.t`, *default:* `nil`) - Required. The sync mode for aspects. Only INCREMENTAL mode is supported for aspects. An aspect is modified only if the metadata import file includes a reference to the aspect in the update_mask field and the aspect_keys field.
-  *   `entrySyncMode` (*type:* `String.t`, *default:* `nil`) - Required. The sync mode for entries. Only FULL mode is supported for entries. All entries in the job's scope are modified. If an entry exists in Dataplex but isn't included in the metadata import file, the entry is deleted when you run the metadata job.
+  *   `aspectSyncMode` (*type:* `String.t`, *default:* `nil`) - Required. The sync mode for aspects.
+  *   `entrySyncMode` (*type:* `String.t`, *default:* `nil`) - Required. The sync mode for entries.
   *   `logLevel` (*type:* `String.t`, *default:* `nil`) - Optional. The level of logs to write to Cloud Logging for this job.Debug-level logs provide highly-detailed information for troubleshooting, but their increased verbosity could incur additional costs (https://cloud.google.com/stackdriver/pricing) that might not be merited for all jobs.If unspecified, defaults to INFO.
   *   `scope` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobImportJobSpecImportJobScope.t`, *default:* `nil`) - Required. A boundary on the scope of impact that the metadata import job can have.
   *   `sourceCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when the process that created the metadata import files began.
