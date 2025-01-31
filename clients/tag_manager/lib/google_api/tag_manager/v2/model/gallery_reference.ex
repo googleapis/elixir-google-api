@@ -21,6 +21,7 @@ defmodule GoogleApi.TagManager.V2.Model.GalleryReference do
 
   ## Attributes
 
+  *   `galleryTemplateId` (*type:* `String.t`, *default:* `nil`) - ID for the gallery template that is generated once during first sync and travels with the template redirects.
   *   `host` (*type:* `String.t`, *default:* `nil`) - The name of the host for the community gallery template.
   *   `isModified` (*type:* `boolean()`, *default:* `nil`) - If a user has manually edited the community gallery template.
   *   `owner` (*type:* `String.t`, *default:* `nil`) - The name of the owner for the community gallery template.
@@ -33,6 +34,7 @@ defmodule GoogleApi.TagManager.V2.Model.GalleryReference do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :galleryTemplateId => String.t() | nil,
           :host => String.t() | nil,
           :isModified => boolean() | nil,
           :owner => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.TagManager.V2.Model.GalleryReference do
           :version => String.t() | nil
         }
 
+  field(:galleryTemplateId)
   field(:host)
   field(:isModified)
   field(:owner)
