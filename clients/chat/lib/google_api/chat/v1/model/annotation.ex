@@ -21,6 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
 
   ## Attributes
 
+  *   `customEmojiMetadata` (*type:* `GoogleApi.Chat.V1.Model.CustomEmojiMetadata.t`, *default:* `nil`) - The metadata for a custom emoji.
   *   `length` (*type:* `integer()`, *default:* `nil`) - Length of the substring in the plain-text message body this annotation corresponds to.
   *   `richLinkMetadata` (*type:* `GoogleApi.Chat.V1.Model.RichLinkMetadata.t`, *default:* `nil`) - The metadata for a rich link.
   *   `slashCommand` (*type:* `GoogleApi.Chat.V1.Model.SlashCommandMetadata.t`, *default:* `nil`) - The metadata for a slash command.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customEmojiMetadata => GoogleApi.Chat.V1.Model.CustomEmojiMetadata.t() | nil,
           :length => integer() | nil,
           :richLinkMetadata => GoogleApi.Chat.V1.Model.RichLinkMetadata.t() | nil,
           :slashCommand => GoogleApi.Chat.V1.Model.SlashCommandMetadata.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
           :userMention => GoogleApi.Chat.V1.Model.UserMentionMetadata.t() | nil
         }
 
+  field(:customEmojiMetadata, as: GoogleApi.Chat.V1.Model.CustomEmojiMetadata)
   field(:length)
   field(:richLinkMetadata, as: GoogleApi.Chat.V1.Model.RichLinkMetadata)
   field(:slashCommand, as: GoogleApi.Chat.V1.Model.SlashCommandMetadata)
