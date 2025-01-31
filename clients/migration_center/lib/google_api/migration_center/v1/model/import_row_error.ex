@@ -21,6 +21,8 @@ defmodule GoogleApi.MigrationCenter.V1.Model.ImportRowError do
 
   ## Attributes
 
+  *   `archiveError` (*type:* `GoogleApi.MigrationCenter.V1.Model.ImportRowErrorArchiveErrorDetails.t`, *default:* `nil`) - Error details for an archive file.
+  *   `assetTitle` (*type:* `String.t`, *default:* `nil`) - Output only. The asset title.
   *   `csvError` (*type:* `GoogleApi.MigrationCenter.V1.Model.ImportRowErrorCsvErrorDetails.t`, *default:* `nil`) - Error details for a CSV file.
   *   `errors` (*type:* `list(GoogleApi.MigrationCenter.V1.Model.ImportError.t)`, *default:* `nil`) - The list of errors detected in the row.
   *   `rowNumber` (*type:* `integer()`, *default:* `nil`) - The row number where the error was detected.
@@ -32,6 +34,9 @@ defmodule GoogleApi.MigrationCenter.V1.Model.ImportRowError do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :archiveError =>
+            GoogleApi.MigrationCenter.V1.Model.ImportRowErrorArchiveErrorDetails.t() | nil,
+          :assetTitle => String.t() | nil,
           :csvError => GoogleApi.MigrationCenter.V1.Model.ImportRowErrorCsvErrorDetails.t() | nil,
           :errors => list(GoogleApi.MigrationCenter.V1.Model.ImportError.t()) | nil,
           :rowNumber => integer() | nil,
@@ -41,6 +46,8 @@ defmodule GoogleApi.MigrationCenter.V1.Model.ImportRowError do
             GoogleApi.MigrationCenter.V1.Model.ImportRowErrorXlsxErrorDetails.t() | nil
         }
 
+  field(:archiveError, as: GoogleApi.MigrationCenter.V1.Model.ImportRowErrorArchiveErrorDetails)
+  field(:assetTitle)
   field(:csvError, as: GoogleApi.MigrationCenter.V1.Model.ImportRowErrorCsvErrorDetails)
   field(:errors, as: GoogleApi.MigrationCenter.V1.Model.ImportError, type: :list)
   field(:rowNumber)
