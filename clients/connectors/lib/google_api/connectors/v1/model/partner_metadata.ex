@@ -25,7 +25,9 @@ defmodule GoogleApi.Connectors.V1.Model.PartnerMetadata do
   *   `additionalComments` (*type:* `String.t`, *default:* `nil`) - Optional. Additional comments for the submission.
   *   `confirmPartnerRequirements` (*type:* `boolean()`, *default:* `nil`) - Required. Confirmation that connector meets all applicable requirements mentioned in the Partner Connector Publishing requirements list and Partner onboardiong requirements list (https://cloud.google.com/marketplace/docs/partners/get-started#requirements).
   *   `demoUri` (*type:* `String.t`, *default:* `nil`) - Required. Public URL for the demo video.
+  *   `hasDynamicSpecUri` (*type:* `boolean()`, *default:* `nil`) - Output only. Has dynamic open api spec uri.
   *   `integrationTemplates` (*type:* `String.t`, *default:* `nil`) - Required. Integration example templates for the custom connector.
+  *   `localSpecPath` (*type:* `String.t`, *default:* `nil`) - Output only. Local spec path. Required if has_dynamic_spec_uri is true.
   *   `marketplaceProduct` (*type:* `String.t`, *default:* `nil`) - Optional. Marketplace product name.
   *   `marketplaceProductId` (*type:* `String.t`, *default:* `nil`) - Required. Marketplace product ID.
   *   `marketplaceProductProjectId` (*type:* `String.t`, *default:* `nil`) - Optional. Marketplace product project ID.
@@ -45,7 +47,9 @@ defmodule GoogleApi.Connectors.V1.Model.PartnerMetadata do
           :additionalComments => String.t() | nil,
           :confirmPartnerRequirements => boolean() | nil,
           :demoUri => String.t() | nil,
+          :hasDynamicSpecUri => boolean() | nil,
           :integrationTemplates => String.t() | nil,
+          :localSpecPath => String.t() | nil,
           :marketplaceProduct => String.t() | nil,
           :marketplaceProductId => String.t() | nil,
           :marketplaceProductProjectId => String.t() | nil,
@@ -62,7 +66,9 @@ defmodule GoogleApi.Connectors.V1.Model.PartnerMetadata do
   field(:additionalComments)
   field(:confirmPartnerRequirements)
   field(:demoUri)
+  field(:hasDynamicSpecUri)
   field(:integrationTemplates)
+  field(:localSpecPath)
   field(:marketplaceProduct)
   field(:marketplaceProductId)
   field(:marketplaceProductProjectId)
