@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1BatchComputeSecurityAssessmentResultsRequestResourceArray do
   @moduledoc """
-  An array of resource messages.
+  Message for the array of resources. For Apigee, the proxies are resources.
 
   ## Attributes
 

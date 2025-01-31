@@ -20,7 +20,7 @@ defmodule GoogleApi.Apigee.V1 do
   API client metadata for GoogleApi.Apigee.V1.
   """
 
-  @discovery_revision "20241213"
+  @discovery_revision "20250129"
 
   def discovery_revision(), do: @discovery_revision
 end

@@ -25,7 +25,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityAssessmentResultS
   *   `dataUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when resource data was last fetched for this resource. This time may be different than when the resource was actually updated due to lag in data collection.
   *   `failedAssessmentPerWeight` (*type:* `map()`, *default:* `nil`) - The number of failed assessments grouped by its weight. Keys are one of the following: "MAJOR", "MODERATE", "MINOR".
   *   `score` (*type:* `integer()`, *default:* `nil`) - The security score of the assessment.
-  *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the assessment.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
