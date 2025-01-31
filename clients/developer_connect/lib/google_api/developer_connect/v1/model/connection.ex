@@ -22,11 +22,14 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.Connection do
   ## Attributes
 
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Allows clients to store small amounts of arbitrary data.
+  *   `bitbucketCloudConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.BitbucketCloudConfig.t`, *default:* `nil`) - Configuration for connections to an instance of Bitbucket Clouds.
+  *   `bitbucketDataCenterConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.BitbucketDataCenterConfig.t`, *default:* `nil`) - Configuration for connections to an instance of Bitbucket Data Center.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Create timestamp
   *   `cryptoKeyConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.CryptoKeyConfig.t`, *default:* `nil`) - Optional. The crypto key configuration. This field is used by the Customer-Managed Encryption Keys (CMEK) feature.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Delete timestamp
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
+  *   `gitProxyConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.GitProxyConfig.t`, *default:* `nil`) - Optional. Configuration for the git proxy feature. Enabling the git proxy allows clients to perform git operations on the repositories linked in the connection.
   *   `githubConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.GitHubConfig.t`, *default:* `nil`) - Configuration for connections to github.com.
   *   `githubEnterpriseConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.GitHubEnterpriseConfig.t`, *default:* `nil`) - Configuration for connections to an instance of GitHub Enterprise.
   *   `gitlabConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.GitLabConfig.t`, *default:* `nil`) - Configuration for connections to gitlab.com.
@@ -43,11 +46,16 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.Connection do
 
   @type t :: %__MODULE__{
           :annotations => map() | nil,
+          :bitbucketCloudConfig =>
+            GoogleApi.DeveloperConnect.V1.Model.BitbucketCloudConfig.t() | nil,
+          :bitbucketDataCenterConfig =>
+            GoogleApi.DeveloperConnect.V1.Model.BitbucketDataCenterConfig.t() | nil,
           :createTime => DateTime.t() | nil,
           :cryptoKeyConfig => GoogleApi.DeveloperConnect.V1.Model.CryptoKeyConfig.t() | nil,
           :deleteTime => DateTime.t() | nil,
           :disabled => boolean() | nil,
           :etag => String.t() | nil,
+          :gitProxyConfig => GoogleApi.DeveloperConnect.V1.Model.GitProxyConfig.t() | nil,
           :githubConfig => GoogleApi.DeveloperConnect.V1.Model.GitHubConfig.t() | nil,
           :githubEnterpriseConfig =>
             GoogleApi.DeveloperConnect.V1.Model.GitHubEnterpriseConfig.t() | nil,
@@ -63,11 +71,18 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.Connection do
         }
 
   field(:annotations, type: :map)
+  field(:bitbucketCloudConfig, as: GoogleApi.DeveloperConnect.V1.Model.BitbucketCloudConfig)
+
+  field(:bitbucketDataCenterConfig,
+    as: GoogleApi.DeveloperConnect.V1.Model.BitbucketDataCenterConfig
+  )
+
   field(:createTime, as: DateTime)
   field(:cryptoKeyConfig, as: GoogleApi.DeveloperConnect.V1.Model.CryptoKeyConfig)
   field(:deleteTime, as: DateTime)
   field(:disabled)
   field(:etag)
+  field(:gitProxyConfig, as: GoogleApi.DeveloperConnect.V1.Model.GitProxyConfig)
   field(:githubConfig, as: GoogleApi.DeveloperConnect.V1.Model.GitHubConfig)
   field(:githubEnterpriseConfig, as: GoogleApi.DeveloperConnect.V1.Model.GitHubEnterpriseConfig)
   field(:gitlabConfig, as: GoogleApi.DeveloperConnect.V1.Model.GitLabConfig)

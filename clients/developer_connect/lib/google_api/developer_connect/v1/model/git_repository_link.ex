@@ -26,6 +26,7 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.GitRepositoryLink do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Create timestamp
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Delete timestamp
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
+  *   `gitProxyUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI to access the linked repository through the Git Proxy. This field is only populated if the git proxy is enabled for the connection.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels as key value pairs
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the repository, in the format `projects/*/locations/*/connections/*/gitRepositoryLinks/*`.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Set to true when the connection is being set up or updated in the background.
@@ -42,6 +43,7 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.GitRepositoryLink do
           :createTime => DateTime.t() | nil,
           :deleteTime => DateTime.t() | nil,
           :etag => String.t() | nil,
+          :gitProxyUri => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :reconciling => boolean() | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.GitRepositoryLink do
   field(:createTime, as: DateTime)
   field(:deleteTime, as: DateTime)
   field(:etag)
+  field(:gitProxyUri)
   field(:labels, type: :map)
   field(:name)
   field(:reconciling)
