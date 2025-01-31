@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1BatchComputeSecurityAssessmentResultsRequestIncludeAll do
   @moduledoc """
-  Message for include_all option.
+  Message for include_all_resources option.
 
   ## Attributes
 
