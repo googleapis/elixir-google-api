@@ -25,6 +25,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
   *   `artifactTiming` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1TimeSpan.t`, *default:* `nil`) - Time to push all non-container artifacts to Cloud Storage.
   *   `buildStepImages` (*type:* `list(String.t)`, *default:* `nil`) - List of build step digests, in the order corresponding to build step indices.
   *   `buildStepOutputs` (*type:* `list(String.t)`, *default:* `nil`) - List of build step outputs, produced by builder images, in the order corresponding to build step indices. [Cloud Builders](https://cloud.google.com/cloud-build/docs/cloud-builders) can produce this output by writing to `$BUILDER_OUTPUT/output`. Only the first 50KB of data is stored. Note that the `$BUILDER_OUTPUT` variable is read-only and can't be substituted.
+  *   `goModules` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule.t)`, *default:* `nil`) - Optional. Go module artifacts uploaded to Artifact Registry at the end of the build.
   *   `images` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuiltImage.t)`, *default:* `nil`) - Container images that were built as a part of the build.
   *   `mavenArtifacts` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedMavenArtifact.t)`, *default:* `nil`) - Maven artifacts uploaded to Artifact Registry at the end of the build.
   *   `npmPackages` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedNpmPackage.t)`, *default:* `nil`) - Npm packages uploaded to Artifact Registry at the end of the build.
@@ -41,6 +42,11 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
             | nil,
           :buildStepImages => list(String.t()) | nil,
           :buildStepOutputs => list(String.t()) | nil,
+          :goModules =>
+            list(
+              GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule.t()
+            )
+            | nil,
           :images =>
             list(
               GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuiltImage.t()
@@ -73,6 +79,12 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
 
   field(:buildStepImages, type: :list)
   field(:buildStepOutputs, type: :list)
+
+  field(:goModules,
+    as:
+      GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1UploadedGoModule,
+    type: :list
+  )
 
   field(:images,
     as:

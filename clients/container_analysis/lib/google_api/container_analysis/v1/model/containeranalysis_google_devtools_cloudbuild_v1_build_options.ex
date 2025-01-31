@@ -25,6 +25,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
   *   `defaultLogsBucketBehavior` (*type:* `String.t`, *default:* `nil`) - Optional. Option to specify how default logs buckets are setup.
   *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Requested disk size for the VM that runs the build. Note that this is *NOT* "disk free"; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 4000GB; builds that request more than the maximum are rejected with an error.
   *   `dynamicSubstitutions` (*type:* `boolean()`, *default:* `nil`) - Option to specify whether or not to apply bash style string operations to the substitutions. NOTE: this is always enabled for triggered builds and cannot be overridden in the build configuration file.
+  *   `enableStructuredLogging` (*type:* `boolean()`, *default:* `nil`) - Optional. Option to specify whether structured logging is enabled. If true, JSON-formatted logs are parsed as structured logs.
   *   `env` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variable definitions that will exist for all build steps in this build. If a variable is defined in both globally and in a build step, the variable will use the build step value. The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE".
   *   `logStreamingOption` (*type:* `String.t`, *default:* `nil`) - Option to define build log streaming behavior to Cloud Storage.
   *   `logging` (*type:* `String.t`, *default:* `nil`) - Option to specify the logging mode, which determines if and where build logs are stored.
@@ -45,6 +46,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
           :defaultLogsBucketBehavior => String.t() | nil,
           :diskSizeGb => String.t() | nil,
           :dynamicSubstitutions => boolean() | nil,
+          :enableStructuredLogging => boolean() | nil,
           :env => list(String.t()) | nil,
           :logStreamingOption => String.t() | nil,
           :logging => String.t() | nil,
@@ -68,6 +70,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
   field(:defaultLogsBucketBehavior)
   field(:diskSizeGb)
   field(:dynamicSubstitutions)
+  field(:enableStructuredLogging)
   field(:env, type: :list)
   field(:logStreamingOption)
   field(:logging)

@@ -21,6 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
 
   ## Attributes
 
+  *   `goModules` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule.t)`, *default:* `nil`) - Optional. A list of Go modules to be uploaded to Artifact Registry upon successful completion of all build steps. If any objects fail to be pushed, the build is marked FAILURE.
   *   `images` (*type:* `list(String.t)`, *default:* `nil`) - A list of images to be pushed upon the successful completion of all build steps. The images will be pushed using the builder service account's credentials. The digests of the pushed images will be stored in the Build resource's results field. If any of the images fail to be pushed, the build is marked FAILURE.
   *   `mavenArtifacts` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsMavenArtifact.t)`, *default:* `nil`) - A list of Maven artifacts to be uploaded to Artifact Registry upon successful completion of all build steps. Artifacts in the workspace matching specified paths globs will be uploaded to the specified Artifact Registry repository using the builder service account's credentials. If any artifacts fail to be pushed, the build is marked FAILURE.
   *   `npmPackages` (*type:* `list(GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsNpmPackage.t)`, *default:* `nil`) - A list of npm packages to be uploaded to Artifact Registry upon successful completion of all build steps. Npm packages in the specified paths will be uploaded to the specified Artifact Registry repository using the builder service account's credentials. If any packages fail to be pushed, the build is marked FAILURE.
@@ -31,6 +32,11 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :goModules =>
+            list(
+              GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule.t()
+            )
+            | nil,
           :images => list(String.t()) | nil,
           :mavenArtifacts =>
             list(
@@ -51,6 +57,12 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
             )
             | nil
         }
+
+  field(:goModules,
+    as:
+      GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ArtifactsGoModule,
+    type: :list
+  )
 
   field(:images, type: :list)
 
