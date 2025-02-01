@@ -54,6 +54,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Model do
   *   `supportedOutputStorageFormats` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The formats this Model supports in BatchPredictionJob.output_config. If both PredictSchemata.instance_schema_uri and PredictSchemata.prediction_schema_uri exist, the predictions are returned together with their instances. In other words, the prediction has the original instance data first, followed by the actual prediction content (as per the schema). The possible formats are: * `jsonl` The JSON Lines format, where each prediction is a single line. Uses GcsDestination. * `csv` The CSV format, where each prediction is a single comma-separated line. The first line in the file is the header, containing comma-separated field names. Uses GcsDestination. * `bigquery` Each prediction is a single row in a BigQuery table, uses BigQueryDestination . If this Model doesn't support any of these formats it means it cannot be used with a BatchPredictionJob. However, if it has supported_deployment_resources_types, it could serve online predictions by using PredictionService.Predict or PredictionService.Explain.
   *   `explanationSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExplanationSpec.t`, *default:* `nil`) - The default explanation specification for this Model. The Model can be used for requesting explanation after being deployed if it is populated. The Model can be used for batch explanation if it is populated. All fields of the explanation_spec can be overridden by explanation_spec of DeployModelRequest.deployed_model, or explanation_spec of BatchPredictionJob. If the default explanation specification is not set for this Model, this Model can still be used for requesting explanation by setting explanation_spec of DeployModelRequest.deployed_model and for batch explanation by setting explanation_spec of BatchPredictionJob.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `defaultCheckpointId` (*type:* `String.t`, *default:* `nil`) - The default checkpoint id of a model version.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -101,7 +102,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Model do
           :supportedOutputStorageFormats => list(String.t()) | nil,
           :explanationSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExplanationSpec.t() | nil,
-          :satisfiesPzi => boolean() | nil
+          :satisfiesPzi => boolean() | nil,
+          :defaultCheckpointId => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
@@ -162,6 +164,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Model do
   field(:explanationSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExplanationSpec)
 
   field(:satisfiesPzi)
+  field(:defaultCheckpointId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Model do

@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FileData do
 
   ## Attributes
 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name of the file data. Used to provide a label or filename to distinguish file datas. This field is only returned in PromptMessage for prompt management. It is not currently used in the Gemini GenerateContent calls.
   *   `fileUri` (*type:* `String.t`, *default:* `nil`) - Required. URI.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Required. The IANA standard MIME type of the source data.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FileData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :displayName => String.t() | nil,
           :fileUri => String.t() | nil,
           :mimeType => String.t() | nil
         }
 
+  field(:displayName)
   field(:fileUri)
   field(:mimeType)
 end

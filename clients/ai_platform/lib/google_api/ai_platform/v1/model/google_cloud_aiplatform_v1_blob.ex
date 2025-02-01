@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Blob do
   ## Attributes
 
   *   `data` (*type:* `String.t`, *default:* `nil`) - Required. Raw bytes.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name of the blob. Used to provide a label or filename to distinguish blobs. This field is only returned in PromptMessage for prompt management. It is not currently used in the Gemini GenerateContent calls.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Required. The IANA standard MIME type of the source data.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Blob do
 
   @type t :: %__MODULE__{
           :data => String.t() | nil,
+          :displayName => String.t() | nil,
           :mimeType => String.t() | nil
         }
 
   field(:data)
+  field(:displayName)
   field(:mimeType)
 end
 

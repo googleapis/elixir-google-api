@@ -31,6 +31,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
   *   `enablePrivateServiceConnect` (*type:* `boolean()`, *default:* `nil`) - Deprecated: If true, expose the Endpoint via private service connect. Only one of the fields, network or enable_private_service_connect, can be set.
   *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key spec for an Endpoint. If set, this Endpoint and all sub-resources of this Endpoint will be secured by this key.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
+  *   `genAiAdvancedFeaturesConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenAiAdvancedFeaturesConfig.t`, *default:* `nil`) - Optional. Configuration for GenAiAdvancedFeatures. If the endpoint is serving GenAI models, advanced features like native RAG integration can be configured. Currently, only Model Garden models are supported.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels with user-defined metadata to organize your Endpoints. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
   *   `modelDeploymentMonitoringJob` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Model Monitoring job associated with this Endpoint if monitoring is enabled by JobService.CreateModelDeploymentMonitoringJob. Format: `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Endpoint.
@@ -59,6 +60,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
           :encryptionSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t() | nil,
           :etag => String.t() | nil,
+          :genAiAdvancedFeaturesConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenAiAdvancedFeaturesConfig.t()
+            | nil,
           :labels => map() | nil,
           :modelDeploymentMonitoringJob => String.t() | nil,
           :name => String.t() | nil,
@@ -93,6 +97,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
   field(:enablePrivateServiceConnect)
   field(:encryptionSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec)
   field(:etag)
+
+  field(:genAiAdvancedFeaturesConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenAiAdvancedFeaturesConfig
+  )
+
   field(:labels, type: :map)
   field(:modelDeploymentMonitoringJob)
   field(:name)
