@@ -688,7 +688,7 @@ defmodule GoogleApi.CloudBuild.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:webhookKey` (*type:* `String.t`) - Arbitrary additional key to find the maching repository for a webhook event if needed.
+      *   `:webhookKey` (*type:* `String.t`) - Arbitrary additional key to find the matching repository for a webhook event if needed.
       *   `:body` (*type:* `GoogleApi.CloudBuild.V2.Model.HttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
