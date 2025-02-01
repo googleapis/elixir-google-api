@@ -38,6 +38,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
   *   `notebookRuntimeType` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The type of the notebook runtime template.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Deprecated: This field is ignored and the "Vertex AI Notebook Service Account" (service-PROJECT_NUMBER@gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is used for the runtime workload identity. See https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account for more details. For NotebookExecutionJob, use NotebookExecutionJob.service_account instead. The service account that the runtime workload runs as. You can use any service account within the same project, but you must have the service account user permission to use the instance. If not specified, the [Compute Engine default service account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used.
   *   `shieldedVmConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig.t`, *default:* `nil`) - Optional. Immutable. Runtime Shielded VM spec.
+  *   `softwareConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookSoftwareConfig.t`, *default:* `nil`) - Optional. The notebook software configuration of the notebook runtime.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookRuntimeTemplate was most recently updated.
   """
 
@@ -69,6 +70,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
           :serviceAccount => String.t() | nil,
           :shieldedVmConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig.t() | nil,
+          :softwareConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookSoftwareConfig.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -99,6 +102,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
 
   field(:shieldedVmConfig,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig
+  )
+
+  field(:softwareConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookSoftwareConfig
   )
 
   field(:updateTime, as: DateTime)

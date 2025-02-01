@@ -36,6 +36,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
   *   `privateEndpoints` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateEndpoints.t`, *default:* `nil`) - Output only. Provide paths for users to send predict/explain/health requests directly to the deployed model services running on Cloud via private services access. This field is populated if network is configured.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account that the DeployedModel's container runs as. Specify the email address of the service account. If this service account is not specified, the container runs as a service account that doesn't have access to the resource project. Users deploying the Model must have the `iam.serviceAccounts.actAs` permission on this service account.
   *   `sharedResources` (*type:* `String.t`, *default:* `nil`) - The resource name of the shared DeploymentResourcePool to deploy on. Format: `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+  *   `speculativeDecodingSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeculativeDecodingSpec.t`, *default:* `nil`) - Optional. Spec for configuring speculative decoding.
   *   `status` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModelStatus.t`, *default:* `nil`) - Output only. Runtime status of the deployed model.
   *   `systemLabels` (*type:* `map()`, *default:* `nil`) - System labels to apply to Model Garden deployments. System labels are managed by Google for internal use only.
   """
@@ -63,6 +64,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateEndpoints.t() | nil,
           :serviceAccount => String.t() | nil,
           :sharedResources => String.t() | nil,
+          :speculativeDecodingSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeculativeDecodingSpec.t() | nil,
           :status =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModelStatus.t() | nil,
           :systemLabels => map() | nil
@@ -99,6 +102,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel do
 
   field(:serviceAccount)
   field(:sharedResources)
+
+  field(:speculativeDecodingSpec,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SpeculativeDecodingSpec
+  )
+
   field(:status, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModelStatus)
   field(:systemLabels, type: :map)
 end

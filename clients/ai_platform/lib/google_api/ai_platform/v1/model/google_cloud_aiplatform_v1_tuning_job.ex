@@ -34,7 +34,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningJob do
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the TuningJob for the first time entered the `JOB_STATE_RUNNING` state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of the job.
   *   `supervisedTuningSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningSpec.t`, *default:* `nil`) - Tuning Spec for Supervised Fine Tuning.
-  *   `tunedModel` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TunedModel.t`, *default:* `nil`) - Output only. The tuned model resources assiociated with this TuningJob.
+  *   `tunedModel` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TunedModel.t`, *default:* `nil`) - Output only. The tuned model resources associated with this TuningJob.
   *   `tunedModelDisplayName` (*type:* `String.t`, *default:* `nil`) - Optional. The display name of the TunedModel. The name can be up to 128 characters long and can consist of any UTF-8 characters.
   *   `tuningDataStats` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningDataStats.t`, *default:* `nil`) - Output only. The tuning data statistics associated with this TuningJob.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the TuningJob was most recently updated.

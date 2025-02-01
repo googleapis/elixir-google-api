@@ -22,8 +22,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   ## Attributes
 
   *   `candidates` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate.t)`, *default:* `nil`) - Output only. Generated candidates.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when the request is made to the server.
   *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The model version used to generate the response.
   *   `promptFeedback` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponsePromptFeedback.t`, *default:* `nil`) - Output only. Content filter results for a prompt sent in the request. Note: Sent only in the first stream chunk. Only happens when no candidates were generated due to content violations.
+  *   `responseId` (*type:* `String.t`, *default:* `nil`) - Output only. response_id is used to identify each response. It is the encoding of the event_id.
   *   `usageMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponseUsageMetadata.t`, *default:* `nil`) - Usage metadata about the response(s).
   """
 
@@ -32,10 +34,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   @type t :: %__MODULE__{
           :candidates =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate.t()) | nil,
+          :createTime => DateTime.t() | nil,
           :modelVersion => String.t() | nil,
           :promptFeedback =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponsePromptFeedback.t()
             | nil,
+          :responseId => String.t() | nil,
           :usageMetadata =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponseUsageMetadata.t()
             | nil
@@ -46,11 +50,14 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
     type: :list
   )
 
+  field(:createTime, as: DateTime)
   field(:modelVersion)
 
   field(:promptFeedback,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponsePromptFeedback
   )
+
+  field(:responseId)
 
   field(:usageMetadata,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponseUsageMetadata

@@ -45,6 +45,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. Deprecated: This field is no longer used and the "Vertex AI Notebook Service Account" (service-PROJECT_NUMBER@gcp-sa-aiplatform-vm.iam.gserviceaccount.com) is used for the runtime workload identity. See https://cloud.google.com/iam/docs/service-agents#vertex-ai-notebook-service-account for more details. The service account that the NotebookRuntime workload runs as.
   *   `shieldedVmConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig.t`, *default:* `nil`) - Output only. Runtime Shielded VM spec.
+  *   `softwareConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookSoftwareConfig.t`, *default:* `nil`) - Output only. Software config of the notebook runtime.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookRuntime was most recently updated.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Output only. The VM os image version of NotebookRuntime.
   """
@@ -86,6 +87,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
           :serviceAccount => String.t() | nil,
           :shieldedVmConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig.t() | nil,
+          :softwareConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookSoftwareConfig.t() | nil,
           :updateTime => DateTime.t() | nil,
           :version => String.t() | nil
         }
@@ -128,6 +131,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
 
   field(:shieldedVmConfig,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig
+  )
+
+  field(:softwareConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookSoftwareConfig
   )
 
   field(:updateTime, as: DateTime)

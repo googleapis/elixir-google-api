@@ -22,7 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CachedContent do
   ## Attributes
 
   *   `contents` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Optional. Input only. Immutable. The content to cache
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creatation time of the cache entry.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of the cache entry.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The user-generated meaningful display name of the cached content.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of when this resource is considered expired. This is *always* provided on output, regardless of what was sent on input.
   *   `model` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the publisher model to use for cached content. Format: projects/{project}/locations/{location}/publishers/{publisher}/models/{model}

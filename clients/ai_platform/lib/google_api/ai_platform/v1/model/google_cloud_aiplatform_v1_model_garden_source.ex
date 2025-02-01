@@ -22,15 +22,21 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModelGardenSource
   ## Attributes
 
   *   `publicModelName` (*type:* `String.t`, *default:* `nil`) - Required. The model garden source model resource name.
+  *   `skipHfModelCache` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to avoid pulling the model from the HF cache.
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Optional. The model garden source model version ID.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publicModelName => String.t() | nil
+          :publicModelName => String.t() | nil,
+          :skipHfModelCache => boolean() | nil,
+          :versionId => String.t() | nil
         }
 
   field(:publicModelName)
+  field(:skipHfModelCache)
+  field(:versionId)
 end
 
 defimpl Poison.Decoder,

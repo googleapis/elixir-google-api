@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CountTokensRespon
 
   ## Attributes
 
+  *   `promptTokensDetails` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModalityTokenCount.t)`, *default:* `nil`) - Output only. List of modalities that were processed in the request input.
   *   `totalBillableCharacters` (*type:* `integer()`, *default:* `nil`) - The total number of billable characters counted across all instances from the request.
   *   `totalTokens` (*type:* `integer()`, *default:* `nil`) - The total number of tokens counted across all instances from the request.
   """
@@ -28,9 +29,17 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CountTokensRespon
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :promptTokensDetails =>
+            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModalityTokenCount.t())
+            | nil,
           :totalBillableCharacters => integer() | nil,
           :totalTokens => integer() | nil
         }
+
+  field(:promptTokensDetails,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModalityTokenCount,
+    type: :list
+  )
 
   field(:totalBillableCharacters)
   field(:totalTokens)
