@@ -18,7 +18,7 @@
 defmodule GoogleApi.DisplayVideo.Mixfile do
   use Mix.Project
 
-  @version "0.38.4"
+  @version "0.39.0"
 
   def project() do
     [
