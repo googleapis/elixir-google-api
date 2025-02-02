@@ -21,16 +21,34 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaReplayEx
 
   ## Attributes
 
+  *   `modifiedParameters` (*type:* `%{optional(String.t) => GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t}`, *default:* `nil`) - Optional. The modified input parameters for replay. - Provide values for all the fields in the 'update_mask'. Any field not present in the 'update_mask' will be ignored and its value will be taken from the original execution. - If the 'update_mask' is not specified, all the parameters from original execution will be ignored and only the `modified_parameters` will be used.
+  *   `replayMode` (*type:* `String.t`, *default:* `nil`) - Optional. The mode of the replay.
   *   `replayReason` (*type:* `String.t`, *default:* `nil`) - Required. The user provided reason for replaying the execution.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. The list of parameters to be updated. - If the `update_mask` is not specified, all the parameters from original execution will be ignored and only the `modified_parameters` will be used. - It is an error to include a parameter in `update_mask` but not in `modified_parameters`. - Updating nested fields in a JSON parameter is not supported, please provide the complete JSON in the `modified_parameters`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :replayReason => String.t() | nil
+          :modifiedParameters =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t()
+            }
+            | nil,
+          :replayMode => String.t() | nil,
+          :replayReason => String.t() | nil,
+          :updateMask => String.t() | nil
         }
 
+  field(:modifiedParameters,
+    as: GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType,
+    type: :map
+  )
+
+  field(:replayMode)
   field(:replayReason)
+  field(:updateMask)
 end
 
 defimpl Poison.Decoder,
