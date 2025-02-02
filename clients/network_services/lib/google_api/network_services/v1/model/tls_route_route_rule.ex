@@ -22,7 +22,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.TlsRouteRouteRule do
   ## Attributes
 
   *   `action` (*type:* `GoogleApi.NetworkServices.V1.Model.TlsRouteRouteAction.t`, *default:* `nil`) - Required. The detailed rule defining how to route matched traffic.
-  *   `matches` (*type:* `list(GoogleApi.NetworkServices.V1.Model.TlsRouteRouteMatch.t)`, *default:* `nil`) - Required. RouteMatch defines the predicate used to match requests to a given action. Multiple match types are "OR"ed for evaluation.
+  *   `matches` (*type:* `list(GoogleApi.NetworkServices.V1.Model.TlsRouteRouteMatch.t)`, *default:* `nil`) - Required. RouteMatch defines the predicate used to match requests to a given action. Multiple match types are "OR"ed for evaluation. Atleast one RouteMatch must be supplied.
   """
 
   use GoogleApi.Gax.ModelBase
