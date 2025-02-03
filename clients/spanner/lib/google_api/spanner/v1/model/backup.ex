@@ -31,7 +31,6 @@ defmodule GoogleApi.Spanner.V1.Model.Backup do
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Required for the CreateBackup operation. The expiration time of the backup, with microseconds granularity that must be at least 6 hours and at most 366 days from the time the CreateBackup request is processed. Once the `expire_time` has passed, the backup is eligible to be automatically deleted by Cloud Spanner to free the resources used by the backup.
   *   `freeableSizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The number of bytes that will be freed by deleting this backup. This value will be zero if, for example, this backup is part of an incremental backup chain and younger backups in the chain require that we keep its data. For backups not in an incremental backup chain, this is always the size of the backup. This value may change if backups on the same chain get created, deleted or expired.
   *   `incrementalBackupChainId` (*type:* `String.t`, *default:* `nil`) - Output only. Populated only for backups in an incremental backup chain. Backups share the same chain id if and only if they belong to the same incremental backup chain. Use this field to determine which backups are part of the same incremental backup chain. The ordering of backups in the chain can be determined by ordering the backup `version_time`.
-  *   `instancePartitions` (*type:* `list(GoogleApi.Spanner.V1.Model.BackupInstancePartition.t)`, *default:* `nil`) - Output only. The instance partition(s) storing the backup. This is the same as the list of the instance partition(s) that the database had footprint in at the backup's `version_time`.
   *   `maxExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The max allowed expiration time of the backup, with microseconds granularity. A backup's expiration time can be configured in multiple APIs: CreateBackup, UpdateBackup, CopyBackup. When updating or copying an existing backup, the expiration time specified must be less than `Backup.max_expire_time`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only for the CreateBackup operation. Required for the UpdateBackup operation. A globally unique identifier for the backup which cannot be changed. Values are of the form `projects//instances//backups/a-z*[a-z0-9]` The final segment of the name must be between 2 and 60 characters in length. The backup is stored in the location(s) specified in the instance configuration of the instance containing the backup, identified by the prefix of the backup name of the form `projects//instances/`.
   *   `oldestVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Data deleted at a time older than this is guaranteed not to be retained in order to support this backup. For a backup in an incremental backup chain, this is the version time of the oldest backup that exists or ever existed in the chain. For all other backups, this is the version time of the backup. This field can be used to understand what data is being retained by the backup system.
@@ -55,8 +54,6 @@ defmodule GoogleApi.Spanner.V1.Model.Backup do
           :expireTime => DateTime.t() | nil,
           :freeableSizeBytes => String.t() | nil,
           :incrementalBackupChainId => String.t() | nil,
-          :instancePartitions =>
-            list(GoogleApi.Spanner.V1.Model.BackupInstancePartition.t()) | nil,
           :maxExpireTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :oldestVersionTime => DateTime.t() | nil,
@@ -77,7 +74,6 @@ defmodule GoogleApi.Spanner.V1.Model.Backup do
   field(:expireTime, as: DateTime)
   field(:freeableSizeBytes)
   field(:incrementalBackupChainId)
-  field(:instancePartitions, as: GoogleApi.Spanner.V1.Model.BackupInstancePartition, type: :list)
   field(:maxExpireTime, as: DateTime)
   field(:name)
   field(:oldestVersionTime, as: DateTime)

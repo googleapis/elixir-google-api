@@ -21,7 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.BackupSchedule do
 
   ## Attributes
 
-  *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.CreateBackupEncryptionConfig.t`, *default:* `nil`) - Optional. The encryption configuration that is used to encrypt the backup. If this field is not specified, the backup uses the same encryption configuration as the database.
+  *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.CreateBackupEncryptionConfig.t`, *default:* `nil`) - Optional. The encryption configuration that will be used to encrypt the backup. If this field is not specified, the backup will use the same encryption configuration as the database.
   *   `fullBackupSpec` (*type:* `GoogleApi.Spanner.V1.Model.FullBackupSpec.t`, *default:* `nil`) - The schedule creates only full backups.
   *   `incrementalBackupSpec` (*type:* `GoogleApi.Spanner.V1.Model.IncrementalBackupSpec.t`, *default:* `nil`) - The schedule creates incremental backup chains.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Output only for the CreateBackupSchedule operation. Required for the UpdateBackupSchedule operation. A globally unique identifier for the backup schedule which cannot be changed. Values are of the form `projects//instances//databases//backupSchedules/a-z*[a-z0-9]` The final segment of the name must be between 2 and 60 characters in length.
