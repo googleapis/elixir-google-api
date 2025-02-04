@@ -23,17 +23,20 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ExperimentalFeatures do
 
   *   `protobufPythonicTypesEnabled` (*type:* `boolean()`, *default:* `nil`) - Enables generation of protobuf code using new types that are more Pythonic which are included in `protobuf>=5.29.x`. This feature will be enabled by default 1 month after launching the feature in preview packages.
   *   `restAsyncIoEnabled` (*type:* `boolean()`, *default:* `nil`) - Enables generation of asynchronous REST clients if `rest` transport is enabled. By default, asynchronous REST clients will not be generated. This feature will be enabled by default 1 month after launching the feature in preview packages.
+  *   `unversionedPackageDisabled` (*type:* `boolean()`, *default:* `nil`) - Disables generation of an unversioned Python package for this client library. This means that the module names will need to be versioned in import statements. For example `import google.cloud.library_v2` instead of `import google.cloud.library`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :protobufPythonicTypesEnabled => boolean() | nil,
-          :restAsyncIoEnabled => boolean() | nil
+          :restAsyncIoEnabled => boolean() | nil,
+          :unversionedPackageDisabled => boolean() | nil
         }
 
   field(:protobufPythonicTypesEnabled)
   field(:restAsyncIoEnabled)
+  field(:unversionedPackageDisabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.ExperimentalFeatures do
