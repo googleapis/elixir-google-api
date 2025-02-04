@@ -26,6 +26,7 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. See [Creating and managing labels] (https://cloud.google.com/pubsub/docs/labels).
   *   `messageRetentionDuration` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates the minimum duration to retain a message after it is published to the topic. If this field is set, messages published to the topic in the last `message_retention_duration` are always available to subscribers. For instance, it allows any attached subscription to [seek to a timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) that is up to `message_retention_duration` in the past. If this field is not set, message retention is controlled by settings on individual subscriptions. Cannot be more than 31 days or less than 10 minutes.
   *   `messageStoragePolicy` (*type:* `GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t`, *default:* `nil`) - Optional. Policy constraining the set of Google Cloud Platform regions where messages published to the topic may be stored. If not present, then no constraints are in effect.
+  *   `messageTransforms` (*type:* `list(GoogleApi.PubSub.V1.Model.MessageTransform.t)`, *default:* `nil`) - Optional. Transforms to be applied to messages published to the topic. Transforms are applied in the order specified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the topic. It must have the format `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Optional. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
   *   `schemaSettings` (*type:* `GoogleApi.PubSub.V1.Model.SchemaSettings.t`, *default:* `nil`) - Optional. Settings for validating messages published against a schema.
@@ -41,6 +42,7 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
           :labels => map() | nil,
           :messageRetentionDuration => String.t() | nil,
           :messageStoragePolicy => GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t() | nil,
+          :messageTransforms => list(GoogleApi.PubSub.V1.Model.MessageTransform.t()) | nil,
           :name => String.t() | nil,
           :satisfiesPzs => boolean() | nil,
           :schemaSettings => GoogleApi.PubSub.V1.Model.SchemaSettings.t() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
   field(:labels, type: :map)
   field(:messageRetentionDuration)
   field(:messageStoragePolicy, as: GoogleApi.PubSub.V1.Model.MessageStoragePolicy)
+  field(:messageTransforms, as: GoogleApi.PubSub.V1.Model.MessageTransform, type: :list)
   field(:name)
   field(:satisfiesPzs)
   field(:schemaSettings, as: GoogleApi.PubSub.V1.Model.SchemaSettings)
