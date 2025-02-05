@@ -21,15 +21,18 @@ defmodule GoogleApi.ServiceUsage.V1.Model.SelectiveGapicGeneration do
 
   ## Attributes
 
+  *   `generateOmittedAsInternal` (*type:* `boolean()`, *default:* `nil`) - Setting this to true indicates to the client generators that methods that would be excluded from the generation should instead be generated in a way that indicates these methods should not be consumed by end users. How this is expressed is up to individual language implementations to decide. Some examples may be: added annotations, obfuscated identifiers, or other language idiomatic patterns.
   *   `methods` (*type:* `list(String.t)`, *default:* `nil`) - An allowlist of the fully qualified names of RPCs that should be included on public client surfaces.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :generateOmittedAsInternal => boolean() | nil,
           :methods => list(String.t()) | nil
         }
 
+  field(:generateOmittedAsInternal)
   field(:methods, type: :list)
 end
 
