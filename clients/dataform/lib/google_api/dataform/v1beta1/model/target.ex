@@ -21,9 +21,9 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Target do
 
   ## Attributes
 
-  *   `database` (*type:* `String.t`, *default:* `nil`) - The action's database (Google Cloud project ID) .
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The action's name, within `database` and `schema`.
-  *   `schema` (*type:* `String.t`, *default:* `nil`) - The action's schema (BigQuery dataset ID), within `database`.
+  *   `database` (*type:* `String.t`, *default:* `nil`) - Optional. The action's database (Google Cloud project ID) .
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The action's name, within `database` and `schema`.
+  *   `schema` (*type:* `String.t`, *default:* `nil`) - Optional. The action's schema (BigQuery dataset ID), within `database`.
   """
 
   use GoogleApi.Gax.ModelBase

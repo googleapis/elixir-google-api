@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.ScheduledReleaseRecord do
 
   *   `compilationResult` (*type:* `String.t`, *default:* `nil`) - The name of the created compilation result, if one was successfully created. Must be in the format `projects/*/locations/*/repositories/*/compilationResults/*`.
   *   `errorStatus` (*type:* `GoogleApi.Dataform.V1beta1.Model.Status.t`, *default:* `nil`) - The error status encountered upon this attempt to create the compilation result, if the attempt was unsuccessful.
-  *   `releaseTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of this release attempt.
+  *   `releaseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of this release attempt.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.UncommittedFileChange do
   ## Attributes
 
   *   `path` (*type:* `String.t`, *default:* `nil`) - The file's full path including filename, relative to the workspace root.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Indicates the status of the file.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the status of the file.
   """
 
   use GoogleApi.Gax.ModelBase

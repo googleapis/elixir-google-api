@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataform.V1beta1.Model.NotebookRuntimeOptions do
   @moduledoc """
-
+  Configures various aspects of Dataform notebook runtime.
 
   ## Attributes
 

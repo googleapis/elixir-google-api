@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CodeCompilationConfig do
   *   `databaseSuffix` (*type:* `String.t`, *default:* `nil`) - Optional. The suffix that should be appended to all database (Google Cloud project ID) names.
   *   `defaultDatabase` (*type:* `String.t`, *default:* `nil`) - Optional. The default database (Google Cloud project ID).
   *   `defaultLocation` (*type:* `String.t`, *default:* `nil`) - Optional. The default BigQuery location to use. Defaults to "US". See the BigQuery docs for a full list of locations: https://cloud.google.com/bigquery/docs/locations.
-  *   `defaultNotebookRuntimeOptions` (*type:* `GoogleApi.Dataform.V1beta1.Model.NotebookRuntimeOptions.t`, *default:* `nil`) - 
+  *   `defaultNotebookRuntimeOptions` (*type:* `GoogleApi.Dataform.V1beta1.Model.NotebookRuntimeOptions.t`, *default:* `nil`) - Optional. The default notebook runtime options.
   *   `defaultSchema` (*type:* `String.t`, *default:* `nil`) - Optional. The default schema (BigQuery dataset ID).
   *   `schemaSuffix` (*type:* `String.t`, *default:* `nil`) - Optional. The suffix that should be appended to all schema (BigQuery dataset ID) names.
   *   `tablePrefix` (*type:* `String.t`, *default:* `nil`) - Optional. The prefix that should be prepended to all table names.

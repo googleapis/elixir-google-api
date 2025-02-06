@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.DataEncryptionState do
 
   ## Attributes
 
-  *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - The KMS key version name with which data of a resource is encrypted.
+  *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - Required. The KMS key version name with which data of a resource is encrypted.
   """
 
   use GoogleApi.Gax.ModelBase
