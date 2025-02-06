@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataform.V1beta1.Model.Notebook do
   @moduledoc """
-
+  Represents a notebook.
 
   ## Attributes
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CommitRepositoryChangesRequest do
   ## Attributes
 
   *   `commitMetadata` (*type:* `GoogleApi.Dataform.V1beta1.Model.CommitMetadata.t`, *default:* `nil`) - Required. The changes to commit to the repository.
-  *   `fileOperations` (*type:* `%{optional(String.t) => GoogleApi.Dataform.V1beta1.Model.FileOperation.t}`, *default:* `nil`) - A map to the path of the file to the operation. The path is the full file path including filename, from repository root.
+  *   `fileOperations` (*type:* `%{optional(String.t) => GoogleApi.Dataform.V1beta1.Model.FileOperation.t}`, *default:* `nil`) - Optional. A map to the path of the file to the operation. The path is the full file path including filename, from repository root.
   *   `requiredHeadCommitSha` (*type:* `String.t`, *default:* `nil`) - Optional. The commit SHA which must be the repository's current HEAD before applying this commit; otherwise this request will fail. If unset, no validation on the current HEAD commit SHA is performed.
   """
 

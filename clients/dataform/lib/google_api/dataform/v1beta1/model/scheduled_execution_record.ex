@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.ScheduledExecutionRecord do
   ## Attributes
 
   *   `errorStatus` (*type:* `GoogleApi.Dataform.V1beta1.Model.Status.t`, *default:* `nil`) - The error status encountered upon this attempt to create the workflow invocation, if the attempt was unsuccessful.
-  *   `executionTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of this execution attempt.
+  *   `executionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of this execution attempt.
   *   `workflowInvocation` (*type:* `String.t`, *default:* `nil`) - The name of the created workflow invocation, if one was successfully created. Must be in the format `projects/*/locations/*/repositories/*/workflowInvocations/*`.
   """
 
