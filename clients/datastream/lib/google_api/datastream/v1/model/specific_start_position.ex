@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.SpecificStartPosition do
 
   ## Attributes
 
+  *   `mysqlGtidPosition` (*type:* `GoogleApi.Datastream.V1.Model.MysqlGtidPosition.t`, *default:* `nil`) - MySQL GTID set to start replicating from.
   *   `mysqlLogPosition` (*type:* `GoogleApi.Datastream.V1.Model.MysqlLogPosition.t`, *default:* `nil`) - MySQL specific log position to start replicating from.
   *   `oracleScnPosition` (*type:* `GoogleApi.Datastream.V1.Model.OracleScnPosition.t`, *default:* `nil`) - Oracle SCN to start replicating from.
   *   `sqlServerLsnPosition` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerLsnPosition.t`, *default:* `nil`) - SqlServer LSN to start replicating from.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Datastream.V1.Model.SpecificStartPosition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :mysqlGtidPosition => GoogleApi.Datastream.V1.Model.MysqlGtidPosition.t() | nil,
           :mysqlLogPosition => GoogleApi.Datastream.V1.Model.MysqlLogPosition.t() | nil,
           :oracleScnPosition => GoogleApi.Datastream.V1.Model.OracleScnPosition.t() | nil,
           :sqlServerLsnPosition => GoogleApi.Datastream.V1.Model.SqlServerLsnPosition.t() | nil
         }
 
+  field(:mysqlGtidPosition, as: GoogleApi.Datastream.V1.Model.MysqlGtidPosition)
   field(:mysqlLogPosition, as: GoogleApi.Datastream.V1.Model.MysqlLogPosition)
   field(:oracleScnPosition, as: GoogleApi.Datastream.V1.Model.OracleScnPosition)
   field(:sqlServerLsnPosition, as: GoogleApi.Datastream.V1.Model.SqlServerLsnPosition)
