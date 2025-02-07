@@ -27,7 +27,8 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   *   `fraudPrevention` (*type:* `String.t`, *default:* `nil`) - Optional. The Fraud Prevention setting for this assessment.
   *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated: use `user_info.account_id` instead. Unique stable hashed user identifier for the request. The identifier must be hashed using hmac-sha256 with stable secret.
   *   `headers` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HTTP header information about the request.
-  *   `ja3` (*type:* `String.t`, *default:* `nil`) - Optional. JA3 fingerprint for SSL clients.
+  *   `ja3` (*type:* `String.t`, *default:* `nil`) - Optional. JA3 fingerprint for SSL clients. To learn how to compute this fingerprint, please refer to https://github.com/salesforce/ja3.
+  *   `ja4` (*type:* `String.t`, *default:* `nil`) - Optional. JA4 fingerprint for SSL clients. To learn how to compute this fingerprint, please refer to https://github.com/FoxIO-LLC/ja4.
   *   `requestedUri` (*type:* `String.t`, *default:* `nil`) - Optional. The URI resource the user requested that triggered an assessment.
   *   `siteKey` (*type:* `String.t`, *default:* `nil`) - Optional. The site key that was used to invoke reCAPTCHA Enterprise on your site and generate the token.
   *   `token` (*type:* `String.t`, *default:* `nil`) - Optional. The user response token provided by the reCAPTCHA Enterprise client-side integration on your site.
@@ -48,6 +49,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
           :hashedAccountId => String.t() | nil,
           :headers => list(String.t()) | nil,
           :ja3 => String.t() | nil,
+          :ja4 => String.t() | nil,
           :requestedUri => String.t() | nil,
           :siteKey => String.t() | nil,
           :token => String.t() | nil,
@@ -69,6 +71,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   field(:hashedAccountId)
   field(:headers, type: :list)
   field(:ja3)
+  field(:ja4)
   field(:requestedUri)
   field(:siteKey)
   field(:token)
