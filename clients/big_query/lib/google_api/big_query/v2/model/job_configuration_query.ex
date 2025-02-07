@@ -48,6 +48,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
   *   `useQueryCache` (*type:* `boolean()`, *default:* `true`) - Optional. Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified. Moreover, the query cache is only available when a query does not have a destination table specified. The default value is true.
   *   `userDefinedFunctionResources` (*type:* `list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t)`, *default:* `nil`) - Describes user-defined function resources used in the query.
   *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the action that occurs if the destination table already exists. The following values are supported: * WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the data, removes the constraints, and uses the schema from the query result. * WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. * WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion.
+  *   `writeIncrementalResults` (*type:* `boolean()`, *default:* `nil`) - Optional. This is only supported for a SELECT query using a temporary table. If set, the query is allowed to write results incrementally to the temporary result table. This may incur a performance penalty. This option cannot be used with Legacy SQL. This feature is not yet available.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -83,7 +84,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
           :useQueryCache => boolean() | nil,
           :userDefinedFunctionResources =>
             list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t()) | nil,
-          :writeDisposition => String.t() | nil
+          :writeDisposition => String.t() | nil,
+          :writeIncrementalResults => boolean() | nil
         }
 
   field(:allowLargeResults)
@@ -122,6 +124,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do
   )
 
   field(:writeDisposition)
+  field(:writeIncrementalResults)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobConfigurationQuery do

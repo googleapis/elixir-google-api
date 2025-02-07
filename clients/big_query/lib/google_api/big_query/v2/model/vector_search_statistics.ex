@@ -23,17 +23,20 @@ defmodule GoogleApi.BigQuery.V2.Model.VectorSearchStatistics do
 
   *   `indexUnusedReasons` (*type:* `list(GoogleApi.BigQuery.V2.Model.IndexUnusedReason.t)`, *default:* `nil`) - When `indexUsageMode` is `UNUSED` or `PARTIALLY_USED`, this field explains why indexes were not used in all or part of the vector search query. If `indexUsageMode` is `FULLY_USED`, this field is not populated.
   *   `indexUsageMode` (*type:* `String.t`, *default:* `nil`) - Specifies the index usage mode for the query.
+  *   `storedColumnsUsages` (*type:* `list(GoogleApi.BigQuery.V2.Model.StoredColumnsUsage.t)`, *default:* `nil`) - Specifies the usage of stored columns in the query when stored columns are used in the query.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :indexUnusedReasons => list(GoogleApi.BigQuery.V2.Model.IndexUnusedReason.t()) | nil,
-          :indexUsageMode => String.t() | nil
+          :indexUsageMode => String.t() | nil,
+          :storedColumnsUsages => list(GoogleApi.BigQuery.V2.Model.StoredColumnsUsage.t()) | nil
         }
 
   field(:indexUnusedReasons, as: GoogleApi.BigQuery.V2.Model.IndexUnusedReason, type: :list)
   field(:indexUsageMode)
+  field(:storedColumnsUsages, as: GoogleApi.BigQuery.V2.Model.StoredColumnsUsage, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.VectorSearchStatistics do
