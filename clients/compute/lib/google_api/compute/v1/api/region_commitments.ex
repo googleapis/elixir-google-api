@@ -358,14 +358,14 @@ defmodule GoogleApi.Compute.V1.Api.RegionCommitments do
   end
 
   @doc """
-  Updates the specified commitment with the data included in the request. Update is performed only on selected fields included as part of update-mask. Only the following fields can be modified: auto_renew.
+  Updates the specified commitment with the data included in the request. Update is performed only on selected fields included as part of update-mask. Only the following fields can be updated: auto_renew and plan.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID for this request.
   *   `region` (*type:* `String.t`) - Name of the region for this request.
-  *   `commitment` (*type:* `String.t`) - Name of the commitment for which auto renew is being updated.
+  *   `commitment` (*type:* `String.t`) - Name of the commitment that you want to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

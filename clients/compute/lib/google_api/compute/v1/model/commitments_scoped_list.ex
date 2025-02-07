@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.CommitmentsScopedList do
 
   ## Attributes
 
-  *   `commitments` (*type:* `list(GoogleApi.Compute.V1.Model.Commitment.t)`, *default:* `nil`) - [Output Only] A list of commitments contained in this scope.
+  *   `commitments` (*type:* `list(GoogleApi.Compute.V1.Model.Commitment.t)`, *default:* `nil`) - [Output Only] The list of commitments contained in this scope.
   *   `warning` (*type:* `GoogleApi.Compute.V1.Model.CommitmentsScopedListWarning.t`, *default:* `nil`) - [Output Only] Informational warning which replaces the list of commitments when the list is empty.
   """
 

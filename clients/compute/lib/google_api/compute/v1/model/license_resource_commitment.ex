@@ -21,9 +21,9 @@ defmodule GoogleApi.Compute.V1.Model.LicenseResourceCommitment do
 
   ## Attributes
 
-  *   `amount` (*type:* `String.t`, *default:* `nil`) - The number of licenses purchased.
-  *   `coresPerLicense` (*type:* `String.t`, *default:* `nil`) - Specifies the core range of the instance for which this license applies.
-  *   `license` (*type:* `String.t`, *default:* `nil`) - Any applicable license URI.
+  *   `amount` (*type:* `String.t`, *default:* `nil`) - The number of licenses you plan to purchase.
+  *   `coresPerLicense` (*type:* `String.t`, *default:* `nil`) - The number of cores per license.
+  *   `license` (*type:* `String.t`, *default:* `nil`) - The applicable license URI.
   """
 
   use GoogleApi.Gax.ModelBase
