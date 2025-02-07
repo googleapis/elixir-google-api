@@ -22,6 +22,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Service do
   ## Attributes
 
   *   `apis` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.Api.t)`, *default:* `nil`) - A list of API interfaces exported by this service. Only the `name` field of the google.protobuf.Api needs to be provided by the configuration author, as the remaining fields will be derived from the IDL during the normalization process. It is an error to specify an API interface here which cannot be resolved against the associated IDL files.
+  *   `aspects` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.Aspect.t)`, *default:* `nil`) - Configuration aspects. This is a repeated field to allow multiple aspects to be configured. The kind field in each ConfigAspect specifies the type of aspect. The spec field contains the configuration for that aspect. The schema for the spec field is defined by the backend service owners.
   *   `authentication` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Authentication.t`, *default:* `nil`) - Auth configuration.
   *   `backend` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Backend.t`, *default:* `nil`) - API backend configuration.
   *   `billing` (*type:* `GoogleApi.ServiceNetworking.V1.Model.Billing.t`, *default:* `nil`) - Billing configuration.
@@ -55,6 +56,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Service do
 
   @type t :: %__MODULE__{
           :apis => list(GoogleApi.ServiceNetworking.V1.Model.Api.t()) | nil,
+          :aspects => list(GoogleApi.ServiceNetworking.V1.Model.Aspect.t()) | nil,
           :authentication => GoogleApi.ServiceNetworking.V1.Model.Authentication.t() | nil,
           :backend => GoogleApi.ServiceNetworking.V1.Model.Backend.t() | nil,
           :billing => GoogleApi.ServiceNetworking.V1.Model.Billing.t() | nil,
@@ -86,6 +88,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.Service do
         }
 
   field(:apis, as: GoogleApi.ServiceNetworking.V1.Model.Api, type: :list)
+  field(:aspects, as: GoogleApi.ServiceNetworking.V1.Model.Aspect, type: :list)
   field(:authentication, as: GoogleApi.ServiceNetworking.V1.Model.Authentication)
   field(:backend, as: GoogleApi.ServiceNetworking.V1.Model.Backend)
   field(:billing, as: GoogleApi.ServiceNetworking.V1.Model.Billing)
