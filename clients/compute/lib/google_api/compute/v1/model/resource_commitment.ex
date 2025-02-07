@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Compute.V1.Model.ResourceCommitment do
   @moduledoc """
-  Commitment for a particular resource (a Commitment is composed of one or more of these).
+  Commitment for a particular hardware resource (a commitment is composed of one or more of these).
 
   ## Attributes
 
-  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
-  *   `amount` (*type:* `String.t`, *default:* `nil`) - The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
+  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - Name of the accelerator type or GPU resource. Specify this field only when the type of hardware resource is ACCELERATOR.
+  *   `amount` (*type:* `String.t`, *default:* `nil`) - The quantity of the hardware resource that you want to commit to purchasing (in a type-dependent unit). - For vCPUs, you must specify an integer value. - For memory, you specify the amount of MB that you want. The value you specify must be a multiple of 256 MB, with up to 6.5 GB of memory per every vCPU. - For GPUs, you must specify an integer value. - For Local SSD disks, you must specify the amount in GB. The size of a single Local SSD disk is 375 GB. 
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of hardware resource that you want to specify. You can specify any of the following values: - VCPU - MEMORY - LOCAL_SSD - ACCELERATOR Specify as a separate entry in the list for each individual resource type.
   """
 
   use GoogleApi.Gax.ModelBase

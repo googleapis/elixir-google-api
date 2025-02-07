@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicy do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#firewallPolicy`) - [Output only] Type of the resource. Always compute#firewallPolicyfor firewall policies
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
+  *   `packetMirroringRules` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t)`, *default:* `nil`) - A list of packet mirroring rules that belong to this policy.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `ruleTupleCount` (*type:* `integer()`, *default:* `nil`) - [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicy do
           :id => String.t() | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
+          :packetMirroringRules => list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()) | nil,
           :parent => String.t() | nil,
           :region => String.t() | nil,
           :ruleTupleCount => integer() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicy do
   field(:id)
   field(:kind)
   field(:name)
+  field(:packetMirroringRules, as: GoogleApi.Compute.V1.Model.FirewallPolicyRule, type: :list)
   field(:parent)
   field(:region)
   field(:ruleTupleCount)

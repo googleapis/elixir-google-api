@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeType do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#nodeType`) - [Output Only] The type of the resource. Always compute#nodeType for node types.
   *   `localSsdGb` (*type:* `integer()`, *default:* `nil`) - [Output Only] Local SSD available to the node type, defined in GB.
+  *   `maxVms` (*type:* `integer()`, *default:* `nil`) - [Output Only] Maximum number of VMs that can be created for this node type.
   *   `memoryMb` (*type:* `integer()`, *default:* `nil`) - [Output Only] The amount of physical memory available to the node type, defined in MB.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the resource.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
@@ -46,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeType do
           :id => String.t() | nil,
           :kind => String.t() | nil,
           :localSsdGb => integer() | nil,
+          :maxVms => integer() | nil,
           :memoryMb => integer() | nil,
           :name => String.t() | nil,
           :selfLink => String.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeType do
   field(:id)
   field(:kind)
   field(:localSsdGb)
+  field(:maxVms)
   field(:memoryMb)
   field(:name)
   field(:selfLink)

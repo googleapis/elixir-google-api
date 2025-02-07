@@ -30,7 +30,6 @@ defmodule GoogleApi.Compute.V1.Model.NetworkProfile do
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the resource.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `selfLinkWithId` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource with the resource id.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] Zone to which the network is restricted.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,8 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkProfile do
           :location => GoogleApi.Compute.V1.Model.NetworkProfileLocation.t() | nil,
           :name => String.t() | nil,
           :selfLink => String.t() | nil,
-          :selfLinkWithId => String.t() | nil,
-          :zone => String.t() | nil
+          :selfLinkWithId => String.t() | nil
         }
 
   field(:creationTimestamp)
@@ -57,7 +55,6 @@ defmodule GoogleApi.Compute.V1.Model.NetworkProfile do
   field(:name)
   field(:selfLink)
   field(:selfLinkWithId)
-  field(:zone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.NetworkProfile do
