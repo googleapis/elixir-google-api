@@ -33,6 +33,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.GooglePubsubV1Subscription do
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. An expression written in the Pub/Sub [filter language](https://cloud.google.com/pubsub/docs/filtering). If non-empty, then only `PubsubMessage`s whose `attributes` field matches the filter are delivered on this subscription. If empty, then no messages are filtered out.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. See [Creating and managing labels](https://cloud.google.com/pubsub/docs/labels).
   *   `messageRetentionDuration` (*type:* `String.t`, *default:* `nil`) - Optional. How long to retain unacknowledged messages in the subscription's backlog, from the moment a message is published. If `retain_acked_messages` is true, then this also configures the retention of acknowledged messages, and thus configures how far back in time a `Seek` can be done. Defaults to 7 days. Cannot be more than 31 days or less than 10 minutes.
+  *   `messageTransforms` (*type:* `list(GoogleApi.AnalyticsHub.V1.Model.MessageTransform.t)`, *default:* `nil`) - Optional. Transforms to be applied to messages before they are delivered to subscribers. Transforms are applied in the order specified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the subscription. Format is `projects/{project}/subscriptions/{sub}`.
   *   `pushConfig` (*type:* `GoogleApi.AnalyticsHub.V1.Model.PushConfig.t`, *default:* `nil`) - Optional. If push delivery is used with this subscription, this field is used to configure it.
   *   `retainAckedMessages` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to retain acknowledged messages. If true, then messages are not expunged from the subscription's backlog, even if they are acknowledged, until they fall out of the `message_retention_duration` window. This must be true if you would like to [`Seek` to a timestamp] (https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) in the past to replay previously-acknowledged messages.
@@ -57,6 +58,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.GooglePubsubV1Subscription do
           :filter => String.t() | nil,
           :labels => map() | nil,
           :messageRetentionDuration => String.t() | nil,
+          :messageTransforms => list(GoogleApi.AnalyticsHub.V1.Model.MessageTransform.t()) | nil,
           :name => String.t() | nil,
           :pushConfig => GoogleApi.AnalyticsHub.V1.Model.PushConfig.t() | nil,
           :retainAckedMessages => boolean() | nil,
@@ -81,6 +83,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.GooglePubsubV1Subscription do
   field(:filter)
   field(:labels, type: :map)
   field(:messageRetentionDuration)
+  field(:messageTransforms, as: GoogleApi.AnalyticsHub.V1.Model.MessageTransform, type: :list)
   field(:name)
   field(:pushConfig, as: GoogleApi.AnalyticsHub.V1.Model.PushConfig)
   field(:retainAckedMessages)
