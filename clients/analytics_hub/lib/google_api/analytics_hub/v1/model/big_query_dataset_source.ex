@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.BigQueryDatasetSource do
 
   ## Attributes
 
-  *   `dataset` (*type:* `String.t`, *default:* `nil`) - Resource name of the dataset source for this listing. e.g. `projects/myproject/datasets/123`
+  *   `dataset` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the dataset source for this listing. e.g. `projects/myproject/datasets/123`
   *   `restrictedExportPolicy` (*type:* `GoogleApi.AnalyticsHub.V1.Model.RestrictedExportPolicy.t`, *default:* `nil`) - Optional. If set, restricted export policy will be propagated and enforced on the linked dataset.
   *   `selectedResources` (*type:* `list(GoogleApi.AnalyticsHub.V1.Model.SelectedResource.t)`, *default:* `nil`) - Optional. Resource in this dataset that is selectively shared. This field is required for data clean room exchanges.
   """
