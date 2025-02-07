@@ -50,6 +50,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
   *   `earlyStop` (*type:* `boolean()`, *default:* `nil`) - Whether to stop early when the loss doesn't improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms.
   *   `includeDrift` (*type:* `boolean()`, *default:* `nil`) - Include drift when fitting an ARIMA model.
+  *   `forecastLimitUpperBound` (*type:* `float()`, *default:* `nil`) - The forecast limit upper bound that was used during ARIMA model training with limits.
   *   `calculatePValues` (*type:* `boolean()`, *default:* `nil`) - Whether or not p-value test should be computed for this model. Only available for linear and logistic regression models.
   *   `timeSeriesDataColumn` (*type:* `String.t`, *default:* `nil`) - Column to be designated as time series data for ARIMA model.
   *   `enableGlobalExplain` (*type:* `boolean()`, *default:* `nil`) - If true, enable global explanation during training.
@@ -65,6 +66,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `maxParallelTrials` (*type:* `String.t`, *default:* `nil`) - Maximum number of trials to run in parallel.
   *   `dartNormalizeType` (*type:* `String.t`, *default:* `nil`) - Type of normalization algorithm for boosted tree models using dart booster.
   *   `feedbackType` (*type:* `String.t`, *default:* `nil`) - Feedback type that specifies which algorithm to run for matrix factorization.
+  *   `forecastLimitLowerBound` (*type:* `float()`, *default:* `nil`) - The forecast limit lower bound that was used during ARIMA model training with limits. To see more details of the algorithm: https://otexts.com/fpp2/limits.html
   *   `boosterType` (*type:* `String.t`, *default:* `nil`) - Booster type for boosted tree models.
   *   `minRelativeProgress` (*type:* `float()`, *default:* `nil`) - When early_stop is true, stops training when accuracy improvement is less than 'min_relative_progress'. Used only for iterative training algorithms.
   *   `subsample` (*type:* `float()`, *default:* `nil`) - Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models.
@@ -145,6 +147,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :dataSplitMethod => String.t() | nil,
           :earlyStop => boolean() | nil,
           :includeDrift => boolean() | nil,
+          :forecastLimitUpperBound => float() | nil,
           :calculatePValues => boolean() | nil,
           :timeSeriesDataColumn => String.t() | nil,
           :enableGlobalExplain => boolean() | nil,
@@ -160,6 +163,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :maxParallelTrials => String.t() | nil,
           :dartNormalizeType => String.t() | nil,
           :feedbackType => String.t() | nil,
+          :forecastLimitLowerBound => float() | nil,
           :boosterType => String.t() | nil,
           :minRelativeProgress => float() | nil,
           :subsample => float() | nil,
@@ -237,6 +241,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:dataSplitMethod)
   field(:earlyStop)
   field(:includeDrift)
+  field(:forecastLimitUpperBound)
   field(:calculatePValues)
   field(:timeSeriesDataColumn)
   field(:enableGlobalExplain)
@@ -252,6 +257,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:maxParallelTrials)
   field(:dartNormalizeType)
   field(:feedbackType)
+  field(:forecastLimitLowerBound)
   field(:boosterType)
   field(:minRelativeProgress)
   field(:subsample)

@@ -41,6 +41,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   *   `timeoutMs` (*type:* `integer()`, *default:* `nil`) - Optional. Optional: Specifies the maximum amount of time, in milliseconds, that the client is willing to wait for the query to complete. By default, this limit is 10 seconds (10,000 milliseconds). If the query is complete, the jobComplete field in the response is true. If the query has not yet completed, jobComplete is false. You can request a longer timeout period in the timeoutMs field. However, the call is not guaranteed to wait for the specified timeout; it typically returns after around 200 seconds (200,000 milliseconds), even if the query is not complete. If jobComplete is false, you can continue to wait for the query to complete by calling the getQueryResults method until the jobComplete field in the getQueryResults response is true.
   *   `useLegacySql` (*type:* `boolean()`, *default:* `true`) - Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query will use BigQuery's GoogleSQL: https://cloud.google.com/bigquery/sql-reference/ When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false.
   *   `useQueryCache` (*type:* `boolean()`, *default:* `true`) - Optional. Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified. The default value is true.
+  *   `writeIncrementalResults` (*type:* `boolean()`, *default:* `nil`) - Optional. This is only supported for SELECT query. If set, the query is allowed to write results incrementally to the temporary result table. This may incur a performance penalty. This option cannot be used with Legacy SQL. This feature is not yet available.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -65,7 +66,8 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
           :requestId => String.t() | nil,
           :timeoutMs => integer() | nil,
           :useLegacySql => boolean() | nil,
-          :useQueryCache => boolean() | nil
+          :useQueryCache => boolean() | nil,
+          :writeIncrementalResults => boolean() | nil
         }
 
   field(:connectionProperties, as: GoogleApi.BigQuery.V2.Model.ConnectionProperty, type: :list)
@@ -88,6 +90,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   field(:timeoutMs)
   field(:useLegacySql)
   field(:useQueryCache)
+  field(:writeIncrementalResults)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.QueryRequest do

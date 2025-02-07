@@ -24,6 +24,7 @@ defmodule GoogleApi.BigQuery.V2.Model.RowAccessPolicy do
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when this row access policy was created, in milliseconds since the epoch.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of this resource.
   *   `filterPredicate` (*type:* `String.t`, *default:* `nil`) - Required. A SQL boolean expression that represents the rows defined by this row access policy, similar to the boolean expression in a WHERE clause of a SELECT query on a table. References to other tables, routines, and temporary functions are not supported. Examples: region="EU" date_field = CAST('2019-9-27' as DATE) nullable_field is not NULL numeric_field BETWEEN 1.0 AND 5.0
+  *   `grantees` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Input only. The optional list of iam_member users or groups that specifies the initial members that the row-level access policy should be created with. grantees types: - "user:alice@example.com": An email address that represents a specific Google account. - "serviceAccount:my-other-app@appspot.gserviceaccount.com": An email address that represents a service account. - "group:admins@example.com": An email address that represents a Google group. - "domain:example.com":The Google Workspace domain (primary) that represents all the users of that domain. - "allAuthenticatedUsers": A special identifier that represents all service accounts and all users on the internet who have authenticated with a Google Account. This identifier includes accounts that aren't connected to a Google Workspace or Cloud Identity domain, such as personal Gmail accounts. Users who aren't authenticated, such as anonymous visitors, aren't included. - "allUsers":A special identifier that represents anyone who is on the internet, including authenticated and unauthenticated users. Because BigQuery requires authentication before a user can access the service, allUsers includes only authenticated users.
   *   `lastModifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when this row access policy was last modified, in milliseconds since the epoch.
   *   `rowAccessPolicyReference` (*type:* `GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t`, *default:* `nil`) - Required. Reference describing the ID of this row access policy.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.BigQuery.V2.Model.RowAccessPolicy do
           :creationTime => DateTime.t() | nil,
           :etag => String.t() | nil,
           :filterPredicate => String.t() | nil,
+          :grantees => list(String.t()) | nil,
           :lastModifiedTime => DateTime.t() | nil,
           :rowAccessPolicyReference =>
             GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference.t() | nil
@@ -42,6 +44,7 @@ defmodule GoogleApi.BigQuery.V2.Model.RowAccessPolicy do
   field(:creationTime, as: DateTime)
   field(:etag)
   field(:filterPredicate)
+  field(:grantees, type: :list)
   field(:lastModifiedTime, as: DateTime)
   field(:rowAccessPolicyReference, as: GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference)
 end
