@@ -28,6 +28,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
   *   `streaming` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the template is streaming or not.
   *   `supportsAtLeastOnce` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the streaming template supports at least once mode.
   *   `supportsExactlyOnce` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the streaming template supports exactly once mode.
+  *   `yamlDefinition` (*type:* `String.t`, *default:* `nil`) - Optional. For future use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
           :parameters => list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t()) | nil,
           :streaming => boolean() | nil,
           :supportsAtLeastOnce => boolean() | nil,
-          :supportsExactlyOnce => boolean() | nil
+          :supportsExactlyOnce => boolean() | nil,
+          :yamlDefinition => String.t() | nil
         }
 
   field(:defaultStreamingMode)
@@ -49,6 +51,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
   field(:streaming)
   field(:supportsAtLeastOnce)
   field(:supportsExactlyOnce)
+  field(:yamlDefinition)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
