@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3WebhookGenericW
   ## Attributes
 
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - Required. The client ID provided by the 3rd party platform.
-  *   `clientSecret` (*type:* `String.t`, *default:* `nil`) - Optional. The client secret provided by the 3rd party platform.
+  *   `clientSecret` (*type:* `String.t`, *default:* `nil`) - Required. The client secret provided by the 3rd party platform.
   *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The OAuth scopes to grant.
   *   `tokenEndpoint` (*type:* `String.t`, *default:* `nil`) - Required. The token endpoint provided by the 3rd party platform to exchange an access token.
   """
