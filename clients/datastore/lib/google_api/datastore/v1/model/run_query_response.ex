@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.RunQueryResponse do
 
   ## Attributes
 
-  *   `batch` (*type:* `GoogleApi.Datastore.V1.Model.QueryResultBatch.t`, *default:* `nil`) - A batch of query results (always present).
+  *   `batch` (*type:* `GoogleApi.Datastore.V1.Model.QueryResultBatch.t`, *default:* `nil`) - A batch of query results. This is always present unless running a query under explain-only mode: RunQueryRequest.explain_options was provided and ExplainOptions.analyze was set to false.
   *   `explainMetrics` (*type:* `GoogleApi.Datastore.V1.Model.ExplainMetrics.t`, *default:* `nil`) - Query explain metrics. This is only present when the RunQueryRequest.explain_options is provided, and it is sent only once with the last response in the stream.
   *   `query` (*type:* `GoogleApi.Datastore.V1.Model.Query.t`, *default:* `nil`) - The parsed form of the `GqlQuery` from the request, if it was set.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction that was started as part of this RunQuery request. Set only when ReadOptions.new_transaction was set in RunQueryRequest.read_options.
