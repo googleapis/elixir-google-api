@@ -23,7 +23,7 @@ defmodule GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do
 
   *   `cidrBlocks` (*type:* `list(GoogleApi.Container.V1.Model.CidrBlock.t)`, *default:* `nil`) - cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not master authorized networks is enabled.
-  *   `gcpPublicCidrsAccessEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether master is accessbile via Google Compute Engine Public IP addresses.
+  *   `gcpPublicCidrsAccessEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether master is accessible via Google Compute Engine Public IP addresses.
   *   `privateEndpointEnforcementEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether master authorized networks is enforced on private endpoint or not.
   """
 

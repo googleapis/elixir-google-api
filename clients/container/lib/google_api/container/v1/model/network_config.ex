@@ -33,7 +33,7 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   *   `enableMultiNetworking` (*type:* `boolean()`, *default:* `nil`) - Whether multi-networking is enabled for this cluster.
   *   `gatewayApiConfig` (*type:* `GoogleApi.Container.V1.Model.GatewayAPIConfig.t`, *default:* `nil`) - GatewayAPIConfig contains the desired config of Gateway API on this cluster.
   *   `inTransitEncryptionConfig` (*type:* `String.t`, *default:* `nil`) - Specify the details of in-transit encryption. Now named inter-node transparent encryption.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
   *   `networkPerformanceConfig` (*type:* `GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig.t`, *default:* `nil`) - Network bandwidth tier configuration.
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services. By default, no private IPv6 access to or from Google Services (all access will be via IPv4)
   *   `serviceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies if services with externalIPs field are blocked or not.
