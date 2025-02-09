@@ -32,6 +32,7 @@ defmodule GoogleApi.CertificateManager.V1.Model.Certificate do
   *   `scope` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The scope of the certificate.
   *   `selfManaged` (*type:* `GoogleApi.CertificateManager.V1.Model.SelfManagedCertificate.t`, *default:* `nil`) - If set, defines data of a self-managed certificate.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a Certificate.
+  *   `usedBy` (*type:* `list(GoogleApi.CertificateManager.V1.Model.UsedBy.t)`, *default:* `nil`) - Output only. The list of resources that use this Certificate.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -47,7 +48,8 @@ defmodule GoogleApi.CertificateManager.V1.Model.Certificate do
           :sanDnsnames => list(String.t()) | nil,
           :scope => String.t() | nil,
           :selfManaged => GoogleApi.CertificateManager.V1.Model.SelfManagedCertificate.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :usedBy => list(GoogleApi.CertificateManager.V1.Model.UsedBy.t()) | nil
         }
 
   field(:createTime, as: DateTime)
@@ -61,6 +63,7 @@ defmodule GoogleApi.CertificateManager.V1.Model.Certificate do
   field(:scope)
   field(:selfManaged, as: GoogleApi.CertificateManager.V1.Model.SelfManagedCertificate)
   field(:updateTime, as: DateTime)
+  field(:usedBy, as: GoogleApi.CertificateManager.V1.Model.UsedBy, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CertificateManager.V1.Model.Certificate do
