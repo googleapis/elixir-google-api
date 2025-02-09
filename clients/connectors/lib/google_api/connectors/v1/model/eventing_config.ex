@@ -24,6 +24,7 @@ defmodule GoogleApi.Connectors.V1.Model.EventingConfig do
   *   `additionalVariables` (*type:* `list(GoogleApi.Connectors.V1.Model.ConfigVariable.t)`, *default:* `nil`) - Optional. Additional eventing related field values
   *   `authConfig` (*type:* `GoogleApi.Connectors.V1.Model.AuthConfig.t`, *default:* `nil`) - Optional. Auth details for the webhook adapter.
   *   `deadLetterConfig` (*type:* `GoogleApi.Connectors.V1.Model.DeadLetterConfig.t`, *default:* `nil`) - Optional. Dead letter configuration for eventing of a connection.
+  *   `enrichmentConfig` (*type:* `GoogleApi.Connectors.V1.Model.EnrichmentConfig.t`, *default:* `nil`) - Optional. Data enrichment configuration.
   *   `enrichmentEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enrichment Enabled.
   *   `eventsListenerIngressEndpoint` (*type:* `String.t`, *default:* `nil`) - Optional. Ingress endpoint of the event listener. This is used only when private connectivity is enabled.
   *   `listenerAuthConfig` (*type:* `GoogleApi.Connectors.V1.Model.AuthConfig.t`, *default:* `nil`) - Optional. Auth details for the event listener.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Connectors.V1.Model.EventingConfig do
           :additionalVariables => list(GoogleApi.Connectors.V1.Model.ConfigVariable.t()) | nil,
           :authConfig => GoogleApi.Connectors.V1.Model.AuthConfig.t() | nil,
           :deadLetterConfig => GoogleApi.Connectors.V1.Model.DeadLetterConfig.t() | nil,
+          :enrichmentConfig => GoogleApi.Connectors.V1.Model.EnrichmentConfig.t() | nil,
           :enrichmentEnabled => boolean() | nil,
           :eventsListenerIngressEndpoint => String.t() | nil,
           :listenerAuthConfig => GoogleApi.Connectors.V1.Model.AuthConfig.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.Connectors.V1.Model.EventingConfig do
   field(:additionalVariables, as: GoogleApi.Connectors.V1.Model.ConfigVariable, type: :list)
   field(:authConfig, as: GoogleApi.Connectors.V1.Model.AuthConfig)
   field(:deadLetterConfig, as: GoogleApi.Connectors.V1.Model.DeadLetterConfig)
+  field(:enrichmentConfig, as: GoogleApi.Connectors.V1.Model.EnrichmentConfig)
   field(:enrichmentEnabled)
   field(:eventsListenerIngressEndpoint)
   field(:listenerAuthConfig, as: GoogleApi.Connectors.V1.Model.AuthConfig)
