@@ -25,16 +25,16 @@ defmodule GoogleApi.CSS.V1.Model.Attributes do
   *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
   *   `color` (*type:* `String.t`, *default:* `nil`) - Color of the item.
   *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
-  *   `headlineOfferPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - Headline Price of the aggregate offer.
+  *   `headlineOfferPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - Headline Price of the CSS Product.
   *   `customLabel1` (*type:* `String.t`, *default:* `nil`) - Custom label 1 for custom grouping of items in a Shopping campaign.
   *   `productHeight` (*type:* `GoogleApi.CSS.V1.Model.ProductDimension.t`, *default:* `nil`) - The height of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the item.
   *   `productDetails` (*type:* `list(GoogleApi.CSS.V1.Model.ProductDetail.t)`, *default:* `nil`) - Technical specification or additional product details.
   *   `multipack` (*type:* `String.t`, *default:* `nil`) - The number of identical products in a merchant-defined multipack.
-  *   `lowPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - Low Price of the aggregate offer.
+  *   `lowPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - Low Price of the CSS Product.
   *   `sizeSystem` (*type:* `String.t`, *default:* `nil`) - System in which the size is specified. Recommended for apparel items.
   *   `productLength` (*type:* `GoogleApi.CSS.V1.Model.ProductDimension.t`, *default:* `nil`) - The length of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
-  *   `headlineOfferShippingPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - Headline Price of the aggregate offer.
+  *   `headlineOfferShippingPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - Headline Price of the CSS Product.
   *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - Shared identifier for all variants of the same product.
   *   `customLabel3` (*type:* `String.t`, *default:* `nil`) - Custom label 3 for custom grouping of items in a Shopping campaign.
   *   `customLabel2` (*type:* `String.t`, *default:* `nil`) - Custom label 2 for custom grouping of items in a Shopping campaign.
@@ -44,8 +44,8 @@ defmodule GoogleApi.CSS.V1.Model.Attributes do
   *   `cppAdsRedirect` (*type:* `String.t`, *default:* `nil`) - Allows advertisers to override the item URL when the product is shown within the context of Product Ads.
   *   `headlineOfferLink` (*type:* `String.t`, *default:* `nil`) - Link to the headline offer.
   *   `headlineOfferInstallment` (*type:* `GoogleApi.CSS.V1.Model.HeadlineOfferInstallment.t`, *default:* `nil`) - Number and amount of installments to pay for an item.
-  *   `highPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - High Price of the aggregate offer.
-  *   `numberOfOffers` (*type:* `String.t`, *default:* `nil`) - The number of aggregate offers.
+  *   `highPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - High Price of the CSS Product.
+  *   `numberOfOffers` (*type:* `String.t`, *default:* `nil`) - The number of CSS Products.
   *   `productTypes` (*type:* `list(String.t)`, *default:* `nil`) - Categories of the item (formatted as in [products data specification](https://support.google.com/merchants/answer/6324406)).
   *   `certifications` (*type:* `list(GoogleApi.CSS.V1.Model.Certification.t)`, *default:* `nil`) - A list of certificates claimed by the CSS for the given product.
   *   `additionalImageLinks` (*type:* `list(String.t)`, *default:* `nil`) - Additional URL of images of the item.
