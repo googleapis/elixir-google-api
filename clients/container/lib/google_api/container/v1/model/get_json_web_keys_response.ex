@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Container.V1.Model.GetJSONWebKeysResponse do
   @moduledoc """
-  GetJSONWebKeysResponse is a valid JSON Web Key Set as specififed in rfc 7517
+  GetJSONWebKeysResponse is a valid JSON Web Key Set as specified in rfc 7517
 
   ## Attributes
 

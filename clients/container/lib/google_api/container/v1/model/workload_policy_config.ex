@@ -22,15 +22,18 @@ defmodule GoogleApi.Container.V1.Model.WorkloadPolicyConfig do
   ## Attributes
 
   *   `allowNetAdmin` (*type:* `boolean()`, *default:* `nil`) - If true, workloads can use NET_ADMIN capability.
+  *   `autopilotCompatibilityAuditingEnabled` (*type:* `boolean()`, *default:* `nil`) - If true, enables the GCW Auditor that audits workloads on standard clusters.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowNetAdmin => boolean() | nil
+          :allowNetAdmin => boolean() | nil,
+          :autopilotCompatibilityAuditingEnabled => boolean() | nil
         }
 
   field(:allowNetAdmin)
+  field(:autopilotCompatibilityAuditingEnabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.WorkloadPolicyConfig do

@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.CertificateAuthorityDomainConfig do
 
   ## Attributes
 
-  *   `fqdns` (*type:* `list(String.t)`, *default:* `nil`) - List of fully qualified domain names (FQDN). Specifying port is supported. Wilcards are NOT supported. Examples: - my.customdomain.com - 10.0.1.2:5000
+  *   `fqdns` (*type:* `list(String.t)`, *default:* `nil`) - List of fully qualified domain names (FQDN). Specifying port is supported. Wildcards are NOT supported. Examples: - my.customdomain.com - 10.0.1.2:5000
   *   `gcpSecretManagerCertificateConfig` (*type:* `GoogleApi.Container.V1.Model.GCPSecretManagerCertificateConfig.t`, *default:* `nil`) - Google Secret Manager (GCP) certificate configuration.
   """
 

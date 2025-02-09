@@ -23,7 +23,7 @@ defmodule GoogleApi.Container.V1.Model.AutopilotCompatibilityIssue do
 
   *   `constraintType` (*type:* `String.t`, *default:* `nil`) - The constraint type of the issue.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the issue.
-  *   `documentationUrl` (*type:* `String.t`, *default:* `nil`) - A URL to a public documnetation, which addresses resolving this issue.
+  *   `documentationUrl` (*type:* `String.t`, *default:* `nil`) - A URL to a public documentation, which addresses resolving this issue.
   *   `incompatibilityType` (*type:* `String.t`, *default:* `nil`) - The incompatibility type of this issue.
   *   `lastObservation` (*type:* `DateTime.t`, *default:* `nil`) - The last time when this issue was observed.
   *   `subjects` (*type:* `list(String.t)`, *default:* `nil`) - The name of the resources which are subject to this issue.
