@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.RenderAccountIssuesResponse do
 
   ## Attributes
 
-  *   `alternateDisputeResolution` (*type:* `GoogleApi.Content.V21.Model.AlternateDisputeResolution.t`, *default:* `nil`) - The Alternate Dispute Resolution (ADR) contains a link to a page where merchant can bring their appeal to an [external body](https://support.google.com/european-union-digital-services-act-redress-options/answer/13535501). If the ADR is present, it MUST be available to the merchant on the page that shows the list with their account issues.
+  *   `alternateDisputeResolution` (*type:* `GoogleApi.Content.V21.Model.AlternateDisputeResolution.t`, *default:* `nil`) - Alternate Dispute Resolution (ADR) is deprecated. Use `prerendered_out_of_court_dispute_settlement` instead.
   *   `issues` (*type:* `list(GoogleApi.Content.V21.Model.AccountIssue.t)`, *default:* `nil`) - List of account issues for a given account. This list can be shown with compressed, expandable items. In the compressed form, the title and impact should be shown for each issue. Once the issue is expanded, the detailed content and available actions should be rendered.
   """
 
