@@ -22,12 +22,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Output only. The default CmekConfig for the Customer.
-  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Kms key resource name which will be used to encrypt resources `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
-  *   `kmsKeyVersion` (*type:* `String.t`, *default:* `nil`) - Kms key version resource name which will be used to encrypt resources `/cryptoKeyVersions/{keyVersion}`.
+  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - KMS key resource name which will be used to encrypt resources `projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{keyId}`.
+  *   `kmsKeyVersion` (*type:* `String.t`, *default:* `nil`) - KMS key version resource name which will be used to encrypt resources `/cryptoKeyVersions/{keyVersion}`.
   *   `lastRotationTimestampMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp of the last key rotation.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the CmekConfig, of the form `projects/{project}/locations/{location}/cmekConfig` or `projects/{project}/locations/{location}/cmekConfigs/{cmekConfig}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the CmekConfig of the form `projects/{project}/locations/{location}/cmekConfig` or `projects/{project}/locations/{location}/cmekConfigs/{cmekConfig}`.
   *   `singleRegionKeys` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSingleRegionKey.t)`, *default:* `nil`) - Optional. Single-regional CMEKs that are required for some VAIS features.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the CmekConfig.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The states of the CmekConfig.
   """
 
   use GoogleApi.Gax.ModelBase

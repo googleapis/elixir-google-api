@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaIdentityMappingEntryOperationMetadata do
   @moduledoc """
-  IdentityMappingEntry LongRunningOperation metadata for [IdentityMappingStoreService.ImportIdentityMappings] and [IdentityMappingStoreService.PurgeIdentityMappings]
+  IdentityMappingEntry LongRunningOperation metadata for IdentityMappingStoreService.ImportIdentityMappings and IdentityMappingStoreService.PurgeIdentityMappings
 
   ## Attributes
 

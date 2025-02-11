@@ -23,8 +23,10 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
 
   *   `dataStore` (*type:* `String.t`, *default:* `nil`) - Output only. The full resource name of the associated data store for the source entity. Format: `projects/*/locations/*/collections/*/dataStores/*`. When the connector is initialized by the DataConnectorService.SetUpDataConnector method, a DataStore is automatically created for each source entity.
   *   `entityName` (*type:* `String.t`, *default:* `nil`) - The name of the entity. Supported values by data source: * Salesforce: `Lead`, `Opportunity`, `Contact`, `Account`, `Case`, `Contract`, `Campaign` * Jira: `Issue` * Confluence: `Content`, `Space`
+  *   `healthcareFhirConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig.t`, *default:* `nil`) - Optional. Configuration for `HEALTHCARE_FHIR` vertical.
   *   `keyPropertyMappings` (*type:* `map()`, *default:* `nil`) - Attributes for indexing. Key: Field name. Value: The key property to map a field to, such as `title`, and `description`. Supported key properties: * `title`: The title for data record. This would be displayed on search results. * `description`: The description for data record. This would be displayed on search results.
   *   `params` (*type:* `map()`, *default:* `nil`) - The parameters for the entity to facilitate data ingestion. E.g. for BigQuery connectors: * Key: `document_id_column` * Value: type STRING. The value of the column ID.
+  *   `startingSchema` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSchema.t`, *default:* `nil`) - Optional. The start schema to use for the DataStore created from this SourceEntity. If unset, a default vertical specialized schema will be used. This field is only used by SetUpDataConnector API, and will be ignored if used in other APIs. This field will be omitted from all API responses including GetDataConnector API. To retrieve a schema of a DataStore, use SchemaService.GetSchema API instead. The provided schema will be validated against certain rules on schema. Learn more from [this doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +34,28 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   @type t :: %__MODULE__{
           :dataStore => String.t() | nil,
           :entityName => String.t() | nil,
+          :healthcareFhirConfig =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig.t()
+            | nil,
           :keyPropertyMappings => map() | nil,
-          :params => map() | nil
+          :params => map() | nil,
+          :startingSchema =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSchema.t() | nil
         }
 
   field(:dataStore)
   field(:entityName)
+
+  field(:healthcareFhirConfig,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaHealthcareFhirConfig
+  )
+
   field(:keyPropertyMappings, type: :map)
   field(:params, type: :map)
+
+  field(:startingSchema,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSchema
+  )
 end
 
 defimpl Poison.Decoder,

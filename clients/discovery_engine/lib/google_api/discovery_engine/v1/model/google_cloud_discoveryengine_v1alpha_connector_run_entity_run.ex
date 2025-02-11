@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
 
   ## Attributes
 
+  *   `deletedRecordCount` (*type:* `String.t`, *default:* `nil`) - The number of documents deleted.
   *   `entityName` (*type:* `String.t`, *default:* `nil`) - The name of the source entity.
   *   `errorRecordCount` (*type:* `String.t`, *default:* `nil`) - The total number of documents failed at sync at any stage (extraction, indexing, etc).
   *   `errors` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - The errors from the entity's sync run. Only exist if running into an error state. Contains error code and error message.
@@ -36,6 +37,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :deletedRecordCount => String.t() | nil,
           :entityName => String.t() | nil,
           :errorRecordCount => String.t() | nil,
           :errors => list(GoogleApi.DiscoveryEngine.V1.Model.GoogleRpcStatus.t()) | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
           :syncType => String.t() | nil
         }
 
+  field(:deletedRecordCount)
   field(:entityName)
   field(:errorRecordCount)
   field(:errors, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleRpcStatus, type: :list)
