@@ -22,13 +22,15 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   ## Attributes
 
   *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - For `CARD_CLICKED` interaction events, the form action data associated when a user clicks a card or dialog. To learn more, see [Read form data input by users on cards](https://developers.google.com/workspace/chat/read-form-data).
+  *   `appCommandMetadata` (*type:* `GoogleApi.Chat.V1.Model.AppCommandMetadata.t`, *default:* `nil`) - Populated for app commands, including slash commands and quick commands.
   *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes information submitted by users interacting with [dialogs](https://developers.google.com/workspace/chat/dialogs), like data entered on a card.
-  *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - This URL is populated for `MESSAGE` and `ADDED_TO_SPACE` interaction events. After completing an authorization or configuration flow outside of Google Chat, users must be redirected to this URL to signal to Google Chat that the authorization or configuration flow was successful. For more information, see [Connect a Chat app with other services and tools](https://developers.google.com/workspace/chat/connect-web-services-tools). In [Developer Preview](https://developers.google.com/workspace/preview), this URL is also populated for `APP_COMMAND` interaction events.
+  *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - This URL is populated for `MESSAGE`, `ADDED_TO_SPACE`, and `APP_COMMAND` interaction events. After completing an authorization or configuration flow outside of Google Chat, users must be redirected to this URL to signal to Google Chat that the authorization or configuration flow was successful. For more information, see [Connect a Chat app with other services and tools](https://developers.google.com/workspace/chat/connect-web-services-tools).
   *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of [dialog](https://developers.google.com/workspace/chat/dialogs) interaction event received.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the interaction event occurred.
   *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - For `CARD_CLICKED` and `MESSAGE` interaction events, whether the user is interacting with or about to interact with a [dialog](https://developers.google.com/workspace/chat/dialogs).
   *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - For `ADDED_TO_SPACE`, `CARD_CLICKED`, and `MESSAGE` interaction events, the message that triggered the interaction event, if applicable.
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space in which the user interacted with the Chat app.
+  *   `thread` (*type:* `GoogleApi.Chat.V1.Model.Thread.t`, *default:* `nil`) - The thread in which the user interacted with the Chat app. This could be in a new thread created by a newly sent message. This field is populated if the interaction event is associated with a specific message or thread.
   *   `threadKey` (*type:* `String.t`, *default:* `nil`) - The Chat app-defined key for the thread related to the interaction event. See [`spaces.messages.thread.threadKey`](/chat/api/reference/rest/v1/spaces.messages#Thread.FIELDS.thread_key) for more information.
   *   `token` (*type:* `String.t`, *default:* `nil`) - A secret value that legacy Chat apps can use to verify if a request is from Google. Google randomly generates the token, and its value remains static. You can obtain, revoke, or regenerate the token from the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat) in the Google Cloud Console. Modern Chat apps don't use this field. It is absent from API responses and the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat).
   *   `type` (*type:* `String.t`, *default:* `nil`) - The [type](/workspace/chat/api/reference/rest/v1/EventType) of user interaction with the Chat app, such as `MESSAGE` or `ADDED_TO_SPACE`.
@@ -39,6 +41,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
 
   @type t :: %__MODULE__{
           :action => GoogleApi.Chat.V1.Model.FormAction.t() | nil,
+          :appCommandMetadata => GoogleApi.Chat.V1.Model.AppCommandMetadata.t() | nil,
           :common => GoogleApi.Chat.V1.Model.CommonEventObject.t() | nil,
           :configCompleteRedirectUrl => String.t() | nil,
           :dialogEventType => String.t() | nil,
@@ -46,6 +49,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
           :isDialogEvent => boolean() | nil,
           :message => GoogleApi.Chat.V1.Model.Message.t() | nil,
           :space => GoogleApi.Chat.V1.Model.Space.t() | nil,
+          :thread => GoogleApi.Chat.V1.Model.Thread.t() | nil,
           :threadKey => String.t() | nil,
           :token => String.t() | nil,
           :type => String.t() | nil,
@@ -53,6 +57,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
         }
 
   field(:action, as: GoogleApi.Chat.V1.Model.FormAction)
+  field(:appCommandMetadata, as: GoogleApi.Chat.V1.Model.AppCommandMetadata)
   field(:common, as: GoogleApi.Chat.V1.Model.CommonEventObject)
   field(:configCompleteRedirectUrl)
   field(:dialogEventType)
@@ -60,6 +65,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   field(:isDialogEvent)
   field(:message, as: GoogleApi.Chat.V1.Model.Message)
   field(:space, as: GoogleApi.Chat.V1.Model.Space)
+  field(:thread, as: GoogleApi.Chat.V1.Model.Thread)
   field(:threadKey)
   field(:token)
   field(:type)
