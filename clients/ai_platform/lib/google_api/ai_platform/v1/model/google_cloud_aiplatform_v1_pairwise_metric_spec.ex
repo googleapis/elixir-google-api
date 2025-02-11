@@ -21,16 +21,25 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricSpe
 
   ## Attributes
 
+  *   `baselineResponseFieldName` (*type:* `String.t`, *default:* `nil`) - Optional. The field name of the baseline response.
+  *   `candidateResponseFieldName` (*type:* `String.t`, *default:* `nil`) - Optional. The field name of the candidate response.
   *   `metricPromptTemplate` (*type:* `String.t`, *default:* `nil`) - Required. Metric prompt template for pairwise metric.
+  *   `systemInstruction` (*type:* `String.t`, *default:* `nil`) - Optional. System instructions for pairwise metric.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricPromptTemplate => String.t() | nil
+          :baselineResponseFieldName => String.t() | nil,
+          :candidateResponseFieldName => String.t() | nil,
+          :metricPromptTemplate => String.t() | nil,
+          :systemInstruction => String.t() | nil
         }
 
+  field(:baselineResponseFieldName)
+  field(:candidateResponseFieldName)
   field(:metricPromptTemplate)
+  field(:systemInstruction)
 end
 
 defimpl Poison.Decoder,

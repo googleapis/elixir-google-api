@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   ## Attributes
 
+  *   `autoraterConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig.t`, *default:* `nil`) - Optional. Autorater config used for evaluation.
   *   `bleuInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput.t`, *default:* `nil`) - Instances and metric spec for bleu metric.
   *   `coherenceInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput.t`, *default:* `nil`) - Input for coherence metric.
   *   `cometInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput.t`, *default:* `nil`) - Translation metrics. Input for Comet metric.
@@ -57,6 +58,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoraterConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig.t() | nil,
           :bleuInput => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput.t() | nil,
           :coherenceInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput.t() | nil,
@@ -135,6 +138,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput.t()
             | nil
         }
+
+  field(:autoraterConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig)
 
   field(:bleuInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput)
   field(:coherenceInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput)
