@@ -33,6 +33,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.IntegralAdScience do
   *   `excludedIllegalDownloadsRisk` (*type:* `String.t`, *default:* `nil`) - Brand Safety - **Illegal downloads**.
   *   `excludedOffensiveLanguageRisk` (*type:* `String.t`, *default:* `nil`) - Brand Safety - **Offensive language**.
   *   `excludedViolenceRisk` (*type:* `String.t`, *default:* `nil`) - Brand Safety - **Violence**.
+  *   `qualitySyncCustomSegmentId` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The quality sync custom segment ID provided by Integral Ad Science. The ID must be between `3000000` and `4999999`, inclusive.
   *   `traqScoreOption` (*type:* `String.t`, *default:* `nil`) - True advertising quality (applicable to Display line items only).
   *   `videoViewability` (*type:* `String.t`, *default:* `nil`) - Video Viewability Section (applicable to video line items only).
   """
@@ -52,6 +53,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.IntegralAdScience do
           :excludedIllegalDownloadsRisk => String.t() | nil,
           :excludedOffensiveLanguageRisk => String.t() | nil,
           :excludedViolenceRisk => String.t() | nil,
+          :qualitySyncCustomSegmentId => list(String.t()) | nil,
           :traqScoreOption => String.t() | nil,
           :videoViewability => String.t() | nil
         }
@@ -68,6 +70,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.IntegralAdScience do
   field(:excludedIllegalDownloadsRisk)
   field(:excludedOffensiveLanguageRisk)
   field(:excludedViolenceRisk)
+  field(:qualitySyncCustomSegmentId, type: :list)
   field(:traqScoreOption)
   field(:videoViewability)
 end
