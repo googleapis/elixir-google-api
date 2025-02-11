@@ -21,7 +21,7 @@ defmodule GoogleApi.AppEngine.V1.Model.StandardSchedulerSettings do
 
   ## Attributes
 
-  *   `maxInstances` (*type:* `integer()`, *default:* `nil`) - Maximum number of instances to run for this version. Set to zero to disable max_instances configuration.
+  *   `maxInstances` (*type:* `integer()`, *default:* `nil`) - Maximum number of instances to run for this version. Set to 2147483647 to disable max_instances configuration.
   *   `minInstances` (*type:* `integer()`, *default:* `nil`) - Minimum number of instances to run for this version. Set to zero to disable min_instances configuration.
   *   `targetCpuUtilization` (*type:* `float()`, *default:* `nil`) - Target CPU utilization ratio to maintain when scaling.
   *   `targetThroughputUtilization` (*type:* `float()`, *default:* `nil`) - Target throughput utilization ratio to maintain when scaling

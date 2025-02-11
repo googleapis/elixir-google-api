@@ -134,6 +134,7 @@ defmodule GoogleApi.AppEngine.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:force` (*type:* `boolean()`) - Optional. If set to true, any versions of this service will also be deleted. (Otherwise, the request will only succeed if the service has no versions.)
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -174,7 +175,8 @@ defmodule GoogleApi.AppEngine.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :force => :query
     }
 
     request =
