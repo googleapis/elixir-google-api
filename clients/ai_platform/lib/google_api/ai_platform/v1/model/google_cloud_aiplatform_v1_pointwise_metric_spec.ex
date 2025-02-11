@@ -22,15 +22,18 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricSp
   ## Attributes
 
   *   `metricPromptTemplate` (*type:* `String.t`, *default:* `nil`) - Required. Metric prompt template for pointwise metric.
+  *   `systemInstruction` (*type:* `String.t`, *default:* `nil`) - Optional. System instructions for pointwise metric.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :metricPromptTemplate => String.t() | nil
+          :metricPromptTemplate => String.t() | nil,
+          :systemInstruction => String.t() | nil
         }
 
   field(:metricPromptTemplate)
+  field(:systemInstruction)
 end
 
 defimpl Poison.Decoder,
