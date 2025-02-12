@@ -7,7 +7,7 @@ defmodule GoogleApi.Gax.MixProject do
     [
       app: :google_gax,
       version: @version,
-      elixir: "~> 1.6",
+      elixir: "~> 1.9",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -27,10 +27,9 @@ defmodule GoogleApi.Gax.MixProject do
   defp deps() do
     [
       {:tesla, "~> 1.2"},
-      {:mime, "~> 1.0"},
-      {:poison, ">= 3.0.0 and < 5.0.0"},
-      {:ex_doc, "~> 0.16", only: :dev},
-      {:dialyxir, "~> 0.5", only: [:dev], runtime: false}
+      {:poison, ">= 3.0.0 and <= 5.0.0"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:dialyxir, ">= 0.0.0", only: [:dev, :test], runtime: false}
     ]
   end
 
