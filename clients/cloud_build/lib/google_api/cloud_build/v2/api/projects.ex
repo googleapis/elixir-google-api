@@ -538,6 +538,7 @@ defmodule GoogleApi.CloudBuild.V2.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Number of results to return in the list.
       *   `:pageToken` (*type:* `String.t`) - Page start.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If set to true, the response will return partial results when some regions are unreachable. If set to false, the response will fail if any region is unreachable.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -574,7 +575,8 @@ defmodule GoogleApi.CloudBuild.V2.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -1423,6 +1425,7 @@ defmodule GoogleApi.CloudBuild.V2.Api.Projects do
       *   `:filter` (*type:* `String.t`) - A filter expression that filters resources listed in the response. Expressions must follow API improvement proposal [AIP-160](https://google.aip.dev/160). e.g. `remote_uri:"https://github.com*"`.
       *   `:pageSize` (*type:* `integer()`) - Number of results to return in the list.
       *   `:pageToken` (*type:* `String.t`) - Page start.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If set to true, the response will return partial results when some regions are unreachable. If set to false, the response will fail if any region is unreachable.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1460,7 +1463,8 @@ defmodule GoogleApi.CloudBuild.V2.Api.Projects do
       :upload_protocol => :query,
       :filter => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =

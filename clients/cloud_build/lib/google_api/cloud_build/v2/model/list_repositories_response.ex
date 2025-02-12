@@ -23,17 +23,20 @@ defmodule GoogleApi.CloudBuild.V2.Model.ListRepositoriesResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token identifying a page of results the server should return.
   *   `repositories` (*type:* `list(GoogleApi.CloudBuild.V2.Model.Repository.t)`, *default:* `nil`) - The list of Repositories.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => String.t() | nil,
-          :repositories => list(GoogleApi.CloudBuild.V2.Model.Repository.t()) | nil
+          :repositories => list(GoogleApi.CloudBuild.V2.Model.Repository.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)
   field(:repositories, as: GoogleApi.CloudBuild.V2.Model.Repository, type: :list)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V2.Model.ListRepositoriesResponse do
