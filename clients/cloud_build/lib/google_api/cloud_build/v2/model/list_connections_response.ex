@@ -23,17 +23,20 @@ defmodule GoogleApi.CloudBuild.V2.Model.ListConnectionsResponse do
 
   *   `connections` (*type:* `list(GoogleApi.CloudBuild.V2.Model.Connection.t)`, *default:* `nil`) - The list of Connections.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token identifying a page of results the server should return.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :connections => list(GoogleApi.CloudBuild.V2.Model.Connection.t()) | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:connections, as: GoogleApi.CloudBuild.V2.Model.Connection, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V2.Model.ListConnectionsResponse do
