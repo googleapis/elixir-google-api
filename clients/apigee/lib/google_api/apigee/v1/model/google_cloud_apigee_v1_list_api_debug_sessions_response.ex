@@ -22,18 +22,19 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListApiDebugSessionsRespo
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that you can include in a ListApiDebugSessionsRequest to retrieve the next page. If omitted, no subsequent pages exist.
-  *   `sessions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session.t)`, *default:* `nil`) - Session info that includes debug session ID and the first transaction creation timestamp.
+  *   `sessions` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiDebugSession.t)`, *default:* `nil`) - Session info that includes debug session ID, environment ID, api proxy revision ID and the first transaction creation timestamp.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => String.t() | nil,
-          :sessions => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session.t()) | nil
+          :sessions =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiDebugSession.t()) | nil
         }
 
   field(:nextPageToken)
-  field(:sessions, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Session, type: :list)
+  field(:sessions, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiDebugSession, type: :list)
 end
 
 defimpl Poison.Decoder,
