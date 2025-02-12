@@ -39,6 +39,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `sqlNetworkArchitecture` (*type:* `String.t`, *default:* `nil`) - The SQL network architecture for the instance.
   *   `instanceType` (*type:* `String.t`, *default:* `nil`) - The instance type.
   *   `backendType` (*type:* `String.t`, *default:* `nil`) - The backend type. `SECOND_GEN`: Cloud SQL database instance. `EXTERNAL`: A database server that is not managed by Google. This property is read-only; use the `tier` property in the `settings` object to determine the database type.
+  *   `includeReplicasForMajorVersionUpgrade` (*type:* `boolean()`, *default:* `nil`) - Input only. Determines whether an in-place major version upgrade of replicas happens when an in-place major version upgrade of a primary instance is initiated.
   *   `replicaNames` (*type:* `list(String.t)`, *default:* `nil`) - The replicas of the instance.
   *   `writeEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The dns name of the primary instance in a replication group.
   *   `region` (*type:* `String.t`, *default:* `nil`) - The geographical region of the Cloud SQL instance. It can be one of the [regions](https://cloud.google.com/sql/docs/mysql/locations#location-r) where Cloud SQL operates: For example, `asia-east1`, `europe-west1`, and `us-central1`. The default value is `us-central1`.
@@ -93,6 +94,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :sqlNetworkArchitecture => String.t() | nil,
           :instanceType => String.t() | nil,
           :backendType => String.t() | nil,
+          :includeReplicasForMajorVersionUpgrade => boolean() | nil,
           :replicaNames => list(String.t()) | nil,
           :writeEndpoint => String.t() | nil,
           :region => String.t() | nil,
@@ -152,6 +154,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:sqlNetworkArchitecture)
   field(:instanceType)
   field(:backendType)
+  field(:includeReplicasForMajorVersionUpgrade)
   field(:replicaNames, type: :list)
   field(:writeEndpoint)
   field(:region)
