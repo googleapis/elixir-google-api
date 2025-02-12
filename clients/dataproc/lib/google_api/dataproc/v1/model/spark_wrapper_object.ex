@@ -29,6 +29,8 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkWrapperObject do
   *   `executorStageSummary` (*type:* `GoogleApi.Dataproc.V1.Model.ExecutorStageSummary.t`, *default:* `nil`) - 
   *   `executorSummary` (*type:* `GoogleApi.Dataproc.V1.Model.ExecutorSummary.t`, *default:* `nil`) - 
   *   `jobData` (*type:* `GoogleApi.Dataproc.V1.Model.JobData.t`, *default:* `nil`) - 
+  *   `nativeBuildInfoUiData` (*type:* `GoogleApi.Dataproc.V1.Model.NativeBuildInfoUiData.t`, *default:* `nil`) - Native Build Info
+  *   `nativeSqlExecutionUiData` (*type:* `GoogleApi.Dataproc.V1.Model.NativeSqlExecutionUiData.t`, *default:* `nil`) - Native SQL Execution Info
   *   `poolData` (*type:* `GoogleApi.Dataproc.V1.Model.PoolData.t`, *default:* `nil`) - 
   *   `processSummary` (*type:* `GoogleApi.Dataproc.V1.Model.ProcessSummary.t`, *default:* `nil`) - 
   *   `rddOperationGraph` (*type:* `GoogleApi.Dataproc.V1.Model.RddOperationGraph.t`, *default:* `nil`) - 
@@ -56,6 +58,9 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkWrapperObject do
           :executorStageSummary => GoogleApi.Dataproc.V1.Model.ExecutorStageSummary.t() | nil,
           :executorSummary => GoogleApi.Dataproc.V1.Model.ExecutorSummary.t() | nil,
           :jobData => GoogleApi.Dataproc.V1.Model.JobData.t() | nil,
+          :nativeBuildInfoUiData => GoogleApi.Dataproc.V1.Model.NativeBuildInfoUiData.t() | nil,
+          :nativeSqlExecutionUiData =>
+            GoogleApi.Dataproc.V1.Model.NativeSqlExecutionUiData.t() | nil,
           :poolData => GoogleApi.Dataproc.V1.Model.PoolData.t() | nil,
           :processSummary => GoogleApi.Dataproc.V1.Model.ProcessSummary.t() | nil,
           :rddOperationGraph => GoogleApi.Dataproc.V1.Model.RddOperationGraph.t() | nil,
@@ -80,6 +85,8 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkWrapperObject do
   field(:executorStageSummary, as: GoogleApi.Dataproc.V1.Model.ExecutorStageSummary)
   field(:executorSummary, as: GoogleApi.Dataproc.V1.Model.ExecutorSummary)
   field(:jobData, as: GoogleApi.Dataproc.V1.Model.JobData)
+  field(:nativeBuildInfoUiData, as: GoogleApi.Dataproc.V1.Model.NativeBuildInfoUiData)
+  field(:nativeSqlExecutionUiData, as: GoogleApi.Dataproc.V1.Model.NativeSqlExecutionUiData)
   field(:poolData, as: GoogleApi.Dataproc.V1.Model.PoolData)
   field(:processSummary, as: GoogleApi.Dataproc.V1.Model.ProcessSummary)
   field(:rddOperationGraph, as: GoogleApi.Dataproc.V1.Model.RddOperationGraph)
