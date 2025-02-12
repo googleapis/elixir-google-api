@@ -28,6 +28,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
   *   `dependencyChain` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.LanguagePackageDependency.t)`, *default:* `nil`) - The dependency chain between this package and the user's artifact. List in order from the customer's package under review first, to the current package last. Inclusive of the original package and the current package.
   *   `fileLocation` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t)`, *default:* `nil`) - The path to the jar file / go binary file.
   *   `hashDigest` (*type:* `String.t`, *default:* `nil`) - HashDigest stores the SHA512 hash digest of the jar file if the package is of type Maven. This field will be unset for non Maven packages.
+  *   `layerDetails` (*type:* `GoogleApi.OnDemandScanning.V1.Model.LayerDetails.t`, *default:* `nil`) - 
   *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - The list of licenses found that are related to a given package. Note that licenses may also be stored on the BinarySourceInfo. If there is no BinarySourceInfo (because there's no concept of source vs binary), then it will be stored here, while if there are BinarySourceInfos, it will be stored there, as one source can have multiple binaries with different licenses.
   *   `maintainer` (*type:* `GoogleApi.OnDemandScanning.V1.Model.Maintainer.t`, *default:* `nil`) - The maintainer of the package.
   *   `os` (*type:* `String.t`, *default:* `nil`) - The OS affected by a vulnerability Used to generate the cpe_uri for OS packages
@@ -52,6 +53,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
             list(GoogleApi.OnDemandScanning.V1.Model.LanguagePackageDependency.t()) | nil,
           :fileLocation => list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t()) | nil,
           :hashDigest => String.t() | nil,
+          :layerDetails => GoogleApi.OnDemandScanning.V1.Model.LayerDetails.t() | nil,
           :licenses => list(String.t()) | nil,
           :maintainer => GoogleApi.OnDemandScanning.V1.Model.Maintainer.t() | nil,
           :os => String.t() | nil,
@@ -76,6 +78,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
 
   field(:fileLocation, as: GoogleApi.OnDemandScanning.V1.Model.FileLocation, type: :list)
   field(:hashDigest)
+  field(:layerDetails, as: GoogleApi.OnDemandScanning.V1.Model.LayerDetails)
   field(:licenses, type: :list)
   field(:maintainer, as: GoogleApi.OnDemandScanning.V1.Model.Maintainer)
   field(:os)
