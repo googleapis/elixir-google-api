@@ -24,6 +24,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfig 
   *   `additionalVariables` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConfigVariable.t)`, *default:* `nil`) - Optional. Additional eventing related field values
   *   `authConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t`, *default:* `nil`) - Optional. Auth details for the webhook adapter.
   *   `deadLetterConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfigDeadLetterConfig.t`, *default:* `nil`) - Optional. Dead letter configuration for eventing of a connection.
+  *   `enrichmentConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EnrichmentConfig.t`, *default:* `nil`) - Optional. Data enrichment configuration.
   *   `enrichmentEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enrichment Enabled.
   *   `eventsListenerIngressEndpoint` (*type:* `String.t`, *default:* `nil`) - Optional. Ingress endpoint of the event listener. This is used only when private connectivity is enabled.
   *   `listenerAuthConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t`, *default:* `nil`) - Optional. Auth details for the event listener.
@@ -42,6 +43,8 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfig 
           :deadLetterConfig =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfigDeadLetterConfig.t()
             | nil,
+          :enrichmentConfig =>
+            GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EnrichmentConfig.t() | nil,
           :enrichmentEnabled => boolean() | nil,
           :eventsListenerIngressEndpoint => String.t() | nil,
           :listenerAuthConfig =>
@@ -62,6 +65,10 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfig 
 
   field(:deadLetterConfig,
     as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfigDeadLetterConfig
+  )
+
+  field(:enrichmentConfig,
+    as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EnrichmentConfig
   )
 
   field(:enrichmentEnabled)

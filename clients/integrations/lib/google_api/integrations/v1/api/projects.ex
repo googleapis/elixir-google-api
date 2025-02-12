@@ -2123,6 +2123,7 @@ defmodule GoogleApi.Integrations.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:GCPCloudEventsMode` (*type:* `String.t`) - Optional. LINT: LEGACY_NAMES The query parameter value for __GCP_CloudEventsMode, set by the Eventarc service when configuring triggers.
       *   `:triggerId` (*type:* `String.t`) - Required. Id of the integration trigger config. The trigger_id is in the format: `integration_connector_trigger/projects/{gcp_project_id}/location/{location}/connections/{connection_name}/subscriptions/{subscription_name}`.
       *   `:body` (*type:* `String.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2161,6 +2162,7 @@ defmodule GoogleApi.Integrations.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :GCPCloudEventsMode => :query,
       :triggerId => :query,
       :body => :body
     }
