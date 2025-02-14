@@ -21,16 +21,22 @@ defmodule GoogleApi.DataPortability.V1.Model.InitiatePortabilityArchiveRequest d
 
   ## Attributes
 
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The timestamp that represents the end point for the data you are exporting. If the end_time is not specified in the InitiatePortabilityArchiveRequest, this field is set to the latest available data.
   *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - The resources from which you're exporting data. These values have a 1:1 correspondence with the OAuth scopes.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The timestamp that represents the starting point for the data you are exporting. If the start_time is not specified in the InitiatePortabilityArchiveRequest, the field is set to the earliest available data.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :resources => list(String.t()) | nil
+          :endTime => DateTime.t() | nil,
+          :resources => list(String.t()) | nil,
+          :startTime => DateTime.t() | nil
         }
 
+  field(:endTime, as: DateTime)
   field(:resources, type: :list)
+  field(:startTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataPortability.V1.Model.InitiatePortabilityArchiveRequest do
