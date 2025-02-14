@@ -30,7 +30,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.VpcFlowLogsConfig do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata.
   *   `metadata` (*type:* `String.t`, *default:* `nil`) - Optional. Configures whether all, none or a subset of metadata fields should be added to the reported VPC flow logs. Default value is INCLUDE_ALL_METADATA.
   *   `metadataFields` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Custom metadata fields to include in the reported VPC flow logs. Can only be specified if "metadata" was set to CUSTOM_METADATA.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Unique name of the configuration using the form: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Unique name of the configuration using one of the forms: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}` `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Optional. The state of the VPC Flow Log configuration. Default value is ENABLED. When creating a new configuration, it must be enabled.
   *   `targetResourceState` (*type:* `String.t`, *default:* `nil`) - Output only. A diagnostic bit - describes the state of the configured target resource for diagnostic purposes.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the config was updated.

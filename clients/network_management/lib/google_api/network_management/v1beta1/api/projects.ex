@@ -1129,7 +1129,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource of the VPC Flow Logs configuration to create: `projects/{project_id}/locations/global`
+  *   `parent` (*type:* `String.t`) - Required. The parent resource of the VPC Flow Logs configuration to create: `projects/{project_id}/locations/global` `organizations/{organization_id}/locations/global`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1203,7 +1203,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. `VpcFlowLogsConfig` resource name using the form: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+  *   `name` (*type:* `String.t`) - Required. `VpcFlowLogsConfig` resource name using one of the form: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}` `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1273,7 +1273,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. `VpcFlowLogsConfig` resource name using the form: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
+  *   `name` (*type:* `String.t`) - Required. `VpcFlowLogsConfig` resource name using the form: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}` `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1345,7 +1345,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent resource of the VpcFlowLogsConfig: `projects/{project_id}/locations/global`
+  *   `parent` (*type:* `String.t`) - Required. The parent resource of the VpcFlowLogsConfig: `projects/{project_id}/locations/global` `organizations/{organization_id}/locations/global`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1421,12 +1421,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
   end
 
   @doc """
-  Creates a new `VpcFlowLogsConfig`. If a configuration with the exact same settings already exists (even if the ID is different), the creation fails. Notes: 1. Creating a configuration with state=DISABLED will fail 2. The following fields are not considered as `settings` for the purpose of the check mentioned above, therefore - creating another configuration with the same fields but different values for the following fields will fail as well: * name * create_time * update_time * labels * description
+  Updates an existing `VpcFlowLogsConfig`. If a configuration with the exact same settings already exists (even if the ID is different), the creation fails. Notes: 1. Updating a configuration with state=DISABLED will fail 2. The following fields are not considered as `settings` for the purpose of the check mentioned above, therefore - updating another configuration with the same fields but different values for the following fields will fail as well: * name * create_time * update_time * labels * description
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Identifier. Unique name of the configuration using the form: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+  *   `name` (*type:* `String.t`) - Identifier. Unique name of the configuration using one of the forms: `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}` `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
