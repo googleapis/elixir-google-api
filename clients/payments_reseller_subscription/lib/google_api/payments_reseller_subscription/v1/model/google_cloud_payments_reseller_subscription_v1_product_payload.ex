@@ -21,6 +21,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
+  *   `googleHomePayload` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1GoogleHomePayload.t`, *default:* `nil`) - Payload specific to Google Home products.
   *   `googleOnePayload` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayload.t`, *default:* `nil`) - Product-specific payloads. Payload specific to Google One products.
   *   `youtubePayload` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1YoutubePayload.t`, *default:* `nil`) - Payload specific to Youtube products.
   """
@@ -28,6 +29,9 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :googleHomePayload =>
+            GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1GoogleHomePayload.t()
+            | nil,
           :googleOnePayload =>
             GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1GoogleOnePayload.t()
             | nil,
@@ -35,6 +39,11 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
             GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1YoutubePayload.t()
             | nil
         }
+
+  field(:googleHomePayload,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1GoogleHomePayload
+  )
 
   field(:googleOnePayload,
     as:
