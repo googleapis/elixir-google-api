@@ -21,7 +21,9 @@ defmodule GoogleApi.DataPortability.V1.Model.PortabilityArchiveState do
 
   ## Attributes
 
+  *   `exportTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp that represents the end point for the data you are exporting. If the end_time value is set in the InitiatePortabilityArchiveRequest, this field is set to that value. If end_time is not set, this value is set to the time the export was requested.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of ArchiveJob's PortabilityArchiveState singleton. The format is: archiveJobs/{archive_job}/portabilityArchiveState. archive_job is the job ID provided in the request.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp that represents the starting point for the data you are exporting. This field is set only if the start_time field is specified in the InitiatePortabilityArchiveRequest.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Resource that represents the state of the Archive job.
   *   `urls` (*type:* `list(String.t)`, *default:* `nil`) - If the state is complete, this method returns the signed URLs of the objects in the Cloud Storage bucket.
   """
@@ -29,12 +31,16 @@ defmodule GoogleApi.DataPortability.V1.Model.PortabilityArchiveState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :exportTime => DateTime.t() | nil,
           :name => String.t() | nil,
+          :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :urls => list(String.t()) | nil
         }
 
+  field(:exportTime, as: DateTime)
   field(:name)
+  field(:startTime, as: DateTime)
   field(:state)
   field(:urls, type: :list)
 end
