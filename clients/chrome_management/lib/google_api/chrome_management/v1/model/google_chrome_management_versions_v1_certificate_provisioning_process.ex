@@ -25,6 +25,8 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ce
   *   `chromeOsDevice` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsDevice.t`, *default:* `nil`) - Output only. The client certificate is being provisioned for a ChromeOS device. This contains information about the device.
   *   `chromeOsUserSession` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsUserSession.t`, *default:* `nil`) - Output only. The client certificate is being provisioned for a ChromeOS user session. This contains information about the user session.
   *   `failureMessage` (*type:* `String.t`, *default:* `nil`) - Output only. A message describing why this `CertificateProvisioningProcess` failed. Presence of this field indicates that the `CertificateProvisioningProcess` has failed.
+  *   `genericCaConnection` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1GenericCaConnection.t`, *default:* `nil`) - Output only. The CA connection is a generic CA connection.
+  *   `genericProfile` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1GenericProfile.t`, *default:* `nil`) - Output only. The profile is a generic certificate provisioning profile.
   *   `issuedCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. The issued certificate for this `CertificateProvisioningProcess` in PEM format.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the `CertificateProvisioningProcess`. The name pattern is given as `customers/{customer}/certificateProvisioningProcesses/{certificate_provisioning_process}` with `{customer}` being the obfuscated customer id and `{certificate_provisioning_process}` being the certificate provisioning process id.
   *   `profileAdapterConfigReference` (*type:* `String.t`, *default:* `nil`) - Output only. A JSON string that contains the administrator-provided configuration for the certificate provisioning profile. This field can be missing if no configuration was given.
@@ -47,6 +49,12 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ce
             GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsUserSession.t()
             | nil,
           :failureMessage => String.t() | nil,
+          :genericCaConnection =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1GenericCaConnection.t()
+            | nil,
+          :genericProfile =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1GenericProfile.t()
+            | nil,
           :issuedCertificate => String.t() | nil,
           :name => String.t() | nil,
           :profileAdapterConfigReference => String.t() | nil,
@@ -69,6 +77,15 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ce
   )
 
   field(:failureMessage)
+
+  field(:genericCaConnection,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1GenericCaConnection
+  )
+
+  field(:genericProfile,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1GenericProfile
+  )
+
   field(:issuedCertificate)
   field(:name)
   field(:profileAdapterConfigReference)
