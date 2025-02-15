@@ -20,7 +20,7 @@ defmodule GoogleApi.BigQueryReservation.V1 do
   API client metadata for GoogleApi.BigQueryReservation.V1.
   """
 
-  @discovery_revision "20241231"
+  @discovery_revision "20250211"
 
   def discovery_revision(), do: @discovery_revision
 end

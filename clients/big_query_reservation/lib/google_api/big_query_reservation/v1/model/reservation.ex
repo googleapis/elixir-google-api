@@ -31,6 +31,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`. The reservation_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
   *   `originalPrimaryLocation` (*type:* `String.t`, *default:* `nil`) - Output only. The location where the reservation was originally created. This is set only during the failover reservation's creation. All billing charges for the failover reservation will be applied to this location.
   *   `primaryLocation` (*type:* `String.t`, *default:* `nil`) - Output only. The current location of the reservation's primary replica. This field is only set for reservations using the managed disaster recovery feature.
+  *   `replicationStatus` (*type:* `GoogleApi.BigQueryReservation.V1.Model.ReplicationStatus.t`, *default:* `nil`) - Output only. The Disater Recovery(DR) replication status of the reservation. This is only available for the primary replica of DR/failover reservations and provides information about the both the staleness of the secondary and the last error encountered while trying to replicate changes from the primary to the secondary.
   *   `secondaryLocation` (*type:* `String.t`, *default:* `nil`) - Optional. The current location of the reservation's secondary replica. This field is only set for reservations using the managed disaster recovery feature. Users can set this in create reservation calls to create a failover reservation or in update reservation calls to convert a non-failover reservation to a failover reservation(or vice versa).
   *   `slotCapacity` (*type:* `String.t`, *default:* `nil`) - Baseline slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false, or autoscaling is enabled. The total slot_capacity of the reservation and its siblings may exceed the total slot_count of capacity commitments. In that case, the exceeding slots will be charged with the autoscale SKU. You can increase the number of baseline slots in a reservation every few minutes. If you want to decrease your baseline slots, you are limited to once an hour if you have recently changed your baseline slot capacity and your baseline slots exceed your committed slots. Otherwise, you can decrease your baseline slots every few minutes.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last update time of the reservation.
@@ -49,6 +50,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
           :name => String.t() | nil,
           :originalPrimaryLocation => String.t() | nil,
           :primaryLocation => String.t() | nil,
+          :replicationStatus =>
+            GoogleApi.BigQueryReservation.V1.Model.ReplicationStatus.t() | nil,
           :secondaryLocation => String.t() | nil,
           :slotCapacity => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -64,6 +67,7 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.Reservation do
   field(:name)
   field(:originalPrimaryLocation)
   field(:primaryLocation)
+  field(:replicationStatus, as: GoogleApi.BigQueryReservation.V1.Model.ReplicationStatus)
   field(:secondaryLocation)
   field(:slotCapacity)
   field(:updateTime, as: DateTime)
