@@ -21,7 +21,7 @@ defmodule GoogleApi.DataLineage.V1.Model.GoogleCloudDatacatalogLineageV1EntityRe
 
   ## Attributes
 
-  *   `fullyQualifiedName` (*type:* `String.t`, *default:* `nil`) - Required. [Fully Qualified Name (FQN)](https://cloud.google.com/data-catalog/docs/fully-qualified-names) of the entity.
+  *   `fullyQualifiedName` (*type:* `String.t`, *default:* `nil`) - Required. [Fully Qualified Name (FQN)](https://cloud.google.com/dataplex/docs/fully-qualified-names) of the entity.
   """
 
   use GoogleApi.Gax.ModelBase
