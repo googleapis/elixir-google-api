@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   @moduledoc """
-  Common model for database resource instance metadata. Next ID: 23
+  Common model for database resource instance metadata. Next ID: 24
 
   ## Attributes
 
@@ -39,6 +39,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   *   `product` (*type:* `GoogleApi.Redis.V1.Model.Product.t`, *default:* `nil`) - The product this resource represents.
   *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - Closest parent Cloud Resource Manager container of this resource. It must be resource name of a Cloud Resource Manager project with the format of "/", such as "projects/123". For GCP provided resources, number should be project number.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. Different from DatabaseResourceId.unique_id, a resource name can be reused over time. That is, after a resource named "ABC" is deleted, the name "ABC" can be used to to create a new resource within the same source. Resource name to follow CAIS resource_name format as noted here go/condor-common-datamodel
+  *   `suspensionReason` (*type:* `String.t`, *default:* `nil`) - Suspension reason for the resource.
   *   `tagsSet` (*type:* `GoogleApi.Redis.V1.Model.Tags.t`, *default:* `nil`) - Optional. Tags associated with this resources.
   *   `updationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the resource was updated and recorded at partner service.
   *   `userLabelSet` (*type:* `GoogleApi.Redis.V1.Model.UserLabels.t`, *default:* `nil`) - User-provided labels associated with the resource
@@ -66,6 +67,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
           :product => GoogleApi.Redis.V1.Model.Product.t() | nil,
           :resourceContainer => String.t() | nil,
           :resourceName => String.t() | nil,
+          :suspensionReason => String.t() | nil,
           :tagsSet => GoogleApi.Redis.V1.Model.Tags.t() | nil,
           :updationTime => DateTime.t() | nil,
           :userLabelSet => GoogleApi.Redis.V1.Model.UserLabels.t() | nil
@@ -89,6 +91,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   field(:product, as: GoogleApi.Redis.V1.Model.Product)
   field(:resourceContainer)
   field(:resourceName)
+  field(:suspensionReason)
   field(:tagsSet, as: GoogleApi.Redis.V1.Model.Tags)
   field(:updationTime, as: DateTime)
   field(:userLabelSet, as: GoogleApi.Redis.V1.Model.UserLabels)
