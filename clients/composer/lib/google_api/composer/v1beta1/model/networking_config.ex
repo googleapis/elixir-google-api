@@ -21,7 +21,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.NetworkingConfig do
 
   ## Attributes
 
-  *   `connectionType` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates the user requested specifc connection type between Tenant and Customer projects. You cannot set networking connection type in public IP environment.
+  *   `connectionType` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates the user requested specific connection type between Tenant and Customer projects. You cannot set networking connection type in public IP environment.
   """
 
   use GoogleApi.Gax.ModelBase
