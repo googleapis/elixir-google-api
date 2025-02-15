@@ -21,7 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2OrgPolicy
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the org policy. Example: "organizations/{organization_id}/policies/{constraint_name}"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the org policy. Example: "organizations/{organization_id}/policies/{constraint_name}"
   """
 
   use GoogleApi.Gax.ModelBase
