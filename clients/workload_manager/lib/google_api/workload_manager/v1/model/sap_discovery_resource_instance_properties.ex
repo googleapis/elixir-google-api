@@ -23,6 +23,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
 
   *   `appInstances` (*type:* `list(GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropertiesAppInstance.t)`, *default:* `nil`) - Optional. App server instances on the host
   *   `clusterInstances` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of instance URIs that are part of a cluster with this one.
+  *   `diskMounts` (*type:* `list(GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropertiesDiskMount.t)`, *default:* `nil`) - Optional. Disk mounts on the instance.
   *   `instanceNumber` (*type:* `String.t`, *default:* `nil`) - Optional. The VM's instance number.
   *   `instanceRole` (*type:* `String.t`, *default:* `nil`) - Optional. Bitmask of instance role, a resource may have multiple roles at once.
   *   `isDrSite` (*type:* `boolean()`, *default:* `nil`) - Optional. Instance is part of a DR site.
@@ -38,6 +39,11 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
             )
             | nil,
           :clusterInstances => list(String.t()) | nil,
+          :diskMounts =>
+            list(
+              GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropertiesDiskMount.t()
+            )
+            | nil,
           :instanceNumber => String.t() | nil,
           :instanceRole => String.t() | nil,
           :isDrSite => boolean() | nil,
@@ -50,6 +56,12 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
   )
 
   field(:clusterInstances, type: :list)
+
+  field(:diskMounts,
+    as: GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropertiesDiskMount,
+    type: :list
+  )
+
   field(:instanceNumber)
   field(:instanceRole)
   field(:isDrSite)
