@@ -24,7 +24,7 @@ defmodule GoogleApi.MerchantAPI.Reports_v1beta.Model.ProductStatusChangeMessage 
   *   `account` (*type:* `String.t`, *default:* `nil`) - The target account that owns the entity that changed. Format : `accounts/{merchant_id}`
   *   `attribute` (*type:* `String.t`, *default:* `nil`) - The attribute in the resource that changed, in this case it will be always `Status`.
   *   `changes` (*type:* `list(GoogleApi.MerchantAPI.Reports_v1beta.Model.ProductChange.t)`, *default:* `nil`) - A message to describe the change that happened to the product
-  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The product expiration time.
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The product expiration time. This field will not bet set if the notification is sent for a product deletion event.
   *   `managingAccount` (*type:* `String.t`, *default:* `nil`) - The account that manages the merchant's account. can be the same as merchant id if it is standalone account. Format : `accounts/{service_provider_id}`
   *   `resource` (*type:* `String.t`, *default:* `nil`) - The product name. Format: `{product.name=accounts/{account}/products/{product}}`
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The product id.
