@@ -23,6 +23,7 @@ defmodule GoogleApi.Redis.V1.Model.InternalResourceMetadata do
 
   *   `backupConfiguration` (*type:* `GoogleApi.Redis.V1.Model.BackupConfiguration.t`, *default:* `nil`) - Backup configuration for this database
   *   `backupRun` (*type:* `GoogleApi.Redis.V1.Model.BackupRun.t`, *default:* `nil`) - Information about the last backup attempt for this database
+  *   `isDeletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether deletion protection is enabled for this internal resource.
   *   `product` (*type:* `GoogleApi.Redis.V1.Model.Product.t`, *default:* `nil`) - 
   *   `resourceId` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceId.t`, *default:* `nil`) - 
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. internal resource name for spanner this will be database name e.g."spanner.googleapis.com/projects/123/abc/instances/inst1/databases/db1"
@@ -33,6 +34,7 @@ defmodule GoogleApi.Redis.V1.Model.InternalResourceMetadata do
   @type t :: %__MODULE__{
           :backupConfiguration => GoogleApi.Redis.V1.Model.BackupConfiguration.t() | nil,
           :backupRun => GoogleApi.Redis.V1.Model.BackupRun.t() | nil,
+          :isDeletionProtectionEnabled => boolean() | nil,
           :product => GoogleApi.Redis.V1.Model.Product.t() | nil,
           :resourceId => GoogleApi.Redis.V1.Model.DatabaseResourceId.t() | nil,
           :resourceName => String.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.Redis.V1.Model.InternalResourceMetadata do
 
   field(:backupConfiguration, as: GoogleApi.Redis.V1.Model.BackupConfiguration)
   field(:backupRun, as: GoogleApi.Redis.V1.Model.BackupRun)
+  field(:isDeletionProtectionEnabled)
   field(:product, as: GoogleApi.Redis.V1.Model.Product)
   field(:resourceId, as: GoogleApi.Redis.V1.Model.DatabaseResourceId)
   field(:resourceName)

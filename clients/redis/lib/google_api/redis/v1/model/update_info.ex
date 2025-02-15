@@ -21,6 +21,7 @@ defmodule GoogleApi.Redis.V1.Model.UpdateInfo do
 
   ## Attributes
 
+  *   `targetNodeType` (*type:* `String.t`, *default:* `nil`) - Target node type for redis cluster.
   *   `targetReplicaCount` (*type:* `integer()`, *default:* `nil`) - Target number of replica nodes per shard.
   *   `targetShardCount` (*type:* `integer()`, *default:* `nil`) - Target number of shards for redis cluster
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Redis.V1.Model.UpdateInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :targetNodeType => String.t() | nil,
           :targetReplicaCount => integer() | nil,
           :targetShardCount => integer() | nil
         }
 
+  field(:targetNodeType)
   field(:targetReplicaCount)
   field(:targetShardCount)
 end
