@@ -21,10 +21,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
 
   ## Attributes
 
-  *   `breakpointPercentileThreshold` (*type:* `integer()`, *default:* `nil`) - Optional. The percentile of cosine dissimilarity that must be exceeded between a group of tokens and the next. The smaller this number is, the more chunks will be generated.
+  *   `breakpointPercentileThreshold` (*type:* `integer()`, *default:* `nil`) - Optional. The percentile of cosine dissimilarity that must be exceeded between a group of tokens and the next. The smaller this number is, the more chunks will be generated. THIS FIELD IS NOT YET USED.
   *   `chunkSize` (*type:* `integer()`, *default:* `nil`) - Optional. The chunk sizes to use when splitting documents, in order of level.
   *   `includeAncestorHeadings` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether or not to include ancestor headings when splitting.
-  *   `semanticChunkingGroupSize` (*type:* `boolean()`, *default:* `nil`) - Optional. The number of tokens to group together when evaluating semantic similarity.
+  *   `semanticChunkingGroupSize` (*type:* `boolean()`, *default:* `nil`) - Optional. The number of tokens to group together when evaluating semantic similarity. THIS FIELD IS NOT YET USED.
   """
 
   use GoogleApi.Gax.ModelBase
