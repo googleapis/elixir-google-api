@@ -51,6 +51,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.Cluster do
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time stamp
   *   `etag` (*type:* `String.t`, *default:* `nil`) - For Resource freshness validation (https://google.aip.dev/154)
+  *   `cloudsqlBackupRunSource` (*type:* `GoogleApi.AlloyDB.V1.Model.CloudSQLBackupRunSource.t`, *default:* `nil`) - Output only. Cluster created from CloudSQL snapshot.
   *   `networkConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.NetworkConfig.t`, *default:* `nil`) - 
   *   `continuousBackupConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.ContinuousBackupConfig.t`, *default:* `nil`) - Optional. Continuous backup configuration for this cluster.
   *   `pscConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.PscConfig.t`, *default:* `nil`) - Optional. The configuration for Private Service Connect (PSC) for the cluster.
@@ -90,6 +91,8 @@ defmodule GoogleApi.AlloyDB.V1.Model.Cluster do
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :etag => String.t() | nil,
+          :cloudsqlBackupRunSource =>
+            GoogleApi.AlloyDB.V1.Model.CloudSQLBackupRunSource.t() | nil,
           :networkConfig => GoogleApi.AlloyDB.V1.Model.NetworkConfig.t() | nil,
           :continuousBackupConfig => GoogleApi.AlloyDB.V1.Model.ContinuousBackupConfig.t() | nil,
           :pscConfig => GoogleApi.AlloyDB.V1.Model.PscConfig.t() | nil
@@ -125,6 +128,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.Cluster do
   field(:uid)
   field(:updateTime, as: DateTime)
   field(:etag)
+  field(:cloudsqlBackupRunSource, as: GoogleApi.AlloyDB.V1.Model.CloudSQLBackupRunSource)
   field(:networkConfig, as: GoogleApi.AlloyDB.V1.Model.NetworkConfig)
   field(:continuousBackupConfig, as: GoogleApi.AlloyDB.V1.Model.ContinuousBackupConfig)
   field(:pscConfig, as: GoogleApi.AlloyDB.V1.Model.PscConfig)

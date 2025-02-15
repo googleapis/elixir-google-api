@@ -23,6 +23,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.PscInstanceConfig do
 
   *   `allowedConsumerProjects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of consumer projects that are allowed to create PSC endpoints to service-attachments to this instance.
   *   `pscDnsName` (*type:* `String.t`, *default:* `nil`) - Output only. The DNS name of the instance for PSC connectivity. Name convention: ...alloydb-psc.goog
+  *   `pscInterfaceConfigs` (*type:* `list(GoogleApi.AlloyDB.V1.Model.PscInterfaceConfig.t)`, *default:* `nil`) - Optional. Configurations for setting up PSC interfaces attached to the instance which are used for outbound connectivity. Only primary instances can have PSC interface attached. Currently we only support 0 or 1 PSC interface.
   *   `serviceAttachmentLink` (*type:* `String.t`, *default:* `nil`) - Output only. The service attachment created when Private Service Connect (PSC) is enabled for the instance. The name of the resource will be in the format of `projects//regions//serviceAttachments/`
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.AlloyDB.V1.Model.PscInstanceConfig do
   @type t :: %__MODULE__{
           :allowedConsumerProjects => list(String.t()) | nil,
           :pscDnsName => String.t() | nil,
+          :pscInterfaceConfigs => list(GoogleApi.AlloyDB.V1.Model.PscInterfaceConfig.t()) | nil,
           :serviceAttachmentLink => String.t() | nil
         }
 
   field(:allowedConsumerProjects, type: :list)
   field(:pscDnsName)
+  field(:pscInterfaceConfigs, as: GoogleApi.AlloyDB.V1.Model.PscInterfaceConfig, type: :list)
   field(:serviceAttachmentLink)
 end
 

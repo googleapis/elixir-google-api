@@ -23,6 +23,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainIntern
 
   *   `backupConfiguration` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainBackupConfiguration.t`, *default:* `nil`) - Backup configuration for this database
   *   `backupRun` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainBackupRun.t`, *default:* `nil`) - Information about the last backup attempt for this database
+  *   `isDeletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether deletion protection is enabled for this internal resource.
   *   `product` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct.t`, *default:* `nil`) - 
   *   `resourceId` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceId.t`, *default:* `nil`) - 
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. internal resource name for spanner this will be database name e.g."spanner.googleapis.com/projects/123/abc/instances/inst1/databases/db1"
@@ -36,6 +37,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainIntern
             | nil,
           :backupRun =>
             GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainBackupRun.t() | nil,
+          :isDeletionProtectionEnabled => boolean() | nil,
           :product =>
             GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct.t() | nil,
           :resourceId =>
@@ -49,6 +51,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainIntern
   )
 
   field(:backupRun, as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainBackupRun)
+  field(:isDeletionProtectionEnabled)
   field(:product, as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct)
 
   field(:resourceId,
