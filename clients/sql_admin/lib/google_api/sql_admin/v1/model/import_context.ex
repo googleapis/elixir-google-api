@@ -28,6 +28,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ImportContext do
   *   `importUser` (*type:* `String.t`, *default:* `nil`) - The PostgreSQL user for this import operation. PostgreSQL instances only.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#importContext`.
   *   `sqlImportOptions` (*type:* `GoogleApi.SQLAdmin.V1.Model.ImportContextSqlImportOptions.t`, *default:* `nil`) - Optional. Options for importing data from SQL statements.
+  *   `tdeImportOptions` (*type:* `GoogleApi.SQLAdmin.V1.Model.ImportContextTdeImportOptions.t`, *default:* `nil`) - Optional. Import parameters specific to SQL Server TDE certificates
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Path to the import file in Cloud Storage, in the form `gs://bucketName/fileName`. Compressed gzip files (.gz) are supported when `fileType` is `SQL`. The instance must have write permissions to the bucket and read access to the file.
   """
 
@@ -44,6 +45,8 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ImportContext do
           :kind => String.t() | nil,
           :sqlImportOptions =>
             GoogleApi.SQLAdmin.V1.Model.ImportContextSqlImportOptions.t() | nil,
+          :tdeImportOptions =>
+            GoogleApi.SQLAdmin.V1.Model.ImportContextTdeImportOptions.t() | nil,
           :uri => String.t() | nil
         }
 
@@ -54,6 +57,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ImportContext do
   field(:importUser)
   field(:kind)
   field(:sqlImportOptions, as: GoogleApi.SQLAdmin.V1.Model.ImportContextSqlImportOptions)
+  field(:tdeImportOptions, as: GoogleApi.SQLAdmin.V1.Model.ImportContextTdeImportOptions)
   field(:uri)
 end
 
