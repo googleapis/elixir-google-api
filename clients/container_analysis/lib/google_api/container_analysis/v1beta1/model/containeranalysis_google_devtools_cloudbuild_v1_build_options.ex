@@ -31,6 +31,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
   *   `logging` (*type:* `String.t`, *default:* `nil`) - Option to specify the logging mode, which determines if and where build logs are stored.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Compute Engine machine type on which to run the build.
   *   `pool` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsPoolOption.t`, *default:* `nil`) - Optional. Specification for execution on a `WorkerPool`. See [running builds in a private pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool) for more information.
+  *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Optional. Option to specify the Pub/Sub topic to receive build status updates.
   *   `requestedVerifyOption` (*type:* `String.t`, *default:* `nil`) - Requested verifiability options.
   *   `secretEnv` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variables, which are encrypted using a Cloud Key Management Service crypto key. These values must be specified in the build's `Secret`. These variables will be available to all build steps in this build.
   *   `sourceProvenanceHash` (*type:* `list(String.t)`, *default:* `nil`) - Requested hash for SourceProvenance.
@@ -54,6 +55,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
           :pool =>
             GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsPoolOption.t()
             | nil,
+          :pubsubTopic => String.t() | nil,
           :requestedVerifyOption => String.t() | nil,
           :secretEnv => list(String.t()) | nil,
           :sourceProvenanceHash => list(String.t()) | nil,
@@ -81,6 +83,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevto
       GoogleApi.ContainerAnalysis.V1beta1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildOptionsPoolOption
   )
 
+  field(:pubsubTopic)
   field(:requestedVerifyOption)
   field(:secretEnv, type: :list)
   field(:sourceProvenanceHash, type: :list)

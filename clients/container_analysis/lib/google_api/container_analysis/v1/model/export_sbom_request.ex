@@ -21,7 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ExportSBOMRequest do
 
   ## Attributes
 
-  *   `cloudStorageLocation` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.CloudStorageLocation.t`, *default:* `nil`) - Empty placeholder to denote that this is a Google Cloud Storage export request.
+  *   `cloudStorageLocation` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.CloudStorageLocation.t`, *default:* `nil`) - Optional. Empty placeholder to denote that this is a Google Cloud Storage export request.
   """
 
   use GoogleApi.Gax.ModelBase
