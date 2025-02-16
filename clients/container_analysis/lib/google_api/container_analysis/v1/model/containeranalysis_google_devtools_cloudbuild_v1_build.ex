@@ -26,6 +26,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
   *   `availableSecrets` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1Secrets.t`, *default:* `nil`) - Secrets and secret environment variables.
   *   `buildTriggerId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the `BuildTrigger` that triggered this build, if it was triggered automatically.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the request to create the build was received.
+  *   `dependencies` (*type:* `list(GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1Dependency.t)`, *default:* `nil`) - Optional. Dependencies that the Cloud Build worker will fetch before executing user steps.
   *   `failureInfo` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildFailureInfo.t`, *default:* `nil`) - Output only. Contains information about the build when status=FAILURE.
   *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which execution of the build was finished. The difference between finish_time and start_time is the duration of the build's execution.
   *   `gitConfig` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitConfig.t`, *default:* `nil`) - Optional. Configuration for git operations.
@@ -67,6 +68,11 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
             | nil,
           :buildTriggerId => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :dependencies =>
+            list(
+              GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1Dependency.t()
+            )
+            | nil,
           :failureInfo =>
             GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildFailureInfo.t()
             | nil,
@@ -138,6 +144,12 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
 
   field(:buildTriggerId)
   field(:createTime, as: DateTime)
+
+  field(:dependencies,
+    as:
+      GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1Dependency,
+    type: :list
+  )
 
   field(:failureInfo,
     as:
