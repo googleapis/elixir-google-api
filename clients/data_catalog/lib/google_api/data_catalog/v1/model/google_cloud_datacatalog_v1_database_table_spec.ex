@@ -21,7 +21,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSp
 
   ## Attributes
 
-  *   `databaseViewSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpec.t`, *default:* `nil`) - Spec what aplies to tables that are actually views. Not set for "real" tables.
+  *   `databaseViewSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSpecDatabaseViewSpec.t`, *default:* `nil`) - Spec what applies to tables that are actually views. Not set for "real" tables.
   *   `dataplexTable` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataplexTableSpec.t`, *default:* `nil`) - Output only. Fields specific to a Dataplex table and present only in the Dataplex table entries.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this table.
   """
