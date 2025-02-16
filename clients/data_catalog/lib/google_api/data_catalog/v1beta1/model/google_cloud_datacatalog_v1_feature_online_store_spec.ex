@@ -21,7 +21,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1FeatureOnl
 
   ## Attributes
 
-  *   `storageType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of underelaying storage for the FeatureOnlineStore.
+  *   `storageType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of underlying storage for the FeatureOnlineStore.
   """
 
   use GoogleApi.Gax.ModelBase
