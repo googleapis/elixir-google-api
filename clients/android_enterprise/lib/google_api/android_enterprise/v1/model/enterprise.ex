@@ -22,8 +22,10 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Enterprise do
   ## Attributes
 
   *   `administrator` (*type:* `list(GoogleApi.AndroidEnterprise.V1.Model.Administrator.t)`, *default:* `nil`) - Admins of the enterprise. This is only supported for enterprises created via the EMM-initiated flow.
+  *   `enterpriseType` (*type:* `String.t`, *default:* `nil`) - The type of the enterprise.
   *   `googleAuthenticationSettings` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.GoogleAuthenticationSettings.t`, *default:* `nil`) - Output only. Settings for Google-provided user authentication.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for the enterprise.
+  *   `managedGoogleDomainType` (*type:* `String.t`, *default:* `nil`) - The type of managed Google domain
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the enterprise, for example, "Example, Inc".
   *   `primaryDomain` (*type:* `String.t`, *default:* `nil`) - The enterprise's primary domain, such as "example.com".
   """
@@ -32,20 +34,24 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Enterprise do
 
   @type t :: %__MODULE__{
           :administrator => list(GoogleApi.AndroidEnterprise.V1.Model.Administrator.t()) | nil,
+          :enterpriseType => String.t() | nil,
           :googleAuthenticationSettings =>
             GoogleApi.AndroidEnterprise.V1.Model.GoogleAuthenticationSettings.t() | nil,
           :id => String.t() | nil,
+          :managedGoogleDomainType => String.t() | nil,
           :name => String.t() | nil,
           :primaryDomain => String.t() | nil
         }
 
   field(:administrator, as: GoogleApi.AndroidEnterprise.V1.Model.Administrator, type: :list)
+  field(:enterpriseType)
 
   field(:googleAuthenticationSettings,
     as: GoogleApi.AndroidEnterprise.V1.Model.GoogleAuthenticationSettings
   )
 
   field(:id)
+  field(:managedGoogleDomainType)
   field(:name)
   field(:primaryDomain)
 end
