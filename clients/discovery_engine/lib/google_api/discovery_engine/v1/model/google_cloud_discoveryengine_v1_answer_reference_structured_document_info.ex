@@ -23,17 +23,23 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerR
 
   *   `document` (*type:* `String.t`, *default:* `nil`) - Document resource name.
   *   `structData` (*type:* `map()`, *default:* `nil`) - Structured search data.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Output only. The title of the document.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the document.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :document => String.t() | nil,
-          :structData => map() | nil
+          :structData => map() | nil,
+          :title => String.t() | nil,
+          :uri => String.t() | nil
         }
 
   field(:document)
   field(:structData, type: :map)
+  field(:title)
+  field(:uri)
 end
 
 defimpl Poison.Decoder,

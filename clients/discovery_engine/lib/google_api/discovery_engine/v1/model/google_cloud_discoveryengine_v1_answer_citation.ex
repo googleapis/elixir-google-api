@@ -21,9 +21,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerC
 
   ## Attributes
 
-  *   `endIndex` (*type:* `String.t`, *default:* `nil`) - End of the attributed segment, exclusive.
+  *   `endIndex` (*type:* `String.t`, *default:* `nil`) - End of the attributed segment, exclusive. Measured in bytes (UTF-8 unicode). If there are multi-byte characters,such as non-ASCII characters, the index measurement is longer than the string length.
   *   `sources` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerCitationSource.t)`, *default:* `nil`) - Citation sources for the attributed segment.
-  *   `startIndex` (*type:* `String.t`, *default:* `nil`) - Index indicates the start of the segment, measured in bytes (UTF-8 unicode).
+  *   `startIndex` (*type:* `String.t`, *default:* `nil`) - Index indicates the start of the segment, measured in bytes (UTF-8 unicode). If there are multi-byte characters,such as non-ASCII characters, the index measurement is longer than the string length.
   """
 
   use GoogleApi.Gax.ModelBase
