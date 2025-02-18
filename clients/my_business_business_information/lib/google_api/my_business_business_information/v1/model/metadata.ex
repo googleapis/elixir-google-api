@@ -26,7 +26,7 @@ defmodule GoogleApi.MyBusinessBusinessInformation.V1.Model.Metadata do
   *   `canHaveFoodMenus` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if the listing is eligible for food menu.
   *   `canModifyServiceList` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if the listing can modify the service list.
   *   `canOperateHealthData` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the location can operate on Health data.
-  *   `canOperateLocalPost` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if the listing can manage local posts.
+  *   `canOperateLocalPost` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if the listing can manage local posts. Deprecated: This field is no longer populated and will be removed in a future version.
   *   `canOperateLodgingData` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the location can operate on Lodging data.
   *   `duplicateLocation` (*type:* `String.t`, *default:* `nil`) - Output only. The location resource that this location duplicates.
   *   `hasGoogleUpdated` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the place ID associated with this location has updates that need to be updated or rejected by the client. If this boolean is set, you should call the `getGoogleUpdated` method to lookup information that's needs to be verified.
