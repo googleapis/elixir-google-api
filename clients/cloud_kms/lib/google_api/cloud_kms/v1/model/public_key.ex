@@ -26,6 +26,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.PublicKey do
   *   `pem` (*type:* `String.t`, *default:* `nil`) - The public key, encoded in PEM format. For more information, see the [RFC 7468](https://tools.ietf.org/html/rfc7468) sections for [General Considerations](https://tools.ietf.org/html/rfc7468#section-2) and [Textual Encoding of Subject Public Key Info] (https://tools.ietf.org/html/rfc7468#section-13).
   *   `pemCrc32c` (*type:* `String.t`, *default:* `nil`) - Integrity verification field. A CRC32C checksum of the returned PublicKey.pem. An integrity check of PublicKey.pem can be performed by computing the CRC32C checksum of PublicKey.pem and comparing your results to this field. Discard the response in case of non-matching checksum values, and perform a limited number of retries. A persistent mismatch may indicate an issue in your computation of the CRC32C checksum. Note: This field is defined as int64 for reasons of compatibility across different languages. However, it is a non-negative integer, which will never exceed 2^32-1, and can be safely downconverted to uint32 in languages that support this type. NOTE: This field is in Beta.
   *   `protectionLevel` (*type:* `String.t`, *default:* `nil`) - The ProtectionLevel of the CryptoKeyVersion public key.
+  *   `publicKey` (*type:* `GoogleApi.CloudKMS.V1.Model.ChecksummedData.t`, *default:* `nil`) - This field contains the public key (with integrity verification), formatted according to the public_key_format field.
+  *   `publicKeyFormat` (*type:* `String.t`, *default:* `nil`) - The PublicKey format specified by the customer through the public_key_format field.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +37,9 @@ defmodule GoogleApi.CloudKMS.V1.Model.PublicKey do
           :name => String.t() | nil,
           :pem => String.t() | nil,
           :pemCrc32c => String.t() | nil,
-          :protectionLevel => String.t() | nil
+          :protectionLevel => String.t() | nil,
+          :publicKey => GoogleApi.CloudKMS.V1.Model.ChecksummedData.t() | nil,
+          :publicKeyFormat => String.t() | nil
         }
 
   field(:algorithm)
@@ -43,6 +47,8 @@ defmodule GoogleApi.CloudKMS.V1.Model.PublicKey do
   field(:pem)
   field(:pemCrc32c)
   field(:protectionLevel)
+  field(:publicKey, as: GoogleApi.CloudKMS.V1.Model.ChecksummedData)
+  field(:publicKeyFormat)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudKMS.V1.Model.PublicKey do
