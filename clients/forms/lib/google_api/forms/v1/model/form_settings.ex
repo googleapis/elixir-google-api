@@ -21,7 +21,7 @@ defmodule GoogleApi.Forms.V1.Model.FormSettings do
 
   ## Attributes
 
-  *   `emailCollectionType` (*type:* `String.t`, *default:* `nil`) - Optional. Kind of email collection configured in the form.
+  *   `emailCollectionType` (*type:* `String.t`, *default:* `nil`) - Optional. The setting that determines whether the form collects email addresses from respondents.
   *   `quizSettings` (*type:* `GoogleApi.Forms.V1.Model.QuizSettings.t`, *default:* `nil`) - Settings related to quiz forms and grading.
   """
 
