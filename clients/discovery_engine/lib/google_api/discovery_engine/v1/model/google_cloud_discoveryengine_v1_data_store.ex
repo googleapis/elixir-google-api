@@ -26,10 +26,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
   *   `cmekConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CmekConfig.t`, *default:* `nil`) - Output only. CMEK-related information for the DataStore.
   *   `contentConfig` (*type:* `String.t`, *default:* `nil`) - Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the DataStore was created at.
-  *   `defaultSchemaId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of the default Schema asscociated to this data store.
+  *   `defaultSchemaId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of the default Schema associated to this data store.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
   *   `documentProcessingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfig.t`, *default:* `nil`) - Configuration for Document understanding and enrichment.
   *   `healthcareFhirConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1HealthcareFhirConfig.t`, *default:* `nil`) - Optional. Configuration for `HEALTHCARE_FHIR` vertical.
+  *   `identityMappingStore` (*type:* `String.t`, *default:* `nil`) - Immutable. The fully qualified resource name of the associated IdentityMappingStore. This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or `GSUITE` IdP. Format: `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - Immutable. The industry vertical that the data store registers.
   *   `isInfobotFaqDataStore` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, this DataStore is an Infobot FAQ DataStore.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Input only. The KMS key to be used to protect this DataStore at creation time. Must be set for requests that need to comply with CMEK Org Policy protections. If this field is set and processed successfully, the DataStore will be protected by the KMS key, as indicated in the cmek_config field.
@@ -61,6 +62,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
           :healthcareFhirConfig =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1HealthcareFhirConfig.t()
             | nil,
+          :identityMappingStore => String.t() | nil,
           :industryVertical => String.t() | nil,
           :isInfobotFaqDataStore => boolean() | nil,
           :kmsKeyName => String.t() | nil,
@@ -99,6 +101,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1DataSto
     as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1HealthcareFhirConfig
   )
 
+  field(:identityMappingStore)
   field(:industryVertical)
   field(:isInfobotFaqDataStore)
   field(:kmsKeyName)
