@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.GoogleDatastoreAdminV1RedirectWritesStepD
 
   ## Attributes
 
-  *   `concurrencyMode` (*type:* `String.t`, *default:* `nil`) - Ths concurrency mode for this database.
+  *   `concurrencyMode` (*type:* `String.t`, *default:* `nil`) - The concurrency mode for this database.
   """
 
   use GoogleApi.Gax.ModelBase
