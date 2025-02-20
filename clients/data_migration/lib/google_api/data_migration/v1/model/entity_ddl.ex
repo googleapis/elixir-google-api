@@ -22,7 +22,9 @@ defmodule GoogleApi.DataMigration.V1.Model.EntityDdl do
   ## Attributes
 
   *   `ddl` (*type:* `String.t`, *default:* `nil`) - The actual ddl code.
+  *   `ddlKind` (*type:* `String.t`, *default:* `nil`) - The DDL Kind selected for apply, or SOURCE if getting the source tree.
   *   `ddlType` (*type:* `String.t`, *default:* `nil`) - Type of DDL (Create, Alter).
+  *   `editedDdlKind` (*type:* `String.t`, *default:* `nil`) - If ddl_kind is USER_EDIT, this holds the DDL kind of the original content - DETERMINISTIC or AI. Otherwise, this is DDL_KIND_UNSPECIFIED.
   *   `entity` (*type:* `String.t`, *default:* `nil`) - The name of the database entity the ddl refers to.
   *   `entityType` (*type:* `String.t`, *default:* `nil`) - The entity type (if the DDL is for a sub entity).
   *   `issueId` (*type:* `list(String.t)`, *default:* `nil`) - EntityIssues found for this ddl.
@@ -32,14 +34,18 @@ defmodule GoogleApi.DataMigration.V1.Model.EntityDdl do
 
   @type t :: %__MODULE__{
           :ddl => String.t() | nil,
+          :ddlKind => String.t() | nil,
           :ddlType => String.t() | nil,
+          :editedDdlKind => String.t() | nil,
           :entity => String.t() | nil,
           :entityType => String.t() | nil,
           :issueId => list(String.t()) | nil
         }
 
   field(:ddl)
+  field(:ddlKind)
   field(:ddlType)
+  field(:editedDdlKind)
   field(:entity)
   field(:entityType)
   field(:issueId, type: :list)
