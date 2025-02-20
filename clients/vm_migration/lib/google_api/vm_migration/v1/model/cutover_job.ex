@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.VMMigration.V1.Model.CutoverJob do
   @moduledoc """
-  CutoverJob message describes a cutover of a migrating VM. The CutoverJob is the operation of shutting down the VM, creating a snapshot and clonning the VM using the replicated snapshot.
+  CutoverJob message describes a cutover of a migrating VM. The CutoverJob is the operation of shutting down the VM, creating a snapshot and cloning the VM using the replicated snapshot.
 
   ## Attributes
 

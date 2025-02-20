@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.VMMigration.V1.Model.AvailableUpdates do
   @moduledoc """
-  Holds informatiom about the available versions for upgrade.
+  Holds information about the available versions for upgrade.
 
   ## Attributes
 
