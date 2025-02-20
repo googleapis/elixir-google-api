@@ -22,8 +22,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EvaluationConfig 
   ## Attributes
 
   *   `datasets` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputDataset.t)`, *default:* `nil`) - Required. Datasets used for evaluation.
-  *   `smartComposeConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EvaluationConfigSmartComposeConfig.t`, *default:* `nil`) - Configuration for smart compose model evalution.
-  *   `smartReplyConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EvaluationConfigSmartReplyConfig.t`, *default:* `nil`) - Configuration for smart reply model evalution.
+  *   `smartComposeConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EvaluationConfigSmartComposeConfig.t`, *default:* `nil`) - Configuration for smart compose model evaluation.
+  *   `smartReplyConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2EvaluationConfigSmartReplyConfig.t`, *default:* `nil`) - Configuration for smart reply model evaluation.
   """
 
   use GoogleApi.Gax.ModelBase

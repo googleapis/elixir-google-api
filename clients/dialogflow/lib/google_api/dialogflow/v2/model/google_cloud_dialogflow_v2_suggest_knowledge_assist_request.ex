@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestKnowledgeA
 
   *   `contextSize` (*type:* `integer()`, *default:* `nil`) - Optional. Max number of messages prior to and including latest_message to use as context when compiling the suggestion. The context size is by default 100 and at most 100.
   *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the latest conversation message to compile suggestions for. If empty, it will be the latest message of the conversation. Format: `projects//locations//conversations//messages/`.
-  *   `previousSuggestedQuery` (*type:* `String.t`, *default:* `nil`) - Optional. The previously suggested query for the given conversation. This helps identify whether the next suggestion we generate is resonably different from the previous one. This is useful to avoid similar suggestions within the conversation.
+  *   `previousSuggestedQuery` (*type:* `String.t`, *default:* `nil`) - Optional. The previously suggested query for the given conversation. This helps identify whether the next suggestion we generate is reasonably different from the previous one. This is useful to avoid similar suggestions within the conversation.
   """
 
   use GoogleApi.Gax.ModelBase
