@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModelVersionCheckpoint do
   @moduledoc """
-  A proto representation of a Spanner-stored ModelVersionCheckpoint. The meaning of the fields is equivalent to their in-Spanner counterparts.
+  Describes the machine learning model version checkpoint.
 
   ## Attributes
 
   *   `checkpointId` (*type:* `String.t`, *default:* `nil`) - The ID of the checkpoint.
   *   `epoch` (*type:* `String.t`, *default:* `nil`) - The epoch of the checkpoint.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the ModelVersionCheckpoint. Format: `projects/{project}/locations/{location}/models/{model}/versions/{version}/checkpoints/{checkpoint}`
   *   `step` (*type:* `String.t`, *default:* `nil`) - The step of the checkpoint.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModelVersionCheck
   @type t :: %__MODULE__{
           :checkpointId => String.t() | nil,
           :epoch => String.t() | nil,
+          :name => String.t() | nil,
           :step => String.t() | nil
         }
 
   field(:checkpointId)
   field(:epoch)
+  field(:name)
   field(:step)
 end
 
