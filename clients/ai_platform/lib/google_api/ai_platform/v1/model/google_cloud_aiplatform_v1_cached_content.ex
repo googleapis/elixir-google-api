@@ -25,7 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CachedContent do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of the cache entry.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The user-generated meaningful display name of the cached content.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of when this resource is considered expired. This is *always* provided on output, regardless of what was sent on input.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the publisher model to use for cached content. Format: projects/{project}/locations/{location}/publishers/{publisher}/models/{model}
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the `Model` to use for cached content. Currently, only the published Gemini base models are supported, in form of projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier. The server-generated resource name of the cached content Format: projects/{project}/locations/{location}/cachedContents/{cached_content}
   *   `systemInstruction` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t`, *default:* `nil`) - Optional. Input only. Immutable. Developer set system instruction. Currently, text only
   *   `toolConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolConfig.t`, *default:* `nil`) - Optional. Input only. Immutable. Tool config. This config is shared for all tools
