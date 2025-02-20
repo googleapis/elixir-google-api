@@ -21,21 +21,21 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.BaseImage do
 
   ## Attributes
 
+  *   `layerCount` (*type:* `integer()`, *default:* `nil`) - The number of layers that the base image is composed of.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the base image.
-  *   `numLayers` (*type:* `String.t`, *default:* `nil`) - The number of layers that the base image is composed of.
   *   `repository` (*type:* `String.t`, *default:* `nil`) - The repository name in which the base image is from.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :layerCount => integer() | nil,
           :name => String.t() | nil,
-          :numLayers => String.t() | nil,
           :repository => String.t() | nil
         }
 
+  field(:layerCount)
   field(:name)
-  field(:numLayers)
   field(:repository)
 end
 
