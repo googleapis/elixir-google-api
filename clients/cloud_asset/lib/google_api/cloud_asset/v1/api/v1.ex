@@ -204,7 +204,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:destinationParent` (*type:* `String.t`) - Required. Name of the Google Cloud folder or organization to reparent the target resource. The analysis will be performed against hypothetically moving the resource to this specified desitination parent. This can only be a folder number (such as "folders/123") or an organization number (such as "organizations/123").
+      *   `:destinationParent` (*type:* `String.t`) - Required. Name of the Google Cloud folder or organization to reparent the target resource. The analysis will be performed against hypothetically moving the resource to this specified destination parent. This can only be a folder number (such as "folders/123") or an organization number (such as "organizations/123").
       *   `:view` (*type:* `String.t`) - Analysis view indicating what information should be included in the analysis response. If unspecified, the default view is FULL.
   *   `opts` (*type:* `keyword()`) - Call options
 
