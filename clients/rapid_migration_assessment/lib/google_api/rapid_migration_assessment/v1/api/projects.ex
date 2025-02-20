@@ -396,7 +396,7 @@ defmodule GoogleApi.RapidMigrationAssessment.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a single Collector - changes state of collector to "Deleting". Background jobs does final deletion thorugh producer api.
+  Deletes a single Collector - changes state of collector to "Deleting". Background jobs does final deletion through producer API.
 
   ## Parameters
 
