@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV2betaAnalysis do
 
   ## Attributes
 
-  *   `analysis` (*type:* `GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV2betaAnalysisResult.t`, *default:* `nil`) - Output only. Analysis result of updating a policy.
+  *   `analysisResult` (*type:* `GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV2betaAnalysisResult.t`, *default:* `nil`) - Output only. Analysis result of updating a policy.
   *   `analysisType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of analysis.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The user friendly display name of the analysis type. E.g. service dependency analysis, service resource usage analysis, etc.
   *   `service` (*type:* `String.t`, *default:* `nil`) - The names of the service that has analysis result of warnings or blockers. Example: `services/storage.googleapis.com`.
@@ -30,14 +30,17 @@ defmodule GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV2betaAnalysis do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :analysis =>
+          :analysisResult =>
             GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV2betaAnalysisResult.t() | nil,
           :analysisType => String.t() | nil,
           :displayName => String.t() | nil,
           :service => String.t() | nil
         }
 
-  field(:analysis, as: GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV2betaAnalysisResult)
+  field(:analysisResult,
+    as: GoogleApi.ServiceUsage.V1.Model.GoogleApiServiceusageV2betaAnalysisResult
+  )
+
   field(:analysisType)
   field(:displayName)
   field(:service)
