@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.InsertRangeRequest do
 
   ## Attributes
 
-  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to insert new cells into.
+  *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range to insert new cells into. The range is constrained to the current sheet boundaries.
   *   `shiftDimension` (*type:* `String.t`, *default:* `nil`) - The dimension which will be shifted when inserting cells. If ROWS, existing cells will be shifted down. If COLUMNS, existing cells will be shifted right.
   """
 
