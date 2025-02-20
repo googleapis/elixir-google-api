@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.SlashCommand do
   @moduledoc """
-  A [slash command](https://developers.google.com/workspace/chat/slash-commands) in Google Chat.
+  Metadata about a [slash command](https://developers.google.com/workspace/chat/commands) in Google Chat.
 
   ## Attributes
 
-  *   `commandId` (*type:* `String.t`, *default:* `nil`) - The ID of the slash command invoked.
+  *   `commandId` (*type:* `String.t`, *default:* `nil`) - The ID of the slash command.
   """
 
   use GoogleApi.Gax.ModelBase

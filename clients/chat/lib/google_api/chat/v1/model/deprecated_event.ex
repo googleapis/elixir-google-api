@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   ## Attributes
 
   *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - For `CARD_CLICKED` interaction events, the form action data associated when a user clicks a card or dialog. To learn more, see [Read form data input by users on cards](https://developers.google.com/workspace/chat/read-form-data).
-  *   `appCommandMetadata` (*type:* `GoogleApi.Chat.V1.Model.AppCommandMetadata.t`, *default:* `nil`) - Populated for app commands, including slash commands and quick commands.
+  *   `appCommandMetadata` (*type:* `GoogleApi.Chat.V1.Model.AppCommandMetadata.t`, *default:* `nil`) - Metadata about a Chat app command.
   *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes information submitted by users interacting with [dialogs](https://developers.google.com/workspace/chat/dialogs), like data entered on a card.
   *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - This URL is populated for `MESSAGE`, `ADDED_TO_SPACE`, and `APP_COMMAND` interaction events. After completing an authorization or configuration flow outside of Google Chat, users must be redirected to this URL to signal to Google Chat that the authorization or configuration flow was successful. For more information, see [Connect a Chat app with other services and tools](https://developers.google.com/workspace/chat/connect-web-services-tools).
   *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of [dialog](https://developers.google.com/workspace/chat/dialogs) interaction event received.
