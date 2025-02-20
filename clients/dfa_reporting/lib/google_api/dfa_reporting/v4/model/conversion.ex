@@ -42,7 +42,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Conversion do
   *   `timestampMicros` (*type:* `String.t`, *default:* `nil`) - The timestamp of conversion, in Unix epoch micros. This is a required field.
   *   `treatmentForUnderage` (*type:* `boolean()`, *default:* `nil`) - Whether this particular request may come from a user under the age of 16 (may differ by country), under compliance with the European Union's General Data Protection Regulation (GDPR).
   *   `userIdentifiers` (*type:* `list(GoogleApi.DFAReporting.V4.Model.UserIdentifier.t)`, *default:* `nil`) - The user identifiers to enhance the conversion. The maximum number of user identifiers for each conversion is 5.
-  *   `value` (*type:* `float()`, *default:* `nil`) - The value of the conversion. This is a required field.
+  *   `value` (*type:* `float()`, *default:* `nil`) - The value of the conversion. Interpreted in CM360 Floodlight config parent advertiser's currency code. This is a required field.
   """
 
   use GoogleApi.Gax.ModelBase
