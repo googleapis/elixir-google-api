@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.MetadataCacheStatistics do
   @moduledoc """
-  Statistics for metadata caching in BigLake tables.
+  Statistics for metadata caching in queried tables.
 
   ## Attributes
 

@@ -27,7 +27,7 @@ defmodule GoogleApi.BigQuery.V2.Model.AggregateClassificationMetrics do
   *   `precision` (*type:* `float()`, *default:* `nil`) - Precision is the fraction of actual positive predictions that had positive actual labels. For multiclass this is a macro-averaged metric treating each class as a binary classifier.
   *   `recall` (*type:* `float()`, *default:* `nil`) - Recall is the fraction of actual positive labels that were given a positive prediction. For multiclass this is a macro-averaged metric.
   *   `rocAuc` (*type:* `float()`, *default:* `nil`) - Area Under a ROC Curve. For multiclass this is a macro-averaged metric.
-  *   `threshold` (*type:* `float()`, *default:* `nil`) - Threshold at which the metrics are computed. For binary classification models this is the positive class threshold. For multi-class classfication models this is the confidence threshold.
+  *   `threshold` (*type:* `float()`, *default:* `nil`) - Threshold at which the metrics are computed. For binary classification models this is the positive class threshold. For multi-class classification models this is the confidence threshold.
   """
 
   use GoogleApi.Gax.ModelBase
