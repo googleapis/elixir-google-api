@@ -25,6 +25,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   *   `calendarOptions` (*type:* `GoogleApi.Vault.V1.Model.CalendarOptions.t`, *default:* `nil`) - Set Calendar search-specific options.
   *   `corpus` (*type:* `String.t`, *default:* `nil`) - The Google Workspace service to search.
   *   `dataScope` (*type:* `String.t`, *default:* `nil`) - The data source to search.
+  *   `driveDocumentInfo` (*type:* `GoogleApi.Vault.V1.Model.DriveDocumentInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **DRIVE_DOCUMENT**.
   *   `driveOptions` (*type:* `GoogleApi.Vault.V1.Model.DriveOptions.t`, *default:* `nil`) - Set Drive search-specific options.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time for the search query. Specify in GMT. The value is rounded to 12 AM on the specified date.
   *   `geminiOptions` (*type:* `GoogleApi.Vault.V1.Model.GeminiOptions.t`, *default:* `nil`) - Set Gemini search-specific options.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
           :calendarOptions => GoogleApi.Vault.V1.Model.CalendarOptions.t() | nil,
           :corpus => String.t() | nil,
           :dataScope => String.t() | nil,
+          :driveDocumentInfo => GoogleApi.Vault.V1.Model.DriveDocumentInfo.t() | nil,
           :driveOptions => GoogleApi.Vault.V1.Model.DriveOptions.t() | nil,
           :endTime => DateTime.t() | nil,
           :geminiOptions => GoogleApi.Vault.V1.Model.GeminiOptions.t() | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   field(:calendarOptions, as: GoogleApi.Vault.V1.Model.CalendarOptions)
   field(:corpus)
   field(:dataScope)
+  field(:driveDocumentInfo, as: GoogleApi.Vault.V1.Model.DriveDocumentInfo)
   field(:driveOptions, as: GoogleApi.Vault.V1.Model.DriveOptions)
   field(:endTime, as: DateTime)
   field(:geminiOptions, as: GoogleApi.Vault.V1.Model.GeminiOptions)
