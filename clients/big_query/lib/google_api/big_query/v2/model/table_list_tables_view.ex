@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTablesView do
 
   ## Attributes
 
-  *   `privacyPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.PrivacyPolicy.t`, *default:* `nil`) - Specifices the privacy policy for the view.
+  *   `privacyPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.PrivacyPolicy.t`, *default:* `nil`) - Specifies the privacy policy for the view.
   *   `useLegacySql` (*type:* `boolean()`, *default:* `nil`) - True if view is defined in legacy SQL dialect, false if in GoogleSQL.
   """
 

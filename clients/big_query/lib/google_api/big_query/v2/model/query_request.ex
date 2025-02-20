@@ -25,9 +25,11 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   *   `continuous` (*type:* `boolean()`, *default:* `nil`) - [Optional] Specifies whether the query should be executed as a continuous query. The default value is false.
   *   `createSession` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, creates a new session using a randomly generated session_id. If false, runs query with an existing session_id passed in ConnectionProperty, otherwise runs query in non-session mode. The session location will be set to QueryRequest.location if it is present, otherwise it's set to the default location based on existing routing logic.
   *   `defaultDataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - Optional. Specifies the default datasetId and projectId to assume for any unqualified table names in the query. If not set, all table names in the query string must be qualified in the format 'datasetId.tableId'.
+  *   `destinationEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Optional. Custom encryption configuration (e.g., Cloud KMS keys)
   *   `dryRun` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, BigQuery doesn't run the job. Instead, if the query is valid, BigQuery returns statistics about the job such as how many bytes would be processed. If the query is invalid, an error returns. The default value is false.
   *   `formatOptions` (*type:* `GoogleApi.BigQuery.V2.Model.DataFormatOptions.t`, *default:* `nil`) - Optional. Output format adjustments.
   *   `jobCreationMode` (*type:* `String.t`, *default:* `nil`) - Optional. If not set, jobs are always required. If set, the query request will follow the behavior described JobCreationMode. [Preview](https://cloud.google.com/products/#product-launch-stages)
+  *   `jobTimeoutMs` (*type:* `String.t`, *default:* `nil`) - Optional. Job timeout in milliseconds. If this time limit is exceeded, BigQuery will attempt to stop a longer job, but may not always succeed in canceling it before the job completes. For example, a job that takes more than 60 seconds to complete has a better chance of being stopped than a job that takes 10 seconds to complete. This timeout applies to the query even if a job does not need to be created.
   *   `kind` (*type:* `String.t`, *default:* `bigquery#queryRequest`) - The resource type of the request.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels associated with this query. Labels can be used to organize and group query jobs. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label keys must start with a letter and each label in the list must have a different key.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location where the job should run. For more information, see how to [specify locations](https://cloud.google.com/bigquery/docs/locations#specify_locations).
@@ -51,9 +53,12 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
           :continuous => boolean() | nil,
           :createSession => boolean() | nil,
           :defaultDataset => GoogleApi.BigQuery.V2.Model.DatasetReference.t() | nil,
+          :destinationEncryptionConfiguration =>
+            GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
           :dryRun => boolean() | nil,
           :formatOptions => GoogleApi.BigQuery.V2.Model.DataFormatOptions.t() | nil,
           :jobCreationMode => String.t() | nil,
+          :jobTimeoutMs => String.t() | nil,
           :kind => String.t() | nil,
           :labels => map() | nil,
           :location => String.t() | nil,
@@ -74,9 +79,15 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   field(:continuous)
   field(:createSession)
   field(:defaultDataset, as: GoogleApi.BigQuery.V2.Model.DatasetReference)
+
+  field(:destinationEncryptionConfiguration,
+    as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration
+  )
+
   field(:dryRun)
   field(:formatOptions, as: GoogleApi.BigQuery.V2.Model.DataFormatOptions)
   field(:jobCreationMode)
+  field(:jobTimeoutMs)
   field(:kind)
   field(:labels, type: :map)
   field(:location)

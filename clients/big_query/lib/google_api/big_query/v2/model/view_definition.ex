@@ -22,7 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ViewDefinition do
   ## Attributes
 
   *   `foreignDefinitions` (*type:* `list(GoogleApi.BigQuery.V2.Model.ForeignViewDefinition.t)`, *default:* `nil`) - Optional. Foreign view representations.
-  *   `privacyPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.PrivacyPolicy.t`, *default:* `nil`) - Optional. Specifices the privacy policy for the view.
+  *   `privacyPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.PrivacyPolicy.t`, *default:* `nil`) - Optional. Specifies the privacy policy for the view.
   *   `query` (*type:* `String.t`, *default:* `nil`) - Required. A query that BigQuery executes when the view is referenced.
   *   `useExplicitColumnNames` (*type:* `boolean()`, *default:* `nil`) - True if the column names are explicitly specified. For example by using the 'CREATE VIEW v(c1, c2) AS ...' syntax. Can only be set for GoogleSQL views.
   *   `useLegacySql` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to use BigQuery's legacy SQL for this view. The default value is true. If set to false, the view will use BigQuery's GoogleSQL: https://cloud.google.com/bigquery/sql-reference/ Queries and views that reference this view must use the same flag value. A wrapper is used here because the default value is True.

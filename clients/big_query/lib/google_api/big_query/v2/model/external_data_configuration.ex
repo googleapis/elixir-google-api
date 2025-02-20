@@ -27,7 +27,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   *   `compression` (*type:* `String.t`, *default:* `nil`) - Optional. The compression type of the data source. Possible values include GZIP and NONE. The default value is NONE. This setting is ignored for Google Cloud Bigtable, Google Cloud Datastore backups, Avro, ORC and Parquet formats. An empty string is an invalid value.
   *   `connectionId` (*type:* `String.t`, *default:* `nil`) - Optional. The connection specifying the credentials to be used to read external storage, such as Azure Blob, Cloud Storage, or S3. The connection_id can have the form `{project_id}.{location_id};{connection_id}` or `projects/{project_id}/locations/{location_id}/connections/{connection_id}`.
   *   `csvOptions` (*type:* `GoogleApi.BigQuery.V2.Model.CsvOptions.t`, *default:* `nil`) - Optional. Additional properties to set if sourceFormat is set to CSV.
-  *   `decimalTargetTypes` (*type:* `list(String.t)`, *default:* `nil`) - Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is ["NUMERIC", "BIGNUMERIC"]. If (precision,scale) is: * (38,9) -> NUMERIC; * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); * (76,38) -> BIGNUMERIC; * (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as ["NUMERIC", "BIGNUMERIC"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to ["NUMERIC", "STRING"] for ORC and ["NUMERIC"] for the other file formats.
+  *   `dateFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Format used to parse DATE values. Supports C-style and SQL-style values.
+  *   `datetimeFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Format used to parse DATETIME values. Supports C-style and SQL-style values.
+  *   `decimalTargetTypes` (*type:* `list(String.t)`, *default:* `nil`) - Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is ["NUMERIC", "BIGNUMERIC"]. If (precision,scale) is: * (38,9) -> NUMERIC; * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); * (76,38) -> BIGNUMERIC; * (77,38) -> BIGNUMERIC (error if value exceeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as ["NUMERIC", "BIGNUMERIC"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to ["NUMERIC", "STRING"] for ORC and ["NUMERIC"] for the other file formats.
   *   `fileSetSpecType` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies how source URIs are interpreted for constructing the file set to load. By default source URIs are expanded against the underlying storage. Other options include specifying manifest files. Only applicable to object storage systems.
   *   `googleSheetsOptions` (*type:* `GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t`, *default:* `nil`) - Optional. Additional options if sourceFormat is set to GOOGLE_SHEETS.
   *   `hivePartitioningOptions` (*type:* `GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t`, *default:* `nil`) - Optional. When set, configures hive partitioning support. Not all storage formats support hive partitioning -- requesting hive partitioning on an unsupported format will lead to an error, as will providing an invalid specification.
@@ -42,6 +44,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - Optional. The schema for the data. Schema is required for CSV and JSON formats if autodetect is not on. Schema is disallowed for Google Cloud Bigtable, Cloud Datastore backups, Avro, ORC and Parquet formats.
   *   `sourceFormat` (*type:* `String.t`, *default:* `nil`) - [Required] The data format. For CSV files, specify "CSV". For Google sheets, specify "GOOGLE_SHEETS". For newline-delimited JSON, specify "NEWLINE_DELIMITED_JSON". For Avro files, specify "AVRO". For Google Cloud Datastore backups, specify "DATASTORE_BACKUP". For Apache Iceberg tables, specify "ICEBERG". For ORC files, specify "ORC". For Parquet files, specify "PARQUET". [Beta] For Google Cloud Bigtable, specify "BIGTABLE".
   *   `sourceUris` (*type:* `list(String.t)`, *default:* `nil`) - [Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one '*' wildcard character and it must come after the 'bucket' name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups, exactly one URI can be specified. Also, the '*' wildcard character is not allowed.
+  *   `timeFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Format used to parse TIME values. Supports C-style and SQL-style values.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Optional. Time zone used when parsing timestamp values that do not have specific time zone information (e.g. 2024-04-20 12:34:56). The expected format is a IANA timezone string (e.g. America/Los_Angeles).
+  *   `timestampFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Format used to parse TIMESTAMP values. Supports C-style and SQL-style values.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,6 +58,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
           :compression => String.t() | nil,
           :connectionId => String.t() | nil,
           :csvOptions => GoogleApi.BigQuery.V2.Model.CsvOptions.t() | nil,
+          :dateFormat => String.t() | nil,
+          :datetimeFormat => String.t() | nil,
           :decimalTargetTypes => list(String.t()) | nil,
           :fileSetSpecType => String.t() | nil,
           :googleSheetsOptions => GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions.t() | nil,
@@ -68,7 +75,10 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
           :referenceFileSchemaUri => String.t() | nil,
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
           :sourceFormat => String.t() | nil,
-          :sourceUris => list(String.t()) | nil
+          :sourceUris => list(String.t()) | nil,
+          :timeFormat => String.t() | nil,
+          :timeZone => String.t() | nil,
+          :timestampFormat => String.t() | nil
         }
 
   field(:autodetect)
@@ -77,6 +87,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   field(:compression)
   field(:connectionId)
   field(:csvOptions, as: GoogleApi.BigQuery.V2.Model.CsvOptions)
+  field(:dateFormat)
+  field(:datetimeFormat)
   field(:decimalTargetTypes, type: :list)
   field(:fileSetSpecType)
   field(:googleSheetsOptions, as: GoogleApi.BigQuery.V2.Model.GoogleSheetsOptions)
@@ -92,6 +104,9 @@ defmodule GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
   field(:sourceFormat)
   field(:sourceUris, type: :list)
+  field(:timeFormat)
+  field(:timeZone)
+  field(:timestampFormat)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ExternalDataConfiguration do
