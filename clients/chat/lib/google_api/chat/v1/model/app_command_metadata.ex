@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.AppCommandMetadata do
   @moduledoc """
-  Metadata associated with app commands. App commands are a way for users to invoke and interact with a Chat app. These can be slash commands typed in the compose box, or items directly selected from the integration menu. For more information, see [Respond to quick commands](https://developers.google.com/workspace/chat/quick-commands).
+  Metadata about a [Chat app command](https://developers.google.com/workspace/chat/commands).
 
   ## Attributes
 
-  *   `appCommandId` (*type:* `integer()`, *default:* `nil`) - The command ID for the given app interaction.
-  *   `appCommandType` (*type:* `String.t`, *default:* `nil`) - The type of the app command.
+  *   `appCommandId` (*type:* `integer()`, *default:* `nil`) - The ID for the command specified in the Chat API configuration.
+  *   `appCommandType` (*type:* `String.t`, *default:* `nil`) - The type of Chat app command.
   """
 
   use GoogleApi.Gax.ModelBase
