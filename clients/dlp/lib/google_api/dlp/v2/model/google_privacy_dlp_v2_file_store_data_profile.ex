@@ -30,7 +30,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   *   `fileStoreInfoTypeSummaries` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreInfoTypeSummary.t)`, *default:* `nil`) - InfoTypes detected in this file store.
   *   `fileStoreIsEmpty` (*type:* `boolean()`, *default:* `nil`) - The file store does not have any files.
   *   `fileStoreLocation` (*type:* `String.t`, *default:* `nil`) - The location of the file store. * Cloud Storage: https://cloud.google.com/storage/docs/locations#available-locations * Amazon S3: https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
-  *   `fileStorePath` (*type:* `String.t`, *default:* `nil`) - The file store path. * Cloud Storage: `gs://{bucket}` * Amazon S3: `s3://{bucket}`
+  *   `fileStorePath` (*type:* `String.t`, *default:* `nil`) - The file store path. * Cloud Storage: `gs://{bucket}` * Amazon S3: `s3://{bucket}` * Vertex AI dataset: `projects/{project_number}/locations/{location}/datasets/{dataset_id}`
   *   `fullResource` (*type:* `String.t`, *default:* `nil`) - The resource name of the resource profiled. https://cloud.google.com/apis/design/resource_names#full_resource_name Example format of an S3 bucket full resource name: `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
   *   `lastModifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the file store was last modified.
   *   `locationType` (*type:* `String.t`, *default:* `nil`) - The location type of the file store (region, dual-region, multi-region, etc). If dual-region, expect data_storage_locations to be populated.
@@ -39,6 +39,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   *   `profileStatus` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t`, *default:* `nil`) - Success or error status from the most recent profile generation attempt. May be empty if the profile is still being generated.
   *   `projectDataProfile` (*type:* `String.t`, *default:* `nil`) - The resource name of the project data profile for this file store.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud project ID that owns the resource. For Amazon S3 buckets, this is the AWS Account Id.
+  *   `relatedResources` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RelatedResource.t)`, *default:* `nil`) - Resources related to this profile.
   *   `resourceAttributes` (*type:* `%{optional(String.t) => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t}`, *default:* `nil`) - Attributes of the resource being profiled. Currently used attributes: * customer_managed_encryption: boolean - true: the resource is encrypted with a customer-managed key. - false: the resource is encrypted with a provider-managed key.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The labels applied to the resource at the time the profile was generated.
   *   `resourceVisibility` (*type:* `String.t`, *default:* `nil`) - How broadly a resource has been shared.
@@ -70,6 +71,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
           :profileStatus => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t() | nil,
           :projectDataProfile => String.t() | nil,
           :projectId => String.t() | nil,
+          :relatedResources =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RelatedResource.t()) | nil,
           :resourceAttributes =>
             %{optional(String.t()) => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()} | nil,
           :resourceLabels => map() | nil,
@@ -106,6 +109,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   field(:profileStatus, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus)
   field(:projectDataProfile)
   field(:projectId)
+
+  field(:relatedResources,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RelatedResource,
+    type: :list
+  )
+
   field(:resourceAttributes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value, type: :map)
   field(:resourceLabels, type: :map)
   field(:resourceVisibility)

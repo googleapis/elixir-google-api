@@ -26,6 +26,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
   *   `cloudStorageTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageDiscoveryTarget.t`, *default:* `nil`) - Cloud Storage target for Discovery. The first target to match a table will be the one applied.
   *   `otherCloudTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryTarget.t`, *default:* `nil`) - Other clouds target for discovery. The first target to match a resource will be the one applied.
   *   `secretsTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget.t`, *default:* `nil`) - Discovery target that looks for credentials and secrets stored in cloud resource metadata and reports them as vulnerabilities to Security Command Center. Only one target of this type is allowed.
+  *   `vertexDatasetTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2VertexDatasetDiscoveryTarget.t`, *default:* `nil`) - Vertex AI dataset target for Discovery. The first target to match a dataset will be the one applied. Note that discovery for Vertex AI can incur Cloud Storage Class B operation charges for storage.objects.get operations and retrieval fees. For more information, see [Cloud Storage pricing](https://cloud.google.com/storage/pricing#price-tables). Note that discovery for Vertex AI dataset will not be able to scan images unless DiscoveryConfig.processing_location.image_fallback_location has multi_region_processing or global_processing configured.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,7 +41,9 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
           :otherCloudTarget =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryTarget.t() | nil,
           :secretsTarget =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget.t() | nil
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget.t() | nil,
+          :vertexDatasetTarget =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2VertexDatasetDiscoveryTarget.t() | nil
         }
 
   field(:bigQueryTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget)
@@ -52,6 +55,10 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
 
   field(:otherCloudTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryTarget)
   field(:secretsTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget)
+
+  field(:vertexDatasetTarget,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2VertexDatasetDiscoveryTarget
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do

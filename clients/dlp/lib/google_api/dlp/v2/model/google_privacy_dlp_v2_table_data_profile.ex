@@ -39,6 +39,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `profileLastGenerated` (*type:* `DateTime.t`, *default:* `nil`) - The last time the profile was generated.
   *   `profileStatus` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t`, *default:* `nil`) - Success or error status from the most recent profile generation attempt. May be empty if the profile is still being generated.
   *   `projectDataProfile` (*type:* `String.t`, *default:* `nil`) - The resource name of the project data profile for this table.
+  *   `relatedResources` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RelatedResource.t)`, *default:* `nil`) - Resources related to this profile.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The labels applied to the resource at the time the profile was generated.
   *   `resourceVisibility` (*type:* `String.t`, *default:* `nil`) - How broadly a resource has been shared.
   *   `rowCount` (*type:* `String.t`, *default:* `nil`) - Number of rows in the table when the profile was generated. This will not be populated for BigLake tables.
@@ -73,6 +74,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
           :profileLastGenerated => DateTime.t() | nil,
           :profileStatus => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t() | nil,
           :projectDataProfile => String.t() | nil,
+          :relatedResources =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RelatedResource.t()) | nil,
           :resourceLabels => map() | nil,
           :resourceVisibility => String.t() | nil,
           :rowCount => String.t() | nil,
@@ -111,6 +114,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   field(:profileLastGenerated, as: DateTime)
   field(:profileStatus, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus)
   field(:projectDataProfile)
+
+  field(:relatedResources,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RelatedResource,
+    type: :list
+  )
+
   field(:resourceLabels, type: :map)
   field(:resourceVisibility)
   field(:rowCount)

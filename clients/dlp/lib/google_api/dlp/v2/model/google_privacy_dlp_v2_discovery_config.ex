@@ -30,6 +30,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique resource name for the DiscoveryConfig, assigned by the service when the DiscoveryConfig is created, for example `projects/dlp-test-project/locations/global/discoveryConfigs/53234423`.
   *   `orgConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OrgConfig.t`, *default:* `nil`) - Only set when the parent is an org.
   *   `otherCloudStartingLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation.t`, *default:* `nil`) - Must be set only when scanning other clouds.
+  *   `processingLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProcessingLocation.t`, *default:* `nil`) - Optional. Processing location configuration. Vertex AI dataset scanning will set processing_location.image_fallback_type to MultiRegionProcessing by default.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Required. A status for this configuration.
   *   `targets` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget.t)`, *default:* `nil`) - Target to match against for determining what to scan and how frequently.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a DiscoveryConfig.
@@ -48,6 +49,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig do
           :orgConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OrgConfig.t() | nil,
           :otherCloudStartingLocation =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation.t() | nil,
+          :processingLocation =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProcessingLocation.t() | nil,
           :status => String.t() | nil,
           :targets => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget.t()) | nil,
           :updateTime => DateTime.t() | nil
@@ -66,6 +69,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig do
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation
   )
 
+  field(:processingLocation, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProcessingLocation)
   field(:status)
   field(:targets, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget, type: :list)
   field(:updateTime, as: DateTime)
