@@ -24,6 +24,7 @@ defmodule GoogleApi.Datastream.V1.Model.SourceConfig do
   *   `mysqlSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.MysqlSourceConfig.t`, *default:* `nil`) - MySQL data source configuration.
   *   `oracleSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSourceConfig.t`, *default:* `nil`) - Oracle data source configuration.
   *   `postgresqlSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig.t`, *default:* `nil`) - PostgreSQL data source configuration.
+  *   `salesforceSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.SalesforceSourceConfig.t`, *default:* `nil`) - Salesforce data source configuration.
   *   `sourceConnectionProfile` (*type:* `String.t`, *default:* `nil`) - Required. Source connection profile resoource. Format: `projects/{project}/locations/{location}/connectionProfiles/{name}`
   *   `sqlServerSourceConfig` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerSourceConfig.t`, *default:* `nil`) - SQLServer data source configuration.
   """
@@ -35,6 +36,8 @@ defmodule GoogleApi.Datastream.V1.Model.SourceConfig do
           :oracleSourceConfig => GoogleApi.Datastream.V1.Model.OracleSourceConfig.t() | nil,
           :postgresqlSourceConfig =>
             GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig.t() | nil,
+          :salesforceSourceConfig =>
+            GoogleApi.Datastream.V1.Model.SalesforceSourceConfig.t() | nil,
           :sourceConnectionProfile => String.t() | nil,
           :sqlServerSourceConfig => GoogleApi.Datastream.V1.Model.SqlServerSourceConfig.t() | nil
         }
@@ -42,6 +45,7 @@ defmodule GoogleApi.Datastream.V1.Model.SourceConfig do
   field(:mysqlSourceConfig, as: GoogleApi.Datastream.V1.Model.MysqlSourceConfig)
   field(:oracleSourceConfig, as: GoogleApi.Datastream.V1.Model.OracleSourceConfig)
   field(:postgresqlSourceConfig, as: GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig)
+  field(:salesforceSourceConfig, as: GoogleApi.Datastream.V1.Model.SalesforceSourceConfig)
   field(:sourceConnectionProfile)
   field(:sqlServerSourceConfig, as: GoogleApi.Datastream.V1.Model.SqlServerSourceConfig)
 end
