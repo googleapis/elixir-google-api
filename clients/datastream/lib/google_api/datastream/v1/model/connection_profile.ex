@@ -32,6 +32,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   *   `oracleProfile` (*type:* `GoogleApi.Datastream.V1.Model.OracleProfile.t`, *default:* `nil`) - Oracle ConnectionProfile configuration.
   *   `postgresqlProfile` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlProfile.t`, *default:* `nil`) - PostgreSQL Connection Profile configuration.
   *   `privateConnectivity` (*type:* `GoogleApi.Datastream.V1.Model.PrivateConnectivity.t`, *default:* `nil`) - Private connectivity.
+  *   `salesforceProfile` (*type:* `GoogleApi.Datastream.V1.Model.SalesforceProfile.t`, *default:* `nil`) - Salesforce Connection Profile configuration.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `sqlServerProfile` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerProfile.t`, *default:* `nil`) - SQLServer Connection Profile configuration.
@@ -54,6 +55,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
           :oracleProfile => GoogleApi.Datastream.V1.Model.OracleProfile.t() | nil,
           :postgresqlProfile => GoogleApi.Datastream.V1.Model.PostgresqlProfile.t() | nil,
           :privateConnectivity => GoogleApi.Datastream.V1.Model.PrivateConnectivity.t() | nil,
+          :salesforceProfile => GoogleApi.Datastream.V1.Model.SalesforceProfile.t() | nil,
           :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :sqlServerProfile => GoogleApi.Datastream.V1.Model.SqlServerProfile.t() | nil,
@@ -73,6 +75,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   field(:oracleProfile, as: GoogleApi.Datastream.V1.Model.OracleProfile)
   field(:postgresqlProfile, as: GoogleApi.Datastream.V1.Model.PostgresqlProfile)
   field(:privateConnectivity, as: GoogleApi.Datastream.V1.Model.PrivateConnectivity)
+  field(:salesforceProfile, as: GoogleApi.Datastream.V1.Model.SalesforceProfile)
   field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:sqlServerProfile, as: GoogleApi.Datastream.V1.Model.SqlServerProfile)

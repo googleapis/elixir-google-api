@@ -22,6 +22,7 @@ defmodule GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig do
   ## Attributes
 
   *   `appendOnly` (*type:* `GoogleApi.Datastream.V1.Model.AppendOnly.t`, *default:* `nil`) - Append only mode
+  *   `blmtConfig` (*type:* `GoogleApi.Datastream.V1.Model.BlmtConfig.t`, *default:* `nil`) - Optional. Big Lake Managed Tables (BLMT) configuration.
   *   `dataFreshness` (*type:* `String.t`, *default:* `nil`) - The guaranteed data freshness (in seconds) when querying tables created by the stream. Editing this field will only affect new tables created in the future, but existing tables will not be impacted. Lower values mean that queries will return fresher data, but may result in higher cost.
   *   `merge` (*type:* `GoogleApi.Datastream.V1.Model.Merge.t`, *default:* `nil`) - The standard mode
   *   `singleTargetDataset` (*type:* `GoogleApi.Datastream.V1.Model.SingleTargetDataset.t`, *default:* `nil`) - Single destination dataset.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig do
 
   @type t :: %__MODULE__{
           :appendOnly => GoogleApi.Datastream.V1.Model.AppendOnly.t() | nil,
+          :blmtConfig => GoogleApi.Datastream.V1.Model.BlmtConfig.t() | nil,
           :dataFreshness => String.t() | nil,
           :merge => GoogleApi.Datastream.V1.Model.Merge.t() | nil,
           :singleTargetDataset => GoogleApi.Datastream.V1.Model.SingleTargetDataset.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig do
         }
 
   field(:appendOnly, as: GoogleApi.Datastream.V1.Model.AppendOnly)
+  field(:blmtConfig, as: GoogleApi.Datastream.V1.Model.BlmtConfig)
   field(:dataFreshness)
   field(:merge, as: GoogleApi.Datastream.V1.Model.Merge)
   field(:singleTargetDataset, as: GoogleApi.Datastream.V1.Model.SingleTargetDataset)
