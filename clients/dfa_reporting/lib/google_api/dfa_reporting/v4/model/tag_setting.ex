@@ -24,6 +24,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.TagSetting do
   *   `additionalKeyValues` (*type:* `String.t`, *default:* `nil`) - Additional key-values to be included in tags. Each key-value pair must be of the form key=value, and pairs must be separated by a semicolon (;). Keys and values must not contain commas. For example, id=2;color=red is a valid value for this field.
   *   `includeClickThroughUrls` (*type:* `boolean()`, *default:* `nil`) - Whether static landing page URLs should be included in the tags. New placements will default to the value set on their site.
   *   `includeClickTracking` (*type:* `boolean()`, *default:* `nil`) - Whether click-tracking string should be included in the tags.
+  *   `includeUnescapedlpurlMacro` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates that the unescapedlpurl macro should be included in the tag for the static landing page. New placements will default to the value set on their site.
   *   `keywordOption` (*type:* `String.t`, *default:* `nil`) - Option specifying how keywords are embedded in ad tags. This setting can be used to specify whether keyword placeholders are inserted in placement tags for this site. Publishers can then add keywords to those placeholders.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.DFAReporting.V4.Model.TagSetting do
           :additionalKeyValues => String.t() | nil,
           :includeClickThroughUrls => boolean() | nil,
           :includeClickTracking => boolean() | nil,
+          :includeUnescapedlpurlMacro => boolean() | nil,
           :keywordOption => String.t() | nil
         }
 
   field(:additionalKeyValues)
   field(:includeClickThroughUrls)
   field(:includeClickTracking)
+  field(:includeUnescapedlpurlMacro)
   field(:keywordOption)
 end
 

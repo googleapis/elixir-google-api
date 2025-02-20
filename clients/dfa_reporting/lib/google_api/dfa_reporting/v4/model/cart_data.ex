@@ -22,9 +22,9 @@ defmodule GoogleApi.DFAReporting.V4.Model.CartData do
   ## Attributes
 
   *   `items` (*type:* `list(GoogleApi.DFAReporting.V4.Model.CartDataItem.t)`, *default:* `nil`) - Data of the items purchased.
-  *   `merchantFeedLabel` (*type:* `String.t`, *default:* `nil`) - The feed labels associated with the feed where your items are uploaded. For more information, please refer to ​​ https://support.google.com/merchants/answer/12453549. This is a required field.
-  *   `merchantFeedLanguage` (*type:* `String.t`, *default:* `nil`) - The language associated with the feed where your items are uploaded. Use ISO 639-1 language codes. This field is needed only when item IDs are not unique across multiple Merchant Center feeds.
-  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The Merchant Center ID where the items are uploaded. This is a required field.
+  *   `merchantFeedLabel` (*type:* `String.t`, *default:* `nil`) - The feed labels associated with the feed where your items are uploaded. For more information, please refer to ​​ https://support.google.com/merchants/answer/12453549. Providing the feed label reduces ambiguity in identifying the right offer details.
+  *   `merchantFeedLanguage` (*type:* `String.t`, *default:* `nil`) - The language associated with the feed where your items are uploaded. Use ISO 639-1 language codes. Providing the feed language reduces ambiguity in identifying the right offer details.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - The Merchant Center ID where the items are uploaded. Providing Merchant Center ID reduces ambiguity in identifying the right offer details.
   """
 
   use GoogleApi.Gax.ModelBase
