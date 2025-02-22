@@ -25,14 +25,14 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.StepEntry do
   *   `entryId` (*type:* `String.t`, *default:* `nil`) - Output only. The numeric ID of this step entry, used for navigation.
   *   `exception` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.Exception.t`, *default:* `nil`) - Output only. The exception thrown by the step entry.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full resource name of the step entry. Each step entry has a unique entry ID, which is a monotonically increasing counter. Step entry names have the format: `projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}/stepEntries/{step_entry}`.
-  *   `navigationInfo` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.NavigationInfo.t`, *default:* `nil`) - Output only. The NavigationInfo associated to this step.
+  *   `navigationInfo` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.NavigationInfo.t`, *default:* `nil`) - Output only. The NavigationInfo associated with this step.
   *   `routine` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the routine this step entry belongs to. A routine name is the subworkflow name defined in the YAML source code. The top level routine name is `main`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the step entry.
   *   `step` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the step this step entry belongs to.
-  *   `stepEntryMetadata` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.StepEntryMetadata.t`, *default:* `nil`) - Output only. The StepEntryMetadata associated to this step.
+  *   `stepEntryMetadata` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.StepEntryMetadata.t`, *default:* `nil`) - Output only. The StepEntryMetadata associated with this step.
   *   `stepType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the step this step entry belongs to.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recently updated time of the step entry.
-  *   `variableData` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.VariableData.t`, *default:* `nil`) - Output only. The VariableData associated to this step.
+  *   `variableData` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.VariableData.t`, *default:* `nil`) - Output only. The VariableData associated with this step.
   """
 
   use GoogleApi.Gax.ModelBase
