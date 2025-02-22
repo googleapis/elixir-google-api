@@ -21,7 +21,7 @@ defmodule GoogleApi.Redis.V1.Model.ClusterEndpoint do
 
   ## Attributes
 
-  *   `connections` (*type:* `list(GoogleApi.Redis.V1.Model.ConnectionDetail.t)`, *default:* `nil`) - A group of PSC connections. They are created in the same VPC network, one for each service attachment in the cluster.
+  *   `connections` (*type:* `list(GoogleApi.Redis.V1.Model.ConnectionDetail.t)`, *default:* `nil`) - Required. A group of PSC connections. They are created in the same VPC network, one for each service attachment in the cluster.
   """
 
   use GoogleApi.Gax.ModelBase

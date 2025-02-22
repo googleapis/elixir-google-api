@@ -677,7 +677,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:clusterId` (*type:* `String.t`) - Required. The logical name of the Redis cluster in the customer project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-63 characters. * Must end with a number or a letter. * Must be unique within the customer project / location
-      *   `:requestId` (*type:* `String.t`) - Idempotent request UUID.
+      *   `:requestId` (*type:* `String.t`) - Optional. Idempotent request UUID.
       *   `:body` (*type:* `GoogleApi.Redis.V1.Model.Cluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -752,7 +752,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:requestId` (*type:* `String.t`) - Idempotent request UUID.
+      *   `:requestId` (*type:* `String.t`) - Optional. Idempotent request UUID.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1033,7 +1033,7 @@ defmodule GoogleApi.Redis.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:requestId` (*type:* `String.t`) - Idempotent request UUID.
+      *   `:requestId` (*type:* `String.t`) - Optional. Idempotent request UUID.
       *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update. At least one path must be supplied in this field. The elements of the repeated paths field may only include these fields from Cluster: * `size_gb` * `replica_count` * `cluster_endpoints`
       *   `:body` (*type:* `GoogleApi.Redis.V1.Model.Cluster.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
