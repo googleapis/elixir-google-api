@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   @moduledoc """
-  Common model for database resource instance metadata. Next ID: 24
+  Common model for database resource instance metadata. Next ID: 25
 
   ## Attributes
 
@@ -30,6 +30,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   *   `edition` (*type:* `String.t`, *default:* `nil`) - Optional. Edition represents whether the instance is ENTERPRISE or ENTERPRISE_PLUS. This information is core to Cloud SQL only and is used to identify the edition of the instance.
   *   `entitlements` (*type:* `list(GoogleApi.Redis.V1.Model.Entitlement.t)`, *default:* `nil`) - Entitlements associated with the resource
   *   `expectedState` (*type:* `String.t`, *default:* `nil`) - The state that the instance is expected to be in. For example, an instance state can transition to UNHEALTHY due to wrong patch update, while the expected state will remain at the HEALTHY.
+  *   `gcbdrConfiguration` (*type:* `GoogleApi.Redis.V1.Model.GCBDRConfiguration.t`, *default:* `nil`) - GCBDR configuration for the resource.
   *   `id` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceId.t`, *default:* `nil`) - Required. Unique identifier for a Database resource
   *   `instanceType` (*type:* `String.t`, *default:* `nil`) - The type of the instance. Specified at creation time.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The resource location. REQUIRED
@@ -39,7 +40,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   *   `product` (*type:* `GoogleApi.Redis.V1.Model.Product.t`, *default:* `nil`) - The product this resource represents.
   *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - Closest parent Cloud Resource Manager container of this resource. It must be resource name of a Cloud Resource Manager project with the format of "/", such as "projects/123". For GCP provided resources, number should be project number.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. Different from DatabaseResourceId.unique_id, a resource name can be reused over time. That is, after a resource named "ABC" is deleted, the name "ABC" can be used to to create a new resource within the same source. Resource name to follow CAIS resource_name format as noted here go/condor-common-datamodel
-  *   `suspensionReason` (*type:* `String.t`, *default:* `nil`) - Suspension reason for the resource.
+  *   `suspensionReason` (*type:* `String.t`, *default:* `nil`) - Optional. Suspension reason for the resource.
   *   `tagsSet` (*type:* `GoogleApi.Redis.V1.Model.Tags.t`, *default:* `nil`) - Optional. Tags associated with this resources.
   *   `updationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the resource was updated and recorded at partner service.
   *   `userLabelSet` (*type:* `GoogleApi.Redis.V1.Model.UserLabels.t`, *default:* `nil`) - User-provided labels associated with the resource
@@ -58,6 +59,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
           :edition => String.t() | nil,
           :entitlements => list(GoogleApi.Redis.V1.Model.Entitlement.t()) | nil,
           :expectedState => String.t() | nil,
+          :gcbdrConfiguration => GoogleApi.Redis.V1.Model.GCBDRConfiguration.t() | nil,
           :id => GoogleApi.Redis.V1.Model.DatabaseResourceId.t() | nil,
           :instanceType => String.t() | nil,
           :location => String.t() | nil,
@@ -82,6 +84,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   field(:edition)
   field(:entitlements, as: GoogleApi.Redis.V1.Model.Entitlement, type: :list)
   field(:expectedState)
+  field(:gcbdrConfiguration, as: GoogleApi.Redis.V1.Model.GCBDRConfiguration)
   field(:id, as: GoogleApi.Redis.V1.Model.DatabaseResourceId)
   field(:instanceType)
   field(:location)

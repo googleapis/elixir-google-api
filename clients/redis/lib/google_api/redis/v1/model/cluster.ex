@@ -25,7 +25,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   *   `authorizationMode` (*type:* `String.t`, *default:* `nil`) - Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
   *   `automatedBackupConfig` (*type:* `GoogleApi.Redis.V1.Model.AutomatedBackupConfig.t`, *default:* `nil`) - Optional. The automated backup config for the cluster.
   *   `backupCollection` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. The backup collection full resource name. Example: projects/{project}/locations/{location}/backupCollections/{collection}
-  *   `clusterEndpoints` (*type:* `list(GoogleApi.Redis.V1.Model.ClusterEndpoint.t)`, *default:* `nil`) - Optional. A list of cluster enpoints.
+  *   `clusterEndpoints` (*type:* `list(GoogleApi.Redis.V1.Model.ClusterEndpoint.t)`, *default:* `nil`) - Optional. A list of cluster endpoints.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp associated with the cluster creation request.
   *   `crossClusterReplicationConfig` (*type:* `GoogleApi.Redis.V1.Model.CrossClusterReplicationConfig.t`, *default:* `nil`) - Optional. Cross cluster replication config.
   *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The delete operation will fail when the value is set to true.

@@ -21,7 +21,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.GcsBackupSource do
 
   ## Attributes
 
-  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. URIs of the GCS objects to import. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
+  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. URIs of the Cloud Storage objects to import. Example: gs://bucket1/object1, gs://bucket2/folder2/object2
   """
 
   use GoogleApi.Gax.ModelBase

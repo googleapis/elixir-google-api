@@ -25,6 +25,7 @@ defmodule GoogleApi.Redis.V1.Model.PscConnection do
   *   `connectionType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the PSC connection.
   *   `forwardingRule` (*type:* `String.t`, *default:* `nil`) - Required. The URI of the consumer side forwarding rule. Example: projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Required. The consumer network where the IP address resides, in the form of projects/{project_id}/global/networks/{network_id}.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Output only. The port number of the exposed discovery endpoint.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Optional. Project ID of the consumer project where the forwarding rule is created in.
   *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - Required. The PSC connection id of the forwarding rule connected to the service attachment.
   *   `pscConnectionStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The status of the PSC connection. Please note that this value is updated periodically. To get the latest status of a PSC connection, follow https://cloud.google.com/vpc/docs/configure-private-service-connect-services#endpoint-details.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Redis.V1.Model.PscConnection do
           :connectionType => String.t() | nil,
           :forwardingRule => String.t() | nil,
           :network => String.t() | nil,
+          :port => integer() | nil,
           :projectId => String.t() | nil,
           :pscConnectionId => String.t() | nil,
           :pscConnectionStatus => String.t() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.Redis.V1.Model.PscConnection do
   field(:connectionType)
   field(:forwardingRule)
   field(:network)
+  field(:port)
   field(:projectId)
   field(:pscConnectionId)
   field(:pscConnectionStatus)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Redis.V1beta1.Model.ClusterMaintenanceSchedule do
   @moduledoc """
-  Upcoming maitenance schedule.
+  Upcoming maintenance schedule.
 
   ## Attributes
 
