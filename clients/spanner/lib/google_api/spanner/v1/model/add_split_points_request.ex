@@ -21,7 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.AddSplitPointsRequest do
 
   ## Attributes
 
-  *   `initiator` (*type:* `String.t`, *default:* `nil`) - Optional. A user-supplied tag associated with the split points. For example, "intital_data_load", "special_event_1". Defaults to "CloudAddSplitPointsAPI" if not specified. The length of the tag must not exceed 50 characters,else will be trimmed. Only valid UTF8 characters are allowed.
+  *   `initiator` (*type:* `String.t`, *default:* `nil`) - Optional. A user-supplied tag associated with the split points. For example, "initial_data_load", "special_event_1". Defaults to "CloudAddSplitPointsAPI" if not specified. The length of the tag must not exceed 50 characters,else will be trimmed. Only valid UTF8 characters are allowed.
   *   `splitPoints` (*type:* `list(GoogleApi.Spanner.V1.Model.SplitPoints.t)`, *default:* `nil`) - Required. The split points to add.
   """
 
