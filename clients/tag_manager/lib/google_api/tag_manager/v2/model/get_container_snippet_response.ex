@@ -21,15 +21,18 @@ defmodule GoogleApi.TagManager.V2.Model.GetContainerSnippetResponse do
 
   ## Attributes
 
+  *   `containerConfig` (*type:* `String.t`, *default:* `nil`) - Server container config param for manually provisioning a tagging server.
   *   `snippet` (*type:* `String.t`, *default:* `nil`) - Tagging snippet for a Container.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :containerConfig => String.t() | nil,
           :snippet => String.t() | nil
         }
 
+  field(:containerConfig)
   field(:snippet)
 end
 
