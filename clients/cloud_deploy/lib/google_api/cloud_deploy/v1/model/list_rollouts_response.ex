@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.ListRolloutsResponse do
   @moduledoc """
-  ListRolloutsResponse is the response object reutrned by `ListRollouts`.
+  ListRolloutsResponse is the response object returned by `ListRollouts`.
 
   ## Attributes
 
