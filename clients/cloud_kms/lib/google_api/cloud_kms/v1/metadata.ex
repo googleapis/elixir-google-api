@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudKMS.V1 do
   API client metadata for GoogleApi.CloudKMS.V1.
   """
 
-  @discovery_revision "20250205"
+  @discovery_revision "20250213"
 
   def discovery_revision(), do: @discovery_revision
 end
