@@ -21,8 +21,8 @@ defmodule GoogleApi.DisplayVideo.V3.Model.UniversalAdId do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The unique creative identifier.
-  *   `registry` (*type:* `String.t`, *default:* `nil`) - The registry provides unique creative identifiers.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Optional. The unique creative identifier.
+  *   `registry` (*type:* `String.t`, *default:* `nil`) - Optional. The registry provides unique creative identifiers.
   """
 
   use GoogleApi.Gax.ModelBase

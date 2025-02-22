@@ -235,7 +235,7 @@ defmodule GoogleApi.DisplayVideo.V3.Api.CustomBiddingAlgorithms do
   end
 
   @doc """
-  Updates an existing custom bidding algorithm. Returns the updated custom bidding algorithm if successful.
+  Updates an existing custom bidding algorithm. Returns the updated custom bidding algorithm if successful. *Warning*: Starting **April 1, 2025**, requests updating custom bidding algorithms that are assigned to line items will return an error. [Read more about this announced change](/display-video/api/deprecations#features.custom_bidding_floodlight).
 
   ## Parameters
 
@@ -466,7 +466,7 @@ defmodule GoogleApi.DisplayVideo.V3.Api.CustomBiddingAlgorithms do
   end
 
   @doc """
-  Creates a new rules resource. Returns the newly created rules resource if successful.
+  Creates a new rules resource. Returns the newly created rules resource if successful. *Warning*: Starting **April 1, 2025**, requests updating custom bidding algorithms that are assigned to line items will return an error. [Read more about this announced change](/display-video/api/deprecations#features.custom_bidding_floodlight).
 
   ## Parameters
 
@@ -713,7 +713,7 @@ defmodule GoogleApi.DisplayVideo.V3.Api.CustomBiddingAlgorithms do
   end
 
   @doc """
-  Creates a new custom bidding script. Returns the newly created script if successful.
+  Creates a new custom bidding script. Returns the newly created script if successful. *Warning*: Starting **April 1, 2025**, requests updating custom bidding algorithms that are assigned to line items will return an error. [Read more about this announced change](/display-video/api/deprecations#features.custom_bidding_floodlight).
 
   ## Parameters
 

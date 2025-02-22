@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.CustomListGroup do
 
   ## Attributes
 
-  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.CustomListTargetingSetting.t)`, *default:* `nil`) - Required. All custom list targeting settings in custom list group. Repeated settings with same id will be ignored.
+  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.CustomListTargetingSetting.t)`, *default:* `nil`) - Required. All custom list targeting settings in custom list group. Repeated settings with the same id will be ignored.
   """
 
   use GoogleApi.Gax.ModelBase

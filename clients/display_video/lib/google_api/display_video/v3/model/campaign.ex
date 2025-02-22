@@ -28,7 +28,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.Campaign do
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the campaign. Assigned by the system.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the campaign. Must be UTF-8 encoded with a maximum size of 240 bytes.
   *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not the insertion orders under this campaign can spend their budgets and bid on inventory. * Accepted values are `ENTITY_STATUS_ACTIVE`, `ENTITY_STATUS_ARCHIVED`, and `ENTITY_STATUS_PAUSED`. * For CreateCampaign method, `ENTITY_STATUS_ARCHIVED` is not allowed.
-  *   `frequencyCap` (*type:* `GoogleApi.DisplayVideo.V3.Model.FrequencyCap.t`, *default:* `nil`) - Required. The frequency cap setting of the campaign.
+  *   `frequencyCap` (*type:* `GoogleApi.DisplayVideo.V3.Model.FrequencyCap.t`, *default:* `nil`) - Required. The frequency cap setting of the campaign. *Warning*: On **February 28, 2025**, frequency cap time periods greater than 30 days will no longer be accepted. [Read more about this announced change](/display-video/api/deprecations#features.lifetime_frequency_cap)
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the campaign.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the campaign was last updated. Assigned by the system.
   """

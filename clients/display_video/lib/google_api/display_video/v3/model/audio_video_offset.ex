@@ -21,8 +21,8 @@ defmodule GoogleApi.DisplayVideo.V3.Model.AudioVideoOffset do
 
   ## Attributes
 
-  *   `percentage` (*type:* `String.t`, *default:* `nil`) - The offset in percentage of the audio or video duration.
-  *   `seconds` (*type:* `String.t`, *default:* `nil`) - The offset in seconds from the start of the audio or video.
+  *   `percentage` (*type:* `String.t`, *default:* `nil`) - Optional. The offset in percentage of the audio or video duration.
+  *   `seconds` (*type:* `String.t`, *default:* `nil`) - Optional. The offset in seconds from the start of the audio or video.
   """
 
   use GoogleApi.Gax.ModelBase

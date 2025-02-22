@@ -22,20 +22,20 @@ defmodule GoogleApi.DisplayVideo.V3.Model.InsertionOrder do
   ## Attributes
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser the insertion order belongs to.
-  *   `bidStrategy` (*type:* `GoogleApi.DisplayVideo.V3.Model.BiddingStrategy.t`, *default:* `nil`) - The bidding strategy of the insertion order. By default, fixed_bid is set.
+  *   `bidStrategy` (*type:* `GoogleApi.DisplayVideo.V3.Model.BiddingStrategy.t`, *default:* `nil`) - Optional. The bidding strategy of the insertion order. By default, fixed_bid is set.
   *   `budget` (*type:* `GoogleApi.DisplayVideo.V3.Model.InsertionOrderBudget.t`, *default:* `nil`) - Required. The budget allocation settings of the insertion order.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the campaign that the insertion order belongs to.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the insertion order. Must be UTF-8 encoded with a maximum size of 240 bytes.
   *   `entityStatus` (*type:* `String.t`, *default:* `nil`) - Required. Controls whether or not the insertion order can spend its budget and bid on inventory. * For CreateInsertionOrder method, only `ENTITY_STATUS_DRAFT` is allowed. To activate an insertion order, use UpdateInsertionOrder method and update the status to `ENTITY_STATUS_ACTIVE` after creation. * An insertion order cannot be changed back to `ENTITY_STATUS_DRAFT` status from any other status. * An insertion order cannot be set to `ENTITY_STATUS_ACTIVE` if its parent campaign is not active.
-  *   `frequencyCap` (*type:* `GoogleApi.DisplayVideo.V3.Model.FrequencyCap.t`, *default:* `nil`) - Required. The frequency capping setting of the insertion order.
+  *   `frequencyCap` (*type:* `GoogleApi.DisplayVideo.V3.Model.FrequencyCap.t`, *default:* `nil`) - Required. The frequency capping setting of the insertion order. *Warning*: On **February 28, 2025**, frequency cap time periods greater than 30 days will no longer be accepted. [Read more about this announced change](/display-video/api/deprecations#features.lifetime_frequency_cap)
   *   `insertionOrderId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the insertion order. Assigned by the system.
-  *   `insertionOrderType` (*type:* `String.t`, *default:* `nil`) - The type of insertion order. If this field is unspecified in creation, the value defaults to `RTB`.
-  *   `integrationDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.IntegrationDetails.t`, *default:* `nil`) - Additional integration details of the insertion order.
+  *   `insertionOrderType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of insertion order. If this field is unspecified in creation, the value defaults to `RTB`.
+  *   `integrationDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.IntegrationDetails.t`, *default:* `nil`) - Optional. Additional integration details of the insertion order.
   *   `kpi` (*type:* `GoogleApi.DisplayVideo.V3.Model.Kpi.t`, *default:* `nil`) - Required. The key performance indicator (KPI) of the insertion order. This is represented as referred to as the "Goal" in the Display & Video 360 interface.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the insertion order.
-  *   `optimizationObjective` (*type:* `String.t`, *default:* `nil`) - Optional. The optimization objective of the insertion order.
+  *   `optimizationObjective` (*type:* `String.t`, *default:* `nil`) - Optional. Required. The optimization objective of the insertion order.
   *   `pacing` (*type:* `GoogleApi.DisplayVideo.V3.Model.Pacing.t`, *default:* `nil`) - Required. The budget spending speed setting of the insertion order. pacing_type `PACING_TYPE_ASAP` is not compatible with pacing_period `PACING_PERIOD_FLIGHT`.
-  *   `partnerCosts` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.PartnerCost.t)`, *default:* `nil`) - The partner costs associated with the insertion order. If absent or empty in CreateInsertionOrder method, the newly created insertion order will inherit partner costs from the partner settings.
+  *   `partnerCosts` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.PartnerCost.t)`, *default:* `nil`) - Optional. The partner costs associated with the insertion order. If absent or empty in CreateInsertionOrder method, the newly created insertion order will inherit partner costs from the partner settings.
   *   `reservationType` (*type:* `String.t`, *default:* `nil`) - Output only. The reservation type of the insertion order.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the insertion order was last updated. Assigned by the system.
   """

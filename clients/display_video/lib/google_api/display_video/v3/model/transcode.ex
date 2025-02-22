@@ -21,15 +21,15 @@ defmodule GoogleApi.DisplayVideo.V3.Model.Transcode do
 
   ## Attributes
 
-  *   `audioBitRateKbps` (*type:* `String.t`, *default:* `nil`) - The bit rate for the audio stream of the transcoded video, or the bit rate for the transcoded audio, in kilobits per second.
-  *   `audioSampleRateHz` (*type:* `String.t`, *default:* `nil`) - The sample rate for the audio stream of the transcoded video, or the sample rate for the transcoded audio, in hertz.
-  *   `bitRateKbps` (*type:* `String.t`, *default:* `nil`) - The transcoding bit rate of the transcoded video, in kilobits per second.
-  *   `dimensions` (*type:* `GoogleApi.DisplayVideo.V3.Model.Dimensions.t`, *default:* `nil`) - The dimensions of the transcoded video.
-  *   `fileSizeBytes` (*type:* `String.t`, *default:* `nil`) - The size of the transcoded file, in bytes.
-  *   `frameRate` (*type:* `number()`, *default:* `nil`) - The frame rate of the transcoded video, in frames per second.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the transcoded file.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the transcoded file.
-  *   `transcoded` (*type:* `boolean()`, *default:* `nil`) - Indicates if the transcoding was successful.
+  *   `audioBitRateKbps` (*type:* `String.t`, *default:* `nil`) - Optional. The bit rate for the audio stream of the transcoded video, or the bit rate for the transcoded audio, in kilobits per second.
+  *   `audioSampleRateHz` (*type:* `String.t`, *default:* `nil`) - Optional. The sample rate for the audio stream of the transcoded video, or the sample rate for the transcoded audio, in hertz.
+  *   `bitRateKbps` (*type:* `String.t`, *default:* `nil`) - Optional. The transcoding bit rate of the transcoded video, in kilobits per second.
+  *   `dimensions` (*type:* `GoogleApi.DisplayVideo.V3.Model.Dimensions.t`, *default:* `nil`) - Optional. The dimensions of the transcoded video.
+  *   `fileSizeBytes` (*type:* `String.t`, *default:* `nil`) - Optional. The size of the transcoded file, in bytes.
+  *   `frameRate` (*type:* `number()`, *default:* `nil`) - Optional. The frame rate of the transcoded video, in frames per second.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Optional. The MIME type of the transcoded file.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the transcoded file.
+  *   `transcoded` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the transcoding was successful.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.DisplayVideo.V3.Model.AssetAssociation do
 
   ## Attributes
 
-  *   `asset` (*type:* `GoogleApi.DisplayVideo.V3.Model.Asset.t`, *default:* `nil`) - The associated asset.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - The role of this asset for the creative.
+  *   `asset` (*type:* `GoogleApi.DisplayVideo.V3.Model.Asset.t`, *default:* `nil`) - Optional. The associated asset.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. The role of this asset for the creative.
   """
 
   use GoogleApi.Gax.ModelBase
