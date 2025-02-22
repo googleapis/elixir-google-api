@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.GoogleAudienceGroup do
 
   ## Attributes
 
-  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.GoogleAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All Google audience targeting settings in Google audience group. Repeated settings with same id will be ignored.
+  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.GoogleAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All Google audience targeting settings in Google audience group. Repeated settings with the same id will be ignored.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.ConversionCountingConfig do
 
   ## Attributes
 
-  *   `floodlightActivityConfigs` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.TrackingFloodlightActivityConfig.t)`, *default:* `nil`) - The Floodlight activity configs used to track conversions. The number of conversions counted is the sum of all of the conversions counted by all of the Floodlight activity IDs specified in this field.
+  *   `floodlightActivityConfigs` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.TrackingFloodlightActivityConfig.t)`, *default:* `nil`) - The Floodlight activity configs used to track conversions. The number of conversions counted is the sum of all of the conversions counted by all of the Floodlight activity IDs specified in this field. *Warning*: Starting **April 1, 2025**, this field will no longer be writable while a custom bidding algorithm is assigned to the line item. If you set this field and assign a custom bidding algorithm in the same request, the floodlight activities must match the ones used by the custom bidding algorithm. [Read more about this announced change](/display-video/api/deprecations#features.custom_bidding_floodlight).
   *   `postViewCountPercentageMillis` (*type:* `String.t`, *default:* `nil`) - The percentage of post-view conversions to count, in millis (1/1000 of a percent). Must be between 0 and 100000 inclusive. For example, to track 50% of the post-click conversions, set a value of 50000.
   """
 

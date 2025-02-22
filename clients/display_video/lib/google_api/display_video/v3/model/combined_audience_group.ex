@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.CombinedAudienceGroup do
 
   ## Attributes
 
-  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.CombinedAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All combined audience targeting settings in combined audience group. Repeated settings with same id will be ignored. The number of combined audience settings should be no more than five, error will be thrown otherwise.
+  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.CombinedAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All combined audience targeting settings in combined audience group. Repeated settings with the same id will be ignored. The number of combined audience settings should be no more than five, error will be thrown otherwise.
   """
 
   use GoogleApi.Gax.ModelBase

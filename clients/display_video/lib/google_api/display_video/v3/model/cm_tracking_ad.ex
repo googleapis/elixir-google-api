@@ -21,9 +21,9 @@ defmodule GoogleApi.DisplayVideo.V3.Model.CmTrackingAd do
 
   ## Attributes
 
-  *   `cmAdId` (*type:* `String.t`, *default:* `nil`) - The ad ID of the campaign manager 360 tracking Ad.
-  *   `cmCreativeId` (*type:* `String.t`, *default:* `nil`) - The creative ID of the campaign manager 360 tracking Ad.
-  *   `cmPlacementId` (*type:* `String.t`, *default:* `nil`) - The placement ID of the campaign manager 360 tracking Ad.
+  *   `cmAdId` (*type:* `String.t`, *default:* `nil`) - Optional. The ad ID of the campaign manager 360 tracking Ad.
+  *   `cmCreativeId` (*type:* `String.t`, *default:* `nil`) - Optional. The creative ID of the campaign manager 360 tracking Ad.
+  *   `cmPlacementId` (*type:* `String.t`, *default:* `nil`) - Optional. The placement ID of the campaign manager 360 tracking Ad.
   """
 
   use GoogleApi.Gax.ModelBase

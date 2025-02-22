@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.FirstAndThirdPartyAudienceGroup do
 
   ## Attributes
 
-  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.FirstAndThirdPartyAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All first and third party audience targeting settings in first and third party audience group. Repeated settings with same id are not allowed.
+  *   `settings` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.FirstAndThirdPartyAudienceTargetingSetting.t)`, *default:* `nil`) - Required. All first and third party audience targeting settings in first and third party audience group. Repeated settings with the same id are not allowed.
   """
 
   use GoogleApi.Gax.ModelBase
