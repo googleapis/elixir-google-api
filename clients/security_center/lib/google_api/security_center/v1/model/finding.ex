@@ -31,6 +31,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}", "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
   *   `dataFlowEvents` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.DataFlowEvent.t)`, *default:* `nil`) - Data flow events associated with the finding.
   *   `vulnerability` (*type:* `GoogleApi.SecurityCenter.V1.Model.Vulnerability.t`, *default:* `nil`) - Represents vulnerability-specific fields like CVE and CVSS scores. CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)
+  *   `ipRules` (*type:* `GoogleApi.SecurityCenter.V1.Model.IpRules.t`, *default:* `nil`) - IP rules associated with the finding.
   *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
   *   `moduleName` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the module which generated the finding. Example: folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
   *   `dataRetentionDeletionEvents` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.DataRetentionDeletionEvent.t)`, *default:* `nil`) - Data retention deletion events associated with the finding.
@@ -59,7 +60,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `processes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Process.t)`, *default:* `nil`) - Represents operating system processes associated with the Finding.
   *   `logEntries` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.LogEntry.t)`, *default:* `nil`) - Log entries that are relevant to the finding.
   *   `cloudArmor` (*type:* `GoogleApi.SecurityCenter.V1.Model.CloudArmor.t`, *default:* `nil`) - Fields related to Cloud Armor findings.
+  *   `networks` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Network.t)`, *default:* `nil`) - Represents the VPC networks that the resource is attached to.
   *   `disk` (*type:* `GoogleApi.SecurityCenter.V1.Model.Disk.t`, *default:* `nil`) - Disk associated with the finding.
+  *   `job` (*type:* `GoogleApi.SecurityCenter.V1.Model.Job.t`, *default:* `nil`) - Job associated with the finding.
   *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.Access.t`, *default:* `nil`) - Access details associated with the finding, such as more information on the caller, which method was accessed, and from where.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string. This field is immutable after creation time.
   *   `mitreAttack` (*type:* `GoogleApi.SecurityCenter.V1.Model.MitreAttack.t`, *default:* `nil`) - MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org
@@ -90,6 +93,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :name => String.t() | nil,
           :dataFlowEvents => list(GoogleApi.SecurityCenter.V1.Model.DataFlowEvent.t()) | nil,
           :vulnerability => GoogleApi.SecurityCenter.V1.Model.Vulnerability.t() | nil,
+          :ipRules => GoogleApi.SecurityCenter.V1.Model.IpRules.t() | nil,
           :mute => String.t() | nil,
           :moduleName => String.t() | nil,
           :dataRetentionDeletionEvents =>
@@ -125,7 +129,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :processes => list(GoogleApi.SecurityCenter.V1.Model.Process.t()) | nil,
           :logEntries => list(GoogleApi.SecurityCenter.V1.Model.LogEntry.t()) | nil,
           :cloudArmor => GoogleApi.SecurityCenter.V1.Model.CloudArmor.t() | nil,
+          :networks => list(GoogleApi.SecurityCenter.V1.Model.Network.t()) | nil,
           :disk => GoogleApi.SecurityCenter.V1.Model.Disk.t() | nil,
+          :job => GoogleApi.SecurityCenter.V1.Model.Job.t() | nil,
           :access => GoogleApi.SecurityCenter.V1.Model.Access.t() | nil,
           :resourceName => String.t() | nil,
           :mitreAttack => GoogleApi.SecurityCenter.V1.Model.MitreAttack.t() | nil,
@@ -154,6 +160,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:name)
   field(:dataFlowEvents, as: GoogleApi.SecurityCenter.V1.Model.DataFlowEvent, type: :list)
   field(:vulnerability, as: GoogleApi.SecurityCenter.V1.Model.Vulnerability)
+  field(:ipRules, as: GoogleApi.SecurityCenter.V1.Model.IpRules)
   field(:mute)
   field(:moduleName)
 
@@ -192,7 +199,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:processes, as: GoogleApi.SecurityCenter.V1.Model.Process, type: :list)
   field(:logEntries, as: GoogleApi.SecurityCenter.V1.Model.LogEntry, type: :list)
   field(:cloudArmor, as: GoogleApi.SecurityCenter.V1.Model.CloudArmor)
+  field(:networks, as: GoogleApi.SecurityCenter.V1.Model.Network, type: :list)
   field(:disk, as: GoogleApi.SecurityCenter.V1.Model.Disk)
+  field(:job, as: GoogleApi.SecurityCenter.V1.Model.Job)
   field(:access, as: GoogleApi.SecurityCenter.V1.Model.Access)
   field(:resourceName)
   field(:mitreAttack, as: GoogleApi.SecurityCenter.V1.Model.MitreAttack)
