@@ -21,7 +21,7 @@ defmodule GoogleApi.Connectors.V1.Model.Source do
 
   ## Attributes
 
-  *   `fieldId` (*type:* `String.t`, *default:* `nil`) - Field identifier. For example config vaiable name.
+  *   `fieldId` (*type:* `String.t`, *default:* `nil`) - Field identifier. For example config variable name.
   *   `sourceType` (*type:* `String.t`, *default:* `nil`) - Type of the source.
   """
 
