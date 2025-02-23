@@ -27,6 +27,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DataExchange do
   *   `documentation` (*type:* `String.t`, *default:* `nil`) - Optional. Documentation describing the data exchange.
   *   `icon` (*type:* `String.t`, *default:* `nil`) - Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API only performs validation on size of the encoded data. Note: For byte fields, the content of the fields are base64-encoded (which increases the size of the data by 33-36%) when using JSON on the wire.
   *   `listingCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of listings contained in the data exchange.
+  *   `logLinkedDatasetQueryUserEmail` (*type:* `boolean()`, *default:* `nil`) - Optional. By default, false. If true, the DataExchange has an email sharing mandate enabled.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the data exchange. e.g. `projects/myproject/locations/US/dataExchanges/123`.
   *   `primaryContact` (*type:* `String.t`, *default:* `nil`) - Optional. Email or URL of the primary point of contact of the data exchange. Max Length: 1000 bytes.
   *   `sharingEnvironmentConfig` (*type:* `GoogleApi.AnalyticsHub.V1.Model.SharingEnvironmentConfig.t`, *default:* `nil`) - Optional. Configurable data sharing environment option for a data exchange.
@@ -41,6 +42,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DataExchange do
           :documentation => String.t() | nil,
           :icon => String.t() | nil,
           :listingCount => integer() | nil,
+          :logLinkedDatasetQueryUserEmail => boolean() | nil,
           :name => String.t() | nil,
           :primaryContact => String.t() | nil,
           :sharingEnvironmentConfig =>
@@ -53,6 +55,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DataExchange do
   field(:documentation)
   field(:icon)
   field(:listingCount)
+  field(:logLinkedDatasetQueryUserEmail)
   field(:name)
   field(:primaryContact)
   field(:sharingEnvironmentConfig, as: GoogleApi.AnalyticsHub.V1.Model.SharingEnvironmentConfig)

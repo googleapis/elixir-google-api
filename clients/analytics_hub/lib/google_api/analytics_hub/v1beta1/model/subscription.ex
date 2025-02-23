@@ -28,6 +28,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Subscription do
   *   `linkedDatasetMap` (*type:* `%{optional(String.t) => GoogleApi.AnalyticsHub.V1beta1.Model.LinkedResource.t}`, *default:* `nil`) - Output only. Map of listing resource names to associated linked resource, e.g. projects/123/locations/US/dataExchanges/456/listings/789 -> projects/123/datasets/my_dataset For listing-level subscriptions, this is a map of size 1. Only contains values if state == STATE_ACTIVE.
   *   `linkedResources` (*type:* `list(GoogleApi.AnalyticsHub.V1beta1.Model.LinkedResource.t)`, *default:* `nil`) - Output only. Linked resources created in the subscription. Only contains values if state = STATE_ACTIVE.
   *   `listing` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the source Listing. e.g. projects/123/locations/US/dataExchanges/456/listings/789
+  *   `logLinkedDatasetQueryUserEmail` (*type:* `boolean()`, *default:* `nil`) - Output only. By default, false. If true, the Subscriber agreed to the email sharing mandate that is enabled for DataExchange/Listing.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the subscription. e.g. `projects/myproject/locations/US/subscriptions/123`.
   *   `organizationDisplayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name of the project of this subscription.
   *   `organizationId` (*type:* `String.t`, *default:* `nil`) - Output only. Organization of the project this subscription belongs to.
@@ -48,6 +49,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Subscription do
             | nil,
           :linkedResources => list(GoogleApi.AnalyticsHub.V1beta1.Model.LinkedResource.t()) | nil,
           :listing => String.t() | nil,
+          :logLinkedDatasetQueryUserEmail => boolean() | nil,
           :name => String.t() | nil,
           :organizationDisplayName => String.t() | nil,
           :organizationId => String.t() | nil,
@@ -63,6 +65,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Subscription do
   field(:linkedDatasetMap, as: GoogleApi.AnalyticsHub.V1beta1.Model.LinkedResource, type: :map)
   field(:linkedResources, as: GoogleApi.AnalyticsHub.V1beta1.Model.LinkedResource, type: :list)
   field(:listing)
+  field(:logLinkedDatasetQueryUserEmail)
   field(:name)
   field(:organizationDisplayName)
   field(:organizationId)
