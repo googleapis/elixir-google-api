@@ -21,6 +21,7 @@ defmodule GoogleApi.Connectors.V1.Model.JsonSchema do
 
   ## Attributes
 
+  *   `additionalDetails` (*type:* `map()`, *default:* `nil`) - Additional details apart from standard json schema fields, this gives flexibility to store metadata about the schema
   *   `default` (*type:* `any()`, *default:* `nil`) - The default value of the field or object described by this schema.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this schema.
   *   `enum` (*type:* `list(any())`, *default:* `nil`) - Possible values for an enumeration. This works in conjunction with `type` to represent types with a fixed set of legal values
@@ -35,6 +36,7 @@ defmodule GoogleApi.Connectors.V1.Model.JsonSchema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalDetails => map() | nil,
           :default => any() | nil,
           :description => String.t() | nil,
           :enum => list(any()) | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.Connectors.V1.Model.JsonSchema do
           :type => list(String.t()) | nil
         }
 
+  field(:additionalDetails, type: :map)
   field(:default)
   field(:description)
   field(:enum, type: :list)
