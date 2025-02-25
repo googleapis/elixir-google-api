@@ -21,19 +21,22 @@ defmodule GoogleApi.AdSense.V2.Model.PolicyTopic do
 
   ## Attributes
 
-  *   `mustFix` (*type:* `boolean()`, *default:* `nil`) - Required. Indicates if this is a policy violation or not. When the value is true, issues that are instances of this topic must be addressed to remain in compliance with the partner's agreements with Google. A false value indicates that it's not mandatory to fix the issues but advertising demand might be restricted.
+  *   `mustFix` (*type:* `boolean()`, *default:* `nil`) - Required. Deprecated. Policy topics no longer have a "must-fix" classification.
   *   `topic` (*type:* `String.t`, *default:* `nil`) - Required. The policy topic. For example, "sexual-content" or "ads-obscuring-content"."
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of policy topic. For example, "POLICY" represents all the policy topics that are related to the Google Publisher Policy (GPP). See https://support.google.com/adsense/answer/15689616.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :mustFix => boolean() | nil,
-          :topic => String.t() | nil
+          :topic => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:mustFix)
   field(:topic)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AdSense.V2.Model.PolicyTopic do
