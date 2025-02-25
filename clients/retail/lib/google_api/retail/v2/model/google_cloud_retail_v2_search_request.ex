@@ -30,6 +30,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   *   `facetSpecs` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpec.t)`, *default:* `nil`) - Facet specifications for faceted search. If empty, no facets are returned. A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - The filter syntax consists of an expression language for constructing a predicate from one or more fields of the products being filtered. Filter expression is case-sensitive. For more information, see [Filter](https://cloud.google.com/retail/docs/filter-and-order#filter). If this field is unrecognizable, an INVALID_ARGUMENT is returned.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters and cannot be empty. Values can be empty and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. For more information, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) in the Resource Manager documentation.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The BCP-47 language code, such as "en-US" or "sr-Latn" [list](https://www.unicode.org/cldr/charts/46/summary/root.html). For more information, see [Standardized codes](https://google.aip.dev/143). This field helps to better interpret the query. If a value isn't specified, the query language code is automatically detected, which may not be accurate.
   *   `offset` (*type:* `integer()`, *default:* `nil`) - A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Products deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an INVALID_ARGUMENT is returned.
   *   `orderBy` (*type:* `String.t`, *default:* `nil`) - The order in which products are returned. Products can be ordered by a field in an Product object. Leave it unset if ordered by relevance. OrderBy expression is case-sensitive. For more information, see [Order](https://cloud.google.com/retail/docs/filter-and-order#order). If this field is unrecognizable, an INVALID_ARGUMENT is returned.
   *   `pageCategories` (*type:* `list(String.t)`, *default:* `nil`) - The categories associated with a category page. Must be set for category navigation queries to achieve good search quality. The format should be the same as UserEvent.page_categories; To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: "pageCategories" : ["Sales > 2017 Black Friday Deals"].
@@ -38,6 +39,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   *   `personalizationSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestPersonalizationSpec.t`, *default:* `nil`) - The specification for personalization. Notice that if both ServingConfig.personalization_spec and SearchRequest.personalization_spec are set. SearchRequest.personalization_spec will override ServingConfig.personalization_spec.
   *   `query` (*type:* `String.t`, *default:* `nil`) - Raw search query. If this field is empty, the request is considered a category browsing request and returned results are based on filter and page_categories.
   *   `queryExpansionSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestQueryExpansionSpec.t`, *default:* `nil`) - The query expansion specification that specifies the conditions under which query expansion occurs. For more information, see [Query expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Optional. The Unicode country/region code (CLDR) of a location, such as "US" and "419" [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html). For more information, see [Standardized codes](https://google.aip.dev/143). If set, then results will be boosted based on the region_code provided.
   *   `searchMode` (*type:* `String.t`, *default:* `nil`) - The search mode of the search request. If not specified, a single search request triggers both product search and faceted search.
   *   `spellCorrectionSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestSpellCorrectionSpec.t`, *default:* `nil`) - The spell correction specification that specifies the mode under which spell correction will take effect.
   *   `tileNavigationSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestTileNavigationSpec.t`, *default:* `nil`) - Optional. This field specifies tile navigation related parameters.
@@ -63,6 +65,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
             list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpec.t()) | nil,
           :filter => String.t() | nil,
           :labels => map() | nil,
+          :languageCode => String.t() | nil,
           :offset => integer() | nil,
           :orderBy => String.t() | nil,
           :pageCategories => list(String.t()) | nil,
@@ -74,6 +77,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
           :query => String.t() | nil,
           :queryExpansionSpec =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestQueryExpansionSpec.t() | nil,
+          :regionCode => String.t() | nil,
           :searchMode => String.t() | nil,
           :spellCorrectionSpec =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestSpellCorrectionSpec.t()
@@ -106,6 +110,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
 
   field(:filter)
   field(:labels, type: :map)
+  field(:languageCode)
   field(:offset)
   field(:orderBy)
   field(:pageCategories, type: :list)
@@ -122,6 +127,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestQueryExpansionSpec
   )
 
+  field(:regionCode)
   field(:searchMode)
 
   field(:spellCorrectionSpec,
