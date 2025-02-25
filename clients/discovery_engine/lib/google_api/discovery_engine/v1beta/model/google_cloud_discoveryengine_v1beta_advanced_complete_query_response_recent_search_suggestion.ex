@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `recentSearchTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when this recent rearch happened.
+  *   `score` (*type:* `float()`, *default:* `nil`) - The score of each suggestion. The score is in the range of [0, 1].
   *   `suggestion` (*type:* `String.t`, *default:* `nil`) - The suggestion for the query.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   @type t :: %__MODULE__{
           :recentSearchTime => DateTime.t() | nil,
+          :score => float() | nil,
           :suggestion => String.t() | nil
         }
 
   field(:recentSearchTime, as: DateTime)
+  field(:score)
   field(:suggestion)
 end
 

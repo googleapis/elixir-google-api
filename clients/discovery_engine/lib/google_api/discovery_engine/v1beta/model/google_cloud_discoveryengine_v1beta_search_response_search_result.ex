@@ -24,7 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `chunk` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaChunk.t`, *default:* `nil`) - The chunk data in the search response if the SearchRequest.ContentSearchSpec.search_result_mode is set to CHUNKS.
   *   `document` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocument.t`, *default:* `nil`) - The document data snippet in the search response. Only fields that are marked as `retrievable` are populated.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Document.id of the searched Document.
-  *   `modelScores` (*type:* `%{optional(String.t) => GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDoubleList.t}`, *default:* `nil`) - Google provided available scores.
+  *   `modelScores` (*type:* `%{optional(String.t) => GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDoubleList.t}`, *default:* `nil`) - Output only. Google provided available scores.
   """
 
   use GoogleApi.Gax.ModelBase

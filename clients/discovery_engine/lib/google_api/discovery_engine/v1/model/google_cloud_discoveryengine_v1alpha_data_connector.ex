@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
 
   *   `actionConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaActionConfig.t`, *default:* `nil`) - Optional. Action configurations to make the connector support actions.
   *   `autoRunDisabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the connector is disabled for auto run. It can be used to pause periodical and real time sync.
+  *   `bapConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaBAPConfig.t`, *default:* `nil`) - Optional. The configuration for establishing a BAP connection.
   *   `blockingReasons` (*type:* `list(String.t)`, *default:* `nil`) - Output only. User actions that must be completed before the connector can start syncing data.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the DataConnector was created at.
   *   `dataSource` (*type:* `String.t`, *default:* `nil`) - Required. The name of the data source. Supported values: `salesforce`, `jira`, `confluence`, `bigquery`.
@@ -53,6 +54,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaActionConfig.t()
             | nil,
           :autoRunDisabled => boolean() | nil,
+          :bapConfig =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaBAPConfig.t()
+            | nil,
           :blockingReasons => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :dataSource => String.t() | nil,
@@ -91,6 +95,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   )
 
   field(:autoRunDisabled)
+
+  field(:bapConfig,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaBAPConfig
+  )
+
   field(:blockingReasons, type: :list)
   field(:createTime, as: DateTime)
   field(:dataSource)

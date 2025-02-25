@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaEn
   ## Attributes
 
   *   `agentCreationConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaEngineChatEngineConfigAgentCreationConfig.t`, *default:* `nil`) - The configurationt generate the Dialogflow agent that is associated to this Engine. Note that these configurations are one-time consumed by and passed to Dialogflow service. It means they cannot be retrieved using EngineService.GetEngine or EngineService.ListEngines API after engine creation.
+  *   `allowCrossRegion` (*type:* `boolean()`, *default:* `nil`) - Optional. If the flag set to true, we allow the agent and engine are in different locations, otherwise the agent and engine are required to be in the same location. The flag is set to false by default. Note that the `allow_cross_region` are one-time consumed by and passed to EngineService.CreateEngine. It means they cannot be retrieved using EngineService.GetEngine or EngineService.ListEngines API after engine creation.
   *   `dialogflowAgentToLink` (*type:* `String.t`, *default:* `nil`) - The resource name of an exist Dialogflow agent to link to this Chat Engine. Customers can either provide `agent_creation_config` to create agent or provide an agent name that links the agent with the Chat engine. Format: `projects//locations//agents/`. Note that the `dialogflow_agent_to_link` are one-time consumed by and passed to Dialogflow service. It means they cannot be retrieved using EngineService.GetEngine or EngineService.ListEngines API after engine creation. Use ChatEngineMetadata.dialogflow_agent for actual agent association after Engine is created.
   """
 
@@ -31,6 +32,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaEn
           :agentCreationConfig =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaEngineChatEngineConfigAgentCreationConfig.t()
             | nil,
+          :allowCrossRegion => boolean() | nil,
           :dialogflowAgentToLink => String.t() | nil
         }
 
@@ -39,6 +41,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaEn
       GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaEngineChatEngineConfigAgentCreationConfig
   )
 
+  field(:allowCrossRegion)
   field(:dialogflowAgentToLink)
 end
 
