@@ -38,6 +38,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
   *   `params` (*type:* `map()`, *default:* `nil`) - Additional search parameters. For public website search only, supported values are: * `user_country_code`: string. Default empty. If set to non-empty, results are restricted or boosted based on the location provided. For example, `user_country_code: "au"` For available codes see [Country Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes) * `search_type`: double. Default empty. Enables non-webpage searching depending on the value. The only valid non-default value is 1, which enables image searching. For example, `search_type: 1`
   *   `query` (*type:* `String.t`, *default:* `nil`) - Raw search query.
   *   `queryExpansionSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchRequestQueryExpansionSpec.t`, *default:* `nil`) - The query expansion specification that specifies the conditions under which query expansion occurs.
+  *   `relevanceScoreSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchRequestRelevanceScoreSpec.t`, *default:* `nil`) - Optional. The specification for returning the relevance score.
   *   `safeSearch` (*type:* `boolean()`, *default:* `nil`) - Whether to turn on safe search. This is only supported for website search.
   *   `searchAsYouTypeSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchRequestSearchAsYouTypeSpec.t`, *default:* `nil`) - Search as you type configuration. Only supported for the IndustryVertical.MEDIA vertical.
   *   `session` (*type:* `String.t`, *default:* `nil`) - The session resource name. Optional. Session allows users to do multi-turn /search API calls or coordination between /search API calls and /answer API calls. Example #1 (multi-turn /search API calls): 1. Call /search API with the auto-session mode (see below). 2. Call /search API with the session ID generated in the first call. Here, the previous search query gets considered in query standing. I.e., if the first query is "How did Alphabet do in 2022?" and the current query is "How about 2023?", the current query will be interpreted as "How did Alphabet do in 2023?". Example #2 (coordination between /search API calls and /answer API calls): 1. Call /search API with the auto-session mode (see below). 2. Call /answer API with the session ID generated in the first call. Here, the answer generation happens in the context of the search results from the first search call. Auto-session mode: when `projects/.../sessions/-` is used, a new session gets automatically created. Otherwise, users can use the create-session API to create a session manually. Multi-turn Search feature is currently at private GA stage. Please use v1alpha or v1beta version instead before we launch this feature to public GA. Or ask for allowlisting through Google Support team.
@@ -83,6 +84,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
           :query => String.t() | nil,
           :queryExpansionSpec =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchRequestQueryExpansionSpec.t()
+            | nil,
+          :relevanceScoreSpec =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchRequestRelevanceScoreSpec.t()
             | nil,
           :safeSearch => boolean() | nil,
           :searchAsYouTypeSpec =>
@@ -141,6 +145,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
   field(:queryExpansionSpec,
     as:
       GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchRequestQueryExpansionSpec
+  )
+
+  field(:relevanceScoreSpec,
+    as:
+      GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchRequestRelevanceScoreSpec
   )
 
   field(:safeSearch)

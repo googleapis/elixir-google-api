@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `removeAllSearchHistorySuggestions` (*type:* `boolean()`, *default:* `nil`) - Remove all search history suggestions for the user.
-  *   `removeTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Time at which the suggestion was removed. If not set, the current time will be used.
+  *   `removeTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Time at which the suggestion was removed. If not set, the current time will be used.
   *   `searchHistorySuggestion` (*type:* `String.t`, *default:* `nil`) - The search history suggestion to be removed.
   *   `userInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaUserInfo.t`, *default:* `nil`) - Optional. Information about the end user. This should be the same identifier information as UserEvent.user_info and SearchRequest.user_info.
   *   `userPseudoId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for tracking visitors. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor logs in or out of the website. This field should NOT have a fixed value such as `unknown_visitor`. This should be the same identifier as UserEvent.user_pseudo_id and SearchRequest.user_pseudo_id. The field must be a UTF-8 encoded string with a length limit of 128.

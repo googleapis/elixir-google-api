@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `completableFieldPaths` (*type:* `list(String.t)`, *default:* `nil`) - The unique document field paths that serve as the source of this suggestion if it was generated from completable fields. This field is only populated for the document-completable model.
   *   `dataStore` (*type:* `list(String.t)`, *default:* `nil`) - The name of the dataStore that this suggestion belongs to.
+  *   `score` (*type:* `float()`, *default:* `nil`) - The score of each suggestion. The score is in the range of [0, 1].
   *   `suggestion` (*type:* `String.t`, *default:* `nil`) - The suggestion for the query.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   @type t :: %__MODULE__{
           :completableFieldPaths => list(String.t()) | nil,
           :dataStore => list(String.t()) | nil,
+          :score => float() | nil,
           :suggestion => String.t() | nil
         }
 
   field(:completableFieldPaths, type: :list)
   field(:dataStore, type: :list)
+  field(:score)
   field(:suggestion)
 end
 
