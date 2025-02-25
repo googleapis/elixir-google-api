@@ -37,7 +37,7 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
   *   `marginTop` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The top page margin. Updating the top page margin on the document style clears the top page margin on all section styles.
   *   `pageNumberStart` (*type:* `integer()`, *default:* `nil`) - The page number from which to start counting the number of pages.
   *   `pageSize` (*type:* `GoogleApi.Docs.V1.Model.Size.t`, *default:* `nil`) - The size of a page in the document.
-  *   `useCustomHeaderFooterMargins` (*type:* `boolean()`, *default:* `nil`) - Indicates whether DocumentStyle margin_header, SectionStyle margin_header and DocumentStyle margin_footer, SectionStyle margin_footer are respected. When false, the default values in the Docs editor for header and footer margin are used. This property is read-only.
+  *   `useCustomHeaderFooterMargins` (*type:* `boolean()`, *default:* `nil`) - Indicates whether DocumentStyle margin_header, SectionStyle margin_header and DocumentStyle margin_footer, SectionStyle margin_footer are respected. When false, the default values in the Docs editor for header and footer margin is used. This property is read-only.
   *   `useEvenPageHeaderFooter` (*type:* `boolean()`, *default:* `nil`) - Indicates whether to use the even page header / footer IDs for the even pages.
   *   `useFirstPageHeaderFooter` (*type:* `boolean()`, *default:* `nil`) - Indicates whether to use the first page header / footer IDs for the first page.
   """
