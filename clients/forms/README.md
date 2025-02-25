@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/forms/api](https://developers.google.com/forms/api).
+Product documentation is available at [https://developers.google.com/workspace/forms/api](https://developers.google.com/workspace/forms/api).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_forms](https://hexdocs.pm/google_api_forms).
