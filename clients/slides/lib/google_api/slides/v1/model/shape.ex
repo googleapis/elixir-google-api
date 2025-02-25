@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Slides.V1.Model.Shape do
   @moduledoc """
-  A PageElement kind representing a generic shape that does not have a more specific classification.
+  A PageElement kind representing a generic shape that doesn't have a more specific classification. For more information, see [Size and position page elements](https://developers.google.com/slides/api/guides/transform).
 
   ## Attributes
 
