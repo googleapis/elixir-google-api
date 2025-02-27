@@ -23,7 +23,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Hub do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the hub was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. An optional description of the hub.
-  *   `exportPsc` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether Private Service Connect transitivity is enabled for the hub. If true, Private Service Connect endpoints in VPC spokes attached to the hub are made accessible to other VPC spokes attached to the hub. The default value is false.
+  *   `exportPsc` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether Private Service Connect connection propagation is enabled for the hub. If true, Private Service Connect endpoints in VPC spokes attached to the hub are made accessible to other VPC spokes attached to the hub. The default value is false.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional labels in key-value pair format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the hub. Hub names must be unique. They use the following form: `projects/{project_number}/locations/global/hubs/{hub_id}`
   *   `policyMode` (*type:* `String.t`, *default:* `nil`) - Optional. The policy mode of this hub. This field can be either PRESET or CUSTOM. If unspecified, the policy_mode defaults to PRESET.
