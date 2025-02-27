@@ -23,8 +23,8 @@ defmodule GoogleApi.Workstations.V1.Model.GcePersistentDisk do
 
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of the disk to use. Defaults to `"pd-standard"`.
   *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the disk is read only. If true, the disk may be shared by multiple VMs and source_snapshot must be set.
-  *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the disk image to use as the source for the disk. Must be empty if source_snapshot is set. Updating source_image will update content in the ephemeral directory after the workstation is restarted. This field is mutable.
-  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the snapshot to use as the source for the disk. Must be empty if source_image is set. Must be empty if read_only is false. Updating source_snapshot will update content in the ephemeral directory after the workstation is restarted. This field is mutable.
+  *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the disk image to use as the source for the disk. Must be empty if source_snapshot is set. Updating source_image will update content in the ephemeral directory after the workstation is restarted. Only file systems supported by Container-Optimized OS (COS) are explicitly supported. For a list of supported file systems, please refer to the [COS documentation](https://cloud.google.com/container-optimized-os/docs/concepts/supported-filesystems). This field is mutable.
+  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the snapshot to use as the source for the disk. Must be empty if source_image is set. Must be empty if read_only is false. Updating source_snapshot will update content in the ephemeral directory after the workstation is restarted. Only file systems supported by Container-Optimized OS (COS) are explicitly supported. For a list of supported file systems, please refer to the [COS documentation](https://cloud.google.com/container-optimized-os/docs/concepts/supported-filesystems). This field is mutable.
   """
 
   use GoogleApi.Gax.ModelBase
