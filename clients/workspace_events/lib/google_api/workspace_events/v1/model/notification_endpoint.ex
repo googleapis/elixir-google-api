@@ -21,7 +21,7 @@ defmodule GoogleApi.WorkspaceEvents.V1.Model.NotificationEndpoint do
 
   ## Attributes
 
-  *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Immutable. The Cloud Pub/Sub topic that receives events for the subscription. Format: `projects/{project}/topics/{topic}` You must create the topic in the same Google Cloud project where you create this subscription. When the topic receives events, the events are encoded as Cloud Pub/Sub messages. For details, see the [Google Cloud Pub/Sub Protocol Binding for CloudEvents](https://github.com/googleapis/google-cloudevents/blob/main/docs/spec/pubsub.md).
+  *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Immutable. The Pub/Sub topic that receives events for the subscription. Format: `projects/{project}/topics/{topic}` You must create the topic in the same Google Cloud project where you create this subscription. When the topic receives events, the events are encoded as Pub/Sub messages. For details, see the [Google Cloud Pub/Sub Protocol Binding for CloudEvents](https://github.com/googleapis/google-cloudevents/blob/main/docs/spec/pubsub.md).
   """
 
   use GoogleApi.Gax.ModelBase
