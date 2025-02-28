@@ -158,7 +158,7 @@ defmodule GoogleApi.Storage.V1.Api.Folders do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:recursive` (*type:* `boolean()`) - If true, any parent folder which doesn’t exist will be created automatically.
+      *   `:recursive` (*type:* `boolean()`) - If true, any parent folder which doesn't exist will be created automatically.
       *   `:body` (*type:* `GoogleApi.Storage.V1.Model.Folder.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
