@@ -39,6 +39,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
   *   `namedPorts` (*type:* `list(GoogleApi.Compute.V1.Model.NamedPort.t)`, *default:* `nil`) - [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the managed instance group resides (for regional resources).
+  *   `resourcePolicies` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerResourcePolicies.t`, *default:* `nil`) - Resource policies for this managed instance group.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this managed instance group. The server defines this URL.
@@ -80,6 +81,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :name => String.t() | nil,
           :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()) | nil,
           :region => String.t() | nil,
+          :resourcePolicies =>
+            GoogleApi.Compute.V1.Model.InstanceGroupManagerResourcePolicies.t() | nil,
           :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
@@ -127,6 +130,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   field(:name)
   field(:namedPorts, as: GoogleApi.Compute.V1.Model.NamedPort, type: :list)
   field(:region)
+  field(:resourcePolicies, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerResourcePolicies)
   field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:selfLink)

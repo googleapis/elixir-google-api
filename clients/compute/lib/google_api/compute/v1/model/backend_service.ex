@@ -61,6 +61,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `localityLbPolicy` (*type:* `String.t`, *default:* `nil`) - The load balancing algorithm used within the scope of the locality. The possible values are: - ROUND_ROBIN: This is a simple policy in which each healthy backend is selected in round robin order. This is the default. - LEAST_REQUEST: An O(1) algorithm which selects two random healthy hosts and picks the host which has fewer active requests. - RING_HASH: The ring/modulo hash load balancer implements consistent hashing to backends. The algorithm has the property that the addition/removal of a host from a set of N hosts only affects 1/N of the requests. - RANDOM: The load balancer selects a random healthy host. - ORIGINAL_DESTINATION: Backend host is selected based on the client connection metadata, i.e., connections are opened to the same address as the destination address of the incoming connection before the connection was redirected to the load balancer. - MAGLEV: used as a drop in replacement for the ring hash load balancer. Maglev is not as stable as ring hash but has faster table lookup build times and host selection times. For more information about Maglev, see https://ai.google/research/pubs/pub44824 This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED, INTERNAL_MANAGED, or EXTERNAL_MANAGED. If sessionAffinity is not configured—that is, if session affinity remains at the default value of NONE—then the default value for localityLbPolicy is ROUND_ROBIN. If session affinity is set to a value other than NONE, then the default value for localityLbPolicy is MAGLEV. Only ROUND_ROBIN and RING_HASH are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
   *   `enableCDN` (*type:* `boolean()`, *default:* `nil`) - If true, enables Cloud CDN for the backend service of a global external Application Load Balancer.
   *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this backend service.
+  *   `customMetrics` (*type:* `list(GoogleApi.Compute.V1.Model.BackendServiceCustomMetric.t)`, *default:* `nil`) - List of custom metrics that are used for the WEIGHTED_ROUND_ROBIN locality_lb_policy.
   *   `sessionAffinity` (*type:* `String.t`, *default:* `nil`) - Type of session affinity to use. The default is NONE. Only NONE and HEADER_FIELD are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. For more details, see: [Session Affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity).
   *   `serviceBindings` (*type:* `list(String.t)`, *default:* `nil`) - URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
@@ -115,6 +116,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :localityLbPolicy => String.t() | nil,
           :enableCDN => boolean() | nil,
           :securityPolicy => String.t() | nil,
+          :customMetrics => list(GoogleApi.Compute.V1.Model.BackendServiceCustomMetric.t()) | nil,
           :sessionAffinity => String.t() | nil,
           :serviceBindings => list(String.t()) | nil,
           :id => String.t() | nil,
@@ -170,6 +172,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:localityLbPolicy)
   field(:enableCDN)
   field(:securityPolicy)
+  field(:customMetrics, as: GoogleApi.Compute.V1.Model.BackendServiceCustomMetric, type: :list)
   field(:sessionAffinity)
   field(:serviceBindings, type: :list)
   field(:id)
