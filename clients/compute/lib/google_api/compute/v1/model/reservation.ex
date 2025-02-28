@@ -28,6 +28,7 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#reservation`) - [Output Only] Type of the resource. Always compute#reservations for reservations.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `reservationSharingPolicy` (*type:* `GoogleApi.Compute.V1.Model.AllocationReservationSharingPolicy.t`, *default:* `nil`) - Specify the reservation sharing policy. If unspecified, the reservation will not be shared with Google Cloud managed services.
   *   `resourcePolicies` (*type:* `map()`, *default:* `nil`) - Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
   *   `resourceStatus` (*type:* `GoogleApi.Compute.V1.Model.AllocationResourceStatus.t`, *default:* `nil`) - [Output Only] Status information for Reservation resource.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
@@ -50,6 +51,8 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
           :id => String.t() | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
+          :reservationSharingPolicy =>
+            GoogleApi.Compute.V1.Model.AllocationReservationSharingPolicy.t() | nil,
           :resourcePolicies => map() | nil,
           :resourceStatus => GoogleApi.Compute.V1.Model.AllocationResourceStatus.t() | nil,
           :satisfiesPzs => boolean() | nil,
@@ -69,6 +72,11 @@ defmodule GoogleApi.Compute.V1.Model.Reservation do
   field(:id)
   field(:kind)
   field(:name)
+
+  field(:reservationSharingPolicy,
+    as: GoogleApi.Compute.V1.Model.AllocationReservationSharingPolicy
+  )
+
   field(:resourcePolicies, type: :map)
   field(:resourceStatus, as: GoogleApi.Compute.V1.Model.AllocationResourceStatus)
   field(:satisfiesPzs)
