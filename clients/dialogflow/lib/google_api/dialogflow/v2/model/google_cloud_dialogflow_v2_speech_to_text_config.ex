@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfi
   *   `phraseSets` (*type:* `list(String.t)`, *default:* `nil`) - List of names of Cloud Speech phrase sets that are used for transcription.
   *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - Sample rate (in Hertz) of the audio content sent in the query. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics) for more details.
   *   `speechModelVariant` (*type:* `String.t`, *default:* `nil`) - The speech model used in speech to text. `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as `USE_ENHANCED`. It can be overridden in AnalyzeContentRequest and StreamingAnalyzeContentRequest request. If enhanced model variant is specified and an enhanced version of the specified model for the language does not exist, then it would emit an error.
-  *   `useTimeoutBasedEndpointing` (*type:* `boolean()`, *default:* `nil`) - Use timeout based endpointing, interpreting endpointer sensitivy as seconds of timeout value.
+  *   `useTimeoutBasedEndpointing` (*type:* `boolean()`, *default:* `nil`) - Use timeout based endpointing, interpreting endpointer sensitivity as seconds of timeout value.
   """
 
   use GoogleApi.Gax.ModelBase

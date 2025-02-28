@@ -29,7 +29,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1Message do
   *   `participant` (*type:* `String.t`, *default:* `nil`) - Output only. The participant that sends this message.
   *   `participantRole` (*type:* `String.t`, *default:* `nil`) - Output only. The role of the participant.
   *   `responseMessages` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1ResponseMessage.t)`, *default:* `nil`) - Optional. Automated agent responses.
-  *   `sendTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when the message was sent.
+  *   `sendTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when the message was sent. For voice messages, this is the time when an utterance started.
   *   `sentimentAnalysis` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SentimentAnalysisResult.t`, *default:* `nil`) - Output only. The sentiment analysis result for the message.
   """
 
