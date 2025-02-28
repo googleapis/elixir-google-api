@@ -279,7 +279,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Backups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SQLAdmin.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name of the backup. Format: projects/{project}/backups/{backup}
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the backup. Format: projects/{project}/backups/{backup}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
