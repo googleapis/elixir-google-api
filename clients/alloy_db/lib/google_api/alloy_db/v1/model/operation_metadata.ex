@@ -27,6 +27,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.OperationMetadata do
   *   `requestedCancellation` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have google.longrunning.Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable status of the operation, if any.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined resource path for the target of the operation.
+  *   `upgradeClusterStatus` (*type:* `GoogleApi.AlloyDB.V1.Model.UpgradeClusterStatus.t`, *default:* `nil`) - Output only. UpgradeClusterStatus related metadata.
   *   `verb` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the verb executed by the operation.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.OperationMetadata do
           :requestedCancellation => boolean() | nil,
           :statusMessage => String.t() | nil,
           :target => String.t() | nil,
+          :upgradeClusterStatus => GoogleApi.AlloyDB.V1.Model.UpgradeClusterStatus.t() | nil,
           :verb => String.t() | nil
         }
 
@@ -48,6 +50,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.OperationMetadata do
   field(:requestedCancellation)
   field(:statusMessage)
   field(:target)
+  field(:upgradeClusterStatus, as: GoogleApi.AlloyDB.V1.Model.UpgradeClusterStatus)
   field(:verb)
 end
 

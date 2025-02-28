@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlloyDB.V1.Model.Node do
   @moduledoc """
-  Details of a single node in the instance. Nodes in an AlloyDB instance are ephemereal, they can change during update, failover, autohealing and resize operations.
+  Details of a single node in the instance. Nodes in an AlloyDB instance are ephemeral, they can change during update, failover, autohealing and resize operations.
 
   ## Attributes
 
