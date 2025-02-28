@@ -27,8 +27,10 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   *   `cmekKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key name used for the csql instance.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - The Cloud SQL default instance level collation.
   *   `dataCacheConfig` (*type:* `GoogleApi.DataMigration.V1.Model.DataCacheConfig.t`, *default:* `nil`) - Optional. Data cache is an optional feature available for Cloud SQL for MySQL Enterprise Plus edition only. For more information on data cache, see [Data cache overview](https://cloud.google.com/sql/help/mysql-data-cache) in Cloud SQL documentation.
+  *   `dataDiskProvisionedIops` (*type:* `String.t`, *default:* `nil`) - Optional. Provisioned number of I/O operations per second for the data disk. This field is only used for hyperdisk-balanced disk types.
+  *   `dataDiskProvisionedThroughput` (*type:* `String.t`, *default:* `nil`) - Optional. Provisioned throughput measured in MiB per second for the data disk. This field is only used for hyperdisk-balanced disk types.
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The storage capacity available to the database, in GB. The minimum (and default) size is 10GB.
-  *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of storage: `PD_SSD` (default) or `PD_HDD`.
+  *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of storage: `PD_SSD` (default) or `PD_HDD` or `HYPERDISK_BALANCED`.
   *   `databaseFlags` (*type:* `map()`, *default:* `nil`) - The database flags passed to the Cloud SQL instance at startup. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
   *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version. Deprecated. Use database_version_name instead.
   *   `databaseVersionName` (*type:* `String.t`, *default:* `nil`) - Optional. The database engine type and version name.
@@ -53,6 +55,8 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
           :cmekKeyName => String.t() | nil,
           :collation => String.t() | nil,
           :dataCacheConfig => GoogleApi.DataMigration.V1.Model.DataCacheConfig.t() | nil,
+          :dataDiskProvisionedIops => String.t() | nil,
+          :dataDiskProvisionedThroughput => String.t() | nil,
           :dataDiskSizeGb => String.t() | nil,
           :dataDiskType => String.t() | nil,
           :databaseFlags => map() | nil,
@@ -76,6 +80,8 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   field(:cmekKeyName)
   field(:collation)
   field(:dataCacheConfig, as: GoogleApi.DataMigration.V1.Model.DataCacheConfig)
+  field(:dataDiskProvisionedIops)
+  field(:dataDiskProvisionedThroughput)
   field(:dataDiskSizeGb)
   field(:dataDiskType)
   field(:databaseFlags, type: :map)
