@@ -23,6 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ConvertRegionPricesResponse do
 
   *   `convertedOtherRegionsPrice` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ConvertedOtherRegionsPrice.t`, *default:* `nil`) - Converted other regions prices in USD and EUR, to use for countries where Play doesn't support a country's local currency.
   *   `convertedRegionPrices` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.ConvertedRegionPrice.t}`, *default:* `nil`) - Map from region code to converted region price.
+  *   `regionVersion` (*type:* `GoogleApi.AndroidPublisher.V3.Model.RegionsVersion.t`, *default:* `nil`) - The region version at which the prices were generated.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,7 +35,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ConvertRegionPricesResponse do
             %{
               optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.ConvertedRegionPrice.t()
             }
-            | nil
+            | nil,
+          :regionVersion => GoogleApi.AndroidPublisher.V3.Model.RegionsVersion.t() | nil
         }
 
   field(:convertedOtherRegionsPrice,
@@ -45,6 +47,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ConvertRegionPricesResponse do
     as: GoogleApi.AndroidPublisher.V3.Model.ConvertedRegionPrice,
     type: :map
   )
+
+  field(:regionVersion, as: GoogleApi.AndroidPublisher.V3.Model.RegionsVersion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.ConvertRegionPricesResponse do
