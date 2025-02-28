@@ -21,8 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeRe
 
   ## Attributes
 
-  *   `boostSpecs` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeRequestSearchConfigBoostSpecs.t)`, *default:* `nil`) - Optional. Boost specifications for data stores.
-  *   `filterSpecs` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeRequestSearchConfigFilterSpecs.t)`, *default:* `nil`) - Optional. Filter specification for data store queries.
+  *   `boostSpecs` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeRequestSearchConfigBoostSpecs.t)`, *default:* `nil`) - Optional. Boost specifications for data stores. Maps from datastore name to their boost configuration. Do not specify more than one BoostSpecs for each datastore name. If multiple BoostSpecs are provided for the same datastore name, the behavior is undefined.
+  *   `filterSpecs` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeRequestSearchConfigFilterSpecs.t)`, *default:* `nil`) - Optional. Filter specification for data store queries. TMaps from datastore name to the filter expression for that datastore. Do not specify more than one FilterSpecs for each datastore name. If multiple FilterSpecs are provided for the same datastore name, the behavior is undefined.
   """
 
   use GoogleApi.Gax.ModelBase

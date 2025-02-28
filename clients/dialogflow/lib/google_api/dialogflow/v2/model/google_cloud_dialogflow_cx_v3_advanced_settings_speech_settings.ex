@@ -24,7 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3AdvancedSetting
   *   `endpointerSensitivity` (*type:* `integer()`, *default:* `nil`) - Sensitivity of the speech model that detects the end of speech. Scale from 0 to 100.
   *   `models` (*type:* `map()`, *default:* `nil`) - Mapping from language to Speech-to-Text model. The mapped Speech-to-Text model will be selected for requests from its corresponding language. For more information, see [Speech models](https://cloud.google.com/dialogflow/cx/docs/concept/speech-models).
   *   `noSpeechTimeout` (*type:* `String.t`, *default:* `nil`) - Timeout before detecting no speech.
-  *   `useTimeoutBasedEndpointing` (*type:* `boolean()`, *default:* `nil`) - Use timeout based endpointing, interpreting endpointer sensitivy as seconds of timeout value.
+  *   `useTimeoutBasedEndpointing` (*type:* `boolean()`, *default:* `nil`) - Use timeout based endpointing, interpreting endpointer sensitivity as seconds of timeout value.
   """
 
   use GoogleApi.Gax.ModelBase

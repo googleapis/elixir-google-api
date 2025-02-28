@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BoostSpec do
 
   ## Attributes
 
-  *   `conditionBoostSpecs` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BoostSpecConditionBoostSpec.t)`, *default:* `nil`) - Optional. Condition boost specifications. If a document matches multiple conditions in the specifictions, boost scores from these specifications are all applied and combined in a non-linear way. Maximum number of specifications is 20.
+  *   `conditionBoostSpecs` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BoostSpecConditionBoostSpec.t)`, *default:* `nil`) - Optional. Condition boost specifications. If a document matches multiple conditions in the specifications, boost scores from these specifications are all applied and combined in a non-linear way. Maximum number of specifications is 20.
   """
 
   use GoogleApi.Gax.ModelBase
