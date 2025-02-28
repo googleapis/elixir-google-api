@@ -21,6 +21,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidConfig do
 
   ## Attributes
 
+  *   `bandwidthConstrainedOk` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, messages will be allowed to be delivered to the app while the device is in bandwidth constrained mode.
   *   `collapseKey` (*type:* `String.t`, *default:* `nil`) - An identifier of a group of messages that can be collapsed, so that only the last message gets sent when delivery can be resumed. A maximum of 4 different collapse keys is allowed at any given time.
   *   `data` (*type:* `map()`, *default:* `nil`) - Arbitrary key/value payload. If present, it will override google.firebase.fcm.v1.Message.data.
   *   `directBootOk` (*type:* `boolean()`, *default:* `nil`) - If set to true, messages will be allowed to be delivered to the app while the device is in direct boot mode. See [Support Direct Boot mode](https://developer.android.com/training/articles/direct-boot).
@@ -34,6 +35,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bandwidthConstrainedOk => boolean() | nil,
           :collapseKey => String.t() | nil,
           :data => map() | nil,
           :directBootOk => boolean() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidConfig do
           :ttl => String.t() | nil
         }
 
+  field(:bandwidthConstrainedOk)
   field(:collapseKey)
   field(:data, type: :map)
   field(:directBootOk)
