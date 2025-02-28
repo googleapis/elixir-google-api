@@ -26,6 +26,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecuteI
   *   `executionId` (*type:* `String.t`, *default:* `nil`) - The id of the execution corresponding to this run of integration.
   *   `outputParameters` (*type:* `map()`, *default:* `nil`) - OUTPUT parameters in format of Map. Where Key is the name of the parameter. Note: Name of the system generated parameters are wrapped by backtick(`) to distinguish them from the user defined parameters.
   *   `parameterEntries` (*type:* `list(GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoParameterEntry.t)`, *default:* `nil`) - Parameters are a part of Event and can be used to communicate between different tasks that are part of the same integration execution.
+  *   `parameters` (*type:* `%{optional(String.t) => GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t}`, *default:* `nil`) - Optional. OUTPUT parameters from integration execution.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,6 +42,12 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecuteI
             list(
               GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoParameterEntry.t()
             )
+            | nil,
+          :parameters =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t()
+            }
             | nil
         }
 
@@ -55,6 +62,11 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecuteI
   field(:parameterEntries,
     as: GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoParameterEntry,
     type: :list
+  )
+
+  field(:parameters,
+    as: GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType,
+    type: :map
   )
 end
 
