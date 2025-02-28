@@ -24,7 +24,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpec do
   *   `excludeFields` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpecSelectedFields.t`, *default:* `nil`) - Optional. The fields to exclude from data profile.If specified, the fields will be excluded from data profile, regardless of include_fields value.
   *   `includeFields` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpecSelectedFields.t`, *default:* `nil`) - Optional. The fields to include in data profile.If not specified, all fields at the time of profile scan job execution are included, except for ones listed in exclude_fields.
   *   `postScanActions` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpecPostScanActions.t`, *default:* `nil`) - Optional. Actions to take upon job completion..
-  *   `rowFilter` (*type:* `String.t`, *default:* `nil`) - Optional. A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in BigQuery standard SQL syntax. Example: col1 >= 0 AND col2 < 10
+  *   `rowFilter` (*type:* `String.t`, *default:* `nil`) - Optional. A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in GoogleSQL syntax (https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#where_clause).Example: col1 >= 0 AND col2 < 10
   *   `samplingPercent` (*type:* `number()`, *default:* `nil`) - Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100.
   """
 

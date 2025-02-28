@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoverySpecBigQ
   ## Attributes
 
   *   `connection` (*type:* `String.t`, *default:* `nil`) - Optional. The BigQuery connection used to create BigLake tables. Must be in the form projects/{project_id}/locations/{location_id}/connections/{connection_id}
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. The location of the BigQuery dataset to publish BigLake external or non-BigLake external tables to. 1. If the Cloud Storage bucket is located in a multi-region bucket, then BigQuery dataset can be in the same multi-region bucket or any single region that is included in the same multi-region bucket. The datascan can be created in any single region that is included in the same multi-region bucket 2. If the Cloud Storage bucket is located in a dual-region bucket, then BigQuery dataset can be located in regions that are included in the dual-region bucket, or in a multi-region that includes the dual-region. The datascan can be created in any single region that is included in the same dual-region bucket. 3. If the Cloud Storage bucket is located in a single region, then BigQuery dataset can be in the same single region or any multi-region bucket that includes the same single region. The datascan will be created in the same single region as the bucket. 4. If the BigQuery dataset is in single region, it must be in the same single region as the datascan.For supported values, refer to https://cloud.google.com/bigquery/docs/locations#supported_locations.
   *   `tableType` (*type:* `String.t`, *default:* `nil`) - Optional. Determines whether to publish discovered tables as BigLake external tables or non-BigLake external tables.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoverySpecBigQ
 
   @type t :: %__MODULE__{
           :connection => String.t() | nil,
+          :location => String.t() | nil,
           :tableType => String.t() | nil
         }
 
   field(:connection)
+  field(:location)
   field(:tableType)
 end
 
