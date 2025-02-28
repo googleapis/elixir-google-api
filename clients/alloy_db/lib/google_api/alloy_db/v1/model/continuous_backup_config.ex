@@ -22,7 +22,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.ContinuousBackupConfig do
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether ContinuousBackup is enabled.
-  *   `encryptionConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.EncryptionConfig.t`, *default:* `nil`) - The encryption config can be specified to encrypt the backups with a customer-managed encryption key (CMEK). When this field is not specified, the backup will then use default encryption scheme to protect the user data.
+  *   `encryptionConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.EncryptionConfig.t`, *default:* `nil`) - The encryption config can be specified to encrypt the backups with a customer-managed encryption key (CMEK). When this field is not specified, the backup will use the cluster's encryption config.
   *   `recoveryWindowDays` (*type:* `integer()`, *default:* `nil`) - The number of days that are eligible to restore from using PITR. To support the entire recovery window, backups and logs are retained for one day more than the recovery window. If not set, defaults to 14 days.
   """
 

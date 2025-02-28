@@ -25,7 +25,10 @@ defmodule GoogleApi.AlloyDB.V1.Model.SupportedDatabaseFlag do
   *   `flagName` (*type:* `String.t`, *default:* `nil`) - The name of the database flag, e.g. "max_allowed_packets". The is a possibly key for the Instance.database_flags map field.
   *   `integerRestrictions` (*type:* `GoogleApi.AlloyDB.V1.Model.IntegerRestrictions.t`, *default:* `nil`) - Restriction on INTEGER type value.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the flag resource, following Google Cloud conventions, e.g.: * projects/{project}/locations/{location}/flags/{flag} This field currently has no semantic meaning.
+  *   `recommendedIntegerValue` (*type:* `String.t`, *default:* `nil`) - The recommended value for an INTEGER flag.
+  *   `recommendedStringValue` (*type:* `String.t`, *default:* `nil`) - The recommended value for a STRING flag.
   *   `requiresDbRestart` (*type:* `boolean()`, *default:* `nil`) - Whether setting or updating this flag on an Instance requires a database restart. If a flag that requires database restart is set, the backend will automatically restart the database (making sure to satisfy any availability SLO's).
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - The scope of the flag.
   *   `stringRestrictions` (*type:* `GoogleApi.AlloyDB.V1.Model.StringRestrictions.t`, *default:* `nil`) - Restriction on STRING type value.
   *   `supportedDbVersions` (*type:* `list(String.t)`, *default:* `nil`) - Major database engine versions for which this flag is supported.
   *   `valueType` (*type:* `String.t`, *default:* `nil`) - 
@@ -38,7 +41,10 @@ defmodule GoogleApi.AlloyDB.V1.Model.SupportedDatabaseFlag do
           :flagName => String.t() | nil,
           :integerRestrictions => GoogleApi.AlloyDB.V1.Model.IntegerRestrictions.t() | nil,
           :name => String.t() | nil,
+          :recommendedIntegerValue => String.t() | nil,
+          :recommendedStringValue => String.t() | nil,
           :requiresDbRestart => boolean() | nil,
+          :scope => String.t() | nil,
           :stringRestrictions => GoogleApi.AlloyDB.V1.Model.StringRestrictions.t() | nil,
           :supportedDbVersions => list(String.t()) | nil,
           :valueType => String.t() | nil
@@ -48,7 +54,10 @@ defmodule GoogleApi.AlloyDB.V1.Model.SupportedDatabaseFlag do
   field(:flagName)
   field(:integerRestrictions, as: GoogleApi.AlloyDB.V1.Model.IntegerRestrictions)
   field(:name)
+  field(:recommendedIntegerValue)
+  field(:recommendedStringValue)
   field(:requiresDbRestart)
+  field(:scope)
   field(:stringRestrictions, as: GoogleApi.AlloyDB.V1.Model.StringRestrictions)
   field(:supportedDbVersions, type: :list)
   field(:valueType)
