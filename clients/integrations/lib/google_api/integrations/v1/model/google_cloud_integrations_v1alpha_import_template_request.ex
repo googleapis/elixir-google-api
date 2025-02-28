@@ -21,8 +21,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaImportTe
 
   ## Attributes
 
-  *   `integration` (*type:* `String.t`, *default:* `nil`) - Required. Name of the integration where template needs to be imported.
-  *   `integrationRegion` (*type:* `String.t`, *default:* `nil`) - Required. The region of the Integration to be created.
+  *   `integration` (*type:* `String.t`, *default:* `nil`) - Required. Resource Name of the integration where template needs to be imported/inserted.
   *   `subIntegrations` (*type:* `%{optional(String.t) => GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaUseTemplateRequestIntegrationDetails.t}`, *default:* `nil`) - Optional. Sub Integration which would be created via templates.
   """
 
@@ -30,7 +29,6 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaImportTe
 
   @type t :: %__MODULE__{
           :integration => String.t() | nil,
-          :integrationRegion => String.t() | nil,
           :subIntegrations =>
             %{
               optional(String.t()) =>
@@ -40,7 +38,6 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaImportTe
         }
 
   field(:integration)
-  field(:integrationRegion)
 
   field(:subIntegrations,
     as:
