@@ -31,7 +31,8 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current state of this Data Fusion instance if available.
   *   `dataplexDataLineageIntegrationEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Option to enable the Dataplex Lineage Integration feature.
   *   `maintenanceEvents` (*type:* `list(GoogleApi.DataFusion.V1beta1.Model.MaintenanceEvent.t)`, *default:* `nil`) - Output only. The maintenance events for this instance.
-  *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Option to enable Stackdriver Logging.
+  *   `loggingConfig` (*type:* `GoogleApi.DataFusion.V1beta1.Model.LoggingConfig.t`, *default:* `nil`) - Optional. The logging configuration for this instance. This field is supported only in CDF versions 6.11.0 and above.
+  *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Option to enable Dataproc Stackdriver Logging.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this instance.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for an instance.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
@@ -57,6 +58,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   *   `disabledReason` (*type:* `list(String.t)`, *default:* `nil`) - Output only. If the instance state is DISABLED, the reason for disabling the instance.
   *   `networkConfig` (*type:* `GoogleApi.DataFusion.V1beta1.Model.NetworkConfig.t`, *default:* `nil`) - Network configuration options. These are required when a private Data Fusion instance is to be created.
   *   `tenantProjectId` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the tenant project.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -73,6 +75,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
           :dataplexDataLineageIntegrationEnabled => boolean() | nil,
           :maintenanceEvents =>
             list(GoogleApi.DataFusion.V1beta1.Model.MaintenanceEvent.t()) | nil,
+          :loggingConfig => GoogleApi.DataFusion.V1beta1.Model.LoggingConfig.t() | nil,
           :enableStackdriverLogging => boolean() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
@@ -98,7 +101,8 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
           :privateInstance => boolean() | nil,
           :disabledReason => list(String.t()) | nil,
           :networkConfig => GoogleApi.DataFusion.V1beta1.Model.NetworkConfig.t() | nil,
-          :tenantProjectId => String.t() | nil
+          :tenantProjectId => String.t() | nil,
+          :satisfiesPzi => boolean() | nil
         }
 
   field(:enableZoneSeparation)
@@ -111,6 +115,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   field(:stateMessage)
   field(:dataplexDataLineageIntegrationEnabled)
   field(:maintenanceEvents, as: GoogleApi.DataFusion.V1beta1.Model.MaintenanceEvent, type: :list)
+  field(:loggingConfig, as: GoogleApi.DataFusion.V1beta1.Model.LoggingConfig)
   field(:enableStackdriverLogging)
   field(:description)
   field(:displayName)
@@ -137,6 +142,7 @@ defmodule GoogleApi.DataFusion.V1beta1.Model.Instance do
   field(:disabledReason, type: :list)
   field(:networkConfig, as: GoogleApi.DataFusion.V1beta1.Model.NetworkConfig)
   field(:tenantProjectId)
+  field(:satisfiesPzi)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataFusion.V1beta1.Model.Instance do
