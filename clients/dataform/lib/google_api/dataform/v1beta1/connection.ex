@@ -24,6 +24,9 @@ defmodule GoogleApi.Dataform.V1beta1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # View and manage your data in Google BigQuery and see the email address for your Google Account
+      "https://www.googleapis.com/auth/bigquery",
+
       # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform"
     ],
