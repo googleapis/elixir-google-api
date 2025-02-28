@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggi
 
   ## Attributes
 
+  *   `connectorRunPayload` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggingConnectorRunErrorContext.t`, *default:* `nil`) - The error payload that is populated on LRO connector sync APIs.
   *   `context` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggingErrorContext.t`, *default:* `nil`) - A description of the context in which the error occurred.
   *   `importPayload` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggingImportErrorContext.t`, *default:* `nil`) - The error payload that is populated on LRO import APIs.
   *   `message` (*type:* `String.t`, *default:* `nil`) - A message describing the error.
@@ -33,6 +34,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :connectorRunPayload =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggingConnectorRunErrorContext.t()
+            | nil,
           :context =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggingErrorContext.t()
             | nil,
@@ -47,6 +51,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggi
             | nil,
           :status => GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t() | nil
         }
+
+  field(:connectorRunPayload,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggingConnectorRunErrorContext
+  )
 
   field(:context,
     as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineLoggingErrorContext
