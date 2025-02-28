@@ -2384,7 +2384,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.CancelWorkflowInvocationResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec dataform_projects_locations_repositories_workflow_invocations_cancel(
@@ -2393,7 +2393,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataform.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.Dataform.V1beta1.Model.CancelWorkflowInvocationResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -2429,7 +2429,9 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.Empty{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.CancelWorkflowInvocationResponse{}]
+    )
   end
 
   @doc """
@@ -2824,7 +2826,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.CommitWorkspaceChangesResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec dataform_projects_locations_repositories_workspaces_commit(
@@ -2833,7 +2835,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataform.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.Dataform.V1beta1.Model.CommitWorkspaceChangesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -2869,7 +2871,9 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.Empty{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.CommitWorkspaceChangesResponse{}]
+    )
   end
 
   @doc """
@@ -3776,7 +3780,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.PullGitCommitsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec dataform_projects_locations_repositories_workspaces_pull(
@@ -3785,7 +3789,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataform.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.Dataform.V1beta1.Model.PullGitCommitsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -3821,7 +3825,9 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.Empty{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.PullGitCommitsResponse{}]
+    )
   end
 
   @doc """
@@ -3848,7 +3854,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.PushGitCommitsResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec dataform_projects_locations_repositories_workspaces_push(
@@ -3857,7 +3863,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataform.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.Dataform.V1beta1.Model.PushGitCommitsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -3893,7 +3899,9 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.Empty{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.PushGitCommitsResponse{}]
+    )
   end
 
   @doc """
@@ -4072,7 +4080,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.RemoveDirectoryResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec dataform_projects_locations_repositories_workspaces_remove_directory(
@@ -4081,7 +4089,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataform.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.Dataform.V1beta1.Model.RemoveDirectoryResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -4117,7 +4125,9 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.Empty{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.RemoveDirectoryResponse{}]
+    )
   end
 
   @doc """
@@ -4144,7 +4154,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.RemoveFileResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec dataform_projects_locations_repositories_workspaces_remove_file(
@@ -4153,7 +4163,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataform.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.Dataform.V1beta1.Model.RemoveFileResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -4189,7 +4199,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.Empty{}])
+    |> Response.decode(opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.RemoveFileResponse{}])
   end
 
   @doc """
@@ -4216,7 +4226,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.Dataform.V1beta1.Model.ResetWorkspaceChangesResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec dataform_projects_locations_repositories_workspaces_reset(
@@ -4225,7 +4235,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Dataform.V1beta1.Model.Empty.t()}
+          {:ok, GoogleApi.Dataform.V1beta1.Model.ResetWorkspaceChangesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -4261,7 +4271,9 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.Empty{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Dataform.V1beta1.Model.ResetWorkspaceChangesResponse{}]
+    )
   end
 
   @doc """
