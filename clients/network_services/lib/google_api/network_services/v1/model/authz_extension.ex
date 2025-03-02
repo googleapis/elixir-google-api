@@ -33,7 +33,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.AuthzExtension do
   *   `service` (*type:* `String.t`, *default:* `nil`) - Required. The reference to the service that runs the extension. To configure a callout extension, `service` must be a fully-qualified reference to a [backend service](https://cloud.google.com/compute/docs/reference/rest/v1/backendServices) in the format: `https://www.googleapis.com/compute/v1/projects/{project}/regions/{region}/backendServices/{backendService}` or `https://www.googleapis.com/compute/v1/projects/{project}/global/backendServices/{backendService}`.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the timeout for each individual message on the stream. The timeout must be between 10-10000 milliseconds.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
-  *   `wireFormat` (*type:* `String.t`, *default:* `nil`) - Optional. The format of communication supported by the callout extension. If not specified, the default is `EXT_PROC_GRPC`.
+  *   `wireFormat` (*type:* `String.t`, *default:* `nil`) - Optional. The format of communication supported by the callout extension. If not specified, the default value `EXT_PROC_GRPC` is used.
   """
 
   use GoogleApi.Gax.ModelBase

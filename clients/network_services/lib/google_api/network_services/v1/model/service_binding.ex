@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.NetworkServices.V1.Model.ServiceBinding do
   @moduledoc """
-  ServiceBinding is the resource that defines a Service Directory Service to be used in a BackendService resource.
+  ServiceBinding can be used to: - Bind a Service Directory Service to be used in a BackendService resource. - Bind a Private Service Connect producer service to be used in consumer Cloud Service Mesh or Application Load Balancers.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A free-text description of the resource. Max length 1024 characters.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the ServiceBinding resource.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the ServiceBinding resource. It matches pattern `projects/*/locations/global/serviceBindings/service_binding_name`.
-  *   `service` (*type:* `String.t`, *default:* `nil`) - Required. The full Service Directory Service name of the format projects/*/locations/*/namespaces/*/services/*
-  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the Service Directory Service against which the Service Binding resource is validated. This is populated when the Service Binding resource is used in another resource (like Backend Service). This is of the UUID4 format.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the ServiceBinding resource. It matches pattern `projects/*/locations/*/serviceBindings/`.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - Optional. The full Service Directory Service name of the format `projects/*/locations/*/namespaces/*/services/*`. This field must be set.
+  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the Service Directory Service against which the ServiceBinding resource is validated. This is populated when the Service Binding resource is used in another resource (like Backend Service). This is of the UUID4 format.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
   """
 
