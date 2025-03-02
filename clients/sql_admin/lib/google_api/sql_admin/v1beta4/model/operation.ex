@@ -36,7 +36,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of an operation.
   *   `subOperationType` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SqlSubOperationType.t`, *default:* `nil`) - Optional. The sub operation based on the operation type.
-  *   `targetId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `targetId` (*type:* `String.t`, *default:* `nil`) - Name of the resource on which this operation runs.
   *   `targetLink` (*type:* `String.t`, *default:* `nil`) - 
   *   `targetProject` (*type:* `String.t`, *default:* `nil`) - The project ID of the target instance related to this operation.
   *   `user` (*type:* `String.t`, *default:* `nil`) - The email address of the user who initiated this operation.
