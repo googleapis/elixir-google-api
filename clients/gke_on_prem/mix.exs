@@ -18,7 +18,7 @@
 defmodule GoogleApi.GKEOnPrem.Mixfile do
   use Mix.Project
 
-  @version "0.6.1"
+  @version "0.6.2"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.GKEOnPrem.Mixfile do
 
   defp description() do
     """
-    GDC Virtual API client library. 
+    GKE On-Prem API client library. 
     """
   end
 

@@ -1,6 +1,6 @@
 # GoogleApi.GKEOnPrem
 
-GDC Virtual API client library.
+GKE On-Prem API client library.
 
 
 
