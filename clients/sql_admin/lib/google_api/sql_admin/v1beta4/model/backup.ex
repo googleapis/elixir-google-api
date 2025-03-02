@@ -33,12 +33,12 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Backup do
   *   `kmsKeyVersion` (*type:* `String.t`, *default:* `nil`) - Output only. This output contains the encryption status for a backup and the version of the KMS key that's used to encrypt the Cloud SQL instance.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The storage location of the backups. The location can be multi-regional.
   *   `maxChargeableBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The maximum chargeable bytes for the backup.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the backup. Format: projects/{project}/backups/{backup}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the backup. Format: projects/{project}/backups/{backup}.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. This status indicates whether the backup satisfies PZI. The status is reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. This status indicates whether the backup satisfies PZS. The status is reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of this resource.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this backup.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Output only. This output contains a backup time zone. If a Cloud SQL for SQL Server instance has a different time zone from the backup's time zone, then restores to the instance won't happen.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Output only. This output contains a backup time zone. If a Cloud SQL for SQL Server instance has a different time zone from the backup's time zone, then the restore to the instance doesn't happen.
   *   `ttlDays` (*type:* `String.t`, *default:* `nil`) - Input only. The time-to-live (TTL) interval for this resource (in days). For example: ttlDays:7 means 7 days.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of this backup. The type can be "AUTOMATED", "ON_DEMAND", or “FINAL”.
   """
