@@ -23,6 +23,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.Deal do
 
   *   `billedBuyer` (*type:* `String.t`, *default:* `nil`) - Output only. When the client field is populated, this field refers to the buyer who creates and manages the client buyer and gets billed on behalf of the client buyer; when the buyer field is populated, this field is the same value as buyer; when the deal belongs to a media planner account, this field will be empty. Format : `buyers/{buyerAccountId}`
   *   `buyer` (*type:* `String.t`, *default:* `nil`) - Output only. Refers to a buyer in Real-time Bidding API's Buyer resource. Format: `buyers/{buyerAccountId}`
+  *   `buyerPermissionType` (*type:* `String.t`, *default:* `nil`) - Output only. The buyer permission type of the deal.
   *   `client` (*type:* `String.t`, *default:* `nil`) - Output only. Refers to a Client. Format: `buyers/{buyerAccountId}/clients/{clientAccountid}`
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time of the deal creation.
   *   `creativeRequirements` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CreativeRequirements.t`, *default:* `nil`) - Output only. Metadata about the creatives of this deal.
@@ -51,6 +52,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.Deal do
   @type t :: %__MODULE__{
           :billedBuyer => String.t() | nil,
           :buyer => String.t() | nil,
+          :buyerPermissionType => String.t() | nil,
           :client => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :creativeRequirements =>
@@ -82,6 +84,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.Deal do
 
   field(:billedBuyer)
   field(:buyer)
+  field(:buyerPermissionType)
   field(:client)
   field(:createTime, as: DateTime)
 
