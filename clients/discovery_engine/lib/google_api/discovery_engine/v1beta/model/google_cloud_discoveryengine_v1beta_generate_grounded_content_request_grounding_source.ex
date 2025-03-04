@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `enterpriseWebRetrievalSource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGenerateGroundedContentRequestGroundingSourceEnterpriseWebRetrievalSource.t`, *default:* `nil`) - If set, grounding is performed with enterprise web retrieval.
   *   `googleSearchSource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGenerateGroundedContentRequestGroundingSourceGoogleSearchSource.t`, *default:* `nil`) - If set, grounding is performed with Google Search.
   *   `inlineSource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGenerateGroundedContentRequestGroundingSourceInlineSource.t`, *default:* `nil`) - If set, grounding is performed with inline content.
   *   `searchSource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGenerateGroundedContentRequestGroundingSourceSearchSource.t`, *default:* `nil`) - If set, grounding is performed with Vertex AI Search.
@@ -29,6 +30,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :enterpriseWebRetrievalSource =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGenerateGroundedContentRequestGroundingSourceEnterpriseWebRetrievalSource.t()
+            | nil,
           :googleSearchSource =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGenerateGroundedContentRequestGroundingSourceGoogleSearchSource.t()
             | nil,
@@ -39,6 +43,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGenerateGroundedContentRequestGroundingSourceSearchSource.t()
             | nil
         }
+
+  field(:enterpriseWebRetrievalSource,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGenerateGroundedContentRequestGroundingSourceEnterpriseWebRetrievalSource
+  )
 
   field(:googleSearchSource,
     as:
