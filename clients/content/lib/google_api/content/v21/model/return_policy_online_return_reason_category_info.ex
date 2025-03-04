@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.ReturnPolicyOnlineReturnReasonCategoryInfo
 
   ## Attributes
 
-  *   `returnLabelSource` (*type:* `String.t`, *default:* `nil`) - The corresponding return label source.
+  *   `returnLabelSource` (*type:* `String.t`, *default:* `nil`) - The corresponding return label source. If the `ReturnMethod` field includes `BY_MAIL`, it is required to specify `ReturnLabelSource` for both `BUYER_REMORSE` and `ITEM_DEFECT` return reason categories.
   *   `returnReasonCategory` (*type:* `String.t`, *default:* `nil`) - The return reason category.
   *   `returnShippingFee` (*type:* `GoogleApi.Content.V21.Model.ReturnPolicyOnlineReturnShippingFee.t`, *default:* `nil`) - The corresponding return shipping fee. This is only applicable when returnLabelSource is not the customer's responsibility.
   """
