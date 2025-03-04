@@ -23,7 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReservationAffini
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - Optional. Corresponds to the label key of a reservation resource. To target a SPECIFIC_RESERVATION by name, use `compute.googleapis.com/reservation-name` as the key and specify the name of your reservation as its value.
   *   `reservationAffinityType` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the reservation affinity type.
-  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Corresponds to the label values of a reservation resource. This must be the full resource name of the reservation.
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Corresponds to the label values of a reservation resource. This must be the full resource name of the reservation or reservation block.
   """
 
   use GoogleApi.Gax.ModelBase

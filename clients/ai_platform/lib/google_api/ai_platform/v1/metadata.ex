@@ -20,7 +20,7 @@ defmodule GoogleApi.AIPlatform.V1 do
   API client metadata for GoogleApi.AIPlatform.V1.
   """
 
-  @discovery_revision "20250212"
+  @discovery_revision "20250226"
 
   def discovery_revision(), do: @discovery_revision
 end

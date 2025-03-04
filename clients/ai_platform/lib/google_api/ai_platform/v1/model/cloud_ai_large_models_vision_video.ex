@@ -23,6 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionVideo do
 
   *   `encodedVideo` (*type:* `String.t`, *default:* `nil`) - Base 64 encoded video bytes.
   *   `encoding` (*type:* `String.t`, *default:* `nil`) - Video encoding, for example "video/mp4".
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Text/Expanded text input for Help Me Write.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Path to another storage (typically Google Cloud Storage).
   *   `video` (*type:* `String.t`, *default:* `nil`) - Raw bytes.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionVideo do
   @type t :: %__MODULE__{
           :encodedVideo => String.t() | nil,
           :encoding => String.t() | nil,
+          :text => String.t() | nil,
           :uri => String.t() | nil,
           :video => String.t() | nil
         }
 
   field(:encodedVideo)
   field(:encoding)
+  field(:text)
   field(:uri)
   field(:video)
 end
