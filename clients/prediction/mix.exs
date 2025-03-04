@@ -20,7 +20,7 @@ defmodule GoogleApi.Prediction.V16.Mixfile do
 
   defp deps() do
     [
-      {:tesla, "~> 0.8"},
+      {:tesla, "~> 1.8"},
       {:poison, ">= 1.0.0"},
       {:ex_doc, "~> 0.16", only: :dev}
     ]
