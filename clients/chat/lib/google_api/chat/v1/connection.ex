@@ -100,7 +100,10 @@ defmodule GoogleApi.Chat.V1.Connection do
       "https://www.googleapis.com/auth/chat.users.readstate",
 
       # View last read time for Google Chat conversations
-      "https://www.googleapis.com/auth/chat.users.readstate.readonly"
+      "https://www.googleapis.com/auth/chat.users.readstate.readonly",
+
+      # Read and update your space settings
+      "https://www.googleapis.com/auth/chat.users.spacesettings"
     ],
     otp_app: :google_api_chat,
     base_url: "https://chat.googleapis.com/"
