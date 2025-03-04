@@ -21,7 +21,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool do
 
   ## Attributes
 
-  *   `codeExecution` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCodeExecution.t`, *default:* `nil`) - Optional. CodeExecution tool type. Enables the model to execute code as part of generation. This field is only used by the Gemini Developer API services.
+  *   `codeExecution` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCodeExecution.t`, *default:* `nil`) - Optional. CodeExecution tool type. Enables the model to execute code as part of generation.
+  *   `enterpriseWebSearch` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EnterpriseWebSearch.t`, *default:* `nil`) - Optional. Tool to support searching public web data, powered by Vertex AI Search and Sec4 compliance.
   *   `functionDeclarations` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionDeclaration.t)`, *default:* `nil`) - Optional. Function tool type. One or more function declarations to be passed to the model along with the current user query. Model may decide to call a subset of these functions by populating FunctionCall in the response. User should provide a FunctionResponse for each function call in the next turn. Based on the function responses, Model will generate the final response back to the user. Maximum 128 function declarations can be provided.
   *   `googleSearch` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolGoogleSearch.t`, *default:* `nil`) - Optional. GoogleSearch tool type. Tool to support Google Search in Model. Powered by Google.
   *   `googleSearchRetrieval` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleSearchRetrieval.t`, *default:* `nil`) - Optional. GoogleSearchRetrieval tool type. Specialized retrieval tool that is powered by Google search.
@@ -33,6 +34,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool do
   @type t :: %__MODULE__{
           :codeExecution =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCodeExecution.t() | nil,
+          :enterpriseWebSearch =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EnterpriseWebSearch.t() | nil,
           :functionDeclarations =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionDeclaration.t())
             | nil,
@@ -44,6 +47,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool do
         }
 
   field(:codeExecution, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCodeExecution)
+
+  field(:enterpriseWebSearch,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EnterpriseWebSearch
+  )
 
   field(:functionDeclarations,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionDeclaration,

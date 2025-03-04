@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSp
   ## Attributes
 
   *   `classMethods` (*type:* `list(map())`, *default:* `nil`) - Optional. Declarations for object class methods in OpenAPI specification format.
+  *   `deploymentSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecDeploymentSpec.t`, *default:* `nil`) - Optional. The specification of a Reasoning Engine deployment.
   *   `packageSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec.t`, *default:* `nil`) - Required. User provided package spec of the ReasoningEngine.
   """
 
@@ -29,12 +30,19 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSp
 
   @type t :: %__MODULE__{
           :classMethods => list(map()) | nil,
+          :deploymentSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecDeploymentSpec.t()
+            | nil,
           :packageSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec.t()
             | nil
         }
 
   field(:classMethods, type: :list)
+
+  field(:deploymentSpec,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecDeploymentSpec
+  )
 
   field(:packageSpec,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec
