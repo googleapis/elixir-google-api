@@ -21,109 +21,112 @@ defmodule GoogleApi.VerifiedAccess.V2.Model.DeviceSignals do
 
   ## Attributes
 
-  *   `allowScreenLock` (*type:* `boolean()`, *default:* `nil`) - Value of the AllowScreenLock policy on the device. See https://chromeenterprise.google/policies/?policy=AllowScreenLock for more details. Available on ChromeOS only.
-  *   `browserVersion` (*type:* `String.t`, *default:* `nil`) - Current version of the Chrome browser which generated this set of signals. Example value: "107.0.5286.0".
-  *   `builtInDnsClientEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Chrome's built-in DNS client is used. The OS DNS client is otherwise used. This value may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#BuiltInDnsClientEnabled.
-  *   `chromeRemoteDesktopAppBlocked` (*type:* `boolean()`, *default:* `nil`) - Whether access to the Chrome Remote Desktop application is blocked via a policy.
-  *   `crowdStrikeAgent` (*type:* `GoogleApi.VerifiedAccess.V2.Model.CrowdStrikeAgent.t`, *default:* `nil`) - Crowdstrike agent properties installed on the device, if any. Available on Windows and MacOS only.
-  *   `deviceAffiliationIds` (*type:* `list(String.t)`, *default:* `nil`) - Affiliation IDs of the organizations that are affiliated with the organization that is currently managing the device. When the sets of device and profile affiliation IDs overlap, it means that the organizations managing the device and user are affiliated. To learn more about user affiliation, visit https://support.google.com/chrome/a/answer/12801245?ref_topic=9027936.
-  *   `deviceEnrollmentDomain` (*type:* `String.t`, *default:* `nil`) - Enrollment domain of the customer which is currently managing the device.
-  *   `deviceManufacturer` (*type:* `String.t`, *default:* `nil`) - The name of the device's manufacturer.
-  *   `deviceModel` (*type:* `String.t`, *default:* `nil`) - The name of the device's model.
-  *   `diskEncryption` (*type:* `String.t`, *default:* `nil`) - The encryption state of the disk. On ChromeOS, the main disk is always ENCRYPTED.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the device, as defined by the user.
-  *   `hostname` (*type:* `String.t`, *default:* `nil`) - Hostname of the device.
-  *   `imei` (*type:* `list(String.t)`, *default:* `nil`) - International Mobile Equipment Identity (IMEI) of the device. Available on ChromeOS only.
-  *   `macAddresses` (*type:* `list(String.t)`, *default:* `nil`) - MAC addresses of the device.
-  *   `meid` (*type:* `list(String.t)`, *default:* `nil`) - Mobile Equipment Identifier (MEID) of the device. Available on ChromeOS only.
-  *   `operatingSystem` (*type:* `String.t`, *default:* `nil`) - The type of the Operating System currently running on the device.
-  *   `osFirewall` (*type:* `String.t`, *default:* `nil`) - The state of the OS level firewall. On ChromeOS, the value will always be ENABLED on regular devices and UNKNOWN on devices in developer mode. Support for MacOS 15 (Sequoia) and later has been introduced in Chrome M131.
-  *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The current version of the Operating System. On Windows and linux, the value will also include the security patch information.
-  *   `passwordProtectionWarningTrigger` (*type:* `String.t`, *default:* `nil`) - Whether the Password Protection Warning feature is enabled or not. Password protection alerts users when they reuse their protected password on potentially suspicious sites. This setting is controlled by an enterprise policy: https://chromeenterprise.google/policies/#PasswordProtectionWarningTrigger. Note that the policy unset does not have the same effects as having the policy explicitly set to `PASSWORD_PROTECTION_OFF`.
-  *   `profileAffiliationIds` (*type:* `list(String.t)`, *default:* `nil`) - Affiliation IDs of the organizations that are affiliated with the organization that is currently managing the Chrome Profile’s user or ChromeOS user.
-  *   `profileEnrollmentDomain` (*type:* `String.t`, *default:* `nil`) - Enrollment domain of the customer which is currently managing the profile.
-  *   `realtimeUrlCheckMode` (*type:* `String.t`, *default:* `nil`) - Whether Enterprise-grade (i.e. custom) unsafe URL scanning is enabled or not. This setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#EnterpriseRealTimeUrlCheckMode
-  *   `safeBrowsingProtectionLevel` (*type:* `String.t`, *default:* `nil`) - Safe Browsing Protection Level. That setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#SafeBrowsingProtectionLevel.
-  *   `screenLockSecured` (*type:* `String.t`, *default:* `nil`) - The state of the Screen Lock password protection. On ChromeOS, this value will always be ENABLED as there is not way to disable requiring a password or pin when unlocking the device.
-  *   `secureBootMode` (*type:* `String.t`, *default:* `nil`) - Whether the device's startup software has its Secure Boot feature enabled. Available on Windows only.
-  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The serial number of the device. On Windows, this represents the BIOS's serial number. Not available on most Linux distributions.
-  *   `siteIsolationEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the Site Isolation (a.k.a Site Per Process) setting is enabled. That setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#SitePerProcess
+  *   `operatingSystem` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the Operating System currently running on the device.
+  *   `deviceManufacturer` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the device's manufacturer.
+  *   `meid` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Mobile Equipment Identifier (MEID) of the device. Available on ChromeOS only.
+  *   `trigger` (*type:* `String.t`, *default:* `nil`) - Output only. The trigger which generated this set of signals.
+  *   `profileAffiliationIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Affiliation IDs of the organizations that are affiliated with the organization that is currently managing the Chrome Profile’s user or ChromeOS user.
+  *   `safeBrowsingProtectionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. Safe Browsing Protection Level. That setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#SafeBrowsingProtectionLevel.
+  *   `diskEncryption` (*type:* `String.t`, *default:* `nil`) - Output only. The encryption state of the disk. On ChromeOS, the main disk is always ENCRYPTED.
+  *   `antivirus` (*type:* `GoogleApi.VerifiedAccess.V2.Model.Antivirus.t`, *default:* `nil`) - Output only. Information about Antivirus software on the device. Available on Windows only.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of the device, as defined by the user.
+  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Output only. The serial number of the device. On Windows, this represents the BIOS's serial number. Not available on most Linux distributions.
+  *   `secureBootMode` (*type:* `String.t`, *default:* `nil`) - Output only. Whether the device's startup software has its Secure Boot feature enabled. Available on Windows only.
   *   `systemDnsServers` (*type:* `list(String.t)`, *default:* `nil`) - List of the addesses of all OS level DNS servers configured in the device's network settings.
-  *   `thirdPartyBlockingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Chrome is blocking third-party software injection or not. This setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/?policy=ThirdPartyBlockingEnabled. Available on Windows only.
-  *   `trigger` (*type:* `String.t`, *default:* `nil`) - The trigger which generated this set of signals.
-  *   `windowsMachineDomain` (*type:* `String.t`, *default:* `nil`) - Windows domain that the current machine has joined. Available on Windows only.
-  *   `windowsUserDomain` (*type:* `String.t`, *default:* `nil`) - Windows domain for the current OS user. Available on Windows only.
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - Hostname of the device.
+  *   `windowsUserDomain` (*type:* `String.t`, *default:* `nil`) - Output only. Windows domain for the current OS user. Available on Windows only.
+  *   `realtimeUrlCheckMode` (*type:* `String.t`, *default:* `nil`) - Output only. Whether Enterprise-grade (i.e. custom) unsafe URL scanning is enabled or not. This setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#EnterpriseRealTimeUrlCheckMode
+  *   `siteIsolationEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the Site Isolation (a.k.a Site Per Process) setting is enabled. That setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#SitePerProcess
+  *   `screenLockSecured` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the Screen Lock password protection. On ChromeOS, this value will always be ENABLED as there is not way to disable requiring a password or pin when unlocking the device.
+  *   `builtInDnsClientEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether Chrome's built-in DNS client is used. The OS DNS client is otherwise used. This value may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#BuiltInDnsClientEnabled.
+  *   `imei` (*type:* `list(String.t)`, *default:* `nil`) - Output only. International Mobile Equipment Identity (IMEI) of the device. Available on ChromeOS only.
+  *   `thirdPartyBlockingEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether Chrome is blocking third-party software injection or not. This setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/?policy=ThirdPartyBlockingEnabled. Available on Windows only.
+  *   `osFirewall` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the OS level firewall. On ChromeOS, the value will always be ENABLED on regular devices and UNKNOWN on devices in developer mode. Support for MacOS 15 (Sequoia) and later has been introduced in Chrome M131.
+  *   `profileEnrollmentDomain` (*type:* `String.t`, *default:* `nil`) - Output only. Enrollment domain of the customer which is currently managing the profile.
+  *   `crowdStrikeAgent` (*type:* `GoogleApi.VerifiedAccess.V2.Model.CrowdStrikeAgent.t`, *default:* `nil`) - Output only. Crowdstrike agent properties installed on the device, if any. Available on Windows and MacOS only.
+  *   `chromeRemoteDesktopAppBlocked` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether access to the Chrome Remote Desktop application is blocked via a policy.
+  *   `allowScreenLock` (*type:* `boolean()`, *default:* `nil`) - Output only. Value of the AllowScreenLock policy on the device. See https://chromeenterprise.google/policies/?policy=AllowScreenLock for more details. Available on ChromeOS only.
+  *   `browserVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Current version of the Chrome browser which generated this set of signals. Example value: "107.0.5286.0".
+  *   `passwordProtectionWarningTrigger` (*type:* `String.t`, *default:* `nil`) - Output only. Whether the Password Protection Warning feature is enabled or not. Password protection alerts users when they reuse their protected password on potentially suspicious sites. This setting is controlled by an enterprise policy: https://chromeenterprise.google/policies/#PasswordProtectionWarningTrigger. Note that the policy unset does not have the same effects as having the policy explicitly set to `PASSWORD_PROTECTION_OFF`.
+  *   `deviceAffiliationIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Affiliation IDs of the organizations that are affiliated with the organization that is currently managing the device. When the sets of device and profile affiliation IDs overlap, it means that the organizations managing the device and user are affiliated. To learn more about user affiliation, visit https://support.google.com/chrome/a/answer/12801245?ref_topic=9027936.
+  *   `osVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The current version of the Operating System. On Windows and linux, the value will also include the security patch information.
+  *   `macAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Output only. MAC addresses of the device.
+  *   `deviceModel` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the device's model.
+  *   `deviceEnrollmentDomain` (*type:* `String.t`, *default:* `nil`) - Output only. Enrollment domain of the customer which is currently managing the device.
+  *   `windowsMachineDomain` (*type:* `String.t`, *default:* `nil`) - Output only. Windows domain that the current machine has joined. Available on Windows only.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :operatingSystem => String.t() | nil,
+          :deviceManufacturer => String.t() | nil,
+          :meid => list(String.t()) | nil,
+          :trigger => String.t() | nil,
+          :profileAffiliationIds => list(String.t()) | nil,
+          :safeBrowsingProtectionLevel => String.t() | nil,
+          :diskEncryption => String.t() | nil,
+          :antivirus => GoogleApi.VerifiedAccess.V2.Model.Antivirus.t() | nil,
+          :displayName => String.t() | nil,
+          :serialNumber => String.t() | nil,
+          :secureBootMode => String.t() | nil,
+          :systemDnsServers => list(String.t()) | nil,
+          :hostname => String.t() | nil,
+          :windowsUserDomain => String.t() | nil,
+          :realtimeUrlCheckMode => String.t() | nil,
+          :siteIsolationEnabled => boolean() | nil,
+          :screenLockSecured => String.t() | nil,
+          :builtInDnsClientEnabled => boolean() | nil,
+          :imei => list(String.t()) | nil,
+          :thirdPartyBlockingEnabled => boolean() | nil,
+          :osFirewall => String.t() | nil,
+          :profileEnrollmentDomain => String.t() | nil,
+          :crowdStrikeAgent => GoogleApi.VerifiedAccess.V2.Model.CrowdStrikeAgent.t() | nil,
+          :chromeRemoteDesktopAppBlocked => boolean() | nil,
           :allowScreenLock => boolean() | nil,
           :browserVersion => String.t() | nil,
-          :builtInDnsClientEnabled => boolean() | nil,
-          :chromeRemoteDesktopAppBlocked => boolean() | nil,
-          :crowdStrikeAgent => GoogleApi.VerifiedAccess.V2.Model.CrowdStrikeAgent.t() | nil,
-          :deviceAffiliationIds => list(String.t()) | nil,
-          :deviceEnrollmentDomain => String.t() | nil,
-          :deviceManufacturer => String.t() | nil,
-          :deviceModel => String.t() | nil,
-          :diskEncryption => String.t() | nil,
-          :displayName => String.t() | nil,
-          :hostname => String.t() | nil,
-          :imei => list(String.t()) | nil,
-          :macAddresses => list(String.t()) | nil,
-          :meid => list(String.t()) | nil,
-          :operatingSystem => String.t() | nil,
-          :osFirewall => String.t() | nil,
-          :osVersion => String.t() | nil,
           :passwordProtectionWarningTrigger => String.t() | nil,
-          :profileAffiliationIds => list(String.t()) | nil,
-          :profileEnrollmentDomain => String.t() | nil,
-          :realtimeUrlCheckMode => String.t() | nil,
-          :safeBrowsingProtectionLevel => String.t() | nil,
-          :screenLockSecured => String.t() | nil,
-          :secureBootMode => String.t() | nil,
-          :serialNumber => String.t() | nil,
-          :siteIsolationEnabled => boolean() | nil,
-          :systemDnsServers => list(String.t()) | nil,
-          :thirdPartyBlockingEnabled => boolean() | nil,
-          :trigger => String.t() | nil,
-          :windowsMachineDomain => String.t() | nil,
-          :windowsUserDomain => String.t() | nil
+          :deviceAffiliationIds => list(String.t()) | nil,
+          :osVersion => String.t() | nil,
+          :macAddresses => list(String.t()) | nil,
+          :deviceModel => String.t() | nil,
+          :deviceEnrollmentDomain => String.t() | nil,
+          :windowsMachineDomain => String.t() | nil
         }
 
+  field(:operatingSystem)
+  field(:deviceManufacturer)
+  field(:meid, type: :list)
+  field(:trigger)
+  field(:profileAffiliationIds, type: :list)
+  field(:safeBrowsingProtectionLevel)
+  field(:diskEncryption)
+  field(:antivirus, as: GoogleApi.VerifiedAccess.V2.Model.Antivirus)
+  field(:displayName)
+  field(:serialNumber)
+  field(:secureBootMode)
+  field(:systemDnsServers, type: :list)
+  field(:hostname)
+  field(:windowsUserDomain)
+  field(:realtimeUrlCheckMode)
+  field(:siteIsolationEnabled)
+  field(:screenLockSecured)
+  field(:builtInDnsClientEnabled)
+  field(:imei, type: :list)
+  field(:thirdPartyBlockingEnabled)
+  field(:osFirewall)
+  field(:profileEnrollmentDomain)
+  field(:crowdStrikeAgent, as: GoogleApi.VerifiedAccess.V2.Model.CrowdStrikeAgent)
+  field(:chromeRemoteDesktopAppBlocked)
   field(:allowScreenLock)
   field(:browserVersion)
-  field(:builtInDnsClientEnabled)
-  field(:chromeRemoteDesktopAppBlocked)
-  field(:crowdStrikeAgent, as: GoogleApi.VerifiedAccess.V2.Model.CrowdStrikeAgent)
-  field(:deviceAffiliationIds, type: :list)
-  field(:deviceEnrollmentDomain)
-  field(:deviceManufacturer)
-  field(:deviceModel)
-  field(:diskEncryption)
-  field(:displayName)
-  field(:hostname)
-  field(:imei, type: :list)
-  field(:macAddresses, type: :list)
-  field(:meid, type: :list)
-  field(:operatingSystem)
-  field(:osFirewall)
-  field(:osVersion)
   field(:passwordProtectionWarningTrigger)
-  field(:profileAffiliationIds, type: :list)
-  field(:profileEnrollmentDomain)
-  field(:realtimeUrlCheckMode)
-  field(:safeBrowsingProtectionLevel)
-  field(:screenLockSecured)
-  field(:secureBootMode)
-  field(:serialNumber)
-  field(:siteIsolationEnabled)
-  field(:systemDnsServers, type: :list)
-  field(:thirdPartyBlockingEnabled)
-  field(:trigger)
+  field(:deviceAffiliationIds, type: :list)
+  field(:osVersion)
+  field(:macAddresses, type: :list)
+  field(:deviceModel)
+  field(:deviceEnrollmentDomain)
   field(:windowsMachineDomain)
-  field(:windowsUserDomain)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.VerifiedAccess.V2.Model.DeviceSignals do
