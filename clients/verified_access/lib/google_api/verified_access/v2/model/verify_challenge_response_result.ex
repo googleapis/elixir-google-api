@@ -21,18 +21,19 @@ defmodule GoogleApi.VerifiedAccess.V2.Model.VerifyChallengeResponseResult do
 
   ## Attributes
 
-  *   `attestedDeviceId` (*type:* `String.t`, *default:* `nil`) - Attested device ID (ADID).
-  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Unique customer id that this device belongs to, as defined by the Google Admin SDK at https://developers.google.com/admin-sdk/directory/v1/guides/manage-customers
-  *   `deviceEnrollmentId` (*type:* `String.t`, *default:* `nil`) - Device enrollment id for ChromeOS devices.
-  *   `devicePermanentId` (*type:* `String.t`, *default:* `nil`) - Device permanent id is returned in this field (for the machine response only).
-  *   `deviceSignal` (*type:* `String.t`, *default:* `nil`) - Deprecated. Device signal in json string representation. Prefer using `device_signals` instead.
-  *   `deviceSignals` (*type:* `GoogleApi.VerifiedAccess.V2.Model.DeviceSignals.t`, *default:* `nil`) - Device signals.
-  *   `keyTrustLevel` (*type:* `String.t`, *default:* `nil`) - Device attested key trust level.
-  *   `profileCustomerId` (*type:* `String.t`, *default:* `nil`) - Unique customer id that this profile belongs to, as defined by the Google Admin SDK at https://developers.google.com/admin-sdk/directory/v1/guides/manage-customers
-  *   `profileKeyTrustLevel` (*type:* `String.t`, *default:* `nil`) - Profile attested key trust level.
-  *   `signedPublicKeyAndChallenge` (*type:* `String.t`, *default:* `nil`) - Certificate Signing Request (in the SPKAC format, base64 encoded) is returned in this field. This field will be set only if device has included CSR in its challenge response. (the option to include CSR is now available for both user and machine responses)
-  *   `virtualDeviceId` (*type:* `String.t`, *default:* `nil`) - Virtual device id of the device. The definition of virtual device id is platform-specific.
-  *   `virtualProfileId` (*type:* `String.t`, *default:* `nil`) - The ID of a profile on the device.
+  *   `attestedDeviceId` (*type:* `String.t`, *default:* `nil`) - Output only. Attested device ID (ADID).
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Output only. Unique customer id that this device belongs to, as defined by the Google Admin SDK at https://developers.google.com/admin-sdk/directory/v1/guides/manage-customers
+  *   `deviceEnrollmentId` (*type:* `String.t`, *default:* `nil`) - Output only. Device enrollment id for ChromeOS devices.
+  *   `devicePermanentId` (*type:* `String.t`, *default:* `nil`) - Output only. Device permanent id is returned in this field (for the machine response only).
+  *   `deviceSignal` (*type:* `String.t`, *default:* `nil`) - Output only. Deprecated. Device signal in json string representation. Prefer using `device_signals` instead.
+  *   `deviceSignals` (*type:* `GoogleApi.VerifiedAccess.V2.Model.DeviceSignals.t`, *default:* `nil`) - Output only. Device signals.
+  *   `keyTrustLevel` (*type:* `String.t`, *default:* `nil`) - Output only. Device attested key trust level.
+  *   `profileCustomerId` (*type:* `String.t`, *default:* `nil`) - Output only. Unique customer id that this profile belongs to, as defined by the Google Admin SDK at https://developers.google.com/admin-sdk/directory/v1/guides/manage-customers
+  *   `profileKeyTrustLevel` (*type:* `String.t`, *default:* `nil`) - Output only. Profile attested key trust level.
+  *   `profilePermanentId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique server-side ID of a profile on the device.
+  *   `signedPublicKeyAndChallenge` (*type:* `String.t`, *default:* `nil`) - Output only. Certificate Signing Request (in the SPKAC format, base64 encoded) is returned in this field. This field will be set only if device has included CSR in its challenge response. (the option to include CSR is now available for both user and machine responses)
+  *   `virtualDeviceId` (*type:* `String.t`, *default:* `nil`) - Output only. Virtual device id of the device. The definition of virtual device id is platform-specific.
+  *   `virtualProfileId` (*type:* `String.t`, *default:* `nil`) - Output only. The client-provided ID of a profile on the device.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -47,6 +48,7 @@ defmodule GoogleApi.VerifiedAccess.V2.Model.VerifyChallengeResponseResult do
           :keyTrustLevel => String.t() | nil,
           :profileCustomerId => String.t() | nil,
           :profileKeyTrustLevel => String.t() | nil,
+          :profilePermanentId => String.t() | nil,
           :signedPublicKeyAndChallenge => String.t() | nil,
           :virtualDeviceId => String.t() | nil,
           :virtualProfileId => String.t() | nil
@@ -61,6 +63,7 @@ defmodule GoogleApi.VerifiedAccess.V2.Model.VerifyChallengeResponseResult do
   field(:keyTrustLevel)
   field(:profileCustomerId)
   field(:profileKeyTrustLevel)
+  field(:profilePermanentId)
   field(:signedPublicKeyAndChallenge)
   field(:virtualDeviceId)
   field(:virtualProfileId)
