@@ -21,14 +21,22 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   ## Attributes
 
+  *   `autoRefreshCrawlErrorRate` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries.t`, *default:* `nil`) - Vertex AI's error rate time series of auto-refresh dedicated crawl.
   *   `autoRefreshCrawlRate` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries.t`, *default:* `nil`) - Vertex AI's dedicated crawl rate time series of auto-refresh, which is the crawl rate of Google-CloudVertexBot when dedicate crawl is set, and the crawl rate is for best effort use cases like refreshing urls periodically.
+  *   `userTriggeredCrawlErrorRate` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries.t`, *default:* `nil`) - Vertex AI's error rate time series of user triggered dedicated crawl.
   *   `userTriggeredCrawlRate` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries.t`, *default:* `nil`) - Vertex AI's dedicated crawl rate time series of user triggered crawl, which is the crawl rate of Google-CloudVertexBot when dedicate crawl is set, and user triggered crawl rate is for deterministic use cases like crawling urls or sitemaps specified by users.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoRefreshCrawlErrorRate =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries.t()
+            | nil,
           :autoRefreshCrawlRate =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries.t()
+            | nil,
+          :userTriggeredCrawlErrorRate =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries.t()
             | nil,
           :userTriggeredCrawlRate =>
@@ -36,7 +44,17 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
             | nil
         }
 
+  field(:autoRefreshCrawlErrorRate,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries
+  )
+
   field(:autoRefreshCrawlRate,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries
+  )
+
+  field(:userTriggeredCrawlErrorRate,
     as:
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaCrawlRateTimeSeries
   )

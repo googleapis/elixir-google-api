@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `classifiedIntents` (*type:* `list(String.t)`, *default:* `nil`) - The classified intents from the input query.
   *   `extractedFilters` (*type:* `String.t`, *default:* `nil`) - The filters that were extracted from the input query.
   *   `rewrittenQuery` (*type:* `String.t`, *default:* `nil`) - Rewritten input query minus the extracted filters.
   *   `sqlRequest` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseNaturalLanguageQueryUnderstandingInfoSqlRequest.t`, *default:* `nil`) - Optional. The SQL request that was generated from the natural language query understanding phase.
@@ -30,6 +31,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :classifiedIntents => list(String.t()) | nil,
           :extractedFilters => String.t() | nil,
           :rewrittenQuery => String.t() | nil,
           :sqlRequest =>
@@ -40,6 +42,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             | nil
         }
 
+  field(:classifiedIntents, type: :list)
   field(:extractedFilters)
   field(:rewrittenQuery)
 
