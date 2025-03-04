@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.WalletObjects.V1.Model.Image do
   @moduledoc """
-  Wrapping type for Google hosted images. Next ID: 7
+  Wrapping type for Google hosted images. Next ID: 8
 
   ## Attributes
 
