@@ -26,7 +26,7 @@ defmodule GoogleApi.Solar.V1.Api.BuildingInsights do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Locates the closest building to a query point. Returns an error with code `NOT_FOUND` if there are no buildings within approximately 50m of the query point.
+  Locates the building whose centroid is closest to a query point. Returns an error with code `NOT_FOUND` if there are no buildings within approximately 50m of the query point.
 
   ## Parameters
 
