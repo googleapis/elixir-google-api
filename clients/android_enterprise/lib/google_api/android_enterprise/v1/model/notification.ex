@@ -25,6 +25,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
   *   `appUpdateEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.AppUpdateEvent.t`, *default:* `nil`) - Notifications about app updates.
   *   `deviceReportUpdateEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent.t`, *default:* `nil`) - Notifications about device report updates.
   *   `enterpriseId` (*type:* `String.t`, *default:* `nil`) - The ID of the enterprise for which the notification is sent. This will always be present.
+  *   `enterpriseUpgradeEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.EnterpriseUpgradeEvent.t`, *default:* `nil`) - Notifications about enterprise upgrade. **Note:** This feature is not generally available.
   *   `installFailureEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent.t`, *default:* `nil`) - Notifications about an app installation failure.
   *   `newDeviceEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent.t`, *default:* `nil`) - Notifications about new devices.
   *   `newPermissionsEvent` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent.t`, *default:* `nil`) - Notifications about new app permissions.
@@ -43,6 +44,8 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
           :deviceReportUpdateEvent =>
             GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent.t() | nil,
           :enterpriseId => String.t() | nil,
+          :enterpriseUpgradeEvent =>
+            GoogleApi.AndroidEnterprise.V1.Model.EnterpriseUpgradeEvent.t() | nil,
           :installFailureEvent =>
             GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent.t() | nil,
           :newDeviceEvent => GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent.t() | nil,
@@ -65,6 +68,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Notification do
   field(:deviceReportUpdateEvent, as: GoogleApi.AndroidEnterprise.V1.Model.DeviceReportUpdateEvent)
 
   field(:enterpriseId)
+  field(:enterpriseUpgradeEvent, as: GoogleApi.AndroidEnterprise.V1.Model.EnterpriseUpgradeEvent)
   field(:installFailureEvent, as: GoogleApi.AndroidEnterprise.V1.Model.InstallFailureEvent)
   field(:newDeviceEvent, as: GoogleApi.AndroidEnterprise.V1.Model.NewDeviceEvent)
   field(:newPermissionsEvent, as: GoogleApi.AndroidEnterprise.V1.Model.NewPermissionsEvent)
