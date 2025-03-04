@@ -75,6 +75,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `formattedAddress` (*type:* `String.t`, *default:* `nil`) - A full, human-readable address for this place.
   *   `photos` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo.t)`, *default:* `nil`) - Information (including references) about photos of this place. A maximum of 10 photos can be returned.
   *   `reservable` (*type:* `boolean()`, *default:* `nil`) - Specifies if the place supports reservations.
+  *   `timeZone` (*type:* `GoogleApi.Places.V1.Model.GoogleTypeTimeZone.t`, *default:* `nil`) - IANA Time Zone Database time zone. For example "America/New_York".
   *   `iconMaskBaseUri` (*type:* `String.t`, *default:* `nil`) - A truncated URL to an icon mask. User can access different icon type by appending type suffix to the end (eg, ".svg" or ".png").
   *   `servesDinner` (*type:* `boolean()`, *default:* `nil`) - Specifies if the place serves dinner.
   *   `primaryType` (*type:* `String.t`, *default:* `nil`) - The primary type of the given result. This type must one of the Places API supported types. For example, "restaurant", "cafe", "airport", etc. A place can only have a single primary type. For the complete list of possible values, see Table A and Table B at https://developers.google.com/maps/documentation/places/web-service/place-types
@@ -159,6 +160,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
           :formattedAddress => String.t() | nil,
           :photos => list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo.t()) | nil,
           :reservable => boolean() | nil,
+          :timeZone => GoogleApi.Places.V1.Model.GoogleTypeTimeZone.t() | nil,
           :iconMaskBaseUri => String.t() | nil,
           :servesDinner => boolean() | nil,
           :primaryType => String.t() | nil,
@@ -260,6 +262,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   field(:formattedAddress)
   field(:photos, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Photo, type: :list)
   field(:reservable)
+  field(:timeZone, as: GoogleApi.Places.V1.Model.GoogleTypeTimeZone)
   field(:iconMaskBaseUri)
   field(:servesDinner)
   field(:primaryType)
