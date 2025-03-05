@@ -22,7 +22,7 @@ defmodule GoogleApi.DataMigration.V1.Model.EntityDdl do
   ## Attributes
 
   *   `ddl` (*type:* `String.t`, *default:* `nil`) - The actual ddl code.
-  *   `ddlKind` (*type:* `String.t`, *default:* `nil`) - The DDL Kind selected for apply, or SOURCE if getting the source tree.
+  *   `ddlKind` (*type:* `String.t`, *default:* `nil`) - The DDL Kind selected for apply, or UNSPECIFIED if the entity wasn't converted yet.
   *   `ddlType` (*type:* `String.t`, *default:* `nil`) - Type of DDL (Create, Alter).
   *   `editedDdlKind` (*type:* `String.t`, *default:* `nil`) - If ddl_kind is USER_EDIT, this holds the DDL kind of the original content - DETERMINISTIC or AI. Otherwise, this is DDL_KIND_UNSPECIFIED.
   *   `entity` (*type:* `String.t`, *default:* `nil`) - The name of the database entity the ddl refers to.
