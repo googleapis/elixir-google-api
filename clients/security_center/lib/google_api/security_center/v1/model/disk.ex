@@ -21,7 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Disk do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the disk, for example, "https://www.googleapis.com/compute/v1/projects/project-id/zones/zone-id/disks/disk-id".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the disk, for example, "https://www.googleapis.com/compute/v1/projects/{project-id}/zones/{zone-id}/disks/{disk-id}".
   """
 
   use GoogleApi.Gax.ModelBase
