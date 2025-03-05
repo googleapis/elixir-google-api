@@ -22,15 +22,21 @@ defmodule GoogleApi.Metastore.V1.Model.MultiRegionMetadata do
   ## Attributes
 
   *   `constituentRegions` (*type:* `list(String.t)`, *default:* `nil`) - The regions constituting the multi-region.
+  *   `continent` (*type:* `String.t`, *default:* `nil`) - The continent for this multi-region.
+  *   `witnessRegion` (*type:* `String.t`, *default:* `nil`) - The Spanner witness region for this multi-region.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :constituentRegions => list(String.t()) | nil
+          :constituentRegions => list(String.t()) | nil,
+          :continent => String.t() | nil,
+          :witnessRegion => String.t() | nil
         }
 
   field(:constituentRegions, type: :list)
+  field(:continent)
+  field(:witnessRegion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Metastore.V1.Model.MultiRegionMetadata do
