@@ -37,6 +37,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.Instance do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the instance resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id} where the cluster and instance ID segments should satisfy the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of lowercase letters, numbers, and dashes, starting with a letter, and ending with a letter or number. For more details see https://google.aip.dev/122. The prefix of the instance resource name is the name of the parent resource: * projects/{project}/locations/{region}/clusters/{cluster_id}
   *   `networkConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig.t`, *default:* `nil`) - Optional. Instance-level network configuration.
   *   `nodes` (*type:* `list(GoogleApi.AlloyDB.V1.Model.Node.t)`, *default:* `nil`) - Output only. List of available read-only VMs in this instance, including the standby for a PRIMARY instance.
+  *   `observabilityConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.ObservabilityInstanceConfig.t`, *default:* `nil`) - Configuration for observability.
   *   `outboundPublicIpAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Output only. All outbound public IP addresses configured for the instance.
   *   `pscInstanceConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.PscInstanceConfig.t`, *default:* `nil`) - Optional. The configuration for Private Service Connect (PSC) for the instance.
   *   `publicIpAddress` (*type:* `String.t`, *default:* `nil`) - Output only. The public IP addresses for the Instance. This is available ONLY when enable_public_ip is set. This is the connection endpoint for an end-user application.
@@ -69,6 +70,8 @@ defmodule GoogleApi.AlloyDB.V1.Model.Instance do
           :name => String.t() | nil,
           :networkConfig => GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig.t() | nil,
           :nodes => list(GoogleApi.AlloyDB.V1.Model.Node.t()) | nil,
+          :observabilityConfig =>
+            GoogleApi.AlloyDB.V1.Model.ObservabilityInstanceConfig.t() | nil,
           :outboundPublicIpAddresses => list(String.t()) | nil,
           :pscInstanceConfig => GoogleApi.AlloyDB.V1.Model.PscInstanceConfig.t() | nil,
           :publicIpAddress => String.t() | nil,
@@ -99,6 +102,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.Instance do
   field(:name)
   field(:networkConfig, as: GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig)
   field(:nodes, as: GoogleApi.AlloyDB.V1.Model.Node, type: :list)
+  field(:observabilityConfig, as: GoogleApi.AlloyDB.V1.Model.ObservabilityInstanceConfig)
   field(:outboundPublicIpAddresses, type: :list)
   field(:pscInstanceConfig, as: GoogleApi.AlloyDB.V1.Model.PscInstanceConfig)
   field(:publicIpAddress)
