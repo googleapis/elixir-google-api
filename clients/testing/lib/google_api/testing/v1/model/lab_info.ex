@@ -22,15 +22,18 @@ defmodule GoogleApi.Testing.V1.Model.LabInfo do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Lab name where the device is hosted. If empty, the device is hosted in a Google owned lab.
+  *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The Unicode country/region code (CLDR) of the lab where the device is hosted. E.g. "US" for United States, "CH" for Switzerland.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :regionCode => String.t() | nil
         }
 
   field(:name)
+  field(:regionCode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Testing.V1.Model.LabInfo do
