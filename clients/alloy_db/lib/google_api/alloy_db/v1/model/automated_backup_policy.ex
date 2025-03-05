@@ -23,7 +23,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.AutomatedBackupPolicy do
 
   *   `backupWindow` (*type:* `String.t`, *default:* `nil`) - The length of the time window during which a backup can be taken. If a backup does not succeed within this time window, it will be canceled and considered failed. The backup window must be at least 5 minutes long. There is no upper bound on the window. If not set, it defaults to 1 hour.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether automated automated backups are enabled. If not set, defaults to true.
-  *   `encryptionConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption config can be specified to encrypt the backups with a customer-managed encryption key (CMEK). When this field is not specified, the backup will then use default encryption scheme to protect the user data.
+  *   `encryptionConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption config can be specified to encrypt the backups with a customer-managed encryption key (CMEK). When this field is not specified, the backup will use the cluster's encryption config.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to backups created using this configuration.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location where the backup will be stored. Currently, the only supported option is to store the backup in the same region as the cluster. If empty, defaults to the region of the cluster.
   *   `quantityBasedRetention` (*type:* `GoogleApi.AlloyDB.V1.Model.QuantityBasedRetention.t`, *default:* `nil`) - Quantity-based Backup retention policy to retain recent backups.
