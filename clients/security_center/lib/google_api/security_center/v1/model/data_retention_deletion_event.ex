@@ -24,7 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.DataRetentionDeletionEvent do
   *   `dataObjectCount` (*type:* `String.t`, *default:* `nil`) - Number of objects that violated the policy for this resource. If the number is less than 1,000, then the value of this field is the exact number. If the number of objects that violated the policy is greater than or equal to 1,000, then the value of this field is 1000.
   *   `eventDetectionTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp indicating when the event was detected.
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - Type of the DRD event.
-  *   `maxRetentionAllowed` (*type:* `String.t`, *default:* `nil`) - Maximum duration of retention allowed from the DRD control. This comes from the DRD control where users set a max TTL for their data. For example, suppose that a user set the max TTL for a Cloud Storage bucket to 90 days. However, an object in that bucket is 100 days old. In this case, a DataRetentionDeletionEvent will be generated for that Cloud Storage bucket, and the max_retention_allowed is 90 days.
+  *   `maxRetentionAllowed` (*type:* `String.t`, *default:* `nil`) - Maximum duration of retention allowed from the DRD control. This comes from the DRD control where users set a max TTL for their data. For example, suppose that a user sets the max TTL for a Cloud Storage bucket to 90 days. However, an object in that bucket is 100 days old. In this case, a DataRetentionDeletionEvent will be generated for that Cloud Storage bucket, and the max_retention_allowed is 90 days.
   """
 
   use GoogleApi.Gax.ModelBase
