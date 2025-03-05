@@ -43,6 +43,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The labels applied to the resource at the time the profile was generated.
   *   `resourceVisibility` (*type:* `String.t`, *default:* `nil`) - How broadly a resource has been shared.
   *   `rowCount` (*type:* `String.t`, *default:* `nil`) - Number of rows in the table when the profile was generated. This will not be populated for BigLake tables.
+  *   `sampleFindingsTable` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - The BigQuery table to which the sample findings are written.
   *   `scannedColumnCount` (*type:* `String.t`, *default:* `nil`) - The number of columns profiled in the table.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this table.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of a profile.
@@ -79,6 +80,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
           :resourceLabels => map() | nil,
           :resourceVisibility => String.t() | nil,
           :rowCount => String.t() | nil,
+          :sampleFindingsTable =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil,
           :scannedColumnCount => String.t() | nil,
           :sensitivityScore =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t() | nil,
@@ -123,6 +126,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   field(:resourceLabels, type: :map)
   field(:resourceVisibility)
   field(:rowCount)
+  field(:sampleFindingsTable, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable)
   field(:scannedColumnCount)
   field(:sensitivityScore, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore)
   field(:state)

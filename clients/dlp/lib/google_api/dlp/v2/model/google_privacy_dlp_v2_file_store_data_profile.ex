@@ -43,6 +43,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   *   `resourceAttributes` (*type:* `%{optional(String.t) => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t}`, *default:* `nil`) - Attributes of the resource being profiled. Currently used attributes: * customer_managed_encryption: boolean - true: the resource is encrypted with a customer-managed key. - false: the resource is encrypted with a provider-managed key.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The labels applied to the resource at the time the profile was generated.
   *   `resourceVisibility` (*type:* `String.t`, *default:* `nil`) - How broadly a resource has been shared.
+  *   `sampleFindingsTable` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - The BigQuery table to which the sample findings are written.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this resource.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of a profile.
   """
@@ -77,6 +78,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
             %{optional(String.t()) => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t()} | nil,
           :resourceLabels => map() | nil,
           :resourceVisibility => String.t() | nil,
+          :sampleFindingsTable =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil,
           :sensitivityScore =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t() | nil,
           :state => String.t() | nil
@@ -118,6 +121,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   field(:resourceAttributes, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value, type: :map)
   field(:resourceLabels, type: :map)
   field(:resourceVisibility)
+  field(:sampleFindingsTable, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable)
   field(:sensitivityScore, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore)
   field(:state)
 end
