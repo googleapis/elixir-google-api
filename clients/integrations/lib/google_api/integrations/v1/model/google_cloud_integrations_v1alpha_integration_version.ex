@@ -21,6 +21,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaIntegrat
 
   ## Attributes
 
+  *   `cloudKmsKey` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud KMS resource name for the CMEK encryption key.
   *   `cloudLoggingDetails` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudLoggingDetails.t`, *default:* `nil`) - Optional. Cloud Logging details for the integration version
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Auto-generated.
   *   `createdFromTemplate` (*type:* `String.t`, *default:* `nil`) - Optional. Optional. The resource name of the template from which the integration is created.
@@ -52,6 +53,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaIntegrat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudKmsKey => String.t() | nil,
           :cloudLoggingDetails =>
             GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudLoggingDetails.t()
             | nil,
@@ -108,6 +110,8 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaIntegrat
           :updateTime => DateTime.t() | nil,
           :userLabel => String.t() | nil
         }
+
+  field(:cloudKmsKey)
 
   field(:cloudLoggingDetails,
     as: GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudLoggingDetails

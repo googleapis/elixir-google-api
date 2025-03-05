@@ -21,6 +21,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecutio
 
   ## Attributes
 
+  *   `cloudKmsKey` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud KMS resource name for the CMEK encryption key.
   *   `cloudLoggingDetails` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudLoggingDetails.t`, *default:* `nil`) - Cloud Logging details for the integration version
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time of the execution.
   *   `directSubExecutions` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecution.t)`, *default:* `nil`) - Direct sub executions of the following Execution.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecutio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudKmsKey => String.t() | nil,
           :cloudLoggingDetails =>
             GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudLoggingDetails.t()
             | nil,
@@ -87,6 +89,8 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecutio
           :triggerId => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
+
+  field(:cloudKmsKey)
 
   field(:cloudLoggingDetails,
     as: GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudLoggingDetails
