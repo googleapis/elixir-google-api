@@ -86,7 +86,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
   end
 
   @doc """
-  Get a GoogleChannelConfig
+  Get a GoogleChannelConfig. The name of the GoogleChannelConfig in the response is ALWAYS coded with projectID.
 
   ## Parameters
 
@@ -227,7 +227,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Eventarc.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the config. Must be in the format of, `projects/{project}/locations/{location}/googleChannelConfig`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the config. Must be in the format of, `projects/{project}/locations/{location}/googleChannelConfig`. In API responses, the config name always includes the projectID, regardless of whether the projectID or projectNumber was provided.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

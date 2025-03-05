@@ -22,7 +22,7 @@ defmodule GoogleApi.Eventarc.V1.Model.GoogleChannelConfig do
   ## Attributes
 
   *   `cryptoKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the config. Must be in the format of, `projects/{project}/locations/{location}/googleChannelConfig`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the config. Must be in the format of, `projects/{project}/locations/{location}/googleChannelConfig`. In API responses, the config name always includes the projectID, regardless of whether the projectID or projectNumber was provided.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """
 
