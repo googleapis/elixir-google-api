@@ -48,7 +48,7 @@ defmodule GoogleApi.FCM.Mixfile do
 
   defp description() do
     """
-    Firebase Cloud Messaging API client library. FCM send API that provides a cross-platform messaging solution to reliably deliver messages at no cost.
+    Firebase Cloud Messaging API client library. FCM send API that provides a cross-platform messaging solution to reliably deliver messages.
     """
   end
 
