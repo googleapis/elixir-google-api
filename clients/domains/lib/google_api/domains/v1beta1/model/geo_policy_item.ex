@@ -24,7 +24,7 @@ defmodule GoogleApi.Domains.V1beta1.Model.GeoPolicyItem do
   *   `healthCheckedTargets` (*type:* `GoogleApi.Domains.V1beta1.Model.HealthCheckTargets.t`, *default:* `nil`) - For A and AAAA types only. Endpoints to return in the query result only if they are healthy. These can be specified along with `rrdata` within this item.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The geo-location granularity is a GCP region. This location string should correspond to a GCP region. e.g. "us-east1", "southamerica-east1", "asia-east1", etc.
   *   `rrdata` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `signatureRrdata` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the `rrdata` within this item. If health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 IP address per item.
+  *   `signatureRrdata` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the `rrdata` within this item. When using health-checked targets for DNSSEC-enabled zones, you can only use at most one health-checked IP address per item.
   """
 
   use GoogleApi.Gax.ModelBase

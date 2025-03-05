@@ -23,7 +23,7 @@ defmodule GoogleApi.Domains.V1.Model.WrrPolicyItem do
 
   *   `healthCheckedTargets` (*type:* `GoogleApi.Domains.V1.Model.HealthCheckTargets.t`, *default:* `nil`) - Endpoints that are health checked before making the routing decision. The unhealthy endpoints are omitted from the result. If all endpoints within a bucket are unhealthy, we choose a different bucket (sampled with respect to its weight) for responding. If DNSSEC is enabled for this zone, only one of `rrdata` or `health_checked_targets` can be set.
   *   `rrdata` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `signatureRrdata` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the `rrdata` within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 IP address per item.
+  *   `signatureRrdata` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the `rrdata` within this item. When using health-checked targets for DNSSEC-enabled zones, you can only use at most one health-checked IP address per item.
   *   `weight` (*type:* `float()`, *default:* `nil`) - The weight corresponding to this `WrrPolicyItem` object. When multiple `WrrPolicyItem` objects are configured, the probability of returning an `WrrPolicyItem` object's data is proportional to its weight relative to the sum of weights configured for all items. This weight must be non-negative.
   """
 
