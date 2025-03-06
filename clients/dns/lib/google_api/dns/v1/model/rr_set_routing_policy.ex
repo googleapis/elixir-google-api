@@ -22,7 +22,7 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicy do
   ## Attributes
 
   *   `geo` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicy.t`, *default:* `nil`) - 
-  *   `healthCheck` (*type:* `String.t`, *default:* `nil`) - The selfLink attribute of the HealthCheck resource to use for this RRSetRoutingPolicy. https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks
+  *   `healthCheck` (*type:* `String.t`, *default:* `nil`) - The fully qualified URL of the HealthCheck to use for this RRSetRoutingPolicy. Format this URL like `https://www.googleapis.com/compute/v1/projects/{project}/global/healthChecks/{healthCheck}`. https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicy`) - 
   *   `primaryBackup` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyPrimaryBackupPolicy.t`, *default:* `nil`) - 
   *   `wrr` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyWrrPolicy.t`, *default:* `nil`) - 
