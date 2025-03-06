@@ -23,7 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.InstancesRestoreBackupRequest do
 
   *   `backup` (*type:* `String.t`, *default:* `nil`) - The name of the backup that's used to restore a Cloud SQL instance: Format: projects/{project-id}/backups/{backup-uid}. Only one of restore_backup_context, backup, backupdr_backup can be passed to the input.
   *   `restoreBackupContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.RestoreBackupContext.t`, *default:* `nil`) - Parameters required to perform the restore backup operation.
-  *   `restoreInstanceSettings` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`, *default:* `nil`) - Optional. By using this parameter, Cloud SQL overrides any instance settings that it stored with the instance settings that you want to restore. You can't change the Instance's major database version and you can only increase the disk size. You can use this field to restore new instances only.
+  *   `restoreInstanceSettings` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance.t`, *default:* `nil`) - Optional. By using this parameter, Cloud SQL overrides any instance settings stored in the backup you are restoring from. You can't change the instance's major database version and you can only increase the disk size. You can use this field to restore new instances only. This field is not applicable for restore to existing instances.
   """
 
   use GoogleApi.Gax.ModelBase
