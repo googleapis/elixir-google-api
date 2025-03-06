@@ -42,6 +42,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   *   `firebaseLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink.t`, *default:* `nil`) - A snapshot of a FirebaseLink resource in change history.
   *   `googleAdsLink` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleAdsLink.t`, *default:* `nil`) - A snapshot of a GoogleAdsLink resource in change history.
   *   `googleSignalsSettings` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleSignalsSettings.t`, *default:* `nil`) - A snapshot of a GoogleSignalsSettings resource in change history.
+  *   `keyEvent` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaKeyEvent.t`, *default:* `nil`) - A snapshot of a KeyEvent resource in change history.
   *   `measurementProtocolSecret` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaMeasurementProtocolSecret.t`, *default:* `nil`) - A snapshot of a MeasurementProtocolSecret resource in change history.
   *   `property` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t`, *default:* `nil`) - A snapshot of a Property resource in change history.
   *   `searchAds360Link` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaSearchAds360Link.t`, *default:* `nil`) - A snapshot of a SearchAds360Link resource in change history.
@@ -111,6 +112,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
           :googleSignalsSettings =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleSignalsSettings.t()
             | nil,
+          :keyEvent =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaKeyEvent.t() | nil,
           :measurementProtocolSecret =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaMeasurementProtocolSecret.t()
             | nil,
@@ -206,6 +209,8 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   field(:googleSignalsSettings,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGoogleSignalsSettings
   )
+
+  field(:keyEvent, as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaKeyEvent)
 
   field(:measurementProtocolSecret,
     as:
