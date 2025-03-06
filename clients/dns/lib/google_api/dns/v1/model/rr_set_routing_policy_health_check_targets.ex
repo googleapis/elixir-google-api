@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets do
   @moduledoc """
-  HealthCheckTargets describes endpoints to health-check when responding to Routing Policy queries. Only the healthy endpoints will be included in the response.
+  HealthCheckTargets describes endpoints to health-check when responding to Routing Policy queries. Only the healthy endpoints will be included in the response. Set either `internal_load_balancer` or `external_endpoints`. Do not set both.
 
   ## Attributes
 
