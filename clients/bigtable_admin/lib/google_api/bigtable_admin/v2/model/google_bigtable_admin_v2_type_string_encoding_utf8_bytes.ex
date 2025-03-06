@@ -21,11 +21,16 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodi
 
   ## Attributes
 
+  *   `nullEscapeChar` (*type:* `String.t`, *default:* `nil`) - Single-character escape sequence used to support NULL values. If set, allows NULL values to be encoded as the empty string "". The actual empty string, or any value where every character equals `null_escape_char`, has one more `null_escape_char` appended. If `null_escape_char` is set and does not equal the ASCII null character 0x00, then the encoding will not support sorted mode. .
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :nullEscapeChar => String.t() | nil
+        }
+
+  field(:nullEscapeChar)
 end
 
 defimpl Poison.Decoder,

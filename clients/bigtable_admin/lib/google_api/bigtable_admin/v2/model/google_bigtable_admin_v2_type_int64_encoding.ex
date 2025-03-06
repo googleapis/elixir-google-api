@@ -22,6 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64Encodin
   ## Attributes
 
   *   `bigEndianBytes` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64EncodingBigEndianBytes.t`, *default:* `nil`) - Use `BigEndianBytes` encoding.
+  *   `orderedCodeBytes` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64EncodingOrderedCodeBytes.t`, *default:* `nil`) - Use `OrderedCodeBytes` encoding.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,11 +30,18 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64Encodin
   @type t :: %__MODULE__{
           :bigEndianBytes =>
             GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64EncodingBigEndianBytes.t()
+            | nil,
+          :orderedCodeBytes =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64EncodingOrderedCodeBytes.t()
             | nil
         }
 
   field(:bigEndianBytes,
     as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64EncodingBigEndianBytes
+  )
+
+  field(:orderedCodeBytes,
+    as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64EncodingOrderedCodeBytes
   )
 end
 

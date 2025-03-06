@@ -21,11 +21,17 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeTimestamp do
 
   ## Attributes
 
+  *   `encoding` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeTimestampEncoding.t`, *default:* `nil`) - The encoding to use when converting to or from lower level types.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :encoding =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeTimestampEncoding.t() | nil
+        }
+
+  field(:encoding, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeTimestampEncoding)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeTimestamp do

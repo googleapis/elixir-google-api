@@ -21,15 +21,20 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStruct do
 
   ## Attributes
 
+  *   `encoding` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStructEncoding.t`, *default:* `nil`) - The encoding to use when converting to or from lower level types.
   *   `fields` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStructField.t)`, *default:* `nil`) - The names and types of the fields in this struct.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :encoding =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStructEncoding.t() | nil,
           :fields =>
             list(GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStructField.t()) | nil
         }
+
+  field(:encoding, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStructEncoding)
 
   field(:fields,
     as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStructField,
