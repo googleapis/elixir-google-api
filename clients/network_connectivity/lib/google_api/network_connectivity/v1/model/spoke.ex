@@ -23,6 +23,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Spoke do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the spoke was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. An optional description of the spoke.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
+  *   `fieldPathsPendingUpdate` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of fields waiting for hub administration's approval.
   *   `group` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the group that this spoke is associated with.
   *   `hub` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the hub that this spoke is attached to.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional labels in key-value pair format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
@@ -44,6 +46,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Spoke do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :etag => String.t() | nil,
+          :fieldPathsPendingUpdate => list(String.t()) | nil,
           :group => String.t() | nil,
           :hub => String.t() | nil,
           :labels => map() | nil,
@@ -65,6 +69,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Spoke do
 
   field(:createTime, as: DateTime)
   field(:description)
+  field(:etag)
+  field(:fieldPathsPendingUpdate, type: :list)
   field(:group)
   field(:hub)
   field(:labels, type: :map)
