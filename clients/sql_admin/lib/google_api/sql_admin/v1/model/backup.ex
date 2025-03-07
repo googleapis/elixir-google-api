@@ -28,6 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Backup do
   *   `error` (*type:* `GoogleApi.SQLAdmin.V1.Model.OperationError.t`, *default:* `nil`) - Output only. Information about why the backup operation fails (for example, when the backup state fails).
   *   `expiryTime` (*type:* `DateTime.t`, *default:* `nil`) - Backup expiration time. A UTC timestamp of when this backup expired.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - The name of the source database instance.
+  *   `instanceDeletionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Output only. Timestamp in UTC of when the instance associated with this backup is deleted.
+  *   `instanceSettings` (*type:* `GoogleApi.SQLAdmin.V1.Model.DatabaseInstance.t`, *default:* `nil`) - Optional. Output only. The instance setting of the source instance that's associated with this backup.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. This is always `sql#backup`.
   *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Output only. This output contains the encryption configuration for a backup and the resource name of the KMS key for disk encryption.
   *   `kmsKeyVersion` (*type:* `String.t`, *default:* `nil`) - Output only. This output contains the encryption status for a backup and the version of the KMS key that's used to encrypt the Cloud SQL instance.
@@ -39,7 +41,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Backup do
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of this resource.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The status of this backup.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Output only. This output contains a backup time zone. If a Cloud SQL for SQL Server instance has a different time zone from the backup's time zone, then the restore to the instance doesn't happen.
-  *   `ttlDays` (*type:* `String.t`, *default:* `nil`) - Input only. The time-to-live (TTL) interval for this resource (in days). For example: ttlDays:7 means 7 days.
+  *   `ttlDays` (*type:* `String.t`, *default:* `nil`) - Input only. The time-to-live (TTL) interval for this resource (in days). For example: ttlDays:7, means 7 days from the current time. The expiration time can't exceed 365 days from the time that the backup is created.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of this backup. The type can be "AUTOMATED", "ON_DEMAND" or “FINAL”.
   """
 
@@ -53,6 +55,8 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Backup do
           :error => GoogleApi.SQLAdmin.V1.Model.OperationError.t() | nil,
           :expiryTime => DateTime.t() | nil,
           :instance => String.t() | nil,
+          :instanceDeletionTime => DateTime.t() | nil,
+          :instanceSettings => GoogleApi.SQLAdmin.V1.Model.DatabaseInstance.t() | nil,
           :kind => String.t() | nil,
           :kmsKey => String.t() | nil,
           :kmsKeyVersion => String.t() | nil,
@@ -75,6 +79,8 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Backup do
   field(:error, as: GoogleApi.SQLAdmin.V1.Model.OperationError)
   field(:expiryTime, as: DateTime)
   field(:instance)
+  field(:instanceDeletionTime, as: DateTime)
+  field(:instanceSettings, as: GoogleApi.SQLAdmin.V1.Model.DatabaseInstance)
   field(:kind)
   field(:kmsKey)
   field(:kmsKeyVersion)
