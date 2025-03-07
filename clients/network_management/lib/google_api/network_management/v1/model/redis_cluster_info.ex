@@ -24,7 +24,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.RedisClusterInfo do
   *   `discoveryEndpointIpAddress` (*type:* `String.t`, *default:* `nil`) - Discovery endpoint IP address of a Redis Cluster.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a Redis Cluster.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Name of the region in which the Redis Cluster is defined. For example, "us-central1".
-  *   `networkUri` (*type:* `String.t`, *default:* `nil`) - URI of a Redis Cluster network in format "projects/{project_id}/global/networks/{network_id}".
+  *   `networkUri` (*type:* `String.t`, *default:* `nil`) - URI of the network containing the Redis Cluster endpoints in format "projects/{project_id}/global/networks/{network_id}".
   *   `secondaryEndpointIpAddress` (*type:* `String.t`, *default:* `nil`) - Secondary endpoint IP address of a Redis Cluster.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Redis Cluster in format "projects/{project_id}/locations/{location}/clusters/{cluster_id}"
   """
