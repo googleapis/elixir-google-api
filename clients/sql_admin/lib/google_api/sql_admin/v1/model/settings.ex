@@ -37,6 +37,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type. Potential values: * `ZONAL`: The instance serves data from only one zone. Outages in that zone affect data accessibility. * `REGIONAL`: The instance can serve data from more than one zone in a region (it is highly available)./ For more information, see [Overview of the High Availability Configuration](https://cloud.google.com/sql/docs/mysql/high-availability).
   *   `insightsConfig` (*type:* `GoogleApi.SQLAdmin.V1.Model.InsightsConfig.t`, *default:* `nil`) - Insights configuration, for now relevant only for Postgres.
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The size of data disk, in GB. The data disk size minimum is 10GB.
+  *   `retainBackupsOnDelete` (*type:* `boolean()`, *default:* `nil`) - Optional. When this parameter is set to true, Cloud SQL retains backups of the instance even after the instance is deleted. The ON_DEMAND backup will be retained until customer deletes the backup or the project. The AUTOMATED backup will be retained based on the backups retention setting.
   *   `backupConfiguration` (*type:* `GoogleApi.SQLAdmin.V1.Model.BackupConfiguration.t`, *default:* `nil`) - The daily backup configuration for the instance.
   *   `authorizedGaeApplications` (*type:* `list(String.t)`, *default:* `nil`) - The App Engine app IDs that can access this instance. (Deprecated) Applied to First Generation instances only.
   *   `edition` (*type:* `String.t`, *default:* `nil`) - Optional. The edition of the instance.
@@ -79,6 +80,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
           :availabilityType => String.t() | nil,
           :insightsConfig => GoogleApi.SQLAdmin.V1.Model.InsightsConfig.t() | nil,
           :dataDiskSizeGb => String.t() | nil,
+          :retainBackupsOnDelete => boolean() | nil,
           :backupConfiguration => GoogleApi.SQLAdmin.V1.Model.BackupConfiguration.t() | nil,
           :authorizedGaeApplications => list(String.t()) | nil,
           :edition => String.t() | nil,
@@ -123,6 +125,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   field(:availabilityType)
   field(:insightsConfig, as: GoogleApi.SQLAdmin.V1.Model.InsightsConfig)
   field(:dataDiskSizeGb)
+  field(:retainBackupsOnDelete)
   field(:backupConfiguration, as: GoogleApi.SQLAdmin.V1.Model.BackupConfiguration)
   field(:authorizedGaeApplications, type: :list)
   field(:edition)
