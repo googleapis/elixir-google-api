@@ -38,6 +38,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
   *   `managedBackupSource` (*type:* `GoogleApi.Redis.V1beta1.Model.ManagedBackupSource.t`, *default:* `nil`) - Optional. Backups generated and managed by memorystore service.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Identifier. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.
+  *   `ondemandMaintenance` (*type:* `boolean()`, *default:* `nil`) - Optional. Input only. Ondemand maintenance for the cluster. This field can be used to trigger ondemand critical update on the cluster.
   *   `persistenceConfig` (*type:* `GoogleApi.Redis.V1beta1.Model.ClusterPersistenceConfig.t`, *default:* `nil`) - Optional. Persistence config (RDB, AOF) for the cluster.
   *   `preciseSizeGb` (*type:* `float()`, *default:* `nil`) - Output only. Precise value of redis memory size in GB for the entire cluster.
   *   `pscConfigs` (*type:* `list(GoogleApi.Redis.V1beta1.Model.PscConfig.t)`, *default:* `nil`) - Optional. Each PscConfig configures the consumer network where IPs will be designated to the cluster for client access through Private Service Connect Automation. Currently, only one PscConfig is supported.
@@ -76,6 +77,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
           :managedBackupSource => GoogleApi.Redis.V1beta1.Model.ManagedBackupSource.t() | nil,
           :name => String.t() | nil,
           :nodeType => String.t() | nil,
+          :ondemandMaintenance => boolean() | nil,
           :persistenceConfig => GoogleApi.Redis.V1beta1.Model.ClusterPersistenceConfig.t() | nil,
           :preciseSizeGb => float() | nil,
           :pscConfigs => list(GoogleApi.Redis.V1beta1.Model.PscConfig.t()) | nil,
@@ -115,6 +117,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
   field(:managedBackupSource, as: GoogleApi.Redis.V1beta1.Model.ManagedBackupSource)
   field(:name)
   field(:nodeType)
+  field(:ondemandMaintenance)
   field(:persistenceConfig, as: GoogleApi.Redis.V1beta1.Model.ClusterPersistenceConfig)
   field(:preciseSizeGb)
   field(:pscConfigs, as: GoogleApi.Redis.V1beta1.Model.PscConfig, type: :list)
