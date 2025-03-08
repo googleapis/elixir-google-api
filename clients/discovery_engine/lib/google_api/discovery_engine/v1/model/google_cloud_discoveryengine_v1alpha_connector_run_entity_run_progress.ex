@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
   ## Attributes
 
   *   `currentCount` (*type:* `String.t`, *default:* `nil`) - The current progress.
-  *   `percentile` (*type:* `integer()`, *default:* `nil`) - Derived. The percentile of the progress.
+  *   `percentile` (*type:* `number()`, *default:* `nil`) - Derived. The percentile of the progress.current_count / total_count. The value is between [0, 1.0] inclusive.
   *   `totalCount` (*type:* `String.t`, *default:* `nil`) - The total.
   """
 
@@ -30,7 +30,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaCo
 
   @type t :: %__MODULE__{
           :currentCount => String.t() | nil,
-          :percentile => integer() | nil,
+          :percentile => number() | nil,
           :totalCount => String.t() | nil
         }
 
