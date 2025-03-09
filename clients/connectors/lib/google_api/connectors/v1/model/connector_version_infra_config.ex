@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Connectors.V1.Model.ConnectorVersionInfraConfig do
   @moduledoc """
-  This cofiguration provides infra configs like rate limit threshold which need to be configurable for every connector version
+  This configuration provides infra configs like rate limit threshold which need to be configurable for every connector version
 
   ## Attributes
 
