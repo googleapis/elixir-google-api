@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.Listing do
 
   ## Attributes
 
-  *   `bigqueryDataset` (*type:* `GoogleApi.AnalyticsHub.V1.Model.BigQueryDatasetSource.t`, *default:* `nil`) - Required. Shared dataset i.e. BigQuery dataset source.
+  *   `bigqueryDataset` (*type:* `GoogleApi.AnalyticsHub.V1.Model.BigQueryDatasetSource.t`, *default:* `nil`) - Shared dataset i.e. BigQuery dataset source.
   *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Categories of the listing. Up to two categories are allowed.
   *   `commercialInfo` (*type:* `GoogleApi.AnalyticsHub.V1.Model.GoogleCloudBigqueryAnalyticshubV1ListingCommercialInfo.t`, *default:* `nil`) - Output only. Commercial info contains the information about the commercial data products associated with the listing.
   *   `dataProvider` (*type:* `GoogleApi.AnalyticsHub.V1.Model.DataProvider.t`, *default:* `nil`) - Optional. Details of the data provider who owns the source data.
@@ -34,7 +34,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.Listing do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the listing. e.g. `projects/myproject/locations/US/dataExchanges/123/listings/456`
   *   `primaryContact` (*type:* `String.t`, *default:* `nil`) - Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes.
   *   `publisher` (*type:* `GoogleApi.AnalyticsHub.V1.Model.Publisher.t`, *default:* `nil`) - Optional. Details of the publisher who owns the listing and who can share the source data.
-  *   `pubsubTopic` (*type:* `GoogleApi.AnalyticsHub.V1.Model.PubSubTopicSource.t`, *default:* `nil`) - Required. Pub/Sub topic source.
+  *   `pubsubTopic` (*type:* `GoogleApi.AnalyticsHub.V1.Model.PubSubTopicSource.t`, *default:* `nil`) - Pub/Sub topic source.
   *   `requestAccess` (*type:* `String.t`, *default:* `nil`) - Optional. Email or URL of the request access of the listing. Subscribers can use this reference to request access. Max Length: 1000 bytes.
   *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Output only. Listing shared asset type.
   *   `restrictedExportConfig` (*type:* `GoogleApi.AnalyticsHub.V1.Model.RestrictedExportConfig.t`, *default:* `nil`) - Optional. If set, restricted export configuration will be propagated and enforced on the linked dataset.
