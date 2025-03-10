@@ -21,11 +21,16 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.RevokeSubscriptionRequest do
 
   ## Attributes
 
+  *   `revokeCommercial` (*type:* `boolean()`, *default:* `nil`) - Optional. If the subscription is commercial then this field must be set to true, otherwise a failure is thrown. This acts as a safety guard to avoid revoking commercial subscriptions accidentally.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :revokeCommercial => boolean() | nil
+        }
+
+  field(:revokeCommercial)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsHub.V1.Model.RevokeSubscriptionRequest do
