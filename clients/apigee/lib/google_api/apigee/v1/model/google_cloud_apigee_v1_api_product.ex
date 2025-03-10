@@ -39,6 +39,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
   *   `quotaInterval` (*type:* `String.t`, *default:* `nil`) - Time interval over which the number of request messages is calculated.
   *   `quotaTimeUnit` (*type:* `String.t`, *default:* `nil`) - Time unit defined for the `quotaInterval`. Valid values include `minute`, `hour`, `day`, or `month`.
   *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Comma-separated list of OAuth scopes that are validated at runtime. Apigee validates that the scopes in any access token presented match the scopes defined in the OAuth policy associated with the API product.
+  *   `space` (*type:* `String.t`, *default:* `nil`) - Optional. The resource ID of the parent Space. If not set, the parent resource will be the Organization. To learn how Spaces can be used to manage resources, read the [Apigee Spaces Overview](https://cloud.google.com/apigee/docs/api-platform/system-administration/spaces/apigee-spaces-overview).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -64,7 +65,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
           :quotaCounterScope => String.t() | nil,
           :quotaInterval => String.t() | nil,
           :quotaTimeUnit => String.t() | nil,
-          :scopes => list(String.t()) | nil
+          :scopes => list(String.t()) | nil,
+          :space => String.t() | nil
         }
 
   field(:apiResources, type: :list)
@@ -89,6 +91,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
   field(:quotaInterval)
   field(:quotaTimeUnit)
   field(:scopes, type: :list)
+  field(:space)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do

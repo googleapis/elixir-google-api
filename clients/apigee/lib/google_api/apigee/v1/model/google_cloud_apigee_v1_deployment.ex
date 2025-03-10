@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Deployment do
   @moduledoc """
-
+  Deployment represents a deployment of an API proxy or shared flow.
 
   ## Attributes
 
