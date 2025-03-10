@@ -24,7 +24,6 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.ReplicationStatus do
   *   `error` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Status.t`, *default:* `nil`) - Output only. The last error encountered while trying to replicate changes from the primary to the secondary. This field is only available if the replication has not succeeded since.
   *   `lastErrorTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the last error was encountered while trying to replicate changes from the primary to the secondary. This field is only available if the replication has not succeeded since.
   *   `lastReplicationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. A timestamp corresponding to the last change on the primary that was successfully replicated to the secondary.
-  *   `softFailoverStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which a soft failover for the reservation and its associated datasets was initiated. After this field is set, all subsequent changes to the reservation will be rejected unless a hard failover overrides this operation. This field will be cleared once the failover is complete.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,14 +31,12 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.ReplicationStatus do
   @type t :: %__MODULE__{
           :error => GoogleApi.BigQueryReservation.V1.Model.Status.t() | nil,
           :lastErrorTime => DateTime.t() | nil,
-          :lastReplicationTime => DateTime.t() | nil,
-          :softFailoverStartTime => DateTime.t() | nil
+          :lastReplicationTime => DateTime.t() | nil
         }
 
   field(:error, as: GoogleApi.BigQueryReservation.V1.Model.Status)
   field(:lastErrorTime, as: DateTime)
   field(:lastReplicationTime, as: DateTime)
-  field(:softFailoverStartTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQueryReservation.V1.Model.ReplicationStatus do
