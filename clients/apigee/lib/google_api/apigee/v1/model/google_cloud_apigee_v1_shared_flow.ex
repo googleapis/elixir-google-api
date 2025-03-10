@@ -25,6 +25,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlow do
   *   `metaData` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata.t`, *default:* `nil`) - Metadata describing the shared flow.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The ID of the shared flow.
   *   `revision` (*type:* `list(String.t)`, *default:* `nil`) - A list of revisions of this shared flow.
+  *   `space` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of the space associated with this shared flow. Any IAM policies applied to the space will control access to this shared flow. To learn how Spaces can be used to manage resources, read the [Apigee Spaces Overview](https://cloud.google.com/apigee/docs/api-platform/system-administration/spaces/apigee-spaces-overview).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlow do
           :latestRevisionId => String.t() | nil,
           :metaData => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata.t() | nil,
           :name => String.t() | nil,
-          :revision => list(String.t()) | nil
+          :revision => list(String.t()) | nil,
+          :space => String.t() | nil
         }
 
   field(:latestRevisionId)
   field(:metaData, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EntityMetadata)
   field(:name)
   field(:revision, type: :list)
+  field(:space)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SharedFlow do
