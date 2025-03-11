@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Language.V2.Model.InfraUsage do
   @moduledoc """
-  Infra Usage of billing metrics.
+  LINT: LEGACY_NAMES Infra Usage of billing metrics.
 
   ## Attributes
 
