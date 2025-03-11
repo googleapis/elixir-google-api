@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
   ## Attributes
 
   *   `additionalExperiments` (*type:* `list(String.t)`, *default:* `nil`) - Additional experiment flags for the job.
+  *   `additionalPipelineOptions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Additional pipeline option flags for the job.
   *   `additionalUserLabels` (*type:* `map()`, *default:* `nil`) - Additional user labels to be specified for the job. Keys and values must follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1kg", "count": "3" }.
   *   `autoscalingAlgorithm` (*type:* `String.t`, *default:* `nil`) - The algorithm to use for autoscaling
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Worker disk size, in gigabytes.
@@ -52,6 +53,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
 
   @type t :: %__MODULE__{
           :additionalExperiments => list(String.t()) | nil,
+          :additionalPipelineOptions => list(String.t()) | nil,
           :additionalUserLabels => map() | nil,
           :autoscalingAlgorithm => String.t() | nil,
           :diskSizeGb => integer() | nil,
@@ -79,6 +81,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.FlexTemplateRuntimeEnvironment do
         }
 
   field(:additionalExperiments, type: :list)
+  field(:additionalPipelineOptions, type: :list)
   field(:additionalUserLabels, type: :map)
   field(:autoscalingAlgorithm)
   field(:diskSizeGb)
