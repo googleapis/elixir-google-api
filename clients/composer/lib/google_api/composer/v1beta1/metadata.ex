@@ -20,7 +20,7 @@ defmodule GoogleApi.Composer.V1beta1 do
   API client metadata for GoogleApi.Composer.V1beta1.
   """
 
-  @discovery_revision "20250211"
+  @discovery_revision "20250303"
 
   def discovery_revision(), do: @discovery_revision
 end
