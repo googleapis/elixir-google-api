@@ -25,6 +25,7 @@ defmodule GoogleApi.Forms.V1.Model.Form do
   *   `info` (*type:* `GoogleApi.Forms.V1.Model.Info.t`, *default:* `nil`) - Required. The title and description of the form.
   *   `items` (*type:* `list(GoogleApi.Forms.V1.Model.Item.t)`, *default:* `nil`) - Required. A list of the form's items, which can include section headers, questions, embedded media, etc.
   *   `linkedSheetId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the linked Google Sheet which is accumulating responses from this Form (if such a Sheet exists).
+  *   `publishSettings` (*type:* `GoogleApi.Forms.V1.Model.PublishSettings.t`, *default:* `nil`) - Output only. The publishing settings for a form. This field isn't set for legacy forms because they don't have the `publish_settings` field. All newly created forms support publish settings. Forms with `publish_settings` value set can call UpdatePublishSettings API to publish or unpublish the form.
   *   `responderUri` (*type:* `String.t`, *default:* `nil`) - Output only. The form URI to share with responders. This opens a page that allows the user to submit responses but not edit the questions.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. The revision ID of the form. Used in the WriteControl in update requests to identify the revision on which the changes are based. The format of the revision ID may change over time, so it should be treated opaquely. A returned revision ID is only guaranteed to be valid for 24 hours after it has been returned and cannot be shared across users. If the revision ID is unchanged between calls, then the form has not changed. Conversely, a changed ID (for the same form and user) usually means the form has been updated; however, a changed ID can also be due to internal factors such as ID format changes.
   *   `settings` (*type:* `GoogleApi.Forms.V1.Model.FormSettings.t`, *default:* `nil`) - The form's settings. This must be updated with UpdateSettingsRequest; it is ignored during `forms.create` and UpdateFormInfoRequest.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Forms.V1.Model.Form do
           :info => GoogleApi.Forms.V1.Model.Info.t() | nil,
           :items => list(GoogleApi.Forms.V1.Model.Item.t()) | nil,
           :linkedSheetId => String.t() | nil,
+          :publishSettings => GoogleApi.Forms.V1.Model.PublishSettings.t() | nil,
           :responderUri => String.t() | nil,
           :revisionId => String.t() | nil,
           :settings => GoogleApi.Forms.V1.Model.FormSettings.t() | nil
@@ -46,6 +48,7 @@ defmodule GoogleApi.Forms.V1.Model.Form do
   field(:info, as: GoogleApi.Forms.V1.Model.Info)
   field(:items, as: GoogleApi.Forms.V1.Model.Item, type: :list)
   field(:linkedSheetId)
+  field(:publishSettings, as: GoogleApi.Forms.V1.Model.PublishSettings)
   field(:responderUri)
   field(:revisionId)
   field(:settings, as: GoogleApi.Forms.V1.Model.FormSettings)
