@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation do
   *   `conversationProfile` (*type:* `String.t`, *default:* `nil`) - Required. The Conversation Profile to be used to configure this Conversation. This field cannot be updated. Format: `projects//locations//conversationProfiles/`.
   *   `conversationStage` (*type:* `String.t`, *default:* `nil`) - Optional. The stage of a conversation. It indicates whether the virtual agent or a human agent is handling the conversation. If the conversation is created with the conversation profile that has Dialogflow config set, defaults to ConversationStage.VIRTUAL_AGENT_STAGE; Otherwise, defaults to ConversationStage.HUMAN_ASSIST_STAGE. If the conversation is created with the conversation profile that has Dialogflow config set but explicitly sets conversation_stage to ConversationStage.HUMAN_ASSIST_STAGE, it skips ConversationStage.VIRTUAL_AGENT_STAGE stage and directly goes to ConversationStage.HUMAN_ASSIST_STAGE.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the conversation was finished.
+  *   `ingestedContextReferences` (*type:* `%{optional(String.t) => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContextReference.t}`, *default:* `nil`) - Output only. The context reference updates provided by external systems.
   *   `lifecycleState` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the Conversation.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The unique identifier of this conversation. Format: `projects//locations//conversations/`.
   *   `phoneNumber` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationPhoneNumber.t`, *default:* `nil`) - Output only. It will not be empty if the conversation is to be connected over telephony.
@@ -37,6 +38,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation do
           :conversationProfile => String.t() | nil,
           :conversationStage => String.t() | nil,
           :endTime => DateTime.t() | nil,
+          :ingestedContextReferences =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContextReference.t()
+            }
+            | nil,
           :lifecycleState => String.t() | nil,
           :name => String.t() | nil,
           :phoneNumber =>
@@ -50,6 +57,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Conversation do
   field(:conversationProfile)
   field(:conversationStage)
   field(:endTime, as: DateTime)
+
+  field(:ingestedContextReferences,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContextReference,
+    type: :map
+  )
+
   field(:lifecycleState)
   field(:name)
 

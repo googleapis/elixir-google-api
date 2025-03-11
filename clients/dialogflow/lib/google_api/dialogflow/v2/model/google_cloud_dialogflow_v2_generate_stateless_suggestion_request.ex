@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GenerateStateless
 
   ## Attributes
 
+  *   `contextReferences` (*type:* `%{optional(String.t) => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContextReference.t}`, *default:* `nil`) - Optional. A section of ingested context information. The key is the name of the context reference and the value contains the contents of the context reference. The key is used to incorporate ingested context references to enhance the generator.
   *   `conversationContext` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContext.t`, *default:* `nil`) - Optional. Context of the conversation, including transcripts.
   *   `generator` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Generator.t`, *default:* `nil`) - Uncreated generator. It should be a complete generator that includes all information about the generator.
   *   `generatorName` (*type:* `String.t`, *default:* `nil`) - The resource name of the existing created generator. Format: `projects//locations//generators/`
@@ -30,12 +31,23 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GenerateStateless
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :contextReferences =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContextReference.t()
+            }
+            | nil,
           :conversationContext =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContext.t() | nil,
           :generator => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Generator.t() | nil,
           :generatorName => String.t() | nil,
           :triggerEvents => list(String.t()) | nil
         }
+
+  field(:contextReferences,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContextReference,
+    type: :map
+  )
 
   field(:conversationContext,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationContext

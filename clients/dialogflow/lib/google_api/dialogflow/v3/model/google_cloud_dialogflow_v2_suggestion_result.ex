@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SuggestionResult 
   ## Attributes
 
   *   `error` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleRpcStatus.t`, *default:* `nil`) - Error status if the request failed.
+  *   `generateSuggestionsResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2GenerateSuggestionsResponse.t`, *default:* `nil`) - Suggestions generated using generators triggered by customer or agent messages.
   *   `suggestArticlesResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SuggestArticlesResponse.t`, *default:* `nil`) - SuggestArticlesResponse if request is for ARTICLE_SUGGESTION.
   *   `suggestFaqAnswersResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SuggestFaqAnswersResponse.t`, *default:* `nil`) - SuggestFaqAnswersResponse if request is for FAQ_ANSWER.
   *   `suggestKnowledgeAssistResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SuggestKnowledgeAssistResponse.t`, *default:* `nil`) - SuggestKnowledgeAssistResponse if request is for KNOWLEDGE_ASSIST.
@@ -32,6 +33,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SuggestionResult 
 
   @type t :: %__MODULE__{
           :error => GoogleApi.Dialogflow.V3.Model.GoogleRpcStatus.t() | nil,
+          :generateSuggestionsResponse =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2GenerateSuggestionsResponse.t()
+            | nil,
           :suggestArticlesResponse =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SuggestArticlesResponse.t() | nil,
           :suggestFaqAnswersResponse =>
@@ -46,6 +50,10 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SuggestionResult 
         }
 
   field(:error, as: GoogleApi.Dialogflow.V3.Model.GoogleRpcStatus)
+
+  field(:generateSuggestionsResponse,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2GenerateSuggestionsResponse
+  )
 
   field(:suggestArticlesResponse,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SuggestArticlesResponse

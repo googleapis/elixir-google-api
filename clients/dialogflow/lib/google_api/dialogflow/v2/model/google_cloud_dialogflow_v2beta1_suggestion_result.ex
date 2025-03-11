@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SuggestionRe
   ## Attributes
 
   *   `error` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Error status if the request failed.
+  *   `generateSuggestionsResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1GenerateSuggestionsResponse.t`, *default:* `nil`) - Suggestions generated using generators triggered by customer or agent messages.
   *   `suggestArticlesResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SuggestArticlesResponse.t`, *default:* `nil`) - SuggestArticlesResponse if request is for ARTICLE_SUGGESTION.
   *   `suggestDialogflowAssistsResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse.t`, *default:* `nil`) - SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
   *   `suggestEntityExtractionResponse` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse.t`, *default:* `nil`) - SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
@@ -34,6 +35,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SuggestionRe
 
   @type t :: %__MODULE__{
           :error => GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus.t() | nil,
+          :generateSuggestionsResponse =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1GenerateSuggestionsResponse.t()
+            | nil,
           :suggestArticlesResponse =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SuggestArticlesResponse.t()
             | nil,
@@ -55,6 +59,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SuggestionRe
         }
 
   field(:error, as: GoogleApi.Dialogflow.V2.Model.GoogleRpcStatus)
+
+  field(:generateSuggestionsResponse,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1GenerateSuggestionsResponse
+  )
 
   field(:suggestArticlesResponse,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2beta1SuggestArticlesResponse
