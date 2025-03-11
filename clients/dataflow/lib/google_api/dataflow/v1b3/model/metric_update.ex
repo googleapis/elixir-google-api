@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.MetricUpdate do
   @moduledoc """
-  Describes the state of a metric. Next ID: 14
+  Describes the state of a metric.
 
   ## Attributes
 

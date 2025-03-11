@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   ## Attributes
 
   *   `additionalExperiments` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Additional experiment flags for the job, specified with the `--experiments` option.
+  *   `additionalPipelineOptions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Additional pipeline option flags for the job.
   *   `additionalUserLabels` (*type:* `map()`, *default:* `nil`) - Optional. Additional user labels to be specified for the job. Keys and values should follow the restrictions specified in the [labeling restrictions](https://cloud.google.com/compute/docs/labeling-resources#restrictions) page. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1kg", "count": "3" }.
   *   `bypassTempDirValidation` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to bypass the safety checks for the job's temporary directory. Use with caution.
   *   `diskSizeGb` (*type:* `integer()`, *default:* `nil`) - Optional. The disk size, in gigabytes, to use on each remote Compute Engine worker instance.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
 
   @type t :: %__MODULE__{
           :additionalExperiments => list(String.t()) | nil,
+          :additionalPipelineOptions => list(String.t()) | nil,
           :additionalUserLabels => map() | nil,
           :bypassTempDirValidation => boolean() | nil,
           :diskSizeGb => integer() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
         }
 
   field(:additionalExperiments, type: :list)
+  field(:additionalPipelineOptions, type: :list)
   field(:additionalUserLabels, type: :map)
   field(:bypassTempDirValidation)
   field(:diskSizeGb)
