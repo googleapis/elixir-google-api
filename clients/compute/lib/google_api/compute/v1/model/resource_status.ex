@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourceStatus do
   ## Attributes
 
   *   `physicalHost` (*type:* `String.t`, *default:* `nil`) - [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
+  *   `physicalHostTopology` (*type:* `GoogleApi.Compute.V1.Model.ResourceStatusPhysicalHostTopology.t`, *default:* `nil`) - [Output Only] A series of fields containing the global name of the Compute Engine cluster, as well as the ID of the block, sub-block, and host on which the running instance is located.
   *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.ResourceStatusScheduling.t`, *default:* `nil`) - 
   *   `upcomingMaintenance` (*type:* `GoogleApi.Compute.V1.Model.UpcomingMaintenance.t`, *default:* `nil`) - 
   """
@@ -30,11 +31,14 @@ defmodule GoogleApi.Compute.V1.Model.ResourceStatus do
 
   @type t :: %__MODULE__{
           :physicalHost => String.t() | nil,
+          :physicalHostTopology =>
+            GoogleApi.Compute.V1.Model.ResourceStatusPhysicalHostTopology.t() | nil,
           :scheduling => GoogleApi.Compute.V1.Model.ResourceStatusScheduling.t() | nil,
           :upcomingMaintenance => GoogleApi.Compute.V1.Model.UpcomingMaintenance.t() | nil
         }
 
   field(:physicalHost)
+  field(:physicalHostTopology, as: GoogleApi.Compute.V1.Model.ResourceStatusPhysicalHostTopology)
   field(:scheduling, as: GoogleApi.Compute.V1.Model.ResourceStatusScheduling)
   field(:upcomingMaintenance, as: GoogleApi.Compute.V1.Model.UpcomingMaintenance)
 end
