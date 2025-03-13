@@ -25,10 +25,10 @@ defmodule GoogleApi.TagManager.V2.Model.GtagConfig do
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - Google tag container ID.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the Google tag config as computed at storage time. This value is recomputed whenever the config is modified.
   *   `gtagConfigId` (*type:* `String.t`, *default:* `nil`) - The ID uniquely identifies the Google tag config.
-  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The Google tag config's parameters. @mutable tagmanager.accounts.containers.workspaces.gtag_config.create @mutable tagmanager.accounts.containers.workspaces.gtag_config.update
+  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The Google tag config's parameters.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Google tag config's API relative path.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Google tag config type. @required tagmanager.accounts.containers.workspaces.gtag_config.create @required tagmanager.accounts.containers.workspaces.gtag_config.update @mutable tagmanager.accounts.containers.workspaces.gtag_config.create @mutable tagmanager.accounts.containers.workspaces.gtag_config.update
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Google tag config type.
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - Google tag workspace ID. Only used by GTM containers. Set to 0 otherwise.
   """
 

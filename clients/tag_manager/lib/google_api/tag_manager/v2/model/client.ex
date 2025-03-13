@@ -25,14 +25,14 @@ defmodule GoogleApi.TagManager.V2.Model.Client do
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - The Client ID uniquely identifies the GTM client.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Client as computed at storage time. This value is recomputed whenever the client is modified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Client display name. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update
-  *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this tag in the container. @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
-  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The client's parameters. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Client display name.
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this tag in the container.
+  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The client's parameters.
   *   `parentFolderId` (*type:* `String.t`, *default:* `nil`) - Parent folder id.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM client's API relative path.
-  *   `priority` (*type:* `integer()`, *default:* `nil`) - Priority determines relative firing order. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update
+  *   `priority` (*type:* `integer()`, *default:* `nil`) - Priority determines relative firing order.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Client type. @mutable tagmanager.accounts.containers.workspaces.clients.create @mutable tagmanager.accounts.containers.workspaces.clients.update
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Client type.
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - GTM Workspace ID.
   """
 
