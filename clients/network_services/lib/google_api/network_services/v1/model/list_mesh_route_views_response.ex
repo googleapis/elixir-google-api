@@ -23,17 +23,20 @@ defmodule GoogleApi.NetworkServices.V1.Model.ListMeshRouteViewsResponse do
 
   *   `meshRouteViews` (*type:* `list(GoogleApi.NetworkServices.V1.Model.MeshRouteView.t)`, *default:* `nil`) - List of MeshRouteView resources.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable resources. Populated when the request attempts to list all resources across all supported locations, while some locations are temporarily unavailable.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :meshRouteViews => list(GoogleApi.NetworkServices.V1.Model.MeshRouteView.t()) | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:meshRouteViews, as: GoogleApi.NetworkServices.V1.Model.MeshRouteView, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkServices.V1.Model.ListMeshRouteViewsResponse do

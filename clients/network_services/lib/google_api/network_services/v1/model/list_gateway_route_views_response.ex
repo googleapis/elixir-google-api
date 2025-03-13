@@ -23,6 +23,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.ListGatewayRouteViewsResponse do
 
   *   `gatewayRouteViews` (*type:* `list(GoogleApi.NetworkServices.V1.Model.GatewayRouteView.t)`, *default:* `nil`) - List of GatewayRouteView resources.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable resources. Populated when the request attempts to list all resources across all supported locations, while some locations are temporarily unavailable.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,11 +31,13 @@ defmodule GoogleApi.NetworkServices.V1.Model.ListGatewayRouteViewsResponse do
   @type t :: %__MODULE__{
           :gatewayRouteViews =>
             list(GoogleApi.NetworkServices.V1.Model.GatewayRouteView.t()) | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:gatewayRouteViews, as: GoogleApi.NetworkServices.V1.Model.GatewayRouteView, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkServices.V1.Model.ListGatewayRouteViewsResponse do

@@ -23,17 +23,21 @@ defmodule GoogleApi.NetworkServices.V1.Model.ListServiceLbPoliciesResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than those appearing in this response, then `next_page_token` is included. To get the next set of results, call this method again using the value of `next_page_token` as `page_token`.
   *   `serviceLbPolicies` (*type:* `list(GoogleApi.NetworkServices.V1.Model.ServiceLbPolicy.t)`, *default:* `nil`) - List of ServiceLbPolicy resources.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable resources. Populated when the request attempts to list all resources across all supported locations, while some locations are temporarily unavailable.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => String.t() | nil,
-          :serviceLbPolicies => list(GoogleApi.NetworkServices.V1.Model.ServiceLbPolicy.t()) | nil
+          :serviceLbPolicies =>
+            list(GoogleApi.NetworkServices.V1.Model.ServiceLbPolicy.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)
   field(:serviceLbPolicies, as: GoogleApi.NetworkServices.V1.Model.ServiceLbPolicy, type: :list)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkServices.V1.Model.ListServiceLbPoliciesResponse do
