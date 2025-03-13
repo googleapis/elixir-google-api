@@ -21,8 +21,8 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerAccess do
 
   ## Attributes
 
-  *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID. @mutable tagmanager.accounts.permissions.create @mutable tagmanager.accounts.permissions.update
-  *   `permission` (*type:* `String.t`, *default:* `nil`) - List of Container permissions. @mutable tagmanager.accounts.permissions.create @mutable tagmanager.accounts.permissions.update
+  *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
+  *   `permission` (*type:* `String.t`, *default:* `nil`) - List of Container permissions.
   """
 
   use GoogleApi.Gax.ModelBase

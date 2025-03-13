@@ -24,14 +24,14 @@ defmodule GoogleApi.TagManager.V2.Model.Transformation do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Transformation as computed at storage time. This value is recomputed whenever the transformation is modified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Transformation display name. @mutable tagmanager.accounts.containers.workspaces.transformations.create @mutable tagmanager.accounts.containers.workspaces.transformations.update
-  *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this transformation in the container. @mutable tagmanager.accounts.containers.workspaces.transformations.create @mutable tagmanager.accounts.containers.workspaces.transformations.update
-  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The transformation's parameters. @mutable tagmanager.accounts.containers.workspaces.transformations.create @mutable tagmanager.accounts.containers.workspaces.transformations.update
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Transformation display name.
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - User notes on how to apply this transformation in the container.
+  *   `parameter` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - The transformation's parameters.
   *   `parentFolderId` (*type:* `String.t`, *default:* `nil`) - Parent folder id.
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM transformation's API relative path.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
   *   `transformationId` (*type:* `String.t`, *default:* `nil`) - The Transformation ID uniquely identifies the GTM transformation.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Transformation type. @mutable tagmanager.accounts.containers.workspaces.transformations.create @mutable tagmanager.accounts.containers.workspaces.transformations.update
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Transformation type.
   *   `workspaceId` (*type:* `String.t`, *default:* `nil`) - GTM Workspace ID.
   """
 
