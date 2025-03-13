@@ -27,7 +27,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.RegionalEndpoint do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of this resource.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Output only. The literal IP address of the PSC Forwarding Rule created on behalf of the customer. This field is deprecated. Use address instead.
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of a RegionalEndpoint. Format: `projects/{project}/locations/{location}/regionalEndpoints/{regional_endpoint}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of a RegionalEndpoint. Pattern: `projects/{project}/locations/{location}/regionalEndpoints/^[-a-z0-9](?:[-a-z0-9]{0,44})[a-z0-9]$`.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The name of the VPC network for this private regional endpoint. Format: `projects/{project}/global/networks/{network}`
   *   `pscForwardingRule` (*type:* `String.t`, *default:* `nil`) - Output only. The resource reference of the PSC Forwarding Rule created on behalf of the customer. Format: `//compute.googleapis.com/projects/{project}/regions/{region}/forwardingRules/{forwarding_rule_name}`
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The name of the subnetwork from which the IP address will be allocated. Format: `projects/{project}/regions/{region}/subnetworks/{subnetwork}`
