@@ -22,7 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DiskSpec do
   ## Attributes
 
   *   `bootDiskSizeGb` (*type:* `integer()`, *default:* `nil`) - Size in GB of the boot disk (default is 100GB).
-  *   `bootDiskType` (*type:* `String.t`, *default:* `nil`) - Type of the boot disk (default is "pd-ssd"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive).
+  *   `bootDiskType` (*type:* `String.t`, *default:* `nil`) - Type of the boot disk. For non-A3U machines, the default value is "pd-ssd", for A3U machines, the default value is "hyperdisk-balanced". Valid values: "pd-ssd" (Persistent Disk Solid State Drive), "pd-standard" (Persistent Disk Hard Disk Drive) or "hyperdisk-balanced".
   """
 
   use GoogleApi.Gax.ModelBase

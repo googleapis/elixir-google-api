@@ -27,6 +27,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
   *   `maxEmbeddingRequestsPerMin` (*type:* `integer()`, *default:* `nil`) - Optional. The max number of queries per minute that this job is allowed to make to the embedding model specified on the corpus. This value is specific to this job and not shared across other import jobs. Consult the Quotas page on the project to set an appropriate value here. If unspecified, a default value of 1,000 QPM would be used.
   *   `partialFailureBigquerySink` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQueryDestination.t`, *default:* `nil`) - The BigQuery destination to write partial failures to. It should be a bigquery table resource name (e.g. "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the table does not exist, it will be created with the expected schema. If the table exists, the schema will be validated and data will be added to this existing table. Deprecated. Prefer to use `import_result_bq_sink`.
   *   `partialFailureGcsSink` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsDestination.t`, *default:* `nil`) - The Cloud Storage path to write partial failures to. Deprecated. Prefer to use `import_result_gcs_sink`.
+  *   `ragFileParsingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFileParsingConfig.t`, *default:* `nil`) - Optional. Specifies the parsing config for RagFiles. RAG will use the default parser if this field is not set.
   *   `ragFileTransformationConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFileTransformationConfig.t`, *default:* `nil`) - Specifies the transformation config for RagFiles.
   *   `sharePointSources` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SharePointSources.t`, *default:* `nil`) - SharePoint sources.
   *   `slackSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SlackSource.t`, *default:* `nil`) - Slack channels with their corresponding access tokens.
@@ -45,6 +46,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQueryDestination.t() | nil,
           :partialFailureGcsSink =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsDestination.t() | nil,
+          :ragFileParsingConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFileParsingConfig.t() | nil,
           :ragFileTransformationConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFileTransformationConfig.t()
             | nil,
@@ -69,6 +72,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
 
   field(:partialFailureGcsSink,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsDestination
+  )
+
+  field(:ragFileParsingConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagFileParsingConfig
   )
 
   field(:ragFileTransformationConfig,
