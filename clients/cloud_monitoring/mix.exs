@@ -25,7 +25,7 @@ defmodule GoogleApi.CloudMonitoring.V2BETA2.Mixfile do
     [
       {:tesla, "~> 0.5"},
       {:poison, ">= 1.0.0"},
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:ex_doc, "~> 0.37", only: :dev}
     ]
   end
 
