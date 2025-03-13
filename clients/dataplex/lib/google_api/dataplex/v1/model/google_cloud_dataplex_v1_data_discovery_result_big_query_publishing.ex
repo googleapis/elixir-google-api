@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResultBi
 
   ## Attributes
 
-  *   `dataset` (*type:* `String.t`, *default:* `nil`) - Output only. The BigQuery dataset to publish to. It takes the form projects/{project_id}/datasets/{dataset_id}. If not set, the service creates a default publishing dataset.
+  *   `dataset` (*type:* `String.t`, *default:* `nil`) - Output only. The BigQuery dataset the discovered tables are published to.
   """
 
   use GoogleApi.Gax.ModelBase
