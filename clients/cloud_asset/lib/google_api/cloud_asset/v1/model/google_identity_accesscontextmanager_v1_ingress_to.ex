@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Ingr
 
   *   `operations` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ApiOperation.t)`, *default:* `nil`) - A list of ApiOperations allowed to be performed by the sources specified in corresponding IngressFrom in this ServicePerimeter.
   *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - A list of resources, currently only projects in the form `projects/`, protected by this ServicePerimeter that are allowed to be accessed by sources defined in the corresponding IngressFrom. If a single `*` is specified, then access to all resources inside the perimeter are allowed.
+  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - IAM roles that represent the set of operations that the sources specified in the corresponding IngressFrom are allowed to perform in this ServicePerimeter.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,7 +34,8 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Ingr
               GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1ApiOperation.t()
             )
             | nil,
-          :resources => list(String.t()) | nil
+          :resources => list(String.t()) | nil,
+          :roles => list(String.t()) | nil
         }
 
   field(:operations,
@@ -42,6 +44,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Ingr
   )
 
   field(:resources, type: :list)
+  field(:roles, type: :list)
 end
 
 defimpl Poison.Decoder,
