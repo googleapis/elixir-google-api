@@ -21,7 +21,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ch
 
   ## Attributes
 
-  *   `chromeOsDevice` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsDevice.t`, *default:* `nil`) - Output only. This field contains information about the ChromeOS device that the user session is running on. It is only set if the user session is affiliated, i.e. if the user is managed by the same organization that managed the ChromeOS device.
+  *   `chromeOsDevice` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsDevice.t`, *default:* `nil`) - Output only. This field contains information about the ChromeOS device that the user session is running on. It is only set if the user is affiliated, i.e., if the user is managed by the same organization that manages the ChromeOS device.
   *   `userDirectoryApiId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique Directory API ID of the user.
   *   `userPrimaryEmail` (*type:* `String.t`, *default:* `nil`) - Output only. The primary e-mail address of the user.
   """

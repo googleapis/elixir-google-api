@@ -21,18 +21,16 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ce
 
   ## Attributes
 
-  *   `caConnectionAdapterConfigReference` (*type:* `String.t`, *default:* `nil`) - Output only. A JSON string that contains the administrator-provided configuration for the certification authority service. This field can be missing if no configuration was given.
   *   `chromeOsDevice` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsDevice.t`, *default:* `nil`) - Output only. The client certificate is being provisioned for a ChromeOS device. This contains information about the device.
-  *   `chromeOsUserSession` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsUserSession.t`, *default:* `nil`) - Output only. The client certificate is being provisioned for a ChromeOS user session. This contains information about the user session.
-  *   `failureMessage` (*type:* `String.t`, *default:* `nil`) - Output only. A message describing why this `CertificateProvisioningProcess` failed. Presence of this field indicates that the `CertificateProvisioningProcess` has failed.
+  *   `chromeOsUserSession` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsUserSession.t`, *default:* `nil`) - Output only. The client certificate is being provisioned for a ChromeOS user. This contains information about the current user session.
+  *   `failureMessage` (*type:* `String.t`, *default:* `nil`) - Output only. A message describing why this `CertificateProvisioningProcess` has failed. Presence of this field indicates that the `CertificateProvisioningProcess` has failed.
   *   `genericCaConnection` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1GenericCaConnection.t`, *default:* `nil`) - Output only. The CA connection is a generic CA connection.
   *   `genericProfile` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1GenericProfile.t`, *default:* `nil`) - Output only. The profile is a generic certificate provisioning profile.
   *   `issuedCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. The issued certificate for this `CertificateProvisioningProcess` in PEM format.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the `CertificateProvisioningProcess`. The name pattern is given as `customers/{customer}/certificateProvisioningProcesses/{certificate_provisioning_process}` with `{customer}` being the obfuscated customer id and `{certificate_provisioning_process}` being the certificate provisioning process id.
-  *   `profileAdapterConfigReference` (*type:* `String.t`, *default:* `nil`) - Output only. A JSON string that contains the administrator-provided configuration for the certificate provisioning profile. This field can be missing if no configuration was given.
   *   `provisioningProfileId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the certificate provisioning profile.
   *   `signData` (*type:* `String.t`, *default:* `nil`) - Output only. The data that the client was asked to sign. This field is only present after the `SignData` operation has been initiated.
-  *   `signature` (*type:* `String.t`, *default:* `nil`) - Output only. The signature of `signature_algorithm`, generated using the client's private key using `signature_algorithm`. This field is only present after the`SignData` operation has finished.
+  *   `signature` (*type:* `String.t`, *default:* `nil`) - Output only. The signature of `signature_algorithm`, generated using the client's private key using `signature_algorithm`. This field is only present after the `SignData` operation has finished.
   *   `signatureAlgorithm` (*type:* `String.t`, *default:* `nil`) - Output only. The signature algorithm that the adapter expects the client and backend components to use when processing `sign_data`. This field is only present after the `SignData` operation has been initiated.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Server-generated timestamp of when the certificate provisioning process has been created.
   *   `subjectPublicKeyInfo` (*type:* `String.t`, *default:* `nil`) - Output only. The public key for which a certificate should be provisioned. Represented as a DER-encoded X.509 SubjectPublicKeyInfo.
@@ -41,7 +39,6 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ce
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :caConnectionAdapterConfigReference => String.t() | nil,
           :chromeOsDevice =>
             GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsDevice.t()
             | nil,
@@ -57,7 +54,6 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ce
             | nil,
           :issuedCertificate => String.t() | nil,
           :name => String.t() | nil,
-          :profileAdapterConfigReference => String.t() | nil,
           :provisioningProfileId => String.t() | nil,
           :signData => String.t() | nil,
           :signature => String.t() | nil,
@@ -65,8 +61,6 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ce
           :startTime => DateTime.t() | nil,
           :subjectPublicKeyInfo => String.t() | nil
         }
-
-  field(:caConnectionAdapterConfigReference)
 
   field(:chromeOsDevice,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1ChromeOsDevice
@@ -88,7 +82,6 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ce
 
   field(:issuedCertificate)
   field(:name)
-  field(:profileAdapterConfigReference)
   field(:provisioningProfileId)
   field(:signData)
   field(:signature)
