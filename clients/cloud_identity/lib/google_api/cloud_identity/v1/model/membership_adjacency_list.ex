@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.MembershipAdjacencyList do
 
   ## Attributes
 
-  *   `edges` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.Membership.t)`, *default:* `nil`) - Each edge contains information about the member that belongs to this group. Note: Fields returned here will help identify the specific Membership resource (e.g name, preferred_member_key and role), but may not be a comprehensive list of all fields.
+  *   `edges` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.Membership.t)`, *default:* `nil`) - Each edge contains information about the member that belongs to this group. Note: Fields returned here will help identify the specific Membership resource (e.g `name`, `preferred_member_key` and `role`), but may not be a comprehensive list of all fields.
   *   `group` (*type:* `String.t`, *default:* `nil`) - Resource name of the group that the members belong to.
   """
 
