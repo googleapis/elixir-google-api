@@ -21,6 +21,7 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
 
   ## Attributes
 
+  *   `apphub` (*type:* `GoogleApi.Logging.V2.Model.AppHub.t`, *default:* `nil`) - Output only. AppHub application metadata associated with this LogEntry. May be empty if there is no associated AppHub application or multiple associated applications (such as for VPC flow logs)
   *   `errorGroups` (*type:* `list(GoogleApi.Logging.V2.Model.LogErrorGroup.t)`, *default:* `nil`) - Output only. The Error Reporting (https://cloud.google.com/error-reporting) error groups associated with this LogEntry. Error Reporting sets the values for this field during error group creation.For more information, see View error details( https://cloud.google.com/error-reporting/docs/viewing-errors#view_error_details)This field isn't available during log routing (https://cloud.google.com/logging/docs/routing/overview)
   *   `httpRequest` (*type:* `GoogleApi.Logging.V2.Model.HttpRequest.t`, *default:* `nil`) - Optional. Information about the HTTP request associated with this log entry, if applicable.
   *   `insertId` (*type:* `String.t`, *default:* `nil`) - Optional. A unique identifier for the log entry. If you provide a value, then Logging considers other log entries in the same project, with the same timestamp, and with the same insert_id to be duplicates which are removed in a single query result. However, there are no guarantees of de-duplication in the export of logs.If the insert_id is omitted when writing a log entry, the Logging API assigns its own unique identifier in this field.In queries, the insert_id is also used to order log entries that have the same log_name and timestamp values.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :apphub => GoogleApi.Logging.V2.Model.AppHub.t() | nil,
           :errorGroups => list(GoogleApi.Logging.V2.Model.LogErrorGroup.t()) | nil,
           :httpRequest => GoogleApi.Logging.V2.Model.HttpRequest.t() | nil,
           :insertId => String.t() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.Logging.V2.Model.LogEntry do
           :traceSampled => boolean() | nil
         }
 
+  field(:apphub, as: GoogleApi.Logging.V2.Model.AppHub)
   field(:errorGroups, as: GoogleApi.Logging.V2.Model.LogErrorGroup, type: :list)
   field(:httpRequest, as: GoogleApi.Logging.V2.Model.HttpRequest)
   field(:insertId)
