@@ -64,6 +64,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `utcOffsetMinutes` (*type:* `integer()`, *default:* `nil`) - Number of minutes this place's timezone is currently offset from UTC. This is expressed in minutes to support timezones that are offset by fractions of an hour, e.g. X hours and 15 minutes.
   *   `businessStatus` (*type:* `String.t`, *default:* `nil`) - The business status for the place.
   *   `menuForChildren` (*type:* `boolean()`, *default:* `nil`) - Place has a children's menu.
+  *   `postalAddress` (*type:* `GoogleApi.Places.V1.Model.GoogleTypePostalAddress.t`, *default:* `nil`) - The address in postal address format.
   *   `regularSecondaryOpeningHours` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t)`, *default:* `nil`) - Contains an array of entries for information about regular secondary hours of a business. Secondary hours are different from a business's main hours. For example, a restaurant can specify drive through hours or delivery hours as its secondary hours. This field populates the type subfield, which draws from a predefined list of opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the place.
   *   `curbsidePickup` (*type:* `boolean()`, *default:* `nil`) - Specifies if the business supports curbside pickup.
   *   `evChargeOptions` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1EVChargeOptions.t`, *default:* `nil`) - Information of ev charging options.
@@ -146,6 +147,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
           :utcOffsetMinutes => integer() | nil,
           :businessStatus => String.t() | nil,
           :menuForChildren => boolean() | nil,
+          :postalAddress => GoogleApi.Places.V1.Model.GoogleTypePostalAddress.t() | nil,
           :regularSecondaryOpeningHours =>
             list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t()) | nil,
           :curbsidePickup => boolean() | nil,
@@ -246,6 +248,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   field(:utcOffsetMinutes)
   field(:businessStatus)
   field(:menuForChildren)
+  field(:postalAddress, as: GoogleApi.Places.V1.Model.GoogleTypePostalAddress)
 
   field(:regularSecondaryOpeningHours,
     as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours,
