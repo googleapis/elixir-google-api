@@ -23,7 +23,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   *   `discountAmount` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Amount.t`, *default:* `nil`) - Output only. The discount amount. The value is positive.
   *   `discountRatioMicros` (*type:* `String.t`, *default:* `nil`) - Output only. The discount percentage in micros. For example, 50,000 represents 5%.
-  *   `recurrenceCount` (*type:* `integer()`, *default:* `nil`) - Output only. Output Only. The duration of an introductory offer in billing cycles.
+  *   `recurrenceCount` (*type:* `integer()`, *default:* `nil`) - Output only. The duration of an introductory offer in billing cycles.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Output only. 2-letter ISO region code where the product is available in. Ex. "US".
   """
 

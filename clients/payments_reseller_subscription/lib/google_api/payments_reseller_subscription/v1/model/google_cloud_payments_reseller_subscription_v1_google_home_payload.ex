@@ -21,7 +21,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
-  *   `attachedToGoogleStructure` (*type:* `boolean()`, *default:* `nil`) - Output only. Output only. This identifies whether the subscription is attached to a Google Home structure.
+  *   `attachedToGoogleStructure` (*type:* `boolean()`, *default:* `nil`) - Output only. This identifies whether the subscription is attached to a Google Home structure.
   *   `partnerStructureId` (*type:* `String.t`, *default:* `nil`) - Optional. This identifies the structure ID on partner side that the subscription should be applied to. Only required when the partner requires structure mapping.
   """
 
