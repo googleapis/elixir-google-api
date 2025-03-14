@@ -30,7 +30,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.YoutubeAndPartnersSettings do
   *   `targetFrequency` (*type:* `GoogleApi.DisplayVideo.V3.Model.TargetFrequency.t`, *default:* `nil`) - Optional. The average number of times you want ads from this line item to show to the same person over a certain period of time.
   *   `thirdPartyMeasurementConfigs` (*type:* `GoogleApi.DisplayVideo.V3.Model.ThirdPartyMeasurementConfigs.t`, *default:* `nil`) - Optional. The third-party measurement configs of the line item.
   *   `videoAdSequenceSettings` (*type:* `GoogleApi.DisplayVideo.V3.Model.VideoAdSequenceSettings.t`, *default:* `nil`) - Optional. The settings related to VideoAdSequence.
-  *   `viewFrequencyCap` (*type:* `GoogleApi.DisplayVideo.V3.Model.FrequencyCap.t`, *default:* `nil`) - The view frequency cap settings of the line item. The max_views field in this settings object must be used if assigning a limited cap. *Warning*: On **February 28, 2025**, frequency cap time periods greater than 30 days will no longer be accepted. [Read more about this announced change](/display-video/api/deprecations#features.lifetime_frequency_cap)
+  *   `viewFrequencyCap` (*type:* `GoogleApi.DisplayVideo.V3.Model.FrequencyCap.t`, *default:* `nil`) - The view frequency cap settings of the line item. The max_views field in this settings object must be used if assigning a limited cap.
   """
 
   use GoogleApi.Gax.ModelBase
