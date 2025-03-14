@@ -22,15 +22,18 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.FileLocation do
   ## Attributes
 
   *   `filePath` (*type:* `String.t`, *default:* `nil`) - For jars that are contained inside .war files, this filepath can indicate the path to war file combined with the path to jar file.
+  *   `layerDetails` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.LayerDetails.t`, *default:* `nil`) - Each package found in a file should have its own layer metadata (that is, information from the origin layer of the package).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :filePath => String.t() | nil
+          :filePath => String.t() | nil,
+          :layerDetails => GoogleApi.ContainerAnalysis.V1alpha1.Model.LayerDetails.t() | nil
         }
 
   field(:filePath)
+  field(:layerDetails, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.LayerDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1alpha1.Model.FileLocation do
