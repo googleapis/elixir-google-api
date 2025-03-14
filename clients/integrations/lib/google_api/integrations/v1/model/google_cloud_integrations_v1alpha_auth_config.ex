@@ -24,20 +24,20 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaAuthConf
   *   `certificateId` (*type:* `String.t`, *default:* `nil`) - Certificate id for client certificate
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the auth config is created.
   *   `creatorEmail` (*type:* `String.t`, *default:* `nil`) - The creator's email address. Generated based on the End User Credentials/LOAS role of the user making the call.
-  *   `credentialType` (*type:* `String.t`, *default:* `nil`) - Credential type of the encrypted credential.
+  *   `credentialType` (*type:* `String.t`, *default:* `nil`) - Required. Credential type of the encrypted credential.
   *   `decryptedCredential` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCredential.t`, *default:* `nil`) - Raw auth credentials.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the auth config.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the auth config.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the auth config.
   *   `encryptedCredential` (*type:* `String.t`, *default:* `nil`) - Auth credential encrypted by Cloud KMS. Can be decrypted as Credential with proper KMS key.
-  *   `expiryNotificationDuration` (*type:* `list(String.t)`, *default:* `nil`) - User can define the time to receive notification after which the auth config becomes invalid. Support up to 30 days. Support granularity in hours.
+  *   `expiryNotificationDuration` (*type:* `list(String.t)`, *default:* `nil`) - Optional. User can define the time to receive notification after which the auth config becomes invalid. Support up to 30 days. Support granularity in hours.
   *   `lastModifierEmail` (*type:* `String.t`, *default:* `nil`) - The last modifier's email address. Generated based on the End User Credentials/LOAS role of the user making the call.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the auth config. For more information, see Manage authentication profiles. projects/{project}/locations/{location}/authConfigs/{authConfig}.
-  *   `overrideValidTime` (*type:* `DateTime.t`, *default:* `nil`) - User provided expiry time to override. For the example of Salesforce, username/password credentials can be valid for 6 months depending on the instance settings.
+  *   `overrideValidTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. User provided expiry time to override. For the example of Salesforce, username/password credentials can be valid for 6 months depending on the instance settings.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason / details of the current status.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The status of the auth config.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the auth config is modified.
-  *   `validTime` (*type:* `DateTime.t`, *default:* `nil`) - The time until the auth config is valid. Empty or max value is considered the auth config won't expire.
-  *   `visibility` (*type:* `String.t`, *default:* `nil`) - The visibility of the auth config.
+  *   `validTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time until the auth config is valid. Empty or max value is considered the auth config won't expire.
+  *   `visibility` (*type:* `String.t`, *default:* `nil`) - Optional. The visibility of the auth config.
   """
 
   use GoogleApi.Gax.ModelBase

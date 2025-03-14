@@ -24,8 +24,8 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaSfdcInst
   *   `authConfigId` (*type:* `list(String.t)`, *default:* `nil`) - A list of AuthConfigs that can be tried to open the channel to SFDC
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the instance is created
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the instance was deleted. Empty if not deleted.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the sfdc instance.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - User selected unique name/alias to easily reference an instance.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the sfdc instance.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User selected unique name/alias to easily reference an instance.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the SFDC instance projects/{project}/locations/{location}/sfdcInstances/{sfdcInstance}.
   *   `serviceAuthority` (*type:* `String.t`, *default:* `nil`) - URL used for API calls after authentication (the login authority is configured within the referenced AuthConfig).
   *   `sfdcOrgId` (*type:* `String.t`, *default:* `nil`) - The SFDC Org Id. This is defined in salesforce.

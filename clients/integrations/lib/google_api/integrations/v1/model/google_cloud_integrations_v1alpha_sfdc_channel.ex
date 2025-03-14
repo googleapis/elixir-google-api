@@ -21,11 +21,11 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaSfdcChan
 
   ## Attributes
 
-  *   `channelTopic` (*type:* `String.t`, *default:* `nil`) - The Channel topic defined by salesforce once an channel is opened
+  *   `channelTopic` (*type:* `String.t`, *default:* `nil`) - Required. The Channel topic defined by salesforce once an channel is opened
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the channel is created
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the channel was deleted. Empty if not deleted.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The description for this channel
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Client level unique name/alias to easily reference a channel.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description for this channel
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Client level unique name/alias to easily reference a channel.
   *   `isActive` (*type:* `boolean()`, *default:* `nil`) - Indicated if a channel has any active integrations referencing it. Set to false when the channel is created, and set to true if there is any integration published with the channel configured in it.
   *   `lastReplayId` (*type:* `String.t`, *default:* `nil`) - Last sfdc messsage replay id for channel
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the SFDC channel projects/{project}/locations/{location}/sfdcInstances/{sfdc_instance}/sfdcChannels/{sfdc_channel}.
