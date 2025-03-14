@@ -26,7 +26,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  To retrieve the products that can be resold by the partner. It should be autenticated with a service account. - This API doesn't apply to YouTube products currently.
+  Currently, it doesn't support **YouTube** products. Retrieves the products that can be resold by the partner. It should be autenticated with a service account.
 
   ## Parameters
 
@@ -109,7 +109,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  To find eligible promotions for the current user. The API requires user authorization via OAuth. The bare minimum oauth scope `openid` is sufficient, which will skip the consent screen.
+  Currently, it is only enabeld for **YouTube**. Finds eligible promotions for the current user. The API requires user authorization via OAuth. The bare minimum oauth scope `openid` is sufficient, which will skip the consent screen.
 
   ## Parameters
 
@@ -188,7 +188,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  Retrieves the promotions, such as free trial, that can be used by the partner. - This API doesn't apply to YouTube promotions currently. It should be autenticated with a service account.
+  Currently, it doesn't support **YouTube** promotions. Retrieves the promotions, such as free trial, that can be used by the partner. It should be autenticated with a service account.
 
   ## Parameters
 
@@ -271,7 +271,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  Used by partners to cancel a subscription service either immediately or by the end of the current billing cycle for their customers. It should be called directly by the partner using service accounts.
+  Cancels a subscription service either immediately or by the end of the current billing cycle for their customers. It should be called directly by the partner using service accounts.
 
   ## Parameters
 
@@ -431,7 +431,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  Used by partners to entitle a previously provisioned subscription to the current end user. The end user identity is inferred from the authorized credential of the request. This API must be authorized by the end user using OAuth.
+  Entitles a previously provisioned subscription to the current end user. The end user identity is inferred from the authorized credential of the request. This API must be authorized by the end user using OAuth.
 
   ## Parameters
 
@@ -510,7 +510,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  [Opt-in only] Most partners should be on auto-extend by default. Used by partners to extend a subscription service for their customers on an ongoing basis for the subscription to remain active and renewable. It should be called directly by the partner using service accounts.
+  [Opt-in only] Most partners should be on auto-extend by default. Extends a subscription service for their customers on an ongoing basis for the subscription to remain active and renewable. It should be called directly by the partner using service accounts.
 
   ## Parameters
 
@@ -589,7 +589,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  Used by partners to get a subscription by id. It should be called directly by the partner using service accounts.
+  Gets a subscription by id. It should be called directly by the partner using service accounts.
 
   ## Parameters
 
@@ -747,7 +747,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  Revokes the pending cancellation of a subscription, which is currently in `STATE_CANCEL_AT_END_OF_CYCLE` state. If the subscription is already cancelled, the request will fail. - **This API doesn't apply to YouTube subscriptions.** It should be called directly by the partner using service accounts.
+  Currently, it is used by **Google One, Play Pass** partners. Revokes the pending cancellation of a subscription, which is currently in `STATE_CANCEL_AT_END_OF_CYCLE` state. If the subscription is already cancelled, the request will fail. It should be called directly by the partner using service accounts.
 
   ## Parameters
 
@@ -826,7 +826,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  This API replaces user authorized OAuth consent based APIs (Create, Entitle). Generates a short-lived token for a user session based on the user intent. You can use the session token to redirect the user to Google to finish the signup flow. You can re-generate new session token repeatedly for the same request if necessary, regardless of the previous tokens being expired or not.
+  This API replaces user authorized OAuth consent based APIs (Create, Entitle). Issues a timed session token for the given user intent. You can use the session token to redirect the user to Google to finish the signup flow. You can re-generate new session token repeatedly for the same request if necessary, regardless of the previous tokens being expired or not.
 
   ## Parameters
 
