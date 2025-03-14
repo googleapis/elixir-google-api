@@ -21,6 +21,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoTaskExecutio
 
   ## Attributes
 
+  *   `skippedOnFailure` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the task was skipped on failure. Only relevant if the task is in SKIPPED state.
   *   `taskAttemptStats` (*type:* `list(GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoTaskExecutionDetailsTaskAttemptStats.t)`, *default:* `nil`) - 
   *   `taskExecutionState` (*type:* `String.t`, *default:* `nil`) - 
   *   `taskNumber` (*type:* `String.t`, *default:* `nil`) - Pointer to the task config it used for execution.
@@ -29,6 +30,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoTaskExecutio
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :skippedOnFailure => boolean() | nil,
           :taskAttemptStats =>
             list(
               GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoTaskExecutionDetailsTaskAttemptStats.t()
@@ -37,6 +39,8 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoTaskExecutio
           :taskExecutionState => String.t() | nil,
           :taskNumber => String.t() | nil
         }
+
+  field(:skippedOnFailure)
 
   field(:taskAttemptStats,
     as:
