@@ -49,6 +49,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of a profile.
   *   `tableId` (*type:* `String.t`, *default:* `nil`) - The table ID.
   *   `tableSizeBytes` (*type:* `String.t`, *default:* `nil`) - The size of the table when the profile was generated.
+  *   `tags` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Tag.t)`, *default:* `nil`) - The tags attached to the table, including any tags attached during profiling. Because tags are attached to Cloud SQL instances rather than Cloud SQL tables, this field is empty for Cloud SQL table profiles.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -87,7 +88,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t() | nil,
           :state => String.t() | nil,
           :tableId => String.t() | nil,
-          :tableSizeBytes => String.t() | nil
+          :tableSizeBytes => String.t() | nil,
+          :tags => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Tag.t()) | nil
         }
 
   field(:configSnapshot, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileConfigSnapshot)
@@ -132,6 +134,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   field(:state)
   field(:tableId)
   field(:tableSizeBytes)
+  field(:tags, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Tag, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do

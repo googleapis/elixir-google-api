@@ -46,6 +46,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   *   `sampleFindingsTable` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t`, *default:* `nil`) - The BigQuery table to which the sample findings are written.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this resource.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of a profile.
+  *   `tags` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Tag.t)`, *default:* `nil`) - The tags attached to the resource, including any tags attached during profiling.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -82,7 +83,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable.t() | nil,
           :sensitivityScore =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t() | nil,
-          :state => String.t() | nil
+          :state => String.t() | nil,
+          :tags => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Tag.t()) | nil
         }
 
   field(:configSnapshot, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileConfigSnapshot)
@@ -124,6 +126,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   field(:sampleFindingsTable, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTable)
   field(:sensitivityScore, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore)
   field(:state)
+  field(:tags, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Tag, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
