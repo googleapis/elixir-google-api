@@ -42,6 +42,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   *   `preserveAsciiControlCharacters` (*type:* `boolean()`, *default:* `nil`) - Optional. When sourceFormat is set to "CSV", this indicates whether the embedded ASCII control characters (the first 32 characters in the ASCII-table, from '\\x00' to '\\x1F') are preserved.
   *   `encoding` (*type:* `String.t`, *default:* `nil`) - Optional. The character encoding of the data. The supported values are UTF-8, ISO-8859-1, UTF-16BE, UTF-16LE, UTF-32BE, and UTF-32LE. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the `quote` and `fieldDelimiter` properties. If you don't specify an encoding, or if you specify a UTF-8 encoding when the CSV file is not UTF-8 encoded, BigQuery attempts to convert the data to UTF-8. Generally, your data loads successfully, but it may not match byte-for-byte what you expect. To avoid this, specify the correct encoding by using the `--encoding` flag. If BigQuery can't convert a character other than the ASCII `0` character, BigQuery converts the character to the standard Unicode replacement character: �.
   *   `fileSetSpecType` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies how source URIs are interpreted for constructing the file set to load. By default, source URIs are expanded against the underlying storage. You can also specify manifest files to control how the file set is constructed. This option is only applicable to object storage systems.
+  *   `sourceColumnMatch` (*type:* `String.t`, *default:* `nil`) - Optional. Controls the strategy used to match loaded columns to the schema. If not set, a sensible default is chosen based on how the schema is provided. If autodetect is used, then columns are matched by name. Otherwise, columns are matched by position. This is done to keep the behavior backward-compatible.
   *   `dateFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Date format used for parsing DATE values.
   *   `schema` (*type:* `GoogleApi.BigQuery.V2.Model.TableSchema.t`, *default:* `nil`) - Optional. The schema for the destination table. The schema can be omitted if the destination table already exists, or if you're loading data from Google Cloud Datastore.
   *   `projectionFields` (*type:* `list(String.t)`, *default:* `nil`) - If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result.
@@ -58,6 +59,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   *   `createSession` (*type:* `boolean()`, *default:* `nil`) - Optional. If this property is true, the job creates a new session using a randomly generated session_id. To continue using a created session with subsequent queries, pass the existing session identifier as a `ConnectionProperty` value. The session identifier is returned as part of the `SessionInfo` message within the query statistics. The new session's location will be set to `Job.JobReference.location` if it is present, otherwise it's set to the default location based on existing routing logic.
   *   `destinationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] The destination table to load the data into.
   *   `sourceFormat` (*type:* `String.t`, *default:* `nil`) - Optional. The format of the data files. For CSV files, specify "CSV". For datastore backups, specify "DATASTORE_BACKUP". For newline-delimited JSON, specify "NEWLINE_DELIMITED_JSON". For Avro, specify "AVRO". For parquet, specify "PARQUET". For orc, specify "ORC". The default value is CSV.
+  *   `nullMarkers` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of strings represented as SQL NULL value in a CSV file. null_marker and null_markers can't be set at the same time. If null_marker is set, null_markers has to be not set. If null_markers is set, null_marker has to be not set. If both null_marker and null_markers are set at the same time, a user error would be thrown. Any strings listed in null_markers, including empty string would be interpreted as SQL NULL. This applies to all column types.
   *   `destinationTableProperties` (*type:* `GoogleApi.BigQuery.V2.Model.DestinationTableProperties.t`, *default:* `nil`) - Optional. [Experimental] Properties with which to create the destination table if it is new.
   *   `parquetOptions` (*type:* `GoogleApi.BigQuery.V2.Model.ParquetOptions.t`, *default:* `nil`) - Optional. Additional properties to set if sourceFormat is set to PARQUET.
   *   `decimalTargetTypes` (*type:* `list(String.t)`, *default:* `nil`) - Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is ["NUMERIC", "BIGNUMERIC"]. If (precision,scale) is: * (38,9) -> NUMERIC; * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); * (76,38) -> BIGNUMERIC; * (77,38) -> BIGNUMERIC (error if value exceeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as ["NUMERIC", "BIGNUMERIC"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to ["NUMERIC", "STRING"] for ORC and ["NUMERIC"] for the other file formats.
@@ -91,6 +93,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
           :preserveAsciiControlCharacters => boolean() | nil,
           :encoding => String.t() | nil,
           :fileSetSpecType => String.t() | nil,
+          :sourceColumnMatch => String.t() | nil,
           :dateFormat => String.t() | nil,
           :schema => GoogleApi.BigQuery.V2.Model.TableSchema.t() | nil,
           :projectionFields => list(String.t()) | nil,
@@ -107,6 +110,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
           :createSession => boolean() | nil,
           :destinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :sourceFormat => String.t() | nil,
+          :nullMarkers => list(String.t()) | nil,
           :destinationTableProperties =>
             GoogleApi.BigQuery.V2.Model.DestinationTableProperties.t() | nil,
           :parquetOptions => GoogleApi.BigQuery.V2.Model.ParquetOptions.t() | nil,
@@ -140,6 +144,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:preserveAsciiControlCharacters)
   field(:encoding)
   field(:fileSetSpecType)
+  field(:sourceColumnMatch)
   field(:dateFormat)
   field(:schema, as: GoogleApi.BigQuery.V2.Model.TableSchema)
   field(:projectionFields, type: :list)
@@ -156,6 +161,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   field(:createSession)
   field(:destinationTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:sourceFormat)
+  field(:nullMarkers, type: :list)
   field(:destinationTableProperties, as: GoogleApi.BigQuery.V2.Model.DestinationTableProperties)
   field(:parquetOptions, as: GoogleApi.BigQuery.V2.Model.ParquetOptions)
   field(:decimalTargetTypes, type: :list)
