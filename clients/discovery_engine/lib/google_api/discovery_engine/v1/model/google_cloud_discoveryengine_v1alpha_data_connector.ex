@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   ## Attributes
 
   *   `actionConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaActionConfig.t`, *default:* `nil`) - Optional. Action configurations to make the connector support actions.
+  *   `alertPolicyConfigs` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAlertPolicyConfig.t)`, *default:* `nil`) - Optional. The connector level alert config.
   *   `autoRunDisabled` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the connector is disabled for auto run. It can be used to pause periodical and real time sync.
   *   `bapConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaBAPConfig.t`, *default:* `nil`) - Optional. The configuration for establishing a BAP connection.
   *   `blockingReasons` (*type:* `list(String.t)`, *default:* `nil`) - Output only. User actions that must be completed before the connector can start syncing data.
@@ -54,6 +55,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
   @type t :: %__MODULE__{
           :actionConfig =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaActionConfig.t()
+            | nil,
+          :alertPolicyConfigs =>
+            list(
+              GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAlertPolicyConfig.t()
+            )
             | nil,
           :autoRunDisabled => boolean() | nil,
           :bapConfig =>
@@ -96,6 +102,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaDa
 
   field(:actionConfig,
     as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaActionConfig
+  )
+
+  field(:alertPolicyConfigs,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaAlertPolicyConfig,
+    type: :list
   )
 
   field(:autoRunDisabled)
