@@ -28,6 +28,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ConnectSettings do
   *   `dnsNames` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.DnsNameMapping.t)`, *default:* `nil`) - Output only. The list of DNS names used by this instance.
   *   `ipAddresses` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t)`, *default:* `nil`) - The assigned IP addresses for the instance.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#connectSettings`.
+  *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in a read pool.
+  *   `nodes` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.ConnectPoolNodeConfig.t)`, *default:* `nil`) - Output only. Entries containing information about each node of the read pool.
   *   `pscEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether PSC connectivity is enabled for this instance.
   *   `region` (*type:* `String.t`, *default:* `nil`) - The cloud region for the instance. e.g. `us-central1`, `europe-west1`. The region cannot be changed after instance creation.
   *   `serverCaCert` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t`, *default:* `nil`) - SSL configuration.
@@ -44,6 +46,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ConnectSettings do
           :dnsNames => list(GoogleApi.SQLAdmin.V1beta4.Model.DnsNameMapping.t()) | nil,
           :ipAddresses => list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t()) | nil,
           :kind => String.t() | nil,
+          :nodeCount => integer() | nil,
+          :nodes => list(GoogleApi.SQLAdmin.V1beta4.Model.ConnectPoolNodeConfig.t()) | nil,
           :pscEnabled => boolean() | nil,
           :region => String.t() | nil,
           :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t() | nil,
@@ -57,6 +61,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ConnectSettings do
   field(:dnsNames, as: GoogleApi.SQLAdmin.V1beta4.Model.DnsNameMapping, type: :list)
   field(:ipAddresses, as: GoogleApi.SQLAdmin.V1beta4.Model.IpMapping, type: :list)
   field(:kind)
+  field(:nodeCount)
+  field(:nodes, as: GoogleApi.SQLAdmin.V1beta4.Model.ConnectPoolNodeConfig, type: :list)
   field(:pscEnabled)
   field(:region)
   field(:serverCaCert, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert)
