@@ -22,6 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   ## Attributes
 
   *   `backupKind` (*type:* `String.t`, *default:* `nil`) - Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
+  *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The instance database version when this backup was made.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this run, only applicable to on-demand backups.
   *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Encryption configuration specific to a backup.
   *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Encryption status specific to a backup.
@@ -45,6 +46,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
 
   @type t :: %__MODULE__{
           :backupKind => String.t() | nil,
+          :databaseVersion => String.t() | nil,
           :description => String.t() | nil,
           :diskEncryptionConfiguration =>
             GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionConfiguration.t() | nil,
@@ -67,6 +69,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
         }
 
   field(:backupKind)
+  field(:databaseVersion)
   field(:description)
 
   field(:diskEncryptionConfiguration,

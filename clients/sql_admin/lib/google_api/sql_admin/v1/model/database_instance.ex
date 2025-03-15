@@ -28,6 +28,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
   *   `dnsName` (*type:* `String.t`, *default:* `nil`) - Output only. The dns name of the instance.
   *   `currentDiskSize` (*type:* `String.t`, *default:* `nil`) - The current disk usage of the instance in bytes. This property has been deprecated. Use the "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud Monitoring API instead. Please see [this announcement](https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ) for details.
   *   `availableMaintenanceVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List all maintenance versions applicable on the instance
+  *   `nodes` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.PoolNodeConfig.t)`, *default:* `nil`) - Output only. Entries containing information about each node of the read pool.
   *   `masterInstanceName` (*type:* `String.t`, *default:* `nil`) - The name of the instance which will act as primary in the replication setup.
   *   `gceZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone that the instance is currently serving from. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary zone. WARNING: Changing this might restart the instance.
   *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Disk encryption status specific to an instance.
@@ -58,6 +59,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
   *   `ipAddresses` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.IpMapping.t)`, *default:* `nil`) - The assigned IP addresses for the instance.
   *   `diskEncryptionConfiguration` (*type:* `GoogleApi.SQLAdmin.V1.Model.DiskEncryptionConfiguration.t`, *default:* `nil`) - Disk encryption configuration specific to an instance.
   *   `suspensionReason` (*type:* `list(String.t)`, *default:* `nil`) - If the instance state is SUSPENDED, the reason for the suspension.
+  *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes in a read pool.
   *   `pscServiceAttachmentLink` (*type:* `String.t`, *default:* `nil`) - Output only. The link to service attachment of PSC instance.
   *   `failoverReplica` (*type:* `GoogleApi.SQLAdmin.V1.Model.DatabaseInstanceFailoverReplica.t`, *default:* `nil`) - The name and status of the failover replica.
   *   `dnsNames` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.DnsNameMapping.t)`, *default:* `nil`) - Output only. The list of DNS names used by this instance.
@@ -82,6 +84,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
           :dnsName => String.t() | nil,
           :currentDiskSize => String.t() | nil,
           :availableMaintenanceVersions => list(String.t()) | nil,
+          :nodes => list(GoogleApi.SQLAdmin.V1.Model.PoolNodeConfig.t()) | nil,
           :masterInstanceName => String.t() | nil,
           :gceZone => String.t() | nil,
           :diskEncryptionStatus => GoogleApi.SQLAdmin.V1.Model.DiskEncryptionStatus.t() | nil,
@@ -115,6 +118,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
           :diskEncryptionConfiguration =>
             GoogleApi.SQLAdmin.V1.Model.DiskEncryptionConfiguration.t() | nil,
           :suspensionReason => list(String.t()) | nil,
+          :nodeCount => integer() | nil,
           :pscServiceAttachmentLink => String.t() | nil,
           :failoverReplica =>
             GoogleApi.SQLAdmin.V1.Model.DatabaseInstanceFailoverReplica.t() | nil,
@@ -137,6 +141,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
   field(:dnsName)
   field(:currentDiskSize)
   field(:availableMaintenanceVersions, type: :list)
+  field(:nodes, as: GoogleApi.SQLAdmin.V1.Model.PoolNodeConfig, type: :list)
   field(:masterInstanceName)
   field(:gceZone)
   field(:diskEncryptionStatus, as: GoogleApi.SQLAdmin.V1.Model.DiskEncryptionStatus)
@@ -172,6 +177,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
   field(:ipAddresses, as: GoogleApi.SQLAdmin.V1.Model.IpMapping, type: :list)
   field(:diskEncryptionConfiguration, as: GoogleApi.SQLAdmin.V1.Model.DiskEncryptionConfiguration)
   field(:suspensionReason, type: :list)
+  field(:nodeCount)
   field(:pscServiceAttachmentLink)
   field(:failoverReplica, as: GoogleApi.SQLAdmin.V1.Model.DatabaseInstanceFailoverReplica)
   field(:dnsNames, as: GoogleApi.SQLAdmin.V1.Model.DnsNameMapping, type: :list)

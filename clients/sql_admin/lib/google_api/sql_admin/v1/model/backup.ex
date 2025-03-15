@@ -24,6 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Backup do
   *   `backupInterval` (*type:* `GoogleApi.SQLAdmin.V1.Model.Interval.t`, *default:* `nil`) - Output only. This output contains the following values: start_time: All database writes up to this time are available. end_time: Any database writes after this time aren't available.
   *   `backupKind` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
   *   `backupRun` (*type:* `String.t`, *default:* `nil`) - Output only. The mapping to backup run resource used for IAM validations.
+  *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The database version of the instance of when this backup was made.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this backup.
   *   `error` (*type:* `GoogleApi.SQLAdmin.V1.Model.OperationError.t`, *default:* `nil`) - Output only. Information about why the backup operation fails (for example, when the backup state fails).
   *   `expiryTime` (*type:* `DateTime.t`, *default:* `nil`) - Backup expiration time. A UTC timestamp of when this backup expired.
@@ -51,6 +52,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Backup do
           :backupInterval => GoogleApi.SQLAdmin.V1.Model.Interval.t() | nil,
           :backupKind => String.t() | nil,
           :backupRun => String.t() | nil,
+          :databaseVersion => String.t() | nil,
           :description => String.t() | nil,
           :error => GoogleApi.SQLAdmin.V1.Model.OperationError.t() | nil,
           :expiryTime => DateTime.t() | nil,
@@ -75,6 +77,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Backup do
   field(:backupInterval, as: GoogleApi.SQLAdmin.V1.Model.Interval)
   field(:backupKind)
   field(:backupRun)
+  field(:databaseVersion)
   field(:description)
   field(:error, as: GoogleApi.SQLAdmin.V1.Model.OperationError)
   field(:expiryTime, as: DateTime)

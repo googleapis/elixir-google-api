@@ -44,6 +44,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Flags do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:databaseVersion` (*type:* `String.t`) - Database type and version you want to retrieve flags for. By default, this method returns flags for all database types and versions.
+      *   `:flagScope` (*type:* `String.t`) - Optional. Specify the scope of flags to be returned by SqlFlagsListService. Return list of database flags if unspecified.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -69,7 +70,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Flags do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :databaseVersion => :query
+      :databaseVersion => :query,
+      :flagScope => :query
     }
 
     request =
