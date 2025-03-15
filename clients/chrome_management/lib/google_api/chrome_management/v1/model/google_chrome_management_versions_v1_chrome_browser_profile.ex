@@ -39,7 +39,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementVersionsV1Ch
   *   `lastStatusReportTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp of the latest status report by the profile.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Format: customers/{customer_id}/profiles/{profile_permanent_id}
   *   `osPlatformType` (*type:* `String.t`, *default:* `nil`) - Output only. OS platform of the device on which the profile exists.
-  *   `osPlatformVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Major OS version of the device on which the profile exists. (i.e. Windows 10)
+  *   `osPlatformVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Major OS platform version of the device on which the profile exists, from profile reporting.
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - Output only. OS version of the device on which the profile exists.
   *   `policyCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of policies applied on the profile.
   *   `profileId` (*type:* `String.t`, *default:* `nil`) - Output only. Chrome client side profile ID.
