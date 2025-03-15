@@ -23,17 +23,20 @@ defmodule GoogleApi.AccessContextManager.V1.Model.IngressTo do
 
   *   `operations` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.ApiOperation.t)`, *default:* `nil`) - A list of ApiOperations allowed to be performed by the sources specified in corresponding IngressFrom in this ServicePerimeter.
   *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - A list of resources, currently only projects in the form `projects/`, protected by this ServicePerimeter that are allowed to be accessed by sources defined in the corresponding IngressFrom. If a single `*` is specified, then access to all resources inside the perimeter are allowed.
+  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - IAM roles that represent the set of operations that the sources specified in the corresponding IngressFrom are allowed to perform in this ServicePerimeter.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :operations => list(GoogleApi.AccessContextManager.V1.Model.ApiOperation.t()) | nil,
-          :resources => list(String.t()) | nil
+          :resources => list(String.t()) | nil,
+          :roles => list(String.t()) | nil
         }
 
   field(:operations, as: GoogleApi.AccessContextManager.V1.Model.ApiOperation, type: :list)
   field(:resources, type: :list)
+  field(:roles, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessContextManager.V1.Model.IngressTo do
