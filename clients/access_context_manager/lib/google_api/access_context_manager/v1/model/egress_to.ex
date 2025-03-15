@@ -24,6 +24,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.EgressTo do
   *   `externalResources` (*type:* `list(String.t)`, *default:* `nil`) - A list of external resources that are allowed to be accessed. Only AWS and Azure resources are supported. For Amazon S3, the supported formats are s3://BUCKET_NAME, s3a://BUCKET_NAME, and s3n://BUCKET_NAME. For Azure Storage, the supported format is azure://myaccount.blob.core.windows.net/CONTAINER_NAME. A request matches if it contains an external resource in this list (Example: s3://bucket/path). Currently '*' is not allowed.
   *   `operations` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.ApiOperation.t)`, *default:* `nil`) - A list of ApiOperations allowed to be performed by the sources specified in the corresponding EgressFrom. A request matches if it uses an operation/service in this list.
   *   `resources` (*type:* `list(String.t)`, *default:* `nil`) - A list of resources, currently only projects in the form `projects/`, that are allowed to be accessed by sources defined in the corresponding EgressFrom. A request matches if it contains a resource in this list. If `*` is specified for `resources`, then this EgressTo rule will authorize access to all resources outside the perimeter.
+  *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - IAM roles that represent the set of operations that the sources specified in the corresponding EgressFrom. are allowed to perform in this ServicePerimeter.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.AccessContextManager.V1.Model.EgressTo do
   @type t :: %__MODULE__{
           :externalResources => list(String.t()) | nil,
           :operations => list(GoogleApi.AccessContextManager.V1.Model.ApiOperation.t()) | nil,
-          :resources => list(String.t()) | nil
+          :resources => list(String.t()) | nil,
+          :roles => list(String.t()) | nil
         }
 
   field(:externalResources, type: :list)
   field(:operations, as: GoogleApi.AccessContextManager.V1.Model.ApiOperation, type: :list)
   field(:resources, type: :list)
+  field(:roles, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessContextManager.V1.Model.EgressTo do
