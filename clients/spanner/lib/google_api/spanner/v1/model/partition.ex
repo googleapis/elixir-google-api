@@ -21,7 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.Partition do
 
   ## Attributes
 
-  *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - This token can be passed to Read, StreamingRead, ExecuteSql, or ExecuteStreamingSql requests to restrict the results to those identified by this partition token.
+  *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - This token can be passed to `Read`, `StreamingRead`, `ExecuteSql`, or `ExecuteStreamingSql` requests to restrict the results to those identified by this partition token.
   """
 
   use GoogleApi.Gax.ModelBase

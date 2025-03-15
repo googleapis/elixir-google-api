@@ -22,9 +22,9 @@ defmodule GoogleApi.Spanner.V1.Model.ResultSet do
   ## Attributes
 
   *   `metadata` (*type:* `GoogleApi.Spanner.V1.Model.ResultSetMetadata.t`, *default:* `nil`) - Metadata about the result set, such as row type information.
-  *   `precommitToken` (*type:* `GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t`, *default:* `nil`) - Optional. A precommit token will be included if the read-write transaction is on a multiplexed session. The precommit token with the highest sequence number from this transaction attempt should be passed to the Commit request for this transaction.
+  *   `precommitToken` (*type:* `GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t`, *default:* `nil`) - Optional. A precommit token is included if the read-write transaction is on a multiplexed session. Pass the precommit token with the highest sequence number from this transaction attempt to the Commit request for this transaction.
   *   `rows` (*type:* `list(list(any()))`, *default:* `nil`) - Each element in `rows` is a row whose format is defined by metadata.row_type. The ith element in each row matches the ith field in metadata.row_type. Elements are encoded based on type as described here.
-  *   `stats` (*type:* `GoogleApi.Spanner.V1.Model.ResultSetStats.t`, *default:* `nil`) - Query plan and execution statistics for the SQL statement that produced this result set. These can be requested by setting ExecuteSqlRequest.query_mode. DML statements always produce stats containing the number of rows modified, unless executed using the ExecuteSqlRequest.QueryMode.PLAN ExecuteSqlRequest.query_mode. Other fields may or may not be populated, based on the ExecuteSqlRequest.query_mode.
+  *   `stats` (*type:* `GoogleApi.Spanner.V1.Model.ResultSetStats.t`, *default:* `nil`) - Query plan and execution statistics for the SQL statement that produced this result set. These can be requested by setting ExecuteSqlRequest.query_mode. DML statements always produce stats containing the number of rows modified, unless executed using the ExecuteSqlRequest.QueryMode.PLAN ExecuteSqlRequest.query_mode. Other fields might or might not be populated, based on the ExecuteSqlRequest.query_mode.
   """
 
   use GoogleApi.Gax.ModelBase

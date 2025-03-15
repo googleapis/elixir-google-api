@@ -21,11 +21,11 @@ defmodule GoogleApi.Spanner.V1.Model.Session do
 
   ## Attributes
 
-  *   `approximateLastUseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The approximate timestamp when the session is last used. It is typically earlier than the actual last use time.
+  *   `approximateLastUseTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The approximate timestamp when the session is last used. It's typically earlier than the actual last use time.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the session is created.
   *   `creatorRole` (*type:* `String.t`, *default:* `nil`) - The database role which created this session.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels for the session. * Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`. * Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`. * No more than 64 labels can be associated with a given session. See https://goo.gl/xmQnxf for more information on and examples of labels.
-  *   `multiplexed` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, specifies a multiplexed session. Use a multiplexed session for multiple, concurrent read-only operations. Don't use them for read-write transactions, partitioned reads, or partitioned queries. Use `sessions.create` to create multiplexed sessions. Don't use BatchCreateSessions to create a multiplexed session. You can't delete or list multiplexed sessions.
+  *   `multiplexed` (*type:* `boolean()`, *default:* `nil`) - Optional. If `true`, specifies a multiplexed session. Use a multiplexed session for multiple, concurrent read-only operations. Don't use them for read-write transactions, partitioned reads, or partitioned queries. Use `sessions.create` to create multiplexed sessions. Don't use BatchCreateSessions to create a multiplexed session. You can't delete or list multiplexed sessions.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the session. This is always system-assigned.
   """
 
