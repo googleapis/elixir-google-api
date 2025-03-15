@@ -24,6 +24,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig do
   *   `authorizedExternalNetworks` (*type:* `list(GoogleApi.AlloyDB.V1.Model.AuthorizedNetwork.t)`, *default:* `nil`) - Optional. A list of external network authorized to access this instance.
   *   `enableOutboundPublicIp` (*type:* `boolean()`, *default:* `nil`) - Optional. Enabling an outbound public IP address to support a database server sending requests out into the internet.
   *   `enablePublicIp` (*type:* `boolean()`, *default:* `nil`) - Optional. Enabling public ip for the instance.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The resource link for the VPC network in which instance resources are created and from which they are accessible via Private IP. This will be the same value as the parent cluster's network. It is specified in the form: // `projects/{project_number}/global/networks/{network_id}`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,13 +33,15 @@ defmodule GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig do
           :authorizedExternalNetworks =>
             list(GoogleApi.AlloyDB.V1.Model.AuthorizedNetwork.t()) | nil,
           :enableOutboundPublicIp => boolean() | nil,
-          :enablePublicIp => boolean() | nil
+          :enablePublicIp => boolean() | nil,
+          :network => String.t() | nil
         }
 
   field(:authorizedExternalNetworks, as: GoogleApi.AlloyDB.V1.Model.AuthorizedNetwork, type: :list)
 
   field(:enableOutboundPublicIp)
   field(:enablePublicIp)
+  field(:network)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig do
