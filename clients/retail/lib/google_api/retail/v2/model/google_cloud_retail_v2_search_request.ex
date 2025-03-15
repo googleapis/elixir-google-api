@@ -37,6 +37,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Maximum number of Products to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 120. Values above 120 will be coerced to 120. If this field is negative, an INVALID_ARGUMENT is returned.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A page token SearchResponse.next_page_token, received from a previous SearchService.Search call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to SearchService.Search must match the call that provided the page token. Otherwise, an INVALID_ARGUMENT error is returned.
   *   `personalizationSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestPersonalizationSpec.t`, *default:* `nil`) - The specification for personalization. Notice that if both ServingConfig.personalization_spec and SearchRequest.personalization_spec are set. SearchRequest.personalization_spec will override ServingConfig.personalization_spec.
+  *   `placeId` (*type:* `String.t`, *default:* `nil`) - Optional. An id corresponding to a place, such as a store id or region id. When specified, we use the price from the local inventory with the matching product's LocalInventory.place_id for revenue optimization.
   *   `query` (*type:* `String.t`, *default:* `nil`) - Raw search query. If this field is empty, the request is considered a category browsing request and returned results are based on filter and page_categories.
   *   `queryExpansionSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestQueryExpansionSpec.t`, *default:* `nil`) - The query expansion specification that specifies the conditions under which query expansion occurs. For more information, see [Query expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Optional. The Unicode country/region code (CLDR) of a location, such as "US" and "419" [list](https://www.unicode.org/cldr/charts/46/supplemental/territory_information.html). For more information, see [Standardized codes](https://google.aip.dev/143). If set, then results will be boosted based on the region_code provided.
@@ -74,6 +75,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
           :personalizationSpec =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestPersonalizationSpec.t()
             | nil,
+          :placeId => String.t() | nil,
           :query => String.t() | nil,
           :queryExpansionSpec =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestQueryExpansionSpec.t() | nil,
@@ -121,6 +123,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestPersonalizationSpec
   )
 
+  field(:placeId)
   field(:query)
 
   field(:queryExpansionSpec,
