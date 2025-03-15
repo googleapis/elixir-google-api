@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Spanner.V1.Model.ReplicaSelection do
   @moduledoc """
-  The directed read replica selector. Callers must provide one or more of the following fields for replica selection: * `location` - The location must be one of the regions within the multi-region configuration of your database. * `type` - The type of the replica. Some examples of using replica_selectors are: * `location:us-east1` --> The "us-east1" replica(s) of any available type will be used to process the request. * `type:READ_ONLY` --> The "READ_ONLY" type replica(s) in nearest available location will be used to process the request. * `location:us-east1 type:READ_ONLY` --> The "READ_ONLY" type replica(s) in location "us-east1" will be used to process the request.
+  The directed read replica selector. Callers must provide one or more of the following fields for replica selection: * `location` - The location must be one of the regions within the multi-region configuration of your database. * `type` - The type of the replica. Some examples of using replica_selectors are: * `location:us-east1` --> The "us-east1" replica(s) of any available type is used to process the request. * `type:READ_ONLY` --> The "READ_ONLY" type replica(s) in the nearest available location are used to process the request. * `location:us-east1 type:READ_ONLY` --> The "READ_ONLY" type replica(s) in location "us-east1" is used to process the request.
 
   ## Attributes
 
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The location or region of the serving requests, e.g. "us-east1".
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The location or region of the serving requests, for example, "us-east1".
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of replica.
   """
 

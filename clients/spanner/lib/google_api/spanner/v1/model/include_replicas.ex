@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Spanner.V1.Model.IncludeReplicas do
   @moduledoc """
-  An IncludeReplicas contains a repeated set of ReplicaSelection which indicates the order in which replicas should be considered.
+  An `IncludeReplicas` contains a repeated set of `ReplicaSelection` which indicates the order in which replicas should be considered.
 
   ## Attributes
 
-  *   `autoFailoverDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, Spanner will not route requests to a replica outside the include_replicas list when all of the specified replicas are unavailable or unhealthy. Default value is `false`.
+  *   `autoFailoverDisabled` (*type:* `boolean()`, *default:* `nil`) - If `true`, Spanner doesn't route requests to a replica outside the <`include_replicas` list when all of the specified replicas are unavailable or unhealthy. Default value is `false`.
   *   `replicaSelections` (*type:* `list(GoogleApi.Spanner.V1.Model.ReplicaSelection.t)`, *default:* `nil`) - The directed read replica selector.
   """
 

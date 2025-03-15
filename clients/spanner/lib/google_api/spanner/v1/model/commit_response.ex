@@ -21,9 +21,9 @@ defmodule GoogleApi.Spanner.V1.Model.CommitResponse do
 
   ## Attributes
 
-  *   `commitStats` (*type:* `GoogleApi.Spanner.V1.Model.CommitStats.t`, *default:* `nil`) - The statistics about this Commit. Not returned by default. For more information, see CommitRequest.return_commit_stats.
+  *   `commitStats` (*type:* `GoogleApi.Spanner.V1.Model.CommitStats.t`, *default:* `nil`) - The statistics about this `Commit`. Not returned by default. For more information, see CommitRequest.return_commit_stats.
   *   `commitTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - The Cloud Spanner timestamp at which the transaction committed.
-  *   `precommitToken` (*type:* `GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t`, *default:* `nil`) - If specified, transaction has not committed yet. Clients must retry the commit with the new precommit token.
+  *   `precommitToken` (*type:* `GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t`, *default:* `nil`) - If specified, transaction has not committed yet. You must retry the commit with the new precommit token.
   """
 
   use GoogleApi.Gax.ModelBase

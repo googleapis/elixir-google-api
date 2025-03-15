@@ -21,9 +21,9 @@ defmodule GoogleApi.Spanner.V1.Model.BeginTransactionRequest do
 
   ## Attributes
 
-  *   `mutationKey` (*type:* `GoogleApi.Spanner.V1.Model.Mutation.t`, *default:* `nil`) - Optional. Required for read-write transactions on a multiplexed session that commit mutations but do not perform any reads or queries. Clients should randomly select one of the mutations from the mutation set and send it as a part of this request.
+  *   `mutationKey` (*type:* `GoogleApi.Spanner.V1.Model.Mutation.t`, *default:* `nil`) - Optional. Required for read-write transactions on a multiplexed session that commit mutations but don't perform any reads or queries. You must randomly select one of the mutations from the mutation set and send it as a part of this request.
   *   `options` (*type:* `GoogleApi.Spanner.V1.Model.TransactionOptions.t`, *default:* `nil`) - Required. Options for the new transaction.
-  *   `requestOptions` (*type:* `GoogleApi.Spanner.V1.Model.RequestOptions.t`, *default:* `nil`) - Common options for this request. Priority is ignored for this request. Setting the priority in this request_options struct will not do anything. To set the priority for a transaction, set it on the reads and writes that are part of this transaction instead.
+  *   `requestOptions` (*type:* `GoogleApi.Spanner.V1.Model.RequestOptions.t`, *default:* `nil`) - Common options for this request. Priority is ignored for this request. Setting the priority in this `request_options` struct doesn't do anything. To set the priority for a transaction, set it on the reads and writes that are part of this transaction instead.
   """
 
   use GoogleApi.Gax.ModelBase

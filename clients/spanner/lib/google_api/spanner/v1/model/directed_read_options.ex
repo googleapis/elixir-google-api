@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Spanner.V1.Model.DirectedReadOptions do
   @moduledoc """
-  The DirectedReadOptions can be used to indicate which replicas or regions should be used for non-transactional reads or queries. DirectedReadOptions may only be specified for a read-only transaction, otherwise the API will return an `INVALID_ARGUMENT` error.
+  The `DirectedReadOptions` can be used to indicate which replicas or regions should be used for non-transactional reads or queries. `DirectedReadOptions` can only be specified for a read-only transaction, otherwise the API returns an `INVALID_ARGUMENT` error.
 
   ## Attributes
 
-  *   `excludeReplicas` (*type:* `GoogleApi.Spanner.V1.Model.ExcludeReplicas.t`, *default:* `nil`) - Exclude_replicas indicates that specified replicas should be excluded from serving requests. Spanner will not route requests to the replicas in this list.
-  *   `includeReplicas` (*type:* `GoogleApi.Spanner.V1.Model.IncludeReplicas.t`, *default:* `nil`) - Include_replicas indicates the order of replicas (as they appear in this list) to process the request. If auto_failover_disabled is set to true and all replicas are exhausted without finding a healthy replica, Spanner will wait for a replica in the list to become available, requests may fail due to `DEADLINE_EXCEEDED` errors.
+  *   `excludeReplicas` (*type:* `GoogleApi.Spanner.V1.Model.ExcludeReplicas.t`, *default:* `nil`) - `Exclude_replicas` indicates that specified replicas should be excluded from serving requests. Spanner doesn't route requests to the replicas in this list.
+  *   `includeReplicas` (*type:* `GoogleApi.Spanner.V1.Model.IncludeReplicas.t`, *default:* `nil`) - `Include_replicas` indicates the order of replicas (as they appear in this list) to process the request. If `auto_failover_disabled` is set to `true` and all replicas are exhausted without finding a healthy replica, Spanner waits for a replica in the list to become available, requests might fail due to `DEADLINE_EXCEEDED` errors.
   """
 
   use GoogleApi.Gax.ModelBase
