@@ -22,15 +22,18 @@ defmodule GoogleApi.AlloyDB.V1.Model.MachineConfig do
   ## Attributes
 
   *   `cpuCount` (*type:* `integer()`, *default:* `nil`) - The number of CPU's in the VM instance.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Machine type of the VM instance. E.g. "n2-highmem-4", "n2-highmem-8", "c4a-highmem-4-lssd". cpu_count must match the number of vCPUs in the machine type.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cpuCount => integer() | nil
+          :cpuCount => integer() | nil,
+          :machineType => String.t() | nil
         }
 
   field(:cpuCount)
+  field(:machineType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AlloyDB.V1.Model.MachineConfig do

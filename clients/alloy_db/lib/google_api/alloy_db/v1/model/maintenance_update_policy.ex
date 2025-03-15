@@ -21,14 +21,19 @@ defmodule GoogleApi.AlloyDB.V1.Model.MaintenanceUpdatePolicy do
 
   ## Attributes
 
+  *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.AlloyDB.V1.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Periods to deny maintenance. Currently limited to 1.
   *   `maintenanceWindows` (*type:* `list(GoogleApi.AlloyDB.V1.Model.MaintenanceWindow.t)`, *default:* `nil`) - Preferred windows to perform maintenance. Currently limited to 1.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :denyMaintenancePeriods =>
+            list(GoogleApi.AlloyDB.V1.Model.DenyMaintenancePeriod.t()) | nil,
           :maintenanceWindows => list(GoogleApi.AlloyDB.V1.Model.MaintenanceWindow.t()) | nil
         }
+
+  field(:denyMaintenancePeriods, as: GoogleApi.AlloyDB.V1.Model.DenyMaintenancePeriod, type: :list)
 
   field(:maintenanceWindows, as: GoogleApi.AlloyDB.V1.Model.MaintenanceWindow, type: :list)
 end
