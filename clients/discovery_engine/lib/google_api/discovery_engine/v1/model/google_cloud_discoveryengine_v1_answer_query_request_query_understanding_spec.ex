@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQ
 
   ## Attributes
 
+  *   `disableSpellCorrection` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to disable spell correction. The default value is `false`.
   *   `queryClassificationSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryClassificationSpec.t`, *default:* `nil`) - Query classification specification.
   *   `queryRephraserSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryRephraserSpec.t`, *default:* `nil`) - Query rephraser specification.
   """
@@ -28,6 +29,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :disableSpellCorrection => boolean() | nil,
           :queryClassificationSpec =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryClassificationSpec.t()
             | nil,
@@ -35,6 +37,8 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQ
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpecQueryRephraserSpec.t()
             | nil
         }
+
+  field(:disableSpellCorrection)
 
   field(:queryClassificationSpec,
     as:

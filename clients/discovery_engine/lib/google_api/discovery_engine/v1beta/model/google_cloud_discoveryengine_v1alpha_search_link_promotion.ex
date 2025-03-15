@@ -25,7 +25,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The enabled promotion will be returned for any serving configs associated with the parent of the control this promotion is attached to. This flag is used for basic site search only.
   *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The promotion thumbnail image url.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. The title of the promotion. Maximum length: 160 characters.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The URL for the page the user wants to promote.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Optional. The URL for the page the user wants to promote. Must be set for site search. For other verticals, this is optional.
   """
 
   use GoogleApi.Gax.ModelBase
