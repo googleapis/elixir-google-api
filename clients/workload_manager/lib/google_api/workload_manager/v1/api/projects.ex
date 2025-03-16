@@ -1593,6 +1593,7 @@ defmodule GoogleApi.WorkloadManager.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customRulesBucket` (*type:* `String.t`) - The Cloud Storage bucket name for custom rules.
+      *   `:evaluationType` (*type:* `String.t`) - Optional. The evaluation type of the rules will be applied to. The Cloud Storage bucket name for custom rules.
       *   `:filter` (*type:* `String.t`) - Filter based on primary_category, secondary_category
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
@@ -1632,6 +1633,7 @@ defmodule GoogleApi.WorkloadManager.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :customRulesBucket => :query,
+      :evaluationType => :query,
       :filter => :query,
       :pageSize => :query,
       :pageToken => :query
