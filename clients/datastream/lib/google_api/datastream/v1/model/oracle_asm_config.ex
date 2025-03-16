@@ -25,8 +25,9 @@ defmodule GoogleApi.Datastream.V1.Model.OracleAsmConfig do
   *   `connectionAttributes` (*type:* `map()`, *default:* `nil`) - Optional. Connection string attributes
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the Oracle ASM connection.
   *   `oracleSslConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSslConfig.t`, *default:* `nil`) - Optional. SSL configuration for the Oracle connection.
-  *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the Oracle ASM connection.
+  *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the Oracle ASM connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Required. Port for the Oracle ASM connection.
+  *   `secretManagerStoredPassword` (*type:* `String.t`, *default:* `nil`) - Optional. A reference to a Secret Manager resource name storing the Oracle ASM connection password. Mutually exclusive with the `password` field.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the Oracle ASM connection.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleAsmConfig do
           :oracleSslConfig => GoogleApi.Datastream.V1.Model.OracleSslConfig.t() | nil,
           :password => String.t() | nil,
           :port => integer() | nil,
+          :secretManagerStoredPassword => String.t() | nil,
           :username => String.t() | nil
         }
 
@@ -48,6 +50,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleAsmConfig do
   field(:oracleSslConfig, as: GoogleApi.Datastream.V1.Model.OracleSslConfig)
   field(:password)
   field(:port)
+  field(:secretManagerStoredPassword)
   field(:username)
 end
 
