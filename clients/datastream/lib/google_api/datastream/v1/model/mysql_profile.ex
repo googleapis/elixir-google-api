@@ -24,6 +24,7 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlProfile do
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the MySQL connection.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. Password for the MySQL connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the MySQL connection, default value is 3306.
+  *   `secretManagerStoredPassword` (*type:* `String.t`, *default:* `nil`) - Optional. A reference to a Secret Manager resource name storing the MySQL connection password. Mutually exclusive with the `password` field.
   *   `sslConfig` (*type:* `GoogleApi.Datastream.V1.Model.MysqlSslConfig.t`, *default:* `nil`) - SSL configuration for the MySQL connection.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the MySQL connection.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlProfile do
           :hostname => String.t() | nil,
           :password => String.t() | nil,
           :port => integer() | nil,
+          :secretManagerStoredPassword => String.t() | nil,
           :sslConfig => GoogleApi.Datastream.V1.Model.MysqlSslConfig.t() | nil,
           :username => String.t() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.Datastream.V1.Model.MysqlProfile do
   field(:hostname)
   field(:password)
   field(:port)
+  field(:secretManagerStoredPassword)
   field(:sslConfig, as: GoogleApi.Datastream.V1.Model.MysqlSslConfig)
   field(:username)
 end

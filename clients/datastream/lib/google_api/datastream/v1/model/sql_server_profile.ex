@@ -25,6 +25,7 @@ defmodule GoogleApi.Datastream.V1.Model.SqlServerProfile do
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the SQLServer connection.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Optional. Password for the SQLServer connection. Mutually exclusive with the `secret_manager_stored_password` field.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the SQLServer connection, default value is 1433.
+  *   `secretManagerStoredPassword` (*type:* `String.t`, *default:* `nil`) - Optional. A reference to a Secret Manager resource name storing the SQLServer connection password. Mutually exclusive with the `password` field.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the SQLServer connection.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Datastream.V1.Model.SqlServerProfile do
           :hostname => String.t() | nil,
           :password => String.t() | nil,
           :port => integer() | nil,
+          :secretManagerStoredPassword => String.t() | nil,
           :username => String.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Datastream.V1.Model.SqlServerProfile do
   field(:hostname)
   field(:password)
   field(:port)
+  field(:secretManagerStoredPassword)
   field(:username)
 end
 
