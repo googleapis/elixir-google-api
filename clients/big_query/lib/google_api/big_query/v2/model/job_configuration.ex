@@ -29,6 +29,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this job. You can use these to organize and group your jobs. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key.
   *   `load` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfigurationLoad.t`, *default:* `nil`) - [Pick one] Configures a load job.
   *   `query` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfigurationQuery.t`, *default:* `nil`) - [Pick one] Configures a query job.
+  *   `reservation` (*type:* `String.t`, *default:* `nil`) - Optional. The reservation that job would use. User can specify a reservation to execute the job. If reservation is not set, reservation is determined based on the rules defined by the reservation assignments. The expected format is `projects/{project}/locations/{location}/reservations/{reservation}`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
           :jobType => String.t() | nil,
           :labels => map() | nil,
           :load => GoogleApi.BigQuery.V2.Model.JobConfigurationLoad.t() | nil,
-          :query => GoogleApi.BigQuery.V2.Model.JobConfigurationQuery.t() | nil
+          :query => GoogleApi.BigQuery.V2.Model.JobConfigurationQuery.t() | nil,
+          :reservation => String.t() | nil
         }
 
   field(:copy, as: GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy)
@@ -52,6 +54,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfiguration do
   field(:labels, type: :map)
   field(:load, as: GoogleApi.BigQuery.V2.Model.JobConfigurationLoad)
   field(:query, as: GoogleApi.BigQuery.V2.Model.JobConfigurationQuery)
+  field(:reservation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobConfiguration do
