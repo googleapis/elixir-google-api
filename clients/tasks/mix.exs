@@ -18,7 +18,7 @@
 defmodule GoogleApi.Tasks.Mixfile do
   use Mix.Project
 
-  @version "0.16.1"
+  @version "0.17.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.Tasks.Mixfile do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/tasks",
-        "Homepage" => "https://developers.google.com/tasks/"
+        "Homepage" => "https://developers.google.com/workspace/tasks/"
       }
     ]
   end
