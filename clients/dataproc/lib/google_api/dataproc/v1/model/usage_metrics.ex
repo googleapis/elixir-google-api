@@ -24,7 +24,9 @@ defmodule GoogleApi.Dataproc.V1.Model.UsageMetrics do
   *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - Optional. Accelerator type being used, if any
   *   `milliAcceleratorSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. Accelerator usage in (milliAccelerator x seconds) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
   *   `milliDcuSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. DCU (Dataproc Compute Units) usage in (milliDCU x seconds) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
+  *   `milliSlotSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. Slot usage in (milliSlot x seconds).
   *   `shuffleStorageGbSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. Shuffle storage usage in (GB x seconds) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The timestamp of the usage metrics.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +35,17 @@ defmodule GoogleApi.Dataproc.V1.Model.UsageMetrics do
           :acceleratorType => String.t() | nil,
           :milliAcceleratorSeconds => String.t() | nil,
           :milliDcuSeconds => String.t() | nil,
-          :shuffleStorageGbSeconds => String.t() | nil
+          :milliSlotSeconds => String.t() | nil,
+          :shuffleStorageGbSeconds => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:acceleratorType)
   field(:milliAcceleratorSeconds)
   field(:milliDcuSeconds)
+  field(:milliSlotSeconds)
   field(:shuffleStorageGbSeconds)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.UsageMetrics do
