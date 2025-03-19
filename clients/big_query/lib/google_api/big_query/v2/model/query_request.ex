@@ -40,6 +40,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   *   `query` (*type:* `String.t`, *default:* `nil`) - Required. A query string to execute, using Google Standard SQL or legacy SQL syntax. Example: "SELECT COUNT(f1) FROM myProjectId.myDatasetId.myTableId".
   *   `queryParameters` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryParameter.t)`, *default:* `nil`) - Query parameters for GoogleSQL queries.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Optional. A unique user provided identifier to ensure idempotent behavior for queries. Note that this is different from the job_id. It has the following properties: 1. It is case-sensitive, limited to up to 36 ASCII characters. A UUID is recommended. 2. Read only queries can ignore this token since they are nullipotent by definition. 3. For the purposes of idempotency ensured by the request_id, a request is considered duplicate of another only if they have the same request_id and are actually duplicates. When determining whether a request is a duplicate of another request, all parameters in the request that may affect the result are considered. For example, query, connection_properties, query_parameters, use_legacy_sql are parameters that affect the result and are considered when determining whether a request is a duplicate, but properties like timeout_ms don't affect the result and are thus not considered. Dry run query requests are never considered duplicate of another request. 4. When a duplicate mutating query request is detected, it returns: a. the results of the mutation if it completes successfully within the timeout. b. the running operation if it is still in progress at the end of the timeout. 5. Its lifetime is limited to 15 minutes. In other words, if two requests are sent with the same request_id, but more than 15 minutes apart, idempotency is not guaranteed.
+  *   `reservation` (*type:* `String.t`, *default:* `nil`) - Optional. The reservation that jobs.query request would use. User can specify a reservation to execute the job.query. The expected format is `projects/{project}/locations/{location}/reservations/{reservation}`.
   *   `timeoutMs` (*type:* `integer()`, *default:* `nil`) - Optional. Optional: Specifies the maximum amount of time, in milliseconds, that the client is willing to wait for the query to complete. By default, this limit is 10 seconds (10,000 milliseconds). If the query is complete, the jobComplete field in the response is true. If the query has not yet completed, jobComplete is false. You can request a longer timeout period in the timeoutMs field. However, the call is not guaranteed to wait for the specified timeout; it typically returns after around 200 seconds (200,000 milliseconds), even if the query is not complete. If jobComplete is false, you can continue to wait for the query to complete by calling the getQueryResults method until the jobComplete field in the getQueryResults response is true.
   *   `useLegacySql` (*type:* `boolean()`, *default:* `true`) - Specifies whether to use BigQuery's legacy SQL dialect for this query. The default value is true. If set to false, the query will use BigQuery's GoogleSQL: https://cloud.google.com/bigquery/sql-reference/ When useLegacySql is set to false, the value of flattenResults is ignored; query will be run as if flattenResults is false.
   *   `useQueryCache` (*type:* `boolean()`, *default:* `true`) - Optional. Whether to look for the result in the query cache. The query cache is a best-effort cache that will be flushed whenever tables in the query are modified. The default value is true.
@@ -69,6 +70,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
           :query => String.t() | nil,
           :queryParameters => list(GoogleApi.BigQuery.V2.Model.QueryParameter.t()) | nil,
           :requestId => String.t() | nil,
+          :reservation => String.t() | nil,
           :timeoutMs => integer() | nil,
           :useLegacySql => boolean() | nil,
           :useQueryCache => boolean() | nil,
@@ -98,6 +100,7 @@ defmodule GoogleApi.BigQuery.V2.Model.QueryRequest do
   field(:query)
   field(:queryParameters, as: GoogleApi.BigQuery.V2.Model.QueryParameter, type: :list)
   field(:requestId)
+  field(:reservation)
   field(:timeoutMs)
   field(:useLegacySql)
   field(:useQueryCache)
