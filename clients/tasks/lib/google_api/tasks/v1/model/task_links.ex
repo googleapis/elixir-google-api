@@ -21,9 +21,9 @@ defmodule GoogleApi.Tasks.V1.Model.TaskLinks do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - The description. In HTML speak: Everything between <a> and </a>.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description (might be empty).
   *   `link` (*type:* `String.t`, *default:* `nil`) - The URL.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the link, e.g. "email".
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the link, e.g. "email", "generic", "chat_message", "keep_note".
   """
 
   use GoogleApi.Gax.ModelBase
