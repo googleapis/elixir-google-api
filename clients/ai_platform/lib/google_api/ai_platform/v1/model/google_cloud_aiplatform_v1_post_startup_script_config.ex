@@ -23,7 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PostStartupScript
 
   *   `postStartupScript` (*type:* `String.t`, *default:* `nil`) - Optional. Post startup script to run after runtime is started.
   *   `postStartupScriptBehavior` (*type:* `String.t`, *default:* `nil`) - Optional. Post startup script behavior that defines download and execution behavior.
-  *   `postStartupScriptUrl` (*type:* `String.t`, *default:* `nil`) - Optional. Post startup script url to download. Example: https://bucket/script.sh
+  *   `postStartupScriptUrl` (*type:* `String.t`, *default:* `nil`) - Optional. Post startup script url to download. Example: `gs://bucket/script.sh`
   """
 
   use GoogleApi.Gax.ModelBase

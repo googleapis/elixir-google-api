@@ -23,6 +23,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
 
   *   `gcsSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsSource.t`, *default:* `nil`) - Google Cloud Storage location. Supports importing individual files as well as entire Google Cloud Storage directories. Sample formats: - `gs://bucket_name/my_directory/object_name/my_file.txt` - `gs://bucket_name/my_directory`
   *   `googleDriveSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleDriveSource.t`, *default:* `nil`) - Google Drive location. Supports importing individual files as well as Google Drive folders.
+  *   `importResultBigquerySink` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQueryDestination.t`, *default:* `nil`) - The BigQuery destination to write import result to. It should be a bigquery table resource name (e.g. "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the table does not exist, it will be created with the expected schema. If the table exists, the schema will be validated and data will be added to this existing table.
+  *   `importResultGcsSink` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsDestination.t`, *default:* `nil`) - The Cloud Storage path to write import result to.
   *   `jiraSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1JiraSource.t`, *default:* `nil`) - Jira queries with their corresponding authentication.
   *   `maxEmbeddingRequestsPerMin` (*type:* `integer()`, *default:* `nil`) - Optional. The max number of queries per minute that this job is allowed to make to the embedding model specified on the corpus. This value is specific to this job and not shared across other import jobs. Consult the Quotas page on the project to set an appropriate value here. If unspecified, a default value of 1,000 QPM would be used.
   *   `partialFailureBigquerySink` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQueryDestination.t`, *default:* `nil`) - The BigQuery destination to write partial failures to. It should be a bigquery table resource name (e.g. "bq://projectId.bqDatasetId.bqTableId"). The dataset must exist. If the table does not exist, it will be created with the expected schema. If the table exists, the schema will be validated and data will be added to this existing table. Deprecated. Prefer to use `import_result_bq_sink`.
@@ -39,6 +41,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
           :gcsSource => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsSource.t() | nil,
           :googleDriveSource =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleDriveSource.t() | nil,
+          :importResultBigquerySink =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQueryDestination.t() | nil,
+          :importResultGcsSink =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsDestination.t() | nil,
           :jiraSource =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1JiraSource.t() | nil,
           :maxEmbeddingRequestsPerMin => integer() | nil,
@@ -61,6 +67,14 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ImportRagFilesCon
 
   field(:googleDriveSource,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleDriveSource
+  )
+
+  field(:importResultBigquerySink,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQueryDestination
+  )
+
+  field(:importResultGcsSink,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsDestination
   )
 
   field(:jiraSource, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1JiraSource)
