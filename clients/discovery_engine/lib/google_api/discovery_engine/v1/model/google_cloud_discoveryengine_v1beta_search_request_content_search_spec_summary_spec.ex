@@ -29,6 +29,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSea
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language code for Summary. Use language tags defined by [BCP47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt). Note: This is an experimental feature.
   *   `modelPromptSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelPromptSpec.t`, *default:* `nil`) - If specified, the spec will be used to modify the prompt provided to the LLM.
   *   `modelSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelSpec.t`, *default:* `nil`) - If specified, the spec will be used to modify the model specification provided to the LLM.
+  *   `multimodalSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecMultiModalSpec.t`, *default:* `nil`) - Optional. Multimodal specification.
   *   `summaryResultCount` (*type:* `integer()`, *default:* `nil`) - The number of top results to generate the summary from. If the number of results returned is less than `summaryResultCount`, the summary is generated from all of the results. At most 10 results for documents mode, or 50 for chunks mode, can be used to generate a summary. The chunks mode is used when SearchRequest.ContentSearchSpec.search_result_mode is set to CHUNKS.
   *   `useSemanticChunks` (*type:* `boolean()`, *default:* `nil`) - If true, answer will be generated from most relevant chunks from top search results. This feature will improve summary quality. Note that with this feature enabled, not all top search results will be referenced and included in the reference list, so the citation source index only points to the search results listed in the reference list.
   """
@@ -47,6 +48,9 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSea
             | nil,
           :modelSpec =>
             GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelSpec.t()
+            | nil,
+          :multimodalSpec =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecMultiModalSpec.t()
             | nil,
           :summaryResultCount => integer() | nil,
           :useSemanticChunks => boolean() | nil
@@ -67,6 +71,11 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSea
   field(:modelSpec,
     as:
       GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelSpec
+  )
+
+  field(:multimodalSpec,
+    as:
+      GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecMultiModalSpec
   )
 
   field(:summaryResultCount)

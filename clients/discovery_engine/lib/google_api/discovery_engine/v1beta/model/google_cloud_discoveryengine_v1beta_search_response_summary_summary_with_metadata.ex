@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `blobAttachments` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryBlobAttachment.t)`, *default:* `nil`) - Output only. Store multimodal data for answer enhancement.
   *   `citationMetadata` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryCitationMetadata.t`, *default:* `nil`) - Citation metadata for given summary.
   *   `references` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryReference.t)`, *default:* `nil`) - Document References.
   *   `summary` (*type:* `String.t`, *default:* `nil`) - Summary text with no citation information.
@@ -29,6 +30,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :blobAttachments =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryBlobAttachment.t()
+            )
+            | nil,
           :citationMetadata =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryCitationMetadata.t()
             | nil,
@@ -39,6 +45,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             | nil,
           :summary => String.t() | nil
         }
+
+  field(:blobAttachments,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryBlobAttachment,
+    type: :list
+  )
 
   field(:citationMetadata,
     as:

@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `blobAttachmentIndexes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Stores indexes of blobattachments linked to this chunk.
   *   `content` (*type:* `String.t`, *default:* `nil`) - Chunk textual content.
   *   `pageIdentifier` (*type:* `String.t`, *default:* `nil`) - Page identifier.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :blobAttachmentIndexes => list(String.t()) | nil,
           :content => String.t() | nil,
           :pageIdentifier => String.t() | nil
         }
 
+  field(:blobAttachmentIndexes, type: :list)
   field(:content)
   field(:pageIdentifier)
 end

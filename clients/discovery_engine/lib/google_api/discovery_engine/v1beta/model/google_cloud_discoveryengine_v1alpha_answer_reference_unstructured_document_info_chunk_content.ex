@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   ## Attributes
 
+  *   `blobAttachmentIndexes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Stores indexes of blobattachments linked to this chunk.
   *   `content` (*type:* `String.t`, *default:* `nil`) - Chunk textual content.
   *   `pageIdentifier` (*type:* `String.t`, *default:* `nil`) - Page identifier.
   *   `relevanceScore` (*type:* `number()`, *default:* `nil`) - The relevance of the chunk for a given query. Values range from 0.0 (completely irrelevant) to 1.0 (completely relevant). This value is for informational purpose only. It may change for the same query and chunk at any time due to a model retraining or change in implementation.
@@ -29,11 +30,13 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :blobAttachmentIndexes => list(String.t()) | nil,
           :content => String.t() | nil,
           :pageIdentifier => String.t() | nil,
           :relevanceScore => number() | nil
         }
 
+  field(:blobAttachmentIndexes, type: :list)
   field(:content)
   field(:pageIdentifier)
   field(:relevanceScore)
