@@ -22,15 +22,18 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAISearch do
   ## Attributes
 
   *   `datastore` (*type:* `String.t`, *default:* `nil`) - Optional. Fully-qualified Vertex AI Search data store resource ID. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
+  *   `engine` (*type:* `String.t`, *default:* `nil`) - Optional. Fully-qualified Vertex AI Search engine resource ID. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :datastore => String.t() | nil
+          :datastore => String.t() | nil,
+          :engine => String.t() | nil
         }
 
   field(:datastore)
+  field(:engine)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAISearch do

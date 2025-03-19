@@ -21,14 +21,16 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSp
 
   ## Attributes
 
+  *   `agentFramework` (*type:* `String.t`, *default:* `nil`) - Optional. The OSS agent framework used to develop the agent. Currently supported values: "langchain", "langgraph", "ag2", "custom".
   *   `classMethods` (*type:* `list(map())`, *default:* `nil`) - Optional. Declarations for object class methods in OpenAPI specification format.
   *   `deploymentSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecDeploymentSpec.t`, *default:* `nil`) - Optional. The specification of a Reasoning Engine deployment.
-  *   `packageSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec.t`, *default:* `nil`) - Required. User provided package spec of the ReasoningEngine.
+  *   `packageSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecPackageSpec.t`, *default:* `nil`) - Required. User provided package spec of the ReasoningEngine. Ignored when users directly specify a deployment image through `deployment_spec.first_party_image_override`, but keeping the field_behavior to avoid introducing breaking changes.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :agentFramework => String.t() | nil,
           :classMethods => list(map()) | nil,
           :deploymentSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpecDeploymentSpec.t()
@@ -38,6 +40,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSp
             | nil
         }
 
+  field(:agentFramework)
   field(:classMethods, type: :list)
 
   field(:deploymentSpec,
