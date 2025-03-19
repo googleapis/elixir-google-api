@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firebase.V1beta1.Model.MessageSet do
   @moduledoc """
-  This is proto2's version of MessageSet.
+
 
   ## Attributes
 
