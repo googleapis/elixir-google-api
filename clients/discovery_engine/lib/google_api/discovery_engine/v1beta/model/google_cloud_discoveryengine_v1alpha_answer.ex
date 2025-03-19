@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   *   `answerSkippedReasons` (*type:* `list(String.t)`, *default:* `nil`) - Additional answer-skipped reasons. This provides the reason for ignored cases. If nothing is skipped, this field is not set.
   *   `answerText` (*type:* `String.t`, *default:* `nil`) - The textual answer.
+  *   `blobAttachments` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerBlobAttachment.t)`, *default:* `nil`) - List of blob attachments in the answer.
   *   `citations` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerCitation.t)`, *default:* `nil`) - Citations.
   *   `completeTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Answer completed timestamp.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Answer creation timestamp.
@@ -42,6 +43,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   @type t :: %__MODULE__{
           :answerSkippedReasons => list(String.t()) | nil,
           :answerText => String.t() | nil,
+          :blobAttachments =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerBlobAttachment.t()
+            )
+            | nil,
           :citations =>
             list(
               GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerCitation.t()
@@ -80,6 +86,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   field(:answerSkippedReasons, type: :list)
   field(:answerText)
+
+  field(:blobAttachments,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerBlobAttachment,
+    type: :list
+  )
 
   field(:citations,
     as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerCitation,

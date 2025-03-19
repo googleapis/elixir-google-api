@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `blobAttachmentIndexes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Stores indexes of blobattachments linked to this chunk.
   *   `chunk` (*type:* `String.t`, *default:* `nil`) - Chunk resource name.
   *   `content` (*type:* `String.t`, *default:* `nil`) - Chunk textual content.
   *   `documentMetadata` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceChunkInfoDocumentMetadata.t`, *default:* `nil`) - Document metadata.
@@ -30,6 +31,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :blobAttachmentIndexes => list(String.t()) | nil,
           :chunk => String.t() | nil,
           :content => String.t() | nil,
           :documentMetadata =>
@@ -38,6 +40,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :relevanceScore => number() | nil
         }
 
+  field(:blobAttachmentIndexes, type: :list)
   field(:chunk)
   field(:content)
 

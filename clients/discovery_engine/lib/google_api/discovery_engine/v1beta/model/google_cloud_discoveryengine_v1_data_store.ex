@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
 
   ## Attributes
 
+  *   `aclEnabled` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether data in the DataStore has ACL information. If set to `true`, the source data must have ACL. ACL will be ingested when data is ingested by DocumentService.ImportDocuments methods. When ACL is enabled for the DataStore, Document can't be accessed by calling DocumentService.GetDocument or DocumentService.ListDocuments. Currently ACL is only supported in `GENERIC` industry vertical with non-`PUBLIC_WEBSITE` content config.
   *   `advancedSiteSearchConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1AdvancedSiteSearchConfig.t`, *default:* `nil`) - Optional. Configuration for advanced site search.
   *   `billingEstimation` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation.t`, *default:* `nil`) - Output only. Data size estimation for billing.
   *   `cmekConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1CmekConfig.t`, *default:* `nil`) - Output only. CMEK-related information for the DataStore.
@@ -44,6 +45,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :aclEnabled => boolean() | nil,
           :advancedSiteSearchConfig =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1AdvancedSiteSearchConfig.t()
             | nil,
@@ -78,6 +80,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1WorkspaceConfig.t()
             | nil
         }
+
+  field(:aclEnabled)
 
   field(:advancedSiteSearchConfig,
     as:

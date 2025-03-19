@@ -28,6 +28,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `ignoreNonAnswerSeekingQuery` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to filter out queries that are not answer-seeking. The default value is `false`. Google employs search-query classification to detect answer-seeking queries. No answer is returned if the search query is classified as a non-answer seeking query. If this field is set to `true`, we skip generating answers for non-answer seeking queries and return fallback messages instead.
   *   `includeCitations` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to include citation metadata in the answer. The default value is `false`.
   *   `modelSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecModelSpec.t`, *default:* `nil`) - Answer generation model specification.
+  *   `multimodalSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecMultimodalSpec.t`, *default:* `nil`) - Optional. Multimodal specification.
   *   `promptSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecPromptSpec.t`, *default:* `nil`) - Answer generation prompt specification.
   """
 
@@ -42,6 +43,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :includeCitations => boolean() | nil,
           :modelSpec =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecModelSpec.t()
+            | nil,
+          :multimodalSpec =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecMultimodalSpec.t()
             | nil,
           :promptSpec =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecPromptSpec.t()
@@ -58,6 +62,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   field(:modelSpec,
     as:
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecModelSpec
+  )
+
+  field(:multimodalSpec,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecMultimodalSpec
   )
 
   field(:promptSpec,
