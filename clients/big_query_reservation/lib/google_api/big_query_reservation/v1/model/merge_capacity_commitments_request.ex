@@ -21,15 +21,18 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.MergeCapacityCommitmentsRequest
 
   ## Attributes
 
+  *   `capacityCommitmentId` (*type:* `String.t`, *default:* `nil`) - Optional. The optional resulting capacity commitment ID. Capacity commitment name will be generated automatically if this field is empty. This field must only contain lower case alphanumeric characters or dashes. The first and last character cannot be a dash. Max length is 64 characters.
   *   `capacityCommitmentIds` (*type:* `list(String.t)`, *default:* `nil`) - Ids of capacity commitments to merge. These capacity commitments must exist under admin project and location specified in the parent. ID is the last portion of capacity commitment name e.g., 'abc' for projects/myproject/locations/US/capacityCommitments/abc
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :capacityCommitmentId => String.t() | nil,
           :capacityCommitmentIds => list(String.t()) | nil
         }
 
+  field(:capacityCommitmentId)
   field(:capacityCommitmentIds, type: :list)
 end
 
