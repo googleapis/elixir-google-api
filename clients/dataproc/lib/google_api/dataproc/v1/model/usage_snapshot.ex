@@ -25,6 +25,7 @@ defmodule GoogleApi.Dataproc.V1.Model.UsageSnapshot do
   *   `milliAccelerator` (*type:* `String.t`, *default:* `nil`) - Optional. Milli (one-thousandth) accelerator. (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing))
   *   `milliDcu` (*type:* `String.t`, *default:* `nil`) - Optional. Milli (one-thousandth) Dataproc Compute Units (DCUs) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
   *   `milliDcuPremium` (*type:* `String.t`, *default:* `nil`) - Optional. Milli (one-thousandth) Dataproc Compute Units (DCUs) charged at premium tier (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
+  *   `milliSlot` (*type:* `String.t`, *default:* `nil`) - Optional. Milli (one-thousandth) Slot usage of the workload.
   *   `shuffleStorageGb` (*type:* `String.t`, *default:* `nil`) - Optional. Shuffle Storage in gigabytes (GB). (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing))
   *   `shuffleStorageGbPremium` (*type:* `String.t`, *default:* `nil`) - Optional. Shuffle Storage in gigabytes (GB) charged at premium tier. (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing))
   *   `snapshotTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The timestamp of the usage snapshot.
@@ -37,6 +38,7 @@ defmodule GoogleApi.Dataproc.V1.Model.UsageSnapshot do
           :milliAccelerator => String.t() | nil,
           :milliDcu => String.t() | nil,
           :milliDcuPremium => String.t() | nil,
+          :milliSlot => String.t() | nil,
           :shuffleStorageGb => String.t() | nil,
           :shuffleStorageGbPremium => String.t() | nil,
           :snapshotTime => DateTime.t() | nil
@@ -46,6 +48,7 @@ defmodule GoogleApi.Dataproc.V1.Model.UsageSnapshot do
   field(:milliAccelerator)
   field(:milliDcu)
   field(:milliDcuPremium)
+  field(:milliSlot)
   field(:shuffleStorageGb)
   field(:shuffleStorageGbPremium)
   field(:snapshotTime, as: DateTime)

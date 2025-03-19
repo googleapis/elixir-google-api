@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ExecutionConfig do
 
   ## Attributes
 
+  *   `authenticationConfig` (*type:* `GoogleApi.Dataproc.V1.Model.AuthenticationConfig.t`, *default:* `nil`) - Optional. Authentication configuration used to set the default identity for the workload execution. The config specifies the type of identity (service account or user) that will be used by workloads to access resources on the project(s).
   *   `idleTtl` (*type:* `String.t`, *default:* `nil`) - Optional. Applies to sessions only. The duration to keep the session alive while it's idling. Exceeding this threshold causes the session to terminate. This field cannot be set on a batch workload. Minimum value is 10 minutes; maximum value is 14 days (see JSON representation of Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)). Defaults to 1 hour if not set. If both ttl and idle_ttl are specified for an interactive session, the conditions are treated as OR conditions: the workload will be terminated when it has been idle for idle_ttl or when ttl has been exceeded, whichever occurs first.
   *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Optional. The Cloud KMS key to use for encryption.
   *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Tags used for network traffic control.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ExecutionConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :authenticationConfig => GoogleApi.Dataproc.V1.Model.AuthenticationConfig.t() | nil,
           :idleTtl => String.t() | nil,
           :kmsKey => String.t() | nil,
           :networkTags => list(String.t()) | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ExecutionConfig do
           :ttl => String.t() | nil
         }
 
+  field(:authenticationConfig, as: GoogleApi.Dataproc.V1.Model.AuthenticationConfig)
   field(:idleTtl)
   field(:kmsKey)
   field(:networkTags, type: :list)
