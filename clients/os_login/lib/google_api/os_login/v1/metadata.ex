@@ -20,7 +20,7 @@ defmodule GoogleApi.OSLogin.V1 do
   API client metadata for GoogleApi.OSLogin.V1.
   """
 
-  @discovery_revision "20240303"
+  @discovery_revision "20250317"
 
   def discovery_revision(), do: @discovery_revision
 end
