@@ -23,6 +23,7 @@ defmodule GoogleApi.Notebooks.V2.Model.Config do
 
   *   `availableImages` (*type:* `list(GoogleApi.Notebooks.V2.Model.ImageRelease.t)`, *default:* `nil`) - Output only. The list of available images to create a WbI.
   *   `defaultValues` (*type:* `GoogleApi.Notebooks.V2.Model.DefaultValues.t`, *default:* `nil`) - Output only. The default values for configuration.
+  *   `disableWorkbenchLegacyCreation` (*type:* `boolean()`, *default:* `nil`) - Output only. Flag to disable the creation of legacy Workbench notebooks (User-managed notebooks and Google-managed notebooks).
   *   `supportedValues` (*type:* `GoogleApi.Notebooks.V2.Model.SupportedValues.t`, *default:* `nil`) - Output only. The supported values for configuration.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Notebooks.V2.Model.Config do
   @type t :: %__MODULE__{
           :availableImages => list(GoogleApi.Notebooks.V2.Model.ImageRelease.t()) | nil,
           :defaultValues => GoogleApi.Notebooks.V2.Model.DefaultValues.t() | nil,
+          :disableWorkbenchLegacyCreation => boolean() | nil,
           :supportedValues => GoogleApi.Notebooks.V2.Model.SupportedValues.t() | nil
         }
 
   field(:availableImages, as: GoogleApi.Notebooks.V2.Model.ImageRelease, type: :list)
   field(:defaultValues, as: GoogleApi.Notebooks.V2.Model.DefaultValues)
+  field(:disableWorkbenchLegacyCreation)
   field(:supportedValues, as: GoogleApi.Notebooks.V2.Model.SupportedValues)
 end
 
