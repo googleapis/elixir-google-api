@@ -26,6 +26,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaClientCo
   *   `cloudKmsConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudKmsConfig.t`, *default:* `nil`) - Cloud KMS config for Auth Module to encrypt/decrypt credentials.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the client was first created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of what the client is used for
+  *   `enableHttpCall` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates the client enables making HTTP call.
   *   `enableInternalIp` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates the client enables internal IP feature, this is applicable for internal clients only.
   *   `enableVariableMasking` (*type:* `boolean()`, *default:* `nil`) - Optional. True if variable masking feature should be turned on for this region
   *   `id` (*type:* `String.t`, *default:* `nil`) - Globally unique ID (project_id + region)
@@ -45,6 +46,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaClientCo
             GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudKmsConfig.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :enableHttpCall => boolean() | nil,
           :enableInternalIp => boolean() | nil,
           :enableVariableMasking => boolean() | nil,
           :id => String.t() | nil,
@@ -64,6 +66,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaClientCo
 
   field(:createTime, as: DateTime)
   field(:description)
+  field(:enableHttpCall)
   field(:enableInternalIp)
   field(:enableVariableMasking)
   field(:id)
