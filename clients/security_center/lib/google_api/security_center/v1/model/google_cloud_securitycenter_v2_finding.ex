@@ -26,6 +26,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
   *   `groupMemberships` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2GroupMembership.t)`, *default:* `nil`) - Contains details about groups of which this finding is a member. A group is a collection of findings that are related in some way. This field cannot be updated. Its value is ignored in all update requests.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the finding was created in Security Command Center.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the finding.
+  *   `chokepoint` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Chokepoint.t`, *default:* `nil`) - Contains details about a chokepoint, which is a resource or resource group where high-risk attack paths converge, based on [attack path simulations] (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations). This field cannot be updated. Its value is ignored in all update requests.
   *   `orgPolicies` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2OrgPolicy.t)`, *default:* `nil`) - Contains information about the org policies associated with the finding.
   *   `database` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Database.t`, *default:* `nil`) - Database associated with the finding.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. The following list shows some examples: + `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}` + `organizations/{organization_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}` + `folders/{folder_id}/sources/{source_id}/findings/{finding_id}` + `folders/{folder_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}` + `projects/{project_id}/sources/{source_id}/findings/{finding_id}` + `projects/{project_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}`
@@ -91,6 +92,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
             | nil,
           :createTime => DateTime.t() | nil,
           :state => String.t() | nil,
+          :chokepoint =>
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Chokepoint.t() | nil,
           :orgPolicies =>
             list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2OrgPolicy.t()) | nil,
           :database =>
@@ -213,6 +216,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
 
   field(:createTime, as: DateTime)
   field(:state)
+  field(:chokepoint, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Chokepoint)
 
   field(:orgPolicies,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2OrgPolicy,
