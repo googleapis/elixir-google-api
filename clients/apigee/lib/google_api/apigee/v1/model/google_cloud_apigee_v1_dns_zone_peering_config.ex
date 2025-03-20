@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DnsZonePeeringConfig do
   ## Attributes
 
   *   `targetNetworkId` (*type:* `String.t`, *default:* `nil`) - Required. The VPC network where the records for that private DNS zone's namespace are available. Apigee will be performing DNS peering with this VPC network.
-  *   `targetProjectId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the project containing the private DNS zone.
+  *   `targetProjectId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the project that contains the producer VPC network.
   """
 
   use GoogleApi.Gax.ModelBase
