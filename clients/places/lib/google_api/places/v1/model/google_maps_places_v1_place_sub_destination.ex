@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceSubDestination do
   @moduledoc """
-  Sub-destinations are specific places associated with a main place. These provide more specific destinations for users who are searching inside a large or complex place, like an airport, national park, university, or stadium. For example, sub-destinations at an airport might include associated terminals and parking lots. Sub-destinations return the place ID and place resource name, which can be used in subsequent Place Details (new) requests to fetch richer details, including the sub-destination's display name and location.
+  Sub-destinations are specific places associated with a main place. These provide more specific destinations for users who are searching within a large or complex place, like an airport, national park, university, or stadium. For example, sub-destinations at an airport might include associated terminals and parking lots. Sub-destinations return the place ID and place resource name, which can be used in subsequent Place Details (New) requests to fetch richer details, including the sub-destination's display name and location.
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The place id of the sub destination.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the sub destination.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The place id of the sub-destination.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the sub-destination.
   """
 
   use GoogleApi.Gax.ModelBase
