@@ -2370,6 +2370,7 @@ defmodule GoogleApi.Integrations.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:enableNaturalLanguageQueryUnderstanding` (*type:* `boolean()`) - Optional. Whether to enable natural language query understanding.
       *   `:filter` (*type:* `String.t`) - Optional. The pre-filter to be applied to the search. This should follow the expressions defined in https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata. For example, "status:ANY("ACTIVE")" will return all the resources whose status contains the "ACTIVE".
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return. The service may return fewer than this value. If unspecified, at most 10 results will be returned. The maximum value is 100; values above 100 will be coerced to 100.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `SearchIntegrations` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `SearchIntegrations` must match the call that provided the page token.
@@ -2410,6 +2411,7 @@ defmodule GoogleApi.Integrations.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :enableNaturalLanguageQueryUnderstanding => :query,
       :filter => :query,
       :pageSize => :query,
       :pageToken => :query,

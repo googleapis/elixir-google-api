@@ -23,6 +23,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaProvisio
 
   *   `cloudKmsConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudKmsConfig.t`, *default:* `nil`) - Optional. OPTIONAL: Cloud KMS config for AuthModule to encrypt/decrypt credentials.
   *   `createSampleWorkflows` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if sample workflow should be created along with provisioning
+  *   `enableHttpCall` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the client should be allowed to make HTTP calls.
   *   `provisionGmek` (*type:* `boolean()`, *default:* `nil`) - Optional. Deprecated. Indicates provision with GMEK or CMEK. This field is deprecated and the provision would always be GMEK if cloud_kms_config is not present in the request.
   *   `runAsServiceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. User input run-as service account, if empty, will bring up a new default service account
   *   `skipCpProvision` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if skip CP provision or not
@@ -34,6 +35,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaProvisio
           :cloudKmsConfig =>
             GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudKmsConfig.t() | nil,
           :createSampleWorkflows => boolean() | nil,
+          :enableHttpCall => boolean() | nil,
           :provisionGmek => boolean() | nil,
           :runAsServiceAccount => String.t() | nil,
           :skipCpProvision => boolean() | nil
@@ -44,6 +46,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaProvisio
   )
 
   field(:createSampleWorkflows)
+  field(:enableHttpCall)
   field(:provisionGmek)
   field(:runAsServiceAccount)
   field(:skipCpProvision)
