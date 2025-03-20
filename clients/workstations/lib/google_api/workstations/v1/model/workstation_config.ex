@@ -23,10 +23,10 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
 
   *   `allowedPorts` (*type:* `list(GoogleApi.Workstations.V1.Model.PortRange.t)`, *default:* `nil`) - Optional. A list of PortRanges specifying single ports or ranges of ports that are externally accessible in the workstation. Allowed ports must be one of 22, 80, or within range 1024-65535. If not specified defaults to ports 22, 80, and ports 1024-65535.
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Client-specified annotations.
-  *   `conditions` (*type:* `list(GoogleApi.Workstations.V1.Model.Status.t)`, *default:* `nil`) - Output only. Status conditions describing the current resource state.
+  *   `conditions` (*type:* `list(GoogleApi.Workstations.V1.Model.Status.t)`, *default:* `nil`) - Output only. Status conditions describing the workstation configuration's current state.
   *   `container` (*type:* `GoogleApi.Workstations.V1.Model.Container.t`, *default:* `nil`) - Optional. Container that runs upon startup for each workstation using this workstation configuration.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this workstation configuration was created.
-  *   `degraded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this resource is degraded, in which case it may require user action to restore full functionality. See also the conditions field.
+  *   `degraded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this workstation configuration is in degraded mode, in which case it may require user action to restore full functionality. The conditions field contains detailed information about the status of the configuration.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this workstation configuration was soft-deleted.
   *   `disableTcpConnections` (*type:* `boolean()`, *default:* `nil`) - Optional. Disables support for plain TCP connections in the workstation. By default the service supports TCP connections through a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain TCP connections, such as SSH. When enabled, all communication must occur over HTTPS or WSS.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Human-readable name for this workstation configuration.

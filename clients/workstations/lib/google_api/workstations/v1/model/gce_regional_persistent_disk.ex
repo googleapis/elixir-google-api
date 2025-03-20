@@ -25,7 +25,7 @@ defmodule GoogleApi.Workstations.V1.Model.GceRegionalPersistentDisk do
   *   `fsType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of file system that the disk should be formatted with. The workstation image must support this file system type. Must be empty if source_snapshot is set. Defaults to `"ext4"`.
   *   `reclaimPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Whether the persistent disk should be deleted when the workstation is deleted. Valid values are `DELETE` and `RETAIN`. Defaults to `DELETE`.
   *   `sizeGb` (*type:* `integer()`, *default:* `nil`) - Optional. The GB capacity of a persistent home directory for each workstation created with this configuration. Must be empty if source_snapshot is set. Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`. Defaults to `200`. If less than `200` GB, the disk_type must be `"pd-balanced"` or `"pd-ssd"`.
-  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the snapshot to use as the source for the disk. If set, size_gb and fs_type must be empty.
+  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the snapshot to use as the source for the disk. If set, size_gb and fs_type must be empty. Must be formatted as ext4 file system with no partitions.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,7 +25,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationCluster do
   *   `conditions` (*type:* `list(GoogleApi.Workstations.V1.Model.Status.t)`, *default:* `nil`) - Output only. Status conditions describing the workstation cluster's current state.
   *   `controlPlaneIp` (*type:* `String.t`, *default:* `nil`) - Output only. The private IP address of the control plane for this workstation cluster. Workstation VMs need access to this IP address to work with the service, so make sure that your firewall rules allow egress from the workstation VMs to this address.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this workstation cluster was created.
-  *   `degraded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this workstation cluster is in degraded mode, in which case it may require user action to restore full functionality. Details can be found in conditions.
+  *   `degraded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this workstation cluster is in degraded mode, in which case it may require user action to restore full functionality. The conditions field contains detailed information about the status of the cluster.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this workstation cluster was soft-deleted.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Human-readable name for this workstation cluster.
   *   `domainConfig` (*type:* `GoogleApi.Workstations.V1.Model.DomainConfig.t`, *default:* `nil`) - Optional. Configuration options for a custom domain.
@@ -36,7 +36,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationCluster do
   *   `privateClusterConfig` (*type:* `GoogleApi.Workstations.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Optional. Configuration for private workstation cluster.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this workstation cluster is currently being updated to match its intended state.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the Compute Engine subnetwork in which instances associated with this workstation cluster will be created. Must be part of the subnetwork specified for this workstation cluster.
-  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A system-assigned unique identifier for this workstation cluster.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this workstation cluster was most recently updated.
   """
