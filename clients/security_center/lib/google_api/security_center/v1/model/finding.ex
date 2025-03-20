@@ -26,6 +26,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `groupMemberships` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GroupMembership.t)`, *default:* `nil`) - Contains details about groups of which this finding is a member. A group is a collection of findings that are related in some way. This field cannot be updated. Its value is ignored in all update requests.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the finding was created in Security Command Center.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the finding.
+  *   `chokepoint` (*type:* `GoogleApi.SecurityCenter.V1.Model.Chokepoint.t`, *default:* `nil`) - Contains details about a chokepoint, which is a resource or resource group where high-risk attack paths converge, based on [attack path simulations] (https://cloud.google.com/security-command-center/docs/attack-exposure-learn#attack_path_simulations). This field cannot be updated. Its value is ignored in all update requests.
   *   `orgPolicies` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.OrgPolicy.t)`, *default:* `nil`) - Contains information about the org policies associated with the finding.
   *   `database` (*type:* `GoogleApi.SecurityCenter.V1.Model.Database.t`, *default:* `nil`) - Database associated with the finding.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}", "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
@@ -88,6 +89,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :groupMemberships => list(GoogleApi.SecurityCenter.V1.Model.GroupMembership.t()) | nil,
           :createTime => DateTime.t() | nil,
           :state => String.t() | nil,
+          :chokepoint => GoogleApi.SecurityCenter.V1.Model.Chokepoint.t() | nil,
           :orgPolicies => list(GoogleApi.SecurityCenter.V1.Model.OrgPolicy.t()) | nil,
           :database => GoogleApi.SecurityCenter.V1.Model.Database.t() | nil,
           :name => String.t() | nil,
@@ -155,6 +157,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:groupMemberships, as: GoogleApi.SecurityCenter.V1.Model.GroupMembership, type: :list)
   field(:createTime, as: DateTime)
   field(:state)
+  field(:chokepoint, as: GoogleApi.SecurityCenter.V1.Model.Chokepoint)
   field(:orgPolicies, as: GoogleApi.SecurityCenter.V1.Model.OrgPolicy, type: :list)
   field(:database, as: GoogleApi.SecurityCenter.V1.Model.Database)
   field(:name)
