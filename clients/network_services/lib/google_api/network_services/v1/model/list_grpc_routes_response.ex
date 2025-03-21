@@ -23,17 +23,20 @@ defmodule GoogleApi.NetworkServices.V1.Model.ListGrpcRoutesResponse do
 
   *   `grpcRoutes` (*type:* `list(GoogleApi.NetworkServices.V1.Model.GrpcRoute.t)`, *default:* `nil`) - List of GrpcRoute resources.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than those appearing in this response, then `next_page_token` is included. To get the next set of results, call this method again using the value of `next_page_token` as `page_token`.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable resources. Populated when the request opts into return_partial_success and reading across collections e.g. when attempting to list all resources across all supported locations.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :grpcRoutes => list(GoogleApi.NetworkServices.V1.Model.GrpcRoute.t()) | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:grpcRoutes, as: GoogleApi.NetworkServices.V1.Model.GrpcRoute, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkServices.V1.Model.ListGrpcRoutesResponse do

@@ -1426,6 +1426,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of EndpointPolicies to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListEndpointPoliciesResponse` Indicates that this is a continuation of a prior `ListEndpointPolicies` call, and that the system should return the next page of data.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If true, allow partial responses for multi-regional Aggregated List requests. Otherwise if one of the locations is down or unreachable, the Aggregated List request will fail.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1462,7 +1463,8 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -2300,6 +2302,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of GrpcRoutes to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListGrpcRoutesResponse` Indicates that this is a continuation of a prior `ListGrpcRoutes` call, and that the system should return the next page of data.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If true, allow partial responses for multi-regional Aggregated List requests. Otherwise if one of the locations is down or unreachable, the Aggregated List request will fail.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2336,7 +2339,8 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -2664,6 +2668,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of HttpRoutes to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListHttpRoutesResponse` Indicates that this is a continuation of a prior `ListHttpRoutes` call, and that the system should return the next page of data.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If true, allow partial responses for multi-regional Aggregated List requests. Otherwise if one of the locations is down or unreachable, the Aggregated List request will fail.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2700,7 +2705,8 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -5230,6 +5236,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of TcpRoutes to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListTcpRoutesResponse` Indicates that this is a continuation of a prior `ListTcpRoutes` call, and that the system should return the next page of data.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If true, allow partial responses for multi-regional Aggregated List requests. Otherwise if one of the locations is down or unreachable, the Aggregated List request will fail.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5266,7 +5273,8 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -5594,6 +5602,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Maximum number of TlsRoutes to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListTlsRoutesResponse` Indicates that this is a continuation of a prior `ListTlsRoutes` call, and that the system should return the next page of data.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If true, allow partial responses for multi-regional Aggregated List requests. Otherwise if one of the locations is down or unreachable, the Aggregated List request will fail.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5630,7 +5639,8 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
