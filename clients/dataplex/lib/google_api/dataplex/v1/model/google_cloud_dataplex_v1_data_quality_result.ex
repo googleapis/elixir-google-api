@@ -22,12 +22,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult do
   ## Attributes
 
   *   `columns` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityColumnResult.t)`, *default:* `nil`) - Output only. A list of results at the column level.A column will have a corresponding DataQualityColumnResult if and only if there is at least one rule with the 'column' field set to it.
-  *   `dimensions` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimensionResult.t)`, *default:* `nil`) - A list of results at the dimension level.A dimension will have a corresponding DataQualityDimensionResult if and only if there is at least one rule with the 'dimension' field set to it.
-  *   `passed` (*type:* `boolean()`, *default:* `nil`) - Overall data quality result -- true if all rules passed.
+  *   `dimensions` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimensionResult.t)`, *default:* `nil`) - Output only. A list of results at the dimension level.A dimension will have a corresponding DataQualityDimensionResult if and only if there is at least one rule with the 'dimension' field set to it.
+  *   `passed` (*type:* `boolean()`, *default:* `nil`) - Output only. Overall data quality result -- true if all rules passed.
   *   `postScanActionsResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResultPostScanActionsResult.t`, *default:* `nil`) - Output only. The result of post scan actions.
-  *   `rowCount` (*type:* `String.t`, *default:* `nil`) - The count of rows processed.
-  *   `rules` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleResult.t)`, *default:* `nil`) - A list of all the rules in a job, and their results.
-  *   `scannedData` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData.t`, *default:* `nil`) - The data scanned for this result.
+  *   `rowCount` (*type:* `String.t`, *default:* `nil`) - Output only. The count of rows processed.
+  *   `rules` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleResult.t)`, *default:* `nil`) - Output only. A list of all the rules in a job, and their results.
+  *   `scannedData` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData.t`, *default:* `nil`) - Output only. The data scanned for this result.
   *   `score` (*type:* `number()`, *default:* `nil`) - Output only. The overall data quality score.The score ranges between 0, 100 (up to two decimal points).
   """
 
