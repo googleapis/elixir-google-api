@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQueryDataPolicy.V1.Model.DataPolicy do
 
   *   `dataMaskingPolicy` (*type:* `GoogleApi.BigQueryDataPolicy.V1.Model.DataMaskingPolicy.t`, *default:* `nil`) - The data masking policy that specifies the data masking rule to use.
   *   `dataPolicyId` (*type:* `String.t`, *default:* `nil`) - User-assigned (human readable) ID of the data policy that needs to be unique within a project. Used as {data_policy_id} in part of the resource name.
-  *   `dataPolicyType` (*type:* `String.t`, *default:* `nil`) - Type of data policy.
+  *   `dataPolicyType` (*type:* `String.t`, *default:* `nil`) - Required. Data policy type. Type of data policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this data policy, in the format of `projects/{project_number}/locations/{location_id}/dataPolicies/{data_policy_id}`.
   *   `policyTag` (*type:* `String.t`, *default:* `nil`) - Policy tag resource name, in the format of `projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{policyTag_id}`.
   """
