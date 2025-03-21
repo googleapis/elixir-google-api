@@ -22,7 +22,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.TlsRouteRouteDestination do
   ## Attributes
 
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - Required. The URL of a BackendService to route traffic to.
-  *   `weight` (*type:* `integer()`, *default:* `nil`) - Optional. Specifies the proportion of requests forwareded to the backend referenced by the service_name field. This is computed as: - weight/Sum(weights in destinations) Weights in all destinations does not need to sum up to 100.
+  *   `weight` (*type:* `integer()`, *default:* `nil`) - Optional. Specifies the proportion of requests forwarded to the backend referenced by the service_name field. This is computed as: - weight/Sum(weights in destinations) Weights in all destinations does not need to sum up to 100.
   """
 
   use GoogleApi.Gax.ModelBase

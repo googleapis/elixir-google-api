@@ -23,17 +23,20 @@ defmodule GoogleApi.NetworkServices.V1.Model.ListEndpointPoliciesResponse do
 
   *   `endpointPolicies` (*type:* `list(GoogleApi.NetworkServices.V1.Model.EndpointPolicy.t)`, *default:* `nil`) - List of EndpointPolicy resources.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If there might be more results than those appearing in this response, then `next_page_token` is included. To get the next set of results, call this method again using the value of `next_page_token` as `page_token`.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable resources. Populated when the request opts into return_partial_success and reading across collections e.g. when attempting to list all resources across all supported locations.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :endpointPolicies => list(GoogleApi.NetworkServices.V1.Model.EndpointPolicy.t()) | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:endpointPolicies, as: GoogleApi.NetworkServices.V1.Model.EndpointPolicy, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkServices.V1.Model.ListEndpointPoliciesResponse do
