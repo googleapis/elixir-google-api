@@ -21,17 +21,20 @@ defmodule GoogleApi.PubSub.V1.Model.MessageTransform do
 
   ## Attributes
 
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, the transform is enabled. If false, the transform is disabled and will not be applied to messages. Defaults to `true`.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the transform is disabled and will not be applied to messages. Defaults to `false`.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Optional. This field is deprecated, use the `disabled` field to disable transforms.
   *   `javascriptUdf` (*type:* `GoogleApi.PubSub.V1.Model.JavaScriptUDF.t`, *default:* `nil`) - Optional. JavaScript User Defined Function. If multiple JavaScriptUDF's are specified on a resource, each must have a unique `function_name`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :disabled => boolean() | nil,
           :enabled => boolean() | nil,
           :javascriptUdf => GoogleApi.PubSub.V1.Model.JavaScriptUDF.t() | nil
         }
 
+  field(:disabled)
   field(:enabled)
   field(:javascriptUdf, as: GoogleApi.PubSub.V1.Model.JavaScriptUDF)
 end
