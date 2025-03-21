@@ -51,7 +51,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse{}}` on success
+  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2RepresentativeInfoResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec civicinfo_representatives_representative_info_by_address(
@@ -59,7 +59,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse.t()}
+          {:ok, GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2RepresentativeInfoResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -96,7 +96,8 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoResponse{}]
+      opts ++
+        [struct: %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2RepresentativeInfoResponse{}]
     )
   end
 
@@ -126,7 +127,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData{}}` on success
+  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2RepresentativeInfoData{}}` on success
   *   `{:error, info}` on failure
   """
   @spec civicinfo_representatives_representative_info_by_division(
@@ -135,7 +136,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData.t()}
+          {:ok, GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2RepresentativeInfoData.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -173,6 +174,8 @@ defmodule GoogleApi.CivicInfo.V2.Api.Representatives do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.RepresentativeInfoData{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2RepresentativeInfoData{}]
+    )
   end
 end

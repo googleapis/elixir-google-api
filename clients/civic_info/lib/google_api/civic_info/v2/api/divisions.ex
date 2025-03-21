@@ -48,11 +48,11 @@ defmodule GoogleApi.CivicInfo.V2.Api.Divisions do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.DivisionByAddressResponse{}}` on success
+  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2DivisionByAddressResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec civicinfo_divisions_query_division_by_address(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CivicInfo.V2.Model.DivisionByAddressResponse.t()}
+          {:ok, GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2DivisionByAddressResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -82,7 +82,8 @@ defmodule GoogleApi.CivicInfo.V2.Api.Divisions do
     connection
     |> Connection.execute(request)
     |> Response.decode(
-      opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.DivisionByAddressResponse{}]
+      opts ++
+        [struct: %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2DivisionByAddressResponse{}]
     )
   end
 
@@ -109,11 +110,11 @@ defmodule GoogleApi.CivicInfo.V2.Api.Divisions do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse{}}` on success
+  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2DivisionSearchResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec civicinfo_divisions_search(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse.t()}
+          {:ok, GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2DivisionSearchResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -142,6 +143,8 @@ defmodule GoogleApi.CivicInfo.V2.Api.Divisions do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.DivisionSearchResponse{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2DivisionSearchResponse{}]
+    )
   end
 end
