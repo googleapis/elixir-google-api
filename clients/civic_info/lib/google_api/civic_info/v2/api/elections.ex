@@ -48,11 +48,11 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse{}}` on success
+  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2ElectionsQueryResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec civicinfo_elections_election_query(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse.t()}
+          {:ok, GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2ElectionsQueryResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -81,7 +81,9 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.ElectionsQueryResponse{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2ElectionsQueryResponse{}]
+    )
   end
 
   @doc """
@@ -111,11 +113,11 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.VoterInfoResponse{}}` on success
+  *   `{:ok, %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2VoterInfoResponse{}}` on success
   *   `{:error, info}` on failure
   """
   @spec civicinfo_elections_voter_info_query(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.CivicInfo.V2.Model.VoterInfoResponse.t()}
+          {:ok, GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2VoterInfoResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -148,6 +150,8 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
 
     connection
     |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.VoterInfoResponse{}])
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CivicInfo.V2.Model.CivicinfoApiprotosV2VoterInfoResponse{}]
+    )
   end
 end
