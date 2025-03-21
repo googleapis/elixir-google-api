@@ -22,7 +22,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimensionR
   ## Attributes
 
   *   `dimension` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimension.t`, *default:* `nil`) - Output only. The dimension config specified in the DataQualitySpec, as is.
-  *   `passed` (*type:* `boolean()`, *default:* `nil`) - Whether the dimension passed or failed.
+  *   `passed` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the dimension passed or failed.
   *   `score` (*type:* `number()`, *default:* `nil`) - Output only. The dimension-level data quality score for this data scan job if and only if the 'dimension' field is set.The score ranges between 0, 100 (up to two decimal points).
   """
 
