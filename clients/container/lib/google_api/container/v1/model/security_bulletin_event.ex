@@ -27,6 +27,7 @@ defmodule GoogleApi.Container.V1.Model.SecurityBulletinEvent do
   *   `bulletinUri` (*type:* `String.t`, *default:* `nil`) - The URI link to the bulletin on the website for more information.
   *   `cveIds` (*type:* `list(String.t)`, *default:* `nil`) - The CVEs associated with this bulletin.
   *   `manualStepsRequired` (*type:* `boolean()`, *default:* `nil`) - If this field is specified, it means there are manual steps that the user must take to make their clusters safe.
+  *   `mitigatedVersions` (*type:* `list(String.t)`, *default:* `nil`) - The GKE versions where this vulnerability is mitigated.
   *   `patchedVersions` (*type:* `list(String.t)`, *default:* `nil`) - The GKE versions where this vulnerability is patched.
   *   `resourceTypeAffected` (*type:* `String.t`, *default:* `nil`) - The resource type (node/control plane) that has the vulnerability. Multiple notifications (1 notification per resource type) will be sent for a vulnerability that affects > 1 resource type.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of this bulletin as it relates to GKE.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Container.V1.Model.SecurityBulletinEvent do
           :bulletinUri => String.t() | nil,
           :cveIds => list(String.t()) | nil,
           :manualStepsRequired => boolean() | nil,
+          :mitigatedVersions => list(String.t()) | nil,
           :patchedVersions => list(String.t()) | nil,
           :resourceTypeAffected => String.t() | nil,
           :severity => String.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.Container.V1.Model.SecurityBulletinEvent do
   field(:bulletinUri)
   field(:cveIds, type: :list)
   field(:manualStepsRequired)
+  field(:mitigatedVersions, type: :list)
   field(:patchedVersions, type: :list)
   field(:resourceTypeAffected)
   field(:severity)
