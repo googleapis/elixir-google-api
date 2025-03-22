@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   ## Attributes
 
   *   `chunkingConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptionsLayoutConfigChunkingConfig.t`, *default:* `nil`) - Optional. Config for chunking in layout parser processor.
+  *   `enableLlmLayoutParsing` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to refine PDF layout using LLM.
   *   `returnBoundingBoxes` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to include bounding boxes in layout parser processor response.
   *   `returnImages` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to include images in layout parser processor response.
   """
@@ -32,6 +33,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
           :chunkingConfig =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptionsLayoutConfigChunkingConfig.t()
             | nil,
+          :enableLlmLayoutParsing => boolean() | nil,
           :returnBoundingBoxes => boolean() | nil,
           :returnImages => boolean() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
       GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptionsLayoutConfigChunkingConfig
   )
 
+  field(:enableLlmLayoutParsing)
   field(:returnBoundingBoxes)
   field(:returnImages)
 end
