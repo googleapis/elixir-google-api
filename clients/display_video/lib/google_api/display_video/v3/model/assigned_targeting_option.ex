@@ -23,6 +23,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.AssignedTargetingOption do
 
   *   `contentOutstreamPositionDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.ContentOutstreamPositionAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content outstream position details. This field will be populated when the targeting_type is `TARGETING_TYPE_CONTENT_OUTSTREAM_POSITION`.
   *   `contentDurationDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.ContentDurationAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content duration details. This field will be populated when the targeting_type is `TARGETING_TYPE_CONTENT_DURATION`.
+  *   `contentThemeExclusionDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.ContentThemeAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content theme details. This field will be populated when the targeting_type is `TARGETING_TYPE_CONTENT_THEME_EXCLUSION`. Content theme are targeting exclusions. Advertiser level content theme exclusions, if set, are always applied in serving (even though they aren't visible in resource settings). Resource settings can exclude content theme in addition to advertiser exclusions.
   *   `videoPlayerSizeDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.VideoPlayerSizeAssignedTargetingOptionDetails.t`, *default:* `nil`) - Video player size details. This field will be populated when the targeting_type is `TARGETING_TYPE_VIDEO_PLAYER_SIZE`.
   *   `contentInstreamPositionDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.ContentInstreamPositionAssignedTargetingOptionDetails.t`, *default:* `nil`) - Content instream position details. This field will be populated when the targeting_type is `TARGETING_TYPE_CONTENT_INSTREAM_POSITION`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this assigned targeting option.
@@ -85,6 +86,8 @@ defmodule GoogleApi.DisplayVideo.V3.Model.AssignedTargetingOption do
           :contentDurationDetails =>
             GoogleApi.DisplayVideo.V3.Model.ContentDurationAssignedTargetingOptionDetails.t()
             | nil,
+          :contentThemeExclusionDetails =>
+            GoogleApi.DisplayVideo.V3.Model.ContentThemeAssignedTargetingOptionDetails.t() | nil,
           :videoPlayerSizeDetails =>
             GoogleApi.DisplayVideo.V3.Model.VideoPlayerSizeAssignedTargetingOptionDetails.t()
             | nil,
@@ -210,6 +213,10 @@ defmodule GoogleApi.DisplayVideo.V3.Model.AssignedTargetingOption do
 
   field(:contentDurationDetails,
     as: GoogleApi.DisplayVideo.V3.Model.ContentDurationAssignedTargetingOptionDetails
+  )
+
+  field(:contentThemeExclusionDetails,
+    as: GoogleApi.DisplayVideo.V3.Model.ContentThemeAssignedTargetingOptionDetails
   )
 
   field(:videoPlayerSizeDetails,
