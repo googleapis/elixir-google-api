@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.VerifiedAccess.V2.Model.VerifyChallengeResponseResult do
   @moduledoc """
-  Result message for VerifiedAccess.VerifyChallengeResponse.
+  Result message for VerifiedAccess.VerifyChallengeResponse. The response returned when successful for Managed profiles on Unmanaged browsers will NOT have devicePermanentId, keyTrustLevel, virtualDeviceId and customerId fields. Managed profiles will INSTEAD have the profileCustomerId, virtualProfileId, profilePermanentId and profileKeyTrustLevel fields.
 
   ## Attributes
 
