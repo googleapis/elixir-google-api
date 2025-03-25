@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firebase.V1beta1.Model.MessageSet do
   @moduledoc """
-  LINT.ThenChange( //depot/google3/third_party/protobuf/github/src/google/protobuf/bridge/message_set.proto ) This is proto2's version of MessageSet.
+  This is proto2's version of MessageSet.
 
   ## Attributes
 
