@@ -26,6 +26,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DestinationDataset do
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive name for the dataset.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See https://cloud.google.com/resource-manager/docs/creating-managing-labels for more information.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Required. The geographic location where the dataset should reside. See https://cloud.google.com/bigquery/docs/locations for supported locations.
+  *   `replicaLocations` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The geographic locations where the dataset should be replicated. See https://cloud.google.com/bigquery/docs/locations for supported locations.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +37,8 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DestinationDataset do
           :description => String.t() | nil,
           :friendlyName => String.t() | nil,
           :labels => map() | nil,
-          :location => String.t() | nil
+          :location => String.t() | nil,
+          :replicaLocations => list(String.t()) | nil
         }
 
   field(:datasetReference, as: GoogleApi.AnalyticsHub.V1.Model.DestinationDatasetReference)
@@ -44,6 +46,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DestinationDataset do
   field(:friendlyName)
   field(:labels, type: :map)
   field(:location)
+  field(:replicaLocations, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsHub.V1.Model.DestinationDataset do
