@@ -18,7 +18,7 @@
 defmodule GoogleApi.Keep.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.4.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.Keep.Mixfile do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/keep",
-        "Homepage" => "https://developers.google.com/keep/api"
+        "Homepage" => "https://developers.google.com/workspace/keep/api"
       }
     ]
   end
