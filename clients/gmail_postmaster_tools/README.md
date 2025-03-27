@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_gmail_postmaster_tools, "~> 0.6"}]
+  [{:google_api_gmail_postmaster_tools, "~> 0.7"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/gmail/postmaster](https://developers.google.com/gmail/postmaster).
+Product documentation is available at [https://developers.google.com/workspace/gmail/postmaster](https://developers.google.com/workspace/gmail/postmaster).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_gmail_postmaster_tools](https://hexdocs.pm/google_api_gmail_postmaster_tools).
