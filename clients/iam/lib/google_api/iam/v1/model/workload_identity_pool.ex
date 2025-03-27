@@ -25,6 +25,9 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPool do
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the pool is disabled. You cannot use a disabled pool to exchange tokens, or use existing tokens to access resources. If the pool is re-enabled, existing tokens grant access again.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. A display name for the pool. Cannot exceed 32 characters.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time after which the workload identity pool will be permanently purged and cannot be recovered.
+  *   `inlineCertificateIssuanceConfig` (*type:* `GoogleApi.IAM.V1.Model.InlineCertificateIssuanceConfig.t`, *default:* `nil`) - Optional. Defines the Certificate Authority (CA) pool resources and configurations required for issuance and rotation of mTLS workload certificates.
+  *   `inlineTrustConfig` (*type:* `GoogleApi.IAM.V1.Model.InlineTrustConfig.t`, *default:* `nil`) - Optional. Represents config to add additional trusted trust domains.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - Immutable. The mode the pool is operating in.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the pool.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the pool.
   """
@@ -36,6 +39,10 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPool do
           :disabled => boolean() | nil,
           :displayName => String.t() | nil,
           :expireTime => DateTime.t() | nil,
+          :inlineCertificateIssuanceConfig =>
+            GoogleApi.IAM.V1.Model.InlineCertificateIssuanceConfig.t() | nil,
+          :inlineTrustConfig => GoogleApi.IAM.V1.Model.InlineTrustConfig.t() | nil,
+          :mode => String.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil
         }
@@ -44,6 +51,13 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPool do
   field(:disabled)
   field(:displayName)
   field(:expireTime, as: DateTime)
+
+  field(:inlineCertificateIssuanceConfig,
+    as: GoogleApi.IAM.V1.Model.InlineCertificateIssuanceConfig
+  )
+
+  field(:inlineTrustConfig, as: GoogleApi.IAM.V1.Model.InlineTrustConfig)
+  field(:mode)
   field(:name)
   field(:state)
 end
