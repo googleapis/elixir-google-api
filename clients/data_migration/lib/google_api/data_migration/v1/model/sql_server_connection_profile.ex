@@ -23,6 +23,7 @@ defmodule GoogleApi.DataMigration.V1.Model.SqlServerConnectionProfile do
 
   *   `backups` (*type:* `GoogleApi.DataMigration.V1.Model.SqlServerBackups.t`, *default:* `nil`) - The backup details in Cloud Storage for homogeneous migration to Cloud SQL for SQL Server.
   *   `cloudSqlId` (*type:* `String.t`, *default:* `nil`) - If the source is a Cloud SQL database, use this field to provide the Cloud SQL instance ID of the source.
+  *   `database` (*type:* `String.t`, *default:* `nil`) - Required. The name of the specific database within the host.
   *   `forwardSshConnectivity` (*type:* `GoogleApi.DataMigration.V1.Model.ForwardSshTunnelConnectivity.t`, *default:* `nil`) - Forward SSH tunnel connectivity.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Required. The IP or hostname of the source SQL Server database.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password for the user that Database Migration Service will be using to connect to the database. This field is not returned on request, and the value is encrypted when stored in Database Migration Service.
@@ -40,6 +41,7 @@ defmodule GoogleApi.DataMigration.V1.Model.SqlServerConnectionProfile do
   @type t :: %__MODULE__{
           :backups => GoogleApi.DataMigration.V1.Model.SqlServerBackups.t() | nil,
           :cloudSqlId => String.t() | nil,
+          :database => String.t() | nil,
           :forwardSshConnectivity =>
             GoogleApi.DataMigration.V1.Model.ForwardSshTunnelConnectivity.t() | nil,
           :host => String.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.DataMigration.V1.Model.SqlServerConnectionProfile do
 
   field(:backups, as: GoogleApi.DataMigration.V1.Model.SqlServerBackups)
   field(:cloudSqlId)
+  field(:database)
 
   field(:forwardSshConnectivity, as: GoogleApi.DataMigration.V1.Model.ForwardSshTunnelConnectivity)
 

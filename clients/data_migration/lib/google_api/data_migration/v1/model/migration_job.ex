@@ -46,6 +46,7 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   *   `source` (*type:* `String.t`, *default:* `nil`) - Required. The resource name (URI) of the source connection profile.
   *   `sourceDatabase` (*type:* `GoogleApi.DataMigration.V1.Model.DatabaseType.t`, *default:* `nil`) - The database engine type and provider of the source.
   *   `sqlserverHomogeneousMigrationJobConfig` (*type:* `GoogleApi.DataMigration.V1.Model.SqlServerHomogeneousMigrationJobConfig.t`, *default:* `nil`) - Optional. Configuration for SQL Server homogeneous migration.
+  *   `sqlserverToPostgresConfig` (*type:* `GoogleApi.DataMigration.V1.Model.SqlServerToPostgresConfig.t`, *default:* `nil`) - Configuration for heterogeneous **SQL Server to Cloud SQL for PostgreSQL** migrations.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current migration job state.
   *   `staticIpConnectivity` (*type:* `GoogleApi.DataMigration.V1.Model.StaticIpConnectivity.t`, *default:* `nil`) - static ip connectivity data (default, no additional details needed).
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The migration job type.
@@ -85,6 +86,8 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
           :sourceDatabase => GoogleApi.DataMigration.V1.Model.DatabaseType.t() | nil,
           :sqlserverHomogeneousMigrationJobConfig =>
             GoogleApi.DataMigration.V1.Model.SqlServerHomogeneousMigrationJobConfig.t() | nil,
+          :sqlserverToPostgresConfig =>
+            GoogleApi.DataMigration.V1.Model.SqlServerToPostgresConfig.t() | nil,
           :state => String.t() | nil,
           :staticIpConnectivity =>
             GoogleApi.DataMigration.V1.Model.StaticIpConnectivity.t() | nil,
@@ -122,6 +125,8 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   field(:sqlserverHomogeneousMigrationJobConfig,
     as: GoogleApi.DataMigration.V1.Model.SqlServerHomogeneousMigrationJobConfig
   )
+
+  field(:sqlserverToPostgresConfig, as: GoogleApi.DataMigration.V1.Model.SqlServerToPostgresConfig)
 
   field(:state)
   field(:staticIpConnectivity, as: GoogleApi.DataMigration.V1.Model.StaticIpConnectivity)
