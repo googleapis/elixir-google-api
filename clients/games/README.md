@@ -1,6 +1,6 @@
 # GoogleApi.Games
 
-Google Play Game Services client library.
+Google Play Games Services API client library.
 
 The Google Play Games Service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
 
