@@ -27,6 +27,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroup do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata to organize your FeatureGroup. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one FeatureGroup(System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the FeatureGroup. Format: `projects/{project}/locations/{location}/featureGroups/{featureGroup}`
+  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Output only. A Service Account unique to this FeatureGroup. The role bigquery.dataViewer should be granted to this service account to allow Vertex AI Feature Store to access source data while running jobs under this FeatureGroup.
+  *   `serviceAgentType` (*type:* `String.t`, *default:* `nil`) - Optional. Service agent type used during jobs under a FeatureGroup. By default, the Vertex AI Service Agent is used. When using an IAM Policy to isolate this FeatureGroup within a project, a separate service account should be provisioned by setting this field to `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service account to access the BigQuery source table.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this FeatureGroup was last updated.
   """
 
@@ -40,6 +42,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroup do
           :etag => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :serviceAccountEmail => String.t() | nil,
+          :serviceAgentType => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -49,6 +53,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroup do
   field(:etag)
   field(:labels, type: :map)
   field(:name)
+  field(:serviceAccountEmail)
+  field(:serviceAgentType)
   field(:updateTime, as: DateTime)
 end
 

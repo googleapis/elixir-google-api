@@ -28,6 +28,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagCorpus do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the RagCorpus.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this RagCorpus was last updated.
   *   `vectorDbConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfig.t`, *default:* `nil`) - Optional. Immutable. The config for the Vector DBs.
+  *   `vertexAiSearchConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAiSearchConfig.t`, *default:* `nil`) - Optional. Immutable. The config for the Vertex AI Search.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagCorpus do
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :vectorDbConfig =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfig.t() | nil
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfig.t() | nil,
+          :vertexAiSearchConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAiSearchConfig.t() | nil
         }
 
   field(:corpusStatus, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CorpusStatus)
@@ -53,6 +56,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagCorpus do
 
   field(:vectorDbConfig,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagVectorDbConfig
+  )
+
+  field(:vertexAiSearchConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAiSearchConfig
   )
 end
 
