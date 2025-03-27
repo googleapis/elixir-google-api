@@ -28,6 +28,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Generator do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of the generator. Format: `projects//locations//generators/`
   *   `publishedModel` (*type:* `String.t`, *default:* `nil`) - Optional. The published Large Language Model name. * To use the latest model version, specify the model name without version number. Example: `text-bison` * To use a stable model version, specify the version number as well. Example: `text-bison@002`.
   *   `summarizationContext` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SummarizationContext.t`, *default:* `nil`) - Input of prebuilt Summarization feature.
+  *   `tools` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Resource names of the tools that the generator can choose from. Format: `projects//locations//tools/`.
   *   `triggerEvent` (*type:* `String.t`, *default:* `nil`) - Optional. The trigger event of the generator. It defines when the generator is triggered in a conversation.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time of this generator.
   """
@@ -45,6 +46,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Generator do
           :publishedModel => String.t() | nil,
           :summarizationContext =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SummarizationContext.t() | nil,
+          :tools => list(String.t()) | nil,
           :triggerEvent => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -65,6 +67,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Generator do
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SummarizationContext
   )
 
+  field(:tools, type: :list)
   field(:triggerEvent)
   field(:updateTime, as: DateTime)
 end

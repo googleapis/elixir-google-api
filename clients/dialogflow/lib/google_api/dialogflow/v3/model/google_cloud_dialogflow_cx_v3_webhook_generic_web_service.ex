@@ -28,6 +28,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookGenericW
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for HTTP Basic authentication.
   *   `requestBody` (*type:* `String.t`, *default:* `nil`) - Optional. Defines a custom JSON object as request body to send to flexible webhook.
   *   `requestHeaders` (*type:* `map()`, *default:* `nil`) - The HTTP request headers to send together with webhook requests.
+  *   `secretVersionForUsernamePassword` (*type:* `String.t`, *default:* `nil`) - Optional. The SecretManager secret version resource storing the username:password pair for HTTP Basic authentication. Format: `projects/{project}/secrets/{secret}/versions/{version}`
+  *   `secretVersionsForRequestHeaders` (*type:* `%{optional(String.t) => GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookGenericWebServiceSecretVersionHeaderValue.t}`, *default:* `nil`) - Optional. The HTTP request headers to send together with webhook requests. Header values are stored in SecretManager secret versions. When the same header name is specified in both `request_headers` and `secret_versions_for_request_headers`, the value in `secret_versions_for_request_headers` will be used.
   *   `serviceAgentAuth` (*type:* `String.t`, *default:* `nil`) - Optional. Indicate the auth token type generated from the [Diglogflow service agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent). The generated token is sent in the Authorization header.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The webhook URI for receiving POST requests. It must use https protocol.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The user name for HTTP Basic authentication.
@@ -46,6 +48,13 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookGenericW
           :password => String.t() | nil,
           :requestBody => String.t() | nil,
           :requestHeaders => map() | nil,
+          :secretVersionForUsernamePassword => String.t() | nil,
+          :secretVersionsForRequestHeaders =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookGenericWebServiceSecretVersionHeaderValue.t()
+            }
+            | nil,
           :serviceAgentAuth => String.t() | nil,
           :uri => String.t() | nil,
           :username => String.t() | nil,
@@ -63,6 +72,14 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookGenericW
   field(:password)
   field(:requestBody)
   field(:requestHeaders, type: :map)
+  field(:secretVersionForUsernamePassword)
+
+  field(:secretVersionsForRequestHeaders,
+    as:
+      GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookGenericWebServiceSecretVersionHeaderValue,
+    type: :map
+  )
+
   field(:serviceAgentAuth)
   field(:uri)
   field(:username)
