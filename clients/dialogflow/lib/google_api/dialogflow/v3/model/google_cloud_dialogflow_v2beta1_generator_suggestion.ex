@@ -23,6 +23,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1GeneratorSug
 
   *   `freeFormSuggestion` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1FreeFormSuggestion.t`, *default:* `nil`) - Optional. Free form suggestion.
   *   `summarySuggestion` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SummarySuggestion.t`, *default:* `nil`) - Optional. Suggested summary.
+  *   `toolCallInfo` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1GeneratorSuggestionToolCallInfo.t)`, *default:* `nil`) - Optional. List of request and response for tool calls executed.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,7 +32,12 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1GeneratorSug
           :freeFormSuggestion =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1FreeFormSuggestion.t() | nil,
           :summarySuggestion =>
-            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SummarySuggestion.t() | nil
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SummarySuggestion.t() | nil,
+          :toolCallInfo =>
+            list(
+              GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1GeneratorSuggestionToolCallInfo.t()
+            )
+            | nil
         }
 
   field(:freeFormSuggestion,
@@ -40,6 +46,11 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1GeneratorSug
 
   field(:summarySuggestion,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SummarySuggestion
+  )
+
+  field(:toolCallInfo,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1GeneratorSuggestionToolCallInfo,
+    type: :list
   )
 end
 
