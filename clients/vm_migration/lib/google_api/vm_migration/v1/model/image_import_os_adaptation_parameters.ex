@@ -21,6 +21,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ImageImportOsAdaptationParameters do
 
   ## Attributes
 
+  *   `bootConversion` (*type:* `String.t`, *default:* `nil`) - Optional. By default the image will keep its existing boot option. Setting this property will trigger an internal process which will convert the image from using the existing boot option to another. The size of the boot disk might be increased to allow the conversion
   *   `generalize` (*type:* `boolean()`, *default:* `nil`) - Optional. Set to true in order to generalize the imported image. The generalization process enables co-existence of multiple VMs created from the same image. For Windows, generalizing the image removes computer-specific information such as installed drivers and the computer security identifier (SID).
   *   `licenseType` (*type:* `String.t`, *default:* `nil`) - Optional. Choose which type of license to apply to the imported image.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.VMMigration.V1.Model.ImageImportOsAdaptationParameters do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bootConversion => String.t() | nil,
           :generalize => boolean() | nil,
           :licenseType => String.t() | nil
         }
 
+  field(:bootConversion)
   field(:generalize)
   field(:licenseType)
 end
