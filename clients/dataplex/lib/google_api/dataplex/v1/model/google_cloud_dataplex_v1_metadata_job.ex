@@ -22,6 +22,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJob do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metadata job was created.
+  *   `exportResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobExportJobResult.t`, *default:* `nil`) - Output only. Export job result.
+  *   `exportSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobExportJobSpec.t`, *default:* `nil`) - Export job specification.
   *   `importResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobImportJobResult.t`, *default:* `nil`) - Output only. Import job result.
   *   `importSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobImportJobSpec.t`, *default:* `nil`) - Import job specification.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels.
@@ -36,6 +38,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJob do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :exportResult =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobExportJobResult.t() | nil,
+          :exportSpec =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobExportJobSpec.t() | nil,
           :importResult =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobImportJobResult.t() | nil,
           :importSpec =>
@@ -49,6 +55,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJob do
         }
 
   field(:createTime, as: DateTime)
+
+  field(:exportResult,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobExportJobResult
+  )
+
+  field(:exportSpec, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobExportJobSpec)
 
   field(:importResult,
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobImportJobResult
