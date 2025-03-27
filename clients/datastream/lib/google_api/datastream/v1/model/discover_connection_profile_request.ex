@@ -25,9 +25,11 @@ defmodule GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileRequest do
   *   `connectionProfileName` (*type:* `String.t`, *default:* `nil`) - A reference to an existing connection profile.
   *   `fullHierarchy` (*type:* `boolean()`, *default:* `nil`) - Whether to retrieve the full hierarchy of data objects (TRUE) or only the current level (FALSE).
   *   `hierarchyDepth` (*type:* `integer()`, *default:* `nil`) - The number of hierarchy levels below the current level to be retrieved.
+  *   `mongodbCluster` (*type:* `GoogleApi.Datastream.V1.Model.MongodbCluster.t`, *default:* `nil`) - MongoDB cluster to enrich with child data objects and metadata.
   *   `mysqlRdbms` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - MySQL RDBMS to enrich with child data objects and metadata.
   *   `oracleRdbms` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle RDBMS to enrich with child data objects and metadata.
   *   `postgresqlRdbms` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - PostgreSQL RDBMS to enrich with child data objects and metadata.
+  *   `salesforceOrg` (*type:* `GoogleApi.Datastream.V1.Model.SalesforceOrg.t`, *default:* `nil`) - Salesforce organization to enrich with child data objects and metadata.
   *   `sqlServerRdbms` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerRdbms.t`, *default:* `nil`) - SQLServer RDBMS to enrich with child data objects and metadata.
   """
 
@@ -38,9 +40,11 @@ defmodule GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileRequest do
           :connectionProfileName => String.t() | nil,
           :fullHierarchy => boolean() | nil,
           :hierarchyDepth => integer() | nil,
+          :mongodbCluster => GoogleApi.Datastream.V1.Model.MongodbCluster.t() | nil,
           :mysqlRdbms => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
           :oracleRdbms => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
           :postgresqlRdbms => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil,
+          :salesforceOrg => GoogleApi.Datastream.V1.Model.SalesforceOrg.t() | nil,
           :sqlServerRdbms => GoogleApi.Datastream.V1.Model.SqlServerRdbms.t() | nil
         }
 
@@ -48,9 +52,11 @@ defmodule GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileRequest do
   field(:connectionProfileName)
   field(:fullHierarchy)
   field(:hierarchyDepth)
+  field(:mongodbCluster, as: GoogleApi.Datastream.V1.Model.MongodbCluster)
   field(:mysqlRdbms, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
   field(:oracleRdbms, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
   field(:postgresqlRdbms, as: GoogleApi.Datastream.V1.Model.PostgresqlRdbms)
+  field(:salesforceOrg, as: GoogleApi.Datastream.V1.Model.SalesforceOrg)
   field(:sqlServerRdbms, as: GoogleApi.Datastream.V1.Model.SqlServerRdbms)
 end
 
