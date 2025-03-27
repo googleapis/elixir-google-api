@@ -20,7 +20,7 @@ defmodule GoogleApi.TextToSpeech.V1 do
   API client metadata for GoogleApi.TextToSpeech.V1.
   """
 
-  @discovery_revision "20250114"
+  @discovery_revision "20250325"
 
   def discovery_revision(), do: @discovery_revision
 end
