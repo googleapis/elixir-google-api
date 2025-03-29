@@ -21,6 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
 
   ## Attributes
 
+  *   `accessDeniedReasons` (*type:* `list(String.t)`, *default:* `nil`) - Reasons for access denial. This model is accessible if this list is empty, otherwise the model is viewable only.
   *   `brand` (*type:* `String.t`, *default:* `nil`) - The company that this device is branded with. Example: "Google", "Samsung".
   *   `codename` (*type:* `String.t`, *default:* `nil`) - The name of the industrial design. This corresponds to android.os.Build.DEVICE.
   *   `form` (*type:* `String.t`, *default:* `nil`) - Whether this device is virtual or physical.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accessDeniedReasons => list(String.t()) | nil,
           :brand => String.t() | nil,
           :codename => String.t() | nil,
           :form => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
           :thumbnailUrl => String.t() | nil
         }
 
+  field(:accessDeniedReasons, type: :list)
   field(:brand)
   field(:codename)
   field(:form)
