@@ -22,6 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.PrometheusQueryLanguageCondition do
   ## Attributes
 
   *   `alertRule` (*type:* `String.t`, *default:* `nil`) - Optional. The alerting rule name of this alert in the corresponding Prometheus configuration file.Some external tools may require this field to be populated correctly in order to refer to the original Prometheus configuration file. The rule group name and the alert name are necessary to update the relevant AlertPolicies in case the definition of the rule group changes in the future.This field is optional. If this field is not empty, then it must be a valid Prometheus label name (https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels). This field may not exceed 2048 Unicode characters in length.
+  *   `disableMetricValidation` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to disable metric existence validation for this condition.This allows alerting policies to be defined on metrics that do not yet exist, improving advanced customer workflows such as configuring alerting policies using Terraform.Users with the monitoring.alertPolicyViewer role are able to see the name of the non-existent metric in the alerting policy condition.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Optional. Alerts are considered firing once their PromQL expression was evaluated to be "true" for this long. Alerts whose PromQL expression was not evaluated to be "true" for long enough are considered pending. Must be a non-negative duration or missing. This field is optional. Its default value is zero.
   *   `evaluationInterval` (*type:* `String.t`, *default:* `nil`) - Optional. How often this rule should be evaluated. Must be a positive multiple of 30 seconds or missing. This field is optional. Its default value is 30 seconds. If this PrometheusQueryLanguageCondition was generated from a Prometheus alerting rule, then this value should be taken from the enclosing rule group.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels to add to or overwrite in the PromQL query result. Label names must be valid (https://prometheus.io/docs/concepts/data_model/#metric-names-and-labels). Label values can be templatized by using variables (https://cloud.google.com/monitoring/alerts/doc-variables#doc-vars). The only available variable names are the names of the labels in the PromQL result, including "__name__" and "value". "labels" may be empty.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Monitoring.V3.Model.PrometheusQueryLanguageCondition do
 
   @type t :: %__MODULE__{
           :alertRule => String.t() | nil,
+          :disableMetricValidation => boolean() | nil,
           :duration => String.t() | nil,
           :evaluationInterval => String.t() | nil,
           :labels => map() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.Monitoring.V3.Model.PrometheusQueryLanguageCondition do
         }
 
   field(:alertRule)
+  field(:disableMetricValidation)
   field(:duration)
   field(:evaluationInterval)
   field(:labels, type: :map)
