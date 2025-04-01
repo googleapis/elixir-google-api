@@ -244,6 +244,7 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:extraLocationTypes` (*type:* `list(String.t)`) - Optional. A list of extra location types that should be used as conditions for controlling the visibility of the locations.
       *   `:filter` (*type:* `String.t`) - A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return. If not set, the service selects a default.
       *   `:pageToken` (*type:* `String.t`) - A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
@@ -272,6 +273,7 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :extraLocationTypes => :query,
       :filter => :query,
       :pageSize => :query,
       :pageToken => :query
@@ -3918,6 +3920,7 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - Order by parameters.
       *   `:pageSize` (*type:* `integer()`) - Page size.
       *   `:pageToken` (*type:* `String.t`) - Page token.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If true, allow partial responses for multi-regional Aggregated List requests.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3956,7 +3959,8 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =

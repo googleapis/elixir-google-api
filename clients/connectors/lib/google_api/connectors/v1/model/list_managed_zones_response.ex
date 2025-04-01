@@ -23,17 +23,20 @@ defmodule GoogleApi.Connectors.V1.Model.ListManagedZonesResponse do
 
   *   `managedZones` (*type:* `list(GoogleApi.Connectors.V1.Model.ManagedZone.t)`, *default:* `nil`) - ManagedZones.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Next page token.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :managedZones => list(GoogleApi.Connectors.V1.Model.ManagedZone.t()) | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:managedZones, as: GoogleApi.Connectors.V1.Model.ManagedZone, type: :list)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.ListManagedZonesResponse do

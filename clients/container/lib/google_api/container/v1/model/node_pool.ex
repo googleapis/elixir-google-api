@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
 
   ## Attributes
 
-  *   `autopilotConfig` (*type:* `GoogleApi.Container.V1.Model.AutopilotConfig.t`, *default:* `nil`) - Specifies the autopilot configuration for this node pool. This field is exclusively reserved for Cluster Autoscaler to implement go/gke-managed-nodes-ccc-api
+  *   `autopilotConfig` (*type:* `GoogleApi.Container.V1.Model.AutopilotConfig.t`, *default:* `nil`) - Specifies the autopilot configuration for this node pool. This field is exclusively reserved for Cluster Autoscaler.
   *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for this NodePool. Autoscaler is enabled only if a valid configuration is present.
   *   `bestEffortProvisioning` (*type:* `GoogleApi.Container.V1.Model.BestEffortProvisioning.t`, *default:* `nil`) - Enable best effort provisioning for nodes
   *   `conditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current node pool state.

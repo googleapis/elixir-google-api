@@ -35,7 +35,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The version of the OS Used to generate the cpe_uri for OS packages
   *   `package` (*type:* `String.t`, *default:* `nil`) - The package being analysed for vulnerabilities
   *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package: os, maven, go, etc.
-  *   `patchedCve` (*type:* `list(String.t)`, *default:* `nil`) - CVEs that this package is no longer vulnerable to go/drydock-dd-custom-binary-scanning
+  *   `patchedCve` (*type:* `list(String.t)`, *default:* `nil`) - CVEs that this package is no longer vulnerable to
   *   `sourceVersion` (*type:* `GoogleApi.OnDemandScanning.V1.Model.PackageVersion.t`, *default:* `nil`) - DEPRECATED
   *   `unused` (*type:* `String.t`, *default:* `nil`) - 
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the package being analysed

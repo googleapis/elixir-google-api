@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.BackfillAllStrategy do
 
   ## Attributes
 
+  *   `mongodbExcludedObjects` (*type:* `GoogleApi.Datastream.V1.Model.MongodbCluster.t`, *default:* `nil`) - MongoDB data source objects to avoid backfilling
   *   `mysqlExcludedObjects` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - MySQL data source objects to avoid backfilling.
   *   `oracleExcludedObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle data source objects to avoid backfilling.
   *   `postgresqlExcludedObjects` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - PostgreSQL data source objects to avoid backfilling.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Datastream.V1.Model.BackfillAllStrategy do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :mongodbExcludedObjects => GoogleApi.Datastream.V1.Model.MongodbCluster.t() | nil,
           :mysqlExcludedObjects => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
           :oracleExcludedObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
           :postgresqlExcludedObjects => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.Datastream.V1.Model.BackfillAllStrategy do
           :sqlServerExcludedObjects => GoogleApi.Datastream.V1.Model.SqlServerRdbms.t() | nil
         }
 
+  field(:mongodbExcludedObjects, as: GoogleApi.Datastream.V1.Model.MongodbCluster)
   field(:mysqlExcludedObjects, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
   field(:oracleExcludedObjects, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
   field(:postgresqlExcludedObjects, as: GoogleApi.Datastream.V1.Model.PostgresqlRdbms)

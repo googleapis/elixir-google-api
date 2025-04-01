@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.SourceObjectIdentifier do
 
   ## Attributes
 
+  *   `mongodbIdentifier` (*type:* `GoogleApi.Datastream.V1.Model.MongodbObjectIdentifier.t`, *default:* `nil`) - MongoDB data source object identifier.
   *   `mysqlIdentifier` (*type:* `GoogleApi.Datastream.V1.Model.MysqlObjectIdentifier.t`, *default:* `nil`) - Mysql data source object identifier.
   *   `oracleIdentifier` (*type:* `GoogleApi.Datastream.V1.Model.OracleObjectIdentifier.t`, *default:* `nil`) - Oracle data source object identifier.
   *   `postgresqlIdentifier` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlObjectIdentifier.t`, *default:* `nil`) - PostgreSQL data source object identifier.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Datastream.V1.Model.SourceObjectIdentifier do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :mongodbIdentifier => GoogleApi.Datastream.V1.Model.MongodbObjectIdentifier.t() | nil,
           :mysqlIdentifier => GoogleApi.Datastream.V1.Model.MysqlObjectIdentifier.t() | nil,
           :oracleIdentifier => GoogleApi.Datastream.V1.Model.OracleObjectIdentifier.t() | nil,
           :postgresqlIdentifier =>
@@ -41,6 +43,7 @@ defmodule GoogleApi.Datastream.V1.Model.SourceObjectIdentifier do
             GoogleApi.Datastream.V1.Model.SqlServerObjectIdentifier.t() | nil
         }
 
+  field(:mongodbIdentifier, as: GoogleApi.Datastream.V1.Model.MongodbObjectIdentifier)
   field(:mysqlIdentifier, as: GoogleApi.Datastream.V1.Model.MysqlObjectIdentifier)
   field(:oracleIdentifier, as: GoogleApi.Datastream.V1.Model.OracleObjectIdentifier)
   field(:postgresqlIdentifier, as: GoogleApi.Datastream.V1.Model.PostgresqlObjectIdentifier)

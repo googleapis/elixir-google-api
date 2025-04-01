@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingChunkWeb
 
   ## Attributes
 
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Domain of the (original) URI.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the chunk.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI reference of the chunk.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingChunkWeb
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :domain => String.t() | nil,
           :title => String.t() | nil,
           :uri => String.t() | nil
         }
 
+  field(:domain)
   field(:title)
   field(:uri)
 end

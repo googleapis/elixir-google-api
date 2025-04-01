@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaUs
 
   ## Attributes
 
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Optional. IANA time zone, e.g. Europe/Budapest.
   *   `userAgent` (*type:* `String.t`, *default:* `nil`) - User agent as included in the HTTP header. The field must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an `INVALID_ARGUMENT` error is returned. This should not be set when using the client side event reporting with GTM or JavaScript tag in UserEventService.CollectUserEvent or if UserEvent.direct_user_request is set.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Highly recommended for logged-in users. Unique identifier for logged-in user, such as a user name. Don't set for anonymous users. Always use a hashed value for this ID. Don't set the field to the same fixed ID for different users. This mixes the event history of those users together, which results in degraded model quality. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an `INVALID_ARGUMENT` error is returned.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaUs
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :timeZone => String.t() | nil,
           :userAgent => String.t() | nil,
           :userId => String.t() | nil
         }
 
+  field(:timeZone)
   field(:userAgent)
   field(:userId)
 end

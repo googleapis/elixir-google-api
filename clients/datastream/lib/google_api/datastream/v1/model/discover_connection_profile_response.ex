@@ -21,24 +21,30 @@ defmodule GoogleApi.Datastream.V1.Model.DiscoverConnectionProfileResponse do
 
   ## Attributes
 
+  *   `mongodbCluster` (*type:* `GoogleApi.Datastream.V1.Model.MongodbCluster.t`, *default:* `nil`) - Enriched MongoDB cluster.
   *   `mysqlRdbms` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - Enriched MySQL RDBMS object.
   *   `oracleRdbms` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Enriched Oracle RDBMS object.
   *   `postgresqlRdbms` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - Enriched PostgreSQL RDBMS object.
+  *   `salesforceOrg` (*type:* `GoogleApi.Datastream.V1.Model.SalesforceOrg.t`, *default:* `nil`) - Enriched Salesforce organization.
   *   `sqlServerRdbms` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerRdbms.t`, *default:* `nil`) - Enriched SQLServer RDBMS object.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :mongodbCluster => GoogleApi.Datastream.V1.Model.MongodbCluster.t() | nil,
           :mysqlRdbms => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
           :oracleRdbms => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
           :postgresqlRdbms => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil,
+          :salesforceOrg => GoogleApi.Datastream.V1.Model.SalesforceOrg.t() | nil,
           :sqlServerRdbms => GoogleApi.Datastream.V1.Model.SqlServerRdbms.t() | nil
         }
 
+  field(:mongodbCluster, as: GoogleApi.Datastream.V1.Model.MongodbCluster)
   field(:mysqlRdbms, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
   field(:oracleRdbms, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
   field(:postgresqlRdbms, as: GoogleApi.Datastream.V1.Model.PostgresqlRdbms)
+  field(:salesforceOrg, as: GoogleApi.Datastream.V1.Model.SalesforceOrg)
   field(:sqlServerRdbms, as: GoogleApi.Datastream.V1.Model.SqlServerRdbms)
 end
 

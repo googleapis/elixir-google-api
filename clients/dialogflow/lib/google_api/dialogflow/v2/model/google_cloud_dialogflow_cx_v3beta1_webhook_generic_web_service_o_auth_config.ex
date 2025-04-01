@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookGen
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - Required. The client ID provided by the 3rd party platform.
   *   `clientSecret` (*type:* `String.t`, *default:* `nil`) - Optional. The client secret provided by the 3rd party platform.
   *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The OAuth scopes to grant.
+  *   `secretVersionForClientSecret` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the SecretManager secret version resource storing the client secret. If this field is set, the `client_secret` field will be ignored. Format: `projects/{project}/secrets/{secret}/versions/{version}`
   *   `tokenEndpoint` (*type:* `String.t`, *default:* `nil`) - Required. The token endpoint provided by the 3rd party platform to exchange an access token.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1WebhookGen
           :clientId => String.t() | nil,
           :clientSecret => String.t() | nil,
           :scopes => list(String.t()) | nil,
+          :secretVersionForClientSecret => String.t() | nil,
           :tokenEndpoint => String.t() | nil
         }
 
   field(:clientId)
   field(:clientSecret)
   field(:scopes, type: :list)
+  field(:secretVersionForClientSecret)
   field(:tokenEndpoint)
 end
 

@@ -26,7 +26,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngine d
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the ReasoningEngine.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the ReasoningEngine.
-  *   `spec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpec.t`, *default:* `nil`) - Required. Configurations of the ReasoningEngine
+  *   `spec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ReasoningEngineSpec.t`, *default:* `nil`) - Optional. Configurations of the ReasoningEngine
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this ReasoningEngine was most recently updated.
   """
 
