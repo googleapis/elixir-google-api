@@ -20,7 +20,7 @@ defmodule GoogleApi.Testing.V1 do
   API client metadata for GoogleApi.Testing.V1.
   """
 
-  @discovery_revision "20250304"
+  @discovery_revision "20250327"
 
   def discovery_revision(), do: @discovery_revision
 end

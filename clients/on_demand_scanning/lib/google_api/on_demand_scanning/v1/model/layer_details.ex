@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.OnDemandScanning.V1.Model.LayerDetails do
   @moduledoc """
-  Details about the layer a package was found in. This should be the same as the LayerDetails message in google3/third_party/scalibr/binary/proto/scan_result.proto.
+  Details about the layer a package was found in.
 
   ## Attributes
 

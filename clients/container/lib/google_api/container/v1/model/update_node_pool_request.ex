@@ -54,6 +54,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the name field.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
   *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The desired workload metadata config for the node pool.
+  *   `flexStart` (*type:* `boolean()`, *default:* `nil`) - Flex Start flag for enabling Flex Start VM.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -91,7 +92,9 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
           :etag => String.t() | nil,
           :projectId => String.t() | nil,
           :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t() | nil,
-          :workloadMetadataConfig => GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t() | nil
+          :workloadMetadataConfig =>
+            GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t() | nil,
+          :flexStart => boolean() | nil
         }
 
   field(:fastSocket, as: GoogleApi.Container.V1.Model.FastSocket)
@@ -127,6 +130,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   field(:projectId)
   field(:upgradeSettings, as: GoogleApi.Container.V1.Model.UpgradeSettings)
   field(:workloadMetadataConfig, as: GoogleApi.Container.V1.Model.WorkloadMetadataConfig)
+  field(:flexStart)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.UpdateNodePoolRequest do

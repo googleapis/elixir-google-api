@@ -64,6 +64,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `soleTenantConfig` (*type:* `GoogleApi.Container.V1.Model.SoleTenantConfig.t`, *default:* `nil`) - Parameters for node pools to be backed by shared sole tenant node groups.
   *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The workload metadata configuration for this node.
   *   `reservationAffinity` (*type:* `GoogleApi.Container.V1.Model.ReservationAffinity.t`, *default:* `nil`) - The optional reservation affinity. Setting this field will apply the specified [Zonal Compute Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources) to this node pool.
+  *   `flexStart` (*type:* `boolean()`, *default:* `nil`) - Flex Start flag for enabling Flex Start VM.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -117,7 +118,8 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :soleTenantConfig => GoogleApi.Container.V1.Model.SoleTenantConfig.t() | nil,
           :workloadMetadataConfig =>
             GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t() | nil,
-          :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t() | nil
+          :reservationAffinity => GoogleApi.Container.V1.Model.ReservationAffinity.t() | nil,
+          :flexStart => boolean() | nil
         }
 
   field(:sandboxConfig, as: GoogleApi.Container.V1.Model.SandboxConfig)
@@ -171,6 +173,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:soleTenantConfig, as: GoogleApi.Container.V1.Model.SoleTenantConfig)
   field(:workloadMetadataConfig, as: GoogleApi.Container.V1.Model.WorkloadMetadataConfig)
   field(:reservationAffinity, as: GoogleApi.Container.V1.Model.ReservationAffinity)
+  field(:flexStart)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodeConfig do

@@ -21,6 +21,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
 
   ## Attributes
 
+  *   `diskNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Names of the disks providing this mount point.
   *   `mountPoint` (*type:* `String.t`, *default:* `nil`) - Optional. Filesystem mount point.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the disk.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :diskNames => list(String.t()) | nil,
           :mountPoint => String.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:diskNames, type: :list)
   field(:mountPoint)
   field(:name)
 end

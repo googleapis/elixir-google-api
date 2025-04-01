@@ -31,6 +31,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   *   `migrateDeploymentModel` (*type:* `boolean()`, *default:* `nil`) - Indicate whether connector is being migrated to cloud run deployment model.
   *   `migrateTls` (*type:* `boolean()`, *default:* `nil`) - Indicate whether connector is being migrated to TLS.
   *   `provisionCloudSpanner` (*type:* `boolean()`, *default:* `nil`) - Indicate whether cloud spanner is required for connector job.
+  *   `provisionMemstore` (*type:* `boolean()`, *default:* `nil`) - Indicate whether memstore is required for connector job.
   *   `ratelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Max QPS supported by the connector version before throttling of requests.
   *   `resourceLimits` (*type:* `GoogleApi.Connectors.V1.Model.ResourceLimits.t`, *default:* `nil`) - System resource limits.
   *   `resourceRequests` (*type:* `GoogleApi.Connectors.V1.Model.ResourceRequests.t`, *default:* `nil`) - System resource requests.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
           :migrateDeploymentModel => boolean() | nil,
           :migrateTls => boolean() | nil,
           :provisionCloudSpanner => boolean() | nil,
+          :provisionMemstore => boolean() | nil,
           :ratelimitThreshold => String.t() | nil,
           :resourceLimits => GoogleApi.Connectors.V1.Model.ResourceLimits.t() | nil,
           :resourceRequests => GoogleApi.Connectors.V1.Model.ResourceRequests.t() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   field(:migrateDeploymentModel)
   field(:migrateTls)
   field(:provisionCloudSpanner)
+  field(:provisionMemstore)
   field(:ratelimitThreshold)
   field(:resourceLimits, as: GoogleApi.Connectors.V1.Model.ResourceLimits)
   field(:resourceRequests, as: GoogleApi.Connectors.V1.Model.ResourceRequests)

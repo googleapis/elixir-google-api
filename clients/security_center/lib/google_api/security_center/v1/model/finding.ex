@@ -50,6 +50,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `application` (*type:* `GoogleApi.SecurityCenter.V1.Model.Application.t`, *default:* `nil`) - Represents an application associated with the finding.
   *   `files` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.File.t)`, *default:* `nil`) - File associated with the finding.
   *   `iamBindings` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.IamBinding.t)`, *default:* `nil`) - Represents IAM bindings associated with the finding.
+  *   `affectedResources` (*type:* `GoogleApi.SecurityCenter.V1.Model.AffectedResources.t`, *default:* `nil`) - AffectedResources associated with the finding.
   *   `containers` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Container.t)`, *default:* `nil`) - Containers associated with the finding. This field provides information for both Kubernetes and non-Kubernetes containers.
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - The URI that, if available, points to a web page outside of Security Command Center where additional information about the finding can be found. This field is guaranteed to be either empty or a well formed URL.
   *   `securityMarks` (*type:* `GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t`, *default:* `nil`) - Output only. User specified security marks. These marks are entirely managed by the user and come from the SecurityMarks resource that belongs to the finding.
@@ -115,6 +116,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :application => GoogleApi.SecurityCenter.V1.Model.Application.t() | nil,
           :files => list(GoogleApi.SecurityCenter.V1.Model.File.t()) | nil,
           :iamBindings => list(GoogleApi.SecurityCenter.V1.Model.IamBinding.t()) | nil,
+          :affectedResources => GoogleApi.SecurityCenter.V1.Model.AffectedResources.t() | nil,
           :containers => list(GoogleApi.SecurityCenter.V1.Model.Container.t()) | nil,
           :externalUri => String.t() | nil,
           :securityMarks => GoogleApi.SecurityCenter.V1.Model.SecurityMarks.t() | nil,
@@ -186,6 +188,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:application, as: GoogleApi.SecurityCenter.V1.Model.Application)
   field(:files, as: GoogleApi.SecurityCenter.V1.Model.File, type: :list)
   field(:iamBindings, as: GoogleApi.SecurityCenter.V1.Model.IamBinding, type: :list)
+  field(:affectedResources, as: GoogleApi.SecurityCenter.V1.Model.AffectedResources)
   field(:containers, as: GoogleApi.SecurityCenter.V1.Model.Container, type: :list)
   field(:externalUri)
   field(:securityMarks, as: GoogleApi.SecurityCenter.V1.Model.SecurityMarks)

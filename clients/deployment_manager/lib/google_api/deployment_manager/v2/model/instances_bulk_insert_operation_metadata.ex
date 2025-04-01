@@ -21,12 +21,14 @@ defmodule GoogleApi.DeploymentManager.V2.Model.InstancesBulkInsertOperationMetad
 
   ## Attributes
 
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The machine type of the VMs that were created used internally only by KCP flex bulk insert.
   *   `perLocationStatus` (*type:* `%{optional(String.t) => GoogleApi.DeploymentManager.V2.Model.BulkInsertOperationStatus.t}`, *default:* `nil`) - Status information per location (location name is key). Example key: zones/us-central1-a
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :machineType => String.t() | nil,
           :perLocationStatus =>
             %{
               optional(String.t()) =>
@@ -34,6 +36,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.InstancesBulkInsertOperationMetad
             }
             | nil
         }
+
+  field(:machineType)
 
   field(:perLocationStatus,
     as: GoogleApi.DeploymentManager.V2.Model.BulkInsertOperationStatus,
