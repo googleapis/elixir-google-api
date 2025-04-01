@@ -160,7 +160,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.User do
   field(:lastLoginTime, as: DateTime)
   field(:password)
   field(:isMailboxSetup)
-  field(:customSchemas, as: GoogleApi.Admin.Directory_v1.Model.UserCustomProperties, type: :map)
+  field(:customSchemas, type: :map)
   field(:etag)
   field(:emails)
   field(:languages)
