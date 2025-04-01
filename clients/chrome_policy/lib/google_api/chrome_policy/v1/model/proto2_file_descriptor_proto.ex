@@ -25,6 +25,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto do
   *   `enumType` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto.t)`, *default:* `nil`) - 
   *   `messageType` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto.t)`, *default:* `nil`) - All top-level definitions in this file.
   *   `name` (*type:* `String.t`, *default:* `nil`) - file name, relative to root of source tree
+  *   `optionDependency` (*type:* `list(String.t)`, *default:* `nil`) - Names of files imported by this file purely for the purpose of providing option extensions. These are excluded from the dependency list above.
   *   `package` (*type:* `String.t`, *default:* `nil`) - e.g. "foo", "foo.bar", etc.
   *   `syntax` (*type:* `String.t`, *default:* `nil`) - The syntax of the proto file. The supported values are "proto2", "proto3", and "editions". If `edition` is present, this value must be "editions". WARNING: This field should only be used by protobuf plugins or special cases like the proto compiler. Other uses are discouraged and developers should rely on the protoreflect APIs for their client language.
   """
@@ -36,6 +37,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto do
           :enumType => list(GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto.t()) | nil,
           :messageType => list(GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto.t()) | nil,
           :name => String.t() | nil,
+          :optionDependency => list(String.t()) | nil,
           :package => String.t() | nil,
           :syntax => String.t() | nil
         }
@@ -44,6 +46,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto do
   field(:enumType, as: GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto, type: :list)
   field(:messageType, as: GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto, type: :list)
   field(:name)
+  field(:optionDependency, type: :list)
   field(:package)
   field(:syntax)
 end

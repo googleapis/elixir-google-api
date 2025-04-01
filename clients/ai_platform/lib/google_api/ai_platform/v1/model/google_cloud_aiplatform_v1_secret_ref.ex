@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SecretRef do
 
   ## Attributes
 
-  *   `secret` (*type:* `String.t`, *default:* `nil`) - Required. The name of the secret in Cloud Secret Manager. Format: {secret_name} if the secret is in the same project. projects/{project}/secrets/{secret_name} if the secret is in a different project.
+  *   `secret` (*type:* `String.t`, *default:* `nil`) - Required. The name of the secret in Cloud Secret Manager. Format: {secret_name}.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The Cloud Secret Manager secret version. Can be 'latest' for the latest version, an integer for a specific version, or a version alias.
   """
 

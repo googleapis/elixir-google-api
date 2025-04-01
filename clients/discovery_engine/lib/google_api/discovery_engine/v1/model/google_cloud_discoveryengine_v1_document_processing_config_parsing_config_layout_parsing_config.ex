@@ -21,11 +21,19 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Documen
 
   ## Attributes
 
+  *   `enableImageAnnotation` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the LLM based annotation is added to the image during parsing.
+  *   `enableTableAnnotation` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the LLM based annotation is added to the table during parsing.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :enableImageAnnotation => boolean() | nil,
+          :enableTableAnnotation => boolean() | nil
+        }
+
+  field(:enableImageAnnotation)
+  field(:enableTableAnnotation)
 end
 
 defimpl Poison.Decoder,

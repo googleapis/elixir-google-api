@@ -18,7 +18,7 @@
 defmodule GoogleApi.GmailPostmasterTools.Mixfile do
   use Mix.Project
 
-  @version "0.6.0"
+  @version "0.7.0"
 
   def project() do
     [
@@ -56,10 +56,10 @@ defmodule GoogleApi.GmailPostmasterTools.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/gmail_postmaster_tools",
-        "Homepage" => "https://developers.google.com/gmail/postmaster"
+        "Homepage" => "https://developers.google.com/workspace/gmail/postmaster"
       }
     ]
   end

@@ -20,7 +20,7 @@ defmodule GoogleApi.RapidMigrationAssessment.V1 do
   API client metadata for GoogleApi.RapidMigrationAssessment.V1.
   """
 
-  @discovery_revision "20250214"
+  @discovery_revision "20250324"
 
   def discovery_revision(), do: @discovery_revision
 end

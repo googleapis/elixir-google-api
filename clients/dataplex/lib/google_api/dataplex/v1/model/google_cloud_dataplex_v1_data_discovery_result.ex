@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResult d
   ## Attributes
 
   *   `bigqueryPublishing` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResultBigQueryPublishing.t`, *default:* `nil`) - Output only. Configuration for metadata publishing.
+  *   `scanStatistics` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResultScanStatistics.t`, *default:* `nil`) - Output only. Statistics of the DataDiscoveryScan.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,11 +30,18 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResult d
   @type t :: %__MODULE__{
           :bigqueryPublishing =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResultBigQueryPublishing.t()
+            | nil,
+          :scanStatistics =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResultScanStatistics.t()
             | nil
         }
 
   field(:bigqueryPublishing,
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResultBigQueryPublishing
+  )
+
+  field(:scanStatistics,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDiscoveryResultScanStatistics
   )
 end
 

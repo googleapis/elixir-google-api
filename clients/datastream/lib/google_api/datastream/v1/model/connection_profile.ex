@@ -27,6 +27,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   *   `forwardSshConnectivity` (*type:* `GoogleApi.Datastream.V1.Model.ForwardSshTunnelConnectivity.t`, *default:* `nil`) - Forward SSH tunnel connectivity.
   *   `gcsProfile` (*type:* `GoogleApi.Datastream.V1.Model.GcsProfile.t`, *default:* `nil`) - Cloud Storage ConnectionProfile configuration.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels.
+  *   `mongodbProfile` (*type:* `GoogleApi.Datastream.V1.Model.MongodbProfile.t`, *default:* `nil`) - MongoDB Connection Profile configuration.
   *   `mysqlProfile` (*type:* `GoogleApi.Datastream.V1.Model.MysqlProfile.t`, *default:* `nil`) - MySQL ConnectionProfile configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource's name.
   *   `oracleProfile` (*type:* `GoogleApi.Datastream.V1.Model.OracleProfile.t`, *default:* `nil`) - Oracle ConnectionProfile configuration.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
             GoogleApi.Datastream.V1.Model.ForwardSshTunnelConnectivity.t() | nil,
           :gcsProfile => GoogleApi.Datastream.V1.Model.GcsProfile.t() | nil,
           :labels => map() | nil,
+          :mongodbProfile => GoogleApi.Datastream.V1.Model.MongodbProfile.t() | nil,
           :mysqlProfile => GoogleApi.Datastream.V1.Model.MysqlProfile.t() | nil,
           :name => String.t() | nil,
           :oracleProfile => GoogleApi.Datastream.V1.Model.OracleProfile.t() | nil,
@@ -70,6 +72,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   field(:forwardSshConnectivity, as: GoogleApi.Datastream.V1.Model.ForwardSshTunnelConnectivity)
   field(:gcsProfile, as: GoogleApi.Datastream.V1.Model.GcsProfile)
   field(:labels, type: :map)
+  field(:mongodbProfile, as: GoogleApi.Datastream.V1.Model.MongodbProfile)
   field(:mysqlProfile, as: GoogleApi.Datastream.V1.Model.MysqlProfile)
   field(:name)
   field(:oracleProfile, as: GoogleApi.Datastream.V1.Model.OracleProfile)
