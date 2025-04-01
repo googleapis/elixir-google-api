@@ -30,6 +30,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Model.VmwareAdminCluster do
   *   `controlPlaneNode` (*type:* `GoogleApi.GKEOnPrem.V1.Model.VmwareAdminControlPlaneNodeConfig.t`, *default:* `nil`) - The VMware admin cluster control plane node configuration.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which VMware admin cluster was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A human readable description of this VMware admin cluster.
+  *   `enableAdvancedCluster` (*type:* `boolean()`, *default:* `nil`) - Enable advanced cluster.
   *   `endpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The DNS name of VMware admin cluster's API server.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control.
   *   `fleet` (*type:* `GoogleApi.GKEOnPrem.V1.Model.Fleet.t`, *default:* `nil`) - Output only. Fleet configuration for the cluster.
@@ -63,6 +64,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Model.VmwareAdminCluster do
             GoogleApi.GKEOnPrem.V1.Model.VmwareAdminControlPlaneNodeConfig.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :enableAdvancedCluster => boolean() | nil,
           :endpoint => String.t() | nil,
           :etag => String.t() | nil,
           :fleet => GoogleApi.GKEOnPrem.V1.Model.Fleet.t() | nil,
@@ -93,6 +95,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Model.VmwareAdminCluster do
   field(:controlPlaneNode, as: GoogleApi.GKEOnPrem.V1.Model.VmwareAdminControlPlaneNodeConfig)
   field(:createTime, as: DateTime)
   field(:description)
+  field(:enableAdvancedCluster)
   field(:endpoint)
   field(:etag)
   field(:fleet, as: GoogleApi.GKEOnPrem.V1.Model.Fleet)

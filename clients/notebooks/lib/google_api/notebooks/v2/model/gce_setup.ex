@@ -23,6 +23,7 @@ defmodule GoogleApi.Notebooks.V2.Model.GceSetup do
 
   *   `acceleratorConfigs` (*type:* `list(GoogleApi.Notebooks.V2.Model.AcceleratorConfig.t)`, *default:* `nil`) - Optional. The hardware accelerators used on this instance. If you use accelerators, make sure that your configuration has [enough vCPUs and memory to support the `machine_type` you have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list). Currently supports only one accelerator configuration.
   *   `bootDisk` (*type:* `GoogleApi.Notebooks.V2.Model.BootDisk.t`, *default:* `nil`) - Optional. The boot disk for the VM.
+  *   `confidentialInstanceConfig` (*type:* `GoogleApi.Notebooks.V2.Model.ConfidentialInstanceConfig.t`, *default:* `nil`) - Optional. Confidential instance configuration.
   *   `containerImage` (*type:* `GoogleApi.Notebooks.V2.Model.ContainerImage.t`, *default:* `nil`) - Optional. Use a container image to start the notebook instance.
   *   `dataDisks` (*type:* `list(GoogleApi.Notebooks.V2.Model.DataDisk.t)`, *default:* `nil`) - Optional. Data disks attached to the VM instance. Currently supports only one data disk.
   *   `disablePublicIp` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, no external IP will be assigned to this VM instance.
@@ -43,6 +44,8 @@ defmodule GoogleApi.Notebooks.V2.Model.GceSetup do
   @type t :: %__MODULE__{
           :acceleratorConfigs => list(GoogleApi.Notebooks.V2.Model.AcceleratorConfig.t()) | nil,
           :bootDisk => GoogleApi.Notebooks.V2.Model.BootDisk.t() | nil,
+          :confidentialInstanceConfig =>
+            GoogleApi.Notebooks.V2.Model.ConfidentialInstanceConfig.t() | nil,
           :containerImage => GoogleApi.Notebooks.V2.Model.ContainerImage.t() | nil,
           :dataDisks => list(GoogleApi.Notebooks.V2.Model.DataDisk.t()) | nil,
           :disablePublicIp => boolean() | nil,
@@ -61,6 +64,7 @@ defmodule GoogleApi.Notebooks.V2.Model.GceSetup do
 
   field(:acceleratorConfigs, as: GoogleApi.Notebooks.V2.Model.AcceleratorConfig, type: :list)
   field(:bootDisk, as: GoogleApi.Notebooks.V2.Model.BootDisk)
+  field(:confidentialInstanceConfig, as: GoogleApi.Notebooks.V2.Model.ConfidentialInstanceConfig)
   field(:containerImage, as: GoogleApi.Notebooks.V2.Model.ContainerImage)
   field(:dataDisks, as: GoogleApi.Notebooks.V2.Model.DataDisk, type: :list)
   field(:disablePublicIp)

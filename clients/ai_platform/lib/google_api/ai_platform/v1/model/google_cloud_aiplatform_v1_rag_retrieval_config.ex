@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfi
   ## Attributes
 
   *   `filter` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfigFilter.t`, *default:* `nil`) - Optional. Config for filters.
+  *   `ranking` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfigRanking.t`, *default:* `nil`) - Optional. Config for ranking and reranking.
   *   `topK` (*type:* `integer()`, *default:* `nil`) - Optional. The number of contexts to retrieve.
   """
 
@@ -31,10 +32,17 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfi
           :filter =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfigFilter.t()
             | nil,
+          :ranking =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfigRanking.t()
+            | nil,
           :topK => integer() | nil
         }
 
   field(:filter, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfigFilter)
+
+  field(:ranking,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RagRetrievalConfigRanking
+  )
 
   field(:topK)
 end

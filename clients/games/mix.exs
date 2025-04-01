@@ -18,7 +18,7 @@
 defmodule GoogleApi.Games.Mixfile do
   use Mix.Project
 
-  @version "0.26.1"
+  @version "0.26.2"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Games.Mixfile do
 
   defp description() do
     """
-    Google Play Game Services client library. The Google Play Games Service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
+    Google Play Games Services API client library. The Google Play Games Service allows developers to enhance games with social leaderboards, achievements, game state, sign-in with Google, and more.
     """
   end
 

@@ -44,6 +44,7 @@ defmodule GoogleApi.Testing.V1.Api.TestEnvironmentCatalog do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:includeViewableModels` (*type:* `boolean()`) - Optional. Whether to include viewable only models in the response. This is only applicable for Android models.
       *   `:projectId` (*type:* `String.t`) - For authorization, the cloud project requesting the TestEnvironmentCatalog.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -75,6 +76,7 @@ defmodule GoogleApi.Testing.V1.Api.TestEnvironmentCatalog do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :includeViewableModels => :query,
       :projectId => :query
     }
 

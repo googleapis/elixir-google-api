@@ -20,7 +20,7 @@ defmodule GoogleApi.Datastream.V1 do
   API client metadata for GoogleApi.Datastream.V1.
   """
 
-  @discovery_revision "20250316"
+  @discovery_revision "20250321"
 
   def discovery_revision(), do: @discovery_revision
 end

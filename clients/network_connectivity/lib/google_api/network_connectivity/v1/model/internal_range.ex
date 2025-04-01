@@ -23,6 +23,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.InternalRange do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the internal range was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this resource.
+  *   `excludeCidrRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. ExcludeCidrRanges flag. Specifies a set of CIDR blocks that allows exclusion of particular CIDR ranges from the auto-allocation process, without having to reserve these blocks
+  *   `immutable` (*type:* `boolean()`, *default:* `nil`) - Optional. Immutable ranges cannot have their fields modified, except for labels and description.
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IP range that this internal range defines. NOTE: IPv6 ranges are limited to usage=EXTERNAL_TO_VPC and peering=FOR_SELF. NOTE: For IPv6 Ranges this field is compulsory, i.e. the address range must be specified explicitly.
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels.
   *   `migration` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.Migration.t`, *default:* `nil`) - Optional. Must be present if usage is set to FOR_MIGRATION.
@@ -42,6 +44,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.InternalRange do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :excludeCidrRanges => list(String.t()) | nil,
+          :immutable => boolean() | nil,
           :ipCidrRange => String.t() | nil,
           :labels => map() | nil,
           :migration => GoogleApi.NetworkConnectivity.V1.Model.Migration.t() | nil,
@@ -58,6 +62,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.InternalRange do
 
   field(:createTime, as: DateTime)
   field(:description)
+  field(:excludeCidrRanges, type: :list)
+  field(:immutable)
   field(:ipCidrRange)
   field(:labels, type: :map)
   field(:migration, as: GoogleApi.NetworkConnectivity.V1.Model.Migration)

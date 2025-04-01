@@ -43,7 +43,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.Backup do
   *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: ``` "123/environment": "production", "123/costCenter": "marketing" ```
   *   `type` (*type:* `String.t`, *default:* `nil`) - The backup type, which suggests the trigger for the backup.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time stamp
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time stamp Users should not infer any meaning from this field. Its value is generally unrelated to the timing of the backup creation operation.
   """
 
   use GoogleApi.Gax.ModelBase
