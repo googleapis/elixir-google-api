@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.YouTube.V3.Model.CommentSnippetAuthorChannelId do
   @moduledoc """
-  The id of the author's YouTube channel, if any.
+  Contains the id of the author's YouTube channel, if any.
 
   ## Attributes
 
-  *   `value` (*type:* `String.t`, *default:* `nil`) - 
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The id of the author's YouTube channel.
   """
 
   use GoogleApi.Gax.ModelBase

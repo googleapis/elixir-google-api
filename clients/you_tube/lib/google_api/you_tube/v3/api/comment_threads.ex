@@ -112,6 +112,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
       *   `:moderationStatus` (*type:* `String.t`) - Limits the returned comment threads to those with the specified moderation status. Not compatible with the 'id' filter. Valid values: published, heldForReview, likelySpam.
       *   `:order` (*type:* `String.t`) - 
       *   `:pageToken` (*type:* `String.t`) - The *pageToken* parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.
+      *   `:postId` (*type:* `String.t`) - Returns the comment threads of the specified post.
       *   `:searchTerms` (*type:* `String.t`) - Limits the returned comment threads to those matching the specified key words. Not compatible with the 'id' filter.
       *   `:textFormat` (*type:* `String.t`) - The requested text format for the returned comments.
       *   `:videoId` (*type:* `String.t`) - Returns the comment threads of the specified video.
@@ -147,6 +148,7 @@ defmodule GoogleApi.YouTube.V3.Api.CommentThreads do
       :moderationStatus => :query,
       :order => :query,
       :pageToken => :query,
+      :postId => :query,
       :searchTerms => :query,
       :textFormat => :query,
       :videoId => :query
