@@ -22,6 +22,7 @@ defmodule GoogleApi.Slides.V1.Model.SubstringMatchCriteria do
   ## Attributes
 
   *   `matchCase` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the search should respect case: - `True`: the search is case sensitive. - `False`: the search is case insensitive.
+  *   `searchByRegex` (*type:* `boolean()`, *default:* `nil`) - Optional. True if the find value should be treated as a regular expression. Any backslashes in the pattern should be escaped. - `True`: the search text is treated as a regular expressions. - `False`: the search text is treated as a substring for matching.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The text to search for in the shape or table.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Slides.V1.Model.SubstringMatchCriteria do
 
   @type t :: %__MODULE__{
           :matchCase => boolean() | nil,
+          :searchByRegex => boolean() | nil,
           :text => String.t() | nil
         }
 
   field(:matchCase)
+  field(:searchByRegex)
   field(:text)
 end
 

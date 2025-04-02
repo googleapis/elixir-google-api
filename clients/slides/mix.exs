@@ -18,7 +18,7 @@
 defmodule GoogleApi.Slides.Mixfile do
   use Mix.Project
 
-  @version "0.23.1"
+  @version "0.24.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.Slides.Mixfile do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/slides",
-        "Homepage" => "https://developers.google.com/slides/"
+        "Homepage" => "https://developers.google.com/workspace/slides/"
       }
     ]
   end
