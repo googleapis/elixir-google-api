@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_drive_activity, "~> 0.8"}]
+  [{:google_api_drive_activity, "~> 0.9"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/drive/activity/](https://developers.google.com/drive/activity/).
+Product documentation is available at [https://developers.google.com/workspace/drive/activity/](https://developers.google.com/workspace/drive/activity/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_drive_activity](https://hexdocs.pm/google_api_drive_activity).
