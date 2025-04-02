@@ -26,6 +26,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto do
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `nestedType` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto.t)`, *default:* `nil`) - 
   *   `oneofDecl` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.Proto2OneofDescriptorProto.t)`, *default:* `nil`) - 
+  *   `visibility` (*type:* `String.t`, *default:* `nil`) - Support for `export` and `local` keywords on enums.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,9 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto do
           :field => list(GoogleApi.ChromePolicy.V1.Model.Proto2FieldDescriptorProto.t()) | nil,
           :name => String.t() | nil,
           :nestedType => list(GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto.t()) | nil,
-          :oneofDecl => list(GoogleApi.ChromePolicy.V1.Model.Proto2OneofDescriptorProto.t()) | nil
+          :oneofDecl =>
+            list(GoogleApi.ChromePolicy.V1.Model.Proto2OneofDescriptorProto.t()) | nil,
+          :visibility => String.t() | nil
         }
 
   field(:enumType, as: GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto, type: :list)
@@ -43,6 +46,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto do
   field(:name)
   field(:nestedType, as: GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto, type: :list)
   field(:oneofDecl, as: GoogleApi.ChromePolicy.V1.Model.Proto2OneofDescriptorProto, type: :list)
+  field(:visibility)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto do
