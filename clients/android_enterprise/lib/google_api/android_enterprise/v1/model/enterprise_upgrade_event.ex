@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.EnterpriseUpgradeEvent do
   @moduledoc """
-  An event generated when an enterprise is upgraded. **Note:** This feature is not generally available.
+  An event generated when an enterprise is upgraded.
 
   ## Attributes
 
