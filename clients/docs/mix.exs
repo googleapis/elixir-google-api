@@ -18,7 +18,7 @@
 defmodule GoogleApi.Docs.Mixfile do
   use Mix.Project
 
-  @version "0.17.3"
+  @version "0.18.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.Docs.Mixfile do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/docs",
-        "Homepage" => "https://developers.google.com/docs/"
+        "Homepage" => "https://developers.google.com/workspace/docs/"
       }
     ]
   end

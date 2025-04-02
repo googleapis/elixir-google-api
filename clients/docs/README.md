@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_docs, "~> 0.17"}]
+  [{:google_api_docs, "~> 0.18"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/docs/](https://developers.google.com/docs/).
+Product documentation is available at [https://developers.google.com/workspace/docs/](https://developers.google.com/workspace/docs/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_docs](https://hexdocs.pm/google_api_docs).
