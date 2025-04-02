@@ -45,6 +45,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   *   `keyEvent` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaKeyEvent.t`, *default:* `nil`) - A snapshot of a KeyEvent resource in change history.
   *   `measurementProtocolSecret` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaMeasurementProtocolSecret.t`, *default:* `nil`) - A snapshot of a MeasurementProtocolSecret resource in change history.
   *   `property` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t`, *default:* `nil`) - A snapshot of a Property resource in change history.
+  *   `reportingDataAnnotation` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaReportingDataAnnotation.t`, *default:* `nil`) - A snapshot of a ReportingDataAnnotation resource in change history.
   *   `searchAds360Link` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaSearchAds360Link.t`, *default:* `nil`) - A snapshot of a SearchAds360Link resource in change history.
   *   `skadnetworkConversionValueSchema` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaSKAdNetworkConversionValueSchema.t`, *default:* `nil`) - A snapshot of SKAdNetworkConversionValueSchema resource in change history.
   """
@@ -119,6 +120,9 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
             | nil,
           :property =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t() | nil,
+          :reportingDataAnnotation =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaReportingDataAnnotation.t()
+            | nil,
           :searchAds360Link =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaSearchAds360Link.t()
             | nil,
@@ -218,6 +222,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   )
 
   field(:property, as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty)
+
+  field(:reportingDataAnnotation,
+    as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaReportingDataAnnotation
+  )
 
   field(:searchAds360Link,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaSearchAds360Link
