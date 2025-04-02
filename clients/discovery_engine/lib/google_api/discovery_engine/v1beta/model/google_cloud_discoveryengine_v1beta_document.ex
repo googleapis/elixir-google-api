@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `aclInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocumentAclInfo.t`, *default:* `nil`) - Access control information for the document.
   *   `content` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocumentContent.t`, *default:* `nil`) - The unstructured data linked to this document. Content must be set if this document is under a `CONTENT_REQUIRED` data store.
   *   `derivedStructData` (*type:* `map()`, *default:* `nil`) - Output only. This field is OUTPUT_ONLY. It contains derived data that are not in the original input document.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Immutable. The identifier of the document. Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with a length limit of 128 characters.
@@ -36,6 +37,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :aclInfo =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocumentAclInfo.t()
+            | nil,
           :content =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocumentContent.t()
             | nil,
@@ -51,6 +55,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :schemaId => String.t() | nil,
           :structData => map() | nil
         }
+
+  field(:aclInfo,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocumentAclInfo
+  )
 
   field(:content,
     as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocumentContent
