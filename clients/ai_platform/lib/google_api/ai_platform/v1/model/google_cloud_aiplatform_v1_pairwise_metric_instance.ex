@@ -21,15 +21,19 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricIns
 
   ## Attributes
 
+  *   `contentMapInstance` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ContentMap.t`, *default:* `nil`) - Key-value contents for the mutlimodality input, including text, image, video, audio, and pdf, etc. The key is placeholder in metric prompt template, and the value is the multimodal content.
   *   `jsonInstance` (*type:* `String.t`, *default:* `nil`) - Instance specified as a json string. String key-value pairs are expected in the json_instance to render PairwiseMetricSpec.instance_prompt_template.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :contentMapInstance =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ContentMap.t() | nil,
           :jsonInstance => String.t() | nil
         }
 
+  field(:contentMapInstance, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ContentMap)
   field(:jsonInstance)
 end
 

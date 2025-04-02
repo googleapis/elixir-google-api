@@ -31,6 +31,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   *   `toolUsePromptTokenCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of tokens present in tool-use prompt(s).
   *   `toolUsePromptTokensDetails` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModalityTokenCount.t)`, *default:* `nil`) - Output only. List of modalities that were processed for tool-use request inputs.
   *   `totalTokenCount` (*type:* `integer()`, *default:* `nil`) - Total token count for prompt, response candidates, and tool-use prompts (if present).
+  *   `trafficType` (*type:* `String.t`, *default:* `nil`) - Output only. Traffic type. This shows whether a request consumes Pay-As-You-Go or Provisioned Throughput quota.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,7 +54,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
           :toolUsePromptTokensDetails =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModalityTokenCount.t())
             | nil,
-          :totalTokenCount => integer() | nil
+          :totalTokenCount => integer() | nil,
+          :trafficType => String.t() | nil
         }
 
   field(:cacheTokensDetails,
@@ -85,6 +87,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   )
 
   field(:totalTokenCount)
+  field(:trafficType)
 end
 
 defimpl Poison.Decoder,

@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateDatasetRe
 
   ## Attributes
 
-  *   `autoraterConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig.t`, *default:* `nil`) - Optional. Autorater config used for evaluation.
+  *   `autoraterConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig.t`, *default:* `nil`) - Optional. Autorater config used for evaluation. Currently only publisher Gemini models are supported. Format: `projects/{PROJECT}/locations/{LOCATION}/publishers/google/models/{MODEL}.`
   *   `dataset` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluationDataset.t`, *default:* `nil`) - Required. The dataset used for evaluation.
   *   `metrics` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Metric.t)`, *default:* `nil`) - Required. The metrics used for evaluation.
   *   `outputConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1OutputConfig.t`, *default:* `nil`) - Required. Config for evaluation output.

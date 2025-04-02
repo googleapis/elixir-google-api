@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricRes
 
   ## Attributes
 
+  *   `customOutput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutput.t`, *default:* `nil`) - Output only. Spec for custom output.
   *   `explanation` (*type:* `String.t`, *default:* `nil`) - Output only. Explanation for pairwise metric score.
   *   `pairwiseChoice` (*type:* `String.t`, *default:* `nil`) - Output only. Pairwise metric choice.
   """
@@ -28,10 +29,13 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customOutput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutput.t() | nil,
           :explanation => String.t() | nil,
           :pairwiseChoice => String.t() | nil
         }
 
+  field(:customOutput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutput)
   field(:explanation)
   field(:pairwiseChoice)
 end

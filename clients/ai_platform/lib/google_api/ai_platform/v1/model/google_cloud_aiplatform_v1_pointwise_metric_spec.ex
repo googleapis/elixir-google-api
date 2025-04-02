@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricSp
 
   ## Attributes
 
+  *   `customOutputFormatConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutputFormatConfig.t`, *default:* `nil`) - Optional. CustomOutputFormatConfig allows customization of metric output. By default, metrics return a score and explanation. When this config is set, the default output is replaced with either: - The raw output string. - A parsed output based on a user-defined schema. If a custom format is chosen, the `score` and `explanation` fields in the corresponding metric result will be empty.
   *   `metricPromptTemplate` (*type:* `String.t`, *default:* `nil`) - Required. Metric prompt template for pointwise metric.
   *   `systemInstruction` (*type:* `String.t`, *default:* `nil`) - Optional. System instructions for pointwise metric.
   """
@@ -28,9 +29,16 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricSp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customOutputFormatConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutputFormatConfig.t()
+            | nil,
           :metricPromptTemplate => String.t() | nil,
           :systemInstruction => String.t() | nil
         }
+
+  field(:customOutputFormatConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutputFormatConfig
+  )
 
   field(:metricPromptTemplate)
   field(:systemInstruction)
