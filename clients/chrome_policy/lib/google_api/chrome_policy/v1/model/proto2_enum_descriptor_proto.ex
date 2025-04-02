@@ -23,17 +23,21 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto do
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - 
   *   `value` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.Proto2EnumValueDescriptorProto.t)`, *default:* `nil`) - 
+  *   `visibility` (*type:* `String.t`, *default:* `nil`) - Support for `export` and `local` keywords on enums.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :name => String.t() | nil,
-          :value => list(GoogleApi.ChromePolicy.V1.Model.Proto2EnumValueDescriptorProto.t()) | nil
+          :value =>
+            list(GoogleApi.ChromePolicy.V1.Model.Proto2EnumValueDescriptorProto.t()) | nil,
+          :visibility => String.t() | nil
         }
 
   field(:name)
   field(:value, as: GoogleApi.ChromePolicy.V1.Model.Proto2EnumValueDescriptorProto, type: :list)
+  field(:visibility)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto do
