@@ -21,229 +21,240 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   ## Attributes
 
-  *   `autoraterConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig.t`, *default:* `nil`) - Optional. Autorater config used for evaluation.
-  *   `bleuInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput.t`, *default:* `nil`) - Instances and metric spec for bleu metric.
-  *   `coherenceInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput.t`, *default:* `nil`) - Input for coherence metric.
-  *   `cometInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput.t`, *default:* `nil`) - Translation metrics. Input for Comet metric.
-  *   `exactMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput.t`, *default:* `nil`) - Auto metric instances. Instances and metric spec for exact match metric.
-  *   `fluencyInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyInput.t`, *default:* `nil`) - LLM-based metric instance. General text generation metrics, applicable to other categories. Input for fluency metric.
-  *   `fulfillmentInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentInput.t`, *default:* `nil`) - Input for fulfillment metric.
-  *   `groundednessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput.t`, *default:* `nil`) - Input for groundedness metric.
-  *   `metricxInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput.t`, *default:* `nil`) - Input for Metricx metric.
-  *   `pairwiseMetricInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput.t`, *default:* `nil`) - Input for pairwise metric.
-  *   `pairwiseQuestionAnsweringQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput.t`, *default:* `nil`) - Input for pairwise question answering quality metric.
-  *   `pairwiseSummarizationQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityInput.t`, *default:* `nil`) - Input for pairwise summarization quality metric.
-  *   `pointwiseMetricInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput.t`, *default:* `nil`) - Input for pointwise metric.
-  *   `questionAnsweringCorrectnessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringCorrectnessInput.t`, *default:* `nil`) - Input for question answering correctness metric.
-  *   `questionAnsweringHelpfulnessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringHelpfulnessInput.t`, *default:* `nil`) - Input for question answering helpfulness metric.
-  *   `questionAnsweringQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityInput.t`, *default:* `nil`) - Input for question answering quality metric.
-  *   `questionAnsweringRelevanceInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringRelevanceInput.t`, *default:* `nil`) - Input for question answering relevance metric.
-  *   `rougeInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeInput.t`, *default:* `nil`) - Instances and metric spec for rouge metric.
-  *   `safetyInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyInput.t`, *default:* `nil`) - Input for safety metric.
-  *   `summarizationHelpfulnessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationHelpfulnessInput.t`, *default:* `nil`) - Input for summarization helpfulness metric.
-  *   `summarizationQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationQualityInput.t`, *default:* `nil`) - Input for summarization quality metric.
-  *   `summarizationVerbosityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationVerbosityInput.t`, *default:* `nil`) - Input for summarization verbosity metric.
-  *   `toolCallValidInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCallValidInput.t`, *default:* `nil`) - Tool call metric instances. Input for tool call valid metric.
-  *   `toolNameMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolNameMatchInput.t`, *default:* `nil`) - Input for tool name match metric.
-  *   `toolParameterKeyMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKeyMatchInput.t`, *default:* `nil`) - Input for tool parameter key match metric.
-  *   `toolParameterKvMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchInput.t`, *default:* `nil`) - Input for tool parameter key value match metric.
-  *   `trajectoryAnyOrderMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput.t`, *default:* `nil`) - Input for trajectory match any order metric.
-  *   `trajectoryExactMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchInput.t`, *default:* `nil`) - Input for trajectory exact match metric.
-  *   `trajectoryInOrderMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchInput.t`, *default:* `nil`) - Input for trajectory in order match metric.
-  *   `trajectoryPrecisionInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionInput.t`, *default:* `nil`) - Input for trajectory precision metric.
   *   `trajectoryRecallInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallInput.t`, *default:* `nil`) - Input for trajectory recall metric.
+  *   `fulfillmentInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentInput.t`, *default:* `nil`) - Input for fulfillment metric.
+  *   `summarizationHelpfulnessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationHelpfulnessInput.t`, *default:* `nil`) - Input for summarization helpfulness metric.
+  *   `pairwiseSummarizationQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityInput.t`, *default:* `nil`) - Input for pairwise summarization quality metric.
+  *   `coherenceInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput.t`, *default:* `nil`) - Input for coherence metric.
+  *   `pairwiseQuestionAnsweringQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput.t`, *default:* `nil`) - Input for pairwise question answering quality metric.
+  *   `questionAnsweringCorrectnessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringCorrectnessInput.t`, *default:* `nil`) - Input for question answering correctness metric.
+  *   `toolParameterKvMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchInput.t`, *default:* `nil`) - Input for tool parameter key value match metric.
+  *   `rougeInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeInput.t`, *default:* `nil`) - Instances and metric spec for rouge metric.
+  *   `trajectoryAnyOrderMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput.t`, *default:* `nil`) - Input for trajectory match any order metric.
   *   `trajectorySingleToolUseInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput.t`, *default:* `nil`) - Input for trajectory single tool use metric.
+  *   `groundednessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput.t`, *default:* `nil`) - Input for groundedness metric.
+  *   `trajectoryPrecisionInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionInput.t`, *default:* `nil`) - Input for trajectory precision metric.
+  *   `questionAnsweringRelevanceInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringRelevanceInput.t`, *default:* `nil`) - Input for question answering relevance metric.
+  *   `trajectoryExactMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchInput.t`, *default:* `nil`) - Input for trajectory exact match metric.
+  *   `safetyInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyInput.t`, *default:* `nil`) - Input for safety metric.
+  *   `summarizationQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationQualityInput.t`, *default:* `nil`) - Input for summarization quality metric.
+  *   `cometInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput.t`, *default:* `nil`) - Translation metrics. Input for Comet metric.
+  *   `pairwiseMetricInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput.t`, *default:* `nil`) - Input for pairwise metric.
+  *   `toolNameMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolNameMatchInput.t`, *default:* `nil`) - Input for tool name match metric.
+  *   `exactMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput.t`, *default:* `nil`) - Auto metric instances. Instances and metric spec for exact match metric.
+  *   `pointwiseMetricInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput.t`, *default:* `nil`) - Input for pointwise metric.
+  *   `metricxInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput.t`, *default:* `nil`) - Input for Metricx metric.
+  *   `questionAnsweringHelpfulnessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringHelpfulnessInput.t`, *default:* `nil`) - Input for question answering helpfulness metric.
+  *   `toolCallValidInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCallValidInput.t`, *default:* `nil`) - Tool call metric instances. Input for tool call valid metric.
+  *   `questionAnsweringQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityInput.t`, *default:* `nil`) - Input for question answering quality metric.
+  *   `rubricBasedInstructionFollowingInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RubricBasedInstructionFollowingInput.t`, *default:* `nil`) - Rubric Based Instruction Following metric.
+  *   `autoraterConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig.t`, *default:* `nil`) - Optional. Autorater config used for evaluation.
+  *   `fluencyInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyInput.t`, *default:* `nil`) - LLM-based metric instance. General text generation metrics, applicable to other categories. Input for fluency metric.
+  *   `toolParameterKeyMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKeyMatchInput.t`, *default:* `nil`) - Input for tool parameter key match metric.
+  *   `summarizationVerbosityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationVerbosityInput.t`, *default:* `nil`) - Input for summarization verbosity metric.
+  *   `bleuInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput.t`, *default:* `nil`) - Instances and metric spec for bleu metric.
+  *   `trajectoryInOrderMatchInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchInput.t`, *default:* `nil`) - Input for trajectory in order match metric.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :autoraterConfig =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig.t() | nil,
-          :bleuInput => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput.t() | nil,
-          :coherenceInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput.t() | nil,
-          :cometInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput.t() | nil,
-          :exactMatchInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput.t() | nil,
-          :fluencyInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyInput.t() | nil,
+          :trajectoryRecallInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallInput.t() | nil,
           :fulfillmentInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentInput.t() | nil,
-          :groundednessInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput.t() | nil,
-          :metricxInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput.t() | nil,
-          :pairwiseMetricInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput.t() | nil,
-          :pairwiseQuestionAnsweringQualityInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput.t()
+          :summarizationHelpfulnessInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationHelpfulnessInput.t()
             | nil,
           :pairwiseSummarizationQualityInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityInput.t()
             | nil,
-          :pointwiseMetricInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput.t() | nil,
+          :coherenceInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput.t() | nil,
+          :pairwiseQuestionAnsweringQualityInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput.t()
+            | nil,
           :questionAnsweringCorrectnessInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringCorrectnessInput.t()
-            | nil,
-          :questionAnsweringHelpfulnessInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringHelpfulnessInput.t()
-            | nil,
-          :questionAnsweringQualityInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityInput.t()
-            | nil,
-          :questionAnsweringRelevanceInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringRelevanceInput.t()
-            | nil,
-          :rougeInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeInput.t() | nil,
-          :safetyInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyInput.t() | nil,
-          :summarizationHelpfulnessInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationHelpfulnessInput.t()
-            | nil,
-          :summarizationQualityInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationQualityInput.t()
-            | nil,
-          :summarizationVerbosityInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationVerbosityInput.t()
-            | nil,
-          :toolCallValidInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCallValidInput.t() | nil,
-          :toolNameMatchInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolNameMatchInput.t() | nil,
-          :toolParameterKeyMatchInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKeyMatchInput.t()
             | nil,
           :toolParameterKvMatchInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchInput.t()
             | nil,
+          :rougeInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeInput.t() | nil,
           :trajectoryAnyOrderMatchInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput.t()
+            | nil,
+          :trajectorySingleToolUseInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput.t()
+            | nil,
+          :groundednessInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput.t() | nil,
+          :trajectoryPrecisionInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionInput.t()
+            | nil,
+          :questionAnsweringRelevanceInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringRelevanceInput.t()
             | nil,
           :trajectoryExactMatchInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchInput.t()
             | nil,
+          :safetyInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyInput.t() | nil,
+          :summarizationQualityInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationQualityInput.t()
+            | nil,
+          :cometInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput.t() | nil,
+          :pairwiseMetricInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput.t() | nil,
+          :toolNameMatchInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolNameMatchInput.t() | nil,
+          :exactMatchInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput.t() | nil,
+          :pointwiseMetricInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput.t() | nil,
+          :metricxInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput.t() | nil,
+          :questionAnsweringHelpfulnessInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringHelpfulnessInput.t()
+            | nil,
+          :toolCallValidInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCallValidInput.t() | nil,
+          :questionAnsweringQualityInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityInput.t()
+            | nil,
+          :rubricBasedInstructionFollowingInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RubricBasedInstructionFollowingInput.t()
+            | nil,
+          :autoraterConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig.t() | nil,
+          :fluencyInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyInput.t() | nil,
+          :toolParameterKeyMatchInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKeyMatchInput.t()
+            | nil,
+          :summarizationVerbosityInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationVerbosityInput.t()
+            | nil,
+          :bleuInput => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput.t() | nil,
           :trajectoryInOrderMatchInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchInput.t()
-            | nil,
-          :trajectoryPrecisionInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionInput.t()
-            | nil,
-          :trajectoryRecallInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallInput.t() | nil,
-          :trajectorySingleToolUseInput =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput.t()
             | nil
         }
 
-  field(:autoraterConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig)
-
-  field(:bleuInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput)
-  field(:coherenceInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput)
-  field(:cometInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput)
-
-  field(:exactMatchInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput)
-
-  field(:fluencyInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyInput)
+  field(:trajectoryRecallInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallInput
+  )
 
   field(:fulfillmentInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentInput
   )
 
-  field(:groundednessInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput
-  )
-
-  field(:metricxInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput)
-
-  field(:pairwiseMetricInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput
-  )
-
-  field(:pairwiseQuestionAnsweringQualityInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput
+  field(:summarizationHelpfulnessInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationHelpfulnessInput
   )
 
   field(:pairwiseSummarizationQualityInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityInput
   )
 
-  field(:pointwiseMetricInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput
+  field(:coherenceInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CoherenceInput)
+
+  field(:pairwiseQuestionAnsweringQualityInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput
   )
 
   field(:questionAnsweringCorrectnessInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringCorrectnessInput
   )
 
-  field(:questionAnsweringHelpfulnessInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringHelpfulnessInput
-  )
-
-  field(:questionAnsweringQualityInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityInput
-  )
-
-  field(:questionAnsweringRelevanceInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringRelevanceInput
-  )
-
-  field(:rougeInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeInput)
-  field(:safetyInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyInput)
-
-  field(:summarizationHelpfulnessInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationHelpfulnessInput
-  )
-
-  field(:summarizationQualityInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationQualityInput
-  )
-
-  field(:summarizationVerbosityInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationVerbosityInput
-  )
-
-  field(:toolCallValidInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCallValidInput
-  )
-
-  field(:toolNameMatchInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolNameMatchInput
-  )
-
-  field(:toolParameterKeyMatchInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKeyMatchInput
-  )
-
   field(:toolParameterKvMatchInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKVMatchInput
   )
+
+  field(:rougeInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeInput)
 
   field(:trajectoryAnyOrderMatchInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryAnyOrderMatchInput
   )
 
-  field(:trajectoryExactMatchInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchInput
+  field(:trajectorySingleToolUseInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput
   )
 
-  field(:trajectoryInOrderMatchInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchInput
+  field(:groundednessInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput
   )
 
   field(:trajectoryPrecisionInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryPrecisionInput
   )
 
-  field(:trajectoryRecallInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryRecallInput
+  field(:questionAnsweringRelevanceInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringRelevanceInput
   )
 
-  field(:trajectorySingleToolUseInput,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectorySingleToolUseInput
+  field(:trajectoryExactMatchInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryExactMatchInput
+  )
+
+  field(:safetyInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyInput)
+
+  field(:summarizationQualityInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationQualityInput
+  )
+
+  field(:cometInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CometInput)
+
+  field(:pairwiseMetricInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput
+  )
+
+  field(:toolNameMatchInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolNameMatchInput
+  )
+
+  field(:exactMatchInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ExactMatchInput)
+
+  field(:pointwiseMetricInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput
+  )
+
+  field(:metricxInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetricxInput)
+
+  field(:questionAnsweringHelpfulnessInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringHelpfulnessInput
+  )
+
+  field(:toolCallValidInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolCallValidInput
+  )
+
+  field(:questionAnsweringQualityInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityInput
+  )
+
+  field(:rubricBasedInstructionFollowingInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RubricBasedInstructionFollowingInput
+  )
+
+  field(:autoraterConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutoraterConfig)
+
+  field(:fluencyInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyInput)
+
+  field(:toolParameterKeyMatchInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolParameterKeyMatchInput
+  )
+
+  field(:summarizationVerbosityInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationVerbosityInput
+  )
+
+  field(:bleuInput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BleuInput)
+
+  field(:trajectoryInOrderMatchInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TrajectoryInOrderMatchInput
   )
 end
 

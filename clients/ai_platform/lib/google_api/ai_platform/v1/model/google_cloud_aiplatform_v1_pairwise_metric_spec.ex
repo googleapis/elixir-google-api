@@ -23,6 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricSpe
 
   *   `baselineResponseFieldName` (*type:* `String.t`, *default:* `nil`) - Optional. The field name of the baseline response.
   *   `candidateResponseFieldName` (*type:* `String.t`, *default:* `nil`) - Optional. The field name of the candidate response.
+  *   `customOutputFormatConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutputFormatConfig.t`, *default:* `nil`) - Optional. CustomOutputFormatConfig allows customization of metric output. When this config is set, the default output is replaced with the raw output string. If a custom format is chosen, the `pairwise_choice` and `explanation` fields in the corresponding metric result will be empty.
   *   `metricPromptTemplate` (*type:* `String.t`, *default:* `nil`) - Required. Metric prompt template for pairwise metric.
   *   `systemInstruction` (*type:* `String.t`, *default:* `nil`) - Optional. System instructions for pairwise metric.
   """
@@ -32,12 +33,20 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricSpe
   @type t :: %__MODULE__{
           :baselineResponseFieldName => String.t() | nil,
           :candidateResponseFieldName => String.t() | nil,
+          :customOutputFormatConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutputFormatConfig.t()
+            | nil,
           :metricPromptTemplate => String.t() | nil,
           :systemInstruction => String.t() | nil
         }
 
   field(:baselineResponseFieldName)
   field(:candidateResponseFieldName)
+
+  field(:customOutputFormatConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomOutputFormatConfig
+  )
+
   field(:metricPromptTemplate)
   field(:systemInstruction)
 end

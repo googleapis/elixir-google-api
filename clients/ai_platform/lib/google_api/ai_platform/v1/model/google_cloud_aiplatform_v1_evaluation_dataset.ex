@@ -22,7 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluationDataset
   ## Attributes
 
   *   `bigquerySource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQuerySource.t`, *default:* `nil`) - BigQuery source holds the dataset.
-  *   `gcsSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsSource.t`, *default:* `nil`) - Cloud storage source holds the dataset.
+  *   `gcsSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsSource.t`, *default:* `nil`) - Cloud storage source holds the dataset. Currently only one Cloud Storage file path is supported.
   """
 
   use GoogleApi.Gax.ModelBase

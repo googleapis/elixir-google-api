@@ -38,6 +38,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   *   `questionAnsweringQualityResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityResult.t`, *default:* `nil`) - Question answering only metrics. Result for question answering quality metric.
   *   `questionAnsweringRelevanceResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringRelevanceResult.t`, *default:* `nil`) - Result for question answering relevance metric.
   *   `rougeResults` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeResults.t`, *default:* `nil`) - Results for rouge metric.
+  *   `rubricBasedInstructionFollowingResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RubricBasedInstructionFollowingResult.t`, *default:* `nil`) - Result for rubric based instruction following metric.
   *   `safetyResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyResult.t`, *default:* `nil`) - Result for safety metric.
   *   `summarizationHelpfulnessResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationHelpfulnessResult.t`, *default:* `nil`) - Result for summarization helpfulness metric.
   *   `summarizationQualityResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SummarizationQualityResult.t`, *default:* `nil`) - Summarization only metrics. Result for summarization quality metric.
@@ -97,6 +98,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             | nil,
           :rougeResults =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeResults.t() | nil,
+          :rubricBasedInstructionFollowingResult =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RubricBasedInstructionFollowingResult.t()
+            | nil,
           :safetyResult =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyResult.t() | nil,
           :summarizationHelpfulnessResult =>
@@ -193,6 +197,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   )
 
   field(:rougeResults, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RougeResults)
+
+  field(:rubricBasedInstructionFollowingResult,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RubricBasedInstructionFollowingResult
+  )
+
   field(:safetyResult, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyResult)
 
   field(:summarizationHelpfulnessResult,
