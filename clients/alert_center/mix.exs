@@ -18,7 +18,7 @@
 defmodule GoogleApi.AlertCenter.Mixfile do
   use Mix.Project
 
-  @version "0.26.1"
+  @version "0.27.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.AlertCenter.Mixfile do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/alert_center",
-        "Homepage" => "https://developers.google.com/admin-sdk/alertcenter/"
+        "Homepage" => "https://developers.google.com/workspace/admin/alertcenter/"
       }
     ]
   end

@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_alert_center, "~> 0.26"}]
+  [{:google_api_alert_center, "~> 0.27"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/admin-sdk/alertcenter/](https://developers.google.com/admin-sdk/alertcenter/).
+Product documentation is available at [https://developers.google.com/workspace/admin/alertcenter/](https://developers.google.com/workspace/admin/alertcenter/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_alert_center](https://hexdocs.pm/google_api_alert_center).
