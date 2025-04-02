@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_slides, "~> 0.23"}]
+  [{:google_api_slides, "~> 0.24"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/slides/](https://developers.google.com/slides/).
+Product documentation is available at [https://developers.google.com/workspace/slides/](https://developers.google.com/workspace/slides/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_slides](https://hexdocs.pm/google_api_slides).
