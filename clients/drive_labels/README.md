@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_drive_labels, "~> 0.2"}]
+  [{:google_api_drive_labels, "~> 0.3"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/drive/labels](https://developers.google.com/drive/labels).
+Product documentation is available at [https://developers.google.com/workspace/drive/labels](https://developers.google.com/workspace/drive/labels).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_drive_labels](https://hexdocs.pm/google_api_drive_labels).

@@ -20,7 +20,7 @@ defmodule GoogleApi.DriveLabels.V2 do
   API client metadata for GoogleApi.DriveLabels.V2.
   """
 
-  @discovery_revision "20240307"
+  @discovery_revision "20250331"
 
   def discovery_revision(), do: @discovery_revision
 end
