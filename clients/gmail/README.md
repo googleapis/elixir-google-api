@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_gmail, "~> 0.16"}]
+  [{:google_api_gmail, "~> 0.17"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/gmail/api/](https://developers.google.com/gmail/api/).
+Product documentation is available at [https://developers.google.com/workspace/gmail/api/](https://developers.google.com/workspace/gmail/api/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_gmail](https://hexdocs.pm/google_api_gmail).
