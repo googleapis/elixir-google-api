@@ -519,8 +519,8 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Api.Vitals do
       *   `:"interval.endTime.month"` (*type:* `integer()`) - Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.
       *   `:"interval.endTime.nanos"` (*type:* `integer()`) - Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.
       *   `:"interval.endTime.seconds"` (*type:* `integer()`) - Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.
-      *   `:"interval.endTime.timeZone.id"` (*type:* `String.t`) - IANA Time Zone Database time zone, e.g. "America/New_York".
-      *   `:"interval.endTime.timeZone.version"` (*type:* `String.t`) - Optional. IANA Time Zone Database version number, e.g. "2019a".
+      *   `:"interval.endTime.timeZone.id"` (*type:* `String.t`) - IANA Time Zone Database time zone. For example "America/New_York".
+      *   `:"interval.endTime.timeZone.version"` (*type:* `String.t`) - Optional. IANA Time Zone Database version number. For example "2019a".
       *   `:"interval.endTime.utcOffset"` (*type:* `String.t`) - UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }.
       *   `:"interval.endTime.year"` (*type:* `integer()`) - Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year.
       *   `:"interval.startTime.day"` (*type:* `integer()`) - Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day.
@@ -529,8 +529,8 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Api.Vitals do
       *   `:"interval.startTime.month"` (*type:* `integer()`) - Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.
       *   `:"interval.startTime.nanos"` (*type:* `integer()`) - Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.
       *   `:"interval.startTime.seconds"` (*type:* `integer()`) - Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.
-      *   `:"interval.startTime.timeZone.id"` (*type:* `String.t`) - IANA Time Zone Database time zone, e.g. "America/New_York".
-      *   `:"interval.startTime.timeZone.version"` (*type:* `String.t`) - Optional. IANA Time Zone Database version number, e.g. "2019a".
+      *   `:"interval.startTime.timeZone.id"` (*type:* `String.t`) - IANA Time Zone Database time zone. For example "America/New_York".
+      *   `:"interval.startTime.timeZone.version"` (*type:* `String.t`) - Optional. IANA Time Zone Database version number. For example "2019a".
       *   `:"interval.startTime.utcOffset"` (*type:* `String.t`) - UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }.
       *   `:"interval.startTime.year"` (*type:* `integer()`) - Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year.
       *   `:orderBy` (*type:* `String.t`) - Specifies a field that will be used to order the results. ** Supported dimensions:** * `errorReportCount`: Orders issues by number of error reports. * `distinctUsers`: Orders issues by number of unique affected users. ** Supported operations:** * `asc` for ascending order. * `desc` for descending order. Format: A field and an operation, e.g., `errorReportCount desc` *Note:* currently only one field is supported at a time.
@@ -646,8 +646,8 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Api.Vitals do
       *   `:"interval.endTime.month"` (*type:* `integer()`) - Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.
       *   `:"interval.endTime.nanos"` (*type:* `integer()`) - Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.
       *   `:"interval.endTime.seconds"` (*type:* `integer()`) - Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.
-      *   `:"interval.endTime.timeZone.id"` (*type:* `String.t`) - IANA Time Zone Database time zone, e.g. "America/New_York".
-      *   `:"interval.endTime.timeZone.version"` (*type:* `String.t`) - Optional. IANA Time Zone Database version number, e.g. "2019a".
+      *   `:"interval.endTime.timeZone.id"` (*type:* `String.t`) - IANA Time Zone Database time zone. For example "America/New_York".
+      *   `:"interval.endTime.timeZone.version"` (*type:* `String.t`) - Optional. IANA Time Zone Database version number. For example "2019a".
       *   `:"interval.endTime.utcOffset"` (*type:* `String.t`) - UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }.
       *   `:"interval.endTime.year"` (*type:* `integer()`) - Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year.
       *   `:"interval.startTime.day"` (*type:* `integer()`) - Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day.
@@ -656,8 +656,8 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Api.Vitals do
       *   `:"interval.startTime.month"` (*type:* `integer()`) - Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.
       *   `:"interval.startTime.nanos"` (*type:* `integer()`) - Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.
       *   `:"interval.startTime.seconds"` (*type:* `integer()`) - Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.
-      *   `:"interval.startTime.timeZone.id"` (*type:* `String.t`) - IANA Time Zone Database time zone, e.g. "America/New_York".
-      *   `:"interval.startTime.timeZone.version"` (*type:* `String.t`) - Optional. IANA Time Zone Database version number, e.g. "2019a".
+      *   `:"interval.startTime.timeZone.id"` (*type:* `String.t`) - IANA Time Zone Database time zone. For example "America/New_York".
+      *   `:"interval.startTime.timeZone.version"` (*type:* `String.t`) - Optional. IANA Time Zone Database version number. For example "2019a".
       *   `:"interval.startTime.utcOffset"` (*type:* `String.t`) - UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }.
       *   `:"interval.startTime.year"` (*type:* `integer()`) - Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of reports to return. The service may return fewer than this value. If unspecified, at most 50 reports will be returned. The maximum value is 100; values above 100 will be coerced to 100.
