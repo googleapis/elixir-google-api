@@ -39,6 +39,7 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the operation resides. Only applicable when performing regional operations.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `selfLinkWithId` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource with the resource id.
+  *   `setAutoscalerLinkOperationMetadata` (*type:* `GoogleApi.DeploymentManager.V2.Model.SetAutoscalerLinkOperationMetadata.t`, *default:* `nil`) - This field is used internally by the Autoscaler team and should not be promoted to "alpha/beta/v1".
   *   `setCommonInstanceMetadataOperationMetadata` (*type:* `GoogleApi.DeploymentManager.V2.Model.SetCommonInstanceMetadataOperationMetadata.t`, *default:* `nil`) - [Output Only] If the operation is for projects.setCommonInstanceMetadata, this field will contain information on all underlying zonal actions and their state.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
@@ -72,6 +73,8 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
           :region => String.t() | nil,
           :selfLink => String.t() | nil,
           :selfLinkWithId => String.t() | nil,
+          :setAutoscalerLinkOperationMetadata =>
+            GoogleApi.DeploymentManager.V2.Model.SetAutoscalerLinkOperationMetadata.t() | nil,
           :setCommonInstanceMetadataOperationMetadata =>
             GoogleApi.DeploymentManager.V2.Model.SetCommonInstanceMetadataOperationMetadata.t()
             | nil,
@@ -107,6 +110,10 @@ defmodule GoogleApi.DeploymentManager.V2.Model.Operation do
   field(:region)
   field(:selfLink)
   field(:selfLinkWithId)
+
+  field(:setAutoscalerLinkOperationMetadata,
+    as: GoogleApi.DeploymentManager.V2.Model.SetAutoscalerLinkOperationMetadata
+  )
 
   field(:setCommonInstanceMetadataOperationMetadata,
     as: GoogleApi.DeploymentManager.V2.Model.SetCommonInstanceMetadataOperationMetadata
