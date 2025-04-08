@@ -23,7 +23,7 @@ defmodule GoogleApi.AdExchangeSeller.V20.Mixfile do
   defp deps() do
     [
       {:google_gax, "~> 0.1.0"},
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:ex_doc, "~> 0.37", only: :dev}
     ]
   end
 

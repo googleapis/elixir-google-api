@@ -42,7 +42,7 @@ defmodule GoogleApi.BigtableAdmin.Mixfile do
     [
       {:google_gax, "~> 0.4"},
 
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:ex_doc, "~> 0.37", only: :dev}
     ]
   end
 
