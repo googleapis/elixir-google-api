@@ -21,8 +21,8 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Model.GoogleTypeTimeZone do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - IANA Time Zone Database time zone, e.g. "America/New_York".
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Optional. IANA Time Zone Database version number, e.g. "2019a".
+  *   `id` (*type:* `String.t`, *default:* `nil`) - IANA Time Zone Database time zone. For example "America/New_York".
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Optional. IANA Time Zone Database version number. For example "2019a".
   """
 
   use GoogleApi.Gax.ModelBase
