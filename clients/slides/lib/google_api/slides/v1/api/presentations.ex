@@ -288,7 +288,7 @@ defmodule GoogleApi.Slides.V1.Api.Presentations do
   end
 
   @doc """
-  Generates a thumbnail of the latest version of the specified page in the presentation and returns a URL to the thumbnail image. This request counts as an [expensive read request](/slides/limits) for quota purposes.
+  Generates a thumbnail of the latest version of the specified page in the presentation and returns a URL to the thumbnail image. This request counts as an [expensive read request](https://developers.google.com/workspace/slides/limits) for quota purposes.
 
   ## Parameters
 
