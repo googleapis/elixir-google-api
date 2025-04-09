@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.ColorStyle do
 
   ## Attributes
 
-  *   `rgbColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - RGB color. The [`alpha`](/sheets/api/reference/rest/v4/spreadsheets/other#Color.FIELDS.alpha) value in the [`Color`](/sheets/api/reference/rest/v4/spreadsheets/other#color) object isn't generally supported.
+  *   `rgbColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - RGB color. The [`alpha`](https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets/other#Color.FIELDS.alpha) value in the [`Color`](https://developers.google.com/workspace/sheets/api/reference/rest/v4/spreadsheets/other#color) object isn't generally supported.
   *   `themeColor` (*type:* `String.t`, *default:* `nil`) - Theme color.
   """
 
