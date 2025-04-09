@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/meet/api](https://developers.google.com/meet/api).
+Product documentation is available at [https://developers.google.com/workspace/meet/api](https://developers.google.com/workspace/meet/api).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_meet](https://hexdocs.pm/google_api_meet).

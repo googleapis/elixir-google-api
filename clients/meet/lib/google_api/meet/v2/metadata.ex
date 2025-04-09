@@ -20,7 +20,7 @@ defmodule GoogleApi.Meet.V2 do
   API client metadata for GoogleApi.Meet.V2.
   """
 
-  @discovery_revision "20250320"
+  @discovery_revision "20250406"
 
   def discovery_revision(), do: @discovery_revision
 end
