@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/google-apps/calendar/firstapp](https://developers.google.com/google-apps/calendar/firstapp).
+Product documentation is available at [https://developers.google.com/workspace/calendar/firstapp](https://developers.google.com/workspace/calendar/firstapp).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_calendar](https://hexdocs.pm/google_api_calendar).
