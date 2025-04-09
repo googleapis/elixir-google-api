@@ -59,7 +59,7 @@ defmodule GoogleApi.Calendar.Mixfile do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/calendar",
-        "Homepage" => "https://developers.google.com/google-apps/calendar/firstapp"
+        "Homepage" => "https://developers.google.com/workspace/calendar/firstapp"
       }
     ]
   end
