@@ -22,18 +22,30 @@ defmodule GoogleApi.Meet.V2.Model.SpaceConfig do
   ## Attributes
 
   *   `accessType` (*type:* `String.t`, *default:* `nil`) - Access type of the meeting space that determines who can join without knocking. Default: The user's default access settings. Controlled by the user's admin for enterprise users or RESTRICTED.
+  *   `artifactConfig` (*type:* `GoogleApi.Meet.V2.Model.ArtifactConfig.t`, *default:* `nil`) - [Developer Preview](https://developers.google.com/workspace/preview): Configuration pertaining to the auto-generated artifacts that the meeting supports.
+  *   `attendanceReportGenerationType` (*type:* `String.t`, *default:* `nil`) - [Developer Preview](https://developers.google.com/workspace/preview): Whether attendance report is enabled for the meeting space.
   *   `entryPointAccess` (*type:* `String.t`, *default:* `nil`) - Defines the entry points that can be used to join meetings hosted in this meeting space. Default: EntryPointAccess.ALL
+  *   `moderation` (*type:* `String.t`, *default:* `nil`) - [Developer Preview](https://developers.google.com/workspace/preview): The pre-configured moderation mode for the Meeting. Default: Controlled by the user's policies.
+  *   `moderationRestrictions` (*type:* `GoogleApi.Meet.V2.Model.ModerationRestrictions.t`, *default:* `nil`) - [Developer Preview](https://developers.google.com/workspace/preview): When moderation.ON, these restrictions go into effect for the meeting. When moderation.OFF, will be reset to default ModerationRestrictions.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :accessType => String.t() | nil,
-          :entryPointAccess => String.t() | nil
+          :artifactConfig => GoogleApi.Meet.V2.Model.ArtifactConfig.t() | nil,
+          :attendanceReportGenerationType => String.t() | nil,
+          :entryPointAccess => String.t() | nil,
+          :moderation => String.t() | nil,
+          :moderationRestrictions => GoogleApi.Meet.V2.Model.ModerationRestrictions.t() | nil
         }
 
   field(:accessType)
+  field(:artifactConfig, as: GoogleApi.Meet.V2.Model.ArtifactConfig)
+  field(:attendanceReportGenerationType)
   field(:entryPointAccess)
+  field(:moderation)
+  field(:moderationRestrictions, as: GoogleApi.Meet.V2.Model.ModerationRestrictions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Meet.V2.Model.SpaceConfig do

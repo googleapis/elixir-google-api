@@ -25,7 +25,7 @@ defmodule GoogleApi.Meet.V2.Model.Space do
   *   `config` (*type:* `GoogleApi.Meet.V2.Model.SpaceConfig.t`, *default:* `nil`) - Configuration pertaining to the meeting space.
   *   `meetingCode` (*type:* `String.t`, *default:* `nil`) - Output only. Type friendly unique string used to join the meeting. Format: `[a-z]+-[a-z]+-[a-z]+`. For example, `abc-mnop-xyz`. The maximum length is 128 characters. Can only be used as an alias of the space name to get the space.
   *   `meetingUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI used to join meetings consisting of `https://meet.google.com/` followed by the `meeting_code`. For example, `https://meet.google.com/abc-mnop-xyz`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Resource name of the space. Format: `spaces/{space}`. `{space}` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`. For more information, see [How Meet identifies a meeting space](https://developers.google.com/meet/api/guides/meeting-spaces#identify-meeting-space).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Resource name of the space. Format: `spaces/{space}`. `{space}` is the resource identifier for the space. It's a unique, server-generated ID and is case sensitive. For example, `jQCFfuBOdN5z`. For more information, see [How Meet identifies a meeting space](https://developers.google.com/workspace/meet/api/guides/meeting-spaces#identify-meeting-space).
   """
 
   use GoogleApi.Gax.ModelBase
