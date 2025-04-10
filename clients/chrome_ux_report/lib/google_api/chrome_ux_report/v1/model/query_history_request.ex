@@ -21,6 +21,7 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.QueryHistoryRequest do
 
   ## Attributes
 
+  *   `collectionPeriodCount` (*type:* `integer()`, *default:* `nil`) - The number of collection periods to return. If not specified, the default is 25. If present, must be in the range [1, 40].
   *   `formFactor` (*type:* `String.t`, *default:* `nil`) - The form factor is a query dimension that specifies the device class that the record's data should belong to. Note: If no form factor is specified, then a special record with aggregated data over all form factors will be returned.
   *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - The metrics that should be included in the response. If none are specified then any metrics found will be returned. Allowed values: ["first_contentful_paint", "first_input_delay", "largest_contentful_paint", "cumulative_layout_shift", "experimental_time_to_first_byte", "experimental_interaction_to_next_paint"]
   *   `origin` (*type:* `String.t`, *default:* `nil`) - The url pattern "origin" refers to a url pattern that is the origin of a website. Examples: "https://example.com", "https://cloud.google.com"
@@ -30,12 +31,14 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.QueryHistoryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :collectionPeriodCount => integer() | nil,
           :formFactor => String.t() | nil,
           :metrics => list(String.t()) | nil,
           :origin => String.t() | nil,
           :url => String.t() | nil
         }
 
+  field(:collectionPeriodCount)
   field(:formFactor)
   field(:metrics, type: :list)
   field(:origin)
