@@ -22,6 +22,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.Statement do
   ## Attributes
 
   *   `relation` (*type:* `String.t`, *default:* `nil`) - The relation identifies the use of the statement as intended by the source asset's owner (that is, the person or entity who issued the statement). Every complete statement has a relation. We identify relations with strings of the format `/`, where `` must be one of a set of pre-defined purpose categories, and `` is a free-form lowercase alphanumeric string that describes the specific use case of the statement. Refer to [our API documentation](/digital-asset-links/v1/relation-strings) for the current list of supported relations. Example: `delegate_permission/common.handle_all_urls` REQUIRED
+  *   `relationExtensions` (*type:* `map()`, *default:* `nil`) - Statements may specify relation level extensions/payloads to express more details when declaring permissions to grant from the source asset to the target asset. These relation extensions should be specified in the `relation_extensions` object, keyed by the relation type they're associated with. { relation: ["delegate_permission/common.handle_all_urls"], target: {...}, relation_extensions: { "delegate_permission/common.handle_all_urls": { ...handle_all_urls specific payload specified here... } } } When requested, and specified in the statement file, the API will return relation_extensions associated with the statement's relation type. i.e. the API will only return relation_extensions specified for "delegate_permission/common.handle_all_urls" if this statement object's relation type is "delegate_permission/common.handle_all_urls".
   *   `source` (*type:* `GoogleApi.DigitalAssetLinks.V1.Model.Asset.t`, *default:* `nil`) - Every statement has a source asset. REQUIRED
   *   `target` (*type:* `GoogleApi.DigitalAssetLinks.V1.Model.Asset.t`, *default:* `nil`) - Every statement has a target asset. REQUIRED
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.Statement do
 
   @type t :: %__MODULE__{
           :relation => String.t() | nil,
+          :relationExtensions => map() | nil,
           :source => GoogleApi.DigitalAssetLinks.V1.Model.Asset.t() | nil,
           :target => GoogleApi.DigitalAssetLinks.V1.Model.Asset.t() | nil
         }
 
   field(:relation)
+  field(:relationExtensions, type: :map)
   field(:source, as: GoogleApi.DigitalAssetLinks.V1.Model.Asset)
   field(:target, as: GoogleApi.DigitalAssetLinks.V1.Model.Asset)
 end

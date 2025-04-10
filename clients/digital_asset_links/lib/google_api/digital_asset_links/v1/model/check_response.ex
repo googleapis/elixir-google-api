@@ -25,6 +25,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.CheckResponse do
   *   `errorCode` (*type:* `list(String.t)`, *default:* `nil`) - Error codes that describe the result of the Check operation.
   *   `linked` (*type:* `boolean()`, *default:* `nil`) - Set to true if the assets specified in the request are linked by the relation specified in the request.
   *   `maxAge` (*type:* `String.t`, *default:* `nil`) - From serving time, how much longer the response should be considered valid barring further updates. REQUIRED
+  *   `relationExtensions` (*type:* `list(map())`, *default:* `nil`) - Statements may specify relation level extensions/payloads to express more details when declaring permissions to grant from the source asset to the target asset. When requested, the API will return relation_extensions specified in any and all statements linking the requested source and target assets by the relation specified in the request.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.CheckResponse do
           :debugString => String.t() | nil,
           :errorCode => list(String.t()) | nil,
           :linked => boolean() | nil,
-          :maxAge => String.t() | nil
+          :maxAge => String.t() | nil,
+          :relationExtensions => list(map()) | nil
         }
 
   field(:debugString)
   field(:errorCode, type: :list)
   field(:linked)
   field(:maxAge)
+  field(:relationExtensions, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DigitalAssetLinks.V1.Model.CheckResponse do
