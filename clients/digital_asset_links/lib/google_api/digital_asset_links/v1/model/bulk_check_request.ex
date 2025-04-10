@@ -24,6 +24,7 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.BulkCheckRequest do
   *   `defaultRelation` (*type:* `String.t`, *default:* `nil`) - If specified, will be used in any given template statement that doesn’t specify a relation.
   *   `defaultSource` (*type:* `GoogleApi.DigitalAssetLinks.V1.Model.Asset.t`, *default:* `nil`) - If specified, will be used in any given template statement that doesn’t specify a source.
   *   `defaultTarget` (*type:* `GoogleApi.DigitalAssetLinks.V1.Model.Asset.t`, *default:* `nil`) - If specified, will be used in any given template statement that doesn’t specify a target.
+  *   `returnRelationExtensions` (*type:* `boolean()`, *default:* `nil`) - Same configuration as in CheckRequest; all statement checks will use the same configuration.
   *   `statements` (*type:* `list(GoogleApi.DigitalAssetLinks.V1.Model.StatementTemplate.t)`, *default:* `nil`) - List of statements to check. For each statement, you can omit a field if the corresponding default_* field below was supplied. Minimum 1 statement; maximum 1,000 statements. Any additional statements will be ignored.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.DigitalAssetLinks.V1.Model.BulkCheckRequest do
           :defaultRelation => String.t() | nil,
           :defaultSource => GoogleApi.DigitalAssetLinks.V1.Model.Asset.t() | nil,
           :defaultTarget => GoogleApi.DigitalAssetLinks.V1.Model.Asset.t() | nil,
+          :returnRelationExtensions => boolean() | nil,
           :statements => list(GoogleApi.DigitalAssetLinks.V1.Model.StatementTemplate.t()) | nil
         }
 
   field(:defaultRelation)
   field(:defaultSource, as: GoogleApi.DigitalAssetLinks.V1.Model.Asset)
   field(:defaultTarget, as: GoogleApi.DigitalAssetLinks.V1.Model.Asset)
+  field(:returnRelationExtensions)
   field(:statements, as: GoogleApi.DigitalAssetLinks.V1.Model.StatementTemplate, type: :list)
 end
 
