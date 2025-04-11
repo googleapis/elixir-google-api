@@ -29,8 +29,6 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   *   `numClients` (*type:* `String.t`, *default:* `nil`) - Number of clients in the container version.
   *   `numCustomTemplates` (*type:* `String.t`, *default:* `nil`) - Number of custom templates in the container version.
   *   `numGtagConfigs` (*type:* `String.t`, *default:* `nil`) - Number of Google tag configs in the container version.
-  *   `numMacros` (*type:* `String.t`, *default:* `nil`) - Number of macros in the container version.
-  *   `numRules` (*type:* `String.t`, *default:* `nil`) - Number of rules in the container version.
   *   `numTags` (*type:* `String.t`, *default:* `nil`) - Number of tags in the container version.
   *   `numTransformations` (*type:* `String.t`, *default:* `nil`) - Number of transformations in the container version.
   *   `numTriggers` (*type:* `String.t`, *default:* `nil`) - Number of triggers in the container version.
@@ -50,8 +48,6 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
           :numClients => String.t() | nil,
           :numCustomTemplates => String.t() | nil,
           :numGtagConfigs => String.t() | nil,
-          :numMacros => String.t() | nil,
-          :numRules => String.t() | nil,
           :numTags => String.t() | nil,
           :numTransformations => String.t() | nil,
           :numTriggers => String.t() | nil,
@@ -68,8 +64,6 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   field(:numClients)
   field(:numCustomTemplates)
   field(:numGtagConfigs)
-  field(:numMacros)
-  field(:numRules)
   field(:numTags)
   field(:numTransformations)
   field(:numTriggers)

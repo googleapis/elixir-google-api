@@ -22,12 +22,10 @@ defmodule GoogleApi.TagManager.V2.Model.Tag do
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - GTM Account ID.
-  *   `blockingRuleId` (*type:* `list(String.t)`, *default:* `nil`) - Blocking rule IDs. If any of the listed rules evaluate to true, the tag will not fire.
   *   `blockingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Blocking trigger IDs. If any of the listed triggers evaluate to true, the tag will not fire.
   *   `consentSettings` (*type:* `GoogleApi.TagManager.V2.Model.TagConsentSetting.t`, *default:* `nil`) - Consent settings of a tag.
   *   `containerId` (*type:* `String.t`, *default:* `nil`) - GTM Container ID.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the GTM Tag as computed at storage time. This value is recomputed whenever the tag is modified.
-  *   `firingRuleId` (*type:* `list(String.t)`, *default:* `nil`) - Firing rule IDs. A tag will fire when any of the listed rules are true and all of its blockingRuleIds (if any specified) are false.
   *   `firingTriggerId` (*type:* `list(String.t)`, *default:* `nil`) - Firing trigger IDs. A tag will fire when any of the listed triggers are true and all of its blockingTriggerIds (if any specified) are false.
   *   `liveOnly` (*type:* `boolean()`, *default:* `nil`) - If set to true, this tag will only fire in the live environment (e.g. not in preview or debug mode).
   *   `monitoringMetadata` (*type:* `GoogleApi.TagManager.V2.Model.Parameter.t`, *default:* `nil`) - A map of key-value pairs of tag metadata to be included in the event data for tag monitoring. Notes: - This parameter must be type MAP. - Each parameter in the map are type TEMPLATE, however cannot contain variable references. 
@@ -54,12 +52,10 @@ defmodule GoogleApi.TagManager.V2.Model.Tag do
 
   @type t :: %__MODULE__{
           :accountId => String.t() | nil,
-          :blockingRuleId => list(String.t()) | nil,
           :blockingTriggerId => list(String.t()) | nil,
           :consentSettings => GoogleApi.TagManager.V2.Model.TagConsentSetting.t() | nil,
           :containerId => String.t() | nil,
           :fingerprint => String.t() | nil,
-          :firingRuleId => list(String.t()) | nil,
           :firingTriggerId => list(String.t()) | nil,
           :liveOnly => boolean() | nil,
           :monitoringMetadata => GoogleApi.TagManager.V2.Model.Parameter.t() | nil,
@@ -83,12 +79,10 @@ defmodule GoogleApi.TagManager.V2.Model.Tag do
         }
 
   field(:accountId)
-  field(:blockingRuleId, type: :list)
   field(:blockingTriggerId, type: :list)
   field(:consentSettings, as: GoogleApi.TagManager.V2.Model.TagConsentSetting)
   field(:containerId)
   field(:fingerprint)
-  field(:firingRuleId, type: :list)
   field(:firingTriggerId, type: :list)
   field(:liveOnly)
   field(:monitoringMetadata, as: GoogleApi.TagManager.V2.Model.Parameter)
