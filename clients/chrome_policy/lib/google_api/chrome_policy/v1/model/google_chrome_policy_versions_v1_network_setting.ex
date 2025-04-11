@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1NetworkSetting do
   @moduledoc """
-  A network setting contains network configurations.
+  A network setting contains network configurations. It adheres to the PolicyAPI formats defined under the namespace chrome.networks.{wifi/ethernet/cellular/vpn}.Details
 
   ## Attributes
 
