@@ -48,6 +48,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.TargetingOption do
   *   `categoryDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.CategoryTargetingOptionDetails.t`, *default:* `nil`) - Category resource details.
   *   `contentStreamTypeDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.ContentStreamTypeTargetingOptionDetails.t`, *default:* `nil`) - Content stream type resource details.
   *   `languageDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.LanguageTargetingOptionDetails.t`, *default:* `nil`) - Language resource details.
+  *   `contentThemeDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.ContentThemeTargetingOptionDetails.t`, *default:* `nil`) - Content theme details.
   *   `parentalStatusDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.ParentalStatusTargetingOptionDetails.t`, *default:* `nil`) - Parental status details.
   *   `onScreenPositionDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.OnScreenPositionTargetingOptionDetails.t`, *default:* `nil`) - On screen position details.
   *   `carrierAndIspDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.CarrierAndIspTargetingOptionDetails.t`, *default:* `nil`) - Carrier and ISP details.
@@ -114,6 +115,8 @@ defmodule GoogleApi.DisplayVideo.V3.Model.TargetingOption do
             GoogleApi.DisplayVideo.V3.Model.ContentStreamTypeTargetingOptionDetails.t() | nil,
           :languageDetails =>
             GoogleApi.DisplayVideo.V3.Model.LanguageTargetingOptionDetails.t() | nil,
+          :contentThemeDetails =>
+            GoogleApi.DisplayVideo.V3.Model.ContentThemeTargetingOptionDetails.t() | nil,
           :parentalStatusDetails =>
             GoogleApi.DisplayVideo.V3.Model.ParentalStatusTargetingOptionDetails.t() | nil,
           :onScreenPositionDetails =>
@@ -213,6 +216,10 @@ defmodule GoogleApi.DisplayVideo.V3.Model.TargetingOption do
   )
 
   field(:languageDetails, as: GoogleApi.DisplayVideo.V3.Model.LanguageTargetingOptionDetails)
+
+  field(:contentThemeDetails,
+    as: GoogleApi.DisplayVideo.V3.Model.ContentThemeTargetingOptionDetails
+  )
 
   field(:parentalStatusDetails,
     as: GoogleApi.DisplayVideo.V3.Model.ParentalStatusTargetingOptionDetails
