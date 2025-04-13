@@ -48,7 +48,7 @@ defmodule GoogleApi.Looker.V1.Model.Instance do
   *   `reservedRange` (*type:* `String.t`, *default:* `nil`) - Name of a reserved IP address range within the Instance.consumer_network, to be used for private services access connection. May or may not be specified in a create request.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the instance.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Looker instance was last updated.
-  *   `userMetadata` (*type:* `GoogleApi.Looker.V1.Model.UserMetadata.t`, *default:* `nil`) - User metadata.
+  *   `userMetadata` (*type:* `GoogleApi.Looker.V1.Model.UserMetadata.t`, *default:* `nil`) - Optional. User metadata.
   """
 
   use GoogleApi.Gax.ModelBase
