@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudUserAccounts.Vm_alpha.Mixfile do
     [
       {:tesla, "~> 0.8"},
       {:poison, ">= 1.0.0"},
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:ex_doc, "~> 0.37", only: :dev}
     ]
   end
 
