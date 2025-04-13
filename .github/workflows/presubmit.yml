@@ -17,7 +17,7 @@ jobs:
           - elixir: "1.14.5-otp-26"
             otp: "26.2.3"
       fail-fast: false
-    runs-on: ubuntu-20.04
+    runs-on: 'ubuntu-24.04'
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
@@ -32,7 +32,7 @@ jobs:
   required-checks:
     needs: tests
     if: ${{ always() }}
-    runs-on: ubuntu-20.04
+    runs-on: 'ubuntu-24.04'
     steps:
       - name: Required checks collector
         run: 'test "${{ needs.tests.result }}" = "success"'
