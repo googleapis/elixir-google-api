@@ -37,17 +37,17 @@ defmodule GoogleApi.OAuth2.V2.Model.Userinfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :email => String.t(),
-          :family_name => String.t(),
-          :gender => String.t(),
-          :given_name => String.t(),
-          :hd => String.t(),
-          :id => String.t(),
-          :link => String.t(),
-          :locale => String.t(),
-          :name => String.t(),
-          :picture => String.t(),
-          :verified_email => boolean()
+          :email => String.t() | nil,
+          :family_name => String.t() | nil,
+          :gender => String.t() | nil,
+          :given_name => String.t() | nil,
+          :hd => String.t() | nil,
+          :id => String.t() | nil,
+          :link => String.t() | nil,
+          :locale => String.t() | nil,
+          :name => String.t() | nil,
+          :picture => String.t() | nil,
+          :verified_email => boolean() | nil
         }
 
   field(:email)

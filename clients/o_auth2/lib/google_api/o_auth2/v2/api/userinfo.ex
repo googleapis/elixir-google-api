@@ -47,7 +47,10 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
   *   `{:error, info}` on failure
   """
   @spec oauth2_userinfo_get(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OAuth2.V2.Model.Userinfo.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.OAuth2.V2.Model.Userinfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def oauth2_userinfo_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
@@ -93,7 +96,10 @@ defmodule GoogleApi.OAuth2.V2.Api.Userinfo do
   *   `{:error, info}` on failure
   """
   @spec oauth2_userinfo_v2_me_get(Tesla.Env.client(), keyword(), keyword()) ::
-          {:ok, GoogleApi.OAuth2.V2.Model.Userinfo.t()} | {:ok, Tesla.Env.t()} | {:error, any()}
+          {:ok, GoogleApi.OAuth2.V2.Model.Userinfo.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
   def oauth2_userinfo_v2_me_get(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :alt => :query,
