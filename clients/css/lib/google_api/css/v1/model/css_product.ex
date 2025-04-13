@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CSS.V1.Model.CssProduct do
   @moduledoc """
-  The processed CSS Product(a.k.a Aggregate Offer internally).
+  The processed CSS Product.
 
   ## Attributes
 
