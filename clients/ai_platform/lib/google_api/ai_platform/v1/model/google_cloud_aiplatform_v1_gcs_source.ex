@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsSource do
 
   ## Attributes
 
-  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - Required. Google Cloud Storage URI(-s) to the input file(s). May contain wildcards. For more information on wildcards, see https://cloud.google.com/storage/docs/gsutil/addlhelp/WildcardNames.
+  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - Required. Google Cloud Storage URI(-s) to the input file(s). May contain wildcards. For more information on wildcards, see https://docs.cloud.google.com/storage/docs/wildcards.
   """
 
   use GoogleApi.Gax.ModelBase
