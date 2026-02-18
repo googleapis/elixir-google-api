@@ -35,4 +35,6 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - name: Required checks collector
-        run: 'test "${{ needs.tests.result }}" = "success"'
+        run: 'test "${NEEDS_TESTS_RESULT}" = "success"'
+        env:
+          NEEDS_TESTS_RESULT: ${{ needs.tests.result }}

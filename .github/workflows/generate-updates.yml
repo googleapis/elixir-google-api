@@ -29,4 +29,6 @@ jobs:
         run: "gem install --no-document toys"
       - name: execute
         run: |
-          toys generate-updates -v --fork --use-dam ${{ github.event.inputs.args }}
+          toys generate-updates -v --fork --use-dam ${GITHUB_EVENT_INPUTS_ARGS}
+        env:
+          GITHUB_EVENT_INPUTS_ARGS: ${{ github.event.inputs.args }}
