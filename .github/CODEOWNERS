@@ -4,4 +4,4 @@
 # For syntax help see:
 # https://help.github.com/en/github/creating-cloning-and-archiving-repositories/about-code-owners#codeowners-syntax
 
-*     @googleapis/yoshi-elixir
+*     @googleapis/cloud-sdk-platform-team @googleapis/cloud-sdk-ruby-team
