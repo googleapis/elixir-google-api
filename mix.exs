@@ -44,7 +44,7 @@ defmodule GoogleApis.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:google_api_discovery, "~> 0.12.0"},
+      {:google_api_discovery, "~> 0.16.0"},
       {:tesla, "~> 1.8"},
       {:oauth2, "~> 0.9"},
       {:temp, "~> 0.4"},
