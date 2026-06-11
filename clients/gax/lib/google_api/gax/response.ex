@@ -24,7 +24,7 @@ defmodule GoogleApi.Gax.Response do
 
   ## Parameters
 
-  *   `response` (*type:* `{:ok, Tesla.Env.t} | {:error, reason}`) - The response object
+  *   `response` (*type:* `Testla.Env.result()`) - The response object
   *   `opts` (*type:* `keyword()`) - [optional] Optional parameters
       *   `:dataWrapped` (*type:* `boolean()`) - If true, the remove the wrapping "data" field. Defaults to false.
       *   `:decode` (*type:* `boolean()`) - If false, returns the entire reponse. Defaults to true.
@@ -32,10 +32,10 @@ defmodule GoogleApi.Gax.Response do
 
   ## Returns
 
-  *   `{:ok, struct()}` on success
-  *   `{:error, Tesla.Env.t}` on failure
+  *   `{:ok, nil | struct()}` on success
+  *   `{:error, any() | Tesla.Env.t}` on failure
   """
-  @spec decode({:ok, Tesla.Env.t()}, keyword()) :: {:ok, struct()} | {:error, Tesla.Env.t()}
+  @spec decode(Tesla.Env.result(), keyword()) :: {:ok, nil | struct()} | {:error, any() | Tesla.Env.t()}
   def decode(env, opts \\ [])
 
   def decode({:error, reason}, _), do: {:error, reason}
