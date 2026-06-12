@@ -21,7 +21,7 @@ defmodule GoogleApi.CSS.V1.Model.ItemLevelIssue do
 
   ## Attributes
 
-  *   `applicableCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where issue applies to the aggregate offer.
+  *   `applicableCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of country codes (ISO 3166-1 alpha-2) where issue applies to the CSS Product.
   *   `attribute` (*type:* `String.t`, *default:* `nil`) - The attribute's name, if the issue is caused by a single attribute.
   *   `code` (*type:* `String.t`, *default:* `nil`) - The error code of the issue.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A short issue description in English.
@@ -29,7 +29,7 @@ defmodule GoogleApi.CSS.V1.Model.ItemLevelIssue do
   *   `detail` (*type:* `String.t`, *default:* `nil`) - A detailed issue description in English.
   *   `documentation` (*type:* `String.t`, *default:* `nil`) - The URL of a web page to help with resolving this issue.
   *   `resolution` (*type:* `String.t`, *default:* `nil`) - Whether the issue can be resolved by the merchant.
-  *   `servability` (*type:* `String.t`, *default:* `nil`) - How this issue affects serving of the aggregate offer.
+  *   `servability` (*type:* `String.t`, *default:* `nil`) - How this issue affects serving of the CSS Product.
   """
 
   use GoogleApi.Gax.ModelBase
