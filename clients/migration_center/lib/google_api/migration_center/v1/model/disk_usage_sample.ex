@@ -21,16 +21,22 @@ defmodule GoogleApi.MigrationCenter.V1.Model.DiskUsageSample do
 
   ## Attributes
 
-  *   `averageIops` (*type:* `number()`, *default:* `nil`) - Average IOPS sampled over a short window. Must be non-negative.
+  *   `averageIops` (*type:* `number()`, *default:* `nil`) - Optional. Average IOPS sampled over a short window. Must be non-negative. Must be equal to the sum of read and write if one of them is positive. if both read and write are zero they are ignored.
+  *   `averageReadIops` (*type:* `number()`, *default:* `nil`) - Optional. Average read IOPS sampled over a short window. Must be non-negative.
+  *   `averageWriteIops` (*type:* `number()`, *default:* `nil`) - Optional. Average write IOPS sampled over a short window. Must be non-negative.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :averageIops => number() | nil
+          :averageIops => number() | nil,
+          :averageReadIops => number() | nil,
+          :averageWriteIops => number() | nil
         }
 
   field(:averageIops)
+  field(:averageReadIops)
+  field(:averageWriteIops)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MigrationCenter.V1.Model.DiskUsageSample do

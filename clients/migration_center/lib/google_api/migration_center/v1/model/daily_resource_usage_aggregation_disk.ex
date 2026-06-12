@@ -21,16 +21,25 @@ defmodule GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationDisk d
 
   ## Attributes
 
-  *   `iops` (*type:* `GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats.t`, *default:* `nil`) - Disk I/O operations per second.
+  *   `iops` (*type:* `GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats.t`, *default:* `nil`) - Optional. Disk I/O operations per second.
+  *   `readIops` (*type:* `GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats.t`, *default:* `nil`) - Optional. Disk read I/O operations per second.
+  *   `writeIops` (*type:* `GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats.t`, *default:* `nil`) - Optional. Disk write I/O operations per second.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :iops => GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats.t() | nil
+          :iops =>
+            GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats.t() | nil,
+          :readIops =>
+            GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats.t() | nil,
+          :writeIops =>
+            GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats.t() | nil
         }
 
   field(:iops, as: GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats)
+  field(:readIops, as: GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats)
+  field(:writeIops, as: GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationStats)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MigrationCenter.V1.Model.DailyResourceUsageAggregationDisk do

@@ -24,12 +24,15 @@ defmodule GoogleApi.MigrationCenter.V1.Model.Asset do
   *   `assignedGroups` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of groups that the asset is assigned to.
   *   `attributes` (*type:* `map()`, *default:* `nil`) - Generic asset attributes.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the asset was created.
+  *   `databaseDeploymentDetails` (*type:* `GoogleApi.MigrationCenter.V1.Model.DatabaseDeploymentDetails.t`, *default:* `nil`) - Output only. Asset information specific for database deployments.
+  *   `databaseDetails` (*type:* `GoogleApi.MigrationCenter.V1.Model.DatabaseDetails.t`, *default:* `nil`) - Output only. Asset information specific for logical databases.
   *   `insightList` (*type:* `GoogleApi.MigrationCenter.V1.Model.InsightList.t`, *default:* `nil`) - Output only. The list of insights associated with the asset.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs.
   *   `machineDetails` (*type:* `GoogleApi.MigrationCenter.V1.Model.MachineDetails.t`, *default:* `nil`) - Output only. Asset information specific for virtual and physical machines.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the asset.
   *   `performanceData` (*type:* `GoogleApi.MigrationCenter.V1.Model.AssetPerformanceData.t`, *default:* `nil`) - Output only. Performance data for the asset.
   *   `sources` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of sources contributing to the asset.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Output only. Server generated human readable name of the asset.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the asset was last updated.
   """
 
@@ -39,24 +42,35 @@ defmodule GoogleApi.MigrationCenter.V1.Model.Asset do
           :assignedGroups => list(String.t()) | nil,
           :attributes => map() | nil,
           :createTime => DateTime.t() | nil,
+          :databaseDeploymentDetails =>
+            GoogleApi.MigrationCenter.V1.Model.DatabaseDeploymentDetails.t() | nil,
+          :databaseDetails => GoogleApi.MigrationCenter.V1.Model.DatabaseDetails.t() | nil,
           :insightList => GoogleApi.MigrationCenter.V1.Model.InsightList.t() | nil,
           :labels => map() | nil,
           :machineDetails => GoogleApi.MigrationCenter.V1.Model.MachineDetails.t() | nil,
           :name => String.t() | nil,
           :performanceData => GoogleApi.MigrationCenter.V1.Model.AssetPerformanceData.t() | nil,
           :sources => list(String.t()) | nil,
+          :title => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:assignedGroups, type: :list)
   field(:attributes, type: :map)
   field(:createTime, as: DateTime)
+
+  field(:databaseDeploymentDetails,
+    as: GoogleApi.MigrationCenter.V1.Model.DatabaseDeploymentDetails
+  )
+
+  field(:databaseDetails, as: GoogleApi.MigrationCenter.V1.Model.DatabaseDetails)
   field(:insightList, as: GoogleApi.MigrationCenter.V1.Model.InsightList)
   field(:labels, type: :map)
   field(:machineDetails, as: GoogleApi.MigrationCenter.V1.Model.MachineDetails)
   field(:name)
   field(:performanceData, as: GoogleApi.MigrationCenter.V1.Model.AssetPerformanceData)
   field(:sources, type: :list)
+  field(:title)
   field(:updateTime, as: DateTime)
 end
 
