@@ -22,7 +22,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.ListCertificatesResponse do
   ## Attributes
 
   *   `certificates` (*type:* `list(GoogleApi.PrivateCA.V1.Model.Certificate.t)`, *default:* `nil`) - The list of Certificates.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListCertificatesRequest.next_page_token to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListCertificatesRequest.page_token to retrieve the next page of results.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - A list of locations (e.g. "us-west1") that could not be reached.
   """
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.ListCaPoolsResponse do
   ## Attributes
 
   *   `caPools` (*type:* `list(GoogleApi.PrivateCA.V1.Model.CaPool.t)`, *default:* `nil`) - The list of CaPools.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListCertificateAuthoritiesRequest.next_page_token to retrieve the next page of results.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListCertificateAuthoritiesRequest.page_token to retrieve the next page of results.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - A list of locations (e.g. "us-west1") that could not be reached.
   """
 
