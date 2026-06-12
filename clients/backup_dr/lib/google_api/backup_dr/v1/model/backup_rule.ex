@@ -21,7 +21,7 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupRule do
 
   ## Attributes
 
-  *   `backupRetentionDays` (*type:* `integer()`, *default:* `nil`) - Required. Configures the duration for which backup data will be kept. It is defined in “days”. The value should be greater than or equal to minimum enforced retention of the backup vault.
+  *   `backupRetentionDays` (*type:* `integer()`, *default:* `nil`) - Required. Configures the duration for which backup data will be kept. It is defined in “days”. The value should be greater than or equal to minimum enforced retention of the backup vault. Minimum value is 1 and maximum value is 90 for hourly backups. Minimum value is 1 and maximum value is 90 for daily backups. Minimum value is 7 and maximum value is 186 for weekly backups. Minimum value is 30 and maximum value is 732 for monthly backups. Minimum value is 30 and maximum value is 36159 for yearly backups.
   *   `ruleId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique id of this `BackupRule`. The `rule_id` is unique per `BackupPlan`.The `rule_id` must start with a lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens. Pattern, /a-z{,62}/.
   *   `standardSchedule` (*type:* `GoogleApi.BackupDR.V1.Model.StandardSchedule.t`, *default:* `nil`) - Required. Defines a schedule that runs within the confines of a defined window of time.
   """
