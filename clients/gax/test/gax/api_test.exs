@@ -35,7 +35,7 @@ defmodule Gax.ApiTest do
     mock(fn %{
               method: :get,
               url: "https://example.com/v1/stores/store-1/pets",
-              headers: [{"x-goog-api-client", ^api_client}, {"accept-encoding", "gzip, deflate"}]
+              headers: [{"x-goog-api-client", ^api_client}, {"accept-encoding", "gzip, deflate, identity"}]
             } ->
       %Tesla.Env{status: 200, body: @pets_json}
     end)
@@ -61,7 +61,7 @@ defmodule Gax.ApiTest do
     mock(fn %{
               method: :get,
               url: "https://example.com/v1/stores/store-1/pets",
-              headers: [{"x-goog-api-client", ^api_client}, {"accept-encoding", "gzip, deflate"}]
+              headers: [{"x-goog-api-client", ^api_client}, {"accept-encoding", "gzip, deflate, identity"}]
             } ->
       %Tesla.Env{status: 200, body: @pets_json_compressed,
                  headers: [{"content-encoding", "gzip"}]}
