@@ -33,7 +33,7 @@ defmodule GoogleApi.Gax.Connection do
         )
       )
 
-      plug(Tesla.Middleware.DecompressResponse, [])
+      plug(Tesla.Middleware.DecompressResponse, max_body_size: :infinity)
 
       plug(Tesla.Middleware.EncodeJson, engine: Poison)
 
