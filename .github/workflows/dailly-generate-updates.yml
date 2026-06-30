@@ -15,7 +15,7 @@ jobs:
       - name: Install Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3"
+          ruby-version: "3.4.10"
       - name: Install Elixir
         uses: erlef/setup-beam@v1
         with:
